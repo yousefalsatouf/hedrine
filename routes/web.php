@@ -15,10 +15,11 @@ use RealRashid\SweetAlert\Facades\Alert;
 */
 
 Route::get('/', function () {
+    return view('welcome');
+});
 
-
-    
-        return view('dashboard');
+Route::get('/dashboard', function () {
+    return view('dashboard');
 });
 
 //DD 2 mai 2020 permet d'indiquer qu'un mail va être envoyé à la personne qui s'enregistre pour la première fois sur hedrine pour vérifier son mail
