@@ -58,19 +58,19 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="herb" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Plante</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="drug" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>DCI</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="target" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Cas Rapporté et Mécanisme</p>
                     </a>

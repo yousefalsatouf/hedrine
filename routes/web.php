@@ -40,5 +40,13 @@ Route::get('/test',function(){
     return view("auth/usernotvalidated.blade.php");
 });
 
+//N.Thierry pour atteindre la page de herbe
+Route::get('/herb','HerbController@index');
+
+//N.Thierry pour atteindre la page de drugs
+Route::get('/drug','DrugController@index');
+
+//N.Thierry pour atteindre la page de targets
+Route::get('/target','TargetController@index');
 
 
