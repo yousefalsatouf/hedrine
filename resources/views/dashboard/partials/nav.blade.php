@@ -107,9 +107,11 @@
             Alexander Pierce
         </button>
         <div class="dropdown-menu">
-            <div class="dropdown-item">
+            <a class="dropdown-item" href="/logout">
+              <i class="fas fa-sign-out-alt"></i>
                 logout
-            </div>
+            </a>
+           
         </div>
     </div>
   </nav>
