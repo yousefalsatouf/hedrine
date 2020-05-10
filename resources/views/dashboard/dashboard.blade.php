@@ -11,30 +11,31 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <div class="content-header">
+    <div class="content-header" style="background: #fff">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-6 col-sm-12 col-md-12 col-lg-12">
+          <div class="col-xs-12 col-sm-12 col-md-10 offset-md-1 col-lg-12 col-xl-8 offset-xl-2">
             <div class="row">
-              <div class="col-4 mx-auto">
-                <img src="/images/plantes.jpg" alt="">
+              <div class="col-3 col-sm-3 col-md-3 col-xl-3 mx-auto">
+                <img src="/images/plantes.jpg" alt="" class="img-fluid">
               </div>
             </div>
-            <div class="row">
-              <div class="col-3 offset-md-2">
-                <img src="/images/interaction_drte.jpg" alt="">  
+          
+            <div class="row text-center">
+              <div class="col-6  col-sm-6 col-md-6  col-xl-5 offset-xl-1 ">
+                <img src="/images/interaction_drte.jpg" alt="" class="img-fluid">  
               </div>
-              <div class="col-4 offset-md-2">
-                <img src="/images/interaction_gche.jpg" alt="">  
+              <div class="col-6 col-sm-6  col-md-6  col-xl-4 ">
+                <img src="/images/interaction_gche.jpg" alt="" class="img-fluid">  
               </div>
             </div>
-            <br>
-            <div class="row">
-              <div class="col-3">
-                <img src="/images/dci.jpg" alt="">  
+            
+            <div class="row text-center">
+              <div class="col-6 col-sm-3 col-md-3  col-lg-4 col-xl-4">
+                <img src="/images/dci.jpg" alt="" class="img-fluid">  
               </div>
-              <div class="col-4 offset-md-5">
-                <img src="/images/mecanismes_hl.jpg" alt="">  
+              <div class=" col-6 col-sm-3 offset-sm-6 col-md-3 offset-md-6 col-lg-4 col-xl-3 offset-xl-4 ">
+                <img src="/images/mecanismes_hl.jpg" alt="" class="img-fluid">  
               </div>
             </div>
           </div>
