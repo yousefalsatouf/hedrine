@@ -1,12 +1,12 @@
-@include('/dashboard/partials/header')
+@include('/partials/header')
 <div class="wrapper">
 
   <!-- Navbar -->
-  @include('/dashboard/partials/nav')
+  @include('/partials/nav')
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  @include('/dashboard/partials/sidebar')
+  @include('/partials/sidebar')
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -58,6 +58,6 @@
   </div>
   <!-- /.content-wrapper -->
 
-  @include('/dashboard/partials/footer')
+  @include('/partials/footer')
 
  

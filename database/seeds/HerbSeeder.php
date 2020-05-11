@@ -11,6 +11,6 @@ class HerbSeeder extends Seeder
      */
     public function run()
     {
-        //
+        
     }
 }
