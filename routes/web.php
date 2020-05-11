@@ -40,6 +40,10 @@ Route::get('/test',function(){
     return view("auth/usernotvalidated.blade.php");
 });
 
+Route::get('/master', function () {
+    return view("layouts/master_dashboard");
+});
+
 //N.Thierry pour atteindre la page de herbe
 Route::get('/herb','HerbController@index');
 

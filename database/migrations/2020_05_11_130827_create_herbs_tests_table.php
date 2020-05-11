@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHerbsTable extends Migration
+class CreateHerbsTestsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateHerbsTable extends Migration
      */
     public function up()
     {
-        Schema::disableForeignKeyConstraints();
-        Schema::create('herbs', function (Blueprint $table) {
-            $table->id();
+    
+        Schema::create('herbs_tests', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('name');
-            $table->text('sciname')->change();
+            $table->text('sciname');
+            $table->integer('user_id')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateHerbsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('herbs');
+        Schema::dropIfExists('herbs_tests');
     }
 }
