@@ -14,6 +14,8 @@ class HerbController extends Controller
      */
     public function index()
     {
+        $herbs = Herb::all();
+
         return view('herbs/index',compact('herbs'));
     }
 
