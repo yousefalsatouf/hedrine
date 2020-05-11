@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Monolog\Handler\RotatingFileHandler;
 use RealRashid\SweetAlert\Facades\Alert;
 
 /*
@@ -18,9 +19,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// });
+
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('dashboard/dashboard');
 });
+
+Route::get('/logout', 'SessionController@destroy');
 
 //DD 2 mai 2020 permet d'indiquer qu'un mail va être envoyé à la personne qui s'enregistre pour la première fois sur hedrine pour vérifier son mail
 Auth::routes(['verify' => true]);
@@ -33,5 +40,13 @@ Route::get('/test',function(){
     return view("auth/usernotvalidated.blade.php");
 });
 
+//N.Thierry pour atteindre la page de herbe
+Route::get('/herb','HerbController@index');
+
+//N.Thierry pour atteindre la page de drugs
+Route::get('/drug','DrugController@index');
+
+//N.Thierry pour atteindre la page de targets
+Route::get('/target','TargetController@index');
 
 

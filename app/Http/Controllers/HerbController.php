@@ -14,7 +14,7 @@ class HerbController extends Controller
      */
     public function index()
     {
-        //
+        return view('herbs/index',compact('herbs'));
     }
 
     /**
