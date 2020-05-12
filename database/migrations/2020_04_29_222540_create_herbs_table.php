@@ -16,8 +16,8 @@ class CreateHerbsTable extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::create('herbs', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
-            $table->text('sciname')->change('sci_name');
+            $table->string('name');
+            $table->text('sciname');
             $table->timestamps();
         });
     }
