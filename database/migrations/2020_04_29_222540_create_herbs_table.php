@@ -17,7 +17,7 @@ class CreateHerbsTable extends Migration
         Schema::create('herbs', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255);
-            $table->text('sciname')->change('sci_name');
+            $table->text('sciname');
             $table->timestamps();
         });
     }
