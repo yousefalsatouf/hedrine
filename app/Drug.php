@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\DrugFamily;
 
 class Drug extends Model
 {
@@ -11,26 +12,30 @@ class Drug extends Model
      */
     public function atc_level4s()
     {
-        return $this->belongsTo(atc_level4s::class);
+        return $this->belongsTo(AtcLevel4::class);
     }
 
-    public function drug_families()
+    public function drug_family()
     {
-        return $this->belongsTo(drug_families::class);
+        return $this->belongsTo(DrugFamily::class);
     }
 
     public function routes()
     {
-        return $this->belongsTo(routes::class);
+        return $this->belongsTo(Route::class);
     }
 
     public function users()
     {
-        return $this->belongsTo(users::class);
+        return $this->belongsTo(User::class);
     }
 
     public function targets()
     {
-        return $this->belongsToMany(targets::class);
+        return $this->belongsToMany(Target::class);
+    }
+
+    public function getDrugFamilyByName(){
+        return DrugFamily::where('id',$this->drug_families_id)->first()->nom;
     }
 }

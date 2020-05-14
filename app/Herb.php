@@ -8,26 +8,26 @@ class Herb extends Model
 {
     public function users()
     {
-        return $this->belongsTo(users::class);
+        return $this->belongsTo(User::class);
     }
 
     public function herb_forms()
     {
-        return $this->belongsToMany(herb_forms::class);
+        return $this->belongsToMany(HerbForm::class);
     }
 
     public function targets()
     {
-        return $this->belongsToMany(targets::class);
+        return $this->belongsToMany(Target::class);
     }
 
     public function dinteractions()
     {
-        return $this->belongsToMany(dinteractions::class);
+        return $this->belongsToMany(Dinteraction::class);
     }
 
     public function hinteractions()
     {
-        return $this->belongsToMany(dinteractions::class);
+        return $this->belongsToMany(Hinteraction::class);
     }
 }

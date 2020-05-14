@@ -22,7 +22,6 @@
                 </a>
               </div>
             </div>
-          
             <div class="row text-center">
               <div class="col-6  col-sm-6 col-md-6  col-xl-5 offset-xl-1 ">
                  <a href="">

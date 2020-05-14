@@ -97,7 +97,7 @@
 				<thead>
 					<tr>
 						<th> Nom</th>
-						{{-- <th> Famille</th> --}}
+						<th> Famille</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -106,7 +106,7 @@
 						<td>
 							<a href="" class="add_style" ><strong>{{$drug->name}}</strong> </a>
 						</td>
-						{{-- <td>{{$drug->famille}}</td> --}}
+						<td>{{$drug->getDrugFamilyByName()}}</td>
 					</tr>
 					@endforeach
 				</tbody>
