@@ -1,8 +1,9 @@
 @extends('layouts.master_dashboard')
-
+@section('content_title')
+	Plantes
+@endsection
 @section('content_dashboard')
-   
-  <div class="row">
+   <div class="row">
     <div class="col-12">
         <div class="card">
 			<div class="card-body">

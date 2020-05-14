@@ -10,4 +10,8 @@ class Post extends Model
     {
         return $this->belongsTo(users::class);
     }
+
+    public function getPostFamilyByName(){
+        return DrugFamily::where('id',$this->drug_families_id)->first()->nom;
+    }
 }

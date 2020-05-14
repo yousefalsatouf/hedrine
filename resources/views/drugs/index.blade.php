@@ -1,8 +1,11 @@
 @extends('layouts.master_dashboard')
 
+<!-- @yield('content_title') créé dans la view master_dashboard.blade.php-->
+@section('content_title')
+	DCI
+@endsection
 @section('content_dashboard')
-   
-  <div class="row">
+	<div class="row">
     <div class="col-12">
         <div class="card">
 			<div class="card-body">
