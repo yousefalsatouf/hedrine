@@ -49,7 +49,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="">Plantes</h1>
+            <h1 class="">@yield('content_title')</h1> <!--affiche le mot plantes ou dci-->
           </div>
         </div>
       </div>

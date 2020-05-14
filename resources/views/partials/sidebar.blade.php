@@ -1,8 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      
-<span class="brand-text font-weight-light"></span>
+    <a href="{{ Route('welcome') }}">
+      <img src="{{ asset('images/hedrine_petit.png') }}" alt="">
     </a>
 
     <!-- Sidebar -->
@@ -77,9 +76,11 @@
                   </li>
               </ul>
             </li>
-           
           </ul>
-      </nav>
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <img src="{{ asset('images/ulb-icon.png') }}" alt="">
+          </ul>
+        </nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->

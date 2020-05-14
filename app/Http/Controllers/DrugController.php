@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Drug;
 use App\Post;
+use App\DrugFamily;
 use Illuminate\Http\Request;
 
 class DrugController extends Controller
