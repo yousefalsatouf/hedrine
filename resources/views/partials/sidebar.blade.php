@@ -1,9 +1,11 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <br />
+    <div class="text-center">
+      <img src="{{ asset('images/ulb-icon.png') }}" alt="Logo ULB">
+    </div>
+    
       
-<span class="brand-text font-weight-light"></span>
-    </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
@@ -77,9 +79,9 @@
                   </li>
               </ul>
             </li>
-           
           </ul>
-      </nav>
+          
+        </nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->

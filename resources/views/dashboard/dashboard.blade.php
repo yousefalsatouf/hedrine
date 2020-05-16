@@ -18,20 +18,19 @@
             <div class="row">
               <div class="col-3 col-sm-3 col-md-3 col-xl-3 mx-auto">
                 <a href="herb">
-                  <img src="{{ asset('images/plantes.jpg') }}" alt="" class="img-fluid">
+                  <img src="{{ asset('images/plantes.jpg') }}" alt="Plants" class="img-fluid">
                 </a>
               </div>
             </div>
-          
             <div class="row text-center">
               <div class="col-6  col-sm-6 col-md-6  col-xl-5 offset-xl-1 ">
                  <a href="">
-                  <img src="{{ asset('images/interaction_drte.jpg') }}" alt="" class="img-fluid">  
+                  <img src="{{ asset('images/interaction_drte.jpg') }}" alt="Drugs" class="img-fluid">  
                  </a>
               </div>
               <div class="col-6 col-sm-6  col-md-6  col-xl-4 ">
                   <a href="">
-                    <img src="{{ asset('images/interaction_gche.jpg') }}" alt="" class="img-fluid"> 
+                    <img src="{{ asset('images/interaction_gche.jpg') }}" alt="Targets" class="img-fluid"> 
                   </a> 
               </div>
             </div>

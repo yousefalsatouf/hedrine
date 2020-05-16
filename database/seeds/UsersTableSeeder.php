@@ -24,7 +24,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'david.dubois@ulb.be',
             'email_verified_at' => Carbon::now(),
             'password' => bcrypt('admin'),
-            'is_active' => 0,
+            'is_active' => 1,
             'role_id' => 1,
 
         ]);
@@ -46,15 +46,15 @@ class UsersTableSeeder extends Seeder
 
         User::create([
 
-            'name' => 'Makandila',
+            'name' => 'Mpindu Mukandila',
             'firstname' => 'Jean Paul',
             'team' => 'DPM',
             'tel1' => '0487854521',
             'tel2' => '02897452',
-            'email' => 'makandila.jp@ulb.be',
+            'email' => 'jpmpindu@gmail.com',
             'email_verified_at' => Carbon::now(),
-            'password' => bcrypt('publisher'),
-            'is_active' => 0,
+            'password' => bcrypt('12345678'),
+            'is_active' => 1,
             'role_id' => 2,
 
         ]);

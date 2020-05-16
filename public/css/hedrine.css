@@ -1,0 +1,11 @@
+a.add_style {
+
+	color:#003d4c; 
+	text-underline-position: below;
+	text-decoration: underline;
+
+}
+a.add_style :hover {
+	color: #367889;
+    text-decoration: none;
+}

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Drug;
+use App\Post;
+use App\DrugFamily;
 use Illuminate\Http\Request;
 
 class DrugController extends Controller
@@ -14,7 +16,9 @@ class DrugController extends Controller
      */
     public function index()
     {
-        return view('drugs/index',compact('drugs'));
+        $drugs = Drug::all();
+        $posts = Post::all();
+       return view('drugs/index',compact('drugs','posts'));
     }
 
     /**

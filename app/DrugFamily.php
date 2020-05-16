@@ -8,11 +8,11 @@ class DrugFamily extends Model
 {
     public function drugs()
     {
-        return $this->hasMany(drugs::class);
+        return $this->hasMany(Drug::class);
     }
 
     public function atc_level2()
     {
-        return $this->hasMany(drugs::class);
+        return $this->hasMany(Drug::class);
     }
 }

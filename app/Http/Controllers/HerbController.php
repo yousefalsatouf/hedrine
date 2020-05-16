@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Herb;
 use Illuminate\Http\Request;
+use App\Post;
 
 class HerbController extends Controller
 {
@@ -15,8 +16,9 @@ class HerbController extends Controller
     public function index()
     {
         $herbs = Herb::all();
+        $posts = Post::all();
 
-        return view('herbs/index',compact('herbs'));
+        return view('herbs/index',compact('herbs','posts'));
     }
 
     /**

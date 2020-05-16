@@ -1,8 +1,9 @@
 @extends('layouts.master_dashboard')
-
+@section('content_title')
+	Plantes
+@endsection
 @section('content_dashboard')
-   
-  <div class="row">
+   <div class="row">
     <div class="col-12">
         <div class="card">
 			<div class="card-body">
@@ -93,7 +94,7 @@
 	 </div>
 	 <div class="col-12">
 		<div class="card-body " style="background-color: #fff">
-            <table  id="example" class="table table-bordered table-striped">
+            <table id="example1" class="table table-bordered table-striped">
 				<thead>
 					<tr>
 						<th> Name</th>
@@ -104,7 +105,7 @@
 					@foreach ($herbs as $herb)
 					<tr>
 						<td>
-							<a href="">{{$herb->name}} </a>
+							<a href="" class="add_style" ><strong>{{$herb->name}}</strong> </a>
 						</td>
 						<td>{{$herb->sciname}}</td>
 					</tr>
@@ -114,9 +115,21 @@
 		</div>
 	 </div>
   </div>
-  <script>
+@endsection
+
+@section('dashboard-js')
+<script>
 	$(function () {
-	  $('#example1').DataTable();
+	
+	  $('#example1').DataTable({
+		"paging": true,
+		"lengthChange": false,
+		"searching": true,
+		"ordering": true,
+		"info": true,
+		"autoWidth": false,
+		"responsive": true,
+	  });
 	});
   </script>
 @endsection

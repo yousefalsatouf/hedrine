@@ -10,6 +10,7 @@
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
+<script src="{{ asset('https://code.jquery.com/jquery-3.4.1.min.js') }}"></script>
 <script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
 
@@ -24,5 +25,6 @@
 <script src="{{ asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('adminlte/js/adminlte.min.js') }}"></script>
+ @yield('dashboard-js')
 </body>
 </html>
