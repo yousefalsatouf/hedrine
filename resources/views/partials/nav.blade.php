@@ -30,8 +30,10 @@
     <!-- Messages Dropdown Menu -->
     <li class="nav-item dropdown">
       <a class="nav-link" data-toggle="dropdown" href="#">
-        <i class="far fa-comments"></i>
-        <span class="badge badge-danger navbar-badge">{{ $posts->count() }}</span>
+        <i class="far fa-comments fa-2x" ></i>
+        <span class="badge badge-danger navbar-badge" style="font-size: 15.5px">
+          {{ $posts->count() }}
+        </span>
       </a>
       <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
         @foreach ($posts as $post )
@@ -55,6 +57,11 @@
         <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
       </div>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+        <i class="fas fa-th-large"></i>
+      </a>
+    </li>
   </ul>
   <div class="dropdown ml-auto">
     <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" href="#">
@@ -68,3 +75,4 @@
     </div>
   </div>
 </nav>
+@include('partials/test');
