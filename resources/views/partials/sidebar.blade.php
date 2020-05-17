@@ -34,13 +34,13 @@
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Plante <-> DCI</p>
+                  <p>Plantes <--> DCI</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Plante <-> Mécanisme</p>
+                  <p>Plantes < - > Mécanismes</p>
                 </a>
               </li>
             </ul>
@@ -62,7 +62,7 @@
                 <li class="nav-item">
                   <a href="herb" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Plante</p>
+                    <p>Plantes</p>
                   </a>
                 </li>
                 <li class="nav-item">
@@ -79,6 +79,44 @@
                   </li>
               </ul>
             </li>
+          </ul>
+          <!-- partie admin -->
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+                 with font-awesome or any other icon font library -->
+            <li class="nav-item has-treeview menu-open">
+              <a href="#" class="nav-link active" style="background-color:green;" >
+                
+                <p>
+                  <!-- icone users admin sur fontawesome (juste copier la classe et la coller) -->
+                  <i class="nav-icon fa fa-user" aria-hidden="true"></i>
+                  
+                  Admin
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Administrer</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="add_post_form" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Ajouter un poste</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Gérer les données</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            
           </ul>
           
         </nav>

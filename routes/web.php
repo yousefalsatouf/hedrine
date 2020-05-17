@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use Monolog\Handler\RotatingFileHandler;
 use RealRashid\SweetAlert\Facades\Alert;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -52,5 +54,9 @@ Route::get('/drug','DrugController@index');
 
 //N.Thierry pour atteindre la page de targets
 Route::get('/target','TargetController@index');
+
+//DD pour atteindre le formulaire d'ajout d'un poste
+Route::get('/add_post_form','PostController@show_form');
+Route::post('/add_post','PostController@create');
 
 

@@ -16,6 +16,10 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersTableSeeder::class);
         $this->call(HerbSeeder::class);
         $this->call(DrugSeeder::class);
-
+        $this->call(HerbFormSeeder::class);
+        $this->call(DrugFamilySeeder::class);
+        $this->call(HerbHasFormSeeder::class);
+        $this->call(PostSeeder::class);
+        $this->call(TargetTypeSeeder::class);
     }
 }

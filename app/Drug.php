@@ -35,7 +35,5 @@ class Drug extends Model
         return $this->belongsToMany(Target::class);
     }
 
-    public function getDrugFamilyByName(){
-        return DrugFamily::where('id',$this->drug_families_id)->first()->nom;
-    }
+    
 }

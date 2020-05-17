@@ -104,12 +104,12 @@
 					</tr>
 				</thead>
 				<tbody>
-					@foreach ($drugs as $drug)
+					@foreach ($drugs_and_families as $drug)
 					<tr>
 						<td>
 							<a href="" class="add_style" ><strong>{{$drug->name}}</strong> </a>
 						</td>
-						<td>{{$drug->getDrugFamilyByName()}}</td>
+						<td>{{$drug->nom}}</td>
 					</tr>
 					@endforeach
 				</tbody>
@@ -131,6 +131,10 @@
 		"info": true,
 		"autoWidth": false,
 		"responsive": true,
+		"language": 
+		{
+			"url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
+        }
 	  });
 	});
   </script>

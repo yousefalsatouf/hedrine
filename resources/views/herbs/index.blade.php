@@ -99,6 +99,7 @@
 					<tr>
 						<th> Name</th>
 						<th> Sci Name</th>
+						<th> Forme(s) de la plante</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -108,6 +109,24 @@
 							<a href="" class="add_style" ><strong>{{$herb->name}}</strong> </a>
 						</td>
 						<td>{{$herb->sciname}}</td>
+						
+						<td>
+							@foreach ($herb->herb_forms as $herb_form)
+								@if(count ($herb->herb_forms ) == 1)
+
+									{{ $herb_form->name }}
+								@else
+								
+								{{ $herb_form->name }} 
+								
+								
+								@endif
+								
+							@endforeach
+							
+						
+							
+						</td>
 					</tr>
 					@endforeach
 				</tbody>
@@ -129,6 +148,10 @@
 		"info": true,
 		"autoWidth": false,
 		"responsive": true,
+		"language": 
+		{
+			"url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
+        }
 	  });
 	});
   </script>

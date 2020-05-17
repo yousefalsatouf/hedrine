@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Herb;
 use Illuminate\Http\Request;
 use App\Post;
+use App\HerbHasForm;
 
 class HerbController extends Controller
 {
@@ -15,9 +16,30 @@ class HerbController extends Controller
      */
     public function index()
     {
-        $herbs = Herb::all();
+
+    
+
+
+        /*$herbs = Herb::all();*/
         $posts = Post::all();
 
+        $herbs = Herb::with('herb_forms')->get();
+
+        /* foreach ($herbs as $herb) 
+        {
+            echo "<pre>";
+            echo $herb->name;
+            echo $herb->sciname;
+            echo $herb->herb_forms;
+            echo "</pre>";
+        } */
+
+    
+
+        /* dd($herbs); */
+    
+        
+        //on retourne le résultat dans une view nommée index, la vue se trouve dans la dossier herbs
         return view('herbs/index',compact('herbs','posts'));
     }
 

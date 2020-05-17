@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Drug;
 use App\Post;
 use App\DrugFamily;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class DrugController extends Controller
@@ -16,9 +17,21 @@ class DrugController extends Controller
      */
     public function index()
     {
-        $drugs = Drug::all();
+        /*$drugs = Drug::all();*/
         $posts = Post::all();
-       return view('drugs/index',compact('drugs','posts'));
+
+        //retourne tous les médicaments et leur drugs families pour la vue drugs
+    
+        
+        $drugs_and_families = DB::table('drugs')
+            
+            ->leftJoin('drug_families', 'drug_families.id', '=', 'drugs.drug_families_id')
+            ->get();
+
+        /*dd($drugs_and_families);*/
+
+        
+       return view('drugs/index',compact('drugs_and_families','posts'));
     }
 
     /**

@@ -24,7 +24,7 @@ class DrugSeeder extends Seeder
             'name' => 'CETUXIMAB',
             'route' => 'injectable',
             'user_id' => 1,
-            'drug_families_id' => 1,
+            'drug_families_id' => 2,
             'route_id' => 1,
             'atc_level_4s_id' => 1,
         ]);
@@ -40,7 +40,7 @@ class DrugSeeder extends Seeder
             'name' => 'RITUXIMAB',
             'route' => 'injectable',
             'user_id' => 1,
-            'drug_families_id' => 1,
+            'drug_families_id' => 2,
             'route_id' => 1,
             'atc_level_4s_id' => 1,
         ]);
@@ -48,7 +48,7 @@ class DrugSeeder extends Seeder
             'name' => 'TRASTUZUMAB',
             'route' => 'injectable',
             'user_id' => 1,
-            'drug_families_id' => 1,
+            'drug_families_id' => 3,
             'route_id' => 1,
             'atc_level_4s_id' => 1,
         ]);
@@ -56,7 +56,7 @@ class DrugSeeder extends Seeder
             'name' => 'CARBOPLATINE',
             'route' => 'injectable',
             'user_id' => 1,
-            'drug_families_id' => 1,
+            'drug_families_id' => 3,
             'route_id' => 1,
             'atc_level_4s_id' => 1,
         ]);
@@ -80,7 +80,7 @@ class DrugSeeder extends Seeder
             'name' => 'CHLORAMBUCIL',
             'route' => 'injectable',
             'user_id' => 1,
-            'drug_families_id' => 1,
+            'drug_families_id' => 2,
             'route_id' => 1,
             'atc_level_4s_id' => 1,
         ]);
@@ -88,7 +88,7 @@ class DrugSeeder extends Seeder
             'name' => 'MELPHALAN',
             'route' => 'per os',
             'user_id' => 1,
-            'drug_families_id' => 1,
+            'drug_families_id' => 2,
             'route_id' => 2,
             'atc_level_4s_id' => 1,
         ]);
@@ -96,7 +96,7 @@ class DrugSeeder extends Seeder
             'name' => 'MELPHALAN',
             'route' => 'injectable',
             'user_id' => 1,
-            'drug_families_id' => 1,
+            'drug_families_id' => 3,
             'route_id' => 1,
             'atc_level_4s_id' => 1,
         ]);
@@ -136,7 +136,7 @@ class DrugSeeder extends Seeder
             'name' => 'EchinacBENDAMUSTINE',
             'route' => 'injectable',
             'user_id' => 1,
-            'drug_families_id' => 1,
+            'drug_families_id' => 2,
             'route_id' => 1,
             'atc_level_4s_id' => 1,
         ]);
@@ -192,7 +192,7 @@ class DrugSeeder extends Seeder
             'name' => 'PIPOBROMAN',
             'route' => 'per os',
             'user_id' => 1,
-            'drug_families_id' => 1,
+            'drug_families_id' => 3,
             'route_id' => 2,
             'atc_level_4s_id' => 1,
         ]);
@@ -208,7 +208,7 @@ class DrugSeeder extends Seeder
             'name' => 'THIOTEPA',
             'route' => 'injectable',
             'user_id' => 1,
-            'drug_families_id' => 1,
+            'drug_families_id' => 2,
             'route_id' => 1,
             'atc_level_4s_id' => 1,
         ]);
