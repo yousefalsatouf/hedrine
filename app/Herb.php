@@ -11,9 +11,8 @@ class Herb extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function herb_forms()
-    {
-        return $this->belongsToMany(HerbForm::class);
+    public function herb_forms() { 
+        return $this->belongsToMany(HerbForm::class, 'herb_has_forms'); 
     }
 
     public function targets()

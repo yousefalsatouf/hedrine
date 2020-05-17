@@ -10,18 +10,7 @@
     <li 
       class="nav-item d-sm-inline-block"><img class="img-fluid" src="{{ asset('images/hedrine_petit.png') }}" alt="Logo Hedrine">
     </li>
-    <li class="nav-item d-none d-sm-inline-block">
-      <a href="{{ Route('home') }}" class="nav-link">Accueil</a>
-      <br />
-    </li>
-    <li class="nav-item d-none d-sm-inline-block">
-      <a href="#" class="nav-link">Administrer</a>
-      <br />
-    </li>
-    <li class="nav-item d-none d-sm-inline-block">
-      <a href="#" class="nav-link">Gérer les données</a>
-      <br />
-    </li>
+    
     
   </ul>
 
@@ -38,7 +27,7 @@
       <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
         @foreach ($posts as $post )
         <a href="#" class="dropdown-item">
-          <!-- Message Start -->
+          <!-- Message Start (les potes) -->
           <div class="media">
             <div class="media-body">
               <h3 class="dropdown-item-title">
@@ -57,11 +46,7 @@
         <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
       </div>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-        <i class="fas fa-th-large"></i>
-      </a>
-    </li>
+    
   </ul>
   <div class="dropdown ml-auto">
     <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" href="#">

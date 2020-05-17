@@ -17,6 +17,7 @@ class CreateTargetTypesTable extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->tinyInteger('rank')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

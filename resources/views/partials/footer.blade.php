@@ -25,6 +25,8 @@
 <script src="{{ asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('adminlte/js/adminlte.min.js') }}"></script>
+<script src="{{ asset('js/change_link_active.js') }}"></script>
+<script src="{{ asset('/adminlte/js/demo.js')}}"></script>
  @yield('dashboard-js')
 </body>
 </html>
