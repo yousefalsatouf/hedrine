@@ -65,4 +65,3 @@
     </div>
   </div>
 </nav>
-@include('partials/test');
