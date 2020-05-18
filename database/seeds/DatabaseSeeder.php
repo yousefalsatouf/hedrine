@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(DrugFamilySeeder::class);
         $this->call(HerbHasFormSeeder::class);
         $this->call(PostSeeder::class);
+        $this->call(TargetSeeder::class);
         $this->call(TargetTypeSeeder::class);
     }
 }
