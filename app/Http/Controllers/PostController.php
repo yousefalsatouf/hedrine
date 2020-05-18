@@ -46,6 +46,9 @@ class PostController extends Controller
      */
     public function create(Request $request)
     {
+        $herbs = Herb::all();
+        $drugs = Drug::all();
+        $targets = Target::all();
         $posts = Post::all();
         $user = \Auth::user();
         
@@ -58,7 +61,7 @@ class PostController extends Controller
         
         Alert::success('OK !', 'Nouveau poste ajouté avec succès');
         
-        return view('admin/postes/form_add_post',compact('posts'));
+        return view('admin/postes/form_add_post',compact('posts','herbs','drugs','targets'));
 
     }
 
