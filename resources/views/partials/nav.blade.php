@@ -46,8 +46,30 @@
         <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
       </div>
     </li>
-    
   </ul>
+
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item d-sm-inline-block">
+       <img class="img-fluid" src="{{ asset('images/Plant-icon_32.png') }}" alt="Logo Hedrine">
+      </li>
+      <li class="nav-item d-sm-inline-block">{{ $herbs->count() }}</li>
+      &nbsp; &nbsp;
+      <li 
+        class="nav-item d-sm-inline-block"><img class="img-fluid" src="{{ asset('images/pills-5-icon_32.png') }}" alt="Logo Hedrine">
+      </li>
+      <li class="nav-item d-sm-inline-block">{{ $drugs->count() }}</li>
+      &nbsp; &nbsp;
+      <li 
+        class="nav-item d-sm-inline-block"><img class="img-fluid" src="{{ asset('images/Refresh-bicolor-icon_32.png') }}" alt="Logo Hedrine">
+      </li>
+      <li class="nav-item d-sm-inline-block">4</li>
+      &nbsp; &nbsp;
+      <li 
+        class="nav-item d-sm-inline-block"><img class="img-fluid" src="{{ asset('images/Document-icon_32.png') }}" alt="Logo Hedrine">
+      </li>
+      <li class="nav-item d-sm-inline-block">4</li>
+    </ul>
+
   <div class="dropdown ml-auto">
     <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" href="#">
         <i class="fas fa-user-circle"></i>
