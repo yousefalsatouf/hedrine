@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Herb;
-
+use App\Drug;
 
 class HomeController extends Controller
 {
