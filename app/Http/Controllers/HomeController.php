@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\Herb;
 use App\Drug;
+use App\Target;
 
 class HomeController extends Controller
 {
@@ -29,6 +30,7 @@ class HomeController extends Controller
         $posts = Post::all();
         $herbs = Herb::all();
         $drugs = Drug::all();
-        return view('dashboard/dashboard',compact('posts', 'herbs','drugs'));
+        $targets= Target::all();
+        return view('dashboard/dashboard',compact('posts', 'herbs','drugs', 'targets'));
     }
 }

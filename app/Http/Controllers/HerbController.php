@@ -8,6 +8,7 @@ use App\Post;
 use App\Herb;
 use App\HerbHasForm;
 use App\Drug;
+use App\Target;
 
 class HerbController extends Controller
 {
@@ -24,6 +25,7 @@ class HerbController extends Controller
         $herbs = Herb::all();
         $posts = Post::all();
         $drugs = Drug::all();
+        $targets = Target::all();
         $herbs = Herb::with('herb_forms')->get();
 
         /* foreach ($herbs as $herb) 
@@ -41,7 +43,7 @@ class HerbController extends Controller
     
         
         //on retourne le résultat dans une view nommée index, la vue se trouve dans la dossier herbs
-        return view('herbs/index',compact('herbs','posts','drugs'));
+        return view('herbs/index',compact('herbs','posts','drugs', 'targets'));
     }
 
     /**

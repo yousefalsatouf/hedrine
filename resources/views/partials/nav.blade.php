@@ -62,7 +62,7 @@
       <li 
         class="nav-item d-sm-inline-block"><img class="img-fluid" src="{{ asset('images/Refresh-bicolor-icon_32.png') }}" alt="Logo Hedrine">
       </li>
-      <li class="nav-item d-sm-inline-block">4</li>
+      <li class="nav-item d-sm-inline-block">{{ $targets->count() }}</li>
       &nbsp; &nbsp;
       <li 
         class="nav-item d-sm-inline-block"><img class="img-fluid" src="{{ asset('images/Document-icon_32.png') }}" alt="Logo Hedrine">
