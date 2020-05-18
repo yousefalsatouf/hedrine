@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Drug;
+use App\Herb;
 use App\Post;
 use App\DrugFamily;
+use App\Target;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -19,6 +21,9 @@ class DrugController extends Controller
     {
         /*$drugs = Drug::all();*/
         $posts = Post::all();
+        $herbs = Herb::all();
+        $targets = Target::all();
+        $drugs = Drug::all();
 
         //retourne tous les médicaments et leur drugs families pour la vue drugs
     
@@ -31,7 +36,7 @@ class DrugController extends Controller
         /*dd($drugs_and_families);*/
 
         
-       return view('drugs/index',compact('drugs_and_families','posts'));
+       return view('drugs/index',compact('drugs_and_families','posts','drugs','targets','herbs'));
     }
 
     /**
