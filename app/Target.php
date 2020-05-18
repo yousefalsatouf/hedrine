@@ -6,23 +6,25 @@ use Illuminate\Database\Eloquent\Model;
 
 class Target extends Model
 {
+    protected $fillable = ['name', 'long_name', 'user_id', 'note','target_type_id'];
+
     public function users()
     {
-        return $this->belongsTo(users::class);
+        return $this->belongsTo(User::class);
     }
 
-    public function target_types()
+    public function targetype()
     {
-        return $this->belongsTo(target_types::class);
+        return $this->belongsTo(TargetType::class,'target_type_id');
     }
 
     public function herbs()
     {
-        return $this->belongsToMany(herbs::class);
+        return $this->belongsToMany(Herb::class);
     }
 
     public function drugs()
     {
-        return $this->belongsToMany(drugs::class);
+        return $this->belongsToMany(Drug::class);
     }
 }

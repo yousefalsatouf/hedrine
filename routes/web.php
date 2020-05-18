@@ -29,7 +29,7 @@ Route::get('/dashboard', function () {
     return view('dashboard/dashboard');
 });
 
-Route::get('/logout', 'SessionController@destroy');
+Route::get('/logout', 'SessionController@destroy')->name('logout');
 
 //DD 2 mai 2020 permet d'indiquer qu'un mail va être envoyé à la personne qui s'enregistre pour la première fois sur hedrine pour vérifier son mail
 Auth::routes(['verify' => true]);
@@ -47,16 +47,16 @@ Route::get('/master', function () {
 });
 
 //N.Thierry pour atteindre la page de herbe
-Route::get('/herb','HerbController@index');
+Route::get('/herb','HerbController@index')->name('herbs.index');
 
 //N.Thierry pour atteindre la page de drugs
-Route::get('/drug','DrugController@index');
+Route::get('/drug','DrugController@index')->name('drugs.index');
 
 //N.Thierry pour atteindre la page de targets
-Route::get('/target','TargetController@index');
+Route::get('/target','TargetController@index')->name('targets.index');
 
 //DD pour atteindre le formulaire d'ajout d'un poste
-Route::get('/add_post_form','PostController@show_form');
-Route::post('/add_post','PostController@create');
+Route::get('/add_post_form','PostController@show_form')->name('posts.show_form');
+Route::post('/add_post','PostController@create')->name('posts.create');
 
 

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use App\Target;
+use App\TargetType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TargetController extends Controller
 {
@@ -14,7 +17,11 @@ class TargetController extends Controller
      */
     public function index()
     {
-        return view('targets/index',compact('target'));
+        // $targets = Target::all();
+        $posts  = Post::all();
+        $targets = Target::with('targetype')->get();
+    
+        return view('targets/index',compact('targets','posts'));
     }
 
     /**

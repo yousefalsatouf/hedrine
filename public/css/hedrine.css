@@ -9,3 +9,20 @@ a.add_style :hover {
 	color: #367889;
     text-decoration: none;
 }
+/* td.style_table.sorting_1 {
+	font-weight: bold;
+    text-align: center;
+    color: #FFFFFF;
+    background: #536C9A;
+} */
+a.style_a {
+	color: #003d4c;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.table-bordered td.style_table {
+	font-weight: bold;
+    text-align: center;
+    color: #FFFFFF;
+    background: #536C9A;
+}
