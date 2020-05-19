@@ -7,6 +7,7 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <title>Page d'acceuil</title>
+        @include('cookieConsent::index')
     </head>
     <body>
         <header>
@@ -24,7 +25,7 @@
         <div class="container-fluid">
             <div class="container">
                 <h5>
-                    @include('cookieConsent::index')
+                    
                     HEDRINE recense les études cliniques et cas rapportés (case reports) d'interactions entre des plantes médicinales
                     et des médicaments allopathiques. Figurent également des interactions potentielles via des mécanismes
                     pharmacodynamiques ou pharmacocinétiques.
@@ -99,5 +100,6 @@
             </ul>
         </footer>
         @include('sweetalert::alert')
+       
     </body>
 </html>
