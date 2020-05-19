@@ -2,9 +2,12 @@
 
 namespace App\Providers;
 
+use App\Drug;
+use App\Herb;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\Post;
+use App\Target;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,9 +28,21 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer(['index','admin/postes/show_form','admin/postes/create'],function($view)
-        {
-            $view->with('posts',Post::all());
+        View::composer('*', function($view) {
+
+            $view->with('posts',Post::orderBy('created_at','desc')->get());
+        });
+        View::composer('*', function($view) {
+
+            $view->with('herbs',Herb::all());
+        });
+        View::composer('*', function($view) {
+
+            $view->with('drugs',Drug::all());
+        });
+        View::composer('*', function($view) {
+
+            $view->with('targets',Target::all());
         });
     }
 }

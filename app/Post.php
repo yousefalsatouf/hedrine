@@ -8,7 +8,7 @@ class Post extends Model
 {
     public function users()
     {
-        return $this->belongsTo(users::class);
+        return $this->belongsTo(User::class);
     }
 
     
