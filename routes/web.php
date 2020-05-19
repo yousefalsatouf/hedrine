@@ -56,7 +56,7 @@ Route::get('/drug','DrugController@index')->name('drugs.index');
 Route::get('/target','TargetController@index')->name('targets.index');
 
 //DD pour atteindre le formulaire d'ajout d'un poste
-Route::get('/add_post_form','PostController@show_form')->name('posts.show_form');
-Route::post('/add_post','PostController@create')->name('posts.create');
+Route::get('posts/add_post_form','PostController@show_form')->name('posts.show_form');
+Route::post('posts/add_post','PostController@create')->name('posts.create');
 
 

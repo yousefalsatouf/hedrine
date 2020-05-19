@@ -25,7 +25,7 @@
         </span>
       </a>
       <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-        @foreach ($posts as $post )
+        @foreach ($posts as $post)
         <a href="#" class="dropdown-item">
           <!-- Message Start (les potes) -->
           <div class="media">

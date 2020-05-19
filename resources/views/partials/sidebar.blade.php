@@ -103,7 +103,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="add_post_form" class="nav-link">
+                  <a href="posts/add_post_form" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Ajouter un poste</p>
                   </a>
