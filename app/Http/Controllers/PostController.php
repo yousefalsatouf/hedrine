@@ -55,9 +55,11 @@ class PostController extends Controller
         $post->save();
 
         
-        Alert::success('OK !', 'Nouveau poste ajouté avec succès');
+         Alert::success('Ok !', 'Nouveau poste ajouté avec succès');
+         
         
         return redirect()->route('posts.show_form')->withSuccessMessage('Ajouter avec succes');
+
 
     }
 

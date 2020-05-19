@@ -29,5 +29,7 @@
 <script src="{{ asset('/adminlte/js/demo.js')}}"></script>
  @yield('dashboard-js')
  @include('sweetalert::alert')
+  @include('cookieConsent::index')
+
 </body>
 </html>
