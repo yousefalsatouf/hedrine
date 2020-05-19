@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Herb;
+use App\Drug;
+use App\Target;
 use Illuminate\Http\Request;
 use DB;
 use Illuminate\Support\Facades\Auth;
@@ -19,6 +22,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
+       
         return view('layouts/master_dashboard',compact('posts'));
     }
 
@@ -30,7 +34,10 @@ class PostController extends Controller
     public function show_form()
     {
         $posts = Post::all();
-        return view('admin/postes/form_add_post',compact('posts'));
+        $herbs = Herb::all();
+        $drugs = Drug::all();
+        $targets = Target::all();
+        return view('admin/postes/form_add_post',compact('posts','herbs','drugs','targets'));
     }
 
     /**
@@ -40,6 +47,9 @@ class PostController extends Controller
      */
     public function create(Request $request)
     {
+        $herbs = Herb::all();
+        $drugs = Drug::all();
+        $targets = Target::all();
         $posts = Post::all();
         $user =  Auth::user();
         
@@ -53,7 +63,8 @@ class PostController extends Controller
          Alert::success('Ok !', 'Nouveau poste ajouté avec succès');
          
         
-         return view('admin/postes/form_add_post',compact('posts'));
+        return view('admin/postes/form_add_post',compact('posts','herbs','drugs','targets'));
+
 
     }
 

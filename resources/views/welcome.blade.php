@@ -91,9 +91,9 @@
         <footer class="bg-info container-fluid h-75 d-inline-block">
             <a class="navbar-brand" href="#" style="color: white">Hedrine : Herb Drug Interaction Database brand</a>
             <ul class="nav justify-content-end" id="icon">
-                <li nav-item><img src="{{ asset('images/Plant-icon_32.png') }}" alt=""></li>
-                <li nav-item><img src="{{ asset('images/pills-5-icon_32.png') }}" alt=""></li>
-                <li nav-item><img src="{{ asset('images/Refresh-bicolor-icon_32.png') }}" alt=""></li>
+                <li nav-item><img src="{{ asset('images/Plant-icon_32.png') }}" alt=""></li>&nbsp; &nbsp;
+                <li nav-item><img src="{{ asset('images/pills-5-icon_32.png') }}" alt=""></li>&nbsp; &nbsp;
+                <li nav-item><img src="{{ asset('images/Refresh-bicolor-icon_32.png') }}" alt=""></li>&nbsp; &nbsp;
                 <li nav-item><img src="{{ asset('images/Document-icon_32.png') }}" alt=""></li>
             </ul>
         </footer>
