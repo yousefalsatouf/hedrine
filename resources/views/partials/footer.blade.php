@@ -28,5 +28,6 @@
 <script src="{{ asset('js/change_link_active.js') }}"></script>
 <script src="{{ asset('/adminlte/js/demo.js')}}"></script>
  @yield('dashboard-js')
+ @include('sweetalert::alert')
 </body>
 </html>
