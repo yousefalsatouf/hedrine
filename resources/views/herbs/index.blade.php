@@ -106,8 +106,9 @@
 					@foreach ($herbs as $herb)
 					<tr>
 						<td>
-							<a href="" class="add_style" ><strong>{{$herb->name}}</strong> </a>
+							<a href="{{route('herbs.details', $herb->id)}} " class="add_style" ><strong>{{$herb->name}}</strong></a>
 						</td>
+
 						<td>{{$herb->sciname}}</td>
 						
 						<td>

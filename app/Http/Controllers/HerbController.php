@@ -9,6 +9,7 @@ use App\Herb;
 use App\HerbHasForm;
 use App\Drug;
 use App\Target;
+use Illuminate\Support\Facades\DB;
 
 class HerbController extends Controller
 {
@@ -55,6 +56,16 @@ class HerbController extends Controller
     {
         //
     }
+
+    public function details($id)
+    {
+        $plante = DB::table('herbs')->where('id', $id)->first();
+
+        //dd($plante);
+
+        return view("herbs/details",compact('plante'));
+    }
+
 
     /**
      * Store a newly created resource in storage.
