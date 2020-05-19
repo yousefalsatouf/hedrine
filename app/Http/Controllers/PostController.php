@@ -8,6 +8,7 @@ use App\Drug;
 use App\Target;
 use Illuminate\Http\Request;
 use DB;
+use Illuminate\Support\Facades\Auth;
 //DD 2-05-20 permet d'utiliser les sweet-alert, si pas présent, pas d'alerte
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -50,7 +51,7 @@ class PostController extends Controller
         $drugs = Drug::all();
         $targets = Target::all();
         $posts = Post::all();
-        $user = \Auth::user();
+        $user =  Auth::user();
         
         $post = new Post;
         $post->user_id = $user->id;
@@ -59,9 +60,11 @@ class PostController extends Controller
         $post->save();
 
         
-        Alert::success('OK !', 'Nouveau poste ajouté avec succès');
+         Alert::success('Ok !', 'Nouveau poste ajouté avec succès');
+         
         
         return view('admin/postes/form_add_post',compact('posts','herbs','drugs','targets'));
+
 
     }
 
