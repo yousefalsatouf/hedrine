@@ -7,8 +7,10 @@
       <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       <br />
     </li>
-    <li 
-      class="nav-item d-sm-inline-block"><img class="img-fluid" src="{{ asset('images/hedrine_petit.png') }}" alt="Logo Hedrine">
+    <li class="nav-item d-sm-inline-block">
+      <a href="{{ route('home') }}">
+        <img class="img-fluid" src="{{ asset('images/hedrine_petit.png') }}" alt="Logo Hedrine">
+      </a>
     </li>
     
     
