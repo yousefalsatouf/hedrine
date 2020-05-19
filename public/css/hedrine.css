@@ -26,3 +26,14 @@ a.style_a {
     color: #FFFFFF;
     background: #536C9A;
 }
+.js-cookie-consent{
+    position: absolute;
+    top: 0px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    z-index: 9999;
+    background-color: #38c172;
+    border-color: #fffacc;
+    border: solid 1px;
+  }

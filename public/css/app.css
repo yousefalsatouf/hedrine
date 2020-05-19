@@ -44,6 +44,18 @@
   box-sizing: border-box;
 }
 
+.js-cookie-consent{
+  position: absolute;
+  top: 0px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  z-index: 9999;
+  background-color: #38c172;
+  border-color: #fffacc;
+  border: solid 1px;
+}
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
