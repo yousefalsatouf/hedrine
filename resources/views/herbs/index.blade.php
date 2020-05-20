@@ -9,7 +9,14 @@
 			<div class="card-body">
 				<h5 class="card-title">
 					<ul class="nav justify-content-center">
-						<li class="nav-item">
+						@foreach (range('A', 'Z') as $char) 
+								<li class="nav-item">
+									<a class="nav-link listAlphabet" href="">
+										{{ $char }}
+									</a>
+								</li>
+						@endforeach
+						{{-- <li class="nav-item" id="listAlphabet">
 							<a class="nav-link " href="#">A</a>
 						</li>
 						<li class="nav-item">
@@ -86,7 +93,7 @@
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#">Z</a>
-						</li>
+						</li> --}}
 					</ul>
 				</h5>
 			</div>
