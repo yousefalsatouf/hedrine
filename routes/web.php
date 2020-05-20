@@ -59,4 +59,4 @@ Route::get('/target','TargetController@index')->name('targets.index');
 Route::get('posts/add_post_form','PostController@show_form')->name('posts.show_form');
 Route::post('posts/add_post','PostController@create')->name('posts.create');
 
-
+Route::get('herb/details_plante/{id}','HerbController@details')->name('herbs.details');

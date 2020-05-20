@@ -60,19 +60,19 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="herb" class="nav-link">
+                  <a href="{{ route('herbs.index') }}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Plantes</p>
+                    Plantes</a>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="drug" class="nav-link">
+                  <a href="{{ route('drugs.index') }}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>DCI</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                    <a href="target" class="nav-link">
+                  <a href="{{ route('targets.index') }}" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Cas Rapporté et Mécanisme</p>
                     </a>
@@ -103,7 +103,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="posts/add_post_form" class="nav-link">
+                  <a href="{{ route('posts.show_form') }}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Ajouter un poste</p>
                   </a>
