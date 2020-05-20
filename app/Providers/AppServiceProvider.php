@@ -6,7 +6,9 @@ use App\Drug;
 use App\Herb;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
+use Illuminate\Routing\Route;
 use App\Post;
+
 use App\Target;
 
 class AppServiceProvider extends ServiceProvider
@@ -43,6 +45,11 @@ class AppServiceProvider extends ServiceProvider
         View::composer('*', function($view) {
 
             $view->with('targets',Target::all());
+        });
+
+        View::composer('admin.layout', function ($view) {
+            $title = config('titles.' . Route::getCurrentRoute()->getName());
+            $view->with(compact('title'));
         });
     }
 }
