@@ -1,6 +1,5 @@
 <?php
-
-use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route;
 
 if (!function_exists('menuOpen')) {
     function menuOpen(...$routes)
@@ -10,7 +9,6 @@ if (!function_exists('menuOpen')) {
         }
     }
 }
-
 if (!function_exists('currentRouteActive')) {
     function currentRouteActive(...$routes)
     {
@@ -19,5 +17,3 @@ if (!function_exists('currentRouteActive')) {
         }
     }
 }
-
-
