@@ -17,7 +17,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 |
 */
 
-Route::get('/', function () {
+Route::get('/w', function () {
     return view('welcome');
 })->name('welcome');
 
@@ -75,4 +75,14 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
       ]);
     Route::name('post.destroy.alert')->get('post/{post}', 'PostController@alert');
 
+    // Route pour drugs
+    Route::name('drug.update')->put('drug', 'DrugController@update');
+    Route::name('drug.edit')->get('drug', 'DrugController@edit');
+    Route::name('drug.index')->get('drug', 'DrugController@index');
+
+    Route::name('drug.details')->get('drug', 'DrugController@details');
+    Route::resource('drug', 'DrugController')->parameters([
+        'drug' => 'drug'
+      ]);
+    Route::name('drug.destroy.alert')->get('drug/{drug}', 'DrugController@alert');
 });

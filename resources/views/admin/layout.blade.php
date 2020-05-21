@@ -46,7 +46,7 @@
           <br>
           <br>
           <li class="nav-item has-treeview {{ menuOpen(
-            'post.edit','post.index','post.details'
+            'post.edit','post.index','post.details','drug.index'
             ) }}">
             <a href="#" class="nav-link {{ currentRouteActive(
               'post.edit','post.index','post.details'
@@ -61,32 +61,11 @@
               <x-menu-item :href="route('post.index')" :sub=true :active="currentRouteActive('post.index','post.edit', 'post.update','post.details')">
                 Posts
               </x-menu-item>
-              {{-- <x-menu-item :href="route('post.edit')" :sub=true :active="currentRouteActive('post.edit', 'post.update')">
-                Actions
-              </x-menu-item>
-              <x-menu-item :href="route('post.edit')" :sub=true :active="currentRouteActive('post.edit', 'post.update')">
-                Drugs Families
-              </x-menu-item>
-              <x-menu-item :href="route('post.edit')" :sub=true :active="currentRouteActive('post.edit', 'post.update')">
-                Forces
-              </x-menu-item>
-              <x-menu-item :href="route('post.edit')" :sub=true :active="currentRouteActive('post.edit', 'post.update')">
-                Roles
-              </x-menu-item>
-              <x-menu-item :href="route('post.edit')" :sub=true :active="currentRouteActive('post.edit', 'post.update')">
-                Target Types
-              </x-menu-item>
-              <x-menu-item :href="route('post.edit')" :sub=true :active="currentRouteActive('post.edit', 'post.update')">
-                Users
-              </x-menu-item>
-              <x-menu-item :href="route('post.edit')" :sub=true :active="currentRouteActive('post.edit', 'post.update')">
-                Pending Users
-              </x-menu-item> --}}
             </ul>
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-cogs"></i>
+              <i class="fa fa-search-plus" aria-hidden="true"></i>              
               <p>
                 Search
                 <i class="right fas fa-angle-left"></i>
@@ -119,15 +98,17 @@
             </ul>
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link ">
-              <i class="nav-icon fas fa-cogs"></i>
+            <a href="#" class="nav-link {{ currentRouteActive(
+              'drug.index'
+              ) }}">
+              <i class="fa fa-list" aria-hidden="true"></i>              
               <p>
                 List
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <x-menu-item :href="route('post.index')" :sub=true :active="currentRouteActive('post.index','post.edit', 'post.update')">
+              <x-menu-item :href="route('drug.index')" :sub=true :active="currentRouteActive('drug.index','drug.edit', 'drug.update')">
                 Drugs
               </x-menu-item>
               <x-menu-item :href="route('post.index')" :sub=true :active="currentRouteActive('post.index','post.edit', 'post.update')">
