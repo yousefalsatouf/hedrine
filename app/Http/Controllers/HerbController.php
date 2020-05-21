@@ -59,11 +59,21 @@ class HerbController extends Controller
 
     public function details($id)
     {
-        $plante = DB::table('herbs')->where('id', $id)->first();
+        //DD je récupère les informations de la plante
+        //DB::enableQueryLog();
+        $informations_plante = DB::table('herbs')
+            ->select('herbs.name as hname', 'herbs.sciname','hinteractions.*','targets.name as targetname', 'forces.name as force_name')
+            ->leftJoin('hinteractions', 'herbs.id', '=', 'herb_id')
+            ->leftJoin('forces', 'forces.id', '=', 'force_id')
+            ->leftJoin('targets', 'targets.id', '=', 'hinteractions.target_id')->where('herbs.id', $id)
+            ->get();
 
-        //dd($plante);
+            //$quries = DB::getQueryLog();
 
-        return view("herbs/details",compact('plante'));
+            //dd($quries);
+            //dd($plante);
+
+        return view("herbs/details",compact('informations_plante'));
     }
 
 

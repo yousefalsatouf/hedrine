@@ -5,6 +5,7 @@
 
 <div class="col-12">
 	<div class="card-body " style="background-color: #fff">
+		
 		<table id="example1" class="table table-bordered table-striped">
 			<thead>
 				<tr>
@@ -16,13 +17,12 @@
 				
 				<tr>
 					<td>
-						{{$plante->name}}
+						{{$informations_plante[0]->hname}}
 					</td>
 					<td>
-						{{$plante->sciname}}
+						{{$informations_plante[0]->sciname}}
 					</td>
 				</tr>
-				
 			</tbody>
 		</table>
 	</div>
@@ -41,25 +41,25 @@
 				</tr>
 			</thead>
 			<tbody>
-				
+				@foreach($informations_plante as $information_plante)
 				<tr>
+					<td>
+						{{$information_plante->targetname}}
+					</td>
 					<td>
 						
 					</td>
 					<td>
-						{{$plante->sciname}}
+						{{$information_plante->force_name}}
 					</td>
 					<td>
-						{{$plante->name}}
+						{{$information_plante->note}}
 					</td>
 					<td>
-						{{$plante->name}}
-					</td>
-					<td>
-						{{$plante->name}}
+						
 					</td>
 				</tr>
-				
+				@endforeach
 			</tbody>
 		</table>
 	</div>
