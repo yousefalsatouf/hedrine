@@ -52,24 +52,24 @@
 
     <ul class="navbar-nav ml-auto">
       <li class="nav-item d-sm-inline-block">
-       <img class="img-fluid" src="{{ asset('images/Plant-icon_32.png') }}" alt="Logo Hedrine">
+       <img class="img-fluid" src="{{ asset('images/Plant-icon_32.png') }}" alt="plante">
       </li>
       <li class="nav-item d-sm-inline-block">{{ $herbs->count() }}</li>
       &nbsp; &nbsp;
       <li 
-        class="nav-item d-sm-inline-block"><img class="img-fluid" src="{{ asset('images/pills-5-icon_32.png') }}" alt="Logo Hedrine">
+        class="nav-item d-sm-inline-block"><img class="img-fluid" src="{{ asset('images/pills-5-icon_32.png') }}" alt="drugs">
       </li>
       <li class="nav-item d-sm-inline-block">{{ $drugs->count() }}</li>
       &nbsp; &nbsp;
       <li 
-        class="nav-item d-sm-inline-block"><img class="img-fluid" src="{{ asset('images/Refresh-bicolor-icon_32.png') }}" alt="Logo Hedrine">
+        class="nav-item d-sm-inline-block"><img class="img-fluid" src="{{ asset('images/Refresh-bicolor-icon_32.png') }}" alt="target">
       </li>
       <li class="nav-item d-sm-inline-block">{{ $targets->count() }}</li>
       &nbsp; &nbsp;
       <li 
-        class="nav-item d-sm-inline-block"><img class="img-fluid" src="{{ asset('images/Document-icon_32.png') }}" alt="Logo Hedrine">
+        class="nav-item d-sm-inline-block"><img class="img-fluid" src="{{ asset('images/Document-icon_32.png') }}" alt="reference">
       </li>
-      <li class="nav-item d-sm-inline-block">4</li>
+      <li class="nav-item d-sm-inline-block">{{$references->count()}}</li>
     </ul>
 
   <div class="dropdown ml-auto">
