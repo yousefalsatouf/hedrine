@@ -32,15 +32,15 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+              <a href="{{ route('hinteractions.hdi')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Plantes <--> DCI</p>
+                  <p>Plantes <span><i class="fas fa-arrows-alt-h fa-lg"></i></span> DCI</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+              <a href="{{route('hinteractions.hti')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Plantes < - > Mécanismes</p>
+                  <p>Plantes <span><i class="fas fa-arrows-alt-h fa-lg"></i></span> Mécanismes</p>
                 </a>
               </li>
             </ul>

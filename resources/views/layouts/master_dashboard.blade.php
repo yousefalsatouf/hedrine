@@ -28,7 +28,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     
     <link rel="stylesheet" href="{{ asset('/adminlte/css/style.css')}}">
     <link rel="stylesheet" href="{{ asset('/css/hedrine.css')}}">
-    @yield('css')
+   
     
     
   </head>

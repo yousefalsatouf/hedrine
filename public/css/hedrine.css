@@ -41,3 +41,10 @@ a.style_a {
 .listAlphabet{
     padding-right:10px;
 }
+
+/*CSS Form Interaction*/
+ .legend {
+    color: #e32;
+    font-size: 160%;
+    font-weight: bold;
+}
