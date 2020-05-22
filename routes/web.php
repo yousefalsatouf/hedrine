@@ -86,3 +86,9 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
       ]);
     Route::name('drug.destroy.alert')->get('drug/{drug}', 'DrugController@alert');
 });
+
+//N.Thierry : Les routes pour interagir entre les plante et DCI
+
+// Route::name('hinteractions.hdi')->get('hinteraction','HinteractionController@index');
+Route::get('hinteractions/hdi','HinteractionController@index')->name('hinteractions.hdi');
+Route::get('hinteractions/hti','HinteractionController@show_mecanisme_form')->name('hinteractions.hti');

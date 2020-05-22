@@ -14,7 +14,21 @@ class HinteractionController extends Controller
      */
     public function index()
     {
-        //
+
+
+        return view('interaction.index',compact('drugs','herbs'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function show_mecanisme_form()
+    {
+
+
+        return view('interaction.index_mecanisme',compact('targets','herbs'));
     }
 
     /**
