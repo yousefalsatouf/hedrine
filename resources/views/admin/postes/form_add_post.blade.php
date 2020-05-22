@@ -26,8 +26,9 @@
 									<strong> 
 										@if(Route::currentRouteName() === 'post.create')
 											Ajouter un nouveau poste
-										@endif
+										@else
 										Modification d'un post
+										@endif
 									</strong>
 								</h3>
 							</div>
@@ -54,8 +55,9 @@
 											<button type="submit" class="btn btn-success"><i class="fas fa-location-arrow"></i>
 												@if(Route::currentRouteName() === 'post.create')
 													Ajouter un nouveau poste
-												@endif
+												@else
 												 Sauvegarder
+												@endif
 											</button>
 											<a class="btn btn-primary" href="{{ route('post.index') }}" role="button"><i class="fas fa-arrow-left"></i> Retour à la liste des postes</a>
 										</div>

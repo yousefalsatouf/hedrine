@@ -1,5 +1,5 @@
-@extends('admin.layout')
-@section('main') 
+@extends('layouts.master_dashboard')
+@section('content_dashboard')
   <div class="container-fluid"> 
     <form id="deleteproduct" action="{{ route('post.destroy', $post->id) }}" method="POST" style="display: none;">
       @csrf

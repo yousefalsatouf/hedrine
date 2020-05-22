@@ -86,10 +86,10 @@
            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
-                 <li class="nav-header">Admin</li>
+                 {{-- <li class="nav-header">Admin</li> --}}
                 <li class="nav-item has-treeview">
                   <a href="#" class="nav-link active" style="background-color:green;">
-                    <i class="nav-icon fas fa-circle"></i>
+                    <i class="fas fa-unlock-alt nav-icon"></i>
                     <p>
                       Administrer
                       <i class="right fas fa-angle-left"></i>
@@ -102,7 +102,7 @@
                         <p>New Post</p>
                       </a>
                     </li>
-                    <li class="nav-item has-treeview">
+                    {{-- <li class="nav-item has-treeview"> --}}
                       <a href="#" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>
@@ -159,9 +159,9 @@
                  </li>
                 <li class="nav-item has-treeview">
                   <a href="#" class="nav-link active" style="background-color:green;">
-                    <i class="nav-icon fas fa-circle"></i>
+                    <i class="fas fa-database nav-icon"></i>
                     <p>
-                      Gerer les données
+                      Gérer les données
                       <i class="right fas fa-angle-left"></i>
                     </p>
                   </a>
@@ -173,7 +173,7 @@
                       </a>
                       
                     </li>
-                    <li class="nav-item has-treeview">
+                    {{-- <li class="nav-item has-treeview">
                       <a href="#" class="nav-link active" style="background-color:green;">
                         <i class="far fa-circle nav-icon"></i>
                         <p>
@@ -198,10 +198,10 @@
                         </li>
 
                       </ul>
-                      
-                    </li>
+                       --}}
+                    {{-- </li> --}}
 
-                    <li class="nav-item has-treeview">
+                    {{-- <li class="nav-item has-treeview">
                       <a href="#" class="nav-link active" style="background-color:green;">
                         <i class="far fa-circle nav-icon"></i>
                         <p>
@@ -227,9 +227,9 @@
 
                       </ul>
                       
-                    </li>
+                    </li> --}}
 
-                    <li class="nav-item has-treeview">
+                    {{-- <li class="nav-item has-treeview">
                       <a href="#" class="nav-link active" style="background-color:green;">
                         <i class="far fa-circle nav-icon"></i>
                         <p>
@@ -269,7 +269,7 @@
 
                       </ul>
                       
-                    </li>
+                    </li> --}}
                     
                   </ul>
                 </li>    
