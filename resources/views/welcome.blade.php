@@ -6,6 +6,7 @@
 
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/hedrine.css') }}">
         <title>Page d'acceuil</title>
         @include('cookieConsent::index')
     </head>
@@ -82,22 +83,32 @@
                             </div>
                             
                           </div>
-                        
-                        
-                        
                     </article>
                 </div>
             </div>
         </div>
+        
 
-        <footer class="bg-info container-fluid h-75 d-inline-block">
-            <a class="navbar-brand" href="#" style="color: white">Hedrine : Herb Drug Interaction Database brand</a>
-            <ul class="nav justify-content-end" id="icon">
-                <li nav-item><img src="{{ asset('images/Plant-icon_32.png') }}" alt=""></li>&nbsp; &nbsp;
-                <li nav-item><img src="{{ asset('images/pills-5-icon_32.png') }}" alt=""></li>&nbsp; &nbsp;
-                <li nav-item><img src="{{ asset('images/Refresh-bicolor-icon_32.png') }}" alt=""></li>&nbsp; &nbsp;
-                <li nav-item><img src="{{ asset('images/Document-icon_32.png') }}" alt=""></li>
-            </ul>
+        <footer class="bg-info container-fluid d-inline-block footer">
+           <div class="container" id="footerDiv">
+               <div class="row" id="test">
+                   <div class="col-6 align-middle">
+                       <a class="navbar-brand" href="#" style="color: white">Hedrine : Herb Drug Interaction Database brand</a>
+                    </div>
+                    <div class="col-6 align-middle" id="test">
+                        <ul class="nav justify-content-end align-middle" id="icon">
+                            <li nav-item><img src="{{asset('images/Plant-icon_32.png')}}" alt="plantes"></li>
+                            <li>{{$herbs->count()}}</li>&nbsp; &nbsp;
+                            <li nav-item><img src="{{asset('images/pills-5-icon_32.png')}}" alt="drugs"></li>
+                            <li>{{$drugs->count()}}</li>&nbsp; &nbsp;
+                            <li nav-item><img src="{{asset('images/Refresh-bicolor-icon_32.png')}}" alt="targets"></li>
+                            <li>{{$targets->count()}}</li>&nbsp; &nbsp;
+                            <li nav-item><img src="{{asset('images/Document-icon_32.png')}}" alt="references"></li>
+                            <li>{{$references->count()}}</li>
+                        </ul>
+                    </div>
+               </div>
+           </div>
         </footer>
         @include('sweetalert::alert')
        

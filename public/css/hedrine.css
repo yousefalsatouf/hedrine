@@ -48,3 +48,12 @@ a.style_a {
     font-size: 160%;
     font-weight: bold;
 }
+
+.footer {
+    height: 150px;
+    background-color: cornflowerblue;
+}
+
+#footerDiv{
+    padding-top: 50px;
+}
