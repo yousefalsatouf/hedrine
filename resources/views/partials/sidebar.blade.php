@@ -88,7 +88,7 @@
                  with font-awesome or any other icon font library -->
                  <li class="nav-header">Admin</li>
                 <li class="nav-item has-treeview">
-                  <a href="#" class="nav-link">
+                  <a href="#" class="nav-link active" style="background-color:green;">
                     <i class="nav-icon fas fa-circle"></i>
                     <p>
                       Administrer
@@ -97,7 +97,7 @@
                   </a>
                   <ul class="nav nav-treeview">
                     <li class="nav-item">
-                      <a href="#" class="nav-link">
+                      <a href="{{ route('post.index') }}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>New Post</p>
                       </a>
@@ -158,7 +158,7 @@
                   </ul>
                  </li>
                 <li class="nav-item has-treeview">
-                  <a href="#" class="nav-link">
+                  <a href="#" class="nav-link active" style="background-color:green;">
                     <i class="nav-icon fas fa-circle"></i>
                     <p>
                       Gerer les données
@@ -174,7 +174,7 @@
                       
                     </li>
                     <li class="nav-item has-treeview">
-                      <a href="#" class="nav-link">
+                      <a href="#" class="nav-link active" style="background-color:green;">
                         <i class="far fa-circle nav-icon"></i>
                         <p>
                           Search
@@ -202,7 +202,7 @@
                     </li>
 
                     <li class="nav-item has-treeview">
-                      <a href="#" class="nav-link">
+                      <a href="#" class="nav-link active" style="background-color:green;">
                         <i class="far fa-circle nav-icon"></i>
                         <p>
                           Manage
@@ -230,7 +230,7 @@
                     </li>
 
                     <li class="nav-item has-treeview">
-                      <a href="#" class="nav-link">
+                      <a href="#" class="nav-link active" style="background-color:green;">
                         <i class="far fa-circle nav-icon"></i>
                         <p>
                           List

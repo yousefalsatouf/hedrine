@@ -22,7 +22,14 @@
 						<!-- general form elements -->
 						<div class="card card-success">
 							<div class="card-header">
-								<h3 class="card-title"><strong> Ajouter un nouveau poste</strong></h3>
+								<h3 class="card-title">
+									<strong> 
+										@if(Route::currentRouteName() === 'post.create')
+											Ajouter un nouveau poste
+										@endif
+										Modification d'un post
+									</strong>
+								</h3>
 							</div>
 							<!-- /.card-header -->
 							<!-- form start -->
@@ -44,7 +51,12 @@
 								<div class="card-footer">
 									<div class="control-group">
 										<div class="controls">
-											<button type="submit" class="btn btn-success"><i class="fas fa-location-arrow"></i> Ajouter le nouveau poste</button>
+											<button type="submit" class="btn btn-success"><i class="fas fa-location-arrow"></i>
+												@if(Route::currentRouteName() === 'post.create')
+													Ajouter un nouveau poste
+												@endif
+												 Sauvegarder
+											</button>
 											<a class="btn btn-primary" href="{{ route('post.index') }}" role="button"><i class="fas fa-arrow-left"></i> Retour à la liste des postes</a>
 										</div>
 									</div>
