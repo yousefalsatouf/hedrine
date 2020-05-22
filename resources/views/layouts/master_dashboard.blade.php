@@ -48,8 +48,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="">@yield('content_title')</h1> <!--affiche le mot plantes ou dci-->
+          <div class="col-sm-12">
+           <h1 class="m-O text-dark"> {{ $title }}</h1>
+            {{-- <h1 class="">@yield('content_title')</h1> <!--affiche le mot plantes ou dci--> --}}
           </div>
         </div>
       </div>
@@ -58,6 +59,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
+      
         @yield('content_dashboard')
         
       </div><!-- /.container-fluid -->

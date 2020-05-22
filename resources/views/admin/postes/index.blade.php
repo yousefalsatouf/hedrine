@@ -1,10 +1,7 @@
-@extends('admin.layout')
+@extends('layouts.master_dashboard')
 
-@section('css')
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
-@endsection
 
-@section('main') 
+@section('content_dashboard') 
     <div class="row justify-content-end" style="padding-bottom: 0.75rem">
 		@if(Route::currentRouteName() === 'post.index')
 			<a class="btn btn-primary" href="{{ route('post.create') }}" role="button">Créer un nouveau post</a>
@@ -45,10 +42,8 @@
  </div>
 @endsection
 
-@section('js') 
-  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script> 
-  <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script> 
-  
+@section('dashboard-js') 
+ 
 	<script>
 		$(function () {
 		

@@ -9,7 +9,6 @@ use App\Post;
 use App\Herb;
 use App\Target;
 use App\Drug;
-use
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;

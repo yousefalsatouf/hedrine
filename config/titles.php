@@ -10,8 +10,8 @@ return [
     | Set Titles for each admin routes names
     */
 	
-    'admin' => 'Tableau de bord',
-    'pays' => [
+    
+    'post' => [
         'index' => 'Gestion des postes',
         'edit' => 'Modification d\'un poste',
         'create' => 'Création d\'un poste',

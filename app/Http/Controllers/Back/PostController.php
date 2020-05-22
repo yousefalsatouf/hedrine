@@ -107,9 +107,9 @@ class PostController extends Controller
         return view('admin.postes.destroy', ['post' => $post]);
     }
   
-    public function details(Request $request, $id)
+    public function details($id)
     {
-        $post = Post::with('users')->findOrFail($id);
+        $post = Post::findOrFail($id);
 
         return view('admin.postes.show',$post);
     }

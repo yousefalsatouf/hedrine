@@ -17,7 +17,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 |
 */
 
-Route::get('/w', function () {
+Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 

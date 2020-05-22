@@ -7,6 +7,7 @@ use App\Herb;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Route;
+
 use App\Post;
 
 use App\Target;
@@ -32,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
     {
         View::composer('*', function($view) {
 
-            $view->with('posts',Post::orderBy('created_at','desc')->get());
+            $view->with('posts',Post::orderBy('created_at','desc')->Take(8)->get());
         });
         View::composer('*', function($view) {
 
@@ -47,7 +48,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('targets',Target::all());
         });
 
-        View::composer('admin.layout', function ($view) {
+        View::composer('layouts.master_dashboard', function ($view) {
             $title = config('titles.' . Route::currentRouteName());
             $view->with(compact('title'));
         });
