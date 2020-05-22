@@ -25,5 +25,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ForceSeeder::class);
         $this->call(HinteractionSeeder::class);
         $this->call(EffectSeeder::class);
+        $this->call(HinteractionHasEffectSeeder::class);
+
     }
 }

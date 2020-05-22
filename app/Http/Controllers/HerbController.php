@@ -8,6 +8,7 @@ use App\Post;
 use App\Herb;
 use App\HerbHasForm;
 use App\Drug;
+use App\Hinteraction;
 use App\Target;
 use Illuminate\Support\Facades\DB;
 
@@ -68,12 +69,20 @@ class HerbController extends Controller
             ->leftJoin('targets', 'targets.id', '=', 'hinteractions.target_id')->where('herbs.id', $id)
             ->get();
 
+            $hinteractions_has_effects = Hinteraction::with('effects')->get();
+
+            //dd($hinteractions_has_effects);
+
+            // foreach ($herbs as $herb) {
+            //     $herb->herb_forms;
+            // }
+
             //$quries = DB::getQueryLog();
 
             //dd($quries);
-            //dd($plante);
+            //dd($informations_plante);
 
-        return view("herbs/details",compact('informations_plante'));
+        return view("herbs/details",compact('informations_plante','hinteractions_has_effects'));
     }
 
 

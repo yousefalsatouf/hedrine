@@ -47,7 +47,9 @@
 						{{$information_plante->targetname}}
 					</td>
 					<td>
-						
+						@foreach ($hinteractions_has_effects as $effect)
+							{{$effect->name}}	
+						@endforeach
 					</td>
 					<td>
 						{{$information_plante->force_name}}
