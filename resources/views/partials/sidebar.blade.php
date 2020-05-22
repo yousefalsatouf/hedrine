@@ -86,39 +86,194 @@
            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
-            <li class="nav-item has-treeview menu-open">
-              <a href="#" class="nav-link active" style="background-color:green;" >
-                
-                <p>
-                  <!-- icone users admin sur fontawesome (juste copier la classe et la coller) -->
-                  <i class="nav-icon fa fa-user" aria-hidden="true"></i>
-                  Admin 
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                <a href="{{ route('admin')}}" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Administrer</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="{{ route('posts.show_form') }}" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Ajouter un poste</p>
-                  </a>
-                </li>
-                <li class="nav-item">
+                 <li class="nav-header">Admin</li>
+                <li class="nav-item has-treeview">
                   <a href="#" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Gérer les données</p>
+                    <i class="nav-icon fas fa-circle"></i>
+                    <p>
+                      Administrer
+                      <i class="right fas fa-angle-left"></i>
+                    </p>
                   </a>
-                </li>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>New Post</p>
+                      </a>
+                    </li>
+                    <li class="nav-item has-treeview">
+                      <a href="#" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                          Manage
+                          <i class="right fas fa-angle-left"></i>
+                        </p>
+                      </a>
+                      <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                          <a href="#" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Actions</p>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="#" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Drugs Families</p>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="#" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Forces</p>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="#" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Roles</p>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="#" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Target Types</p>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="#" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Users</p>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="#" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Pending Users</p>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                 </li>
+                <li class="nav-item has-treeview">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-circle"></i>
+                    <p>
+                      Gerer les données
+                      <i class="right fas fa-angle-left"></i>
+                    </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>New Post</p>
+                      </a>
+                      
+                    </li>
+                    <li class="nav-item has-treeview">
+                      <a href="#" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                          Search
+                          <i class="right fas fa-angle-left"></i>
+                        </p>
+                      </a>
+                      <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                          <a href="#" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Drug/Target Interaction</p>
+                          </a>
+                          
+                        </li>
+                        <li class="nav-item">
+                          <a href="#" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Herb/Target Interaction</p>
+                          </a>
+                          
+                        </li>
+
+                      </ul>
+                      
+                    </li>
+
+                    <li class="nav-item has-treeview">
+                      <a href="#" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                          Manage
+                          <i class="right fas fa-angle-left"></i>
+                        </p>
+                      </a>
+                      <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                          <a href="#" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Drug/Target Interaction</p>
+                          </a>
+                          
+                        </li>
+                        <li class="nav-item">
+                          <a href="#" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Herb/Target Interaction</p>
+                          </a>
+                          
+                        </li>
+
+                      </ul>
+                      
+                    </li>
+
+                    <li class="nav-item has-treeview">
+                      <a href="#" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                          List
+                          <i class="right fas fa-angle-left"></i>
+                        </p>
+                      </a>
+                      <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                          <a href="#" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Drugs</p>
+                          </a>
+                          
+                        </li>
+                        <li class="nav-item">
+                          <a href="#" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Herbs</p>
+                          </a>
+                          
+                        </li>
+                        <li class="nav-item">
+                          <a href="#" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Targets</p>
+                          </a>
+                          
+                        </li>
+                        <li class="nav-item">
+                          <a href="#" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>References</p>
+                          </a>
+                          
+                        </li>
+
+                      </ul>
+                      
+                    </li>
+                    
+                  </ul>
+                </li>    
               </ul>
-            </li>
-            
-          </ul>
            @endif
         </nav>
       <!-- /.sidebar-menu -->

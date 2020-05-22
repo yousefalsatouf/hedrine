@@ -122,4 +122,11 @@ class HerbController extends Controller
     {
         //
     }
+
+    public function ajax(){
+        $herbs = Herb::all();
+        $characters = $herbs->sortBy('character')->pluck('character')->unique();
+
+        return view(herbs.ajax, compact('characters'));
+    }
 }

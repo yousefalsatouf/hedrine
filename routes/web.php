@@ -17,7 +17,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 |
 */
 
-Route::get('/', function () {
+Route::get('/w', function () {
     return view('welcome');
 })->name('welcome');
 
@@ -64,8 +64,25 @@ Route::get('herb/details_plante/{id}','HerbController@details')->name('herbs.det
 //N.Thierry Admin route
 Route::view('admin','admin.layout');
 
-Route::prefix('admin')->middleware('admin')->namespace('admin')->group(function() {
+Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function() {
 
-    Route::name('admin')->get('/admin','AdminController@index');
+    Route::name('admin')->get('/','AdminController@index');
+    Route::name('post.update')->put('post', 'PostController@update');
+    Route::name('post.edit')->get('post', 'PostController@edit');
+    Route::name('post.details')->get('post', 'PostController@details');
+    Route::resource('post', 'PostController')->parameters([
+        'post' => 'post'
+      ]);
+    Route::name('post.destroy.alert')->get('post/{post}', 'PostController@alert');
 
+    // Route pour drugs
+    Route::name('drug.update')->put('drug', 'DrugController@update');
+    Route::name('drug.edit')->get('drug', 'DrugController@edit');
+    Route::name('drug.index')->get('drug', 'DrugController@index');
+
+    Route::name('drug.details')->get('drug', 'DrugController@details');
+    Route::resource('drug', 'DrugController')->parameters([
+        'drug' => 'drug'
+      ]);
+    Route::name('drug.destroy.alert')->get('drug/{drug}', 'DrugController@alert');
 });

@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.4/css/adminlte.min.css">
+  @yield('css')
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -35,6 +36,92 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <x-menu-item 
+            :href="route('admin')" 
+            icon="tachometer-alt" 
+            :active="currentRouteActive('admin')">
+            Administration
+          </x-menu-item>
+          <br>
+          <br>
+          <br>
+          <li class="nav-item has-treeview {{ menuOpen(
+            'post.edit','post.index','post.details','drug.index'
+            ) }}">
+            <a href="#" class="nav-link {{ currentRouteActive(
+              'post.edit','post.index','post.details'
+              ) }}">
+              <i class="nav-icon fas fa-cogs"></i>
+              <p>
+                Add
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <x-menu-item :href="route('post.index')" :sub=true :active="currentRouteActive('post.index','post.edit', 'post.update','post.details')">
+                Posts
+              </x-menu-item>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="fa fa-search-plus" aria-hidden="true"></i>              
+              <p>
+                Search
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <x-menu-item :href="route('post.index')" :sub=true :active="currentRouteActive('post.index','post.edit', 'post.update')">
+                Drug/Target interactions
+              </x-menu-item>
+              <x-menu-item :href="route('post.index')" :sub=true :active="currentRouteActive('post.index','post.edit', 'post.update')">
+                Herb/Target interactions
+              </x-menu-item>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-cogs"></i>
+              <p>
+                Manage
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <x-menu-item :href="route('post.index')" :sub=true :active="currentRouteActive('post.index','post.edit', 'post.update')">
+                Drug/Target interactions
+              </x-menu-item>
+              <x-menu-item :href="route('post.index')" :sub=true :active="currentRouteActive('post.index','post.edit', 'post.update')">
+                Herb/Target interactions
+              </x-menu-item>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link {{ currentRouteActive(
+              'drug.index'
+              ) }}">
+              <i class="fa fa-list" aria-hidden="true"></i>              
+              <p>
+                List
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <x-menu-item :href="route('drug.index')" :sub=true :active="currentRouteActive('drug.index','drug.edit', 'drug.update')">
+                Drugs
+              </x-menu-item>
+              <x-menu-item :href="route('post.index')" :sub=true :active="currentRouteActive('post.index','post.edit', 'post.update')">
+                Herbs
+              </x-menu-item>
+              <x-menu-item :href="route('post.index')" :sub=true :active="currentRouteActive('post.index','post.edit', 'post.update')">
+               Targets
+              </x-menu-item>
+              <x-menu-item :href="route('post.index')" :sub=true :active="currentRouteActive('post.index','post.edit', 'post.update')">
+                References
+              </x-menu-item>
+            </ul>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -48,7 +135,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-12">
-            <h1 class="m-0 text-dark">Les titres ici</h1>
+            <h1 class="m-0 text-dark">{{ $title }}</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -78,5 +165,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.4/js/adminlte.min.js"></script>
+@yield('js')
 </body>
 </html>
