@@ -75,10 +75,12 @@
   <div class="dropdown ml-auto">
     <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" href="#">
         <i class="fas fa-user-circle"></i>
-        {{ auth()->user()->firstname}} {{auth()->user()->name }}      </button>
+        {{ auth()->user()->firstname}} {{auth()->user()->name }} ({{ auth()->user()->roles->name }})
+          
+      </button>
     <div class="dropdown-menu">
         <a class="dropdown-item" href="{{ action('SessionController@destroy') }}">
-          <i class="fas fa-sign-out-alt"></i>
+          <i class="left fas fa-sign-out-alt"></i>
             logout
         </a>
     </div>
