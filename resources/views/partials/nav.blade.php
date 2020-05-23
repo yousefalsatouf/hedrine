@@ -80,7 +80,7 @@
       </button>
     <div class="dropdown-menu">
         <a class="dropdown-item" href="{{ action('SessionController@destroy') }}">
-          <i class="left fas fa-sign-out-alt" ></i>
+          <i class="left fas fa-sign-out-alt"></i>
             logout
         </a>
     </div>
