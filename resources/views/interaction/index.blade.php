@@ -54,7 +54,7 @@
 							</div>
 						</div>
 					</div>
-					<button type="submit" class="btn btn-primary" style="background-color: #62af56; border: 1px solid #62af56">chercher...</button>
+					<button type="submit" class="btn btn-primary" style="background-color: #62af56; border: 1px solid #62af56">Chercher <i class="fas fa-chevron-right"></i></button>
 				</fieldset>
 		   </form>
 	   </div>
