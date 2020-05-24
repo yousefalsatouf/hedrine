@@ -41,21 +41,24 @@
 				</tr>
 			</thead>
 			<tbody>
+				
 				@foreach($informations_plante as $information_plante)
 				<tr>
 					<td>
 						{{$information_plante->targetname}}
 					</td>
 					<td>
-						@foreach ($hinteractions_has_effects as $effect)
-							{{$effect->name}}	
+						@foreach($hinteractions_has_effects as $hinteraction_has_effects)
+							{{-- {{ $hinteraction_has_effects->effect_id }}	 --}}
 						@endforeach
 					</td>
 					<td>
-						{{$information_plante->force_name}}
+						
+							{{$information_plante->force_name}}
+						
 					</td>
 					<td>
-						{{$information_plante->note}}
+						{{$information_plante->hinteractionnote}}
 					</td>
 					<td>
 						
@@ -67,7 +70,7 @@
 	</div>
  </div>
 
- 
+
 	
 
 
