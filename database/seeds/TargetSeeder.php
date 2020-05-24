@@ -187,5 +187,13 @@ class TargetSeeder extends Seeder
             'notes' => 'Case report relatant une modification de l absorp..',
             'user_id' => 2,
         ]);
+
+        Target::create([
+            'name' => 'Etude clinique (Ail + Chlozoxazone)',
+            'long_name' => 'Etude clinique (Ail + Chlozoxazone)',
+            'target_type_id' => 4,
+            'notes' => 'Etude clinique randomisée sur 22 sujets recevant une dose de 500 mg (huile d\'ail) 3 fois /jour durant 28 jours. Diminution de 22% du 6-hydroxychlorzoxazone dans le sérum (p=O.OO5). Inhibition du CYP2E1.',
+            'user_id' => 1,
+        ]);
     }
 }
