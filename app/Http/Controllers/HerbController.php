@@ -60,7 +60,7 @@ class HerbController extends Controller
 
     public function details($id)
     {
-        //DD je récupère les informations de la plante
+        //DD je récupère les informations de la plante (pas les effects et pas les références)
         
         $informations_plante = DB::table('herbs')
             ->select('herbs.name as hname', 'herbs.sciname', 'herbs.id as herbid',
@@ -74,6 +74,8 @@ class HerbController extends Controller
             //dd($informations_plante);
 
             DB::enableQueryLog();
+            //DD avec cette seconde requête, j'essaie de récupérer le nom des effets
+            //each $collection permet de parcourir la collection obtenue avec la requête ci-dessus
             $hinteractions_has_effects =  $informations_plante->each(function ($collection, $iteration) {
                 DB::table('hinteraction_has_effects')
                      ->select('hinteraction_has_effects.effect_id as effectid, effects.id, effects.name')
