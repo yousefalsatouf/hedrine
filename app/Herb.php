@@ -28,6 +28,9 @@ class Herb extends Model
 
     public function hinteractions()
     {
-        return $this->belongsToMany(Hinteraction::class);
+        return $this->hasMany(Hinteraction::class);
     }
+    //Thierry Tester
+
+
 }
