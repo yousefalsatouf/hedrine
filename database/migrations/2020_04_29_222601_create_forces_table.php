@@ -18,6 +18,7 @@ class CreateForcesTable extends Migration
             $table->string('name')->nullable();
             $table->string('color', 8)->nullable();
             $table->unsignedInteger('rang')->nullable();
+            $table->tinyInteger('visible');
             $table->timestamps();
         });
     }
