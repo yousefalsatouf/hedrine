@@ -11,6 +11,7 @@ use App\Drug;
 use App\Hinteraction;
 use App\Target;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\VarDumper\VarDumper;
 
 class HerbController extends Controller
 {
@@ -62,6 +63,10 @@ class HerbController extends Controller
     {
         //DD je récupère les informations de la plante (pas les effects et pas les références)
         
+        $herb = Herb::with('hinteractions.herbs','hinteractions.effects','hinteractions.targets')->findOrFail($id);
+        
+        //   dd($herb);
+        return view("herbs/details",compact('herb'));
         $informations_plante = DB::table('herbs')
             ->select('herbs.name as hname', 'herbs.sciname', 'herbs.id as herbid',
             'hinteractions.id as hinteractionid','hinteractions.note as hinteractionnote',

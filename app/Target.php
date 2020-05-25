@@ -27,4 +27,8 @@ class Target extends Model
     {
         return $this->belongsToMany(Drug::class);
     }
+    public function hinteractions()
+    {
+        return $this->hasMany(Hinteraction::class);
+    }
 }
