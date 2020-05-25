@@ -154,26 +154,33 @@
         }
 	  });
 	});
-	$(document).ready(function() {
-		$('#listerByAlphabetic thead tr').clone(true).appendTo( '#listerByAlphabetic thead' );
-		$('#listerByAlphabetic thead tr:eq(1) th').each( function (i) {
-			var title = $(this).text();
-			$(this).html( '<input type="text" placeholder="Search '+title+'" />' );
-	
-			$( 'input', this ).on( 'keyup change', function () {
-				if ( table.column(i).search() !== this.value ) {
-					table
-						.column(i)
-						.search( this.value )
-						.draw();
-				}
-			} );
-		} );
-	
-		var table = $('#listerByAlphabetic').DataTable( {
-			orderCellsTop: true,
-			fixedHeader: true
-		} );
-	} );
   </script>
+@endsection
+
+@section('alfab-js')
+	<script>
+		$(function() {
+			$(document).ready(function() {
+				$('#listerByAlphabetic thead tr').clone(true).appendTo( '#listerByAlphabetic thead' );
+				$('#listerByAlphabetic thead tr:eq(1) th').each( function (i) {
+					var title = $(this).text();
+					$(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+			
+					$( 'input', this ).on( 'keyup change', function () {
+						if ( table.column(i).search() !== this.value ) {
+							table
+								.column(i)
+								.search( this.value )
+								.draw();
+						}
+					} );
+				} );
+			
+				var table = $('#listerByAlphabetic').DataTable( {
+					orderCellsTop: true,
+					fixedHeader: true
+				} );
+			} );
+		})
+	</script>
 @endsection

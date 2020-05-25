@@ -57,3 +57,8 @@ a.style_a {
 #footerDiv{
     padding-top: 50px;
 }
+.force {background:#FF0000;}
+.moyenne {background:#FFCC33;}
+.faible {background:#EEE8AA;}
+.aucune {background:#CCFF99;}
+.inconnue {background:#FFCCFF;}
