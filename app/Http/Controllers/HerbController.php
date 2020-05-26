@@ -153,7 +153,7 @@ class HerbController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return  view("herbs/test");
     }
 
     /**
