@@ -15,7 +15,7 @@ class HinteractionController extends Controller
     public function index()
     {
 
-        return view('interaction.index',compact('drugs','herbs'));
+        return view('interaction.index');
     }
 
     /**
