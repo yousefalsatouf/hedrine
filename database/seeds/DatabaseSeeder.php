@@ -1,5 +1,6 @@
 <?php
 
+use App\Reference;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -26,6 +27,8 @@ class DatabaseSeeder extends Seeder
         $this->call(HinteractionSeeder::class);
         $this->call(EffectSeeder::class);
         $this->call(HinteractionHasEffectSeeder::class);
+        $this->call(ReferenceSeeder::class);
+        $this->call(HinteractionHasReferenceSeeder::class);
 
     }
 }

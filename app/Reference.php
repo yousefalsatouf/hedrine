@@ -8,16 +8,16 @@ class Reference extends Model
 {
     public function users()
     {
-        return $this->belongsTo(users::class);
+        return $this->belongsTo(User::class);
     }
 
     public function dinteractions()
     {
-        return $this->belongsToMany(dinteractions::class);
+        return $this->belongsToMany(Dinteraction::class);
     }
 
     public function hinteractions()
     {
-        return $this->belongsToMany(hinteractions::class);
+        return $this->belongsToMany(Hinteraction::class);
     }
 }

@@ -15,9 +15,12 @@ class CreateReferencesTable extends Migration
     {
         Schema::create('references', function (Blueprint $table) {
             $table->id();
-            $table->string('titre');
-            $table->dateTime('annee')->nullable();
-            $table->string('url', 45)->nullable();
+            $table->string('title');
+            $table->string('authors');
+            $table->smallInteger('year');
+            $table->string('edition');
+            $table->text('url')->nullable();
+            $table->dateTime('validated')->nullable();
             $table->timestamps();
         });
     }

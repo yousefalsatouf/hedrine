@@ -64,50 +64,73 @@
 					   <tbody>
 						   @foreach ($herb->hinteractions as $hinteraction)
 								@foreach ($hinteraction->effects as $effect)
-									<tr>
-										<th scope="row">{{$hinteraction->targets->name}}</th>
-										<td class="
-										   @if($hinteraction->forces->color == "rouge")
-											   force
-												@elseif($hinteraction->forces->color == "orange")
-												moyenne
-												@elseif($hinteraction->forces->color == "jaune")
-												faible
-												@elseif($hinteraction->forces->color == "vert")
-												aucune
-												@elseif($hinteraction->forces->color == "mauve")
-												inconnue
-											@endif">{{$effect->name}}</td>
-										<td class="
-										   @if($hinteraction->forces->color == "rouge")
-											   force
-												@elseif($hinteraction->forces->color == "orange")
-												moyenne
-												@elseif($hinteraction->forces->color == "jaune")
-												faible
-												@elseif($hinteraction->forces->color == "vert")
-												aucune
-												@elseif($hinteraction->forces->color == "mauve")
-												inconnue
-											@endif">
+									@foreach ($hinteraction->references as $reference)
+										<tr>
+											<th scope="row">{{$hinteraction->targets->name}}</th>
+											<td class="
+											@if($hinteraction->forces->color == "rouge")
+												force
+													@elseif($hinteraction->forces->color == "orange")
+													moyenne
+													@elseif($hinteraction->forces->color == "jaune")
+													faible
+													@elseif($hinteraction->forces->color == "vert")
+													aucune
+													@elseif($hinteraction->forces->color == "mauve")
+													inconnue
+												@endif">{{$effect->name}}</td>
+											<td class="
+											@if($hinteraction->forces->color == "rouge")
+												force
+													@elseif($hinteraction->forces->color == "orange")
+													moyenne
+													@elseif($hinteraction->forces->color == "jaune")
+													faible
+													@elseif($hinteraction->forces->color == "vert")
+													aucune
+													@elseif($hinteraction->forces->color == "mauve")
+													inconnue
+												@endif">
 
-											{{$hinteraction->forces->name}}
-											
-										</td>
-										<td class="
-										   @if($hinteraction->forces->color == "rouge")
-											   force
-												@elseif($hinteraction->forces->color == "orange")
-												moyenne
-												@elseif($hinteraction->forces->color == "jaune")
-												faible
-												@elseif($hinteraction->forces->color == "vert")
-												aucune
-												@elseif($hinteraction->forces->color == "mauve")
-												inconnue
-											@endif">{{$hinteraction->note}}</td>
-										<td></td>
-									</tr> 
+												{{$hinteraction->forces->name}}
+												
+											</td>
+											<td class="
+											@if($hinteraction->forces->color == "rouge")
+												force
+													@elseif($hinteraction->forces->color == "orange")
+													moyenne
+													@elseif($hinteraction->forces->color == "jaune")
+													faible
+													@elseif($hinteraction->forces->color == "vert")
+													aucune
+													@elseif($hinteraction->forces->color == "mauve")
+													inconnue
+												@endif">
+												{{$hinteraction->notes}}
+											</td>
+											<td class="
+												@if($hinteraction->forces->color == "rouge")
+													force
+													@elseif($hinteraction->forces->color == "orange")
+													moyenne
+													@elseif($hinteraction->forces->color == "jaune")
+													faible
+													@elseif($hinteraction->forces->color == "vert")
+													aucune
+													@elseif($hinteraction->forces->color == "mauve")
+													inconnue
+												@endif">
+												<a href=""> 
+													{{$reference->year}} , {{$reference->edition}};<br>
+												</a>
+												<a href=" {{$reference->url}} "> 
+													<i class="fas fa-globe-europe"></i>
+												</a>		
+
+											</td>
+										</tr> 
+									@endforeach
 								@endforeach  
 						    @endforeach
 						   
