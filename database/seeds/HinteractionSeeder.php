@@ -16,7 +16,7 @@ class HinteractionSeeder extends Seeder
             'id'=>1,
             'herb_id'=>6,
             'target_id'=>11,
-            'note'=>'Des études cliniques montrent que l\'ail n\'a pas d\'effet sur le CYP1A2
+            'notes'=>'Des études cliniques montrent que l\'ail n\'a pas d\'effet sur le CYP1A2
             Zhou décrit des interactions théoriques au niveau enzymatique',
             'user_id'=>1,
             'force_id'=>1,
@@ -31,7 +31,7 @@ class HinteractionSeeder extends Seeder
             'id'=>2,
             'herb_id'=>6,
             'target_id'=>21,
-            'note'=>'Certaines préparations d\'ail contenant de l\'allicine semblent induire l\'activité du CYP3A4. Cela a été démontré dans des recherches montrant une réduction significative des taux plasmatiques de saquinavir, un substrat du CYP3A4, chez les patients prenant d\'ail. 
+            'notes'=>'Certaines préparations d\'ail contenant de l\'allicine semblent induire l\'activité du CYP3A4. Cela a été démontré dans des recherches montrant une réduction significative des taux plasmatiques de saquinavir, un substrat du CYP3A4, chez les patients prenant d\'ail. 
 
             Cependant, d\'autres recherches suggèrent que d\'autres produits contenant de l\'ail et aussi de l\'allicine n\'ont pas d\'activité sur le métabolisme des substrats du CYP3A4. Dans une petite étude, avec un produit spécifique d\'ail (GarliPure Maximum Allicin Formula, Natrolm Chatsworth) ou 600 mg était consommé deux fois par jour (fournissant 3.600 µg d\'allicine par dose), pendant 12 jours consécutifs n\'a pas affecté significativement la pharmacocinétique du docétaxel, un substrat du CYP3A4. 
             
@@ -51,7 +51,7 @@ class HinteractionSeeder extends Seeder
             'id'=>3,
             'herb_id'=>6,
             'target_id'=>26,
-            'note'=>'Une des indications de l\'ail est un stimulant de l\'immunité',
+            'notes'=>'Une des indications de l\'ail est un stimulant de l\'immunité',
             'user_id'=>1,
             'force_id'=>10,
             'validated'=>NULL,

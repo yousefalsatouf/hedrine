@@ -30,7 +30,7 @@ class Hinteraction extends Model
 
     public function references()
     {
-        return $this->belongsToMany(Reference::class);
+        return $this->belongsToMany(Reference::class, 'hinteraction_has_references');
     }
 
     public function herbs()

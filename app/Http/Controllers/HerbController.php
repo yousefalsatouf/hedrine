@@ -65,83 +65,9 @@ class HerbController extends Controller
         
         $herb = Herb::with('hinteractions.herbs','hinteractions.effects','hinteractions.targets')->findOrFail($id);
         
-        //   dd($herb);
+          //dd($herb);
         return view("herbs/details",compact('herb'));
-        $informations_plante = DB::table('herbs')
-            ->select('herbs.name as hname', 'herbs.sciname', 'herbs.id as herbid',
-            'hinteractions.id as hinteractionid','hinteractions.note as hinteractionnote',
-            'hinteractions.force_id','targets.name as targetname', 'forces.name as force_name')
-            ->leftJoin('hinteractions', 'herbs.id', '=', 'herb_id')
-            ->leftJoin('forces', 'forces.id', '=', 'force_id')
-            ->leftJoin('targets', 'targets.id', '=', 'hinteractions.target_id')->where('herbs.id', $id)
-            //add here a subquery to select effects.name from hinteractions_has_effects with hinteractions.id
-            ->get();
-            //dd($informations_plante);
-
-            DB::enableQueryLog();
-            //DD avec cette seconde requête, j'essaie de récupérer le nom des effets
-            //each $collection permet de parcourir la collection obtenue avec la requête ci-dessus
-            $hinteractions_has_effects =  $informations_plante->each(function ($collection, $iteration) {
-                DB::table('hinteraction_has_effects')
-                     ->select('hinteraction_has_effects.effect_id as effectid, effects.id, effects.name')
-                     ->leftJoin('effects','effects.id','=','hinteraction_has_effects.effect_id')
-                     ->where('hinteraction_has_effects.id', '=', $collection->hinteractionid)
-                     ->get();
-
-            
-
-            $quries = DB::getQueryLog();
-            dd($quries);
-
-
-            // DB::enableQueryLog();
-            // $hinteractions_has_effects =  $informations_plante->each(function ($collection, $iteration) {
-            //     DB::table('hinteractions')
-            //          ->select('hinteractions.herb_id, hinteraction_has_effects.*, effects.*')
-            //          ->leftJoin('hinteractions', 'herb_id', '=', 'hinteraction_has_effects.herb_id')
-            //          ->leftJoin('effects', 'effects.id', '=', 'hinteraction_has_effects.effect_id')
-            //          ->where('herb_id', '=', $collection->herbid)
-            //          ->get();
-
-            // $quries = DB::getQueryLog();
-            // dd($quries);
-
-
-                    //  DB::table('hinteraction_has_effects')
-                    //  ->select(DB::raw('hinteraction_has_effects.*, effects.*'))
-                    //  ->leftJoin('effects', 'effects.id', '=', 'hinteraction_has_effects.effect_id')
-                    //  ->where('herb_id', '=', $collection->herb_id)
-                    //  ->get();
-                
-            });
-            dd($hinteractions_has_effects);
-
-            //dd($hinteractions_has_effects);
-                     
-
-            //dd($hinteractions_has_effects);
-
-            //DB::enableQueryLog();
-            //$hinteractions_has_effects = Hinteraction::with('effects');
-            //$quries = DB::getQueryLog();
-            //dd($quries);
-            //dd($hinteractions_has_effects);
-
-            //dd($hinteractions_has_effects);
-
-            // $hinteractions_has_effects = Hinteraction::with(['effects'])->select('herbs.name as hname', 'herbs.sciname','hinteractions.*','targets.name as targetname', 'forces.name as force_name')
-            // ->leftJoin('hinteractions', 'herbs.id', '=', 'herb_id')
-            // ->leftJoin('forces', 'forces.id', '=', 'force_id')
-            // ->leftJoin('targets', 'targets.id', '=', 'hinteractions.target_id')->where('herbs.id', $id)
-            // ->get();
         
-            //dd($informations_plante[0]->hinteractionid);
-
-            
-            
-            
-
-        return view("herbs/details",compact('informations_plante','hinteractions_has_effects'));
     }
 
 
@@ -201,10 +127,5 @@ class HerbController extends Controller
         //
     }
 
-    public function ajax(){
-        $herbs = Herb::all();
-        $characters = $herbs->sortBy('character')->pluck('character')->unique();
-
-        return view(herbs.ajax, compact('characters'));
-    }
+   
 }
