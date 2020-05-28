@@ -17,7 +17,7 @@ class CreateDinteractionsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('drug_id')->unsigned();
             $table->unsignedBigInteger('target_id')->unsigned();
-            $table->text('note')->nullable();
+            $table->text('notes')->nullable();
             $table->unsignedBigInteger('user_id')->unsigned();
             $table->unsignedBigInteger('force_id')->unsigned();
             $table->dateTime('validated')->nullable();
