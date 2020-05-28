@@ -42,116 +42,114 @@
 				</table>
 			</div>
 		</div>
-<div class="col-12">
+	</div>
+	<br>
+
+   
 	
-   <br>
-	<section>
-		<div class="container-fluid">
-           <div class="row">
-               <div class="col-md-12">
-				   <h3 style="color: #2c6877;">Mécanisme impliqués</h3>
-				   <br>
-				   <table id="example1" class="table">
-                       <thead>
-						   <tr>
-							   <th></th>
-							   <th>Effets</th>
-							   <th>Intensité</th>
-							   <th>Notes</th>
-							   <th>Références</th>
-						   </tr>
-					   </thead>
-					   <tbody>
-						   @foreach ($herb->hinteractions as $hinteraction)
-								@foreach ($hinteraction->effects as $effect)
-									@foreach ($hinteraction->references as $reference)
-										<tr>
-											<th scope="row">{{$hinteraction->targets->name}}</th>
-											<td class="
+		<div class="col-12">
+			<h3 style="color: #2c6877;">Mécanisme impliqués</h3>
+			<br>
+			<div class="card-body table-responsive" style="background-color: #fff" >
+				<table id="dataTable_details" class="display responsive " width="100%">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Effets</th>
+							<th>Intensité</th>
+							<th>Notes</th>
+							<th>Références</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach ($herb->hinteractions as $hinteraction)
+							@foreach ($hinteraction->effects as $effect)
+								@foreach ($hinteraction->references as $reference)
+									<tr>
+										<th scope="row">
+											{{$hinteraction->targets->name}}
+											<h6>({{$hinteraction->targets->targetype->name}})</h6>
+										</th>
+										<td class="
 											@if($hinteraction->forces->color == "rouge")
 												force
-													@elseif($hinteraction->forces->color == "orange")
+												@elseif($hinteraction->forces->color == "orange")
 													moyenne
-													@elseif($hinteraction->forces->color == "jaune")
+												@elseif($hinteraction->forces->color == "jaune")
 													faible
-													@elseif($hinteraction->forces->color == "vert")
+												@elseif($hinteraction->forces->color == "vert")
 													aucune
-													@elseif($hinteraction->forces->color == "mauve")
+												@elseif($hinteraction->forces->color == "mauve")
 													inconnue
-												@endif">{{$effect->name}}</td>
-											<td class="
+											@endif">{{$effect->name}}
+										</td>
+										<td class="
 											@if($hinteraction->forces->color == "rouge")
-												force
-													@elseif($hinteraction->forces->color == "orange")
+													force
+												@elseif($hinteraction->forces->color == "orange")
 													moyenne
-													@elseif($hinteraction->forces->color == "jaune")
+												@elseif($hinteraction->forces->color == "jaune")
 													faible
-													@elseif($hinteraction->forces->color == "vert")
+												@elseif($hinteraction->forces->color == "vert")
 													aucune
-													@elseif($hinteraction->forces->color == "mauve")
+												@elseif($hinteraction->forces->color == "mauve")
 													inconnue
-												@endif">
+											@endif">
 
 												{{$hinteraction->forces->name}}
-												
-											</td>
-											<td class="
+															
+										</td>
+										<td class="
 											@if($hinteraction->forces->color == "rouge")
 												force
-													@elseif($hinteraction->forces->color == "orange")
+												@elseif($hinteraction->forces->color == "orange")
 													moyenne
-													@elseif($hinteraction->forces->color == "jaune")
+												@elseif($hinteraction->forces->color == "jaune")
 													faible
-													@elseif($hinteraction->forces->color == "vert")
+												@elseif($hinteraction->forces->color == "vert")
 													aucune
-													@elseif($hinteraction->forces->color == "mauve")
+												@elseif($hinteraction->forces->color == "mauve")
 													inconnue
-												@endif">
+											@endif">
 												{{$hinteraction->notes}}
-											</td>
-											<td class="
-												@if($hinteraction->forces->color == "rouge")
-													force
-													@elseif($hinteraction->forces->color == "orange")
-													moyenne
-													@elseif($hinteraction->forces->color == "jaune")
-													faible
-													@elseif($hinteraction->forces->color == "vert")
-													aucune
-													@elseif($hinteraction->forces->color == "mauve")
+										</td>
+										<td class="
+											@if($hinteraction->forces->color == "rouge")
+												force
+												@elseif($hinteraction->forces->color == "orange")
+												moyenne
+												@elseif($hinteraction->forces->color == "jaune")
+												faible
+												@elseif($hinteraction->forces->color == "vert")
+												aucune
+												@elseif($hinteraction->forces->color == "mauve")
 													inconnue
-												@endif">
-												<a href=""> 
-													{{$reference->year}} , {{$reference->edition}};<br>
-												</a>
-												<a href=" {{$reference->url}} "> 
-													<i class="fas fa-globe-europe"></i>
-												</a>		
-
-											</td>
-										</tr> 
-									@endforeach
-								@endforeach  
-						    @endforeach
-						   
-					   </tbody>
-				   </table>
-			   </div>
-		   </div>
+											@endif">
+											<a href=""> 
+												{{$reference->year}} , {{$reference->edition}};<br>
+											</a>
+											<a href=" {{$reference->url}} "> 
+												<i class="fas fa-globe-europe"></i>
+											</a>		
+										</td>
+									</tr> 
+								@endforeach
+							@endforeach  
+						@endforeach
+					</tbody>
+				</table>
+			</div>
 		</div>
-	</section>
-</div>
+  
 @endsection
 
 @section('dashboard-js')
 <script>
 	$(function () {
 
-
-	
-	  $('#example1').DataTable({
+	  $('#dataTable_details').DataTable({
 		"paging": false,
-		"lengthChange": false,
+		"lengthChange": true,
 		"searching": true,
 		"ordering": true,
 		"info": false,

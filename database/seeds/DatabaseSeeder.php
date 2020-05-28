@@ -29,6 +29,9 @@ class DatabaseSeeder extends Seeder
         $this->call(HinteractionHasEffectSeeder::class);
         $this->call(ReferenceSeeder::class);
         $this->call(HinteractionHasReferenceSeeder::class);
+        $this->call(DinteractionSeeder::class);
+        $this->call(DinteractionHasEffectSeeder::class);
+        $this->call(DinteractionHasReferenceSeeder::class);
 
     }
 }

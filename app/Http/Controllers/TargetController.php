@@ -94,4 +94,13 @@ class TargetController extends Controller
     {
         //
     }
+    public function details($id)
+    {
+        $target = Target::with('dinteractions.drugs','dinteractions.effects','dinteractions.targets',
+                                'hinteractions.drugs','hinteractions.effects','hinteractions.targets')->findOrFail($id);
+        
+          //dd($drug);
+        return view("targets/details",compact('target'));
+        
+    }
 }

@@ -19,24 +19,7 @@ class DrugController extends Controller
      */
     public function index()
     {
-        /*$drugs = Drug::all();*/
-        $posts = Post::all();
-        $herbs = Herb::all();
-        $targets = Target::all();
-        $drugs = Drug::all();
-
-        //retourne tous les médicaments et leur drugs families pour la vue drugs
-    
-        
-        $drugs_and_families = DB::table('drugs')
-            
-            ->leftJoin('drug_families', 'drug_families.id', '=', 'drugs.drug_families_id')
-            ->get();
-
-        /*dd($drugs_and_families);*/
-
-        
-       return view('drugs/index',compact('drugs_and_families','posts','drugs','targets','herbs'));
+       return view('drugs/index',compact('drugs'));
     }
 
     /**
@@ -103,5 +86,14 @@ class DrugController extends Controller
     public function destroy(Drug $drug)
     {
         //
+    }
+
+    public function details($id)
+    {
+        $drug = Drug::with('dinteractions.drugs','dinteractions.effects','dinteractions.targets')->findOrFail($id);
+        
+          //dd($drug);
+        return view("drugs/details",compact('drug'));
+        
     }
 }

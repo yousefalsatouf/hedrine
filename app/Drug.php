@@ -17,7 +17,7 @@ class Drug extends Model
 
     public function drug_family()
     {
-        return $this->belongsTo(DrugFamily::class);
+        return $this->belongsTo(DrugFamily::class,'drug_families_id');
     }
 
     public function routes()
@@ -33,6 +33,11 @@ class Drug extends Model
     public function targets()
     {
         return $this->belongsToMany(Target::class);
+    }
+    
+    public function dinteractions()
+    {
+        return $this->hasMany(Dinteraction::class);
     }
 
     

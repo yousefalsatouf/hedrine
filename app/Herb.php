@@ -21,10 +21,7 @@ class Herb extends Model
         return $this->belongsToMany(Target::class);
     }
 
-    public function dinteractions()
-    {
-        return $this->belongsToMany(Dinteraction::class);
-    }
+   
 
     public function hinteractions()
     {
