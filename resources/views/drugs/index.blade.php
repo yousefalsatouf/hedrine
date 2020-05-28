@@ -18,84 +18,7 @@
 								</a>
 							</li>
 						@endforeach
-						{{-- <li class="nav-item">
-							<a class="nav-link " href="#">A</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">B</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link " href="#">C</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link " href="#">D</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">E</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link " href="#">F</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link " href="#">G</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">H</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link " href="#">I</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link " href="#">J</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">K</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link " href="#">L</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link " href="#">M</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">N</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link " href="#">O</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link " href="#">P</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Q</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link " href="#">R</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link " href="#">S</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">T</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link " href="#">U</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link " href="#">V</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">W</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link " href="#">X</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link " href="#">Y</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Z</a>
-						</li> --}}
+					
 					</ul>
 				</h5>
 			</div>
@@ -111,12 +34,12 @@
 					</tr>
 				</thead>
 				<tbody>
-					@foreach ($drugs_and_families as $drug)
+					@foreach ($drugs as $drug)
 					<tr>
 						<td>
-							<a href="" class="add_style" ><strong>{{$drug->name}}</strong> </a>
+							<a href="{{route('drugs.details', $drug->id)}}" class="add_style" ><strong>{{$drug->name}} <span>({{$drug->route}})</span></strong> </a>
 						</td>
-						<td>{{$drug->nom}}</td>
+					<td>{{$drug->drug_family->name}}</td>
 					</tr>
 					@endforeach
 				</tbody>

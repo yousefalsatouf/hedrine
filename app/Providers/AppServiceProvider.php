@@ -39,12 +39,12 @@ class AppServiceProvider extends ServiceProvider
             $view->with('posts',Post::orderBy('created_at','desc')->Take(8)->get());
         });
         View::composer('*', function($view) {
-
-            $view->with('herbs',Herb::all());
+            
+            $view->with('herbs',Herb::orderBy('name')->get());
         });
         View::composer('*', function($view) {
 
-            $view->with('drugs',Drug::all());
+            $view->with('drugs',Drug::orderBy('name')->get());
         });
         View::composer('*', function($view) {
 

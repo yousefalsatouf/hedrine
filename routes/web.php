@@ -48,18 +48,23 @@ Route::get('/master', function () {
 
 //N.Thierry pour atteindre la page de herbe
 Route::get('/herb','HerbController@index')->name('herbs.index');
+Route::get('herb/details_plante/{id}','HerbController@details')->name('herbs.details');
 
 //N.Thierry pour atteindre la page de drugs
 Route::get('/drug','DrugController@index')->name('drugs.index');
+Route::get('drug/details_drug/{id}','DrugController@details')->name('drugs.details');
 
 //N.Thierry pour atteindre la page de targets
 Route::get('/target','TargetController@index')->name('targets.index');
+Route::get('target/details_target/{id}','TargetController@details')->name('targets.details');
 
 //DD pour atteindre le formulaire d'ajout d'un poste
 Route::get('posts/add_post_form','PostController@show_form')->name('posts.show_form');
 Route::post('posts/add_post','PostController@create')->name('posts.create');
 
-Route::get('herb/details_plante/{id}','HerbController@details')->name('herbs.details');
+Route::get('drug_families/details/{id}','DrugFamilyController@details')->name('drugs.family');
+
+
 
 //N.Thierry Admin route
 Route::view('admin','admin.layout');

@@ -37,6 +37,11 @@ class Drug extends Model
     {
         return $this->belongsToMany(Target::class);
     }
+    
+    public function dinteractions()
+    {
+        return $this->hasMany(Dinteraction::class);
+    }
 
     
 }

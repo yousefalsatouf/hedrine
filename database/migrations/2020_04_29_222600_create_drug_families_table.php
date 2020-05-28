@@ -15,7 +15,7 @@ class CreateDrugFamiliesTable extends Migration
     {
         Schema::create('drug_families', function (Blueprint $table) {
             $table->id();
-            $table->string('nom', 60)->nullable();
+            $table->string('name', 60)->nullable();
             $table->timestamps();
         });
     }

@@ -82,4 +82,13 @@ class DrugFamilyController extends Controller
     {
         //
     }
+
+    public function details($id)
+    {
+        $drugfamily = DrugFamily::findOrFail($id);
+        
+          //dd($drug);
+        return view("drugFamily/details",compact('drugfamily'));
+        
+    }
 }

@@ -31,4 +31,8 @@ class Target extends Model
     {
         return $this->hasMany(Hinteraction::class);
     }
+    public function dinteractions()
+    {
+        return $this->hasMany(Dinteraction::class);
+    }
 }
