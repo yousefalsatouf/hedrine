@@ -4,18 +4,17 @@ namespace App\Http\Controllers\Back;
 
 use App\DataTables\DrugssDataTable;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\DrugRequest;
+use App\Http\Requests\TargetRequest;
 use App\Drug;
 use App\Herb;
 use App\Target;
-use App\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\DB;
 
 
-class DrugController extends Controller
+class TargetController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,8 +23,8 @@ class DrugController extends Controller
      */
     public function index()
     {
-        
-        return view('admin.drugs.index');
+       
+        return view('admin.targets.index');
     }
 
     /**
@@ -35,8 +34,8 @@ class DrugController extends Controller
      */
     public function create()
     {
-        $routes = Route::all();
-        return view('admin.drugs.form_add_drug', compact('routes'));
+
+        return view('admin.targets.form_add_target');
     }
 
     /**
@@ -45,17 +44,17 @@ class DrugController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(DrugRequest $request)
+    public function store(TargetRequest $request)
     {
-        $drug = new Drug;
+        $target = new Target;
 
-        $drug->user_id = Auth::user()->id;
-        $drug->name = $request->name;
-        $drug->drug_families_id = $request->drug_families_id;
-        $drug->route_id = $request->route_id;
-        $drug->atc_level_4s_id = $request->atc_level_4s_id;
-        $drug->save();
-        Alert::success('Ok !', 'Nouveau DCI ajouté avec succès');
+        $target->user_id = Auth::user()->id;
+        $target->name = $request->name;
+        $target->long_name = $request->long_name;
+        $target->notes = $request->notes;
+        $target->target_type_id = $request->target_type_id;
+        $target->save();
+        Alert::success('Ok !', 'Nouveau target ajouté avec succès');
 
         return back();
     }
@@ -77,10 +76,9 @@ class DrugController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Drug $drug)
+    public function edit(Target $target)
     {
-        $routes = Route::all();
-        return view('admin.drugs.form_add_drug',['drug' => $drug ], compact('routes'));
+        return view('admin.targets.form_add_target', ['target' => $target ]);
     }
 
     /**
@@ -90,10 +88,10 @@ class DrugController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Drug $drug)
+    public function update(Request $request, Target $target)
     {
-        $drug->update($request->all());
-        Alert::success('Ok !', 'Votre DCI a étè mis à jour avec succès');
+        $target->update($request->all());
+        Alert::success('Ok !', 'Votre target a étè mis à jour avec succès');
 
         return back();
     }
@@ -104,22 +102,22 @@ class DrugController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Drug $drug)
+    public function destroy(Target $target)
     {
-        $drug->delete();
-        return redirect(route('drug.index'));
+        $target->delete();
+        return redirect(route('target.index'));
 
     }
 
-    public function alert(Drug $drug) {
+    public function alert(Target $target) {
 
-        return view('admin.drugs.destroy', ['drug' => $drug]);
+        return view('admin.targets.destroy', ['target' => $target]);
     }
   
     public function details($id)
     {
-        $drug = Drug::findOrFail($id);
+        $target = Target::findOrFail($id);
 
-        return view('admin.drugs.show',$drug);
+        return view('admin.targets.show',$target);
     }
 }

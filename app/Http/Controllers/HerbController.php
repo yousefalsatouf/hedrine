@@ -25,11 +25,11 @@ class HerbController extends Controller
 
     
 
-        //$herbs = Herb::all();
-        $posts = Post::all();
-        $drugs = Drug::all();
-        $targets = Target::all();
-        $herbs = Herb::with('herb_forms')->get(); //DD permet d'ajouter la relation avec la table herb_forms
+        // //$herbs = Herb::all();
+        // $posts = Post::all();
+        // $drugs = Drug::all();
+        // $targets = Target::all();
+        // $herbs = Herb::with('herb_forms')->get(); //DD permet d'ajouter la relation avec la table herb_forms
 
         /* foreach ($herbs as $herb) 
         {
@@ -46,7 +46,7 @@ class HerbController extends Controller
     
         
         //on retourne le résultat dans une view nommée index, la vue se trouve dans la dossier herbs
-        return view('herbs/index',compact('herbs','posts','drugs', 'targets'));
+        return view('herbs/index');
     }
 
     /**

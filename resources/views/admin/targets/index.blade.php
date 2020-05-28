@@ -2,8 +2,8 @@
 
 @section('content_dashboard')
 <div class="row justify-content-end" style="padding-bottom: 0.75rem">
-	@if(Route::currentRouteName() === 'drug.index')
-		<a class="btn btn-primary" href="{{ route('drug.create') }}" role="button">Créer un nouveau DCI</a>
+	@if(Route::currentRouteName() === 'target.index')
+		<a class="btn btn-primary" href="{{ route('target.create') }}" role="button">Créer une nouveau target</a>
 	@endif
 </div>
 
@@ -12,29 +12,37 @@
 		<table id="example1" class="table table-bordered table-hover table-sm">
 			<thead>
 				<tr>
-					<th> Name </th>
-					<th> Family </th>
-					<th> AtcLevel4 </th>
-					<th> Route </th>
-					<th> Editor </th>
+					<th> Name</th>
+					<th>Long Name</th>
+					<th>Notes</th>
+					<th>Type</th>
+					<th>Editor</th>
 					<th> Actions</th>
 				</tr>
 			</thead>
 			<tbody>
-				@foreach ($drugs as $drug)
+				@foreach ($targets as $target)
 				<tr>
 					<td>
-						<a href="" class="add_style" ><strong>{{$drug->name}}</strong></a>
+						<a href="" class="add_style" ><strong>{{$target->name}}</strong></a>
 					</td>
-					<td>{{$drug->drug_family->nom}}</td>
-					<td>{{ $drug->atc_level4s->name }}</td>
-					<td>{{ $drug->routes->name }}</td>
-					<td>{{ $drug->users->name }}</td>
+					<td>
+						{{$target->long_name}}
+					</td>
+					<td>
+						{{$target->notes}}
+					</td>
+					<td>
+						{{$target->targetype->name}}
+					</td>
+					<td>
+						{{$target->user->name}}
+					</td>
 					<td>
 						<div class="btn-group float-right">
 						&nbsp; &nbsp; &nbsp;<a class="btn btn-primary" href="" role="button"><i class="far fa-eye"></i>  View</a>  &nbsp; &nbsp;
-							<a class="btn btn-success" href="{{ route('drug.edit',$drug->id) }}" role="button"><i class="fas fa-edit"></i> Edit </a> &nbsp; &nbsp;
-							<a class="btn btn-danger" href="{{ route('drug.destroy.alert',$drug->id) }}" role="button"><i class="far fa-trash-alt"></i> Delete </a>
+							<a class="btn btn-success" href="{{ route('target.edit',$target->id) }}" role="button"><i class="fas fa-edit"></i> Edit </a> &nbsp; &nbsp;
+							<a class="btn btn-danger" href="{{ route('target.destroy.alert',$target->id) }}" role="button"><i class="far fa-trash-alt"></i> Delete </a>
 							
 						</div>
 					</td>

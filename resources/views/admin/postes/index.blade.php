@@ -1,6 +1,5 @@
 @extends('layouts.master_dashboard')
 
-
 @section('content_dashboard') 
     <div class="row justify-content-end" style="padding-bottom: 0.75rem">
 		@if(Route::currentRouteName() === 'post.index')

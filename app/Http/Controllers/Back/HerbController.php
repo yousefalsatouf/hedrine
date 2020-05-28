@@ -4,18 +4,17 @@ namespace App\Http\Controllers\Back;
 
 use App\DataTables\DrugssDataTable;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\DrugRequest;
+use App\Http\Requests\HerbRequest;
 use App\Drug;
 use App\Herb;
 use App\Target;
-use App\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\DB;
 
 
-class DrugController extends Controller
+class HerbController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,8 +23,8 @@ class DrugController extends Controller
      */
     public function index()
     {
-        
-        return view('admin.drugs.index');
+        $herbs = Herb::all();
+        return view('admin.herbs.index', compact('herbs'));
     }
 
     /**
@@ -35,8 +34,8 @@ class DrugController extends Controller
      */
     public function create()
     {
-        $routes = Route::all();
-        return view('admin.drugs.form_add_drug', compact('routes'));
+        
+        return view('admin.herbs.form_add_herb');
     }
 
     /**
@@ -45,17 +44,15 @@ class DrugController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(DrugRequest $request)
+    public function store(HerbRequest $request)
     {
-        $drug = new Drug;
+        $herb = new Herb;
 
-        $drug->user_id = Auth::user()->id;
-        $drug->name = $request->name;
-        $drug->drug_families_id = $request->drug_families_id;
-        $drug->route_id = $request->route_id;
-        $drug->atc_level_4s_id = $request->atc_level_4s_id;
-        $drug->save();
-        Alert::success('Ok !', 'Nouveau DCI ajouté avec succès');
+        $herb->user_id = Auth::user()->id;
+        $herb->name = $request->name;
+        $herb->sciname = $request->sciname;
+        $herb->save();
+        Alert::success('Ok !', 'Nouvelle plante ajouté avec succès');
 
         return back();
     }
@@ -77,10 +74,9 @@ class DrugController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Drug $drug)
+    public function edit(Herb $herb)
     {
-        $routes = Route::all();
-        return view('admin.drugs.form_add_drug',['drug' => $drug ], compact('routes'));
+        return view('admin.herbs.form_add_herb', ['herb' => $herb ]);
     }
 
     /**
@@ -90,10 +86,10 @@ class DrugController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Drug $drug)
+    public function update(Request $request, Herb $herb)
     {
-        $drug->update($request->all());
-        Alert::success('Ok !', 'Votre DCI a étè mis à jour avec succès');
+        $herb->update($request->all());
+        Alert::success('Ok !', 'Votre plante a étè mis à jour avec succès');
 
         return back();
     }
@@ -104,22 +100,22 @@ class DrugController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Drug $drug)
+    public function destroy(Herb $herb)
     {
-        $drug->delete();
-        return redirect(route('drug.index'));
+        $herb->delete();
+        return redirect(route('herb.index'));
 
     }
 
-    public function alert(Drug $drug) {
+    public function alert(Herb $herb) {
 
-        return view('admin.drugs.destroy', ['drug' => $drug]);
+        return view('admin.herbs.destroy', ['herb' => $herb]);
     }
   
     public function details($id)
     {
-        $drug = Drug::findOrFail($id);
+        $herb = Herb::findOrFail($id);
 
-        return view('admin.drugs.show',$drug);
+        return view('admin.herbs.show',$herb);
     }
 }

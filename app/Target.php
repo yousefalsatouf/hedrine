@@ -8,7 +8,7 @@ class Target extends Model
 {
     protected $fillable = ['name', 'long_name', 'user_id', 'note','target_type_id'];
 
-    public function users()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }
