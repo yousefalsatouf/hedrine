@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Herb extends Model
 {
+    protected $fillable = ['name', 'sciname', 'user_id'];
+
     public function users()
     {
         return $this->belongsTo(User::class);

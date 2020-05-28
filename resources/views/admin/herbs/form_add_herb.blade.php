@@ -20,31 +20,32 @@
 						<!-- left column -->
 						<div class="col-md-8 offset-md-2 ">
 						<!-- general form elements -->
-							<div class="card card-success">
-								<div class="card-header">
-									<h3 class="card-title">
-										<strong> 
-											@if(Route::currentRouteName() === 'post.create')
-												Ajouter un nouveau poste
-											@else
-												Modification d'un post
-											@endif
-										</strong>
-									</h3>
-								</div>
+						<div class="card card-success">
+							<div class="card-header">
+								<h3 class="card-title">
+									<strong> 
+										@if(Route::currentRouteName() === 'herb.create')
+											Ajouter un nouvelle plante
+										@else
+										Modification d'une plante
+										@endif
+									</strong>
+								</h3>
+							</div>
 							<!-- /.card-header -->
 							<!-- form start -->
-							<form class=" justify-content-center" role="form" method="POST" action="@isset($post) {{ route('post.update', $post->id) }} @else {{route('post.store')}} @endisset">
+						<form class=" justify-content-center" role="form" method="POST" action="@isset($herb) {{ route('herb.update', $herb->id) }} @else {{
+							route('herb.store')}} @endisset">
 								<div class="card-body">
 									<div class="form-group">
-										@isset($post) @method('PUT') @endisset
+										@isset($herb) @method('PUT') @endisset
 										@csrf
-										<label for="title">Titre du poste</label>
-										<input type="text" class="form-control" id="title" name="title" required placeholder="Titre du poste" value="{{isset($post) ? $post->title : ''}}">
+										<label for="name">Nom d'une plante</label>
+										<input type="text" class="form-control" id="title" name="name" required placeholder="Nom d'une plante" value="{{isset($herb) ? $herb->name : ''}}">
 									</div>
 									<div class="form-group">
-										<label for="body">Message du poste</label>
-										<textarea rows="10" cols="15" class="form-control" id="body" name="body" placeholder="Texte du poste" required>{{ isset($post) ? $post->body : ''}}</textarea>
+										<label for="sciname">Sciname</label>
+										<input type="text" class="form-control" id="sciname" name="sciname" required placeholder="Nom du sciname" value="{{isset($herb) ? $herb->sciname : ''}}">
 									</div>
 								</div>
 								<!-- /.card-body -->
@@ -52,13 +53,13 @@
 									<div class="control-group">
 										<div class="controls">
 											<button type="submit" class="btn btn-success"><i class="fas fa-location-arrow"></i>
-												@if(Route::currentRouteName() === 'post.create')
-													Ajouter un nouveau poste
+												@if(Route::currentRouteName() === 'herb.create')
+													Ajouter un nouvelle plante
 												@else
 												 Sauvegarder
 												@endif
 											</button>
-											<a class="btn btn-primary" href="{{ route('post.index') }}" role="button"><i class="fas fa-arrow-left"></i> Retour à la liste des postes</a>
+											<a class="btn btn-primary" href="{{ route('herb.index') }}" role="button"><i class="fas fa-arrow-left"></i> Retour à la liste des plantes</a>
 										</div>
 									</div>
 								</div>
@@ -67,7 +68,7 @@
 					   <!-- /.card -->
 					</div>
 				</div>
-			</section>
+			</div>
 		</div>
     </div>
 @endsection

@@ -29,6 +29,10 @@ class DatabaseSeeder extends Seeder
         $this->call(HinteractionHasEffectSeeder::class);
         $this->call(ReferenceSeeder::class);
         $this->call(HinteractionHasReferenceSeeder::class);
+        $this->call(RouteSeeder::class);
+        $this->call(AtcLevel2Seeder::class);
+        $this->call(AtcLevel3Seeder::class);
+        $this->call(AtcLevel4Seeder::class);
 
     }
 }

@@ -16,7 +16,6 @@ class CreateDrugsTable extends Migration
         Schema::create('drugs', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255);
-            $table->string('route', 255);
             $table->timestamps();
         });
     }

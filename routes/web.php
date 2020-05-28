@@ -85,6 +85,28 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
         'drug' => 'drug'
       ]);
     Route::name('drug.destroy.alert')->get('drug/{drug}', 'DrugController@alert');
+
+    //Route pour plante
+    Route::name('herb.update')->put('herb', 'HerbController@update');
+    Route::name('herb.edit')->get('herb', 'HerbController@edit');
+    Route::name('herb.index')->get('herb', 'HerbController@index');
+
+    Route::name('herb.details')->get('herb', 'HerbController@details');
+    Route::resource('herb', 'HerbController')->parameters([
+        'herb' => 'herb'
+      ]);
+    Route::name('herb.destroy.alert')->get('herb/{herb}', 'HerbController@alert');
+
+     //Route pour target
+     Route::name('target.update')->put('target', 'TargetController@update');
+     Route::name('target.edit')->get('target', 'TargetController@edit');
+     Route::name('target.index')->get('target', 'TargetController@index');
+ 
+     Route::name('target.details')->get('target', 'TargetController@details');
+     Route::resource('target', 'TargetController')->parameters([
+         'target' => 'target'
+       ]);
+     Route::name('target.destroy.alert')->get('target/{target}', 'TargetController@alert');
 });
 
 //N.Thierry : Les routes pour interagir entre les plante et DCI
