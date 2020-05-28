@@ -108,7 +108,7 @@
 		<hr>
 			<div class="row">
                <div class="col-md-6">
-				   <h1 style="color: red"> Cas Cliniques</h1>
+				   <h3 style="color: red"> Cas Cliniques</h3>
 				   <p>
 					   Aucune étude ni cas référencé
 				   </p>
@@ -116,7 +116,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-6">
-					<h1 style="color: red"> Interactions Potentielles</h1>
+					<h3 style="color: red"> Interactions Potentielles</h3>
 				   <p>
 					   Aucune interaction référencée
 				   </p>
