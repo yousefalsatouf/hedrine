@@ -27,7 +27,7 @@ class HinteractionController extends Controller
     {
 
 
-        return view('interaction.index_mecanisme',compact('targets','herbs'));
+        return view('interaction.index_mecanisme');
     }
 
     /**

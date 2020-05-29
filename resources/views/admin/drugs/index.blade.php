@@ -26,7 +26,7 @@
 					<td>
 						<a href="" class="add_style" ><strong>{{$drug->name}}</strong></a>
 					</td>
-					<td>{{$drug->drug_family->nom}}</td>
+					<td>{{$drug->drug_family->name}}</td>
 					<td>{{ $drug->atc_level4s->name }}</td>
 					<td>{{ $drug->routes->name }}</td>
 					<td>{{ $drug->users->name }}</td>

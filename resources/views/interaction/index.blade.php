@@ -31,10 +31,10 @@
 							</select>
 						</div>
 						<div class="form-group col-md-4">
-							<label class="form-check-label"><strong><h5>DCI</h5></strong></label>
+							<label class="form-check-label"><strong><h5>Plante *</h5></strong></label>
 							<select id="" class="form-control">
-								<option> Choisir une DCI ...</option>
-								@foreach ($drugs as $item)
+								<option>Choisir une plante ...</option>
+								@foreach ($herbs as $item)
 									<option>{{$item->name}}</option>
 								@endforeach
 							</select>
@@ -43,10 +43,10 @@
 					
 					<div class="form-row">
                         <div class="form-group col-md-4">
-							<label class="form-check-label"><strong><h5>Plante *</h5></strong></label>
+							<label class="form-check-label"><strong><h5>DCI</h5></strong></label>
 							<select id="" class="form-control">
-								<option>Choisir une plante ...</option>
-								@foreach ($herbs as $item)
+								<option>  Choisir une DCI ...</option>
+								@foreach ($drugs as $item)
 									<option>{{$item->name}}</option>
 								@endforeach
 							</select>

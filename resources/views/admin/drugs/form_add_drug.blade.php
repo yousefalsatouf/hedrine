@@ -47,7 +47,7 @@
 											<select name="drug_families_id" class="form-control">
 												<option></option>
 												@foreach ($drug_families as $drug_familie)
-													<option value="{{$drug_familie->id}}">{{$drug_familie->nom}}</option>
+													<option value="{{$drug_familie->id}}">{{$drug_familie->name}}</option>
 												@endforeach
 											</select>
 										</div>

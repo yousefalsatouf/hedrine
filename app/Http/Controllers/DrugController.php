@@ -19,7 +19,7 @@ class DrugController extends Controller
      */
     public function index()
     {
-       return view('drugs/index',compact('drugs'));
+       return view('drugs/index');
     }
 
     /**
