@@ -17,7 +17,7 @@
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- JPM DEBUT du contenant Recherche et ses contenus -->
-        <li class="nav-item has-treeview">
+        <li class="nav-item has-treeview menu-open">
           <a href="#" class="nav-link active" style="background-color:green;" >
             <i class="nav-icon fas fa-search-plus"></i>
             <p>
@@ -43,7 +43,7 @@
         <!-- JPM FIN du contenant Recherche et ses contenus -->
           
         <!-- JPM DEBUT du contenant Index et ses contenus -->
-        <li class="nav-item has-treeview">
+        <li class="nav-item has-treeview menu-open">
           <a href="#" class="nav-link active" style="background-color:green;">
             <i class="nav-icon fas fa-compress-arrows-alt"></i>
             <p>
@@ -202,3 +202,4 @@
     </nav>
   </div>
 </aside>
+

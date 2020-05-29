@@ -4,14 +4,18 @@
     <!-- Default to the left -->
     <strong>Copyright &copy; 2020 <a href="https://hedrine.univ-grenoble-alpes.fr/">Hedrine</a>.</strong> All rights reserved.
   </footer>
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
 </div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
-<script src="{{ asset('https://code.jquery.com/jquery-3.4.1.min.js') }}"></script>
-<script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="{{ asset('/adminlte/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
 
 <script src="{{ asset('/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
@@ -27,6 +31,12 @@
 <script src="{{ asset('adminlte/js/adminlte.min.js') }}"></script>
 <script src="{{ asset('js/change_link_active.js') }}"></script>
 <script src="{{ asset('/adminlte/js/demo.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{ asset('/adminlte/dist/js/adminlte.js') }}"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="{{ asset('/adminlte/dist/js/pages/dashboard.js') }}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{{ asset('/adminlte/dist/js/demo.js') }}"></script>
  @yield('dashboard-js')
  @include('sweetalert::alert')
   @include('cookieConsent::index')

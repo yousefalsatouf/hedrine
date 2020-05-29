@@ -52,11 +52,6 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-
-    
-  </div>
-  <!-- /.content-wrapper -->
-
-  @include('/partials/footer')
+@include('/partials/footer')
 
  
