@@ -1,19 +1,17 @@
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
   <!-- Left navbar links -->
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-    </li>
-    <br />
-    <li class="nav-item d-none d-sm-inline-block">
-      
-      <a href="{{ route('home') }}">
-        <img class="img-fluid" src="{{ asset('images/hedrine_petit.png') }}" alt="Logo Hedrine">
-       </a>
-
-    </li>
-  </ul>
-
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <br />
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="{{ route('home') }}">
+                <img class="img-fluid" src="{{ asset('images/hedrine_petit.png') }}" alt="Logo Hedrine">
+            </a>
+        </li>
+    </ul>
+    
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
         <!-- Messages Dropdown Menu -->

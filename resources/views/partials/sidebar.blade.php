@@ -38,6 +38,7 @@
                 <p>Plantes <span><i class="fas fa-arrows-alt-h fa-lg"></i></span> Mécanismes</p>
               </a>
             </li>
+            
           </ul>
         </li>
         <!-- JPM FIN du contenant Recherche et ses contenus -->
@@ -78,7 +79,7 @@
         @if(auth()->user()->role_id == 1 )
            
           <!-- JPM DEBUT DU CONTENANT ADMINSTRER -->
-          <li class="nav-item has-treeview">
+          <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link active" style="background-color:green;">
               <i class="fas fa-unlock-alt nav-icon"></i>
               <p>
@@ -93,7 +94,7 @@
                     <p>New Post</p>
                 </a>
               </li>
-              <li class="nav-item has-treeview">
+              <li class="nav-item has-treeview menu-open">
                 <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>
@@ -151,7 +152,7 @@
           <!-- JPM FIN DU CONTENANT ADMINSTRER -->
 
           <!-- JPM DEBUT DU GERER LES DONNEES -->
-          <li class="nav-item has-treeview">
+          <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link active" style="background-color:green;">
               <i class="fas fa-database nav-icon"></i>
               <p>
@@ -166,7 +167,7 @@
                   <p>New Post</p>
                 </a>
               </li>
-              <li class="nav-item has-treeview">
+              <li class="nav-item has-treeview menu-open">
                 <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Manage</p>
@@ -200,6 +201,8 @@
         <!-- JPM FIN POUR COMPTE ADMINSTRATION-->
       </ul>
     </nav>
+    
   </div>
+    <!-- /.sidebar -->
 </aside>
 
