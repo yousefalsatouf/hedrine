@@ -1,4 +1,3 @@
-
 @extends('layouts.master_dashboard')
 @section('content_dashboard')
 
