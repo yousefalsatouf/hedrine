@@ -14,6 +14,7 @@ use App\Reference;
 use App\Target;
 use App\TargetType;
 use App\AtcLevel4;
+use App\HerbForm;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -69,6 +70,12 @@ class AppServiceProvider extends ServiceProvider
 
             $view->with('atc_level_4s_ids',AtcLevel4::all());
         });
+
+        View::composer('*', function($view) {
+
+            $view->with('herb_forms',HerbForm::all());
+        });
+        
 
         View::composer('layouts.master_dashboard', function ($view) {
             $title = config('titles.' . Route::currentRouteName());

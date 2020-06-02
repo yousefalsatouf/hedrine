@@ -42,11 +42,23 @@
 								
 								<td>
 									@foreach ($herb->herb_forms as $herb_form)
-										@if(count ($herb->herb_forms ) == 0)
-											{{ $herb_form->name }}
-										@else
+									
+										@php
+											$variable == 0;
+											$variable++;
+											$var="-";
+										@endphp
+										@if(count ($herb->herb_forms ) > 1 )
 											{{ $herb_form->name }} 
+
+										@if($variable < count ($herb->herb_forms))
+											{{$var}} 
+
 										@endif
+										@else
+											{{ $herb_form->name }}
+										@endif
+										 
 									@endforeach
 								</td>
 							</tr>
