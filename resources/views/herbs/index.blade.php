@@ -44,7 +44,7 @@
 									@foreach ($herb->herb_forms as $herb_form)
 									
 										@php
-											$variable == 0;
+											$variable = 0;
 											$variable++;
 											$var="-";
 										@endphp
@@ -52,7 +52,7 @@
 											{{ $herb_form->name }} 
 
 										@if($variable < count ($herb->herb_forms))
-											{{$var}} 
+											{{$variable}} {{$var}} 
 
 										@endif
 										@else
