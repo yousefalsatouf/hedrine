@@ -21,6 +21,7 @@ class PostController extends Controller
      */
     public function index()
     {
+        
         return view('layouts/master_dashboard');
     }
 
@@ -47,7 +48,6 @@ class PostController extends Controller
         $targets = Target::all();
         $posts = Post::all();
         $user = Auth::user();
-        
         $post = new Post;
         $post->user_id = $user->id;
         $post->title = $request->title;
