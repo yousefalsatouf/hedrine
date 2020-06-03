@@ -23,12 +23,13 @@ class HerbController extends Controller
      */
     public function index()
     {
-        $variable = 0;
+        $numberOfTimes_herbForms = 0;
+        $lastHerb = 0;
         
         //dd($herb_forms);
         
         //on retourne le résultat dans une view nommée index, la vue se trouve dans la dossier herbs
-        return view('herbs/index', compact('variable'));
+        return view('herbs/index', compact('numberOfTimes_herbForms', 'lastHerb'));
     }
 
     /**
