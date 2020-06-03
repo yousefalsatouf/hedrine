@@ -71,6 +71,7 @@ Route::view('admin','admin.layout');
 
 Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function() {
 
+    // Route pour Posts
     Route::name('admin')->get('/','AdminController@index');
     Route::name('post.update')->put('post', 'PostController@update');
     Route::name('post.edit')->get('post', 'PostController@edit');
@@ -79,6 +80,9 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
         'post' => 'post'
       ]);
     Route::name('post.destroy.alert')->get('post/{post}', 'PostController@alert');
+
+    //Route pour Posts Important
+    Route::name('post.validate')->get('post/validate/{id}', 'PostController@validpost');
 
     // Route pour drugs
     Route::name('drug.update')->put('drug', 'DrugController@update');
@@ -106,7 +110,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
      Route::name('target.update')->put('target', 'TargetController@update');
      Route::name('target.edit')->get('target', 'TargetController@edit');
      Route::name('target.index')->get('target', 'TargetController@index');
- 
+
      Route::name('target.details')->get('target', 'TargetController@details');
      Route::resource('target', 'TargetController')->parameters([
          'target' => 'target'
