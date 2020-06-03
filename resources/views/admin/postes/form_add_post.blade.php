@@ -23,11 +23,11 @@
 							<div class="card card-success">
 								<div class="card-header">
 									<h3 class="card-title">
-										<strong> 
+										<strong>
 											@if(Route::currentRouteName() === 'post.create')
 												Ajouter un nouveau poste
 											@else
-												Modification d'un post
+												Modification d un post
 											@endif
 										</strong>
 									</h3>
@@ -45,7 +45,16 @@
 									<div class="form-group">
 										<label for="body">Message du poste</label>
 										<textarea rows="10" cols="15" class="form-control" id="body" name="body" placeholder="Texte du poste" required>{{ isset($post) ? $post->body : ''}}</textarea>
-									</div>
+                                    </div>
+
+                                    <div class="form-group form-check form-check-inline">
+                                        <input type="checkbox" class="form-check-input"  name="important" id="important" value="1" @if (old('important',isset($post) ? $post->important : 0 )) checked
+
+                                        @endif>
+
+                                        <label for="important" class="form-check-label"> Important ? </label>
+
+                                    </div>
 								</div>
 								<!-- /.card-body -->
 								<div class="card-footer">

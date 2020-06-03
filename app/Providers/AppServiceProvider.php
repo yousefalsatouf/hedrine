@@ -36,10 +36,10 @@ class AppServiceProvider extends ServiceProvider
     {
         View::composer('*', function($view) {
 
-            $view->with('posts',Post::orderBy('created_at','desc')->Take(8)->get());
+            $view->with('posts',Post::orderBy('important','desc')->Take(20)->get());
         });
         View::composer('*', function($view) {
-            
+
             $view->with('herbs',Herb::orderBy('name')->get());
         });
         View::composer('*', function($view) {
@@ -50,6 +50,9 @@ class AppServiceProvider extends ServiceProvider
 
             $view->with('targets',Target::all());
         });
+
+        view()->share('postsToValidate', Post::where('created_at','!=', 'updated_at')->get());
+
         View::composer('*', function($view) {
 
             $view->with('references',Reference::all());
@@ -74,6 +77,6 @@ class AppServiceProvider extends ServiceProvider
             $title = config('titles.' . Route::currentRouteName());
             $view->with(compact('title'));
         });
-        
+
     }
 }

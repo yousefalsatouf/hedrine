@@ -26,11 +26,12 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {   
+    {
         $posts = Post::all();
         $herbs = Herb::all();
         $drugs = Drug::all();
         $targets= Target::all();
+
         return view('dashboard/dashboard',compact('posts', 'herbs','drugs', 'targets'));
     }
 }
