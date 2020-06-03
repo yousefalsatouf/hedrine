@@ -33,19 +33,41 @@
 					</thead>
 					<tbody>
 						@foreach ($herbs as $herb)
+						<!-- 
+							Les variables $lastHerb et $numberOfTimes_herbForms ont été déclrée dans le controleur Herb methode indes
+							la $numberOfTimes_herbForms sert à compter le nombre de qu'on a une differente forme de plande pour plant x
+							La $lastHerbe y est stockée l'ID de la dernier herb.
+							On verifie si l'ID stocké dans $lastHerb est different de l'Herb recu à chaque boucle, si oui on reinitialise 
+							$numberOfTimes_herbForms pour qu'il se reincrémente au tant de fois qu'on a une nouvelle forme de plante
+						-->
+							@php
+								if($lastHerb != $herb->id )
+									$lastHerb = $herb->id;
+									$numberOfTimes_herbForms = 0;
+							@endphp
 							<tr>
 								<td>
+
 									<a href="{{route('herbs.details', $herb->id)}} " class="add_style" ><strong>{{$herb->name}}</strong></a>
 								</td>
 
 								<td>{{$herb->sciname}}</td>
-								
+									
 								<td>
 									@foreach ($herb->herb_forms as $herb_form)
-										@if(count ($herb->herb_forms ) == 0)
-											{{ $herb_form->name }}
+									<!-- START COMMENT tant que l' Herb ne change $numberOfTimes_herbForms continue à incrémenté au tant de fois q'il des forme herb pour l'Herb Y -->
+										@php
+											$numberOfTimes_herbForms++; 
+										@endphp
+									<!-- END COMMENT -->
+									
+									<!-- START COMMENT on verifie que le nombre de forme herb de Herb Y soit inférieur à 1 et que la $numberOfTimes_herbForms qui s'incremente à cahque nouvelle forme herb de l'Herb Y soit inférieur au nombre de forme herb de l'Herb Y
+									 et on affiche les noms de la forme herb de l'Herb Y plus "-" sinon on affiche juste les noms de la forme herb de l'Herb Y
+									-->
+										@if(count ($herb->herb_forms) > 1 && $numberOfTimes_herbForms < count ($herb->herb_forms) )
+											{{$herb_form->name}} -
 										@else
-											{{ $herb_form->name }} 
+											{{ $herb_form->name }}
 										@endif
 									@endforeach
 								</td>

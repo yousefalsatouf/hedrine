@@ -10,6 +10,7 @@ use App\HerbHasForm;
 use App\Drug;
 use App\Hinteraction;
 use App\Target;
+use APP\HerbForm;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\VarDumper\VarDumper;
 
@@ -22,31 +23,13 @@ class HerbController extends Controller
      */
     public function index()
     {
-
-    
-
-        // //$herbs = Herb::all();
-        // $posts = Post::all();
-        // $drugs = Drug::all();
-        // $targets = Target::all();
-        // $herbs = Herb::with('herb_forms')->get(); //DD permet d'ajouter la relation avec la table herb_forms
-
-        /* foreach ($herbs as $herb) 
-        {
-            echo "<pre>";
-            echo $herb->name;
-            echo $herb->sciname;
-            echo $herb->herb_forms;
-            echo "</pre>";
-        } */
-
-    
-
-        // dd($herbs);
-    
+        $numberOfTimes_herbForms = 0;
+        $lastHerb = 0;
+        
+        //dd($herb_forms);
         
         //on retourne le résultat dans une view nommée index, la vue se trouve dans la dossier herbs
-        return view('herbs/index');
+        return view('herbs/index', compact('numberOfTimes_herbForms', 'lastHerb'));
     }
 
     /**
@@ -65,7 +48,7 @@ class HerbController extends Controller
         
         $herb = Herb::with('hinteractions.herbs','hinteractions.effects','hinteractions.targets')->findOrFail($id);
         
-          //dd($herb);
+          dd($herb);
         return view("herbs/details",compact('herb'));
         
     }

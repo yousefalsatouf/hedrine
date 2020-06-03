@@ -33,9 +33,30 @@ class HerbHasFormSeeder extends Seeder
             
         ]);
         HerbHasForm::create([
+            'herb_id' => '4',
+            'herb_form_id' => 2
+            
+        ]);
+        HerbHasForm::create([
             'herb_id' => '5',
             'herb_form_id' => 3
             
         ]);
+        HerbHasForm::create([
+            'herb_id' => '6',
+            'herb_form_id' => 2
+            
+        ]);
+        HerbHasForm::create([
+            'herb_id' => '6',
+            'herb_form_id' => 1
+        ]);
+
+        HerbHasForm::create([
+            'herb_id' => '6',
+            'herb_form_id' => 3
+        ]);
+       
+        
     }
 }
