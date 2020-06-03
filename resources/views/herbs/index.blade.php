@@ -34,6 +34,8 @@
 					<tbody>
 						@foreach ($herbs as $herb)
 						<!-- 
+							START COMMENT 
+
 							Les variables $lastHerb et $numberOfTimes_herbForms ont été déclrée dans le controleur Herb methode indes
 							la $numberOfTimes_herbForms sert à compter le nombre de qu'on a une differente forme de plande pour plant x
 							La $lastHerbe y est stockée l'ID de la dernier herb.
@@ -45,6 +47,7 @@
 									$lastHerb = $herb->id;
 									$numberOfTimes_herbForms = 0;
 							@endphp
+						<!-- END COMMENT -->
 							<tr>
 								<td>
 
@@ -61,8 +64,9 @@
 										@endphp
 									<!-- END COMMENT -->
 									
-									<!-- START COMMENT on verifie que le nombre de forme herb de Herb Y soit inférieur à 1 et que la $numberOfTimes_herbForms qui s'incremente à cahque nouvelle forme herb de l'Herb Y soit inférieur au nombre de forme herb de l'Herb Y
-									 et on affiche les noms de la forme herb de l'Herb Y plus "-" sinon on affiche juste les noms de la forme herb de l'Herb Y
+									<!-- START COMMENT 
+										On verifie que le nombre de forme herb de Herb Y soit inférieur à 1 et que la $numberOfTimes_herbForms qui s'incremente à cahque nouvelle forme herb de l'Herb Y soit inférieur au nombre de forme herb de l'Herb Y
+										 et on affiche les noms de la forme herb de l'Herb Y plus "-" sinon on affiche juste les noms de la forme herb de l'Herb Y
 									-->
 										@if(count ($herb->herb_forms) > 1 && $numberOfTimes_herbForms < count ($herb->herb_forms) )
 											{{$herb_form->name}} -
