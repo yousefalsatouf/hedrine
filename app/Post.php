@@ -7,15 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     protected $fillable = [
-        'title', 'body','user_id'
+        'title', 'body','user_id','important','updated_at','created_at'
     ];
 
-    public $timestamps = false;
+    public $timestamps = true;
 
     public function users()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    
+
 }

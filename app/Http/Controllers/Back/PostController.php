@@ -19,7 +19,7 @@ class PostController extends Controller
      */
     public function index()
     {
-       
+
         return view('admin.postes.index');
     }
 
@@ -46,6 +46,7 @@ class PostController extends Controller
         $post->user_id = Auth::user()->id;
         $post->title = $request->title;
         $post->body = $request->body;
+        $post->important = ( !$request->has('important') == '1' ? '0' : '1');
         $post->save();
         Alert::success('Ok !', 'Nouveau poste ajouté avec succès');
 
@@ -58,7 +59,7 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    
+
     public function show($id)
     {
     }
@@ -83,7 +84,9 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
+        $post->timestamps = false;
         $post->update($request->all());
+
         Alert::success('Ok !', 'Votre poste a étè mis à jour avec succès');
 
         return back();
@@ -106,7 +109,7 @@ class PostController extends Controller
 
         return view('admin.postes.destroy', ['post' => $post]);
     }
-  
+
     public function details($id)
     {
         $post = Post::findOrFail($id);

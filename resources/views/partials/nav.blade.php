@@ -11,82 +11,91 @@
             </a>
         </li>
     </ul>
-    
+
     <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-        <!-- Messages Dropdown Menu -->
-        <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#">
-                <i class="far fa-comments fa-2x"></i>
-                <span class="badge badge-danger navbar-badge" style="font-size: 15.5px">
-                    {{ $posts->count() }}
-                </span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                @foreach($posts as $post)
-                    @if ($post->important == 1)
+
+        <ul class="navbar-nav ml-auto">
+            <!-- Messages Dropdown Menu -->
+            <li class="nav-item dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="#">
+                    <i class="far fa-comments fa-2x"></i>
+                    <span class="badge badge-danger navbar-badge" style="font-size: 15.5px">
+                        {{ $posts->count() }}
+                    </span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    @foreach($posts as $post)
+
+                            <a href="#" class="dropdown-item">
+                                <!-- Message Start (les potes) -->
+                                <div class="media">
+                                    <div class="media-body @if ($post->important == 1)
+                                        important
+                                    @endif">
+                                        <h3 class="dropdown-item-title">
+                                            <b>{{ $post->title }}</b>
+                                            @if ($post->important == 1)
+                                                <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                                            @endif
+                                        </h3>
+                                        <p class="text-sm">{{ Str::limit($post->body, 35) }}</p>
+                                        <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>
+                                            {{ \Carbon\Carbon::parse($post->created_at)->diffForHumans() }}</p>
+                                        <div class="dropdown-divider"></div>
+                                    </div>
+                                </div>
+                                <!-- Message End -->
+                            </a>
+
+                    @endforeach
+                    <div class="dropdown-divider"></div>
+                    <a href="{{ route('post.index') }}" class="dropdown-item dropdown-footer">See All New Posts</a>
+                </div>
+            </li>
+        </ul>
+
+    <!-- Right navbar links  -->
+    @if ((auth()->user()->role_id == 1 )||(auth()->user()->role_id == 2 ))
+         <ul class="navbar-nav ml-auto">
+            <!-- Messages Dropdown Menu -->
+            <li class="nav-item dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="#">
+                    <i class="far fa-bell fa-2x"></i>
+                    <span class="badge badge-danger navbar-badge" style="font-size: 15.5px">
+                        {{ $postsToValidate->count() }}
+                    </span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    @foreach($postsToValidate as $post)
                         <a href="#" class="dropdown-item">
                             <!-- Message Start (les potes) -->
-                            <div class="media">
-                                <div class="media-body">
-                                    <h3 class="dropdown-item-title">
-                                        <b>{{ $post->title }}</b>
-                                        <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                                    </h3>
-                                    <p class="text-sm">{{ Str::limit($post->body, 35) }}</p>
-                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>
-                                        {{ \Carbon\Carbon::parse($post->created_at)->diffForHumans() }}</p>
-                                    <div class="dropdown-divider"></div>
+
+                                <div class="media">
+                                    <div class="media-body">
+                                        <h3 class="dropdown-item-title">
+                                            <b>{{ $post->title }}</b>
+
+                                        </h3>
+                                        <p class="text-sm">{{ Str::limit($post->body, 35) }}</p>
+                                        <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>
+                                            {{ \Carbon\Carbon::parse($post->created_at)->diffForHumans() }}
+                                            <span class="float-right text-sm text-danger">by {{ $post->users->name}}</span>
+                                        </p>
+
+                                        <div class="dropdown-divider"></div>
+                                    </div>
                                 </div>
-                            </div>
+
                             <!-- Message End -->
                         </a>
-                    @endif
-                @endforeach
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item dropdown-footer">See All New Posts</a>
-            </div>
-        </li>
-    </ul>
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-        <!-- Messages Dropdown Menu -->
-        <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#">
-                <i class="far fa-comments fa-2x"></i>
-                <span class="badge badge-danger navbar-badge" style="font-size: 15.5px">
-                    {{ $posts->count() }}
-                </span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                @foreach($posts as $post)
-                    <a href="#" class="dropdown-item">
-                        <!-- Message Start (les potes) -->
-                           @if ($post->user_id == 1)
-                            <div class="media">
-                                <div class="media-body">
-                                    <h3 class="dropdown-item-title">
-                                        <b>{{ $post->title }}</b>
-                                       
-                                    </h3>
-                                    <p class="text-sm">{{ Str::limit($post->body, 35) }}</p>
-                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>
-                                        {{ \Carbon\Carbon::parse($post->created_at)->diffForHumans() }}
-                                        <span class="float-right text-sm text-danger">by {{ $post->users->name}}</span>
-                                    </p>
-                                        
-                                    <div class="dropdown-divider"></div>
-                                </div>
-                            </div>
-                           @endif
-                        <!-- Message End -->
-                    </a>
-                @endforeach
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item dropdown-footer">See All New Posts</a>
-            </div>
-        </li>
-    </ul>
+                    @endforeach
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item dropdown-footer">See All New Posts</a>
+                </div>
+            </li>
+        </ul>
+    @endif
+
 
     <ul class="navbar-nav ml-auto">
         <li class="nav-item d-sm-inline-block">
