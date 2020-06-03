@@ -52,7 +52,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('targets',Target::all());
         });
 
-        view()->share('postsToValidate', Post::where('created_at','!=', 'updated_at')->get());
+        view()->share('postsToValidate', Post::whereColumn('created_at','!=', 'updated_at')->get());
 
         View::composer('*', function($view) {
 
@@ -78,7 +78,7 @@ class AppServiceProvider extends ServiceProvider
 
             $view->with('herb_forms',HerbForm::all());
         });
-        
+
 
         View::composer('layouts.master_dashboard', function ($view) {
             $title = config('titles.' . Route::currentRouteName());

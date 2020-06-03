@@ -67,7 +67,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     @foreach($postsToValidate as $post)
-                        <a href="#" class="dropdown-item">
+                        <a href="{{ route('post.validate',$post->id) }}" class="dropdown-item">
                             <!-- Message Start (les potes) -->
 
                                 <div class="media">
@@ -78,7 +78,7 @@
                                         </h3>
                                         <p class="text-sm">{{ Str::limit($post->body, 35) }}</p>
                                         <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>
-                                            {{ \Carbon\Carbon::parse($post->created_at)->diffForHumans() }}
+                                            {{ \Carbon\Carbon::parse($post->updated_at)->diffForHumans() }}
                                             <span class="float-right text-sm text-danger">by {{ $post->users->name}}</span>
                                         </p>
 

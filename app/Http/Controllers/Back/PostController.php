@@ -84,12 +84,12 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        $post->timestamps = false;
+        $post->updated_at->now();
         $post->update($request->all());
 
         Alert::success('Ok !', 'Votre poste a étè mis à jour avec succès');
 
-        return back();
+        return redirect(route('post.index'));
     }
 
     /**
@@ -108,6 +108,11 @@ class PostController extends Controller
     public function alert(Post $post) {
 
         return view('admin.postes.destroy', ['post' => $post]);
+    }
+
+    public function validpost($id){
+        $postTovalid = Post::findOrFail($id);
+        return view('admin.postes.valid_form',$postTovalid);
     }
 
     public function details($id)
