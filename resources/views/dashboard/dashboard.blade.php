@@ -1,12 +1,12 @@
-@include('../partials/header')
+@include('partials/header')
 <body class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">
     <!-- Navbar -->
-    @include('../partials/nav')
+    @include('partials/nav')
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    @include('/partials/sidebar')
+    @include('partials/sidebar')
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -52,6 +52,9 @@
         </div>
         <!-- /.container-fluid -->
       </div>
+
+
     <!-- /.content-header -->
 @include('../partials/footer')
-
+  
+ 
