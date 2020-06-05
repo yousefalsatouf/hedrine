@@ -2,13 +2,13 @@
 @section('content_dashboard')
 
 <div class="container">
-    
+
 	<h2 style="color: #e32;font-family: 'Gill Sans','lucida grande', helvetica, arial, sans-serif;">Plante</h2>
 	<br>
     <dl class="row" style="background: #f4f4f4">
 		<dt class="col-sm-2" >Nom</dt>
 		<dd class="col-sm-3"> {{ $herb->name }}</dd>
-			
+
 	</dl>
 	<dl class="row">
 		<dt class="col-sm-2" >Nom scientifique</dt>
@@ -18,7 +18,7 @@
 
 	<div class="row">
 		<div class="col-md-4 ">
-			<h3 style="color: #777;font-family: 'Gill Sans','lucida grande', helvetica, arial, sans-serif;font-size: 160%;font-weight: bold">Intensité d'interaction</h3>
+			<h3 style="color: #777;font-family: 'Gill Sans','lucida grande', helvetica, arial, sans-serif;font-size: 160%;font-weight: bold">Intensité d interaction</h3>
 			<div class="table-responsive-sm">
 				<table class="table table-bordered table-hover table-sm text-center">
 					<tbody>
@@ -44,8 +44,8 @@
 	</div>
 	<br>
 
-   
-	
+
+
 		<div class="col-12">
 			<h3 style="color: #2c6877;">Mécanisme impliqués</h3>
 			<br>
@@ -96,7 +96,7 @@
 											@endif">
 
 												{{$hinteraction->forces->name}}
-															
+
 										</td>
 										<td class="
 											@if($hinteraction->forces->color == "rouge")
@@ -124,22 +124,22 @@
 												@elseif($hinteraction->forces->color == "mauve")
 													inconnue
 											@endif">
-											<a href=""> 
+											<a href="">
 												{{$reference->year}} , {{$reference->edition}};<br>
 											</a>
-											<a href=" {{$reference->url}} "> 
+											<a href=" {{$reference->url}} ">
 												<i class="fas fa-globe-europe"></i>
-											</a>		
+											</a>
 										</td>
-									</tr> 
+									</tr>
 								@endforeach
-							@endforeach  
+							@endforeach
 						@endforeach
 					</tbody>
 				</table>
 			</div>
 		</div>
-  
+
 @endsection
 
 @section('dashboard-js')
@@ -154,7 +154,7 @@
 		"info": false,
 		"autoWidth": true,
 		"responsive": true,
-		"language": 
+		"language":
 		{
 			"url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
         }

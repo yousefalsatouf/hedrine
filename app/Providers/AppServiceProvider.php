@@ -37,7 +37,9 @@ class AppServiceProvider extends ServiceProvider
     {
         View::composer('*', function($view) {
 
-            $view->with('posts',Post::orderBy('important','desc')->Take(20)->get());
+            $view->with('posts',Post::orderBy('important','desc')
+             ->orderBy('created_at','desc')
+            ->Take(20)->get());
         });
         View::composer('*', function($view) {
 
@@ -52,7 +54,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('targets',Target::all());
         });
 
-        view()->share('postsToValidate', Post::whereColumn('created_at','!=', 'updated_at')->get());
+        view()->share('postsToValidate', Post::whereColumn('created_at','!=', 'updated_at')->orderBy('updated_at','desc')->get());
 
         View::composer('*', function($view) {
 

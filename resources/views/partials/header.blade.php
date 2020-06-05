@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -11,7 +9,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>ULB | Hedrinen</title>
-    
+
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Ionicons -->
@@ -36,10 +34,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('/adminlte/css/adminlte.min.css')}}">
-    
+
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="{{ asset('/adminlte/css/style.css')}}">
     <link rel="stylesheet" href="{{ asset('/css/hedrine.css')}}">
     @yield('css')

@@ -130,6 +130,10 @@
                 <i class="left fas fa-sign-out-alt"></i>
                 logout
             </a>
+            <a class="dropdown-item" href="">
+                <i style="color: red" class="left fas fa-times-circle"></i>
+                désinscription
+            </a>
         </div>
     </div>
 </nav>

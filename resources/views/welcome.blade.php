@@ -7,12 +7,12 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/hedrine.css') }}">
-        <title>Page d'acceuil</title>
+        <title>Page d acceuil</title>
         @include('cookieConsent::index')
     </head>
     <body>
         <header>
-           
+
         </header>
         <div class="container-fluid mb-3">
            <div class="text-center">
@@ -26,8 +26,8 @@
         <div class="container-fluid">
             <div class="container">
                 <h5>
-                    
-                    HEDRINE recense les études cliniques et cas rapportés (case reports) d'interactions entre des plantes médicinales
+
+                    HEDRINE recense les études cliniques et cas rapportés (case reports) d interactions entre des plantes médicinales
                     et des médicaments allopathiques. Figurent également des interactions potentielles via des mécanismes
                     pharmacodynamiques ou pharmacocinétiques.
                 </h5>
@@ -63,7 +63,7 @@
                             Accès
                         </h4>
                         <p>
-                            Site hébergé par l'Université Libre de Bruxelles.
+                            Site hébergé par l Université Libre de Bruxelles.
                             Accés limité aux professionnels de santé.
                         </p>
                         <p>
@@ -72,30 +72,31 @@
                     </article>
 
                     <article class="col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
-                        
-                        <div class="row text-center">
-                          
-                            <div class='col-lg-3'>
+
+                        <div class="row">
+
+                            <div class='col-6 col-sm-6 col-md-6 col-lg-6'>
                               <div class="btn-group buttons"><a href="login"><button type="button" class="btn btn-success btn-lg"id="target1">Connexion</button></a></div>
                             </div>
-                            <div class='col-lg-3'>
+                            <div class='col-6 col-sm-6 col-md-6 col-lg-6'>
                               <div class="btn-group buttons"><a href="register"><button type="button" class="btn btn-success btn-lg">S'enregistrer</button></a></div>
                             </div>
-                            
-                          </div>
+
+                        </div>
+                        <br>
                     </article>
                 </div>
             </div>
         </div>
-        
+
 
         <footer class="bg-info container-fluid d-inline-block footer">
            <div class="container" id="footerDiv">
                <div class="row" id="test">
-                   <div class="col-6 align-middle">
+                   <div class="col-12 col-sm-6 col-md-6 align-middle">
                        <a class="navbar-brand" href="#" style="color: white">Hedrine : Herb Drug Interaction Database brand</a>
                     </div>
-                    <div class="col-6 align-middle" id="test">
+                    <div class="col-9 col-sm-6 col-md-6 align-middle" id="test">
                         <ul class="nav justify-content-end align-middle" id="icon">
                             <li nav-item><img src="{{asset('images/Plant-icon_32.png')}}" alt="plantes"></li>
                             <li>{{$herbs->count()}}</li>&nbsp; &nbsp;
@@ -111,6 +112,6 @@
            </div>
         </footer>
         @include('sweetalert::alert')
-       
+
     </body>
 </html>

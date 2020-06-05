@@ -9,6 +9,15 @@ class AdminController extends Controller
 {
     public function index(Request $request) {
 
-        return view('admin.layout');
+        $notifications = $request->user()->unreadNotifications()->get();
+        $newHerbs = 0;
+
+        foreach($notifications as $notification) {
+            if($notification->type === 'App\Notifications\NewHerb') {
+                ++$newHerbs;
+            }
+        }
+
+        return view('dashboard/dashboard',compact('notifications','newHerbs'));
     }
 }
