@@ -8,10 +8,14 @@ use App\Http\Requests\HerbRequest;
 use App\Drug;
 use App\Herb;
 use App\Target;
+use App\User;
+use App\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\DB;
+use App\Notifications\NewHerb as NewHerbNotification;
+use Illuminate\Support\Facades\Mail;
 
 
 class HerbController extends Controller
@@ -34,7 +38,7 @@ class HerbController extends Controller
      */
     public function create()
     {
-        
+
         return view('admin.herbs.form_add_herb');
     }
 
@@ -52,7 +56,16 @@ class HerbController extends Controller
         $herb->name = $request->name;
         $herb->sciname = $request->sciname;
         $herb->save();
+
         Alert::success('Ok !', 'Nouvelle plante ajouté avec succès');
+
+        $adminusers = User::with('roles')->where('role_id','1')->get();
+        //dd($adminusers);
+        foreach($adminusers as $adm) {
+            //Mail::to($adm)->send(new NewHerb($herb, $user));
+            $adm->notify(new NewHerbNotification($herb));
+
+        }
 
         return back();
     }
@@ -63,7 +76,7 @@ class HerbController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    
+
     public function show($id)
     {
     }
@@ -111,7 +124,7 @@ class HerbController extends Controller
 
         return view('admin.herbs.destroy', ['herb' => $herb]);
     }
-  
+
     public function details($id)
     {
         $herb = Herb::findOrFail($id);

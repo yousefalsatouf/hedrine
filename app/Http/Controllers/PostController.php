@@ -21,7 +21,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        
+
         return view('layouts/master_dashboard');
     }
 
@@ -32,7 +32,7 @@ class PostController extends Controller
      */
     public function show_form()
     {
-       
+
         return view('admin/postes/form_add_post');
     }
 
@@ -54,10 +54,10 @@ class PostController extends Controller
         $post->body = $request->body;
         $post->save();
 
-        
+
          Alert::success('Ok !', 'Nouveau poste ajouté avec succès');
-         
-        
+
+
         return redirect()->route('posts.show_form')->withSuccessMessage('Ajouter avec succes');
 
 

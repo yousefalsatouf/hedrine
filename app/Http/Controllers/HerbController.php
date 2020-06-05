@@ -25,9 +25,11 @@ class HerbController extends Controller
     {
         $numberOfTimes_herbForms = 0;
         $lastHerb = 0;
-        
+
+        //pour la notification solution temporaire
+
         //dd($herb_forms);
-        
+
         //on retourne le résultat dans une view nommée index, la vue se trouve dans la dossier herbs
         return view('herbs/index', compact('numberOfTimes_herbForms', 'lastHerb'));
     }
@@ -45,12 +47,11 @@ class HerbController extends Controller
     public function details($id)
     {
         //DD je récupère les informations de la plante (pas les effects et pas les références)
-        
+
         $herb = Herb::with('hinteractions.herbs','hinteractions.effects','hinteractions.targets')->findOrFail($id);
-        
-          dd($herb);
+
         return view("herbs/details",compact('herb'));
-        
+
     }
 
 
@@ -110,5 +111,5 @@ class HerbController extends Controller
         //
     }
 
-   
+
 }
