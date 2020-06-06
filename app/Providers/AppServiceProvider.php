@@ -54,7 +54,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('targets',Target::all());
         });
 
-        view()->share('postsToValidate', Post::whereColumn('created_at','!=', 'updated_at')->orderBy('updated_at','desc')->get());
+        // view()->share('postsToValidate', Post::whereColumn('created_at','!=', 'updated_at')->orderBy('updated_at','desc')->get());
 
         View::composer('*', function($view) {
 
