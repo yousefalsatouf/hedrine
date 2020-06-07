@@ -28,11 +28,22 @@ class HerbController extends Controller
         $numberOfTimes_herbForms = 0;
         $lastHerb = 0;
         //pour la notification solution temporaire
-
         //dd($herb_forms);
-
+        $herbs = Herb::all();
+        $herbsChar=array();
+        foreach (range('A', 'Z') as $char)
+        {
+            foreach ($herbs as $n)
+            {
+                if ($n->name[0] === $char)
+                {
+                    $herbsChar[]=$char;
+                }
+            }
+        }
+        $resultChars = array_unique($herbsChar);
         //on retourne le résultat dans une view nommée index, la vue se trouve dans la dossier herbs
-        return view('herbs/index', compact('numberOfTimes_herbForms', 'lastHerb'));
+        return view('herbs/index', compact('numberOfTimes_herbForms', 'lastHerb', 'resultChars'));
     }
 
     /**
@@ -57,10 +68,17 @@ class HerbController extends Controller
         $numberOfTimes_herbForms = 0;
         $lastHerb = 0;
         $herb =  Herb::orderBy('name')->where('name', 'LIKE', $char.'%')->get();
+        //this one used to add class on active char clicked
+        $herbCharClicked=Herb::where('name', 'LIKE', $char.'%')->get();
+        foreach($herbCharClicked as $char)
+        {
+            $herbChar=$char->name[0];
+        }
+        //dd($herbChar);
         //here just for test ...
         //dd($herbs);
 
-        return view('herbs/index', compact('herb', 'numberOfTimes_herbForms', 'lastHerb'));
+        return view('herbs/index', compact('herb', 'numberOfTimes_herbForms', 'lastHerb', 'herbChar'));
     }
 
     public function details($id)

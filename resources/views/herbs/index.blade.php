@@ -14,24 +14,21 @@
                                 {{--this condition is about changing color if all herbs is selected or just by char--}}
                                 @if(isset($herb))
                                     <a class="all nav-link listAlphabet" href="{{url('herb')}}">
-                                        {{--chars color changed to green, just for good looking ;-)--}}
                                         All
                                     </a>
                                 @else
                                     <a class="all nav-link listAlphabet active-char" href="{{url('herb')}}">
-                                        {{--chars color changed to green, just for good looking ;-)--}}
                                         <b>All</b>
                                     </a>
                                 @endif
                             </li>
-							@foreach (range('A', 'Z') as $char)
-								<li class="nav-item">
-                                        <a class="nav-link listAlphabet" href="{{url('herb/'.$char)}}">
-                                            {{--chars color changed to green, just for good looking ;-)--}}
-                                            {{ $char }}
-                                        </a>
-								</li>
-							@endforeach
+                            @foreach (range('A', 'Z') as $char)
+                                <li class="nav-item">
+                                    <a class="nav-link listAlphabet {{isset($herbChar) && $herbChar===$char?"active-char":""}}" href="{{url('herb/'.$char)}}">
+                                        {{ $char }}
+                                    </a>
+                                </li>
+                            @endforeach
 						</ul>
 					</h5>
 				</div>
@@ -68,7 +65,7 @@
 							<tr>
 								<td>
 
-									<a href="{{route('herbs.details', $herb->id)}} " class="add_style" ><strong>{{$herb->name}}</strong></a>
+									<a href="{{route('herbs.details', $herb->id)}} " class="add_style" ><strong class="text-success">{{$herb->name}}</strong></a>
 								</td>
 
 								<td>{{$herb->sciname}}</td>
@@ -108,9 +105,14 @@
         //this function is responsible for activating class on clicking on it the class called active-char
         //still work on it
         //start
-        $('.listAlphabet').on('click', function () {
-
+        $('.listAlphabet').on('click', function(e) {
+            //window.localStorage.setItem( 'active', 'active-char');
+            let ele = $(e.target);
+            //let className = JSON.parse( window.localStorage.getItem( 'active' ));
+            //console.log(className);
+            ele.addClass('active-char');
         });
+
         //end
 
 	  $('#example1').DataTable({
@@ -134,7 +136,6 @@
 	<script>
 		$(function() {
 			$(document).ready(function() {
-
 				$('#listerByAlphabetic thead tr').clone(true).appendTo( '#listerByAlphabetic thead' );
 				$('#listerByAlphabetic thead tr:eq(1) th').each( function (i) {
 					var title = $(this).text();
@@ -149,7 +150,6 @@
 						}
 					} );
 				} );
-
 				var table = $('#listerByAlphabetic').DataTable( {
 					orderCellsTop: true,
 					fixedHeader: true
