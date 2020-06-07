@@ -12,6 +12,8 @@ use App\Hinteraction;
 use App\Target;
 use APP\HerbForm;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\View\View;
 use Symfony\Component\VarDumper\VarDumper;
 
 class HerbController extends Controller
@@ -25,7 +27,6 @@ class HerbController extends Controller
     {
         $numberOfTimes_herbForms = 0;
         $lastHerb = 0;
-
         //pour la notification solution temporaire
 
         //dd($herb_forms);
@@ -42,6 +43,24 @@ class HerbController extends Controller
     public function create()
     {
         //
+    }
+
+    //create function to get data by char
+    //using this function i can get the char via a request and return data according the need ...
+    /**
+     * @param  string  $char
+     * @return Redirect
+     */
+
+    public function filterByChar($char)
+    {
+        $numberOfTimes_herbForms = 0;
+        $lastHerb = 0;
+        $herb =  Herb::orderBy('name')->where('name', 'LIKE', $char.'%')->get();
+        //here just for test ...
+        //dd($herbs);
+
+        return view('herbs/index', compact('herb', 'numberOfTimes_herbForms', 'lastHerb'));
     }
 
     public function details($id)
@@ -110,6 +129,7 @@ class HerbController extends Controller
     {
         //
     }
+
 
 
 }

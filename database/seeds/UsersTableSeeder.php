@@ -68,7 +68,7 @@ class UsersTableSeeder extends Seeder
             'tel2' => '',
             'email' => 'yousef.alsatouf94@gmail.com',
             'email_verified_at' => Carbon::now(),
-            'password' => bcrypt('passwordisnotcorrect'),
+            'password' => bcrypt('editor'),
             'is_active' => 1,
             'role_id' => 2,
         ]);

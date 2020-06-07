@@ -62,11 +62,12 @@
                 <a class="nav-link" data-toggle="dropdown" href="#">
                     <i class="far fa-bell fa-2x"></i>
                     <span class="badge badge-danger navbar-badge" style="font-size: 15.5px">
-                        {{ $postsToValidate->count() }}
+                        {{-- $postsToValidate->count() --}}
                     </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    @foreach($postsToValidate as $post)
+                    {{--
+                        @foreach($postsToValidate as $post)
                         <a href="{{ route('post.validate',$post->id) }}" class="dropdown-item">
                             <!-- Message Start (les potes) -->
 
@@ -89,6 +90,8 @@
                             <!-- Message End -->
                         </a>
                     @endforeach
+
+                    --}}
                     <div class="dropdown-divider"></div>
                     <a href="#" class="dropdown-item dropdown-footer">See All New Posts</a>
                 </div>

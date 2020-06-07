@@ -46,6 +46,12 @@ Route::get('/master', function () {
     return view("layouts/master_dashboard");
 });
 
+//Yousef for the filter searching
+
+//here is the url for the char searching ...
+Route::get('/herb/{char}', 'HerbController@filterByChar');
+
+
 //N.Thierry pour atteindre la page de herbe
 Route::get('/herb','HerbController@index')->name('herbs.index');
 Route::get('herb/details_plante/{id}','HerbController@details')->name('herbs.details');

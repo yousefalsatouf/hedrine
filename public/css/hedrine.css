@@ -1,6 +1,6 @@
 a.add_style {
 
-	color:#003d4c; 
+	color:#003d4c;
 	text-underline-position: below;
 	text-decoration: underline;
 
@@ -62,3 +62,10 @@ a.style_a {
 .faible {background:#EEE8AA;}
 .aucune {background:#CCFF99;}
 .inconnue {background:#FFCCFF;}
+
+.active-char
+{
+    color: green;
+    border-bottom: 1px solid green;
+    transform: scale(1.5);
+}
