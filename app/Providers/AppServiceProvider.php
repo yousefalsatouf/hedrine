@@ -82,7 +82,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
 
-        View::composer('layouts.master_dashboard', function ($view) {
+        View::composer('dashboard.layout', function ($view) {
             $title = config('titles.' . Route::currentRouteName());
             $view->with(compact('title'));
         });

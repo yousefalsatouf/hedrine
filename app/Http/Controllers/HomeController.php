@@ -27,11 +27,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        $herbs = Herb::all();
-        $drugs = Drug::all();
-        $targets= Target::all();
-
-        return view('dashboard/dashboard',compact('posts', 'herbs','drugs', 'targets'));
+        return view('dashboard.index');
     }
 }

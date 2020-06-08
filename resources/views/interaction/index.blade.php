@@ -1,4 +1,4 @@
-@extends('layouts.master_dashboard')
+@extends('dashboard.layout')
 
 <!-- @yield('content_title') créé dans la view master_dashboard.blade.php-->
 
@@ -13,7 +13,7 @@
 					<legend style="color: #e32; font-size: 160%; font-weight: bold" >Interactions...</legend>
 
 					<div class="form-row">
-                        
+
                         <div class="form-group col-md-4">
 							<label class="form-check-label"><strong><h5>Plante *</h5></strong></label>
 							<select id="" class="form-control">
@@ -40,7 +40,7 @@
 							</select>
 						</div>
 					</div>
-					
+
 					<div class="form-row">
                         <div class="form-group col-md-4">
 							<label class="form-check-label"><strong><h5>DCI</h5></strong></label>
@@ -102,7 +102,7 @@
 				<tr  style="background-color: #FFCC33">
 					<th>G2</th>
 				</tr>
-				<tr  style="background-color: #EEE8AA"> 
+				<tr  style="background-color: #EEE8AA">
 					<th>G1</th>
 				</tr>
 				<tr  style="background-color: #CCFF99">

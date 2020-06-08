@@ -6,7 +6,7 @@
         </li>
         <br />
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{ route('home') }}">
+            <a href="{{ route('home') }}" class="nav-link">
                 <img class="img-fluid" src="{{ asset('images/hedrine_petit.png') }}" alt="Logo Hedrine">
             </a>
         </li>
