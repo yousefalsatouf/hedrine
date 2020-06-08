@@ -10,7 +10,7 @@
 					<h5 class="card-title">
 						<ul id="chars" class="nav justify-content-center">
                             {{--these go to HerbController with new function called filterByChar--}}
-                            <CharsFilter></CharsFilter>
+                            {{--<CharsFilter></CharsFilter>--}}
                             <li class="nav-item">
                                 <a class="nav-link listAlphabet {{!isset($herbChar)?"active-char":""}}" href="{{url('herb')}}">
                                     A
