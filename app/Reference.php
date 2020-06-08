@@ -18,6 +18,6 @@ class Reference extends Model
 
     public function hinteractions()
     {
-        return $this->belongsToMany(Hinteraction::class);
+        return $this->belongsToMany(Hinteraction::class,'hinteraction_has_references','reference_id', 'id');
     }
 }

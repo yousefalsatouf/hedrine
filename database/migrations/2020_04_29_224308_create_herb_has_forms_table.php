@@ -20,8 +20,8 @@ class CreateHerbHasFormsTable extends Migration
             
             // Je relie la table references à la table references_has_dinteractions (table pivot) qui est elle même 
             // est reliée à la table dinteractions
-            $table->foreign('herb_id')->references('id')->on('herbs');
-            $table->foreign('herb_form_id')->references('id')->on('herb_forms');
+            $table->foreign('herb_id')->references('id')->on('herbs')->onDelete('cascade');
+            $table->foreign('herb_form_id')->references('id')->on('herb_forms')->onDelete('cascade');
             $table->timestamps();
         });
     }
