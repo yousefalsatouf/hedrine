@@ -43,7 +43,8 @@
 <!-- jQuery UI 1.11.4 -->
 <script src="{{ asset('/adminlte/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 
-
+ {{--this one is here after installing vue--}}
+ <script src="{{asset('js/app.js')}}"></script>
 
 <!-- DataTables -->
 <script src="{{ asset('/adminlte/plugins/datatables/jquery.dataTables.min.js')}}"></script>
