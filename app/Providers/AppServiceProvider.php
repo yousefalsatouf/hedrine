@@ -81,11 +81,6 @@ class AppServiceProvider extends ServiceProvider
             $view->with('herb_forms',HerbForm::all());
         });
 
-        Route::bind('herb', function ($value) {
-        return Herb::with('herb_forms')->find($value) ?? abort(404);
-        });
-
-
 
         View::composer('layouts.master_dashboard', function ($view) {
             $title = config('titles.' . Route::currentRouteName());
