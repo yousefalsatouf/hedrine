@@ -49,14 +49,14 @@
 									</div>
 									<div class="form-group">
 										<label for="notes">Notes du poste</label>
-										<textarea rows="10" cols="15" class="form-control" id="notes" name="notes" placeholder="Note du poste" required>{{ isset($post) ? $post->notes : ''}}</textarea>
+										<textarea rows="10" cols="15" class="form-control" id="notes" name="notes" placeholder="Note du poste" required>{{ isset($target) ? $target->notes : ''}}</textarea>
 									</div>
 									<div class="form-group">
 										<label for="target_type_id">Type target</label>
 										<select name="target_type_id" class="form-control">
 											<option></option>
 											@foreach ($target_types as $target_type)
-												<option value="{{$target_type->id}}">{{$target_type->name}}</option>
+												<option value=" {{$target_type->id}}" @if($target->target_type_id == $target_type->id) selected @endif>{{$target_type->name}}</option>
 											@endforeach
 										</select>
 									</div>
