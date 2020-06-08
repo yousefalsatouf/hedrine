@@ -11,7 +11,7 @@
 	<div class="card-body " style="background-color: #fff">
 		<table id="example1" class="table table-bordered table-hover table-sm">
 			<thead>
-				<tr>
+				<tr class="text-center">
 					<th> nom</th>
 					<th>Sciname</th>
 					<th>Formes de la plante</th>
@@ -32,7 +32,7 @@
 						$numberOfTimes_herbForms = 0;
 					@endphp
 							
-					<tr>
+					<tr class="text-center">
 						<td>
 							<a href="" class="add_style" ><strong>{{$herb->name}}</strong></a>
 						</td>
