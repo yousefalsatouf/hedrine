@@ -30,6 +30,7 @@ class HerbController extends Controller
         //pour la notification solution temporaire
         //dd($herb_forms);
         $herbs = Herb::all();
+        $herb =  Herb::orderBy('name')->where('name', 'LIKE', 'A%')->get();
         $herbsChar=array();
         foreach (range('A', 'Z') as $char)
         {
@@ -42,8 +43,9 @@ class HerbController extends Controller
             }
         }
         $resultChars = array_unique($herbsChar);
+        //dd($resultChars);
         //on retourne le résultat dans une view nommée index, la vue se trouve dans la dossier herbs
-        return view('herbs/index', compact('numberOfTimes_herbForms', 'lastHerb', 'resultChars'));
+        return view('herbs/index', compact('numberOfTimes_herbForms', 'lastHerb', 'resultChars', 'herb'));
     }
 
     /**

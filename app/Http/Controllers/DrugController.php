@@ -23,6 +23,7 @@ class DrugController extends Controller
     {
         // code added for the filter search chars
         $drugs = Drug::all();
+        $drug =  Drug::orderBy('name')->where('name', 'LIKE', 'A%')->get();
         $drugsChar=array();
         foreach (range('A', 'Z') as $char)
         {
@@ -36,7 +37,7 @@ class DrugController extends Controller
         }
         $resultChars = array_unique($drugsChar);
 
-       return view('drugs/index', compact('drugs', 'resultChars'));
+       return view('drugs/index', compact('drugs', 'resultChars', 'drug'));
     }
 
     //create function to get data by char

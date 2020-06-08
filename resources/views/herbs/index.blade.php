@@ -11,18 +11,11 @@
 						<ul class="nav justify-content-center">
                             {{--these go to HerbController with new function called filterByChar--}}
                             <li class="nav-item">
-                                {{--this condition is about changing color if all herbs is selected or just by char--}}
-                                @if(isset($herb))
-                                    <a class="all nav-link listAlphabet" href="{{url('herb')}}">
-                                        All
-                                    </a>
-                                @else
-                                    <a class="all nav-link listAlphabet active-char" href="{{url('herb')}}">
-                                        <b>All</b>
-                                    </a>
-                                @endif
+                                <a class="nav-link listAlphabet {{!isset($herbChar)?"active-char":""}}" href="{{url('herb')}}">
+                                    A
+                                </a>
                             </li>
-                            @foreach (range('A', 'Z') as $char)
+                            @foreach( range('B', 'Z') as $char)
                                 <li class="nav-item">
                                     <a class="nav-link listAlphabet {{isset($herbChar) && $herbChar===$char?"active-char":""}}" href="{{url('herb/'.$char)}}">
                                         {{ $char }}
