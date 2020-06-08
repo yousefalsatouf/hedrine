@@ -20,8 +20,8 @@ class CreateDinteractionHasReferencesTable extends Migration
             
             // Je relie la table references à la table references_has_dinteractions (table pivot) qui est elle même 
             // est reliée à la table dinteractions
-            $table->foreign('reference_id')->references('id')->on('references');
-            $table->foreign('dinteraction_id')->references('id')->on('dinteractions');
+            $table->foreign('reference_id')->references('id')->on('references')->onDelete('cascade');
+            $table->foreign('dinteraction_id')->references('id')->on('dinteractions')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -11,7 +11,7 @@
 	<div class="card-body " style="background-color: #fff">
 		<table id="example1" class="table table-bordered table-hover table-sm">
 			<thead>
-				<tr>
+				<tr class="text-center">
 					<th> Name</th>
 					<th>Long Name</th>
 					<th>Notes</th>
@@ -22,7 +22,7 @@
 			</thead>
 			<tbody>
 				@foreach ($targets as $target)
-				<tr>
+				<tr class="text-center">
 					<td>
 						<a href="" class="add_style" ><strong>{{$target->name}}</strong></a>
 					</td>
