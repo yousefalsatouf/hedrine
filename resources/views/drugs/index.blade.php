@@ -1,4 +1,4 @@
-@extends('layouts.master_dashboard')
+@extends('dashboard.layout')
 
 <!-- @yield('content_title') créé dans la view master_dashboard.blade.php-->
 @section('content_title')
@@ -11,14 +11,14 @@
 			<div class="card-body">
 				<h5 class="card-title">
 					<ul class="nav justify-content-center">
-						@foreach (range('A', 'Z') as $char) 
+						@foreach (range('A', 'Z') as $char)
 							<li class="nav-item">
 								<a class="nav-link listAlphabet" href="">
 									{{ $char }}
 								</a>
 							</li>
 						@endforeach
-					
+
 					</ul>
 				</h5>
 			</div>
@@ -52,7 +52,7 @@
 @section('dashboard-js')
 <script>
 	$(function () {
-	
+
 	  $('#example1').DataTable({
 		"paging": true,
 		"lengthChange": false,
@@ -61,7 +61,7 @@
 		"info": true,
 		"autoWidth": false,
 		"responsive": true,
-		"language": 
+		"language":
 		{
 			"url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
         }

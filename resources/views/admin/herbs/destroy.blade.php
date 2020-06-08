@@ -1,6 +1,6 @@
-@extends('layouts.master_dashboard')
+@extends('dashboard.layout')
 @section('content_dashboard')
-  <div class="container-fluid"> 
+  <div class="container-fluid">
     <form id="deleteproduct" action="{{ route('herb.destroy', $herb->id) }}" method="POST" style="display: none;">
       @csrf
       @method('DELETE')
@@ -12,7 +12,7 @@
             <h5 class="card-title text-center mb-3">Vous êtes sur le point de supprimer la plante "<strong>{{ $herb->title }}</strong>"</h5>
             <p class="card-text">
               <a class="btn btn-danger btn-lg btn-block" href="#" role="button"
-              onclick="event.preventDefault(); 
+              onclick="event.preventDefault();
               $('#deleteproduct').submit();"
               >Je confirme la suppression</a>
             </p>

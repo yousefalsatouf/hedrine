@@ -1,15 +1,15 @@
 
-@extends('layouts.master_dashboard')
+@extends('dashboard.layout')
 @section('content_dashboard')
 
 <div class="container">
-    
+
 	<h2 style="color: #e32;font-family: 'Gill Sans','lucida grande', helvetica, arial, sans-serif;">Mécanisme</h2>
 	<br>
     <dl class="row" style="background: #f4f4f4">
 		<dt class="col-sm-2" >Nom</dt>
 		<dd class="col-sm-3"> {{ $target->name }}</dd>
-			
+
 	</dl>
 	<dl class="row">
 		<dt class="col-sm-2" >Nom long</dt>
@@ -20,7 +20,7 @@
 		<dt class="col-sm-2" >Type de cible</dt>
 		 <dd class="col-sm-3"> {{ $target->targetype->description }} ({{ $target->targetype->name }})</dd>
 	</dl>
-	 
+
 	<dl class="row">
 		<dt class="col-sm-2" >Notes</dt>
 		 <dd class="col-sm-6"> {{ $target->notes }}</dd>
@@ -28,7 +28,7 @@
 	<br>
 	<div class="col-12">
 		<h3 style="color: #2c6877;">DCI concernées</h3>
-	
+
 		<div class="card-body table-responsive" style="background-color: #fff" >
 			<table id="dci_concern" class="display responsive " width="100%">
 				<thead>
@@ -54,22 +54,22 @@
 									<td >
 
 											{{$dinteraction->forces->name}}
-														
+
 									</td>
 									<td >
 											{{$dinteraction->notes}}
 									</td>
 									<td >
-										<a href=""> 
+										<a href="">
 											{{$reference->year}} , {{$reference->edition}};<br>
 										</a>
-										<a href=" {{$reference->url}} "> 
+										<a href=" {{$reference->url}} ">
 											<i class="fas fa-globe-europe"></i>
-										</a>		
+										</a>
 									</td>
-								</tr> 
+								</tr>
 							@endforeach
-						@endforeach  
+						@endforeach
 					@endforeach
 				</tbody>
 			</table>
@@ -103,22 +103,22 @@
 									<td >
 
 											{{$hinteraction->forces->name}}
-														
+
 									</td>
 									<td >
 											{{$hinteraction->notes}}
 									</td>
 									<td >
-										<a href=""> 
+										<a href="">
 											{{$reference->year}} , {{$reference->edition}};<br>
 										</a>
-										<a href=" {{$reference->url}} "> 
+										<a href=" {{$reference->url}} ">
 											<i class="fas fa-globe-europe"></i>
-										</a>		
+										</a>
 									</td>
-								</tr> 
+								</tr>
 							@endforeach
-						@endforeach  
+						@endforeach
 					@endforeach
 				</tbody>
 			</table>
@@ -139,7 +139,7 @@
 		"info": false,
 		"autoWidth": true,
 		"responsive": true,
-		"language": 
+		"language":
 		{
 			"url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
         }
@@ -156,7 +156,7 @@
 	"info": false,
 	"autoWidth": true,
 	"responsive": true,
-	"language": 
+	"language":
 	{
 		"url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
 	}

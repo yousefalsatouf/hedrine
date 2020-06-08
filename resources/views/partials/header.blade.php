@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<!--
-
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -8,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>ULB | Hedrinen</title>
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{ asset('/adminlte/plugins/fontawesome-free/css/all.min.css') }}">

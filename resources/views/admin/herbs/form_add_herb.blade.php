@@ -1,4 +1,4 @@
-@extends('layouts.master_dashboard')
+@extends('dashboard.layout')
 
 <!-- @yield('content_title') créé dans la view master_dashboard.blade.php-->
 
@@ -23,7 +23,7 @@
 						<div class="card card-success">
 							<div class="card-header">
 								<h3 class="card-title">
-									<strong> 
+									<strong>
 										@if(Route::currentRouteName() === 'herb.create')
 											Ajouter un nouvelle plante
 										@else
