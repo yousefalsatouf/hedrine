@@ -37,8 +37,8 @@
 							START COMMENT 
 
 							Les variables $lastHerb et $numberOfTimes_herbForms ont été déclrée dans le controleur Herb methode indes
-							la $numberOfTimes_herbForms sert à compter le nombre de qu'on a une differente forme de plande pour plant x
-							La $lastHerbe y est stockée l'ID de la dernier herb.
+							la numberOfTimes_herbForms sert à compter le nombre de qu'on a une differente forme de plande pour plant x
+							La lastHerbe y est stockée l'ID de la dernier herb.
 							On verifie si l'ID stocké dans $lastHerb est different de l'Herb recu à chaque boucle, si oui on reinitialise 
 							$numberOfTimes_herbForms pour qu'il se reincrémente au tant de fois qu'on a une nouvelle forme de plante
 						-->
@@ -47,7 +47,7 @@
 									$lastHerb = $herb->id;
 									$numberOfTimes_herbForms = 0;
 							@endphp
-						<!-- END COMMENT -->
+						
 							<tr>
 								<td>
 

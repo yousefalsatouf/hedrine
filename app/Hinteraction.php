@@ -30,7 +30,7 @@ class Hinteraction extends Model
 
     public function references()
     {
-        return $this->belongsToMany(Reference::class, 'hinteraction_has_references');
+        return $this->belongsToMany(Reference::class, 'hinteraction_has_references','hinteraction_id','id',);
     }
 
     public function herbs()
@@ -40,7 +40,7 @@ class Hinteraction extends Model
     }
     public function targets()
     {
-        return $this->belongsTo(Target::class,'target_id');
+        return $this->belongsTo(Target::class,'target_id','id');
 
     }
 

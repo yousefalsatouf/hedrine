@@ -20,8 +20,8 @@ class CreateHinteractionHasEffectsTable extends Migration
             
             // Je relie la table effects à la table effects_has_hinteractions (table pivot) qui est elle même 
             // est reliée à la table hinteractions
-            $table->foreign('effect_id')->references('id')->on('effects');
-            $table->foreign('hinteraction_id')->references('id')->on('hinteractions');
+            $table->foreign('effect_id')->references('id')->on('effects')->onDelete('cascade');
+            $table->foreign('hinteraction_id')->references('id')->on('hinteractions')->onDelete('cascade');
             $table->timestamps();
         });
     }

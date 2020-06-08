@@ -18,6 +18,8 @@
 
 <!-- Bootstrap 4 -->
 <script src="{{ asset('/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
 <!-- ChartJS -->
 <script src="{{ asset('/adminlte/plugins/chart.js/Chart.min.js') }}"></script>
@@ -60,6 +62,7 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('/adminlte/dist/js/demo.js') }}"></script>
+<script type="text/javascript" src="{{asset('js/custom.js') }}"></script>
  @yield('dashboard-js')
  @include('sweetalert::alert')
   @include('cookieConsent::index')

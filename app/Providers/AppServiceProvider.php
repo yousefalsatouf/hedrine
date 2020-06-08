@@ -54,7 +54,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('targets',Target::all());
         });
 
-        // view()->share('postsToValidate', Post::whereColumn('created_at','!=', 'updated_at')->orderBy('updated_at','desc')->get());
+        view()->share('postsToValidate', Post::whereColumn('created_at','!=', 'updated_at')->orderBy('updated_at','desc')->get());
 
         View::composer('*', function($view) {
 
@@ -80,6 +80,11 @@ class AppServiceProvider extends ServiceProvider
 
             $view->with('herb_forms',HerbForm::all());
         });
+
+        Route::bind('herb', function ($value) {
+        return Herb::with('herb_forms')->find($value) ?? abort(404);
+        });
+
 
 
         View::composer('layouts.master_dashboard', function ($view) {
