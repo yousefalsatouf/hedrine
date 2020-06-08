@@ -1,4 +1,4 @@
-@extends('layouts.master_dashboard')
+@extends('dashboard.layout')
 
 @section('content_dashboard')
 <div class="row justify-content-end" style="padding-bottom: 0.75rem">
@@ -11,7 +11,7 @@
 	<div class="card-body " style="background-color: #fff">
 		<table id="example1" class="table table-bordered table-hover table-sm">
 			<thead>
-				<tr>
+				<tr class="text-center">
 					<th> Name</th>
 					<th>Long Name</th>
 					<th>Notes</th>
@@ -22,7 +22,7 @@
 			</thead>
 			<tbody>
 				@foreach ($targets as $target)
-				<tr>
+				<tr class="text-center">
 					<td>
 						<a href="" class="add_style" ><strong>{{$target->name}}</strong></a>
 					</td>
@@ -43,7 +43,7 @@
 						&nbsp; &nbsp; &nbsp;<a class="btn btn-primary" href="" role="button"><i class="far fa-eye"></i>  View</a>  &nbsp; &nbsp;
 							<a class="btn btn-success" href="{{ route('target.edit',$target->id) }}" role="button"><i class="fas fa-edit"></i> Edit </a> &nbsp; &nbsp;
 							<a class="btn btn-danger" href="{{ route('target.destroy.alert',$target->id) }}" role="button"><i class="far fa-trash-alt"></i> Delete </a>
-							
+
 						</div>
 					</td>
 				</tr>
@@ -54,11 +54,11 @@
  </div>
 @endsection
 
-@section('dashboard-js') 
- 
+@section('dashboard-js')
+
 	<script>
 		$(function () {
-		
+
 		$('#example1').DataTable({
 			"paging": true,
 			"lengthChange": false,
@@ -67,7 +67,7 @@
 			"info": true,
 			"autoWidth": false,
 			"responsive": true,
-			"language": 
+			"language":
 			{
 				"url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
 			}

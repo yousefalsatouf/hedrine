@@ -20,8 +20,8 @@ class CreateDinteractionHasEffectsTable extends Migration
             
             // Je relie la table effects à la table effects_has_dinteractions (table pivot) qui est elle même 
             // est reliée à la table dinteractions
-            $table->foreign('effect_id')->references('id')->on('effects');
-            $table->foreign('dinteraction_id')->references('id')->on('dinteractions');
+            $table->foreign('effect_id')->references('id')->on('effects')->onDelete('cascade');
+            $table->foreign('dinteraction_id')->references('id')->on('dinteractions')->onDelete('cascade');
             $table->timestamps();
         });
     }
