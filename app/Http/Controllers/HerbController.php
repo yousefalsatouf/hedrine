@@ -60,7 +60,7 @@ class HerbController extends Controller
     //using this function i can get the char via a request and return data according the need ...
     /**
      * @param  string  $char
-     * @return Redirect
+     * @return View
      */
 
     public function filterByChar($char)
@@ -70,10 +70,7 @@ class HerbController extends Controller
         $herb =  Herb::orderBy('name')->where('name', 'LIKE', $char.'%')->get();
         //this one used to add class on active char clicked
         $herbCharClicked=Herb::where('name', 'LIKE', $char.'%')->get();
-        foreach($herbCharClicked as $char)
-        {
-            $herbChar=$char->name[0];
-        }
+        $herbChar= $char;
         //dd($herbChar);
         //here just for test ...
         //dd($herbs);
