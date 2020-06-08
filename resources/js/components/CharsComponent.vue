@@ -1,7 +1,5 @@
 <template>
-    <li>
-        hello
-    </li>
+
 </template>
 
 <script>

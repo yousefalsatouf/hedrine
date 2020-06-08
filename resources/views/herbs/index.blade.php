@@ -3,22 +3,21 @@
 	Plantes
 @endsection
 @section('content_dashboard')
-	<div class="row" id="listerByAlphabetic">
-    	<div class="col-12">
+	<div class="row" id="listerByAlphabetic" >
+    	<div class="col-12" >
         	<div class="card">
 				<div class="card-body">
 					<h5 class="card-title">
 						<ul id="chars" class="nav justify-content-center">
                             {{--these go to HerbController with new function called filterByChar--}}
-                            {{--<CharsFilter></CharsFilter>--}}
                             <li class="nav-item">
-                                <a class="nav-link listAlphabet {{!isset($herbChar)?"active-char":""}}" href="{{url('herb')}}">
+                                <a class="nav-link {{$disable?$disable:'listAlphabet active-char'}}" href="{{url('herb')}}">
                                     A
                                 </a>
                             </li>
                             @foreach( range('B', 'Z') as $char)
                                 <li class="nav-item">
-                                    <a class="nav-link listAlphabet {{isset($herbChar) && $herbChar===$char?"active-char":""}}" href="{{url('herb/'.$char)}}">
+                                    <a class="nav-link {{in_array($char, $resultChars)?'listAlphabet':'disabled-char'}} {{isset($herbChar) && $herbChar===$char?"active-char":""}}" href="{{url('herb/'.$char)}}">
                                         {{ $char }}
                                     </a>
                                 </li>
@@ -45,9 +44,15 @@
 							START COMMENT
 
 							Les variables $lastHerb et $numberOfTimes_herbForms ont été déclrée dans le controleur Herb methode indes
+<<<<<<< HEAD
 							la $numberOfTimes_herbForms sert à compter le nombre de qu'on a une differente forme de plande pour plant x
 							La $lastHerbe y est stockée l'ID de la dernier herb.
 							On verifie si l'ID stocké dans $lastHerb est different de l'Herb recu à chaque boucle, si oui on reinitialise
+=======
+							la numberOfTimes_herbForms sert à compter le nombre de qu'on a une differente forme de plande pour plant x
+							La lastHerbe y est stockée l'ID de la dernier herb.
+							On verifie si l'ID stocké dans $lastHerb est different de l'Herb recu à chaque boucle, si oui on reinitialise
+>>>>>>> 7afe6e39a9e9e75f9f91371a903b4d7bad774011
 							$numberOfTimes_herbForms pour qu'il se reincrémente au tant de fois qu'on a une nouvelle forme de plante
 						-->
 							@php
@@ -55,7 +60,7 @@
 									$lastHerb = $herb->id;
 									$numberOfTimes_herbForms = 0;
 							@endphp
-						<!-- END COMMENT -->
+
 							<tr>
 								<td>
 

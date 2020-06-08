@@ -49749,12 +49749,16 @@ __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
  //console.log(CharsFilter);
 
-/*window.onload = new Vue({
-    el: '#chars',
-    template: '<CharsFilter/>',
-    components: { CharsFilter }
+window.onload = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
+  //el: '#chars',
+  template: '<CharsFilter/>',
+  components: {
+    props: [{
+      name: 'chars',
+      "default": 0
+    }]
+  }
 });
-*/
 
 /***/ }),
 

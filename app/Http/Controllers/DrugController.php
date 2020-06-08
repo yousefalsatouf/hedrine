@@ -23,7 +23,7 @@ class DrugController extends Controller
     {
         // code added for the filter search chars
         $drugs = Drug::all();
-        $drug =  Drug::orderBy('name')->where('name', 'LIKE', 'A%')->get();
+        $drug =  Drug::orderBy('name')->where('name', 'LIKE', 'B%')->get();
         $drugsChar=array();
         foreach (range('A', 'Z') as $char)
         {
@@ -36,8 +36,9 @@ class DrugController extends Controller
             }
         }
         $resultChars = array_unique($drugsChar);
+        in_array('A', $resultChars)?$disable=null:$disable='disabled-char';
 
-       return view('drugs/index', compact('drugs', 'resultChars', 'drug'));
+        return view('drugs/index', compact('drugs', 'resultChars', 'drug', 'disable'));
     }
 
     //create function to get data by char
@@ -56,9 +57,25 @@ class DrugController extends Controller
         $drugCharClicked = Drug::where('name', 'LIKE', $char.'%')->get();
         //dd($drugCharClicked);
         $drugChar= $char;
+        $drugs = Drug::all();
+        $drugsChars=array();
+        foreach (range('A', 'Z') as $char)
+        {
+            foreach ($drugs as $n)
+            {
+                if ($n->name[0] === $char)
+                {
+                    $drugsChars[]=$char;
+                }
+            }
+        }
+        $resultChars = array_unique($drugsChars);
+        //dd($resultChars);
+        in_array('A', $resultChars)?$disable=null:$disable='disabled-char';
+        //dd($disable);
         //dd($drugChar);
 
-        return view('drugs/index', compact('drug', 'drugChar'));
+        return view('drugs/index', compact('drug', 'drugChar', 'disable', 'resultChars'));
     }
 
     /**

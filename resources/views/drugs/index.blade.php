@@ -13,13 +13,18 @@
                     <ul class="nav justify-content-center">
                         {{--these go to HerbController with new function called filterByChar--}}
                         <li class="nav-item">
-                            <a class="nav-link listAlphabet {{!isset($drugChar)?"active-char":""}}" href="{{url('drug')}}">
+                            <a class="nav-link {{$disable?$disable:'listAlphabet active-char'}}" href="{{url('drug')}}">
                                 A
                             </a>
                         </li>
-                        @foreach (range('B', 'Z') as $char)
+                        <li class="nav-item">
+                            <a class="nav-link {{isset($drugChar)&&$drugChar!=='B'?'listAlphabet':'active-char'}}" href="{{url('drug')}}">
+                                B
+                            </a>
+                        </li>
+                        @foreach (range('C', 'Z') as $char)
                             <li class="nav-item">
-                                <a class="nav-link listAlphabet {{isset($drugChar) && $drugChar===$char?"active-char":""}}" href="{{url('drug/'.$char)}}">
+                                <a class="nav-link {{in_array($char, $resultChars)?'listAlphabet':'disabled-char'}} {{isset($drugChar) && $drugChar===$char?"active-char":""}}" href="{{url('drug/'.$char)}}">
                                     {{ $char }}
                                 </a>
                             </li>

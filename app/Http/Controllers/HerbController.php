@@ -43,9 +43,10 @@ class HerbController extends Controller
             }
         }
         $resultChars = array_unique($herbsChar);
+        in_array('A', $resultChars)?$disable=null:$disable='disabled-char';
         //dd($resultChars);
         //on retourne le résultat dans une view nommée index, la vue se trouve dans la dossier herbs
-        return view('herbs/index', compact('numberOfTimes_herbForms', 'lastHerb', 'resultChars', 'herb'));
+        return view('herbs/index', compact('herbsChar', 'numberOfTimes_herbForms', 'lastHerb', 'resultChars', 'herb', 'disable'));
     }
 
     /**
@@ -76,8 +77,23 @@ class HerbController extends Controller
         //dd($herbChar);
         //here just for test ...
         //dd($herbs);
+        $herbs = Herb::all();
+        $herbsChars=array();
+        foreach (range('A', 'Z') as $char)
+        {
+            foreach ($herbs as $n)
+            {
+                if ($n->name[0] === $char)
+                {
+                    $herbsChars[]=$char;
+                }
+            }
+        }
+        $resultChars = array_unique($herbsChars);
+        //dd($resultChars);
+        in_array('A', $resultChars)?$disable=null:$disable='disabled-char';
 
-        return view('herbs/index', compact('herb', 'numberOfTimes_herbForms', 'lastHerb', 'herbChar'));
+        return view('herbs/index', compact('herb', 'numberOfTimes_herbForms', 'lastHerb', 'herbChar', 'disable', 'resultChars'));
     }
 
     public function details($id)

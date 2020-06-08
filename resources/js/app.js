@@ -6,9 +6,15 @@ import CharsFilter from './components/CharsComponent'
 
 //console.log(CharsFilter);
 
-/*window.onload = new Vue({
-    el: '#chars',
+window.onload = new Vue({
+    //el: '#chars',
     template: '<CharsFilter/>',
-    components: { CharsFilter }
+    components: {
+        props: [
+            {
+                name: 'chars',
+                default:0,
+            }
+        ]
+    }
 });
-*/

@@ -20,16 +20,14 @@ class Herb extends Model
 
     public function targets()
     {
-        return $this->belongsToMany(Target::class);
+        return $this->belongsToMany(Target::class, 'hinteractions');
     }
-
-   
 
     public function hinteractions()
     {
-        return $this->hasMany(Hinteraction::class);
+        return $this->hasMany(Hinteraction::class, 'herb_id', 'id');
     }
-    //Thierry Tester
+    //Thierry Tester 
 
 
 }

@@ -19,7 +19,7 @@ new style is added for the filter search ...
 }
 .disabled-char
 {
-    opacity: 50%;
+    opacity: 20%;
     cursor: not-allowed;
     color: black;
     font-weight: bold;
@@ -29,7 +29,7 @@ new style is added for the filter search ...
 {
     color: green;
     font-weight: bold;
-    transform: scale(1.3);
+    transform: scale(1.5);
 }
 
 .all

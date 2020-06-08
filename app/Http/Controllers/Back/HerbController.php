@@ -10,12 +10,14 @@ use App\Herb;
 use App\Target;
 use App\User;
 use App\Role;
+use App\HerbForm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\DB;
 use App\Notifications\NewHerb as NewHerbNotification;
 use Illuminate\Support\Facades\Mail;
+
 
 
 class HerbController extends Controller
@@ -26,9 +28,10 @@ class HerbController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    { $numberOfTimes_herbForms = 0;
+        $lastHerb = 0;
         $herbs = Herb::all();
-        return view('admin.herbs.index', compact('herbs'));
+        return view('admin.herbs.index', compact('herbs','numberOfTimes_herbForms','lastHerb'));
     }
 
     /**
@@ -38,7 +41,6 @@ class HerbController extends Controller
      */
     public function create()
     {
-
         return view('admin.herbs.form_add_herb');
     }
 
@@ -51,11 +53,15 @@ class HerbController extends Controller
     public function store(HerbRequest $request)
     {
         $herb = new Herb;
+       
 
         $herb->user_id = Auth::user()->id;
         $herb->name = $request->name;
         $herb->sciname = $request->sciname;
+        
+
         $herb->save();
+        $herb->herb_forms()->sync($request->forms, false);
 
         Alert::success('Ok !', 'Nouvelle plante ajouté avec succès');
 
@@ -89,7 +95,8 @@ class HerbController extends Controller
      */
     public function edit(Herb $herb)
     {
-        return view('admin.herbs.form_add_herb', ['herb' => $herb ]);
+       
+        return view('admin.herbs.form_add_herb', ['herb' => $herb]);
     }
 
     /**
@@ -101,7 +108,11 @@ class HerbController extends Controller
      */
     public function update(Request $request, Herb $herb)
     {
-        $herb->update($request->all());
+        $herb->name = $request->name;
+        $herb->sciname = $request->sciname;
+
+        $herb->save();
+        $herb->herb_forms()->sync($request->forms);
         Alert::success('Ok !', 'Votre plante a étè mis à jour avec succès');
 
         return back();
@@ -115,7 +126,8 @@ class HerbController extends Controller
      */
     public function destroy(Herb $herb)
     {
-        $herb->delete();
+       $herb->delete();
+        
         return redirect(route('herb.index'));
 
     }

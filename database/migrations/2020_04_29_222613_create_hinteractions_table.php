@@ -23,13 +23,13 @@ class CreateHinteractionsTable extends Migration
             $table->dateTime('validated')->nullable();
 
             //Relation un à plusieurs
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('force_id')->references('id')->on('forces');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('force_id')->references('id')->on('forces')->onDelete('cascade');
 
             // Relations plusieurs à plusieurs
             // Je relie la table herbs à la table hinteractions (table pivot) qui est elle même reliée à la table targets
-            $table->foreign('herb_id')->references('id')->on('herbs');
-            $table->foreign('target_id')->references('id')->on('targets');
+            $table->foreign('herb_id')->references('id')->on('herbs')->onDelete('cascade');
+            $table->foreign('target_id')->references('id')->on('targets')->onDelete('cascade');
             $table->timestamps();
         });
     }
