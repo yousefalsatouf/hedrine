@@ -13,7 +13,7 @@
                     <ul class="nav justify-content-center">
                         {{--these go to HerbController with new function called filterByChar--}}
                         <li class="nav-item">
-                            <a class="nav-link listAlphabet {{!isset($drugChar)?"active-char":""}}" href="{{url('herb')}}">
+                            <a class="nav-link listAlphabet {{!isset($drugChar)?"active-char":""}}" href="{{url('drug')}}">
                                 A
                             </a>
                         </li>
