@@ -40,6 +40,9 @@
 							la $numberOfTimes_herbForms sert à compter le nombre de qu'on a une differente forme de plande pour plant x
 							La $lastHerbe y est stockée l'ID de la dernier herb.
 							On verifie si l'ID stocké dans $lastHerb est different de l'Herb recu à chaque boucle, si oui on reinitialise
+							la numberOfTimes_herbForms sert à compter le nombre de qu'on a une differente forme de plande pour plant x
+							La lastHerbe y est stockée l'ID de la dernier herb.
+							On verifie si l'ID stocké dans $lastHerb est different de l'Herb recu à chaque boucle, si oui on reinitialise 
 							$numberOfTimes_herbForms pour qu'il se reincrémente au tant de fois qu'on a une nouvelle forme de plante
 						-->
 							@php
@@ -47,7 +50,7 @@
 									$lastHerb = $herb->id;
 									$numberOfTimes_herbForms = 0;
 							@endphp
-						<!-- END COMMENT -->
+						
 							<tr>
 								<td>
 
@@ -65,6 +68,9 @@
 									<!-- END COMMENT -->
 
 									<!-- START COMMENT
+									
+									
+									<!-- START COMMENT 
 										On verifie que le nombre de forme herb de Herb Y soit inférieur à 1 et que la $numberOfTimes_herbForms qui s'incremente à cahque nouvelle forme herb de l'Herb Y soit inférieur au nombre de forme herb de l'Herb Y
 										 et on affiche les noms de la forme herb de l'Herb Y plus "-" sinon on affiche juste les noms de la forme herb de l'Herb Y
 									-->

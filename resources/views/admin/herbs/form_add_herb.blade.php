@@ -1,3 +1,4 @@
+
 @extends('dashboard.layout')
 
 <!-- @yield('content_title') créé dans la view master_dashboard.blade.php-->
@@ -47,6 +48,20 @@
 										<label for="sciname">Sciname</label>
 										<input type="text" class="form-control" id="sciname" name="sciname" required placeholder="Nom du sciname" value="{{isset($herb) ? $herb->sciname : ''}}">
 									</div>
+									<div class="form-group">
+										<label for="herb_form">Formes d'une plante</label>
+									<select class="form-control herbForm" id="forms" name="forms[]" multiple >
+										@foreach ($herb_forms as $herb_form)
+											@if(Route::currentRouteName() === 'herb.create')
+						            		<option value="{{ $herb_form->id }}" {{ in_array($herb_form->id, old('forms') ?: []) ? 'selected' : '' }}>{{ $herb_form->name }}</option>
+						            		@else
+						            		<option value="{{ $herb_form->id }}" {{ in_array($herb_form->id, old('forms') ?: $herb->herb_forms->pluck('id')->toArray()) ? 'selected' : '' }}>{{ $herb_form->name }}
+						            		</option>
+						            		@endif
+						            	@endforeach
+        									
+ 									</select>
+									</div>
 								</div>
 								<!-- /.card-body -->
 								<div class="card-footer">
@@ -72,4 +87,7 @@
 		</div>
     </div>
 @endsection
+<script type="text/javascript">
+	
+</script>
 

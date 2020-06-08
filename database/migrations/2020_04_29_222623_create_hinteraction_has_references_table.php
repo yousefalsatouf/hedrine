@@ -20,8 +20,8 @@ class CreateHinteractionHasReferencesTable extends Migration
             
             // Je relie la table references à la table references_has_hinteractions (table pivot) qui est elle même 
             // est reliée à la table hinteractions
-            $table->foreign('reference_id')->references('id')->on('references');
-            $table->foreign('hinteraction_id')->references('id')->on('hinteractions');
+            $table->foreign('reference_id')->references('id')->on('references')->onDelete('cascade');
+            $table->foreign('hinteraction_id')->references('id')->on('hinteractions')->onDelete('cascade');
             $table->timestamps();
         });
     }
