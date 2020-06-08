@@ -45,7 +45,7 @@
 								@php
 									$numberOfTimes_herbForms++; 
 								@endphp
-							<!-- END COMMENT -->
+							
 										
 							<!-- START COMMENT 
 							On verifie que le nombre de forme herb de Herb Y soit inférieur à 1 et que la $numberOfTimes_herbForms qui s'incremente à cahque nouvelle forme herb de l'Herb Y soit inférieur au nombre de forme herb de l'Herb Y
