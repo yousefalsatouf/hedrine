@@ -9,3 +9,38 @@ a.nav-link.active {
 .inconnue {background:#FFCCFF;}
 
 .important { background:#FEBFD2;}
+/*
+new style is added for the filter search ...
+*/
+.listAlphabet
+{
+    color: black;
+    font-weight: 600;
+}
+.disabled-char
+{
+    opacity: 20%;
+    cursor: not-allowed;
+    color: black;
+    font-weight: bold;
+}
+
+.listAlphabet:hover
+{
+    color: green;
+    font-weight: bold;
+    transform: scale(1.5);
+}
+
+.all
+{
+    margin-right: 2rem;
+}
+
+.active-char
+{
+    color: green;
+    font-weight: bold;
+    border-bottom: 1px solid green;
+    transform: scale(1.5);
+}

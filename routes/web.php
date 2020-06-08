@@ -46,6 +46,12 @@ Route::get('/master', function () {
     return view("layouts/master_dashboard");
 });
 
+//Yousef for the filter searching
+
+//here is the url for the char searching ...
+Route::get('/herb/{char}', 'HerbController@filterByChar');
+
+
 //N.Thierry pour atteindre la page de herbe
 Route::get('/herb','HerbController@index')->name('herbs.index');
 Route::get('herb/details_plante/{id}','HerbController@details')->name('herbs.details');
@@ -53,6 +59,10 @@ Route::get('herb/details_plante/{id}','HerbController@details')->name('herbs.det
 //N.Thierry pour atteindre la page de drugs
 Route::get('/drug','DrugController@index')->name('drugs.index');
 Route::get('drug/details_drug/{id}','DrugController@details')->name('drugs.details');
+//Yousef for the filter searching
+//here is the url for the char searching ...
+Route::get('/drug/{char}', 'DrugController@filterByChar');
+
 
 //N.Thierry pour atteindre la page de targets
 Route::get('/target','TargetController@index')->name('targets.index');

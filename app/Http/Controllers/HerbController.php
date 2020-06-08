@@ -12,6 +12,8 @@ use App\Hinteraction;
 use App\Target;
 use APP\HerbForm;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\View\View;
 use Symfony\Component\VarDumper\VarDumper;
 
 class HerbController extends Controller
@@ -25,13 +27,26 @@ class HerbController extends Controller
     {
         $numberOfTimes_herbForms = 0;
         $lastHerb = 0;
-
         //pour la notification solution temporaire
-
         //dd($herb_forms);
-
+        $herbs = Herb::all();
+        $herb =  Herb::orderBy('name')->where('name', 'LIKE', 'A%')->get();
+        $herbsChar=array();
+        foreach (range('A', 'Z') as $char)
+        {
+            foreach ($herbs as $n)
+            {
+                if ($n->name[0] === $char)
+                {
+                    $herbsChar[]=$char;
+                }
+            }
+        }
+        $resultChars = array_unique($herbsChar);
+        in_array('A', $resultChars)?$disable=null:$disable='disabled-char';
+        //dd($resultChars);
         //on retourne le résultat dans une view nommée index, la vue se trouve dans la dossier herbs
-        return view('herbs/index', compact('numberOfTimes_herbForms', 'lastHerb'));
+        return view('herbs/index', compact('herbsChar', 'numberOfTimes_herbForms', 'lastHerb', 'resultChars', 'herb', 'disable'));
     }
 
     /**
@@ -42,6 +57,43 @@ class HerbController extends Controller
     public function create()
     {
         //
+    }
+
+    //create function to get data by char
+    //using this function i can get the char via a request and return data according the need ...
+    /**
+     * @param  string  $char
+     * @return View
+     */
+
+    public function filterByChar($char)
+    {
+        $numberOfTimes_herbForms = 0;
+        $lastHerb = 0;
+        $herb =  Herb::orderBy('name')->where('name', 'LIKE', $char.'%')->get();
+        //this one used to add class on active char clicked
+        $herbCharClicked=Herb::where('name', 'LIKE', $char.'%')->get();
+        $herbChar= $char;
+        //dd($herbChar);
+        //here just for test ...
+        //dd($herbs);
+        $herbs = Herb::all();
+        $herbsChars=array();
+        foreach (range('A', 'Z') as $char)
+        {
+            foreach ($herbs as $n)
+            {
+                if ($n->name[0] === $char)
+                {
+                    $herbsChars[]=$char;
+                }
+            }
+        }
+        $resultChars = array_unique($herbsChars);
+        //dd($resultChars);
+        in_array('A', $resultChars)?$disable=null:$disable='disabled-char';
+
+        return view('herbs/index', compact('herb', 'numberOfTimes_herbForms', 'lastHerb', 'herbChar', 'disable', 'resultChars'));
     }
 
     public function details($id)
@@ -110,6 +162,7 @@ class HerbController extends Controller
     {
         //
     }
+
 
 
 }

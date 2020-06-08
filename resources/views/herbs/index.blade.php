@@ -3,19 +3,26 @@
 	Plantes
 @endsection
 @section('content_dashboard')
-	<div class="row" id="listerByAlphabetic">
-    	<div class="col-12">
+	<div class="row" id="listerByAlphabetic" >
+    	<div class="col-12" >
         	<div class="card">
 				<div class="card-body">
-					<h5 class="card-title">
-						<ul class="nav justify-content-center">
-							@foreach (range('A', 'Z') as $char)
-								<li class="nav-item">
-									<a class="nav-link listAlphabet" href="" onclick="document.getElementById('location.href='pageurl.html';').innerHTML=Date()">
-										{{ $char }}
-									</a>
-								</li>
-							@endforeach
+
+						<ul id="chars" class="nav justify-content-center">
+                            {{--these go to HerbController with new function called filterByChar--}}
+                            <li class="nav-item">
+                                <a class="nav-link {{$disable?$disable:'listAlphabet active-char'}}" href="{{url('herb')}}">
+                                    A
+                                </a>
+                            </li>
+                            @foreach( range('B', 'Z') as $char)
+                                <li class="nav-item">
+                                    <a class="nav-link {{in_array($char, $resultChars)?'listAlphabet':'disabled-char'}} {{isset($herbChar) && $herbChar===$char?"active-char":""}}" href="{{url('herb/'.$char)}}">
+                                        {{ $char }}
+                                    </a>
+                                </li>
+                            @endforeach
+
 						</ul>
 					</h5>
 				</div>
@@ -32,17 +39,19 @@
 						</tr>
 					</thead>
 					<tbody>
-						@foreach ($herbs as $herb)
+
+              {{--this foreach is changed according our need to display herbs by  filtering char --}}
+						@foreach (isset($herb)?$herb:$herbs as $herb)
+
 						<!--
 							START COMMENT
 
 							Les variables $lastHerb et $numberOfTimes_herbForms ont été déclrée dans le controleur Herb methode indes
-							la $numberOfTimes_herbForms sert à compter le nombre de qu'on a une differente forme de plande pour plant x
-							La $lastHerbe y est stockée l'ID de la dernier herb.
-							On verifie si l'ID stocké dans $lastHerb est different de l'Herb recu à chaque boucle, si oui on reinitialise
+
 							la numberOfTimes_herbForms sert à compter le nombre de qu'on a une differente forme de plande pour plant x
 							La lastHerbe y est stockée l'ID de la dernier herb.
-							On verifie si l'ID stocké dans $lastHerb est different de l'Herb recu à chaque boucle, si oui on reinitialise 
+							On verifie si l'ID stocké dans $lastHerb est different de l'Herb recu à chaque boucle, si oui on reinitialise
+
 							$numberOfTimes_herbForms pour qu'il se reincrémente au tant de fois qu'on a une nouvelle forme de plante
 						-->
 							@php
@@ -50,11 +59,11 @@
 									$lastHerb = $herb->id;
 									$numberOfTimes_herbForms = 0;
 							@endphp
-						
+
 							<tr>
 								<td>
 
-									<a href="{{route('herbs.details', $herb->id)}} " class="add_style" ><strong>{{$herb->name}}</strong></a>
+									<a href="{{route('herbs.details', $herb->id)}} " class="add_style" ><strong class="text-success">{{$herb->name}}</strong></a>
 								</td>
 
 								<td>{{$herb->sciname}}</td>
@@ -68,9 +77,6 @@
 									<!-- END COMMENT -->
 
 									<!-- START COMMENT
-									
-									
-									<!-- START COMMENT 
 										On verifie que le nombre de forme herb de Herb Y soit inférieur à 1 et que la $numberOfTimes_herbForms qui s'incremente à cahque nouvelle forme herb de l'Herb Y soit inférieur au nombre de forme herb de l'Herb Y
 										 et on affiche les noms de la forme herb de l'Herb Y plus "-" sinon on affiche juste les noms de la forme herb de l'Herb Y
 									-->
@@ -93,6 +99,21 @@
 @section('dashboard-js')
 <script>
 	$(function () {
+
+        //console.log('hello world');
+        //this function is responsible for activating class on clicking on it the class called active-char
+        //still work on it
+        //start
+        $('.listAlphabet').on('click', function(e) {
+            //window.localStorage.setItem( 'active', 'active-char');
+            let ele = $(e.target);
+            //let className = JSON.parse( window.localStorage.getItem( 'active' ));
+            //console.log(className);
+            ele.addClass('active-char');
+        });
+
+        //end
+
 
 	  $('#example1').DataTable({
 		"paging": true,

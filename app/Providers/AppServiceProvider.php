@@ -8,6 +8,7 @@ use App\DrugFamily;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Schema;
 
 use App\Post;
 use App\Reference;
@@ -35,50 +36,53 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('*', function($view) {
+        Schema::defaultStringLength(191);
 
-            $view->with('posts',Post::orderBy('important','desc')
-             ->orderBy('created_at','desc')
-            ->Take(20)->get());
+        View::composer('*', function ($view) {
+
+            $view->with('posts', Post::orderBy('important', 'desc')
+                ->orderBy('created_at', 'desc')
+                ->Take(20)->get());
         });
-        View::composer('*', function($view) {
+        View::composer('*', function ($view) {
 
-            $view->with('herbs',Herb::orderBy('name')->get());
+            $view->with('herbs', Herb::orderBy('name')->get());
         });
-        View::composer('*', function($view) {
+        View::composer('*', function ($view) {
 
-            $view->with('drugs',Drug::orderBy('name')->get());
+            $view->with('drugs', Drug::orderBy('name')->get());
         });
-        View::composer('*', function($view) {
+        View::composer('*', function ($view) {
 
-            $view->with('targets',Target::all());
-        });
-
-       // view()->share('postsToValidate', Post::whereColumn('created_at','!=', 'updated_at')->orderBy('updated_at','desc')->get());
-
-        View::composer('*', function($view) {
-
-            $view->with('references',Reference::all());
+            $view->with('targets', Target::all());
         });
 
-        View::composer('*', function($view) {
+        view()->share('postsToValidate', Post::whereColumn('created_at','!=', 'updated_at')->orderBy('updated_at','desc')->get());
 
-            $view->with('drug_families',DrugFamily::all());
+
+        View::composer('*', function ($view) {
+
+            $view->with('references', Reference::all());
         });
 
-        View::composer('*', function($view) {
+        View::composer('*', function ($view) {
 
-            $view->with('target_types',TargetType::all());
+            $view->with('drug_families', DrugFamily::all());
         });
 
-        View::composer('*', function($view) {
+        View::composer('*', function ($view) {
 
-            $view->with('atc_level_4s_ids',AtcLevel4::all());
+            $view->with('target_types', TargetType::all());
         });
 
-        View::composer('*', function($view) {
+        View::composer('*', function ($view) {
 
-            $view->with('herb_forms',HerbForm::all());
+            $view->with('atc_level_4s_ids', AtcLevel4::all());
+        });
+
+        View::composer('*', function ($view) {
+
+            $view->with('herb_forms', HerbForm::all());
         });
 
 
@@ -86,6 +90,5 @@ class AppServiceProvider extends ServiceProvider
             $title = config('titles.' . Route::currentRouteName());
             $view->with(compact('title'));
         });
-
     }
 }

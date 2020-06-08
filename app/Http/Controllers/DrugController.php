@@ -9,6 +9,8 @@ use App\DrugFamily;
 use App\Target;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\View\View;
 
 class DrugController extends Controller
 {
@@ -19,7 +21,61 @@ class DrugController extends Controller
      */
     public function index()
     {
-       return view('drugs/index');
+        // code added for the filter search chars
+        $drugs = Drug::all();
+        $drug =  Drug::orderBy('name')->where('name', 'LIKE', 'B%')->get();
+        $drugsChar=array();
+        foreach (range('A', 'Z') as $char)
+        {
+            foreach ($drugs as $n)
+            {
+                if ($n->name[0] === $char)
+                {
+                    $drugsChar[]=$char;
+                }
+            }
+        }
+        $resultChars = array_unique($drugsChar);
+        in_array('A', $resultChars)?$disable=null:$disable='disabled-char';
+
+        return view('drugs/index', compact('drugs', 'resultChars', 'drug', 'disable'));
+    }
+
+    //create function to get data by char
+    //using this function i can get the char via a request and return data according the need ...
+    /**
+     * @param  string  $char
+     * @return View
+     */
+
+    public function filterByChar($char)
+    {
+        //dd($char);
+        $drug =  Drug::orderBy('name')->where('name', 'LIKE', $char.'%')->get();
+        //dd($drug);
+        //this one used to add class on active char clicked
+        $drugCharClicked = Drug::where('name', 'LIKE', $char.'%')->get();
+        //dd($drugCharClicked);
+        $drugChar= $char;
+        $drugs = Drug::all();
+        $drugsChars=array();
+        foreach (range('A', 'Z') as $char)
+        {
+            foreach ($drugs as $n)
+            {
+                if ($n->name[0] === $char)
+                {
+                    $drugsChars[]=$char;
+                }
+            }
+        }
+        $resultChars = array_unique($drugsChars);
+        //dd($resultChars);
+        in_array('A', $resultChars)?$disable=null:$disable='disabled-char';
+        //dd($disable);
+        //dd($drugChar);
+
+        return view('drugs/index', compact('drug', 'drugChar', 'disable', 'resultChars'));
     }
 
     /**
@@ -91,9 +147,9 @@ class DrugController extends Controller
     public function details($id)
     {
         $drug = Drug::with('dinteractions.drugs','dinteractions.effects','dinteractions.targets')->findOrFail($id);
-        
+
           //dd($drug);
         return view("drugs/details",compact('drug'));
-        
+
     }
 }
