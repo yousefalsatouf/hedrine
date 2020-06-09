@@ -54,10 +54,22 @@
 									<div class="form-group">
 										<label for="target_type_id">Type target</label>
 										<select name="target_type_id" class="form-control">
+											@if(Route::currentRouteName() === 'target.create')
+												<option></option>
+												@foreach ($target_types as $target_type)
+												<option value="{{$target_type->id}}">{{$target_type->name}}</option>
+												@endforeach
+											@else
 											<option></option>
 											@foreach ($target_types as $target_type)
 												<option value=" {{$target_type->id}}" @if($target->target_type_id == $target_type->id) selected @endif>{{$target_type->name}}</option>
 											@endforeach
+
+
+											
+												
+												@endif
+
 										</select>
 									</div>
 								</div>
