@@ -1,4 +1,4 @@
-@extends('layouts.master_dashboard')
+@extends('dashboard.layout')
 
 <!-- @yield('content_title') créé dans la view master_dashboard.blade.php-->
 @section('content_title')
@@ -10,16 +10,23 @@
         <div class="card">
 			<div class="card-body">
 				<h5 class="card-title">
-					<ul class="nav justify-content-center">
-						@foreach (range('A', 'Z') as $char) 
-							<li class="nav-item">
-								<a class="nav-link listAlphabet" href="">
-									{{ $char }}
-								</a>
-							</li>
-						@endforeach
-					
-					</ul>
+
+                    <ul class="nav">
+                        {{--these go to DrugController with new function called filterByChar--}}
+                        <li class="nav-item all">
+                            <a class="nav-link listAlphabet {{isset($drug)&&$drug?'':'active-char'}}" href="{{url('drug')}}">
+                                ALL
+                            </a>
+                        </li>
+                        @foreach (range('A', 'Z') as $char)
+                            <li class="nav-item">
+                                <a class="nav-link {{in_array($char, $resultChars)?'listAlphabet':'disabled-char'}} {{isset($drugChar) && $drugChar===$char?"active-char":""}}" href="{{url('drug/'.$char)}}">
+                                    {{ $char }}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+
 				</h5>
 			</div>
 		</div>
@@ -34,10 +41,10 @@
 					</tr>
 				</thead>
 				<tbody>
-					@foreach ($drugs as $drug)
+					@foreach (isset($drug)?$drug:$drugs as $drug)
 					<tr>
 						<td>
-							<a href="{{route('drugs.details', $drug->id)}}" class="add_style" ><strong>{{$drug->name}} <span>({{$drug->route}})</span></strong> </a>
+							<a href="{{route('drugs.details', $drug->id)}}" class="add_style" ><strong class="text-success">{{$drug->name}} <span>({{$drug->route}})</span></strong> </a>
 						</td>
 					<td>{{$drug->drug_family->name}}</td>
 					</tr>
@@ -52,7 +59,7 @@
 @section('dashboard-js')
 <script>
 	$(function () {
-	
+
 	  $('#example1').DataTable({
 		"paging": true,
 		"lengthChange": false,
@@ -61,7 +68,7 @@
 		"info": true,
 		"autoWidth": false,
 		"responsive": true,
-		"language": 
+		"language":
 		{
 			"url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
         }

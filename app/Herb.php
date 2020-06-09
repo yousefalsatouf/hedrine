@@ -15,7 +15,7 @@ class Herb extends Model
 
     public function herb_forms() { 
         //DD herb_has_forms c'est le nom de la table pivot
-        return $this->belongsToMany(HerbForm::class, 'herb_has_forms'); 
+        return $this->belongsToMany(HerbForm::class, 'herb_has_forms')->withTimestamps(); 
     }
 
     public function targets()

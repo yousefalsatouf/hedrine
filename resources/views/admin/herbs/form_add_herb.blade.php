@@ -1,4 +1,5 @@
- @extends('layouts.master_dashboard')
+
+@extends('dashboard.layout')
 
 <!-- @yield('content_title') créé dans la view master_dashboard.blade.php-->
 
@@ -23,7 +24,7 @@
 						<div class="card card-success">
 							<div class="card-header">
 								<h3 class="card-title">
-									<strong> 
+									<strong>
 										@if(Route::currentRouteName() === 'herb.create')
 											Ajouter un nouvelle plante
 										@else
@@ -49,17 +50,17 @@
 									</div>
 									<div class="form-group">
 										<label for="herb_form">Formes d'une plante</label>
-									<select class="form-control herbForm" id="forms" name="forms[]" multiple >
-										@foreach ($herb_forms as $herb_form)
-											@if(Route::currentRouteName() === 'herb.create')
-						            		<option value="{{ $herb_form->id }}" {{ in_array($herb_form->id, old('forms') ?: []) ? 'selected' : '' }}>{{ $herb_form->name }}</option>
-						            		@else
-						            		<option value="{{ $herb_form->id }}" {{ in_array($herb_form->id, old('forms') ?: $herb->herb_forms->pluck('id')->toArray()) ? 'selected' : '' }}>{{ $herb_form->name }}
-						            		</option>
-						            		@endif
-						            	@endforeach
-        									
- 									</select>
+										<select class="form-control herbForm" id="forms" name="forms[]" multiple >
+											@foreach ($herb_forms as $herb_form)
+												@if(Route::currentRouteName() === 'herb.create')
+							            		<option value="{{ $herb_form->id }}" {{ in_array($herb_form->id, old('forms') ?: []) ? 'selected' : '' }}>{{ $herb_form->name }}</option>
+							            		@else
+							            		<option value="{{ $herb_form->id }}" {{ in_array($herb_form->id, old('forms') ?: $herb->herb_forms->pluck('id')->toArray()) ? 'selected' : '' }}>{{ $herb_form->name }}
+							            		</option>
+							            		@endif
+							            	@endforeach
+	        									
+	 									</select>
 									</div>
 								</div>
 								<!-- /.card-body -->
@@ -87,6 +88,11 @@
     </div>
 @endsection
 <script type="text/javascript">
-	
+	$(document).ready(function() {
+    $('.herbForm').select2({
+    	placeholder:"choisissez une ou plusieur forme de plante"
+    });
+});
+
 </script>
 

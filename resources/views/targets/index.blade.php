@@ -1,4 +1,4 @@
-@extends('layouts.master_dashboard')
+@extends('dashboard.layout')
 @section('content_title')
 	Plantes
 @endsection
@@ -9,13 +9,19 @@
 			<div class="card-body">
 				<h5 class="card-title">
 					<ul class="nav justify-content-center">
-						@foreach (range('A', 'Z') as $char) 
-							<li class="nav-item">
-								<a class="nav-link listAlphabet" href="">
-									{{ $char }}
-								</a>
-							</li>
-						@endforeach
+                        {{--these go to TargetController with new function called filterByChar--}}
+                        <li class="all nav-item">
+                            <a class="nav-link listAlphabet {{isset($target)&&$target?'':'active-char'}}" href="{{url('target')}}">
+                                ALL
+                            </a>
+                        </li>
+                        @foreach (range('A', 'Z') as $char)
+                            <li class="nav-item">
+                                <a class="nav-link {{in_array($char, $resultChars)?'listAlphabet':'disabled-char'}} {{isset($targetChar) && $targetChar===$char?"active-char":""}}" href="{{url('target/'.$char)}}">
+                                    {{ $char }}
+                                </a>
+                            </li>
+                        @endforeach
 					</ul>
 				</h5>
 			</div>
@@ -33,11 +39,11 @@
 					</tr>
 				</thead>
 				<tbody>
-					@foreach ($targets as $target)
+					@foreach (isset($target)?$target:$targets as $target)
 					<tr>
                   <td class="style_table">{{ $target->targetype->name }}</td>
 						<td>
-							<a class="style_a" href="{{route('targets.details', $target->id)}}"><strong>{{$target->name}}</strong> </a>
+							<a class="style_a" href="{{route('targets.details', $target->id)}}"><strong class="text-success">{{$target->name}}</strong> </a>
 						</td>
 						<td>{{$target->long_name}}</td>
 						<td>{{$target->notes}}</td>
@@ -53,7 +59,7 @@
 @section('dashboard-js')
 <script>
 	$(function () {
-	
+
 	  $('#target').DataTable({
 		"paging": true,
 		"lengthChange": false,
@@ -62,7 +68,7 @@
 		"info": true,
 		"autoWidth": false,
 		"responsive": true,
-		"language": 
+		"language":
 		{
 			"url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
         }

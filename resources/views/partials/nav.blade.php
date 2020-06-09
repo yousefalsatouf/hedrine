@@ -6,7 +6,7 @@
         </li>
         <br />
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{ route('home') }}">
+            <a href="{{ route('home') }}" class="nav-link">
                 <img class="img-fluid" src="{{ asset('images/hedrine_petit.png') }}" alt="Logo Hedrine">
             </a>
         </li>
@@ -62,11 +62,14 @@
                 <a class="nav-link" data-toggle="dropdown" href="#">
                     <i class="far fa-bell fa-2x"></i>
                     <span class="badge badge-danger navbar-badge" style="font-size: 15.5px">
-                        5
+
+                        {{-- $postsToValidate->count() --}}
                     </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    @foreach($posts as $post)
+                    {{--
+                        @foreach($postsToValidate as $post)
+
                         <a href="{{ route('post.validate',$post->id) }}" class="dropdown-item">
                             <!-- Message Start (les potes) -->
 
@@ -89,6 +92,8 @@
                             <!-- Message End -->
                         </a>
                     @endforeach
+
+                    --}}
                     <div class="dropdown-divider"></div>
                     <a href="#" class="dropdown-item dropdown-footer">See All New Posts</a>
                 </div>

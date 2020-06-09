@@ -1,4 +1,4 @@
-@extends('layouts.master_dashboard')
+@extends('dashboard.layout')
 
 <!-- @yield('content_title') créé dans la view master_dashboard.blade.php-->
 
@@ -88,7 +88,7 @@
 				   <tr  style="background-color: #FFCC33">
 					   <th>G2</th>
 				   </tr>
-				   <tr  style="background-color: #EEE8AA"> 
+				   <tr  style="background-color: #EEE8AA">
 					   <th>G1</th>
 				   </tr>
 				   <tr  style="background-color: #CCFF99">
@@ -101,7 +101,7 @@
 		  </div>
 	   </div>
 	</div>
-	
+
 	<div class="row">
 		<div class="col-md-1"></div>
       <div class="col-md-8">

@@ -58,6 +58,21 @@ class UsersTableSeeder extends Seeder
             'role_id' => 2,
 
         ]);
+
+        User::create([
+
+            'name' => 'Alsatouf Yousef',
+            'firstname' => 'Yousef',
+            'team' => 'DPM',
+            'tel1' => '',
+            'tel2' => '',
+            'email' => 'yousef.alsatouf94@gmail.com',
+            'email_verified_at' => Carbon::now(),
+            'password' => bcrypt('editor'),
+            'is_active' => 1,
+            'role_id' => 2,
+        ]);
+
         User::create([
 
             'name' => 'Tester',
