@@ -45,30 +45,53 @@
 										<div class="form-group">
 											<label for="drug_families_id">Famille</label>
 											<select name="drug_families_id" class="form-control">
-												<option></option>
+												@if(Route::currentRouteName() === 'drug.create')
+													<option></option>
 												@foreach ($drug_families as $drug_familie)
 													<option value="{{$drug_familie->id}}">{{$drug_familie->name}}</option>
 												@endforeach
+												@else
+												<option></option>
+													@foreach ($drug_families as $drug_familie)
+														<option value="{{$drug_familie->id}}" @if($drug->drug_families_id == $drug_familie->id) selected @endif>{{$drug_familie->name}}</option>
+													@endforeach
+												@endif
+
+
 											</select>
 										</div>
 										<div class="form-group">
 											<label for="route_id">Route</label>
 											<select name="route_id" class="form-control">
-												<option></option>
+												@if(Route::currentRouteName() === 'drug.create')
+													<option></option>
 												@foreach ($routes as $route)
 													<option value="{{$route->id}}">{{$route->name}}</option>
 												@endforeach
+												@else
+													<option></option>
+													@foreach ($routes as $route)
+													<option value="{{$route->id}}" @if($drug->route_id == $route->id) selected @endif>{{$route->name}}</option>
+												@endforeach
+												@endif
 											</select>
 										</div>
-										{{-- <div class="form-group">
+										<div class="form-group">
 											<label for="atc_level_4s_id">AtcLevel4</label>
 											<select name="atc_level_4s_id" class="form-control">
-												<option></option>
-												@foreach ($atc_level_4s as $atc_level_4)
+												@if(Route::currentRouteName() === 'drug.create')
+													<option></option>
+													@foreach ($atc_level_4s as $atc_level_4)
+													<option value="{{$atc_level_4->id}}">{{$atc_level_4->name}}</option>
+													@endforeach
+												@else
+													<option></option>
+													@foreach ($atc_level_4s as $atc_level_4)
 													<option value="{{$atc_level_4->id}}" @if($drug->atc_level_4s_id == $atc_level_4->id) selected @endif>{{$atc_level_4->name}}</option>
 												@endforeach
+												@endif
 											</select>
-										</div> --}}
+										</div>
 									</div>
 									<!-- /.card-body -->
 									<div class="card-footer">
