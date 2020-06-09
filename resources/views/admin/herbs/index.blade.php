@@ -1,4 +1,7 @@
 @extends('dashboard.layout')
+@section('content_title')
+	Plantes
+@endsection
 
 @section('content_dashboard')
 <div class="row justify-content-end" style="padding-bottom: 0.75rem">
@@ -20,14 +23,6 @@
 			</thead>
 			<tbody>
 				@foreach ($herbs as $herb)
-				<tr class="text-center">
-					<td>
-						<a href="" class="add_style" ><strong>{{$herb->name}}</strong></a>
-					</td>
-					<td>
-						<a href="" class="add_style" ><strong>{{$herb->sciname}}</strong></a>
-					</td>
-					
 					<!-- 
 					START COMMENT 
 					Les variables $lastHerb et $numberOfTimes_herbForms ont été déclarées dans le controleur Herb methode indes
@@ -67,8 +62,8 @@
 							@endforeach
 						</td>
 						<td>
-							<div class="btn-group float-right">&nbsp; &nbsp; &nbsp;
-								<a class="btn btn-primary" href="" role="button"><i class="far fa-eye"></i> View</a>  &nbsp; &nbsp;
+							<div class="btn-group float-right">
+							&nbsp; &nbsp; &nbsp;<a class="btn btn-primary" href="" role="button"><i class="far fa-eye"></i>  View</a>  &nbsp; &nbsp;
 								<a class="btn btn-success" href="{{ route('herb.edit',$herb->id) }}" role="button"><i class="fas fa-edit"></i> Edit </a> &nbsp; &nbsp;
 								<a class="btn btn-danger" href="{{ route('herb.destroy.alert',$herb->id) }}" role="button"><i class="far fa-trash-alt"></i> Delete </a>
 								
@@ -82,11 +77,11 @@
  </div>
 @endsection
 
-@section('dashboard-js')
-
+@section('dashboard-js') 
+ 
 	<script>
 		$(function () {
-
+		
 		$('#example1').DataTable({
 			"paging": true,
 			"lengthChange": false,
@@ -95,7 +90,7 @@
 			"info": true,
 			"autoWidth": false,
 			"responsive": true,
-			"language":
+			"language": 
 			{
 				"url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
 			}
