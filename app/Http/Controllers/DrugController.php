@@ -23,7 +23,7 @@ class DrugController extends Controller
     {
         // code added for the filter search chars
         $drugs = Drug::all();
-        $drug =  Drug::orderBy('name')->where('name', 'LIKE', 'B%')->get();
+        //$drug =  Drug::orderBy('name')->where('name', 'LIKE', 'B%')->get();
         $drugsChar=array();
         foreach (range('A', 'Z') as $char)
         {
@@ -37,8 +37,9 @@ class DrugController extends Controller
         }
         $resultChars = array_unique($drugsChar);
         in_array('A', $resultChars)?$disable=null:$disable='disabled-char';
+        //dd($disable);
 
-        return view('drugs/index', compact('drugs', 'resultChars', 'drug', 'disable'));
+        return view('drugs/index', compact('drugs', 'resultChars', 'disable'));
     }
 
     //create function to get data by char
@@ -71,7 +72,7 @@ class DrugController extends Controller
         }
         $resultChars = array_unique($drugsChars);
         //dd($resultChars);
-        in_array('A', $resultChars)?$disable=null:$disable='disabled-char';
+        in_array($char, $resultChars)?$disable=null:$disable='disabled-char';
         //dd($disable);
         //dd($drugChar);
 
