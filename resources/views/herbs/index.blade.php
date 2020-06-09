@@ -11,11 +11,11 @@
 						<ul id="chars" class="nav justify-content-center">
                             {{--these go to HerbController with new function called filterByChar--}}
                             <li class="nav-item">
-                                <a class="nav-link {{$disable?$disable:'listAlphabet active-char'}}" href="{{url('herb')}}">
-                                    A
+                                <a class="nav-link listAlphabet {{isset($herb)&&$herb?'':'active-char'}}" href="{{url('herb')}}">
+                                    ALL
                                 </a>
                             </li>
-                            @foreach( range('B', 'Z') as $char)
+                            @foreach( range('A', 'Z') as $char)
                                 <li class="nav-item">
                                     <a class="nav-link {{in_array($char, $resultChars)?'listAlphabet':'disabled-char'}} {{isset($herbChar) && $herbChar===$char?"active-char":""}}" href="{{url('herb/'.$char)}}">
                                         {{ $char }}
