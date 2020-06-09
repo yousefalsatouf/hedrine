@@ -25,7 +25,7 @@
       <!-- Main content -->
       <div class="content">
         <div class="container-fluid">
-          @yield('content_dashboard')
+          @yield('content_dashboard') 
         </div><!-- /.container-fluid -->
       </div>
       <!-- /.content -->

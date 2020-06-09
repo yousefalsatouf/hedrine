@@ -15,6 +15,7 @@
               onclick="event.preventDefault();
               $('#deleteproduct').submit();"
               >Je confirme la suppression</a>
+              <a class="btn btn-primary btn-lg btn-block" href="{{ route('post.index') }}" role="button">J'annule la suppression</a></a>
             </p>
           </div>
         </div>
