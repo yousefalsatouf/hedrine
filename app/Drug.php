@@ -8,7 +8,7 @@ use App\DrugFamily;
 class Drug extends Model
 {
     protected $fillable = [
-        'id','name', 'drug_families_id','route_id','user_id'
+        'id','name', 'drug_families_id','route_id','user_id','atc_level_4s_id'
     ];
     /**
      * Get the drugs for the blog drug_families.
