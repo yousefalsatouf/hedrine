@@ -77,7 +77,7 @@ class AppServiceProvider extends ServiceProvider
 
         View::composer('*', function ($view) {
 
-            $view->with('atc_level_4s_ids', AtcLevel4::all());
+            $view->with('atc_level_4s', AtcLevel4::all());
         });
 
         View::composer('*', function ($view) {

@@ -60,15 +60,15 @@
 												@endforeach
 											</select>
 										</div>
-										<div class="form-group">
+										{{-- <div class="form-group">
 											<label for="atc_level_4s_id">AtcLevel4</label>
 											<select name="atc_level_4s_id" class="form-control">
 												<option></option>
-												@foreach ($atc_level_4s_ids as $atc_level_4s_id)
-													<option value="{{$atc_level_4s_id->id}}">{{$atc_level_4s_id->name}}</option>
+												@foreach ($atc_level_4s as $atc_level_4)
+													<option value="{{$atc_level_4->id}}" @if($drug->atc_level_4s_id == $atc_level_4->id) selected @endif>{{$atc_level_4->name}}</option>
 												@endforeach
 											</select>
-										</div>
+										</div> --}}
 									</div>
 									<!-- /.card-body -->
 									<div class="card-footer">
