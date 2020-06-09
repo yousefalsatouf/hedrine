@@ -1,7 +1,7 @@
  <!-- Main Footer -->
  	<footer class="main-footer">
  		<!-- Default to the left -->
-    	<strong>Copyright &copy; 2020 <a href="https://hedrine.univ-grenoble-alpes.fr/">Hedrine</a>.</strong> All rights reserved.
+    	<strong>Copyright &copy; 20201 <a href="https://hedrine.univ-grenoble-alpes.fr/">Hedrine</a>.</strong> All rights reserved.
  	</footer>
   	<!-- Control Sidebar -->
   	<aside class="control-sidebar control-sidebar-dark">
@@ -33,7 +33,7 @@
 <script src="{{ asset('/adminlte/plugins/daterangepicker/daterangepicker.js') }}"></script>
 
 <!-- Tempusdominus Bootstrap 4 -->
-<script src="{{ asset('/adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+<script src="{{asset('/adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 
 <!-- Summernote -->
 <script src="{{ asset('/adminlte/plugins/summernote/summernote-bs4.min.js') }}"></script>
