@@ -421,7 +421,7 @@
 <script src="{{ asset('/adminlte/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
 <script src="{{ asset('/adminlte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
 
-<!-- Ajout css et js pour les crud des herbs avec ses forms -->
+<!-- JP Ajout css et js pour les crud des herbs avec ses forms -->
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 <script type="text/javascript" src="{{asset('js/custom.js') }}"></script>
