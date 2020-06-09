@@ -1,15 +1,15 @@
 
-@extends('layouts.master_dashboard')
+@extends('dashboard.layout')
 @section('content_dashboard')
 
 <div class="container">
-    
+
 	<h2 style="color: #e32;font-family: 'Gill Sans','lucida grande', helvetica, arial, sans-serif;">DCI</h2>
 	<br>
     <dl class="row" style="background: #f4f4f4">
 		<dt class="col-sm-2" >Nom</dt>
 		<dd class="col-sm-3"> {{ $drug->name }}</dd>
-			
+
 	</dl>
 	<dl class="row">
 		<dt class="col-sm-2" >Voie</dt>
@@ -17,15 +17,15 @@
 	</dl>
 	<dl class="row" style="background: #f4f4f4">
 		<dt class="col-sm-2" >Famille</dt>
-   
+
 		 <dd class="col-sm-8"> <strong><a href="{{route('drugs.family', $drug->id)}}" style="color: #003d4c; text-decoration: underline; font-weight: bold;">{{ $drug->drug_family->name }}</a></strong></dd>
 	</dl>
-	
+
 	<br>
 
     <div class="col-12">
 			<h3 style="color: #2c6877;">Mécanismes impliqués</h3>
-			
+
 			<div class="card-body table-responsive" style="background-color: #fff" >
 				<table id="dataTable_details" class="display responsive  table table-striped " width="100%">
 					<thead>
@@ -50,22 +50,22 @@
 										<td>{{$dinteractions->forces->name}}</td>
 										<td>{{$dinteractions->notes}}</td>
 										<td >
-											<a href=""> 
+											<a href="">
 												{{$reference->year}} , {{$reference->edition}};<br>
 											</a>
-											<a href=" {{$reference->url}} "> 
+											<a href=" {{$reference->url}} ">
 												<i class="fas fa-globe-europe"></i>
-											</a>		
+											</a>
 										</td>
-									</tr> 
+									</tr>
 								@endforeach
-							@endforeach  
+							@endforeach
 						@endforeach
 					</tbody>
 				</table>
 			</div>
 		</div>
-  
+
 @endsection
 
 @section('dashboard-js')
@@ -80,7 +80,7 @@
 		"info": false,
 		"autoWidth": true,
 		"responsive": true,
-		"language": 
+		"language":
 		{
 			"url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
         }

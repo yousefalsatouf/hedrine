@@ -1,6 +1,6 @@
-@extends('layouts.master_dashboard')
+@extends('dashboard.layout')
 
-@section('content_dashboard') 
+@section('content_dashboard')
     <div class="row justify-content-end" style="padding-bottom: 0.75rem">
 		@if(Route::currentRouteName() === 'post.index')
 			<a class="btn btn-primary" href="{{ route('post.create') }}" role="button">Créer un nouveau post</a>
@@ -24,13 +24,13 @@
 					</td>
 
 					<td>{{$post->body}}</td>
-					
+
 					<td>
 						<div class="btn-group float-right">
 						&nbsp; &nbsp; &nbsp;<a class="btn btn-primary" href="" role="button"><i class="far fa-eye"></i>  View</a>  &nbsp; &nbsp;
 							<a class="btn btn-success" href="{{ route('post.edit',$post->id) }}" role="button"><i class="fas fa-edit"></i> Edit </a> &nbsp; &nbsp;
 							<a class="btn btn-danger" href="{{ route('post.destroy.alert',$post->id) }}" role="button"><i class="far fa-trash-alt"></i> Delete </a>
-							
+
 						</div>
 					</td>
 				</tr>
@@ -41,11 +41,11 @@
  </div>
 @endsection
 
-@section('dashboard-js') 
- 
+@section('dashboard-js')
+
 	<script>
 		$(function () {
-		
+
 		$('#example1').DataTable({
 			"paging": true,
 			"lengthChange": false,
@@ -54,7 +54,7 @@
 			"info": true,
 			"autoWidth": false,
 			"responsive": true,
-			"language": 
+			"language":
 			{
 				"url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
 			}

@@ -1,4 +1,7 @@
-@extends('layouts.master_dashboard')
+@extends('dashboard.layout')
+@section('content_title')
+	Plantes
+@endsection
 
 @section('content_dashboard')
 <div class="row justify-content-end" style="padding-bottom: 0.75rem">
@@ -11,7 +14,7 @@
 	<div class="card-body " style="background-color: #fff">
 		<table id="example1" class="table table-bordered table-hover table-sm">
 			<thead>
-				<tr>
+				<tr class="text-center">
 					<th> nom</th>
 					<th>Sciname</th>
 					<th>Formes de la plante</th>
@@ -32,7 +35,7 @@
 						$numberOfTimes_herbForms = 0;
 					@endphp
 							
-					<tr>
+					<tr class="text-center">
 						<td>
 							<a href="" class="add_style" ><strong>{{$herb->name}}</strong></a>
 						</td>
@@ -45,7 +48,7 @@
 								@php
 									$numberOfTimes_herbForms++; 
 								@endphp
-							<!-- END COMMENT -->
+							
 										
 							<!-- START COMMENT 
 							On verifie que le nombre de forme herb de Herb Y soit inférieur à 1 et que la $numberOfTimes_herbForms qui s'incremente à cahque nouvelle forme herb de l'Herb Y soit inférieur au nombre de forme herb de l'Herb Y

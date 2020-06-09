@@ -1,4 +1,4 @@
-@extends('layouts.master_dashboard')
+@extends('dashboard.layout')
 
 <!-- @yield('content_title') créé dans la view master_dashboard.blade.php-->
 @section('content_title')
@@ -10,6 +10,7 @@
         <div class="card">
 			<div class="card-body">
 				<h5 class="card-title">
+
                     <ul class="nav justify-content-center">
                         {{--these go to HerbController with new function called filterByChar--}}
                         <li class="nav-item">
@@ -25,6 +26,7 @@
                             </li>
                         @endforeach
                     </ul>
+
 				</h5>
 			</div>
 		</div>

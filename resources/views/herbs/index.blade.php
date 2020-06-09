@@ -1,4 +1,4 @@
-@extends('layouts.master_dashboard')
+@extends('dashboard.layout')
 @section('content_title')
 	Plantes
 @endsection
@@ -7,7 +7,7 @@
     	<div class="col-12" >
         	<div class="card">
 				<div class="card-body">
-					<h5 class="card-title">
+
 						<ul id="chars" class="nav justify-content-center">
                             {{--these go to HerbController with new function called filterByChar--}}
                             <li class="nav-item">
@@ -22,6 +22,7 @@
                                     </a>
                                 </li>
                             @endforeach
+
 						</ul>
 					</h5>
 				</div>
@@ -38,21 +39,19 @@
 						</tr>
 					</thead>
 					<tbody>
-                    {{--this foreach is changed according our need to display herbs by  filtering char --}}
+
+              {{--this foreach is changed according our need to display herbs by  filtering char --}}
 						@foreach (isset($herb)?$herb:$herbs as $herb)
+
 						<!--
 							START COMMENT
 
 							Les variables $lastHerb et $numberOfTimes_herbForms ont été déclrée dans le controleur Herb methode indes
-<<<<<<< HEAD
-							la $numberOfTimes_herbForms sert à compter le nombre de qu'on a une differente forme de plande pour plant x
-							La $lastHerbe y est stockée l'ID de la dernier herb.
-							On verifie si l'ID stocké dans $lastHerb est different de l'Herb recu à chaque boucle, si oui on reinitialise
-=======
+
 							la numberOfTimes_herbForms sert à compter le nombre de qu'on a une differente forme de plande pour plant x
 							La lastHerbe y est stockée l'ID de la dernier herb.
 							On verifie si l'ID stocké dans $lastHerb est different de l'Herb recu à chaque boucle, si oui on reinitialise
->>>>>>> 7afe6e39a9e9e75f9f91371a903b4d7bad774011
+
 							$numberOfTimes_herbForms pour qu'il se reincrémente au tant de fois qu'on a une nouvelle forme de plante
 						-->
 							@php
@@ -100,6 +99,7 @@
 @section('dashboard-js')
 <script>
 	$(function () {
+
         //console.log('hello world');
         //this function is responsible for activating class on clicking on it the class called active-char
         //still work on it
@@ -113,6 +113,7 @@
         });
 
         //end
+
 
 	  $('#example1').DataTable({
 		"paging": true,
@@ -149,6 +150,7 @@
 						}
 					} );
 				} );
+
 				var table = $('#listerByAlphabetic').DataTable( {
 					orderCellsTop: true,
 					fixedHeader: true
