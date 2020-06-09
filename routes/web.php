@@ -68,6 +68,10 @@ Route::get('/drug/{char}', 'DrugController@filterByChar');
 Route::get('/target','TargetController@index')->name('targets.index');
 Route::get('target/details_target/{id}','TargetController@details')->name('targets.details');
 
+//Yousef for the filter searching
+//here is the url for the char searching ...
+Route::get('/target/{char}', 'TargetController@filterByChar');
+
 //DD pour atteindre le formulaire d'ajout d'un poste
 Route::get('posts/add_post_form','PostController@show_form')->name('posts.show_form');
 Route::post('posts/add_post','PostController@create')->name('posts.create');

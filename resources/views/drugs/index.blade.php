@@ -11,10 +11,10 @@
 			<div class="card-body">
 				<h5 class="card-title">
 
-                    <ul class="nav justify-content-center">
-                        {{--these go to HerbController with new function called filterByChar--}}
-                        <li class="nav-item">
-                            <a class="nav-link listAlphabet {{isset($drug)&&$drug?'':'active-char'}}" href="{{url('herb')}}">
+                    <ul class="nav">
+                        {{--these go to DrugController with new function called filterByChar--}}
+                        <li class="nav-item all">
+                            <a class="nav-link listAlphabet {{isset($drug)&&$drug?'':'active-char'}}" href="{{url('drug')}}">
                                 ALL
                             </a>
                         </li>

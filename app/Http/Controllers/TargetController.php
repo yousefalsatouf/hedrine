@@ -9,6 +9,7 @@ use App\Herb;
 use App\Drug;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 
 class TargetController extends Controller
 {
@@ -25,8 +26,62 @@ class TargetController extends Controller
         $drugs = Drug::all();
         $targets = Target::all();
         $targets = Target::with('targetype')->get();
-    
-        return view('targets/index',compact('targets','posts','drugs','herbs'));
+        //these are for the filter chars search
+        //dd($targets);
+        $targetsChar=array();
+        foreach (range('A', 'Z') as $char)
+        {
+            foreach ($targets as $n)
+            {
+                if ($n->name[0] === $char)
+                {
+                    $targetsChar[]=$char;
+                }
+            }
+        }
+        $resultChars = array_unique($targetsChar);
+        in_array('A', $resultChars)?$disable=null:$disable='disabled-char';
+        return view('targets/index',compact('targets','posts','drugs','herbs', 'targetsChar', 'resultChars', 'disable'));
+    }
+
+    //create function to get data by char
+    //using this function i can get the char via a request and return data according the need ...
+    /**
+     * @param  string  $char
+     * @return View
+     */
+
+    public function filterByChar($char)
+    {
+        $numberOfTimes_herbForms = 0;
+        $lastHerb = 0;
+
+        $target =  Target::orderBy('name')->where('name', 'LIKE', $char.'%')->get();
+        //dd($target);
+        //dd($char);
+        //this one used to add class on active char clicked
+        $targetCharClicked=Target::where('name', 'LIKE', $char.'%')->get();
+        $targetChar= $char;
+        //dd($herbChar);
+        //here just for test ...
+        //dd($herbs);
+        $targets = Target::with('targetype')->get();
+        $targetsChars=array();
+        foreach (range('A', 'Z') as $char)
+        {
+            foreach ($targets as $n)
+            {
+                if ($n->name[0] === $char)
+                {
+                    $targetsChars[]=$char;
+                }
+            }
+        }
+        $resultChars = array_unique($targetsChars);
+        //dd($resultChars);
+        in_array('A', $resultChars)?$disable=null:$disable='disabled-char';
+
+        return view('targets/index', compact('target', 'targetChar', 'disable', 'resultChars', 'lastHerb', 'numberOfTimes_herbForms'));
     }
 
     /**
@@ -98,9 +153,9 @@ class TargetController extends Controller
     {
         $target = Target::with('dinteractions.drugs','dinteractions.effects','dinteractions.targets',
                                 'hinteractions.drugs','hinteractions.effects','hinteractions.targets')->findOrFail($id);
-        
+
           //dd($drug);
         return view("targets/details",compact('target'));
-        
+
     }
 }
