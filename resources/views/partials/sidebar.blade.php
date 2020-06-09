@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
-  
+
   <!-- Sidebar -->
   <div class="sidebar">
     <br />
@@ -39,17 +39,17 @@
                 <p>Plantes <span><i class="fas fa-arrows-alt-h fa-lg"></i></span> Mécanismes</p>
               </a>
             </li>
-            
+
           </ul>
         </li>
         <!-- JPM FIN du contenant Recherche et ses contenus -->
-          
+
         <!-- JPM DEBUT du contenant Index et ses contenus -->
         <li class="nav-item has-treeview menu-open">
           <a href="#" class="nav-link active" style="background-color:green;">
             <i class="nav-icon fas fa-compress-arrows-alt"></i>
             <p>
-              Index 
+              Index
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
@@ -78,7 +78,7 @@
 
         <!-- DEBUT POUR COMPTE ADMINISTRATION-->
         @if(auth()->user()->role_id == 1 )
-           
+
           <!-- JPM DEBUT DU CONTENANT ADMINSTRER -->
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link active" style="background-color:green;">
@@ -111,7 +111,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Drugs Families</p>
                     </a>
@@ -202,7 +202,7 @@
         <!-- JPM FIN POUR COMPTE ADMINSTRATION-->
       </ul>
     </nav>
-    
+
   </div>
     <!-- /.sidebar -->
 </aside>

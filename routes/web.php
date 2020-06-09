@@ -109,6 +109,14 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
       ]);
     Route::name('drug.destroy.alert')->get('drug/{drug}', 'DrugController@alert');
 
+    // Route pour Drugs Family ..
+    Route::name('drugsFamily')->get('drug_family', 'DrugFamilyController@index');
+    Route::name('drugsFamily.create')->get('drug_family/create', 'DrugFamilyController@create');
+    Route::name('drugsFamily.edit')->get('drug_family/edit', 'DrugFamilyController@edit');
+    Route::name('drugsFamily.update')->get('drug_family/update', 'DrugFamilyController@update');
+    Route::name('drugsFamily.destroy.alert')->get('drug_family/remove/{id}', 'DrugFamilyController@alert');
+
+
     //Route pour plante
     Route::name('herb.update')->put('herb', 'HerbController@update');
     Route::name('herb.edit')->get('herb', 'HerbController@edit');
