@@ -7,10 +7,9 @@
     	<div class="col-12" >
         	<div class="card">
 				<div class="card-body">
-
-						<ul id="chars" class="nav justify-content-center">
+						<ul class="nav">
                             {{--these go to HerbController with new function called filterByChar--}}
-                            <li class="nav-item">
+                            <li class="all nav-item">
                                 <a class="nav-link listAlphabet {{isset($herb)&&$herb?'':'active-char'}}" href="{{url('herb')}}">
                                     ALL
                                 </a>
