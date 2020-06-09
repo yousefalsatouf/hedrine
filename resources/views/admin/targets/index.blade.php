@@ -16,7 +16,7 @@
 					<th>Long Name</th>
 					<th>Notes</th>
 					<th>Type</th>
-					<th>Editor</th>
+					<th>Editors</th>
 					<th> Actions</th>
 				</tr>
 			</thead>
