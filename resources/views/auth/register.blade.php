@@ -118,8 +118,9 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <!-- Button trigger modal -->
-                                <label for="terms"><input type="checkbox" required> J'accepte les terms & conditions</label><br>
+
                                 <input type="button" class="btn btn-light text-success" data-toggle="modal" data-target="#exampleModal" value="cliquez ici pour lire les termes & condition">
+                                <label for="terms"><input type="checkbox" required> J'accepte les terms & conditions</label><br>
 
                                 <!-- Modal -->
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
