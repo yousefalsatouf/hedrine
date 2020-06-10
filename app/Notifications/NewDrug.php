@@ -6,22 +6,22 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use App\Herb;
+use App\Drug;
 
-class NewHerb extends Notification
+class NewDrug extends Notification
 {
     use Queueable;
-    protected $herb;
+    protected $drug;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct(Herb $herb)
+    public function __construct(Drug $drug)
     {
         //
-        $this->herb = $herb;
+        $this->drug = $drug;
 
     }
 
@@ -59,8 +59,7 @@ class NewHerb extends Notification
     public function toArray($notifiable)
     {
         return [
-                'name' => $this->herb->name,
-                'sciname' => $this->herb->sciname,
+                'name' => $this->drug->name,
         ];
     }
 }

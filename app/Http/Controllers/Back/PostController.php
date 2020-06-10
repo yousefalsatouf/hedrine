@@ -6,6 +6,8 @@ use App\DataTables\PostsDataTable;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostRequest;
 use App\Post;
+use App\User;
+use App\Notifications\NewHerb as NewHerbNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -49,6 +51,8 @@ class PostController extends Controller
         $post->important = ( !$request->has('important') == '1' ? '0' : '1');
         $post->save();
         Alert::success('Ok !', 'Nouveau poste ajouté avec succès');
+
+
 
         return back();
     }

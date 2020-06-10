@@ -52,12 +52,14 @@ class AppServiceProvider extends ServiceProvider
 
             $view->with('drugs', Drug::orderBy('name')->get());
         });
+
+
         View::composer('*', function ($view) {
 
             $view->with('targets', Target::all());
         });
 
-        view()->share('postsToValidate', Post::whereColumn('created_at','!=', 'updated_at')->orderBy('updated_at','desc')->get());
+       // view()->share('postsToValidate', Post::whereColumn('created_at','!=', 'updated_at')->orderBy('updated_at','desc')->get());
 
 
         View::composer('*', function ($view) {
@@ -88,7 +90,14 @@ class AppServiceProvider extends ServiceProvider
 
         View::composer('dashboard.layout', function ($view) {
             $title = config('titles.' . Route::currentRouteName());
-            $view->with(compact('title'));
+            $notifications = auth()->user()->unreadNotifications()->count();
+            $newHerbs = auth()->user()->unreadNotifications()->where('type','App\Notifications\NewHerb')->get();
+            $newDrugs = auth()->user()->unreadNotifications()->where('type','App\Notifications\NewDrug')->count();
+            $newTargets = auth()->user()->unreadNotifications()->where('type','App\Notifications\NewTarget')->count();
+            $newUsers = auth()->user()->unreadNotifications()->where('type','App\Notifications\NewTarget')->count();
+            $view->with(compact('title','notifications','newHerbs','newDrugs','newTargets','newUsers'));
         });
+
+        //view()->composer('dashboard.layout', \App\Http\ViewComposers\HerbComposer::class);
     }
 }

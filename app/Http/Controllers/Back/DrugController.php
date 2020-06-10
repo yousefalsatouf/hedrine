@@ -9,10 +9,12 @@ use App\Drug;
 use App\Herb;
 use App\Target;
 use App\Route;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\DB;
+use App\Notifications\NewDrug as NewDrugNotification;
 
 
 class DrugController extends Controller
@@ -24,7 +26,7 @@ class DrugController extends Controller
      */
     public function index()
     {
-        
+
         return view('admin.drugs.index');
     }
 
@@ -57,6 +59,14 @@ class DrugController extends Controller
         $drug->save();
         Alert::success('Ok !', 'Nouveau DCI ajouté avec succès');
 
+        $adminusers = User::with('roles')->where('role_id','1')->get();
+        //dd($adminusers);
+        foreach($adminusers as $adm) {
+            //Mail::to($adm)->send(new NewHerb($herb, $user));
+            $adm->notify(new NewdrugNotification($drug));
+
+        }
+
         return back();
     }
 
@@ -66,7 +76,7 @@ class DrugController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    
+
     public function show($id)
     {
     }
@@ -115,7 +125,7 @@ class DrugController extends Controller
 
         return view('admin.drugs.destroy', ['drug' => $drug]);
     }
-  
+
     public function details($id)
     {
         $drug = Drug::findOrFail($id);
