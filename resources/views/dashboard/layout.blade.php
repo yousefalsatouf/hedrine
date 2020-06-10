@@ -96,32 +96,52 @@
       </li>
       @if((auth()->user()->role_id == 1 )||(auth()->user()->role_id == 2 ))
         <!-- Notifications Dropdown Menu -->
-        <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#">
-                <i class="far fa-bell fa-2x"></i>
-                <span class="badge badge-warning navbar-badge" style="font-size: 15.5px" >15</span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <span class="dropdown-item dropdown-header">15 Notifications</span>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                    <i class="fas fa-envelope mr-2"></i> 4 new messages
-                    <span class="float-right text-muted text-sm">3 mins</span>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="#">
+                    <i class="far fa-bell fa-2x"></i>
+                    <span class="badge badge-warning navbar-badge" style="font-size: 15.5px" >{{ $notifications }}</span>
                 </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                    <i class="fas fa-users mr-2"></i> 8 friend requests
-                    <span class="float-right text-muted text-sm">12 hours</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                    <i class="fas fa-file mr-2"></i> 3 new reports
-                    <span class="float-right text-muted text-sm">2 days</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-            </div>
-        </li>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <span class="dropdown-item dropdown-header"> {{ $notifications }} Notifications</span>
+                    <div class="dropdown-divider"></div>
+                    <a href="{{ route('notification.index') }}" class="dropdown-item">
+                        <i class="fas fa-seedling mr-2" style="color: seagreen"></i> {{ $newHerbs->count() }}
+                        @if($newHerbs === 1) new Herb
+                            @else new Herbs
+                        @endif
+                        <span class="float-right text-muted text-sm">3 mins</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="{{ route('notification.index_drugs') }}" class="dropdown-item">
+                        <i class="fas fa-capsules mr-2" style="color:#7d041e"></i> {{ $newDrugs }}
+                        @if($newHerbs === 1) new Drug
+                            @else new Drugs
+                        @endif
+                        <span class="float-right text-muted text-sm">3 mins</span>
+                    </a>
+
+                    <div class="dropdown-divider"></div>
+                    <a href="{{ route('notification.index_targets') }}" class="dropdown-item">
+                        <i class="fas fa-file mr-2"></i> {{ $newTargets }}
+                        @if($newHerbs === 1) new Target
+                            @else new Targets
+                        @endif
+                        <span class="float-right text-muted text-sm">2 days</span>
+                    </a>
+
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <i class="fas fa-users mr-2"></i> {{ $newUsers }}
+                        @if($newHerbs === 1) New User request
+                            @else new Users requests
+                        @endif
+                        <span class="float-right text-muted text-sm">12 hours</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                </div>
+            </li>
       @endif
     </ul>
     <ul class="navbar-nav ml-auto">

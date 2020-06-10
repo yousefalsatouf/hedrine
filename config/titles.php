@@ -1,7 +1,7 @@
 <?php
 
 return [
-   
+
 	/*
     |--------------------------------------------------------------------------
     | Titles for routes names
@@ -9,8 +9,8 @@ return [
     |
     | Set Titles for each admin routes names
     */
-	
-    
+
+
     'post' => [
         'index' => 'Gestion des postes',
         'edit' => 'Modification d\'un poste',

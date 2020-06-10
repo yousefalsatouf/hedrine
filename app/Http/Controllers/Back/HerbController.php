@@ -31,6 +31,7 @@ class HerbController extends Controller
     { $numberOfTimes_herbForms = 0;
         $lastHerb = 0;
         $herbs = Herb::all();
+
         return view('admin.herbs.index', compact('herbs','numberOfTimes_herbForms','lastHerb'));
     }
 
@@ -53,12 +54,12 @@ class HerbController extends Controller
     public function store(HerbRequest $request)
     {
         $herb = new Herb;
-       
+
 
         $herb->user_id = Auth::user()->id;
         $herb->name = $request->name;
         $herb->sciname = $request->sciname;
-        
+
 
         $herb->save();
         $herb->herb_forms()->sync($request->forms, false);
@@ -95,7 +96,7 @@ class HerbController extends Controller
      */
     public function edit(Herb $herb)
     {
-       
+
         return view('admin.herbs.form_add_herb', ['herb' => $herb]);
     }
 
@@ -127,7 +128,7 @@ class HerbController extends Controller
     public function destroy(Herb $herb)
     {
        $herb->delete();
-        
+
         return redirect(route('herb.index'));
 
     }
