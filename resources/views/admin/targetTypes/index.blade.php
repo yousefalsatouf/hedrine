@@ -13,9 +13,8 @@
 			<thead>
 				<tr>
 					<th> Name </th>
-					<th> Color </th>
 					<th> Rank </th>
-					<th> Visite </th>
+					<th> Description </th>
 					<th> Actions</th>
 				</tr>
 			</thead>
@@ -25,8 +24,7 @@
 					<td>
 						<a href="" class="add_style" ><strong class="text-dark">{{$target_type->name}}</strong></a>
 					</td>
-					<td>{{$target_type->name}}</td>
-					<td>{{$target_type->rank }}</td>
+					<td>{{$target_type->rank}}</td>
 					<td>{{$target_type->description }}</td>
 					<td style="width: 10rem">
 						<div class="btn-group float-right">
