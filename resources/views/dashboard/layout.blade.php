@@ -328,7 +328,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">
+                                        <a href="{{ route('role.index') }}" class="nav-link">
                                             <i class="far fa-dot-circle nav-icon"></i>
                                             <p>Roles</p>
                                         </a>

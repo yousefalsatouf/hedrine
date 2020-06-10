@@ -143,6 +143,17 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
        ]);
      Route::name('target.destroy.alert')->get('target/{target}', 'TargetController@alert');
 
+     // Route pour roles
+    Route::name('role.update')->put('role', 'RoleController@update');
+    Route::name('role.edit')->get('role', 'RoleController@edit');
+    Route::name('role.index')->get('role', 'RoleController@index');
+
+    Route::name('role.details')->get('role', 'RoleController@details');
+    Route::resource('role', 'RoleController')->parameters([
+        'role' => 'role'
+      ]);
+    Route::name('role.destroy.alert')->get('role/{role}', 'RoleController@alert');
+
      //pour les nouveau utilisateurs
     Route::name('newUser.request')->get('/list_user_requests', 'NotificationController@showNewUserRequests');
     Route::name('activeUser')->get('/activated_user/{id}', 'NotificationController@activateNewUser');
