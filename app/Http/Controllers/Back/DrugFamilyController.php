@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Back;
 
 use App\DataTables\DrugssDataTable;
+use App\DrugFamily;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\DrugRequest;
 use App\Drug;
@@ -25,7 +26,6 @@ class DrugFamilyController extends Controller
     public function index()
     {
         $drugsFamily = DB::table('drug_families')->paginate(10);
-        //dd($drugsFamily);
 
         return view('admin.drugsFamily.index', compact('drugsFamily'));
     }
@@ -38,7 +38,8 @@ class DrugFamilyController extends Controller
     public function create()
     {
         $routes = Route::all();
-        return view('admin.drugsFamily.form_add_drug', compact('routes'));
+        //dd($routes);
+        return view('admin.drugsFamily.form_create_drug_family', compact('routes'));
     }
 
     /**
@@ -49,15 +50,13 @@ class DrugFamilyController extends Controller
      */
     public function store(DrugRequest $request)
     {
-        $drug = new Drug;
+        $drugFamily = new DrugFamily;
+        //dd($drug->name);
+        $drugFamily->name = $request->name;
+        $drugFamily->save();
+        //dd($drugFamily->name);
 
-        $drug->user_id = Auth::user()->id;
-        $drug->name = $request->name;
-        $drug->drug_families_id = $request->drug_families_id;
-        $drug->route_id = $request->route_id;
-        $drug->atc_level_4s_id = $request->atc_level_4s_id;
-        $drug->save();
-        Alert::success('Ok !', 'Nouveau DCI ajouté avec succès');
+        Alert::success('Ok !', 'Nouveau Drug Family ajouté avec succès');
 
         return back();
     }
@@ -106,16 +105,20 @@ class DrugFamilyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Drug $drug)
+    public function destroy(DrugFamily $drugFamily)
     {
-        $drug->delete();
-        return redirect(route('drug.index'));
+        dd($drugFamily->id);
+
+        $drugFamily->delete();
+        return redirect(route('drugsFamily'));
 
     }
 
-    public function alert(Drug $drug) {
+    public function alert(DrugFamily $drugFamily)
+    {
+        //dd($drugFamily);
 
-        return view('admin.drugsFamily.destroy', ['drug' => $drug]);
+        return view('admin.drugsFamily.destroy', ['drugFamily' => $drugFamily]);
     }
 
 }

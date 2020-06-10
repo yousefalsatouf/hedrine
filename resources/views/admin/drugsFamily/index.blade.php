@@ -25,7 +25,6 @@
                         <td style="width: 10rem">
                             <div>
                                 <a class="btn btn-outline-success" href="{{ route('drugsFamily.edit',$drug->id) }}" role="button"><i class="fas fa-edit"></i></a> &nbsp; &nbsp;
-                                <a class="btn btn-outline-danger" href="{{ route('drugsFamily.destroy.alert',$drug->id) }}" role="button"><i class="far fa-trash-alt"></i></a>
                             </div>
                         </td>
                     </tr>
