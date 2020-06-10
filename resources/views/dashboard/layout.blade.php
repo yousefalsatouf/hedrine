@@ -76,12 +76,12 @@
                     <div class="dropdown-divider"></div>
                     @forelse($mostRecentUsers as $u)
                         <div class="card text-center">
-                            <div class="card-header">
+                            <div class="d-flex justify-content-between" style="margin: 10px 5px">
                                 <strong><i class="fas fa-user mr-2"></i> {{ $u->name }}</strong>
-                                <small><a class="btn btn-outline-success" href="{{route('activeUser', $u->id)}}" role="button"><i class="fas fa-check"></i></a></small>
+                                <small>{{Carbon\Carbon::parse($u->email_verified_at)->diffForHumans()}}</small>
                             </div>
                             <div class="card-footer text-muted">
-                                <small>{{Carbon\Carbon::parse($u->email_verified_at)->diffForHumans()}}</small>
+                                <a class="btn btn-outline-success w-50" href="{{route('activeUser', $u->id)}}" role="button"><i class="fas fa-check"></i></a>
                             </div>
                         </div>
                     @empty
