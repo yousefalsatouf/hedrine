@@ -37,7 +37,7 @@
 
                 <div class="row">
                     <article class="col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
-                        <h4 style="color:#ff0000">
+                        <h4 class="text-success">
                             Sources
                         </h4>
                         <p>Littérature scientifique, articles parus dans des revues internationales avec comité de lecture ou
@@ -46,7 +46,7 @@
                     </article>
 
                     <article class="col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
-                        <h4 style="color:#ff0000">
+                        <h4 class="text-success">
                             Contrôles et validation
                         </h4>
                         <p>
@@ -59,7 +59,7 @@
 
                 <div class="row">
                     <article class="col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
-                        <h4 style="color:red">
+                        <h4 class="text-success">
                             Accès
                         </h4>
                         <p>
@@ -76,10 +76,10 @@
                         <div class="row">
 
                             <div class='col-6 col-sm-6 col-md-6 col-lg-6'>
-                              <div class="btn-group buttons"><a href="login"><button type="button" class="btn btn-success btn-lg"id="target1">Connexion</button></a></div>
+                              <div class="btn-group buttons"><a href="login"><button type="button" class="btn btn-outline-success btn-lg" id="target1">Connexion</button></a></div>
                             </div>
                             <div class='col-6 col-sm-6 col-md-6 col-lg-6'>
-                              <div class="btn-group buttons"><a href="register"><button type="button" class="btn btn-success btn-lg">S'enregistrer</button></a></div>
+                              <div class="btn-group buttons"><a href="register"><button type="button" class="btn btn-outline-info btn-lg">S'enregistrer</button></a></div>
                             </div>
 
                         </div>

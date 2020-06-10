@@ -267,7 +267,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">
+                                        <a href="{{route('drugsFamily')}}" class="nav-link">
                                             <i class="far fa-dot-circle nav-icon"></i>
                                             <p>Drugs Families</p>
                                         </a>

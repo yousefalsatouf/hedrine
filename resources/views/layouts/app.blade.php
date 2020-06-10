@@ -18,6 +18,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    {{--Font awesome cdn--}}
+    <link href="{{ asset('css/hedrine.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -30,7 +33,7 @@
                 <div class="text-center">
                     <img src="{{ asset('images/hedrine6b.png') }}" class="img-fluid" alt="Responsive image">
                 </div>
-                
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

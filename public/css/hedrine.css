@@ -69,3 +69,32 @@ a.style_a {
     border-bottom: 1px solid green;
     transform: scale(1.5);
 }
+
+
+/* register form style*/
+
+#register label
+{
+    color: green;
+    font-weight: bold;
+}
+
+#register .card
+{
+    width: 75%;
+}
+
+#register input
+{
+    margin-bottom: 0.5rem;
+}
+#register .register
+{
+    width: 40%;
+}
+
+#register input
+{
+    border: 0;
+    border-bottom: 1px solid green;
+}
