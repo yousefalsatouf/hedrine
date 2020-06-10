@@ -143,6 +143,9 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
        ]);
      Route::name('target.destroy.alert')->get('target/{target}', 'TargetController@alert');
 
+     //pour les nouveau utilisateurs
+    Route::name('newUser.request')->get('/list_user_requests', 'NotificationController@showNewUserRequests');
+    Route::name('activeUser')->get('/activated_user/{id}', 'NotificationController@activateNewUser');
     // Notifications
      Route::name ('notification.')->prefix('notification')->group(function () {
         Route::name ('index')->get ('/', 'NotificationController@index');

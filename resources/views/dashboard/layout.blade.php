@@ -63,6 +63,35 @@
 
     <!-- Right navbar links for All -->
     <ul class="navbar-nav ml-auto">
+    {{--new users--}}
+    @if((auth()->user()->role_id == 1 ))
+        <!-- Notifications Dropdown Menu -->
+            <li class="nav-item dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="#">
+                    <i class="fa fa-users fa-2x"></i>
+                    <span class="badge badge-success navbar-badge" style="font-size: 15.5px" >{{ $newUsersCount }}</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <h4 class="dropdown-item dropdown-header text-success"><i class="fas fa-users mr-2"></i> {{ $newUsersCount }}  New Users requests</h4>
+                    <div class="dropdown-divider"></div>
+                    @forelse($mostRecentUsers as $u)
+                        <div class="card text-center">
+                            <div class="card-header">
+                                <strong><i class="fas fa-user mr-2"></i> {{ $u->name }}</strong>
+                                <small><a class="btn btn-outline-success" href="{{route('activeUser', $user->id)}}" role="button"><i class="fas fa-check"></i></a></small>
+                            </div>
+                            <div class="card-footer text-muted">
+                                <small>{{Carbon\Carbon::parse($u->email_verified_at)->diffForHumans()}}</small>
+                            </div>
+                        </div>
+                    @empty
+                        <div class="alert alert-secondary" role="alert">No users requests for the moment</div>
+                    @endforelse
+                    <div class="dropdown-divider"></div>
+                    <a href="{{route('newUser.request')}}" class="dropdown-item dropdown-footer">See All User requests</a>
+                </div>
+            </li>
+    @endif
       <!-- Messages Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
@@ -132,7 +161,7 @@
 
                     <div class="dropdown-divider"></div>
                     <a href="#" class="dropdown-item">
-                        <i class="fas fa-users mr-2"></i> {{ $newUsers }}
+                        <i class="fas fa-users mr-2"></i> {{ $newUsersCount }}
                         @if($newHerbs === 1) New User request
                             @else new Users requests
                         @endif

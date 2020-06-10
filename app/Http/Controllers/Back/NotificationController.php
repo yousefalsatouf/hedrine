@@ -3,10 +3,8 @@
 namespace App\Http\Controllers\Back;
 
 use App\Http\Controllers\Controller;
-use Illuminate\ {
-    Http\Request,
-    Notifications\DatabaseNotification
-};
+use App\User;
+use Illuminate\{Http\Request, Notifications\DatabaseNotification, Support\Facades\DB};
 
 
 class NotificationController extends Controller
@@ -38,8 +36,30 @@ class NotificationController extends Controller
 
         $user = $request->user();
 
-
         return view('notifications.index_target',compact('user'));
+    }
+
+    public function showNewUserRequests(Request $request)
+    {
+        $allNewUsers = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->get();
+
+        return view('notifications.newUserRequests',compact('allNewUsers'));
+    }
+    public function activateNewUser($id)
+    {
+        DB::table('users')
+            ->where('id', $id)
+            ->update(['is_active' => 1]);
+
+        $username=null;
+        $user = DB::table('users')->where('id', $id)->get();
+
+        foreach ($user as $name)
+            $username = $name->name." ".$name->firstname;
+
+        //dd($username);
+
+        return redirect()->back()->with('msg', $username." is activated now !");
     }
     /**
      * Show the form for creating a new resource.
