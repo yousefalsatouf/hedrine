@@ -154,6 +154,17 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
       ]);
     Route::name('role.destroy.alert')->get('role/{role}', 'RoleController@alert');
 
+    // Route pour Target Type
+    Route::name('target_type.update')->put('target_type', 'TargetTypeController@update');
+    Route::name('target_type.edit')->get('target_type', 'TargetTypeController@edit');
+    Route::name('target_type.index')->get('target_type', 'TargetTypeController@index');
+
+    Route::name('target_type.details')->get('force', 'TargetTypeController@details');
+    Route::resource('target_type', 'TargetTypeController')->parameters([
+        'target_type' => 'target_type'
+      ]);
+    Route::name('target_type.destroy.alert')->get('target_type/{target_type}', 'TargetTypeController@alert');
+
      //pour les nouveau utilisateurs
     Route::name('newUser.request')->get('/list_user_requests', 'NotificationController@showNewUserRequests');
     Route::name('activeUser')->get('/activated_user/{id}', 'NotificationController@activateNewUser');
