@@ -78,7 +78,7 @@
                         <div class="card text-center">
                             <div class="card-header">
                                 <strong><i class="fas fa-user mr-2"></i> {{ $u->name }}</strong>
-                                <small><a class="btn btn-outline-success" href="{{route('activeUser', $user->id)}}" role="button"><i class="fas fa-check"></i></a></small>
+                                <small><a class="btn btn-outline-success" href="{{route('activeUser', $u->id)}}" role="button"><i class="fas fa-check"></i></a></small>
                             </div>
                             <div class="card-footer text-muted">
                                 <small>{{Carbon\Carbon::parse($u->email_verified_at)->diffForHumans()}}</small>
