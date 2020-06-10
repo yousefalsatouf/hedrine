@@ -63,6 +63,30 @@
 
     <!-- Right navbar links for All -->
     <ul class="navbar-nav ml-auto">
+    {{--new users--}}
+    @if((auth()->user()->role_id == 1 ))
+        <!-- Notifications Dropdown Menu -->
+            <li class="nav-item dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="#">
+                    <i class="fa fa-users fa-2x"></i>
+                    <span class="badge badge-success navbar-badge" style="font-size: 15.5px" >{{ $newUsersCount }}</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <strong class="dropdown-item dropdown-header text-success"><i class="fas fa-users mr-2"></i> {{ $newUsersCount }}  New Users requests</strong>
+                    <div class="dropdown-divider"></div>
+                    @forelse($mostRecentUsers as $u)
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-user mr-2"></i> {{ $u->name }}
+                            <span class="float-right text-muted text-sm">{{Carbon\Carbon::parse($u->email_verified_at)->diffForHumans()}}</span>
+                        </a>
+                    @empty
+                        <div class="alert alert-secondary" role="alert">No users requests for the moment</div>
+                    @endforelse
+                    <div class="dropdown-divider"></div>
+                    <a href="{{route('newUser.request')}}" class="dropdown-item dropdown-footer">See All Notifications</a>
+                </div>
+            </li>
+    @endif
       <!-- Messages Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
@@ -132,7 +156,7 @@
 
                     <div class="dropdown-divider"></div>
                     <a href="#" class="dropdown-item">
-                        <i class="fas fa-users mr-2"></i> {{ $newUsers }}
+                        <i class="fas fa-users mr-2"></i> {{ $newUsersCount }}
                         @if($newHerbs === 1) New User request
                             @else new Users requests
                         @endif

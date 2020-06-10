@@ -94,8 +94,10 @@ class AppServiceProvider extends ServiceProvider
             $newHerbs = auth()->user()->unreadNotifications()->where('type','App\Notifications\NewHerb')->get();
             $newDrugs = auth()->user()->unreadNotifications()->where('type','App\Notifications\NewDrug')->count();
             $newTargets = auth()->user()->unreadNotifications()->where('type','App\Notifications\NewTarget')->count();
-            $newUsers = auth()->user()->unreadNotifications()->where('type','App\Notifications\NewTarget')->count();
-            $view->with(compact('title','notifications','newHerbs','newDrugs','newTargets','newUsers'));
+            $newUsersCount = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->count();
+            $mostRecentUsers = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->orderBy('email_verified_at', 'DESC')->paginate(10);
+            $allNewUsers = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->get();
+            $view->with(compact('title','notifications','newHerbs','newDrugs','newTargets','newUsersCount', 'mostRecentUsers', 'allNewUsers'));
         });
 
         //view()->composer('dashboard.layout', \App\Http\ViewComposers\HerbComposer::class);

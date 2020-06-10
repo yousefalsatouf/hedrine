@@ -38,8 +38,15 @@ class NotificationController extends Controller
 
         $user = $request->user();
 
-
         return view('notifications.index_target',compact('user'));
+    }
+
+    public function showNewUserRequests(Request $request)
+    {
+        $user = $request->user();
+        dd($user);
+
+        return view('notifications.newUserRequests',compact('user'));
     }
     /**
      * Show the form for creating a new resource.

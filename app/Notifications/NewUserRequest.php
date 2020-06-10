@@ -2,23 +2,26 @@
 
 namespace App\Notifications;
 
+use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class NewUser extends Notification
+class NewUserRequest extends Notification
 {
     use Queueable;
+    protected $user;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(User $user)
     {
         //
+        $this->user=$user;
     }
 
     /**
