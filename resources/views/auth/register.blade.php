@@ -119,7 +119,7 @@
                             <div class="col-md-6 offset-md-4">
                                 <!-- Button trigger modal -->
 
-                                <input type="button" class="btn btn-light text-success" data-toggle="modal" data-target="#exampleModal" value="cliquez ici pour lire les termes & condition">
+                                <input type="button" class="btn btn-light text-success" data-toggle="modal" data-target="#exampleModal" value="cliquez ici pour lire les termes & conditions">
                                 <label for="terms"><input type="checkbox" required> J'accepte les terms & conditions</label><br>
 
                                 <!-- Modal -->
@@ -127,7 +127,7 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title" id="exampleModalLabel">Condition & Terms</h4>
+                                                <h4 class="modal-title" id="exampleModalLabel">Conditions & Terms</h4>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
@@ -136,7 +136,7 @@
                                                 @include('auth.terms')
                                             </div>
                                             <div class="modal-footer">
-                                                <input type="button" class="btn btn-outline-danger" data-dismiss="modal" required value="hell no!">
+                                                <input type="button" class="btn btn-outline-danger" data-dismiss="modal" required value="Oh, no!">
                                                 <i class="far fa-smile-wink"></i>
                                                 <input type="button" class="btn btn-outline-success" data-dismiss="modal" required value="Ok, I am in">
                                             </div>
