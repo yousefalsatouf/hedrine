@@ -2,12 +2,6 @@
 
 @section('content_dashboard')
     <div class="container-fluid">
-        @if(session()->has('msg'))
-            <div class="alert alert-success bg-gradient-green alert-message w-25" id="success-alert">
-                <button type="button" class="close" data-dismiss="alert">x</button>
-                <strong><i class="fas fa-check-circle"></i> {{ session()->get('msg') }}</strong>
-            </div>
-        @endif
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
