@@ -17,7 +17,6 @@
 						</div>
 					@endif
 				    <div class="row">
-						<!-- left column -->
 						<div class="col-md-8 offset-md-2 ">
 						<!-- general form elements -->
 						<div class="card card-success">
@@ -34,8 +33,8 @@
 							</div>
 							<!-- /.card-header -->
 							<!-- form start -->
-						<form class=" justify-content-center" role="form" method="POST" action="@isset($target) {{ route('target.update', $target->id) }} @else {{
-							route('target.store')}} @endisset">
+							<form class=" justify-content-center" role="form" method="POST" action="@isset($target) {{ route('target.update', $target->id) }} @else {{
+								route('target.store')}} @endisset">
 								<div class="card-body">
 									<div class="form-group">
 										@isset($target) @method('PUT') @endisset
@@ -60,31 +59,28 @@
 												<option value="{{$target_type->id}}">{{$target_type->name}}</option>
 												@endforeach
 											@else
-											<option></option>
-											@foreach ($target_types as $target_type)
-												<option value=" {{$target_type->id}}" @if($target->target_type_id == $target_type->id) selected @endif>{{$target_type->name}}</option>
-											@endforeach
-
-
-											
-												
-												@endif
-
+												<option></option>
+												@foreach ($target_types as $target_type)
+													<option value=" {{$target_type->id}}" @if($target->target_type_id == $target_type->id) selected @endif>{{$target_type->name}}</option>
+												@endforeach
+											@endif
 										</select>
 									</div>
 								</div>
-								<!-- /.card-body -->
+									<!-- /.card-body -->
 								<div class="card-footer">
 									<div class="control-group">
 										<div class="controls">
-											<button type="submit" class="btn btn-success"><i class="fas fa-location-arrow"></i>
-												@if(Route::currentRouteName() === 'target.create')
-													Ajouter un nouveau target
-												@else
-												 Sauvegarder
-												@endif
+											<a class="btn btn-light" href="{{ route('target.index') }}" role="button"><i class="fas fa-arrow-left"></i> Retour à la liste des targets</a>
+											
+											<button type="submit" class="btn btn-outline-success 
+												float-right"><i class="fas fa-location-arrow"></i>
+													@if(Route::currentRouteName() === 'target.create')
+														Ajouter un nouveau target
+													@else
+													 Sauvegarder
+													@endif
 											</button>
-											<a class="btn btn-primary" href="{{ route('target.index') }}" role="button"><i class="fas fa-arrow-left"></i> Retour à la liste des targets</a>
 										</div>
 									</div>
 								</div>

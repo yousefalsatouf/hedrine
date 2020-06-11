@@ -3,13 +3,13 @@
 @section('content_dashboard')
 <div class="row justify-content-end" style="padding-bottom: 0.75rem">
 	@if(Route::currentRouteName() === 'target.index')
-		<a class="btn btn-primary" href="{{ route('target.create') }}" role="button">Créer une nouveau target</a>
+		<a class="btn btn-light" href="{{ route('target.create') }}" role="button">Créer une nouveau target</a>
 	@endif
 </div>
 
 <div class="col-12">
 	<div class="card-body " style="background-color: #fff">
-		<table id="example1" class="table table-bordered table-hover table-sm">
+		<table id="example1" class="table table-striped table-sm">
 			<thead>
 				<tr class="text-center">
 					<th> Name</th>
@@ -40,9 +40,9 @@
 					</td>
 					<td>
 						<div class="btn-group float-right">
-						&nbsp; &nbsp; &nbsp;<a class="btn btn-primary" href="" role="button"><i class="far fa-eye"></i>  View</a>  &nbsp; &nbsp;
-							<a class="btn btn-success" href="{{ route('target.edit',$target->id) }}" role="button"><i class="fas fa-edit"></i> Edit </a> &nbsp; &nbsp;
-							<a class="btn btn-danger" href="{{ route('target.destroy.alert',$target->id) }}" role="button"><i class="far fa-trash-alt"></i> Delete </a>
+						&nbsp; &nbsp; &nbsp;<a class="btn btn-outline-primary" href="" role="button"><i class="far fa-eye"></i></a>  &nbsp; &nbsp;
+							<a class="btn btn-outline-success" href="{{ route('target.edit',$target->id) }}" role="button"><i class="fas fa-edit"></i></a> &nbsp; &nbsp;
+							<a class="btn btn-outline-danger" href="{{ route('target.destroy.alert',$target->id) }}" role="button"><i class="far fa-trash-alt"></i></a>
 
 						</div>
 					</td>

@@ -11,7 +11,7 @@
 	<div class="card-body " style="background-color: #fff">
 		<table id="example1" class="table table-striped table-sm">
 			<thead>
-				<tr>
+				<tr class="text-center">
 					<th> Name </th>
 					<th> Description </th>
 					<th> Actions</th>
@@ -19,7 +19,7 @@
 			</thead>
 			<tbody>
 				@foreach ($roles as $role)
-				<tr>
+				<tr class="text-center">
 					<td>
 						<a href="" class="add_style" ><strong class="text-dark">{{$role->name}}</strong></a>
 					</td>
