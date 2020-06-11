@@ -120,7 +120,12 @@
                                 <!-- Button trigger modal -->
 
                                 <input type="button" class="btn btn-light text-success" data-toggle="modal" data-target="#exampleModal" value="cliquez ici pour lire les termes & conditions">
-                                <label for="terms"><input type="checkbox" required> J'accepte les terms & conditions</label><br>
+                                <label for="RGPD"><input type="checkbox" name="RGPD" class="@error('RGPD') is-invalid @enderror" required value="1"> J'accepte les terms & conditions</label><br>
+                                @error('RGPD')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                 @enderror
 
                                 <!-- Modal -->
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
