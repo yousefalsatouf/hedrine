@@ -83,7 +83,8 @@ Route::get('drug_families/details/{id}','DrugFamilyController@details')->name('d
 //N.Thierry Admin route
 Route::view('admin','admin.layout');
 
-Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function() {
+Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function() 
+{
 
     // Route pour Posts
     Route::name('admin')->get('/','AdminController@index');
@@ -165,6 +166,17 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
       ]);
     Route::name('target_type.destroy.alert')->get('target_type/{target_type}', 'TargetTypeController@alert');
 
+    // Route pour users
+    Route::name('user.update')->put('user', 'UserController@update');
+    Route::name('user.edit')->get('user', 'UserController@edit');
+    Route::name('user.index')->get('user', 'UserController@index'); 
+
+    Route::name('user.details')->get('force', 'UserController@details');
+    Route::resource('user', 'UserController')->parameters([
+        'user' => 'user'
+      ]);
+    Route::name('user.destroy.alert')->get('user/{user}', 'UserController@alert');
+
      //pour les nouveau utilisateurs
     Route::name('newUser.request')->get('/list_user_requests', 'NotificationController@showNewUserRequests');
     Route::name('activeUser')->get('/activated_user/{id}', 'NotificationController@activateNewUser');
@@ -175,7 +187,6 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
         Route::name ('index_drugs')->get ('/index_drugs', 'NotificationController@show_drugs');
         Route::name ('index_targets')->get ('/index_targets', 'NotificationController@show_targets');
     });
-
 });
 
 //N.Thierry : Les routes pour interagir entre les plante et DCI
