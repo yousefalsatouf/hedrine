@@ -408,10 +408,10 @@
     <!-- Content Header (Page header) -->
     <div class="content-header">
         @if(session()->has('msg'))
-        <div class="alert text-success alert-message" style="width: 18%" id="success-alert">
-            <button type="button" class="close text-danger" data-dismiss="alert"> <i class="fas fa-window-close"></i></button>
-            <strong><i class="fas fa-check-circle"></i>{{ session()->get('msg') }}</strong>
-        </div>
+            <div class="alert text-success alert-message" style="width: 25%; margin: auto; font-size: 20px" id="success-alert">
+                <button type="button" class="close text-danger" data-dismiss="alert"> <i class="fas fa-window-close"></i></button>
+                <strong><i class="fas fa-check-circle"></i> yousef alsatouf is activated now{{ session()->get('msg') }}</strong>
+            </div>
         @endif
       <div class="container-fluid">
 
