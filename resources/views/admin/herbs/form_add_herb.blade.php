@@ -67,14 +67,14 @@
 								<div class="card-footer">
 									<div class="control-group">
 										<div class="controls">
-											<button type="submit" class="btn btn-success"><i class="fas fa-location-arrow"></i>
+											<a class="btn btn-light" href="{{ route('herb.index') }}" role="button"><i class="fas fa-arrow-left"></i> Retour à la liste des plantes</a>
+											<button type="submit" class="btn btn-outline-success float-right"><i class="fas fa-location-arrow"></i>
 												@if(Route::currentRouteName() === 'herb.create')
 													Ajouter un nouvelle plante
 												@else
 												 Sauvegarder
 												@endif
 											</button>
-											<a class="btn btn-primary" href="{{ route('herb.index') }}" role="button"><i class="fas fa-arrow-left"></i> Retour à la liste des plantes</a>
 										</div>
 									</div>
 								</div>

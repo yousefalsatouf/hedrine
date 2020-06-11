@@ -11,7 +11,7 @@
 	<div class="card-body " style="background-color: #fff">
 		<table id="example1" class="table table-striped table-sm">
 			<thead>
-				<tr>
+				<tr class="text-center">
 					<th> Name </th>
 					<th> Rank </th>
 					<th> Description </th>
@@ -20,7 +20,7 @@
 			</thead>
 			<tbody>
 				@foreach ($target_types as $target_type)
-				<tr>
+				<tr class="text-center">
 					<td>
 						<a href="" class="add_style" ><strong class="text-dark">{{$target_type->name}}</strong></a>
 					</td>
