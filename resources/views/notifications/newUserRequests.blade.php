@@ -24,7 +24,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @forelse ($allNewUsers as $user)
+                        @forelse (isset($singleNewUser)&&$singleNewUser?$singleNewUser:$allNewUsers as $user)
                             <tr>
                                 <td>
                                     <strong class="text-success">{{$user->name}} {{$user->firstname}}</strong>
@@ -57,7 +57,7 @@
                         @empty
                             <tr>
                                 <td>
-                                    <strong class="text-danger">No user requests for the moment</strong>
+                                    <strong class="text-success"> <i class="fas fa-check-circle"></i> OK for user request</strong>
                                 </td>
                             </tr>
                         @endforelse
