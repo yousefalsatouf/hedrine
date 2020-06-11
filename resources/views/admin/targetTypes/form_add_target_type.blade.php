@@ -43,12 +43,22 @@
 											<input type="text" class="form-control" id="name" name="name" required placeholder="Nom du type de target" value="{{isset($target_type) ? $target_type->name : ''}}">
 										</div>
 										<div class="form-group">
-											<label for="rank">Rank</label>
-											<input type="number" class="form-control" id="rank" name="rank" required placeholder="Indiquez le rank" value="{{isset($target_type) ? $target_type->rank : ''}}">
-										</div>
-										<div class="form-group">
 											<label for="description">Description</label>
 											<input type="text" class="form-control" id="description" name="description" required placeholder="Indiquez la description" value="{{isset($target_type) ? $target_type->description : ''}}">
+										</div>
+										<div class="form-group">
+											<label for="rank">Rank</label>
+											<select class="form-control" id="exampleFormControlSelect1" name="rank">
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+												<option>4</option>
+												<option>5</option>
+												<option>6</option>
+												<option>7</option>
+												<option>8</option>
+											</select>
+											{{-- <input type="number" class="form-control" id="rank" name="rank" required placeholder="Indiquez le rank" value="{{isset($target_type) ? $target_type->rank : ''}}"> --}}
 										</div>
 									</div>
 									<!-- /.card-body -->
@@ -63,7 +73,6 @@
 														Sauvegarder
 													@endif
 												</button>
-												
 											</div>
 										</div>
 									</div>
