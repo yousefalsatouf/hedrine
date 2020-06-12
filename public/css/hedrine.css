@@ -1,3 +1,8 @@
+.awesome-font, label
+{
+    font-family: 'Berkshire Swash', cursive;
+}
+
 a.add_style {
 
 	color:#003d4c;
@@ -78,10 +83,13 @@ a.style_a {
     color: green;
     font-weight: bold;
 }
-
+.link:hover
+{
+    color: green;
+}
 #register .card
 {
-    width: 75%;
+    width: 100%;
 }
 
 #register input
@@ -93,8 +101,26 @@ a.style_a {
     width: 40%;
 }
 
-#register input
+#register input, #register button
 {
     border: 0;
     border-bottom: 1px solid green;
+}
+
+#register .info
+{
+    font-size: 15px;
+    margin-left: 5px;
+}
+
+#register .m-footer
+{
+}
+
+
+#register .scroll
+{
+    overflow-y: scroll;
+    height: 25rem;
+    text-align: left;
 }
