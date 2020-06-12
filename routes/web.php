@@ -190,10 +190,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
         Route::name ('update')->patch ('{notification}', 'NotificationController@update');
         Route::name ('index_drugs')->get ('/index_drugs', 'NotificationController@show_drugs');
         Route::name ('index_targets')->get ('/index_targets', 'NotificationController@show_targets');
-<<<<<<< Updated upstream
-=======
         Route::name('newUser')->get('/new_user_request', 'NotificationController@showNewUserRequests');
->>>>>>> Stashed changes
     });
     //Route Pour Les Alertes
     Route::name('alert.')->prefix('alert')->group(function() {
