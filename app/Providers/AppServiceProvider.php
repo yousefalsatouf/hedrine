@@ -48,6 +48,14 @@ class AppServiceProvider extends ServiceProvider
 
             $view->with('herbs', Herb::orderBy('name')->get());
         });
+
+        view()->composer('*', function ($view) {
+            $view->with('noValidCount',Herb::where('validated',false)->get());
+        });
+        view()->composer('*', function ($view) {
+            $view->with('validatedHerb',Herb::where('validated',true)->get());
+        });
+        
         View::composer('*', function ($view) {
 
             $view->with('drugs', Drug::orderBy('name')->get());
