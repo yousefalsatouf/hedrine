@@ -182,6 +182,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
 
      //pour les nouveau utilisateurs
     Route::name('newUser.request')->get('/list_user_requests', 'NotificationController@showNewUserRequests');
+    Route::name('newSingleUser.request')->get('/single_user_requests/{id}', 'NotificationController@showSingleNewUserRequest');
     Route::name('activeUser')->get('/activated_user/{id}', 'NotificationController@activateNewUser');
     // Notifications
      Route::name ('notification.')->prefix('notification')->group(function () {

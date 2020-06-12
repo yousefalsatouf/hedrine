@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Events\ActivateNewUserEvent;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\VerifiesEmails;
+use Illuminate\Support\Facades\DB;
 
 class VerificationController extends Controller
 {
@@ -38,5 +40,12 @@ class VerificationController extends Controller
         $this->middleware('auth');
         $this->middleware('signed')->only('verify');
         $this->middleware('throttle:6,1')->only('verify', 'resend');
+
+        /*$newUser = DB::table('users')->orderByDesc('id')->limit(1)->get();
+        //dd($newUser[0]->name);
+        if ($newUser[0]->email_verified_at)
+        else
+            return;*/
     }
+
 }

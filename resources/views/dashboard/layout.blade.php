@@ -72,23 +72,23 @@
                     <span class="badge badge-success navbar-badge" style="font-size: 15.5px" >{{ $newUsersCount }}</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <h4 class="dropdown-item dropdown-header text-success"><i class="fas fa-users mr-2"></i> {{ $newUsersCount }}  New Users requests</h4>
+                    <h4 class="dropdown-item dropdown-header text-info"><i class="fas fa-users mr-2"></i> {{ $newUsersCount }}  New Users requests</h4>
                     <div class="dropdown-divider"></div>
                     @forelse($mostRecentUsers as $u)
                         <div class="card text-center">
-                            <div class="d-flex justify-content-between" style="margin: 10px 5px">
-                                <strong><i class="fas fa-user mr-2"></i> {{ $u->name }}</strong>
-                                <small>{{Carbon\Carbon::parse($u->email_verified_at)->diffForHumans()}}</small>
-                            </div>
-                            <div class="card-footer text-muted">
-                                <a class="btn btn-outline-success w-50" href="{{route('activeUser', $u->id)}}" role="button"><i class="fas fa-check"></i></a>
+                            <div class="text-dark d-flex justify-content-between new-user" style="padding: 5px 0">
+                                <strong class="text-left">
+                                    <a href="{{route('newSingleUser.request', $u->id)}}" title="See user request" class="text-dark view"><i class="fas fa-user mr-2"></i>{{ $u->name }} {{$u->firstname}} <i class="fas fa-eye"></i></a>
+                                    <a href="{{route('activeUser', $u->id)}}" title="accept user request" role="button" class="accept"><i class="fas fa-check-circle text-success"></i></a>
+                                </strong>
+                                <small class="text-right">{{Carbon\Carbon::parse($u->email_verified_at)->diffForHumans()}}</small>
                             </div>
                         </div>
                     @empty
-                        <div class="alert alert-secondary" role="alert">No users requests for the moment</div>
+                        <div class="alert alert-warning" role="alert">No users requests for the moment</div>
                     @endforelse
                     <div class="dropdown-divider"></div>
-                    <a href="{{route('newUser.request')}}" class="dropdown-item dropdown-footer">See All User requests</a>
+                    <a href="{{route('newUser.request')}}" class="dropdown-item dropdown-footer" title="see all user requests">See All User requests</a>
                 </div>
             </li>
     @endif
@@ -407,7 +407,15 @@
   <div class="content-wrapper" style="background: #fff">
     <!-- Content Header (Page header) -->
     <div class="content-header">
+        @if(session()->has('msg'))
+        <div class="alert text-success alert-message" style="width: 18%" id="success-alert">
+            <button type="button" class="close text-danger" data-dismiss="alert"> <i class="fas fa-window-close"></i></button>
+            <strong><i class="fas fa-check-circle"></i>{{ session()->get('msg') }}</strong>
+        </div>
+        @endif
       <div class="container-fluid">
+
+
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0 text-dark">{{ $title }}</h1>

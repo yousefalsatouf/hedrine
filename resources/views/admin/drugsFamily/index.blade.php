@@ -11,14 +11,14 @@
         <div class="card-body " style="background-color: #fff">
             <table id="example1" class="table table-striped table-sm">
                 <thead>
-                <tr>
+                <tr class="text-center">
                     <th> Name </th>
                     <th> Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach ($drugsFamily as $drug)
-                    <tr>
+                    <tr class="text-center">
                         <td>
                             <strong>{{$drug->name}}</strong>
                         </td>

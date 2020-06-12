@@ -20,7 +20,7 @@ class CreateForeignKeys extends Migration
 
                 $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
             });
-
+ 
             Schema::table('posts', function (Blueprint $table) {
                 $table->unsignedBigInteger('user_id');
 

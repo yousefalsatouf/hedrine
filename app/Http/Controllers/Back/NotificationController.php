@@ -45,6 +45,12 @@ class NotificationController extends Controller
 
         return view('notifications.newUserRequests',compact('allNewUsers'));
     }
+    public function showSingleNewUserRequest($id)
+    {
+        $singleNewUser = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->where('id', '=', $id)->get();
+
+        return view('notifications.newUserRequests',compact('singleNewUser'));
+    }
     public function activateNewUser($id)
     {
         DB::table('users')
@@ -59,7 +65,7 @@ class NotificationController extends Controller
 
         //dd($username);
 
-        return redirect()->back()->with('msg', $username." is activated now !");
+        return redirect()->back()->with('msg', $username." activated now");
     }
     /**
      * Show the form for creating a new resource.

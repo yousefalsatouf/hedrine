@@ -10,7 +10,7 @@
 	<div class="card-body " style="background-color: #fff">
 		<table id="example1" class="table table-bordered table-hover table-sm">
 			<thead>
-				<tr>
+				<tr class="text-center">
 					<th> title</th>
 					<th> Body</th>
 					<th> Actions</th>
@@ -18,7 +18,7 @@
 			</thead>
 			<tbody>
 				@foreach ($posts as $post)
-				<tr>
+				<tr class="text-center">
 					<td>
 						<a href="" class="add_style" ><strong>{{$post->title}}</strong></a>
 					</td>

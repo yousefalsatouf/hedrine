@@ -5,7 +5,7 @@
 @section('content_dashboard')
 	<div class="row">
 		<div class="col-12">
-			<section class="content">
+			<section class="content"> 
 				<div class="container-fluid">
 					@if(session()->has('message'))
 						<div class="col s12">
@@ -97,14 +97,14 @@
 									<div class="card-footer">
 										<div class="control-group">
 											<div class="controls">
-												<button type="submit" class="btn btn-success"><i class="fas fa-location-arrow"></i>
+												<a class="btn btn-light" href="{{ route('drug.index') }}" role="button"><i class="fas fa-arrow-left"></i> Retour à la liste des DCI</a>
+												<button type="submit" class="btn btn-outline-success float-right"><i class="fas fa-location-arrow"></i>
 													@if(Route::currentRouteName() === 'drug.create')
 														Ajouter un nouveau DCI
 													@else
 														Sauvegarder
 													@endif
 												</button>
-												<a class="btn btn-primary" href="{{ route('drug.index') }}" role="button"><i class="fas fa-arrow-left"></i> Retour à la liste des DCI</a>
 											</div>
 										</div>
 									</div>

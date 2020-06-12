@@ -2,12 +2,6 @@
 
 @section('content_dashboard')
     <div class="container-fluid">
-        @if(session()->has('msg'))
-            <div class="alert alert-success bg-gradient-green alert-message w-25" id="success-alert">
-                <button type="button" class="close" data-dismiss="alert">x</button>
-                <strong><i class="fas fa-check-circle"></i> {{ session()->get('msg') }}</strong>
-            </div>
-        @endif
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
@@ -24,7 +18,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @forelse ($allNewUsers as $user)
+                        @forelse (isset($singleNewUser)&&$singleNewUser?$singleNewUser:$allNewUsers as $user)
                             <tr>
                                 <td>
                                     <strong class="text-success">{{$user->name}} {{$user->firstname}}</strong>
@@ -57,7 +51,7 @@
                         @empty
                             <tr>
                                 <td>
-                                    <strong class="text-danger">No user requests for the moment</strong>
+                                    <strong class="text-success"> <i class="fas fa-check-circle"></i> OK for user request</strong>
                                 </td>
                             </tr>
                         @endforelse

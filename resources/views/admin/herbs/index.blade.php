@@ -6,13 +6,13 @@
 @section('content_dashboard')
 <div class="row justify-content-end" style="padding-bottom: 0.75rem">
 	@if(Route::currentRouteName() === 'herb.index')
-		<a class="btn btn-primary" href="{{ route('herb.create') }}" role="button">Créer une nouvelle plante</a>
+		<a class="btn btn-light" href="{{ route('herb.create') }}" role="button">Créer une nouvelle plante</a>
 	@endif
 </div>
 
 <div class="col-12">
 	<div class="card-body " style="background-color: #fff">
-		<table id="example1" class="table table-bordered table-hover table-sm">
+		<table id="example1" class="table table-striped table-sm">
 			<thead>
 				<tr class="text-center">
 					<th> nom</th>
@@ -37,7 +37,7 @@
 							
 					<tr class="text-center">
 						<td>
-							<a href="" class="add_style" ><strong>{{$herb->name}}</strong></a>
+							<a href="" class="add_style" ><strong class="text-dark">{{$herb->name}}</strong></a>
 						</td>
 						<td>
 							<a href="" class="add_style" ><strong>{{$herb->sciname}}</strong></a>
@@ -61,11 +61,11 @@
 									@endif
 							@endforeach
 						</td>
-						<td>
+						<td style="width: 10rem">
 							<div class="btn-group float-right">
-							&nbsp; &nbsp; &nbsp;<a class="btn btn-primary" href="" role="button"><i class="far fa-eye"></i>  View</a>  &nbsp; &nbsp;
-								<a class="btn btn-success" href="{{ route('herb.edit',$herb->id) }}" role="button"><i class="fas fa-edit"></i> Edit </a> &nbsp; &nbsp;
-								<a class="btn btn-danger" href="{{ route('herb.destroy.alert',$herb->id) }}" role="button"><i class="far fa-trash-alt"></i> Delete </a>
+							&nbsp; &nbsp; &nbsp;<a class="btn btn-outline-primary" href="" role="button"><i class="far fa-eye"></i></a>  &nbsp; &nbsp;
+								<a class="btn btn-outline-success" href="{{ route('herb.edit',$herb->id) }}" role="button"><i class="fas fa-edit"></i></a> &nbsp; &nbsp;
+								<a class="btn btn-outline-danger" href="{{ route('herb.destroy.alert',$herb->id) }}" role="button"><i class="far fa-trash-alt"></i></a>
 								
 							</div>
 						</td>
