@@ -180,6 +180,17 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
       ]);
     Route::name('target_type.destroy.alert')->get('target_type/{target_type}', 'TargetTypeController@alert');
 
+    // Reference pour references
+    Route::name('reference.update')->put('reference', 'ReferenceController@update');
+    Route::name('reference.edit')->get('reference', 'ReferenceController@edit');
+    Route::name('reference.index')->get('reference', 'ReferenceController@index');
+
+    Route::name('reference.details')->get('reference', 'ReferenceController@details');
+    Route::resource('reference', 'ReferenceController')->parameters([
+        'reference' => 'reference'
+      ]);
+    Route::name('reference.destroy.alert')->get('reference/{reference}', 'ReferenceController@alert');
+
     //pour les nouveau utilisateurs
     Route::name('newUser.request')->get('/list_user_requests', 'NotificationController@showNewUserRequests');
     Route::name('newSingleUser.request')->get('/single_user_requests/{id}', 'NotificationController@showSingleNewUserRequest');

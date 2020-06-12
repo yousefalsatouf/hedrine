@@ -6,7 +6,7 @@ use App\DataTables\DrugssDataTable;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\DrugRequest;
 use App\Drug;
-use App\Herb;
+use App\Herb; 
 use App\Target;
 use App\Route;
 use App\User;

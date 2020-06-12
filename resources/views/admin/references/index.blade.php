@@ -12,29 +12,31 @@
 		<table id="example1" class="table table-striped table-sm">
 			<thead>
 				<tr class="text-center">
-					<th> Name </th>
-					<th> Family </th>
-					<th> AtcLevel4 </th>
-					<th> Route </th>
-					<th> Editor </th>
+					<th> Title </th>
+					<th> Authors </th>
+					<th> Year </th>
+					<th> Edition </th>
+					<th> URL </th>
+					<th> User</th>
 					<th> Actions</th>
 				</tr>
 			</thead>
 			<tbody>
-				@foreach ($drugs as $drug) 
+				@foreach ($references as $reference)
 				<tr class="text-center">
 					<td>
-						<a href="" class="add_style" ><strong class="text-dark">{{$drug->name}}</strong></a>
+						<a href="" class="add_style" ><strong class="text-dark">{{$reference->title}}</strong></a>
 					</td>
-					<td>{{$drug->drug_family->name}}</td> 
-					<td>{{ $drug->atc_level4s->name }}</td>
-					<td>{{ $drug->routes->name }}</td>
-					<td>{{ $drug->users->name }}</td>
+					<td>{{ $reference->authors }}</td>
+					<td>{{ $reference->year }}</td>
+					<td>{{ $reference->edition }}</td>
+					<td>{{ $reference->url }}</td>
+					<td>{{ $reference->users->name}}</td>
 					<td style="width: 10rem">
 						<div class="btn-group float-right">
 						&nbsp; &nbsp; &nbsp;<a class="btn btn-outline-primary" href="" role="button"><i class="far fa-eye"></i></a>  &nbsp; &nbsp;
-							<a class="btn btn-outline-success" href="{{ route('drug.edit',$drug->id) }}" role="button"><i class="fas fa-edit"></i> </a> &nbsp; &nbsp;
-							<a class="btn btn-outline-danger" href="{{ route('drug.destroy.alert',$drug->id) }}" role="button">
+							<a class="btn btn-outline-success" href="{{ route('reference.edit',$reference->id) }}" role="button"><i class="fas fa-edit"></i> </a> &nbsp; &nbsp;
+							<a class="btn btn-outline-danger" href="{{ route('reference.destroy.alert',$reference->id) }}" role="button">
 								<i class="far fa-trash-alt"></i></a>
 
 						</div>
