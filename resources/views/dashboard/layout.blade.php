@@ -75,15 +75,17 @@
                     <h4 class="dropdown-item dropdown-header text-info"><i class="fas fa-users mr-2"></i> {{ $newUsersCount }}  New Users requests</h4>
                     <div class="dropdown-divider"></div>
                     @forelse($mostRecentUsers as $u)
-                        <div class="card text-center">
-                            <div class="text-dark d-flex justify-content-between new-user" style="padding: 5px 0">
-                                <strong class="text-left">
-                                    <a href="{{route('newSingleUser.request', $u->id)}}" title="See user request" class="text-dark view"><i class="fas fa-user mr-2"></i>{{ $u->name }} {{$u->firstname}} <i class="fas fa-eye"></i></a>
-                                    <a href="{{route('activeUser', $u->id)}}" title="accept user request" role="button" class="accept"><i class="fas fa-check-circle text-success"></i></a>
-                                </strong>
-                                <small class="text-right">{{Carbon\Carbon::parse($u->email_verified_at)->diffForHumans()}}</small>
-                            </div>
+                    <div class="card text-center">
+                        <div class="text-dark d-flex justify-content-between new-user" style="padding: 5px 0">
+                            <strong class="text-left">
+                                <a href="{{route('newSingleUser.request', $u->id)}}" title="See user request" class="text-dark view"><i class="fas fa-user mr-2"></i>{{ $u->name }} {{$u->firstname}} <i class="fas fa-eye"></i></a>
+                                <a href="{{route('activeUser', $u->id)}}" title="accept user request" role="button" class="accept"><i class="fas fa-check-circle text-success"></i></a>
+                            </strong>
+                            <small class="text-right">{{Carbon\Carbon::parse($u->email_verified_at)->diffForHumans()}}</small>
                         </div>
+                    </div>
+
+
                     @empty
                         <div class="alert alert-warning" role="alert">No users requests for the moment</div>
                     @endforelse
@@ -157,15 +159,6 @@
                             @else new Targets
                         @endif
                         <span class="float-right text-muted text-sm">2 days</span>
-                    </a>
-
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <i class="fas fa-users mr-2"></i> {{ $newUsersCount }}
-                        @if($newHerbs === 1) New User request
-                            @else new Users requests
-                        @endif
-                        <span class="float-right text-muted text-sm">12 hours</span>
                     </a>
                     <div class="dropdown-divider"></div>
                     <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
@@ -408,10 +401,10 @@
     <!-- Content Header (Page header) -->
     <div class="content-header">
         @if(session()->has('msg'))
-        <div class="alert text-success alert-message" style="width: 18%" id="success-alert">
-            <button type="button" class="close text-danger" data-dismiss="alert"> <i class="fas fa-window-close"></i></button>
-            <strong><i class="fas fa-check-circle"></i>{{ session()->get('msg') }}</strong>
-        </div>
+            <div class="alert text-success alert-message" style="width: 25%; margin: auto; font-size: 20px" id="success-alert">
+                <button type="button" class="close text-danger" data-dismiss="alert"> <i class="fas fa-window-close"></i></button>
+                <strong><i class="fas fa-check-circle"></i> yousef alsatouf is activated now{{ session()->get('msg') }}</strong>
+            </div>
         @endif
       <div class="container-fluid">
 
