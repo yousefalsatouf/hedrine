@@ -75,6 +75,7 @@
                     <h4 class="dropdown-item dropdown-header text-info"><i class="fas fa-users mr-2"></i> {{ $newUsersCount }}  New Users requests</h4>
                     <div class="dropdown-divider"></div>
                     @forelse($mostRecentUsers as $u)
+<<<<<<< Updated upstream
                         <div class="card text-center">
                             <div class="text-dark d-flex justify-content-between new-user" style="padding: 5px 0">
                                 <strong class="text-left">
@@ -84,11 +85,21 @@
                                 <small class="text-right">{{Carbon\Carbon::parse($u->email_verified_at)->diffForHumans()}}</small>
                             </div>
                         </div>
+=======
+                        <a href="" class="dropdown-item">
+                            <i class="fas fa-user mr-2"></i> {{ $u->name }}
+                            <span class="float-right text-muted text-sm">{{Carbon\Carbon::parse($u->email_verified_at)->diffForHumans()}}</span>
+                        </a>
+>>>>>>> Stashed changes
                     @empty
                         <div class="alert alert-warning" role="alert">No users requests for the moment</div>
                     @endforelse
                     <div class="dropdown-divider"></div>
+<<<<<<< Updated upstream
                     <a href="{{route('newUser.request')}}" class="dropdown-item dropdown-footer" title="see all user requests">See All User requests</a>
+=======
+                    <a href="{{route('newUser')}}" class="dropdown-item dropdown-footer">See All Notifications</a>
+>>>>>>> Stashed changes
                 </div>
             </li>
     @endif
@@ -157,15 +168,6 @@
                             @else new Targets
                         @endif
                         <span class="float-right text-muted text-sm">2 days</span>
-                    </a>
-
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <i class="fas fa-users mr-2"></i> {{ $newUsersCount }}
-                        @if($newHerbs === 1) New User request
-                            @else new Users requests
-                        @endif
-                        <span class="float-right text-muted text-sm">12 hours</span>
                     </a>
                     <div class="dropdown-divider"></div>
                     <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
@@ -408,10 +410,10 @@
     <!-- Content Header (Page header) -->
     <div class="content-header">
         @if(session()->has('msg'))
-        <div class="alert text-success alert-message" style="width: 18%" id="success-alert">
-            <button type="button" class="close text-danger" data-dismiss="alert"> <i class="fas fa-window-close"></i></button>
-            <strong><i class="fas fa-check-circle"></i>{{ session()->get('msg') }}</strong>
-        </div>
+            <div class="alert text-success alert-message" style="width: 25%; margin: auto; font-size: 20px" id="success-alert">
+                <button type="button" class="close text-danger" data-dismiss="alert"> <i class="fas fa-window-close"></i></button>
+                <strong><i class="fas fa-check-circle"></i> yousef alsatouf is activated now{{ session()->get('msg') }}</strong>
+            </div>
         @endif
       <div class="container-fluid">
 
