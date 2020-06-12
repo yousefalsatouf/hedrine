@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDrugsTable extends Migration
+class CreateMessagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateDrugsTable extends Migration
      */
     public function up()
     {
-        Schema::create('drugs', function (Blueprint $table) {
+        Schema::create('messages', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
-            $table->boolean('validated')->default(false);
+            $table->text('texte');
+            $table->string('email');
+            $table->unsignedBigInteger('herb_id');
             $table->timestamps();
+
+            $table->foreign('herb_id')->references('id')->on('herbs')->onDelete('cascade');
         });
     }
 
@@ -28,6 +31,6 @@ class CreateDrugsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('drugs');
+        Schema::dropIfExists('messages');
     }
 }

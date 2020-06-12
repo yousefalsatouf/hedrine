@@ -134,8 +134,8 @@
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <span class="dropdown-item dropdown-header"> {{ $notifications }} Notifications</span>
                     <div class="dropdown-divider"></div>
-                    <a href="{{ route('notification.index') }}" class="dropdown-item">
-                        <i class="fas fa-seedling mr-2" style="color: seagreen"></i> {{ $newHerbs->count() }}
+                    <a href="{{ route('admin.herbs') }}" class="dropdown-item">
+                        <i class="fas fa-seedling mr-2" style="color: seagreen"></i> {{ $noValidCount->count() }}
                         @if($newHerbs === 1) new Herb
                             @else new Herbs
                         @endif
@@ -427,10 +427,10 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+    <strong> 2020 <a href="https://www.ulb.be">Hedrine-ULB</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.0.5
+
     </div>
   </footer>
 
@@ -478,10 +478,19 @@
 
 
 
-
-
     @yield('dashboard-js')
     @include('sweetalert::alert')
     @include('cookieConsent::index')
+    <script type="text/javascript">
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+        })
+    </script>
+    @yield('script')
 </body>
 </html>

@@ -26,6 +26,7 @@
         "barryvdh/laravel-debugbar": "^3.3",
         "facade/ignition": "^2.0",
         "fzaninotto/faker": "^1.9.1",
+        "jason-guru/laravel-make-repository": "^0.0.2",
         "nunomaduro/collision": "^4.1",
         "phpunit/phpunit": "^8.5"
     },

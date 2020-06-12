@@ -28,7 +28,8 @@ class HerbController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { $numberOfTimes_herbForms = 0;
+    {
+        $numberOfTimes_herbForms = 0;
         $lastHerb = 0;
         $herbs = Herb::all();
 
