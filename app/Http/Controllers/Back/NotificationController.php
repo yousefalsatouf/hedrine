@@ -39,9 +39,8 @@ class NotificationController extends Controller
         return view('notifications.index_target',compact('user'));
     }
 
-    public function showNewUserRequests()
+    public function showNewUserRequests(Request $request)
     {
-<<<<<<< Updated upstream
         $allNewUsers = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->get();
 
         return view('notifications.newUserRequests',compact('allNewUsers'));
@@ -65,12 +64,8 @@ class NotificationController extends Controller
             $username = $name->name." ".$name->firstname;
 
         //dd($username);
-=======
 
-        dd('hello');
->>>>>>> Stashed changes
-
-        return redirect()->back()->with('msg', $username." activated now");
+        return redirect()->back()->with('msg', $username." is activated now");
     }
     /**
      * Show the form for creating a new resource.
