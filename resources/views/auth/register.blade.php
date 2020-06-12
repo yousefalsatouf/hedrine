@@ -118,7 +118,7 @@
                                 <blockquote class="text-info">
                                     <i class="fa fa-info-circle info text-danger" id="required-msg"></i>
                                     « L'Université libre de Bruxelles traite vos données afin de permettre votre inscription sur ce site. Pour en savoir plus sur la manière dont vos données personnelles sont traitées et conservées ainsi que pour exercer vos droits,
-                                    <button type="button" class="btn btn-outline-info text-dark awesome-font" data-toggle="modal" data-target="#exampleModal">reportez-vous à l'information disponible ici </button>»
+                                    <button type="button" class="btn btn-outline-light text-dark awesome-font" data-toggle="modal" data-target="#exampleModal">reportez-vous à l'information disponible ici </button>»
                                 </blockquote>
                             </div>
                             <div class="col-md-6 offset-md-4">
