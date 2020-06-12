@@ -84,7 +84,12 @@
                             <small class="text-right">{{Carbon\Carbon::parse($u->email_verified_at)->diffForHumans()}}</small>
                         </div>
                     </div>
+<<<<<<< HEAD
                    
+=======
+
+
+>>>>>>> 03d56d0a261aed7249746bcee0be5827fd7fb730
                     @empty
                         <div class="alert alert-warning" role="alert">No users requests for the moment</div>
                     @endforelse
