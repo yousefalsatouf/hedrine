@@ -31,9 +31,9 @@ class HerbController extends Controller
     {
         $numberOfTimes_herbForms = 0;
         $lastHerb = 0;
-        $herbs = Herb::all();
 
-        return view('admin.herbs.index', compact('herbs','numberOfTimes_herbForms','lastHerb'));
+
+        return view('admin.herbs.index', compact('numberOfTimes_herbForms','lastHerb'));
     }
 
     /**
