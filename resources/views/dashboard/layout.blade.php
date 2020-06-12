@@ -75,31 +75,22 @@
                     <h4 class="dropdown-item dropdown-header text-info"><i class="fas fa-users mr-2"></i> {{ $newUsersCount }}  New Users requests</h4>
                     <div class="dropdown-divider"></div>
                     @forelse($mostRecentUsers as $u)
-<<<<<<< Updated upstream
-                        <div class="card text-center">
-                            <div class="text-dark d-flex justify-content-between new-user" style="padding: 5px 0">
-                                <strong class="text-left">
-                                    <a href="{{route('newSingleUser.request', $u->id)}}" title="See user request" class="text-dark view"><i class="fas fa-user mr-2"></i>{{ $u->name }} {{$u->firstname}} <i class="fas fa-eye"></i></a>
-                                    <a href="{{route('activeUser', $u->id)}}" title="accept user request" role="button" class="accept"><i class="fas fa-check-circle text-success"></i></a>
-                                </strong>
-                                <small class="text-right">{{Carbon\Carbon::parse($u->email_verified_at)->diffForHumans()}}</small>
-                            </div>
+                    <div class="card text-center">
+                        <div class="text-dark d-flex justify-content-between new-user" style="padding: 5px 0">
+                            <strong class="text-left">
+                                <a href="{{route('newSingleUser.request', $u->id)}}" title="See user request" class="text-dark view"><i class="fas fa-user mr-2"></i>{{ $u->name }} {{$u->firstname}} <i class="fas fa-eye"></i></a>
+                                <a href="{{route('activeUser', $u->id)}}" title="accept user request" role="button" class="accept"><i class="fas fa-check-circle text-success"></i></a>
+                            </strong>
+                            <small class="text-right">{{Carbon\Carbon::parse($u->email_verified_at)->diffForHumans()}}</small>
                         </div>
-=======
-                        <a href="" class="dropdown-item">
-                            <i class="fas fa-user mr-2"></i> {{ $u->name }}
-                            <span class="float-right text-muted text-sm">{{Carbon\Carbon::parse($u->email_verified_at)->diffForHumans()}}</span>
-                        </a>
->>>>>>> Stashed changes
+                    </div>
+
+
                     @empty
                         <div class="alert alert-warning" role="alert">No users requests for the moment</div>
                     @endforelse
                     <div class="dropdown-divider"></div>
-<<<<<<< Updated upstream
                     <a href="{{route('newUser.request')}}" class="dropdown-item dropdown-footer" title="see all user requests">See All User requests</a>
-=======
-                    <a href="{{route('newUser')}}" class="dropdown-item dropdown-footer">See All Notifications</a>
->>>>>>> Stashed changes
                 </div>
             </li>
     @endif
