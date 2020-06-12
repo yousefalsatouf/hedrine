@@ -64,6 +64,7 @@ class NotificationController extends Controller
             $username = $name->name." ".$name->firstname;
 
         //dd($username);
+
         return redirect()->back()->with('msg', $username." is activated now");
     }
     /**
