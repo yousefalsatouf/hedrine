@@ -84,8 +84,7 @@
                             <small class="text-right">{{Carbon\Carbon::parse($u->email_verified_at)->diffForHumans()}}</small>
                         </div>
                     </div>
-
-
+                   
                     @empty
                         <div class="alert alert-warning" role="alert">No users requests for the moment</div>
                     @endforelse
@@ -170,7 +169,7 @@
         <li class="nav-item d-sm-inline-block">
             <img class="img-fluid" src="{{ asset('images/Plant-icon_32.png') }}" alt="plante">
         </li>
-        <li class="nav-item d-sm-inline-block">{{ $herbs->count() }}</li>
+        <li class="nav-item d-sm-inline-block">{{ $validatedHerb->count() }}</li>
         &nbsp; &nbsp;
         <li class="nav-item d-sm-inline-block"><img class="img-fluid"
                 src="{{ asset('images/pills-5-icon_32.png') }}" alt="drugs">
