@@ -83,10 +83,24 @@ Route::get('drug_families/details/{id}','DrugFamilyController@details')->name('d
 //N.Thierry Admin route
 Route::view('admin','admin.layout');
 
+//Message
+Route::middleware('ajax')->group(function () {
+    Route::post('message', 'UserController@message')->name('message');
+});
 Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function() {
 
-    // Route pour Posts
+    // Route pour Admins
     Route::name('admin')->get('/','AdminController@index');
+    Route::get('/', 'AdminController@herbs')->name('admin.herbs');
+    Route::prefix('herb')->group(function () {
+
+        Route::middleware('ajax')->group(function() {
+            Route::post('approve/{herb}','AdminController@approve')->name('admin.approve');
+            Route::post('refuse','AdminController@refuse')->name('admin.refuse');
+        });
+    });
+
+    //Pour Post
     Route::name('post.update')->put('post', 'PostController@update');
     Route::name('post.edit')->get('post', 'PostController@edit');
     Route::name('post.details')->get('post', 'PostController@details');
@@ -125,6 +139,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
     Route::name('herb.update')->put('herb', 'HerbController@update');
     Route::name('herb.edit')->get('herb', 'HerbController@edit');
     Route::name('herb.index')->get('herb', 'HerbController@index');
+    Route::name('herb.show')->get('herb', 'HerbController@show');
 
     Route::name('herb.details')->get('herb', 'HerbController@details');
     Route::resource('herb', 'HerbController')->parameters([
@@ -175,6 +190,11 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
         Route::name ('update')->patch ('{notification}', 'NotificationController@update');
         Route::name ('index_drugs')->get ('/index_drugs', 'NotificationController@show_drugs');
         Route::name ('index_targets')->get ('/index_targets', 'NotificationController@show_targets');
+    });
+    //Route Pour Les Alertes
+    Route::name('alert.')->prefix('alert')->group(function() {
+
+        Route::get('/','AlertsController@index')->name('index');
     });
 
 });

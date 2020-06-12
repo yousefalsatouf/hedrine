@@ -38,7 +38,7 @@ class UsersTableSeeder extends Seeder
             'tel1' => '048556262',
             'tel2' => '024875454',
             'RGPD' => '1',
-            'email' => 'thierry.ndayegamiye@gmail.be',
+            'email' => 'thierry.ndayegamiye@gmail.com',
             'email_verified_at' => Carbon::now(),
             'password' => bcrypt('editor'),
             'is_active' => 0,

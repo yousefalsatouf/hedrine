@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 class Herb extends Model
 {
+    use Notifiable;
+
     protected $fillable = ['name', 'sciname', 'user_id'];
 
     public function users()
@@ -13,9 +16,9 @@ class Herb extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function herb_forms() { 
+    public function herb_forms() {
         //DD herb_has_forms c'est le nom de la table pivot
-        return $this->belongsToMany(HerbForm::class, 'herb_has_forms')->withTimestamps(); 
+        return $this->belongsToMany(HerbForm::class, 'herb_has_forms')->withTimestamps();
     }
 
     public function targets()
@@ -27,7 +30,7 @@ class Herb extends Model
     {
         return $this->hasMany(Hinteraction::class, 'herb_id', 'id');
     }
-    //Thierry Tester 
+    //Thierry Tester
 
 
 }
