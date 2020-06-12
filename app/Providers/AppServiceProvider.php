@@ -111,11 +111,7 @@ class AppServiceProvider extends ServiceProvider
             $newDrugs = auth()->user()->unreadNotifications()->where('type','App\Notifications\NewDrug')->count();
             $newTargets = auth()->user()->unreadNotifications()->where('type','App\Notifications\NewTarget')->count();
             $newUsersCount = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->count();
-<<<<<<< HEAD
             $mostRecentUsers = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->orderBy('email_verified_at', 'DESC')->paginate(5);
-=======
-            $mostRecentUsers = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->orderBy('email_verified_at', 'DESC')->paginate(3);
->>>>>>> 03d56d0a261aed7249746bcee0be5827fd7fb730
             $allNewUsers = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->get();
             $view->with(compact('title','notifications','newHerbs','newDrugs','newTargets','newUsersCount', 'mostRecentUsers', 'allNewUsers'));
         });
