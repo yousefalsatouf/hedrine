@@ -99,7 +99,7 @@
                     <div class="col-9 col-sm-6 col-md-6 align-middle" id="test">
                         <ul class="nav justify-content-end align-middle" id="icon">
                             <li nav-item><img src="{{asset('images/Plant-icon_32.png')}}" alt="plantes"></li>
-                            <li>{{$herbs->count()}}</li>&nbsp; &nbsp;
+                            <li>{{$validatedHerb->count()}}</li>&nbsp; &nbsp;
                             <li nav-item><img src="{{asset('images/pills-5-icon_32.png')}}" alt="drugs"></li>
                             <li>{{$drugs->count()}}</li>&nbsp; &nbsp;
                             <li nav-item><img src="{{asset('images/Refresh-bicolor-icon_32.png')}}" alt="targets"></li>

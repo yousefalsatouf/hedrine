@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\DB;
-use App\Notifications\NewDrug as NewDrugNotification;
+
 
 
 class TargetTypeController extends Controller

@@ -87,6 +87,13 @@ class AppServiceProvider extends ServiceProvider
             $view->with('herb_forms', HerbForm::all());
         });
 
+        view()->composer('*', function ($view) {
+            $view->with('noValidCount',Herb::where('validated',false)->get());
+        });
+        view()->composer('*', function ($view) {
+            $view->with('validatedHerb',Herb::where('validated',true)->get());
+        });
+
 
         View::composer('dashboard.layout', function ($view) {
             $title = config('titles.' . Route::currentRouteName());

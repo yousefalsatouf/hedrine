@@ -33,8 +33,8 @@
 								</div>
 								<!-- /.card-header -->
 								<!-- form start -->
-								<form class=" justify-content-center" role="form" method="POST" action="@isset($user) {{ route('user.update', $user->id) }} @else {{
-								route('user.store')}} @endisset">
+								<form class=" justify-content-center" role="form" 
+										method="POST" action="@isset($user) {{ route('user.update', $user->id) }} @else {{route('user.store')}} @endisset">
 									<div class="card-body">
 										<div class="form-group">
 											@isset($user) @method('PUT') @endisset
@@ -47,19 +47,19 @@
 											<input type="text" class="form-control" id="description" name="description" required placeholder="Description" value="{{isset($user) ? $user->firstname : ''}}">
 										</div>
 										<div class="form-group">
-											<label for="Description">Firstname</label>
+											<label for="Description">Team</label>
 											<input type="text" class="form-control" id="description" name="description" required placeholder="Description" value="{{isset($user) ? $user->team : ''}}">
 										</div>
 										<div class="form-group">
-											<label for="Description">Firstname</label>
+											<label for="Description">Numéro portable</label>
 											<input type="text" class="form-control" id="description" name="description" required placeholder="Description" value="{{isset($user) ? $user->tel1 : ''}}">
 										</div>
 										<div class="form-group">
-											<label for="Description">Firstname</label>
+											<label for="Description">Numéro Fixe</label>
 											<input type="text" class="form-control" id="description" name="description" required placeholder="Description" value="{{isset($user) ? $user->tel2 : ''}}">
 										</div>
 										<div class="form-group">
-											<label for="Description">Firstname</label>
+											<label for="Description">Email</label>
 											<input type="text" class="form-control" id="description" name="description" required placeholder="Description" value="{{isset($user) ? $user->email : ''}}">
 										</div>
 										<div class="form-group">
@@ -67,11 +67,15 @@
 											<input type="text" class="form-control" id="description" name="description" required placeholder="Description" value="{{isset($user) ? $user->email_verified_at : ''}}">
 										</div>
 										<div class="form-group">
-											<label for="Description">Firstname</label>
+											<label for="Description">Password</label>
 											<input type="password" class="form-control" id="description" name="description" required placeholder="Description" value="{{isset($user) ? $user->password : ''}}">
 										</div>
 										<div class="form-group">
 											<label for="Description">Firstname</label>
+											<input type="text" class="form-control" id="description" name="description" required placeholder="Description" value="{{isset($user) ? $user->is_actif : ''}}">
+										</div>
+										<div class="form-group">
+											<label for="Description">Is Actif</label>
 											<input type="text" class="form-control" id="description" name="description" required placeholder="Description" value="{{isset($user) ? $user->is_actif : ''}}">
 										</div>
 										
@@ -88,7 +92,6 @@
 														Sauvegarder
 													@endif
 												</button>
-												
 											</div>
 										</div>
 									</div>
