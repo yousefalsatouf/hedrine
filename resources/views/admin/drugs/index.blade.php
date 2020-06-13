@@ -31,11 +31,14 @@
 					<td>{{ $drug->routes->name }}</td>
 					<td>{{ $drug->users->name }}</td>
 					<td style="width: 10rem">
-						<div class="btn-group float-right">
-						&nbsp; &nbsp; &nbsp;<a class="btn btn-outline-primary" href="" role="button"><i class="far fa-eye"></i></a>  &nbsp; &nbsp;
-							<a class="btn btn-outline-success" href="{{ route('drug.edit',$drug->id) }}" role="button"><i class="fas fa-edit"></i> </a> &nbsp; &nbsp;
+						<div class="btn-group float-right">&nbsp; &nbsp; &nbsp;
+							<a class="btn btn-outline-primary" href="" role="button"><i class="far fa-eye"></i>
+							</a>  &nbsp; &nbsp;
+							<a class="btn btn-outline-success" href="{{ route('drug.edit',$drug->id) }}" role="button"><i class="fas fa-edit"></i> 
+							</a> &nbsp; &nbsp;
 							<a class="btn btn-outline-danger" href="{{ route('drug.destroy.alert',$drug->id) }}" role="button">
-								<i class="far fa-trash-alt"></i></a>
+								<i class="far fa-trash-alt"></i>
+							</a>
 
 						</div>
 					</td>
