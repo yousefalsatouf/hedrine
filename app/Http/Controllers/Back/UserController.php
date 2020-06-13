@@ -41,5 +41,10 @@ class UserController extends Controller
 
         return response()->json(['info' => 'Votre message a été mémorisé et sera transmis après modération.']);
     }
-
+    // when email sent to admin by this function he can deny the new user ....
+    public function denyUser($id)
+    {
+        dd($id);
+        return;
+    }
 }
