@@ -31,10 +31,10 @@ class ActivateNewUser extends Mailable
     public function build()
     {
         //dd($this->user[0]->email);
-        $activateUser = $this->user[0];
+        $activateUser = $this->user;
         //dd($activateUser);
 
-        return $this->from($this->user[0]->email, $this->user[0]->name)
+        return $this->from($this->user->email, $this->user->name)
             ->subject('Hedrine : Activate user')
             ->view('mail.ActivateNewUser', compact('activateUser'));
     }
