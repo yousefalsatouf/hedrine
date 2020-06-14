@@ -2,8 +2,9 @@
 
 namespace App\Providers;
 
-use App\Events\ActivateNewUserEvent;
+use App\Events\DenyNewUserEvent;
 use App\Listeners\ActivateNewUser;
+use App\Listeners\DenyNewUser;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -23,6 +24,9 @@ class EventServiceProvider extends ServiceProvider
         Verified::class => [
             ActivateNewUser::class
         ],
+        DenyNewUserEvent::class => [
+            DenyNewUser::class,
+        ]
     ];
 
     /**

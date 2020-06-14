@@ -184,7 +184,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
     Route::name('newUser.request')->get('/list_user_requests', 'NotificationController@showNewUserRequests');
     Route::name('newSingleUser.request')->get('/single_user_requests/{id}', 'NotificationController@showSingleNewUserRequest');
     Route::name('activeUser')->get('/activated_user/{id}', 'NotificationController@activateNewUser');
-    Route::name('denyUser')->get('/denied_user/{id}', 'UserController@denyUser');
+    Route::name('denyUser')->get('/denied_user/', 'NotificationController@denyUser');
 
     // Notifications
      Route::name ('notification.')->prefix('notification')->group(function () {

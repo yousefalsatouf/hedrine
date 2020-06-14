@@ -76,15 +76,18 @@
                     <div class="dropdown-divider"></div>
                     @forelse($mostRecentUsers as $u)
                     <div class="card text-center">
-                        <div class="text-dark d-flex justify-content-between new-user" style="padding: 5px 0">
+                        <div class="text-dark d-flex justify-content-around new-user" style="padding: 5px 0">
                             <strong class="text-left">
                                 <a href="{{route('newSingleUser.request', $u->id)}}" title="See user request" class="text-dark view"><i class="fas fa-user mr-2"></i>{{ $u->name }} {{$u->firstname}} <i class="fas fa-eye"></i></a>
-                                <a href="{{route('activeUser', $u->id)}}" title="accept user request" role="button" class="accept"><i class="fas fa-check-circle text-success"></i></a>
                             </strong>
-                            <small class="text-right">{{Carbon\Carbon::parse($u->email_verified_at)->diffForHumans()}}</small>
+                            <small class="text-right text-info">{{Carbon\Carbon::parse($u->email_verified_at)->diffForHumans()}}</small>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-around ">
+                            <a href="{{route('denyUser', $u->id)}}" title="deny user request" role="button" class="accept"><i class="far fa-thumbs-down text-danger"></i></a>
+                            <a href="{{route('activeUser', $u->id)}}" title="accept user request" role="button" class="accept"><i class="far fa-thumbs-up text-success"></i></a>
                         </div>
                     </div>
-                   
                     @empty
                         <div class="alert alert-warning" role="alert">No users requests for the moment</div>
                     @endforelse

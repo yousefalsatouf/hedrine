@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Back;
 
+use App\Events\DenyNewUserEvent;
 use App\Http\Controllers\Controller;
 use App\User;
-use Illuminate\{Http\Request, Notifications\DatabaseNotification, Support\Facades\DB};
+use Illuminate\{Http\Request, Notifications\DatabaseNotification, Support\Facades\DB, Support\Facades\Mail};
 
 
 class NotificationController extends Controller
@@ -66,6 +67,16 @@ class NotificationController extends Controller
         //dd($username);
 
         return redirect()->back()->with('msg', $username." is activated now");
+    }
+
+    // when email sent to admin by this function he can deny the new user ....
+    public function denyUser(DenyNewUserEvent $event)
+    {
+        //dd($id);
+        //event will pass here
+        //Mail::to($admin->email)->send( new \App\Mail\DenyNewUser($event->user));
+        dd($event->user);
+        //return view('mail.ActivateNewUser');
     }
     /**
      * Show the form for creating a new resource.

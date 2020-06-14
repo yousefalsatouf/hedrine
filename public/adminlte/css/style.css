@@ -46,3 +46,7 @@ new style is added for the filter search ...
     transform: scale(1.5);
 }
 
+.accept i
+{
+    font-size: 20px;
+}
