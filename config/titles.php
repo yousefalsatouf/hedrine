@@ -12,8 +12,8 @@ return [
 
 
     'post' => [
-        'index' => 'Gestion des postes',
+        'index' => 'Gestion des Postes',
         'edit' => 'Modification d\'un poste',
         'create' => 'Création d\'un poste',
     ],
-];
+]; 
