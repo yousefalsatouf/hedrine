@@ -191,7 +191,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
       ]);
     Route::name('reference.destroy.alert')->get('reference/{reference}', 'ReferenceController@alert');
 
-<<<<<<< HEAD
+
     //Route pour Forces
     Route::name('force.update')->put('force', 'ForceController@update');
     Route::name('force.edit')->get('force', 'ForceController@edit');
@@ -201,7 +201,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
         'force' => 'force'
       ]);
     Route::name('force.destroy.alert')->get('force/{force}', 'ForceController@alert');
-=======
+
       // Route pour effect =  Action
     Route::name('effect.update')->put('effect', 'EffectController@update');
     Route::name('effect.edit')->get('effect', 'EffectController@edit');
@@ -212,7 +212,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
         'effect' => 'effect'
       ]);
     Route::name('effect.destroy.alert')->get('effect/{effect}', 'EffectController@alert');
->>>>>>> master
+
 
     //pour les nouveau utilisateurs
     Route::name('newUser.request')->get('/list_user_requests', 'NotificationController@showNewUserRequests');
