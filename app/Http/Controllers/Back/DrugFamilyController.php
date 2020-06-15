@@ -5,11 +5,7 @@ namespace App\Http\Controllers\Back;
 use App\DataTables\DrugssDataTable;
 use App\DrugFamily;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\DrugRequest;
-use App\Drug;
-use App\Herb;
-use App\Target;
-use App\Route;
+use App\Http\Requests\DrugFamilyRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -25,9 +21,9 @@ class DrugFamilyController extends Controller
      */
     public function index()
     {
-        $drugsFamily = DB::table('drug_families')->paginate(10);
+        $drug_families = DrugFamily::all();
 
-        return view('admin.drugsFamily.index', compact('drugsFamily'));
+        return view('admin.drugFamilies.index', compact('drug_families'));
     }
 
     /**
@@ -37,9 +33,7 @@ class DrugFamilyController extends Controller
      */
     public function create()
     {
-        $routes = Route::all();
-        //dd($routes);
-        return view('admin.drugsFamily.form_create_drug_family', compact('routes'));
+        return view('admin.drugFamilies.form_create_drug_family');
     }
 
     /**
@@ -48,15 +42,15 @@ class DrugFamilyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(DrugRequest $request)
+    public function store(DrugFamilyRequest $request)
     {
-        $drugFamily = new DrugFamily;
+        $drug_family = new DrugFamily;
         //dd($drug->name);
-        $drugFamily->name = $request->name;
-        $drugFamily->save();
+        $drug_family->name = $request->name;
+        $drug_family->save();
         //dd($drugFamily->name);
 
-        Alert::success('Ok !', 'Nouveau Drug Family ajouté avec succès');
+        Alert::success('Ok !', 'Nouvelle Family de drug ajouté avec succès');
 
         return back();
     }
@@ -78,10 +72,9 @@ class DrugFamilyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Drug $drug)
+    public function edit(DrugFamily $drug_family)
     {
-        $routes = Route::all();
-        return view('admin.drugs.form_add_drug',['drug' => $drug ], compact('routes'));
+        return view('admin.drugFamilies.form_create_drug_family',['drug_family' => $drug_family ]);
     }
 
     /**
@@ -91,10 +84,10 @@ class DrugFamilyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Drug $drug)
+    public function update(Request $request, DrugFamily $drug_family)
     {
-        $drug->update($request->all());
-        Alert::success('Ok !', 'Votre DCI a étè mis à jour avec succès');
+        $drug_family->update($request->all());
+        Alert::success('Ok !', 'Votre famille de DCI a étè mise à jour avec succès');
 
         return back();
     }
@@ -105,12 +98,11 @@ class DrugFamilyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DrugFamily $drugFamily)
+    public function destroy(DrugFamilies $drug_family)
     {
-        dd($drugFamily->id);
-
-        $drugFamily->delete();
-        return redirect(route('drugsFamily'));
+        
+        $drug_family->delete();
+        return redirect(route('drug_family.index'));
 
     }
 

@@ -11,7 +11,7 @@
 	<div class="card-body " style="background-color: #fff">
 		<table id="example1" class="table table-striped table-sm">
 			<thead>
-				<tr class="text-center">
+				<tr class="text-center"> 
 					<th> Name </th>
 					<th> Family </th>
 					<th> AtcLevel4 </th>
