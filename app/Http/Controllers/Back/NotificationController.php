@@ -44,13 +44,13 @@ class NotificationController extends Controller
 
     public function showNewUserRequests(Request $request)
     {
-        $allNewUsers = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->get();
+        $allNewUsers = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->WhereNull('denied')->get();
 
         return view('notifications.newUserRequests',compact('allNewUsers'));
     }
     public function showSingleNewUserRequest($id)
     {
-        $singleNewUser = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->where('id', '=', $id)->get();
+        $singleNewUser = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->where('id', '=', $id)->WhereNull('denied')->get();
 
         return view('notifications.newUserRequests',compact('singleNewUser'));
     }
