@@ -77,11 +77,6 @@ class AppServiceProvider extends ServiceProvider
 
         View::composer('*', function ($view) {
 
-            $view->with('drug_families', DrugFamily::all());
-        });
-
-        View::composer('*', function ($view) {
-
             $view->with('target_types', TargetType::all());
         });
 
