@@ -191,6 +191,17 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
       ]);
     Route::name('reference.destroy.alert')->get('reference/{reference}', 'ReferenceController@alert');
 
+      // Route pour effect =  Action
+    Route::name('effect.update')->put('effect', 'EffectController@update');
+    Route::name('effect.edit')->get('effect', 'EffectController@edit');
+    Route::name('effect.index')->get('effect', 'EffectController@index');
+
+    Route::name('effect.details')->get('effect', 'EffectController@details');
+    Route::resource('effect', 'EffectController')->parameters([
+        'effect' => 'effect'
+      ]);
+    Route::name('effect.destroy.alert')->get('effect/{effect}', 'EffectController@alert');
+
     //pour les nouveau utilisateurs
     Route::name('newUser.request')->get('/list_user_requests', 'NotificationController@showNewUserRequests');
     Route::name('newSingleUser.request')->get('/single_user_requests/{id}', 'NotificationController@showSingleNewUserRequest');
