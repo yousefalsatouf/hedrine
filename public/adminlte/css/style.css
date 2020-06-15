@@ -50,3 +50,25 @@ new style is added for the filter search ...
 {
     font-size: 20px;
 }
+
+#Mymodal
+{
+    width: 35%;
+    margin: 0 auto;
+}
+
+#Mymodal textarea, #Mymodal button
+{
+    border: 0;
+    border-bottom: 1px solid green;
+
+}
+#Mymodal .modal-header
+{
+    background-color: green;
+}
+
+#Mymodal h4
+{
+    font-family: 'Berkshire Swash', cursive;
+}

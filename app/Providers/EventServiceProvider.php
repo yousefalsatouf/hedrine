@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Events\AcceptNewUserEvent;
 use App\Events\DenyNewUserEvent;
+use App\Listeners\AcceptNewUserListener;
 use App\Listeners\ActivateNewUser;
 use App\Listeners\DenyNewUser;
 use Illuminate\Auth\Events\Registered;
@@ -26,6 +28,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         DenyNewUserEvent::class => [
             DenyNewUser::class,
+        ],
+        AcceptNewUserEvent::class => [
+            AcceptNewUserListener::class,
         ]
     ];
 

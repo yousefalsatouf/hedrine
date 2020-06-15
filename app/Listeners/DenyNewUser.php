@@ -3,8 +3,6 @@
 namespace App\Listeners;
 
 use App\Events\DenyNewUserEvent;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Mail;
 
 class DenyNewUser
@@ -17,7 +15,7 @@ class DenyNewUser
      */
     public function handle(DenyNewUserEvent $event)
     {
-        //
-        Mail::to($event->user->email)->send( new \App\Mail\DenyNewUser($event->user));
+        //dd($event->user->email);
+        Mail::to($event->user->email)->send( new \App\Mail\DenyNewUser($event->user, $event->username, $event->msg));
     }
 }

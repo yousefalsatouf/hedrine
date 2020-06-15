@@ -44,7 +44,7 @@
                                 </td>
                                 <td class="d-flex justify-content-around">
                                     <a href="{{route('activeUser', $user->id)}}" title="accept user request" role="button" class="accept"><i class="far fa-thumbs-up text-success"></i></a>
-                                    <a href="{{route('denyUser', $user->id)}}" title="deny user request" role="button" class="accept"><i class="far fa-thumbs-down text-danger"></i></a>
+                                    <a href="{{route('denyingUser', $user->id)}}" title="deny user request" role="button" class="accept"><i class="far fa-thumbs-down text-danger"></i></a>
                                 </td>
                             </tr>
                         @empty

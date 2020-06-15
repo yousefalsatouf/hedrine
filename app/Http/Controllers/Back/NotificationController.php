@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Back;
 
+use App\Events\AcceptNewUserEvent;
 use App\Events\DenyNewUserEvent;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\{Http\Request, Notifications\DatabaseNotification, Support\Facades\DB, Support\Facades\Mail};
+use RealRashid\SweetAlert\Facades\Alert;
 
 
 class NotificationController extends Controller
@@ -59,25 +61,39 @@ class NotificationController extends Controller
             ->update(['is_active' => 1]);
 
         $username=null;
-        $user = DB::table('users')->where('id', $id)->get();
+        $user = User::where('id', $id)->get();
 
         foreach ($user as $name)
             $username = $name->name." ".$name->firstname;
-
         //dd($username);
-
-        return redirect()->back()->with('msg', $username." is activated now");
+        event(new AcceptNewUserEvent($user[0]));
+        Alert::success('Ok !', $username.' est activé');
+        return redirect()->back();
     }
 
     // when email sent to admin by this function he can deny the new user ....
-    public function denyUser(DenyNewUserEvent $event)
+    public function denyUser($id)
     {
-        //dd($id);
-        //event will pass here
-        //Mail::to($admin->email)->send( new \App\Mail\DenyNewUser($event->user));
-        dd($event->user);
-        //return view('mail.ActivateNewUser');
+       return view('mail.deniedMsg', compact('id'));
     }
+    //send email and event ...
+    public function SendDenyingMsg(Request $request, $id)
+    {
+        $msg = $request->msg;
+        //dd($msg);
+        $username = null;
+        $user = User::where('id', $id)->get();
+
+        foreach ($user as $name)
+            $username = $name->name." ".$name->firstname;
+        //event will pass here
+
+        event(new DenyNewUserEvent($user[0], $username, $msg));
+
+        Alert::success('ok!', 'Message envoyé avec succes');
+        return back();
+    }
+
     /**
      * Show the form for creating a new resource.
      *
