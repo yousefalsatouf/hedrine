@@ -65,5 +65,11 @@ return [
         'create' => 'Création d\'une référence',
     ],
 
+    'effect' => [
+        'index' => 'Gestion des Effets',
+        'edit' => 'Modification d\'un effet',
+        'create' => 'Création d\'un effet',
+    ],
+
 
 ]; 

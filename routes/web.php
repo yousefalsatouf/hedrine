@@ -174,13 +174,13 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
     Route::name('target_type.edit')->get('target_type', 'TargetTypeController@edit');
     Route::name('target_type.index')->get('target_type', 'TargetTypeController@index');
 
-    Route::name('target_type.details')->get('force', 'TargetTypeController@details');
+    Route::name('target_type.details')->get('target_type', 'TargetTypeController@details');
     Route::resource('target_type', 'TargetTypeController')->parameters([
         'target_type' => 'target_type'
       ]);
     Route::name('target_type.destroy.alert')->get('target_type/{target_type}', 'TargetTypeController@alert');
 
-    // Reference pour references
+    // Route pour les references
     Route::name('reference.update')->put('reference', 'ReferenceController@update');
     Route::name('reference.edit')->get('reference', 'ReferenceController@edit');
     Route::name('reference.index')->get('reference', 'ReferenceController@index');
@@ -191,6 +191,17 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
       ]);
     Route::name('reference.destroy.alert')->get('reference/{reference}', 'ReferenceController@alert');
 
+<<<<<<< HEAD
+    //Route pour Forces
+    Route::name('force.update')->put('force', 'ForceController@update');
+    Route::name('force.edit')->get('force', 'ForceController@edit');
+    Route::name('reference.index')->get('reference', 'ReferenceController@index');
+    Route::name('force.details')->get('force', 'ForceController@details');
+    Route::resource('force', 'ForceController')->parameters([
+        'force' => 'force'
+      ]);
+    Route::name('force.destroy.alert')->get('force/{force}', 'ForceController@alert');
+=======
       // Route pour effect =  Action
     Route::name('effect.update')->put('effect', 'EffectController@update');
     Route::name('effect.edit')->get('effect', 'EffectController@edit');
@@ -201,6 +212,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
         'effect' => 'effect'
       ]);
     Route::name('effect.destroy.alert')->get('effect/{effect}', 'EffectController@alert');
+>>>>>>> master
 
     //pour les nouveau utilisateurs
     Route::name('newUser.request')->get('/list_user_requests', 'NotificationController@showNewUserRequests');

@@ -64,7 +64,7 @@
 									</div>
 
 										
-									<div class="form-group">
+									{{-- <div class="form-group">
 										<label for="target">Target</label>
 										<select class="form-control target" id="targets" name="targets[]" multiple >
 											@foreach ($targets as $target)
@@ -76,7 +76,7 @@
 							            		@endif
 							            	@endforeach
 							            </select>
-									</div>
+									</div> --}}
 
 								</div>
 								<!-- /.card-body -->
