@@ -29,7 +29,7 @@
 					<td>{{$drug->drug_family->name}}</td> 
 					<td>{{ $drug->atc_level4s->name }}</td>
 					<td>{{ $drug->routes->name }}</td>
-					<td>{{ $drug->user->name }}</td> 
+					<td>{{ optional($drug->user)->name }}</td> 
 					<td style="width: 10rem">
 						<div class="btn-group float-right">
 						&nbsp; &nbsp; &nbsp;<a class="btn btn-outline-primary" href="" role="button"><i class="far fa-eye"></i></a>  &nbsp; &nbsp;

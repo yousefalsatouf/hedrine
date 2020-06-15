@@ -47,13 +47,13 @@ class ReferenceController extends Controller
     {
         $reference = new Reference;
 
-        $reference->user_id = Auth::user()->id;
+        $reference->user_id = Auth::user()->id; 
         $reference->title = $request->title;
         $reference->authors = $request->authors;
         $reference->year = $request->year;
         $reference->edition = $request->edition;
         $reference->url = $request->url;
-        $reference->user_id = $request->user_id;
+        $reference->validated = $request->validated;
         $reference->save();
         Alert::success('Ok !', 'Nouvelle référence ajoutée avec succès');
 
