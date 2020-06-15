@@ -4,7 +4,8 @@
     <div class="container-fluid" id="Mymodal">
         <div class="card">
             <div class="card-body">
-                <form class=" justify-content-center" role="form" action="{{route('sendDenyingMsg', $id)}}" method="GET">
+                <form class=" justify-content-center" role="form" action="{{route('sendDenyingMsg', $id)}}" method="POST">
+                    @csrf
                     <div class="modal-header">
                         <h4 class="modal-title text-dark">Veilliez Ecrire votre message à l'utlisateur:</h4>
                     </div>

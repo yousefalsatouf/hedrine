@@ -80,7 +80,7 @@ class NotificationController extends Controller
     //send email and event ...
     public function SendDenyingMsg(Request $request, $id)
     {
-        $msg = $request->msg;
+        $msg = $request->get('msg');
         //dd($msg);
         $username = null;
         $user = User::where('id', $id)->get();
@@ -92,7 +92,7 @@ class NotificationController extends Controller
         event(new DenyNewUserEvent($user[0], $msg));
 
         Alert::success('ok!', 'Message envoyé avec succes');
-        return back();
+        return redirect('home');
     }
 
     /**

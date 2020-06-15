@@ -33,11 +33,12 @@ class DenyNewUser extends Mailable
     {
         $admin = Auth::user();
         $username = $this->user->name." ".$this->user->firstname;
-        $message = $this->msg;
+        $msg = $this->msg;
+        //settype($message, 'string');
         //dd($message);
         return $this->from($admin->email)
             ->subject('Hedrine :  votre compte est refusé!')
-            ->view('mail.DenyNewUser', compact('username', 'admin', 'message'));
+            ->view('mail.denyNewUser', compact('username', 'admin', 'msg'));
 
     }
 }

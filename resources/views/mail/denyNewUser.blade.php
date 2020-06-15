@@ -45,12 +45,12 @@
                                     <h1 style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: green; font-size: 18px; font-weight: bold; margin-top: 0; text-align: left;">
                                         Bonjour {{$username}},
                                     </h1>
-                                    <b style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple  Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';color:black; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">Pour une rainson indiqué via l'adminstrateur ci-dessous, <span style="color: red"> votre compte est refusé.</span></b>
+                                    <b style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple  Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';color:black; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">Pour une raison indiqué via l'adminstrateur ci-dessous, <span style="color: red"> votre compte est refusé.</span></b>
                                     <br>
-                                    <strong style="color: black">Voici la raison de réfuser votre compte!</strong>
+                                    <strong style="color: black">Voici pourquoi de réfuser votre compte!</strong>
                                     <hr>
                                     <blockquote>
-                                        {{$message}}
+                                       {{$msg}}
                                     </blockquote>
                                     <hr>
                                     <strong>Cordialement!</strong>
