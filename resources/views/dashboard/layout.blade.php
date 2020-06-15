@@ -84,7 +84,7 @@
                             <small class="text-right">{{Carbon\Carbon::parse($u->email_verified_at)->diffForHumans()}}</small>
                         </div>
                     </div>
-                   
+
                     @empty
                         <div class="alert alert-warning" role="alert">No users requests for the moment</div>
                     @endforelse
@@ -491,6 +491,8 @@
             });
         })
     </script>
+    <!-- Recaptha -->
+    @yield('captcha')
     @yield('script')
 </body>
 </html>
