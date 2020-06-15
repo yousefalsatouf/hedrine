@@ -6,7 +6,7 @@ use App\DataTables\DrugssDataTable;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\DrugRequest;
 use App\Drug;
-use App\Herb;
+use App\Herb; 
 use App\Target;
 use App\Route;
 use App\User;
@@ -27,7 +27,6 @@ class DrugController extends Controller
      */
     public function index()
     {
-
         return view('admin.drugs.index');
     }
 
@@ -53,7 +52,7 @@ class DrugController extends Controller
     {
         $drug = new Drug;
 
-        $drug->user_id = Auth::user()->id;
+        $drug->user_id = Auth::user()->id; 
         $drug->name = $request->name;
         $drug->drug_families_id = $request->drug_families_id;
         $drug->route_id = $request->route_id;

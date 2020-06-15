@@ -343,6 +343,12 @@
                                             <p>Pending Users</p>
                                         </a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a href="{{ route('reference.index') }}" class="nav-link">
+                                            <i class="far fa-dot-circle nav-icon"></i>
+                                            <p>Références</p>
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
