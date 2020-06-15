@@ -26,7 +26,6 @@ class DrugController extends Controller
      */
     public function index()
     {
-
         return view('admin.drugs.index');
     }
 
@@ -51,7 +50,7 @@ class DrugController extends Controller
     {
         $drug = new Drug;
 
-        $drug->user_id = Auth::user()->id;
+        $drug->user_id = Auth::user()->id; 
         $drug->name = $request->name;
         $drug->drug_families_id = $request->drug_families_id;
         $drug->route_id = $request->route_id;

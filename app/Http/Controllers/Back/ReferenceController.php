@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\DB;
-use App\Notifications\NewDrug as NewDrugNotification;
+
 
 
 class ReferenceController extends Controller
@@ -79,7 +79,7 @@ class ReferenceController extends Controller
      */
     public function edit(Reference $reference)
     {
-        return view('admin.drugs.form_add_drug',['reference' => $reference ]);
+        return view('admin.references.form_add_reference',['reference' => $reference ]);
     } 
 
     /**

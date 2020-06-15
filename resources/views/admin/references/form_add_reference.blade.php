@@ -48,7 +48,7 @@
 										</div>
 										<div class="form-group">
 											<label for="year">Année</label>
-											<input type="text" class="form-control" id="year" name="year" required placeholder="Année de la référence" value="{{isset($reference) ? $reference->year : ''}}">
+											<input type="text" class="form-control" id="year" name="year" required placeholder="Année de la référence" value="{{isset($reference) ? $reference->year : ''}}"> 
 										</div>
 										<div class="form-group">
 											<label for="edition">Edition</label>

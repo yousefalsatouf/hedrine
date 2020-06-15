@@ -12,7 +12,7 @@ class Reference extends Model
         'id','title', 'authors','year','edition','url','user_id'
     ];
 
-    public function user()
+    public function user() 
     {
         return $this->belongsTo(User::class, 'user_id');
     }
@@ -25,5 +25,11 @@ class Reference extends Model
     public function hinteractions()
     {
         return $this->belongsToMany(Hinteraction::class,'hinteraction_has_references','reference_id', 'id');
+    }
+
+    public function getname()
+
+    {
+        
     }
 }
