@@ -5,5 +5,12 @@ $(document).ready(function() {
 
 });
 
+$(document).ready(function() {
+    $('.target').select2({
+    	placeholder:"choisissez une ou plusieur target"
+    });
+
+});
+
 
 
