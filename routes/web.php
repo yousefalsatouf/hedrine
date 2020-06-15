@@ -180,7 +180,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
       ]);
     Route::name('target_type.destroy.alert')->get('target_type/{target_type}', 'TargetTypeController@alert');
 
-    // Reference pour references
+    // Route pour les references
     Route::name('reference.update')->put('reference', 'ReferenceController@update');
     Route::name('reference.edit')->get('reference', 'ReferenceController@edit');
     Route::name('reference.index')->get('reference', 'ReferenceController@index');
@@ -190,6 +190,15 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
         'reference' => 'reference'
       ]);
     Route::name('reference.destroy.alert')->get('reference/{reference}', 'ReferenceController@alert');
+
+    //Route pour Forces
+    Route::name('force.update')->put('force', 'ForceController@update');
+    Route::name('force.edit')->get('force', 'ForceController@edit');
+    Route::name('force.details')->get('force', 'ForceController@details');
+    Route::resource('force', 'ForceController')->parameters([
+        'force' => 'force'
+      ]);
+    Route::name('force.destroy.alert')->get('force/{force}', 'ForceController@alert');
 
     //pour les nouveau utilisateurs
     Route::name('newUser.request')->get('/list_user_requests', 'NotificationController@showNewUserRequests');
