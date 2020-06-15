@@ -9,7 +9,7 @@ class Herb extends Model
 {
     use Notifiable;
 
-    protected $fillable = ['name', 'sciname', 'user_id'];
+    protected $fillable = ['name', 'sciname', 'user_id']; 
 
     public function users()
     {
@@ -21,14 +21,19 @@ class Herb extends Model
         return $this->belongsToMany(HerbForm::class, 'herb_has_forms')->withTimestamps();
     }
 
-    public function targets()
+    public function targets() 
     {
-        return $this->belongsToMany(Target::class, 'hinteractions');
+        return $this->belongsToMany(Target::class, 'hinteractions')->withTimestamps();
     }
 
     public function hinteractions()
     {
         return $this->hasMany(Hinteraction::class, 'herb_id', 'id');
+    }
+
+    public function dinteractions()
+    {
+        return $this->hasMany(Dinteraction::class, 'herb_id', 'id');
     }
     //Thierry Tester
 

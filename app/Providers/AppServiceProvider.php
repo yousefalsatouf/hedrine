@@ -90,6 +90,11 @@ class AppServiceProvider extends ServiceProvider
             $view->with('herb_forms', HerbForm::all());
         });
 
+        View::composer('*', function ($view) {
+
+            $view->with('drug_families', DrugFamily::all());
+        });
+
         view()->composer('*', function ($view) {
             $view->with('noValidCount',Herb::where('validated',false)->get());
         });
