@@ -74,6 +74,9 @@ class NotificationController extends Controller
     // when email sent to admin by this function he can deny the new user ....
     public function denyUser($id)
     {
+        DB::table('users')
+            ->where('id', $id)
+            ->update(['denied' => 1]);
        return view('mail.deniedMsg', compact('id'));
     }
 
