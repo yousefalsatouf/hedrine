@@ -46,12 +46,13 @@ class ForceController extends Controller
     {
         $force = new Force;
 
-        $force->user_id = Auth::user()->id; 
-        $force->title = $request->title;
-        $force->body = $request->body;
+        $force->name = $request->name;
+        $force->color = $request->color;
+        $force->rang = $request->rang;
+        $force->visible = $request->visible;
         $force->save();
         
-        Alert::success('Ok !', 'Nouveau DCI ajouté avec succès');
+        Alert::success('Ok !', 'Nouvelle force ajouté avec succès');
 
         return back();
     }

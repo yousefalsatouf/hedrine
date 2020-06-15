@@ -174,7 +174,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
     Route::name('target_type.edit')->get('target_type', 'TargetTypeController@edit');
     Route::name('target_type.index')->get('target_type', 'TargetTypeController@index');
 
-    Route::name('target_type.details')->get('force', 'TargetTypeController@details');
+    Route::name('target_type.details')->get('target_type', 'TargetTypeController@details');
     Route::resource('target_type', 'TargetTypeController')->parameters([
         'target_type' => 'target_type'
       ]);
@@ -194,6 +194,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
     //Route pour Forces
     Route::name('force.update')->put('force', 'ForceController@update');
     Route::name('force.edit')->get('force', 'ForceController@edit');
+    Route::name('reference.index')->get('reference', 'ReferenceController@index');
     Route::name('force.details')->get('force', 'ForceController@details');
     Route::resource('force', 'ForceController')->parameters([
         'force' => 'force'

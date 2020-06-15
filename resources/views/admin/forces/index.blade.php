@@ -34,9 +34,9 @@
 							</a>  &nbsp; &nbsp;
 							<a class="btn btn-outline-success" href="{{ route('force.edit',$force->id) }}" role="button"><i class="fas fa-edit"></i> 
 							</a> &nbsp; &nbsp;
-							<a class="btn btn-outline-danger" href="{{ route('force.destroy.alert',$force->id) }}" role="button">
+							{{-- <a class="btn btn-outline-danger" href="{{ route('force.destroy.alert',$force->id) }}" role="button">
 								<i class="far fa-trash-alt"></i>
-							</a>
+							</a> --}}
 
 						</div>
 					</td>

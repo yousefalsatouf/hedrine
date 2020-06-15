@@ -51,8 +51,8 @@
 										</div>
 
 										<div class="form-group">
-											<label for="visible">Rank</label>
-											<select class="form-control" id="exampleFormControlSelect1" name="visible">
+											<label for="rang">Rank</label>
+											<select class="form-control" id="exampleFormControlSelect1" name="rang">
 												<option>1</option>
 												<option>2</option>
 												<option>3</option>
