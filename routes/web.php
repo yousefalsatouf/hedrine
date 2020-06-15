@@ -191,6 +191,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
       ]);
     Route::name('reference.destroy.alert')->get('reference/{reference}', 'ReferenceController@alert');
 
+<<<<<<< HEAD
     //Route pour Forces
     Route::name('force.update')->put('force', 'ForceController@update');
     Route::name('force.edit')->get('force', 'ForceController@edit');
@@ -200,11 +201,26 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
         'force' => 'force'
       ]);
     Route::name('force.destroy.alert')->get('force/{force}', 'ForceController@alert');
+=======
+      // Route pour effect =  Action
+    Route::name('effect.update')->put('effect', 'EffectController@update');
+    Route::name('effect.edit')->get('effect', 'EffectController@edit');
+    Route::name('effect.index')->get('effect', 'EffectController@index');
+
+    Route::name('effect.details')->get('effect', 'EffectController@details');
+    Route::resource('effect', 'EffectController')->parameters([
+        'effect' => 'effect'
+      ]);
+    Route::name('effect.destroy.alert')->get('effect/{effect}', 'EffectController@alert');
+>>>>>>> master
 
     //pour les nouveau utilisateurs
     Route::name('newUser.request')->get('/list_user_requests', 'NotificationController@showNewUserRequests');
     Route::name('newSingleUser.request')->get('/single_user_requests/{id}', 'NotificationController@showSingleNewUserRequest');
     Route::name('activeUser')->get('/activated_user/{id}', 'NotificationController@activateNewUser');
+    Route::name('denyingUser')->get('/denied_user/{id}', 'NotificationController@denyUser');
+    Route::name('sendDenyingMsg')->post('/send_denying/{id}', 'NotificationController@SendDenyingMsg');
+
     // Notifications
      Route::name ('notification.')->prefix('notification')->group(function () {
         Route::name ('index')->get ('/', 'NotificationController@index');
