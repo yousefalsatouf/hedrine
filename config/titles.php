@@ -59,4 +59,11 @@ return [
         'create' => 'Création d\'un user',
     ],
 
+    'reference' => [
+        'index' => 'Gestion des Références',
+        'edit' => 'Modification d\'une référence',
+        'create' => 'Création d\'une référence',
+    ],
+
+
 ]; 
