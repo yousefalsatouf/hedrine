@@ -306,7 +306,7 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">
+                                        <a href="{{ route('effect.index') }}" class="nav-link">
                                             <i class="far fa-dot-circle nav-icon"></i>
                                             <p>Actions</p>
                                         </a>
