@@ -16,6 +16,6 @@ class DenyNewUser
     public function handle(DenyNewUserEvent $event)
     {
         //dd($event->user->email);
-        Mail::to($event->user->email)->send( new \App\Mail\DenyNewUser($event->user, $event->username, $event->msg));
+        Mail::to($event->user->email)->send( new \App\Mail\DenyNewUser($event->user, $event->msg));
     }
 }

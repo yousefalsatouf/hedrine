@@ -14,18 +14,16 @@ class DenyNewUserEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
     public $user;
-    public $username;
     public $msg;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($user, $username, $msg)
+    public function __construct($user, $msg)
     {
         //
         $this->user = $user;
-        $this->username = $username;
         $this->msg = $msg;
     }
 }

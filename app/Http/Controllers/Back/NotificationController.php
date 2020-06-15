@@ -76,6 +76,7 @@ class NotificationController extends Controller
     {
        return view('mail.deniedMsg', compact('id'));
     }
+
     //send email and event ...
     public function SendDenyingMsg(Request $request, $id)
     {
@@ -88,7 +89,7 @@ class NotificationController extends Controller
             $username = $name->name." ".$name->firstname;
         //event will pass here
 
-        event(new DenyNewUserEvent($user[0], $username, $msg));
+        event(new DenyNewUserEvent($user[0], $msg));
 
         Alert::success('ok!', 'Message envoyé avec succes');
         return back();
