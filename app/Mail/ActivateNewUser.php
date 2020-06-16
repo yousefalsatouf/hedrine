@@ -32,7 +32,7 @@ class ActivateNewUser extends Mailable
     {
         //dd($this->user[0]->email);
         $activateUser = $this->user;
-        //dd($activateUser);
+        //dd($activateUser->name);
 
         return $this->from($this->user->email, $this->user->name)
             ->subject('Hedrine : Activate user')
