@@ -71,5 +71,11 @@ return [
         'create' => 'Création d\'un effet',
     ],
 
+    'force' => [
+        'index' => 'Gestion des Forces',
+        'edit' => 'Modification d\'une force',
+        'create' => 'Création d\'une force',
+    ],
+
 
 ]; 

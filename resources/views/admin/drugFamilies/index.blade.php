@@ -24,7 +24,7 @@
                         </td>
                         <td style="width: 10rem">
                             <div>
-                                <a class="btn btn-outline-success" href="{{ route('drug_family.edit',$drug_family->id) }}" role="button"><i class="fas fa-edit"></i></a> &nbsp; &nbsp;
+                                <a class="btn btn-outline-success align-self-center p-2" href="{{ route('drug_family.edit',$drug_family->id) }}" role="button">Edit</a> &nbsp; &nbsp;
                             </div>
                         </td>
                     </tr>
