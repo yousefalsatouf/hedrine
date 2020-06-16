@@ -3,6 +3,7 @@
 @section('content_dashboard')
 
 @include('partials.message', ['url' => route('admin.refuse')])
+@include('partials.message', ['url' => route('admin.modifs')])
 @include('partials.alerts', ['title' => 'Plantes à valider'])
 
 
@@ -64,4 +65,25 @@
 @endsection
 @section('script')
     @include('partials.script')
+@endsection
+
+@section('dashboard-js')
+<script>
+	$(function () {
+
+	  $('#editable').DataTable({
+		"paging": true,
+		"lengthChange": false,
+		"searching": true,
+		"ordering": true,
+		"info": true,
+		"autoWidth": false,
+		"responsive": true,
+		"language":
+		{
+			"url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
+        }
+	  });
+	});
+  </script>
 @endsection
