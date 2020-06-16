@@ -3,7 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Dinteraction;
+use App\Drug;
+use App\Effect;
+use App\Force;
+use App\Herb;
+use App\Reference;
+use App\Target;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class DinteractionController extends Controller
 {
@@ -24,8 +32,14 @@ class DinteractionController extends Controller
      */
     public function create()
     {
-        //
-        dd('u r good drug');
+        $drugs = Drug::all();
+        $targets = Target::all();
+        $effects = Effect::all();
+        $force = Force::all();
+        $references = Reference::all();
+        //dd($references);
+
+        return view('admin.interaction.targets.newDrugTargetForm', compact('drugs', 'targets', 'effects', 'force', 'references'));
     }
 
     /**
@@ -37,6 +51,29 @@ class DinteractionController extends Controller
     public function store(Request $request)
     {
         //
+        //dd(Auth::user()->role_id);
+        $effects = $request->effects;
+        $references = $request->references;
+        $now = \Carbon\Carbon::now();
+
+        $dinteraction = new Dinteraction();
+        $dinteraction->user_id = Auth::user()->id;
+        $dinteraction->drug_id = $request->drug;
+        $dinteraction->target_id = $request->target;
+        $dinteraction->force_id = $request->force;
+        $dinteraction->notes = $request->note;
+        if (Auth::user()->role_id)
+        {
+            $dinteraction->validated = $now;
+        }
+        $dinteraction->save();
+
+        $dinteraction->effects()->sync($effects, false);
+        $dinteraction->references()->sync($references, false);
+
+        Alert::success('Ok,', 'Drug target inserted successfully!');
+
+        return redirect('admin/target');
     }
 
     /**

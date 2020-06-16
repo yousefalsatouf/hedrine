@@ -8,8 +8,7 @@
   <title>Hedrine | ULB</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Font Awesome -->
+    <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('/adminlte/plugins/fontawesome-free/css/all.min.css') }}">
 
   <!-- Ionicons -->
@@ -446,6 +445,11 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 <!-- jQuery -->
 <script src="{{ asset('/adminlte/plugins/jquery/jquery.min.js') }}"></script>
@@ -487,10 +491,11 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
 <script src="{{ asset('/js/custom.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/js/select.js') }}" type="text/javascript"></script>
 
 
 
-    @yield('dashboard-js')
+@yield('dashboard-js')
     @include('sweetalert::alert')
     @include('cookieConsent::index')
     <script type="text/javascript">
