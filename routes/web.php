@@ -97,6 +97,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
         Route::middleware('ajax')->group(function() {
             Route::post('approve/{herb}','AdminController@approve')->name('admin.approve');
             Route::post('refuse','AdminController@refuse')->name('admin.refuse');
+            Route::post('modifs','AdminController@modifs')->name('admin.modifs');
         });
     });
 
