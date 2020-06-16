@@ -28,8 +28,8 @@
 					<td>{{$target_type->description }}</td>
 					<td style="width: 10rem">
 						<div class="btn-group float-right">
-						&nbsp; &nbsp; &nbsp;<a class="btn btn-outline-primary" href="" role="button"><i class="far fa-eye"></i> </a>  &nbsp; &nbsp;
-							<a class="btn btn-outline-success" href="{{ route('target_type.edit',$target_type->id) }}" role="button"><i class="fas fa-edit"></i> </a> &nbsp; &nbsp;
+						&nbsp; &nbsp; &nbsp;<a class="btn btn-outline-primary align-self-center p-2" href="" role="button">View</a>  &nbsp; &nbsp;
+							<a class="btn btn-outline-success align-self-center p-2" href="{{ route('target_type.edit',$target_type->id) }}" role="button">Edit</a> &nbsp; &nbsp;
 							{{-- <a class="btn btn-outline-danger" href="{{ route('target_type.destroy.alert',$target_type->id) }}" role="button"><i class="far fa-trash-alt"></i> </a> --}}
 
 						</div>
