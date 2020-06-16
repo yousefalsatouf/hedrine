@@ -373,7 +373,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('newHerbTarget')}}" class="nav-link">
+                                <a href="{{route('newDrugTarget')}}" class="nav-link">
                                     <i class="fas fa-plus-circle nav-icon text-success"></i>
                                     <p> <i class="fas fa-capsules mr-2" style="color:#7d041e"></i> New Target</p>
                                 </a>
@@ -383,7 +383,7 @@
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{route('drug.index')}}" class="nav-link">
-                                    <i class="fa fa-dot-circle nav-icon"></i>
+                                    <i class="far fa-dot-circle nav-icon"></i>
                                     <p>Drugs</p>
                                 </a>
                             </li>

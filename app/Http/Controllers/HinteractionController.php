@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Effect;
+use App\Force;
+use App\Herb;
 use App\Hinteraction;
+use App\Reference;
+use App\Target;
 use Illuminate\Http\Request;
 
 class HinteractionController extends Controller
@@ -37,7 +42,14 @@ class HinteractionController extends Controller
      */
     public function create()
     {
-        //
+        // return to herb form
+        $herbs = Herb::all();
+        $targets = Target::all();
+        $effects = Effect::all();
+        $force = Force::all();
+        $references = Reference::all();
+
+        return view('admin.interaction.targets.newHerbTargetForm', compact('herbs', 'targets', 'effects', 'force', 'references'));
     }
 
     /**
@@ -49,6 +61,7 @@ class HinteractionController extends Controller
     public function store(Request $request)
     {
         //
+        dd($request);
     }
 
     /**

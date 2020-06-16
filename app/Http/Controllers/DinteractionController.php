@@ -25,6 +25,7 @@ class DinteractionController extends Controller
     public function create()
     {
         //
+        dd('u r good drug');
     }
 
     /**

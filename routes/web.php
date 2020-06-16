@@ -94,7 +94,7 @@ Route::prefix('admin')->middleware('admin')->group(function() {
     // create - show form page
     Route::name('newHerbTarget')->get('new_herb_target', 'HinteractionController@create');
     Route::name('newDrugTarget')->get('new_drug_target', 'DinteractionController@create');
-    //
+    // store new herb target
 });
 
 Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function() {
