@@ -366,37 +366,25 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item has-treeview">
-                                <a href="#" class="nav-link" style="background-color:#08AA8F;">
-                                    <i class="fas fa-toolbox nav-icon"></i>
-                                    <p>
-                                        Manager
-                                        <i class="right fas fa-angle-left"></i>
-                                    </p>
+                            <li class="nav-item">
+                                <a href="{{route('drug.index')}}" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Drugs</p>
                                 </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="{{route('drug.index')}}" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Drugs</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('herb.index') }}" class="nav-link">
-                                        <i class="far fa-dot-circle nav-icon"></i>
-                                        <p>Herbs</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('target.index') }}" class="nav-link">
-                                        <i class="far fa-dot-circle nav-icon"></i>
-                                        <p>Targets</p>
-                                        </a>
-                                    </li>
-                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('herb.index') }}" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Herbs</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('target.index') }}" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Targets</p>
+                                </a>
                             </li>
                         </ul>
-                    </li>
                 @endif
             </ul>
         </nav>
