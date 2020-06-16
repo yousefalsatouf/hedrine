@@ -9,33 +9,38 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table">
+                <div  class="table-responsive">
+                    @csrf
+                    <table id="editable" class="table">
                         <thead>
                             <tr>
+                                <th scope="col">ID</th>
                                 <th scope="col">Name</th>
-                                <th scope="col">SciNams</th>
-                                <th scope="col">Actions</th>
+                                <th scope="col">SciName</th>
+                                <th scope="col">Author</th>
+                                <th scope="col">Date</th>
+
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($noValidCount as $herb)
                                 <tr>
                                     <td>
-                                        {{ $herb->name }}
+                                        {{ $herb->id }}
                                     </td>
                                     <td>
+                                        {{ $herb->name }}
+                                    </td>
+                                    <td >
                                         {{ $herb->sciname }}
                                     </td>
-                                    <td class="">
-                                        <a class="btn btn-success btn-sm" href="{{ route('admin.approve', $herb->id) }}" role="button" data-toggle="tooltip" title="Approuver la plante">
-                                            <i class="fas fa-thumbs-up"></i>
-                                        </a>
-                                        <i class="fas fa-spinner fa-pulse fa-lg" style="display: none"></i>
-                                        <a class="btn btn-danger btn-sm" href="#" role="button" data-id="{{ $herb->id }}" data-toggle="tooltip" title="Refuser la plante">
-                                            <i class="fas fa-thumbs-down"></i>
-                                        </a>
+                                    <td>
+                                        {{ $herb->user->name }}
                                     </td>
+                                    <td>
+                                        {{ $herb->created_at }}
+                                    </td>
+
                                 </tr>
                             @endforeach
                         </tbody>

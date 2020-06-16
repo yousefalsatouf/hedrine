@@ -58,10 +58,26 @@
 							            		<option value="{{ $herb_form->id }}" {{ in_array($herb_form->id, old('forms') ?: $herb->herb_forms->pluck('id')->toArray()) ? 'selected' : '' }}>{{ $herb_form->name }}
 							            		</option>
 							            		@endif
-							            	@endforeach
+							            	@endforeach 
 	        									
 	 									</select>
 									</div>
+
+										
+									{{-- <div class="form-group">
+										<label for="target">Target</label>
+										<select class="form-control target" id="targets" name="targets[]" multiple >
+											@foreach ($targets as $target)
+												@if(Route::currentRouteName() === 'herb.create')
+							            		<option value="{{ $target->id }}" {{ in_array($target->id, old('targets') ?: []) ? 'selected' : '' }}>{{ $target->name }}</option>
+							            		@else
+							            		<option value="{{ $target->id }}" {{ in_array($target->id, old('targets') ?: $herb->targets->pluck('id')->toArray()) ? 'selected' : '' }}>{{ $target->name }}
+							            		</option>
+							            		@endif
+							            	@endforeach
+							            </select>
+									</div> --}}
+
 								</div>
 								<!-- /.card-body -->
 								<div class="card-footer">

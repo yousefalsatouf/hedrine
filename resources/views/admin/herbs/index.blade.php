@@ -17,6 +17,7 @@
 				<tr class="text-center">
 					<th> nom</th>
 					<th>Sciname</th>
+					{{-- <th>Forces</th> --}}
 					<th>Formes de la plante</th>
 					<th> Actions</th>
 				</tr>

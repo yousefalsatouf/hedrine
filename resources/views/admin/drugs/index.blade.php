@@ -21,15 +21,15 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach ($drugs as $drug)
+				@foreach ($drugs as $drug) 
 				<tr class="text-center">
 					<td>
 						<a href="" class="add_style" ><strong class="text-dark">{{$drug->name}}</strong></a>
 					</td>
-					<td>{{$drug->drug_family->name}}</td>
+					<td>{{$drug->drug_family->name}}</td> 
 					<td>{{ $drug->atc_level4s->name }}</td>
 					<td>{{ $drug->routes->name }}</td>
-					<td>{{ $drug->users->name }}</td>
+					<td>{{ optional($drug->user)->name }}</td> 
 					<td style="width: 10rem">
 						<div class="btn-group float-right">&nbsp; &nbsp; &nbsp;
 							<a class="btn btn-outline-primary" href="" role="button"><i class="far fa-eye"></i>

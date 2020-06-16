@@ -1,14 +1,20 @@
 <?php
 
 namespace App;
+use App\User;
+
 
 use Illuminate\Database\Eloquent\Model;
 
-class Reference extends Model
+class Reference extends Model  
 {
-    public function users()
+     protected $fillable = [
+        'id','title', 'authors','year','edition','url','user_id'
+    ];
+
+    public function user() 
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function dinteractions()
@@ -19,5 +25,11 @@ class Reference extends Model
     public function hinteractions()
     {
         return $this->belongsToMany(Hinteraction::class,'hinteraction_has_references','reference_id', 'id');
+    }
+
+    public function getname()
+
+    {
+        
     }
 }

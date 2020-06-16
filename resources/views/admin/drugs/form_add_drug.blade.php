@@ -58,7 +58,7 @@
 												@endif
 
 
-											</select>
+											</select> 
 										</div>
 										<div class="form-group">
 											<label for="route_id">Route</label>
@@ -93,6 +93,7 @@
 											</select>
 										</div>
 									</div>
+								</div> 
 									<!-- /.card-body -->
 									<div class="card-footer">
 										<div class="control-group">

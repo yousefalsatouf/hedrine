@@ -41,5 +41,4 @@ class UserController extends Controller
 
         return response()->json(['info' => 'Votre message a été mémorisé et sera transmis après modération.']);
     }
-
 }

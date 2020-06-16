@@ -2,14 +2,14 @@
 
 namespace App\DataTables;
 
-use App\Post;
+use App\Effect;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
-class PostsDataTable extends DataTable
+class EffectsDataTable extends DataTable
 {
 
     /**
@@ -22,11 +22,11 @@ class PostsDataTable extends DataTable
     {
         return datatables()
             ->eloquent($query)
-            ->addColumn('edit', function($post) {
-                return '<a href="'. route('post.edit', $post->id) . '" class="btn btn-xs btn-warning btn-block">Modifier</a>';
+            ->addColumn('edit', function($effect) {
+                return '<a href="'. route('effect.edit', $effect->id) . '" class="btn btn-xs btn-warning btn-block">Modifier</a>';
             })
-            ->addColumn('destroy', function($post) {
-                return '<a href="# class="btn btn-xs btn-warning btn-block' . ($post->users->count() ? 'disabled' : '' ) .'">Supprimer</a>';
+            ->addColumn('destroy', function($effect) {
+                return '<a href="# class="btn btn-xs btn-warning btn-block' . ($effect->users->count() ? 'disabled' : '' ) .'">Supprimer</a>';
             })
             ->rawColumns(['edit','destroy']);
 
@@ -38,7 +38,7 @@ class PostsDataTable extends DataTable
      * @param \App\Post $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(Post $model)
+    public function query(Effect $model)
     {
         return $model->with('users')->newQuery();
     }
@@ -71,8 +71,8 @@ class PostsDataTable extends DataTable
         return [
 
             Column::make('id'),
-            Column::make('title')->title('Title'),
-            Column::make('body')->title('Body'),
+            Column::make('name')->title('name'),
+           
             Column::computed('edit')
               ->title('')
               ->width(60)
