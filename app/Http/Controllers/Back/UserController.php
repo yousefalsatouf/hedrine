@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Back;
 
+<<<<<<< HEAD
 use App\DataTables\DrugssDataTable;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
@@ -125,5 +126,45 @@ class UserController extends Controller
         $user = User::findOrFail($id);
 
         return view('admin.users.show',$user);
+=======
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Herb;
+use App\Messages;
+
+class UserController extends Controller
+{
+
+    protected $herbs;
+    protected $message;
+
+    public function __construct( Herb $herbs, Message $message) {
+        $this->herb = $herbs;
+        $this->message = $message;
+    }
+
+    /**
+     * Send message.
+     *
+     * @param  App\Http\Requests\MessageAd  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function message(MessageHerb $request)
+    {
+        $hbs = $this->herb->getById($request->id);
+
+        if(auth()->check()) {
+            $hbs->notify(new AdMessage($hbs, $request->message, auth()->user()->email));
+            return response()->json(['info' => 'Votre message va être rapidement transmis.']);
+        }
+
+        $this->message->create([
+            'texte' => $request->message,
+            'email' => $request->email,
+            'herb_id' => $hbs->id,
+        ]);
+
+        return response()->json(['info' => 'Votre message a été mémorisé et sera transmis après modération.']);
+>>>>>>> 1ee6bab1ba5ecf5d586334eeb732a5bfac212eda
     }
 }

@@ -17,65 +17,72 @@ class CreateForeignKeys extends Migration
             $table->id();
             Schema::table('users', function (Blueprint $table) {
                 $table->unsignedBigInteger('role_id');
+<<<<<<< HEAD
             
                 $table->foreign('role_id')->references('id')->on('roles');
             });
     
+=======
+
+                $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
+            });
+ 
+>>>>>>> 1ee6bab1ba5ecf5d586334eeb732a5bfac212eda
             Schema::table('posts', function (Blueprint $table) {
                 $table->unsignedBigInteger('user_id');
-            
+
                 $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             });
-    
+
             Schema::table('drugs', function (Blueprint $table) {
                 $table->unsignedBigInteger('user_id');
                 $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-                
+
                 $table->unsignedBigInteger('drug_families_id');
                 $table->foreign('drug_families_id')->references('id')->on('drug_families')->onDelete('cascade');
-    
+
                 $table->unsignedBigInteger('route_id');
                 $table->foreign('route_id')->references('id')->on('routes')->onDelete('cascade');
-    
+
                 $table->unsignedBigInteger('atc_level_4s_id');
                 $table->foreign('atc_level_4s_id')->references('id')->on('atc_level4s')->onDelete('cascade');
             });
-    
+
             Schema::table('references', function (Blueprint $table) {
                 $table->unsignedBigInteger('user_id');
-            
+
                 $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             });
-    
+
             Schema::table('targets', function (Blueprint $table) {
                 $table->unsignedBigInteger('user_id');
                 $table->unsignedBigInteger('target_type_id');
-            
+
                 $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
                 $table->foreign('target_type_id')->references('id')->on('target_types')->onDelete('cascade');
             });
-    
+
             Schema::table('herbs', function (Blueprint $table) {
                 $table->unsignedBigInteger('user_id');
-            
+
                 $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             });
-    
+
             Schema::table('atc_level2s', function (Blueprint $table) {
                 $table->unsignedBigInteger('drug_families_id');
-            
+
                 $table->foreign('drug_families_id')->references('id')->on('drug_families')->onDelete('cascade');
             });
-    
+
             Schema::table('atc_level3s', function (Blueprint $table) {
                 $table->unsignedBigInteger('atc_level2s_id');
-            
+
                 $table->foreign('atc_level2s_id')->references('id')->on('atc_level2s')->onDelete('cascade');
             });
-    
+
             Schema::table('atc_level4s', function (Blueprint $table) {
                 $table->unsignedBigInteger('atc_level3s_id');
-            
+
                 $table->foreign('atc_level3s_id')->references('id')->on('atc_level3s')->onDelete('cascade');
             });
             $table->timestamps();

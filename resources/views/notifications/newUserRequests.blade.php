@@ -2,12 +2,6 @@
 
 @section('content_dashboard')
     <div class="container-fluid">
-        @if(session()->has('msg'))
-            <div class="alert alert-success bg-gradient-green alert-message w-25" id="success-alert">
-                <button type="button" class="close" data-dismiss="alert">x</button>
-                <strong><i class="fas fa-check-circle"></i> {{ session()->get('msg') }}</strong>
-            </div>
-        @endif
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
@@ -20,11 +14,11 @@
                             <th> Tel 1 </th>
                             <th> Tel 2 </th>
                             <th> Email verified </th>
-                            <th> Activate</th>
+                            <th> Actions</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @forelse ($allNewUsers as $user)
+                        @forelse (isset($singleNewUser)&&$singleNewUser?$singleNewUser:$allNewUsers as $user)
                             <tr>
                                 <td>
                                     <strong class="text-success">{{$user->name}} {{$user->firstname}}</strong>
@@ -48,16 +42,15 @@
                                         <strong><i class="fa fa-cross text-danger"></i> No</strong>
                                     @endif
                                 </td>
-                                <td style="width: 10%">
-                                    <div>
-                                        <a class="btn btn-outline-success" href="{{route('activeUser', $user->id)}}" role="button"><i class="fas fa-check"></i></a>
-                                    </div>
+                                <td class="d-flex justify-content-around">
+                                    <a href="{{route('activeUser', $user->id)}}" title="accept user request" role="button" class="accept"><i class="far fa-thumbs-up text-success"></i></a>
+                                    <a href="{{route('denyingUser', $user->id)}}" title="deny user request" role="button" class="accept"><i class="far fa-thumbs-down text-danger"></i></a>
                                 </td>
                             </tr>
                         @empty
                             <tr>
                                 <td>
-                                    <strong class="text-danger">No user requests for the moment</strong>
+                                    <strong class="text-success"> <i class="fas fa-check-circle"></i> OK for user request</strong>
                                 </td>
                             </tr>
                         @endforelse

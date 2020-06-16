@@ -20,11 +20,13 @@ class CreateUsersTable extends Migration
             $table->string('team', 45)->nullable();
             $table->string('tel1', 45)->nullable();
             $table->string('tel2', 45)->nullable();
+            $table->string('RGPD')->nullable();
             $table->string('username', 50)->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->smallInteger('is_active')->default(0);
+            $table->smallInteger('denied')->nullable();
             $table->rememberToken();
             $table->dateTime('created')->nullable();
             $table->timestamps();

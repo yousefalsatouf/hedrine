@@ -72,23 +72,28 @@
                     <span class="badge badge-success navbar-badge" style="font-size: 15.5px" >{{ $newUsersCount }}</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <h4 class="dropdown-item dropdown-header text-success"><i class="fas fa-users mr-2"></i> {{ $newUsersCount }}  New Users requests</h4>
+                    <h4 class="dropdown-item dropdown-header text-info"><i class="fas fa-users mr-2"></i> {{ $newUsersCount }}  New Users requests</h4>
                     <div class="dropdown-divider"></div>
                     @forelse($mostRecentUsers as $u)
-                        <div class="card text-center">
-                            <div class="d-flex justify-content-between" style="margin: 10px 5px">
-                                <strong><i class="fas fa-user mr-2"></i> {{ $u->name }}</strong>
-                                <small>{{Carbon\Carbon::parse($u->email_verified_at)->diffForHumans()}}</small>
-                            </div>
-                            <div class="card-footer text-muted">
-                                <a class="btn btn-outline-success w-50" href="{{route('activeUser', $u->id)}}" role="button"><i class="fas fa-check"></i></a>
-                            </div>
+                    <div class="card text-center">
+                        <div class="text-dark d-flex justify-content-around new-user" style="padding: 5px 0">
+                            <strong class="text-left">
+                                <a href="{{route('newSingleUser.request', $u->id)}}" title="See user request" class="text-dark view"><i class="fas fa-user mr-2"></i>{{ $u->name }} {{$u->firstname}} <i class="fas fa-eye"></i></a>
+                            </strong>
+                            <small class="text-right text-info">{{Carbon\Carbon::parse($u->email_verified_at)->diffForHumans()}}</small>
                         </div>
+                        <hr>
+                        <div class="d-flex justify-content-around ">
+                            <a href="{{route('denyingUser', $u->id)}}" title="deny user request" role="button" class="accept"><i class="far fa-thumbs-down text-danger"></i></a>
+                            <a href="{{route('activeUser', $u->id)}}" title="accept user request" role="button" class="accept"><i class="far fa-thumbs-up text-success"></i></a>
+                        </div>
+                    </div>
+
                     @empty
-                        <div class="alert alert-secondary" role="alert">No users requests for the moment</div>
+                        <div class="alert text-warning" role="alert">No users requests for the moment</div>
                     @endforelse
                     <div class="dropdown-divider"></div>
-                    <a href="{{route('newUser.request')}}" class="dropdown-item dropdown-footer">See All User requests</a>
+                    <a href="{{route('newUser.request')}}" class="dropdown-item dropdown-footer" title="see all user requests">See All User requests</a>
                 </div>
             </li>
     @endif
@@ -134,8 +139,8 @@
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <span class="dropdown-item dropdown-header"> {{ $notifications }} Notifications</span>
                     <div class="dropdown-divider"></div>
-                    <a href="{{ route('notification.index') }}" class="dropdown-item">
-                        <i class="fas fa-seedling mr-2" style="color: seagreen"></i> {{ $newHerbs->count() }}
+                    <a href="{{ route('admin.herbs') }}" class="dropdown-item">
+                        <i class="fas fa-seedling mr-2" style="color: seagreen"></i> {{ $noValidCount->count() }}
                         @if($newHerbs === 1) new Herb
                             @else new Herbs
                         @endif
@@ -158,15 +163,6 @@
                         @endif
                         <span class="float-right text-muted text-sm">2 days</span>
                     </a>
-
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <i class="fas fa-users mr-2"></i> {{ $newUsersCount }}
-                        @if($newHerbs === 1) New User request
-                            @else new Users requests
-                        @endif
-                        <span class="float-right text-muted text-sm">12 hours</span>
-                    </a>
                     <div class="dropdown-divider"></div>
                     <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                 </div>
@@ -177,7 +173,7 @@
         <li class="nav-item d-sm-inline-block">
             <img class="img-fluid" src="{{ asset('images/Plant-icon_32.png') }}" alt="plante">
         </li>
-        <li class="nav-item d-sm-inline-block">{{ $herbs->count() }}</li>
+        <li class="nav-item d-sm-inline-block">{{ $validatedHerb->count() }}</li>
         &nbsp; &nbsp;
         <li class="nav-item d-sm-inline-block"><img class="img-fluid"
                 src="{{ asset('images/pills-5-icon_32.png') }}" alt="drugs">
@@ -310,19 +306,19 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">
+                                        <a href="{{ route('effect.index') }}" class="nav-link">
                                             <i class="far fa-dot-circle nav-icon"></i>
                                             <p>Actions</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{route('drugsFamily')}}" class="nav-link">
+                                        <a href="{{route('drug_family.index')}}" class="nav-link">
                                             <i class="far fa-dot-circle nav-icon"></i>
                                             <p>Drugs Families</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">
+                                        <a href="{{ route('force.index') }}" class="nav-link">
                                             <i class="far fa-dot-circle nav-icon"></i>
                                             <p>Forces</p>
                                         </a>
@@ -349,6 +345,12 @@
                                         <a href="#" class="nav-link">
                                             <i class="far fa-dot-circle nav-icon"></i>
                                             <p>Pending Users</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ route('reference.index') }}" class="nav-link">
+                                            <i class="far fa-dot-circle nav-icon"></i>
+                                            <p>Références</p>
                                         </a>
                                     </li>
                                 </ul>
@@ -427,10 +429,10 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+    <strong> 2020 <a href="https://www.ulb.be">Hedrine-ULB</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.0.5
+
     </div>
   </footer>
 
@@ -449,6 +451,13 @@
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)
+</script>
+<script>
+    $(document).ready(function(){
+        $('#MybtnModal').click(function(){
+            $('#Mymodal').modal('show');
+        });
+    });
 </script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
@@ -478,10 +487,19 @@
 
 
 
-
-
     @yield('dashboard-js')
     @include('sweetalert::alert')
     @include('cookieConsent::index')
+    <script type="text/javascript">
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+        })
+    </script>
+    @yield('script')
 </body>
 </html>

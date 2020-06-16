@@ -17,8 +17,12 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
+<<<<<<< HEAD
         'name', 'email', 'password', 'firstname','team','tel1','tel2','email_verified_at',
         'role_id', 'is_active', 'role_id', 'created'
+=======
+        'name', 'email', 'password', 'firstname','team','tel1','tel2', 'RGPD'
+>>>>>>> 1ee6bab1ba5ecf5d586334eeb732a5bfac212eda
     ];
 
     /**
@@ -41,27 +45,27 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function herbs()
     {
-        return $this->hasMany(herbs::class);
+        return $this->hasMany(Herb::class);
     }
 
     public function drugs()
     {
-        return $this->hasMany(drugs::class);
+        return $this->hasMany(Drug::class);
     }
 
     public function references()
     {
-        return $this->hasMany(references::class);
+        return $this->hasMany(Reference::class);
     }
 
     public function targets()
     {
-        return $this->hasMany(targets::class);
+        return $this->hasMany(Target::class);
     }
 
-    public function posts()
+    public function posts() 
     {
-        return $this->hasMany(posts::class);
+        return $this->hasMany(Post::class);
     }
 
     public function roles()

@@ -28,11 +28,12 @@ class HerbController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { $numberOfTimes_herbForms = 0;
+    {
+        $numberOfTimes_herbForms = 0; 
         $lastHerb = 0;
-        $herbs = Herb::all();
+        // $herbs = Herb::all();
 
-        return view('admin.herbs.index', compact('herbs','numberOfTimes_herbForms','lastHerb'));
+        return view('admin.herbs.index', compact('numberOfTimes_herbForms','lastHerb'));
     }
 
     /**
@@ -42,7 +43,8 @@ class HerbController extends Controller
      */
     public function create()
     {
-        return view('admin.herbs.form_add_herb');
+        $targets = Target::all();
+        return view('admin.herbs.form_add_herb', compact('targets'));
     }
 
     /**

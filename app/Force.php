@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Force extends Model
 {
+	protected $fillable = [
+        'id','name','color','rang','visible'
+    ];
     //
     
     const STATUS_COLOR = [

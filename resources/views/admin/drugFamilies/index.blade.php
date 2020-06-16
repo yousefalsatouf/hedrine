@@ -2,29 +2,29 @@
 
 @section('content_dashboard')
     <div class="row justify-content-end" style="padding-bottom: 0.75rem">
-        @if(Route::currentRouteName() === 'drugsFamily')
-            <a class="btn btn-light" href="{{ route('drugsFamily.create') }}" role="button">Créer un nouveau DCI</a>
+        @if(Route::currentRouteName() === 'drug_family.index')
+            <a class="btn btn-light" href="{{ route('drug_family.create') }}" role="button">Créer un nouveau DCI</a>
         @endif
     </div>
 
     <div class="col-12">
         <div class="card-body " style="background-color: #fff">
-            <table id="example1" class="table table-striped table-sm">
+            <table id="example1" class="table tablée-striped table-sm">
                 <thead>
-                <tr>
+                <tr class="text-center">
                     <th> Name </th>
                     <th> Actions</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach ($drugsFamily as $drug)
-                    <tr>
+                @foreach ($drug_families as $drug_family)
+                    <tr class="text-center">
                         <td>
-                            <strong>{{$drug->name}}</strong>
+                            <strong>{{$drug_family->name}}</strong>
                         </td>
                         <td style="width: 10rem">
                             <div>
-                                <a class="btn btn-outline-success" href="{{ route('drugsFamily.edit',$drug->id) }}" role="button"><i class="fas fa-edit"></i></a> &nbsp; &nbsp;
+                                <a class="btn btn-outline-success" href="{{ route('drug_family.edit',$drug_family->id) }}" role="button"><i class="fas fa-edit"></i></a> &nbsp; &nbsp;
                             </div>
                         </td>
                     </tr>

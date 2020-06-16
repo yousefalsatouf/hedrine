@@ -58,23 +58,39 @@
 							            		<option value="{{ $herb_form->id }}" {{ in_array($herb_form->id, old('forms') ?: $herb->herb_forms->pluck('id')->toArray()) ? 'selected' : '' }}>{{ $herb_form->name }}
 							            		</option>
 							            		@endif
-							            	@endforeach
+							            	@endforeach 
 	        									
 	 									</select>
 									</div>
+
+										
+									{{-- <div class="form-group">
+										<label for="target">Target</label>
+										<select class="form-control target" id="targets" name="targets[]" multiple >
+											@foreach ($targets as $target)
+												@if(Route::currentRouteName() === 'herb.create')
+							            		<option value="{{ $target->id }}" {{ in_array($target->id, old('targets') ?: []) ? 'selected' : '' }}>{{ $target->name }}</option>
+							            		@else
+							            		<option value="{{ $target->id }}" {{ in_array($target->id, old('targets') ?: $herb->targets->pluck('id')->toArray()) ? 'selected' : '' }}>{{ $target->name }}
+							            		</option>
+							            		@endif
+							            	@endforeach
+							            </select>
+									</div> --}}
+
 								</div>
 								<!-- /.card-body -->
 								<div class="card-footer">
 									<div class="control-group">
 										<div class="controls">
-											<button type="submit" class="btn btn-success"><i class="fas fa-location-arrow"></i>
+											<a class="btn btn-light" href="{{ route('herb.index') }}" role="button"><i class="fas fa-arrow-left"></i> Retour à la liste des plantes</a>
+											<button type="submit" class="btn btn-outline-success float-right"><i class="fas fa-location-arrow"></i>
 												@if(Route::currentRouteName() === 'herb.create')
 													Ajouter un nouvelle plante
 												@else
 												 Sauvegarder
 												@endif
 											</button>
-											<a class="btn btn-primary" href="{{ route('herb.index') }}" role="button"><i class="fas fa-arrow-left"></i> Retour à la liste des plantes</a>
 										</div>
 									</div>
 								</div>

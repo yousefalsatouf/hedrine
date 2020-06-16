@@ -62,5 +62,10 @@ class HerbSeeder extends Seeder
             'sciname' => 'Ginkgo biloba L.',
             'user_id' => 1,
         ]);
+        Herb::create([
+            'name' => 'Testing',
+            'sciname' => 'Thuerr',
+            'user_id' => 2,
+        ]);
     }
 }

@@ -4,6 +4,11 @@ namespace App\Http\Controllers\Back;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Herb;
+use App\Notifications\ { HerbApprove, HerbRefuse };
+use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Requests\MessageRefuse as MessageRefuseRequest;
+
 
 class AdminController extends Controller
 {
@@ -19,5 +24,43 @@ class AdminController extends Controller
         }
 
         return view('dashboard/dashboard',compact('notifications','newHerbs'));
+    }
+    public function herbs()
+    {
+        return view('alerts.index');
+    }
+
+    public function approved($herb){
+        $herb->validated = true;
+        $herb->save();
+    }
+    public function delete($herb){
+        $herb->delete();
+    }
+    /**
+     * Get an ad by id.
+     *
+     * @param integer $id
+     */
+    public function getById($id)
+    {
+        return Herb::findOrFail($id);
+    }
+
+    public function approve(Herb $herb) {
+        $this->approved($herb);
+        Alert::success('Ok !', 'Nouvelle plante approuvée avec succès');
+
+        return response()->json(['id' => $herb->id]);
+
+    }
+    public function refuse(MessageRefuseRequest $request) {
+
+        $herb = $this->getById($request->id);
+        $herb->notify( New HerbRefuse($request->message));
+        $this->delete($herb);
+
+        return response()->json(['id' => $herb->id]);
+
     }
 }

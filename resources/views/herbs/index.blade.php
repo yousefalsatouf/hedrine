@@ -40,7 +40,7 @@
 					<tbody>
 
               {{--this foreach is changed according our need to display herbs by  filtering char --}}
-						@foreach (isset($herb)?$herb:$herbs as $herb)
+						@foreach (isset($herb)?$herb:$validatedHerb as $herb)
 
 						<!--
 							START COMMENT

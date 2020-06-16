@@ -48,6 +48,14 @@ class AppServiceProvider extends ServiceProvider
 
             $view->with('herbs', Herb::orderBy('name')->get());
         });
+
+        view()->composer('*', function ($view) {
+            $view->with('noValidCount',Herb::where('validated',false)->get());
+        });
+        view()->composer('*', function ($view) {
+            $view->with('validatedHerb',Herb::where('validated',true)->get());
+        });
+
         View::composer('*', function ($view) {
 
             $view->with('drugs', Drug::orderBy('name')->get());
@@ -69,11 +77,6 @@ class AppServiceProvider extends ServiceProvider
 
         View::composer('*', function ($view) {
 
-            $view->with('drug_families', DrugFamily::all());
-        });
-
-        View::composer('*', function ($view) {
-
             $view->with('target_types', TargetType::all());
         });
 
@@ -85,6 +88,19 @@ class AppServiceProvider extends ServiceProvider
         View::composer('*', function ($view) {
 
             $view->with('herb_forms', HerbForm::all());
+        });
+
+        View::composer('*', function ($view) {
+
+            $view->with('drug_families', DrugFamily::all());
+        });
+
+        view()->composer('*', function ($view) {
+            $view->with('noValidCount',Herb::where('validated',false)->get());
+        });
+
+        view()->composer('*', function ($view) {
+            $view->with('validatedHerb',Herb::where('validated',true)->get());
         });
 
         view()->composer('*', function ($view) {
@@ -101,9 +117,9 @@ class AppServiceProvider extends ServiceProvider
             $newHerbs = auth()->user()->unreadNotifications()->where('type','App\Notifications\NewHerb')->get();
             $newDrugs = auth()->user()->unreadNotifications()->where('type','App\Notifications\NewDrug')->count();
             $newTargets = auth()->user()->unreadNotifications()->where('type','App\Notifications\NewTarget')->count();
-            $newUsersCount = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->count();
-            $mostRecentUsers = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->orderBy('email_verified_at', 'DESC')->paginate(2);
-            $allNewUsers = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->get();
+            $newUsersCount = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->whereNull('denied')->count();
+            $mostRecentUsers = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->whereNull('denied')->orderBy('email_verified_at', 'DESC')->paginate(5);
+            $allNewUsers = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->whereNull('denied')->get();
             $view->with(compact('title','notifications','newHerbs','newDrugs','newTargets','newUsersCount', 'mostRecentUsers', 'allNewUsers'));
         });
 
