@@ -87,6 +87,16 @@ Route::view('admin','admin.layout');
 Route::middleware('ajax')->group(function () {
     Route::post('message', 'UserController@message')->name('message');
 });
+
+//create this new one, because I don't need the namespace back here ...
+Route::prefix('admin')->middleware('admin')->group(function() {
+    //route pour new herb target ....
+    // create - show form page
+    Route::name('newHerbTarget')->get('new_herb_target', 'HinteractionController@create');
+    Route::name('newDrugTarget')->get('new_drug_target', 'DinteractionController@create');
+    //
+});
+
 Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function() {
 
     // Route pour Admins
