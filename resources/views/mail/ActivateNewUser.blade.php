@@ -49,16 +49,16 @@
                                     <h3 style="color: green"></h3>
                                     <ul>
                                         <li>
-                                            <p><strong>Nom : {{isset($activateUser->name)}} {{isset($activateUser->firestname)}} </strong></p>
+                                            <p><strong>Nom : {{$activateUser->name}} {{$activateUser->firestname}} </strong></p>
                                         </li>
                                         <li>
-                                            <p><strong>Email : {{isset($activateUser->email)}}</strong></p>
+                                            <p><strong>Email : {{$activateUser->email}}</strong></p>
                                         </li>
                                         <li>
-                                            <p><strong>Team : {{isset($activateUser->team)}}</strong></p>
+                                            <p><strong>Team : {{$activateUser->team}}</strong></p>
                                         </li>
                                         <li>
-                                            <p><strong>Tele : {{isset($activateUser->tel1)}}</strong></p>
+                                            <p><strong>Tele : {{$activateUser->tel1}}</strong></p>
                                         </li>
                                     </ul>
                                     <table class="action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 100%; margin: 30px auto; padding: 0; text-align: center; width: 100%;">
@@ -70,10 +70,10 @@
                                                             <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
                                                                 <tr>
                                                                     <td style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
-                                                                        <a href="{{route('activeUser', isset($activateUser->id))}}" class="button button-outline-success" target="_blank" rel="noopener" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -webkit-text-size-adjust: none; border-radius: 4px; color: #fff; display: inline-block; overflow: hidden; text-decoration: none; background-color: green; border-bottom: 8px solid green; border-left: 18px solid green; border-right: 18px solid green; border-top: 8px solid #2d3748;">Activer</a>
+                                                                        <a href="{{route('activeUser', $activateUser->id)}}" class="button button-outline-success" target="_blank" rel="noopener" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -webkit-text-size-adjust: none; border-radius: 4px; color: #fff; display: inline-block; overflow: hidden; text-decoration: none; background-color: green; border-bottom: 8px solid green; border-left: 18px solid green; border-right: 18px solid green; border-top: 8px solid #2d3748;">Activer</a>
                                                                     </td>
                                                                     <td style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
-                                                                        <a href="{{route('denyingUser', isset($activateUser->id))}}" class="button button-outline-danger" target="_blank" rel="noopener" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -webkit-text-size-adjust: none; border-radius: 4px; color: #fff; display: inline-block; overflow: hidden; text-decoration: none; background-color: red; border-bottom: 8px solid red; border-left: 18px solid red; border-right: 18px solid red; border-top: 8px solid red;">Réfuser</a>
+                                                                        <a href="{{route('denyingUser', $activateUser->id)}}" class="button button-outline-danger" target="_blank" rel="noopener" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -webkit-text-size-adjust: none; border-radius: 4px; color: #fff; display: inline-block; overflow: hidden; text-decoration: none; background-color: red; border-bottom: 8px solid red; border-left: 18px solid red; border-right: 18px solid red; border-top: 8px solid red;">Réfuser</a>
                                                                       </td>
                                                                 </tr>
                                                             </table>
