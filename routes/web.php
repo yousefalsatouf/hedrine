@@ -83,16 +83,14 @@ Route::get('drug_families/details/{id}','DrugFamilyController@details')->name('d
 //N.Thierry Admin route
 Route::view('admin','admin.layout');
 
-<<<<<<< HEAD
-Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function() 
-{
-=======
+
+
 //Message
 Route::middleware('ajax')->group(function () {
     Route::post('message', 'UserController@message')->name('message');
 });
 Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function() {
->>>>>>> 1ee6bab1ba5ecf5d586334eeb732a5bfac212eda
+
 
     // Route pour Admins
     Route::name('admin')->get('/','AdminController@index');
@@ -185,7 +183,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
       ]);
     Route::name('target_type.destroy.alert')->get('target_type/{target_type}', 'TargetTypeController@alert');
 
-<<<<<<< HEAD
+
     // Route pour users
     Route::name('user.update')->put('user', 'UserController@update');
     Route::name('user.edit')->get('user', 'UserController@edit');
@@ -198,7 +196,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
     Route::name('user.destroy.alert')->get('user/{user}', 'UserController@alert');
 
      //pour les nouveau utilisateurs
-=======
+
     // Route pour les references
     Route::name('reference.update')->put('reference', 'ReferenceController@update');
     Route::name('reference.edit')->get('reference', 'ReferenceController@edit');
@@ -234,7 +232,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
 
 
     //pour les nouveau utilisateurs
->>>>>>> 1ee6bab1ba5ecf5d586334eeb732a5bfac212eda
+
     Route::name('newUser.request')->get('/list_user_requests', 'NotificationController@showNewUserRequests');
     Route::name('newSingleUser.request')->get('/single_user_requests/{id}', 'NotificationController@showSingleNewUserRequest');
     Route::name('activeUser')->get('/activated_user/{id}', 'NotificationController@activateNewUser');
@@ -248,15 +246,14 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
         Route::name ('index_drugs')->get ('/index_drugs', 'NotificationController@show_drugs');
         Route::name ('index_targets')->get ('/index_targets', 'NotificationController@show_targets');
     });
-<<<<<<< HEAD
-=======
+
     //Route Pour Les Alertes
     Route::name('alert.')->prefix('alert')->group(function() {
 
         Route::get('/','AlertsController@index')->name('index');
     });
 
->>>>>>> 1ee6bab1ba5ecf5d586334eeb732a5bfac212eda
+
 });
 
 //N.Thierry : Les routes pour interagir entre les plante et DCI

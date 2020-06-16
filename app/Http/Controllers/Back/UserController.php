@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\Back;
 
-<<<<<<< HEAD
 use App\DataTables\DrugssDataTable;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UserRequest;
-use App\User;
 use Illuminate\Http\Request;
+use App\Herb;
+use App\Messages;
+use App\User;
+use App\Http\Requests\UserRequest;
+
+
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\DB;
@@ -15,6 +18,13 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
+    protected $herbs;
+    protected $message;
+
+    public function __construct( Herb $herbs, Message $message) {
+        $this->herb = $herbs;
+        $this->message = $message;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -126,22 +136,8 @@ class UserController extends Controller
         $user = User::findOrFail($id);
 
         return view('admin.users.show',$user);
-=======
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Herb;
-use App\Messages;
-
-class UserController extends Controller
-{
-
-    protected $herbs;
-    protected $message;
-
-    public function __construct( Herb $herbs, Message $message) {
-        $this->herb = $herbs;
-        $this->message = $message;
     }
+
 
     /**
      * Send message.
@@ -165,6 +161,6 @@ class UserController extends Controller
         ]);
 
         return response()->json(['info' => 'Votre message a été mémorisé et sera transmis après modération.']);
->>>>>>> 1ee6bab1ba5ecf5d586334eeb732a5bfac212eda
     }
+
 }

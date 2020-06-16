@@ -500,6 +500,8 @@
             });
         })
     </script>
+    <!-- Recaptha -->
+    @yield('captcha')
     @yield('script')
 </body>
 </html>

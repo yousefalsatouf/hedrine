@@ -98,10 +98,10 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('*', function ($view) {
             $view->with('noValidCount',Herb::where('validated',false)->get());
         });
-
         view()->composer('*', function ($view) {
             $view->with('validatedHerb',Herb::where('validated',true)->get());
         });
+<<<<<<< HEAD
 
         view()->composer('*', function ($view) {
             $view->with('noValidCount',Herb::where('validated',false)->get());
@@ -111,6 +111,8 @@ class AppServiceProvider extends ServiceProvider
         });
 
 
+=======
+>>>>>>> 03ae4f6d818b00b2f5035831fdf5a57bbc4958e8
         View::composer('dashboard.layout', function ($view) {
             $title = config('titles.' . Route::currentRouteName());
             $notifications = auth()->user()->unreadNotifications()->count();

@@ -71,5 +71,11 @@ return [
         'create' => 'Création d\'un effet',
     ],
 
+    'user' => [
+        'index' => 'Gestion des Users',
+        'edit' => 'Modification d\'un user',
+        'create' => 'Création d\'un user',
+    ],
+
 
 ]; 
