@@ -18,13 +18,13 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-    protected $herbs;
-    protected $message;
+    // protected $herbs;
+    // protected $message;
 
-    public function __construct( Herb $herbs, Message $message) {
-        $this->herb = $herbs;
-        $this->message = $message;
-    }
+    // public function __construct( Herb $herbs, Message $message) {
+    //     $this->herb = $herbs;
+    //     $this->message = $message;
+    // }
     /**
      * Display a listing of the resource.
      *
@@ -139,28 +139,28 @@ class UserController extends Controller
     }
 
 
-    /**
-     * Send message.
-     *
-     * @param  App\Http\Requests\MessageAd  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function message(MessageHerb $request)
-    {
-        $hbs = $this->herb->getById($request->id);
+    // /**
+    //  * Send message.
+    //  *
+    //  * @param  App\Http\Requests\MessageAd  $request
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function message(MessageHerb $request)
+    // {
+    //     $hbs = $this->herb->getById($request->id);
 
-        if(auth()->check()) {
-            $hbs->notify(new AdMessage($hbs, $request->message, auth()->user()->email));
-            return response()->json(['info' => 'Votre message va être rapidement transmis.']);
-        }
+    //     if(auth()->check()) {
+    //         $hbs->notify(new AdMessage($hbs, $request->message, auth()->user()->email));
+    //         return response()->json(['info' => 'Votre message va être rapidement transmis.']);
+    //     }
 
-        $this->message->create([
-            'texte' => $request->message,
-            'email' => $request->email,
-            'herb_id' => $hbs->id,
-        ]);
+    //     $this->message->create([
+    //         'texte' => $request->message,
+    //         'email' => $request->email,
+    //         'herb_id' => $hbs->id,
+    //     ]);
 
-        return response()->json(['info' => 'Votre message a été mémorisé et sera transmis après modération.']);
-    }
+    //     return response()->json(['info' => 'Votre message a été mémorisé et sera transmis après modération.']);
+    // }
 
 }

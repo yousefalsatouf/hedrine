@@ -33,7 +33,7 @@
 								</div>
 								<!-- /.card-header -->
 								<!-- form start -->
-								<form class=" justify-content-center" role="form" method="POST" action="@isset($force) {{ route('type_target.update', $type_target->id) }} @else {{
+								<form class=" justify-content-center" role="form" method="POST" action="@isset($target_type) {{ route('target_type.update', $target_type->id) }} @else {{
 								route('target_type.store')}} @endisset">
 									<div class="card-body">
 										<div class="form-group">

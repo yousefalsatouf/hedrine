@@ -63,7 +63,7 @@
 											<input type="text" class="form-control" id="description" name="description" required placeholder="Description" value="{{isset($user) ? $user->email : ''}}">
 										</div>
 										<div class="form-group">
-											<label for="Description">Firstname</label>
+											<label for="Description">Description</label>
 											<input type="text" class="form-control" id="description" name="description" required placeholder="Description" value="{{isset($user) ? $user->email_verified_at : ''}}">
 										</div>
 										<div class="form-group">

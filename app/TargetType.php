@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class TargetType extends Model
 {
-	protected $fillable = ['name', 'rank', 'description'];
+	protected $fillable = ['id','name', 'rank', 'description'];
     
     public function targets()
     {
-        return $this->belongsTo(Target::class);
+        return $this->belongsTo(Target::class); 
     }
 }
