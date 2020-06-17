@@ -146,7 +146,19 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
     Route::resource('drug_family', 'DrugFamilyController')->parameters([
         'drug_family' => 'drug_family'
       ]);
-    Route::name('drug_family.destroy.alert')->get('drug_family/{drug_family}', 'HerbController@alert');
+    Route::name('drug_family.destroy.alert')->get('drug_family/{drug_family}', 'DrugFamilyController@alert');
+
+    // Route pour Herbs forms ..
+    Route::name('herb_form.update')->put('herb_form', 'HerbFormController@update');
+    Route::name('herb_form.edit')->get('herb_form', 'HerbFormController@edit');
+    Route::name('herb_form.index')->get('herb_form', 'HerbFormController@index');
+    Route::name('herb_form.show')->get('herb_form', 'HerbFormController@show');
+
+    Route::name('herb_form.details')->get('herb_form', 'HerbFormController@details');
+    Route::resource('herb_form', 'HerbFormController')->parameters([
+        'herb_form' => 'herb_form'
+      ]);
+    Route::name('herb_form.destroy.alert')->get('herb_form/{herb_form}', 'HerbFormController@alert');
 
     //Route pour plante
     Route::name('herb.update')->put('herb', 'HerbController@update');

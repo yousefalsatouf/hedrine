@@ -308,6 +308,12 @@
                                 </a>
                             </li>
                             <li class="nav-item">
+                                <a href="{{route('herb_form.index')}}" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Herbs Forms</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="{{ route('force.index') }}" class="nav-link">
                                     <i class="far fa-dot-circle nav-icon"></i>
                                     <p>Forces</p>
