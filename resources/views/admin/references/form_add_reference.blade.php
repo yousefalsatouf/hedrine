@@ -50,7 +50,7 @@
 												<div class="form-group">
 													<label for="authors">Authors</label>
 													<input type="text" class="form-control" id="authors" name="authors" required placeholder="Nom de l'auteur" value="{{isset($reference) ? $reference->authors : ''}}">
-												</div>
+												</div> 
 											</div>
 										</div>
 
@@ -72,7 +72,7 @@
 
 										<div class="rows">
 											<div class="form-group">
-												<label for="url">Notes du poste</label>
+												<label for="url">URL de la reference</label>
 													<textarea rows="5" cols="5" class="form-control" id="url" name="url" placeholder="url de la reference" required>{{ isset($reference) ? $reference->url : ''}}</textarea>
 											</div>
 										</div>
