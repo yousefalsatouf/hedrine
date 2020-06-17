@@ -16,8 +16,8 @@
 					<th> Authors </th>
 					<th> Year </th>
 					<th> Edition </th>
-					<th> URL </th>
-					{{-- <th> User</th> --}}
+{{-- 					<th> URL </th>
+ --}}					<th> User</th>
 					<th> Actions</th>
 				</tr>
 			</thead>
@@ -30,8 +30,8 @@
 					<td>{{ $reference->authors }}</td>
 					<td>{{ $reference->year }}</td>
 					<td>{{ $reference->edition }}</td>
-					<td>{{ $reference->url }}</td>
-					{{-- <td>{{ $reference->user->name }}</td> --}}
+{{-- 					<td>{{ $reference->url }}</td> --}}
+					<td>{{ optional($reference->user)->name }}</td>
 					<td style="width: 10rem">
 						<div class="btn-group float-right">
 							<a class="btn btn-outline-success align-self-center p-2" href="{{ route('reference.edit',$reference->id) }}" role="button">Edit</a> &nbsp; &nbsp;

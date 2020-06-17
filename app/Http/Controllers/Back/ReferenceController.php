@@ -23,8 +23,8 @@ class ReferenceController extends Controller
      */
     public function index()
     {
-
-        return view('admin.references.index');
+        $referencees = Reference::find(2);
+        return view('admin.references.index', compact('referencees'));
     }
 
     /**
