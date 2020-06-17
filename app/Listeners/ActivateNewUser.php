@@ -2,8 +2,7 @@
 
 namespace App\Listeners;
 
-use App\Events\ActivateNewUserEvent;
-use App\User;
+use Illuminate\Auth\Events\Verified;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\DB;
@@ -17,11 +16,10 @@ class ActivateNewUser
      * @param  object  $event
      * @return void
      */
-    public function handle(ActivateNewUserEvent $event)
+    public function handle(Verified $event)
     {
         $admins = DB::table('users')->where('role_id', '=', 1)->get();
-        //dd($admin[0]->email);
-        //  dd($event->user);
+
         foreach ($admins as $admin)
         {
             //dump($admin->email);

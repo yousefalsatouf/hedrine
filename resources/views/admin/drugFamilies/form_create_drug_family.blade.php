@@ -23,7 +23,7 @@
                                 <div class="card-header">
                                     <h3 class="card-title">
                                         <strong>
-                                            @if(Route::currentRouteName() === 'drugsFamily.create')
+                                            @if(Route::currentRouteName() === 'drug_family.create')
                                                 Ajouter un nouveau Drug Family
                                             @else
                                                 Modification d'un Drug Family
@@ -31,28 +31,23 @@
                                         </strong>
                                     </h3>
                                 </div>
-                                <!-- /.card-header -->
-                                <!-- form start -->
-                                @php
-
-                                @endphp
-                                <form class=" justify-content-center" role="form" method="POST" action="@isset($drugFamily) {{ route('drugsFamily.update', $drugFamily->id) }} @else {{
-								route('drugsFamily.store')}} @endisset">
+                               <form class=" justify-content-center" role="form" method="POST" action="@isset($drug_family) {{ route('drug_family.update', $drug_family->id) }} @else {{
+								route('drug_family.store')}} @endisset">
                                     <div class="card-body">
                                         <div class="form-group">
-                                            @isset($drugFamily) @method('PUT') @endisset
+                                            @isset($drug_family) @method('PUT') @endisset
                                             @csrf
                                             <label for="name">Nom du Drug Family</label>
-                                            <input type="text" class="form-control" id="name" name="name" required placeholder="Nom du DCI" value="{{isset($drugFamily) ? $drugFamily->name : ''}}">
+                                            <input type="text" class="form-control" id="name" name="name" required placeholder="Nom du DCI" value="{{isset($drug_family) ? $drug_family->name : ''}}">
                                         </div>
                                     </div>
                                     <!-- /.card-body -->
                                     <div class="card-footer">
                                         <div class="control-group">
                                             <div class="controls">
-                                                <a class="btn btn-light" href="{{ route('drugsFamily') }}" role="button"><i class="fas fa-arrow-left"></i> Retour à la liste des Drug Family</a>
+                                                <a class="btn btn-light" href="{{ route('drug_family.index') }}" role="button"><i class="fas fa-arrow-left"></i> Retour à la liste des Drug Family</a>
                                                 <button type="submit" class="btn btn-outline-success float-right"><i class="fas fa-location-arrow"></i>
-                                                    @if(Route::currentRouteName() === 'drugsFamily.create')
+                                                    @if(Route::currentRouteName() === 'drug_family.create')
                                                         Ajouter un nouveau Drug Family
                                                     @else
                                                         Sauvegarder

@@ -10,6 +10,7 @@ use App\Herb;
 use App\Target;
 use App\Route;
 use App\User;
+use App\DrugFamily;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -37,7 +38,8 @@ class DrugController extends Controller
     public function create()
     {
         $routes = Route::all();
-        return view('admin.drugs.form_add_drug', compact('routes'));
+        $targets = Target::all();
+        return view('admin.drugs.form_add_drug', compact('routes','targets'));
     }
 
     /**
@@ -56,15 +58,16 @@ class DrugController extends Controller
         $drug->route_id = $request->route_id;
         $drug->atc_level_4s_id = $request->atc_level_4s_id;
         $drug->save();
+        $drug->targets()->sync($request->targets, false);
         Alert::success('Ok !', 'Nouveau DCI ajouté avec succès');
 
-        $adminusers = User::with('roles')->where('role_id','1')->get();
-        //dd($adminusers);
-        foreach($adminusers as $adm) {
-            //Mail::to($adm)->send(new NewHerb($herb, $user));
-            $adm->notify(new NewdrugNotification($drug));
+        // $adminusers = User::with('roles')->where('role_id','1')->get();
+        // //dd($adminusers);
+        // foreach($adminusers as $adm) {
+        //     //Mail::to($adm)->send(new NewHerb($herb, $user));
+        //     $adm->notify(new NewdrugNotification($drug));
 
-        }
+        // }
 
         return back();
     }
@@ -102,6 +105,7 @@ class DrugController extends Controller
     public function update(Request $request, Drug $drug)
     {
         $drug->update($request->all());
+        $drug->targets()->sync($request->targets, false);
         Alert::success('Ok !', 'Votre DCI a étè mis à jour avec succès');
 
         return back();

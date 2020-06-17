@@ -11,9 +11,9 @@ class Herb extends Model
 
     protected $fillable = ['name', 'sciname', 'user_id'];
 
-    public function users()
+    public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'user_id');
     }
 
     public function herb_forms() {
@@ -23,12 +23,17 @@ class Herb extends Model
 
     public function targets()
     {
-        return $this->belongsToMany(Target::class, 'hinteractions');
+        return $this->belongsToMany(Target::class, 'hinteractions')->withTimestamps();
     }
 
     public function hinteractions()
     {
         return $this->hasMany(Hinteraction::class, 'herb_id', 'id');
+    }
+
+    public function dinteractions()
+    {
+        return $this->hasMany(Dinteraction::class, 'herb_id', 'id');
     }
     //Thierry Tester
 

@@ -70,11 +70,11 @@ class UsersTableSeeder extends Seeder
             'tel1' => '',
             'tel2' => '',
             'RGPD' => '1',
-            'email' => 'yousef.alsatouf94@gmail.com',
+            'email' => 'yousef@gmail.com',
             'email_verified_at' => Carbon::now(),
-            'password' => bcrypt('editor'),
+            'password' => bcrypt('admin'),
             'is_active' => 1,
-            'role_id' => 2,
+            'role_id' => 1,
         ]);
 
         User::create([

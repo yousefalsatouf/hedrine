@@ -76,17 +76,21 @@
                     <div class="dropdown-divider"></div>
                     @forelse($mostRecentUsers as $u)
                     <div class="card text-center">
-                        <div class="text-dark d-flex justify-content-between new-user" style="padding: 5px 0">
+                        <div class="text-dark d-flex justify-content-around new-user" style="padding: 5px 0">
                             <strong class="text-left">
                                 <a href="{{route('newSingleUser.request', $u->id)}}" title="See user request" class="text-dark view"><i class="fas fa-user mr-2"></i>{{ $u->name }} {{$u->firstname}} <i class="fas fa-eye"></i></a>
-                                <a href="{{route('activeUser', $u->id)}}" title="accept user request" role="button" class="accept"><i class="fas fa-check-circle text-success"></i></a>
                             </strong>
-                            <small class="text-right">{{Carbon\Carbon::parse($u->email_verified_at)->diffForHumans()}}</small>
+                            <small class="text-right text-info">{{Carbon\Carbon::parse($u->email_verified_at)->diffForHumans()}}</small>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-around ">
+                            <a href="{{route('denyingUser', $u->id)}}" title="deny user request" role="button" class="accept"><i class="far fa-thumbs-down text-danger"></i></a>
+                            <a href="{{route('activeUser', $u->id)}}" title="accept user request" role="button" class="accept"><i class="far fa-thumbs-up text-success"></i></a>
                         </div>
                     </div>
-                   
+
                     @empty
-                        <div class="alert alert-warning" role="alert">No users requests for the moment</div>
+                        <div class="alert text-warning" role="alert">No users requests for the moment</div>
                     @endforelse
                     <div class="dropdown-divider"></div>
                     <a href="{{route('newUser.request')}}" class="dropdown-item dropdown-footer" title="see all user requests">See All User requests</a>
@@ -302,19 +306,19 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">
+                                        <a href="{{ route('effect.index') }}" class="nav-link">
                                             <i class="far fa-dot-circle nav-icon"></i>
                                             <p>Actions</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{route('drugsFamily')}}" class="nav-link">
+                                        <a href="{{route('drug_family.index')}}" class="nav-link">
                                             <i class="far fa-dot-circle nav-icon"></i>
                                             <p>Drugs Families</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">
+                                        <a href="{{ route('force.index') }}" class="nav-link">
                                             <i class="far fa-dot-circle nav-icon"></i>
                                             <p>Forces</p>
                                         </a>
@@ -362,37 +366,25 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item has-treeview">
-                                <a href="#" class="nav-link" style="background-color:#08AA8F;">
-                                    <i class="fas fa-toolbox nav-icon"></i>
-                                    <p>
-                                        Manager
-                                        <i class="right fas fa-angle-left"></i>
-                                    </p>
+                            <li class="nav-item">
+                                <a href="{{route('drug.index')}}" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Drugs</p>
                                 </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="{{route('drug.index')}}" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Drugs</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('herb.index') }}" class="nav-link">
-                                        <i class="far fa-dot-circle nav-icon"></i>
-                                        <p>Herbs</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('target.index') }}" class="nav-link">
-                                        <i class="far fa-dot-circle nav-icon"></i>
-                                        <p>Targets</p>
-                                        </a>
-                                    </li>
-                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('herb.index') }}" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Herbs</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('target.index') }}" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Targets</p>
+                                </a>
                             </li>
                         </ul>
-                    </li>
                 @endif
             </ul>
         </nav>
@@ -405,15 +397,7 @@
   <div class="content-wrapper" style="background: #fff">
     <!-- Content Header (Page header) -->
     <div class="content-header">
-        @if(session()->has('msg'))
-            <div class="alert text-success alert-message" style="width: 25%; margin: auto; font-size: 20px" id="success-alert">
-                <button type="button" class="close text-danger" data-dismiss="alert"> <i class="fas fa-window-close"></i></button>
-                <strong><i class="fas fa-check-circle"></i> yousef alsatouf is activated now{{ session()->get('msg') }}</strong>
-            </div>
-        @endif
       <div class="container-fluid">
-
-
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0 text-dark">{{ $title }}</h1>
@@ -456,6 +440,13 @@
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
+<script>
+    $(document).ready(function(){
+        $('#MybtnModal').click(function(){
+            $('#Mymodal').modal('show');
+        });
+    });
+</script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- ChartJS -->
@@ -497,6 +488,8 @@
             });
         })
     </script>
+    <!-- Recaptha -->
+    @yield('captcha')
     @yield('script')
 </body>
 </html>

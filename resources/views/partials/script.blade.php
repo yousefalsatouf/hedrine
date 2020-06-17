@@ -30,6 +30,13 @@
             $('#id').val($(e.currentTarget).attr('data-id'));
             $('#messageModal').modal();
         });
+
+        $('.btn-warning').click((e) => {
+            e.preventDefault();
+            $('#id').val($(e.currentTarget).attr('data-id'));
+            $('#messageModal').modal();
+        });
+
         $('#messageForm').submit((e) => {
             let that = e.currentTarget;
             e.preventDefault();

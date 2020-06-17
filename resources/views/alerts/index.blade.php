@@ -3,29 +3,43 @@
 @section('content_dashboard')
 
 @include('partials.message', ['url' => route('admin.refuse')])
+@include('partials.message', ['url' => route('admin.modifs')])
 @include('partials.alerts', ['title' => 'Plantes à valider'])
 
 
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table">
+                <div  class="table-responsive">
+                    @csrf
+                    <table id="editable" class="table">
                         <thead>
                             <tr>
+                                <th scope="col">ID</th>
                                 <th scope="col">Name</th>
-                                <th scope="col">SciNams</th>
-                                <th scope="col">Actions</th>
+                                <th scope="col">SciName</th>
+                                <th scope="col">Author</th>
+                                <th scope="col">Date</th>
+
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($noValidCount as $herb)
                                 <tr>
                                     <td>
-                                        {{ $herb->name }}
+                                        {{ $herb->id }}
                                     </td>
                                     <td>
+                                        {{ $herb->name }}
+                                    </td>
+                                    <td >
                                         {{ $herb->sciname }}
+                                    </td>
+                                    <td>
+                                        {{ $herb->user->name }}
+                                    </td>
+                                    <td>
+                                        {{ $herb->created_at }}
                                     </td>
                                     <td class="">
                                         <a class="btn btn-success btn-sm" href="{{ route('admin.approve', $herb->id) }}" role="button" data-toggle="tooltip" title="Approuver la plante">
@@ -35,7 +49,11 @@
                                         <a class="btn btn-danger btn-sm" href="#" role="button" data-id="{{ $herb->id }}" data-toggle="tooltip" title="Refuser la plante">
                                             <i class="fas fa-thumbs-down"></i>
                                         </a>
+                                        <a class="btn btn-warning btn-sm" href="#" role="button" data-id="{{ $herb->id }}" data-toggle="tooltip" title="Refuser la plante">
+                                            <i class="fas fa-eye" style="color:white"></i>
+                                        </a>
                                     </td>
+
                                 </tr>
                             @endforeach
                         </tbody>
@@ -47,4 +65,25 @@
 @endsection
 @section('script')
     @include('partials.script')
+@endsection
+
+@section('dashboard-js')
+<script>
+	$(function () {
+
+	  $('#editable').DataTable({
+		"paging": true,
+		"lengthChange": false,
+		"searching": true,
+		"ordering": true,
+		"info": true,
+		"autoWidth": false,
+		"responsive": true,
+		"language":
+		{
+			"url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
+        }
+	  });
+	});
+  </script>
 @endsection

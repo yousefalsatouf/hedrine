@@ -1,10 +1,9 @@
 @extends('dashboard.layout')
 
-<!-- @yield('content_title') créé dans la view master_dashboard.blade.php-->
-
+@yield('content_title') {{-- créé dans la view master_dashboard.blade.php --}}
 @section('content_dashboard')
 	<div class="row">
-		<div class="col-12">
+		<div class="col-12"> 
 			<section class="content">
 				<div class="container-fluid">
 					@if(session()->has('message'))
@@ -60,14 +59,14 @@
 								<div class="card-footer">
 									<div class="control-group">
 										<div class="controls">
-											<button type="submit" class="btn btn-success"><i class="fas fa-location-arrow"></i>
+											<a class="btn btn-light" href="{{ route('post.index') }}" role="button"><i class="fas fa-arrow-left"></i> Retour à la liste des postes</a>
+											<button type="submit" class="btn btn-outline-success float-right"><i class="fas fa-location-arrow"></i>
 												@if(Route::currentRouteName() === 'post.create')
 													Ajouter un nouveau poste
 												@else
 												 Sauvegarder
 												@endif
 											</button>
-											<a class="btn btn-primary" href="{{ route('post.index') }}" role="button"><i class="fas fa-arrow-left"></i> Retour à la liste des postes</a>
 										</div>
 									</div>
 								</div>

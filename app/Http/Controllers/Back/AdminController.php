@@ -37,6 +37,9 @@ class AdminController extends Controller
     public function delete($herb){
         $herb->delete();
     }
+    public function modifTodo($herb){
+        $herb->delete();
+    }
     /**
      * Get an ad by id.
      *
@@ -50,11 +53,19 @@ class AdminController extends Controller
     public function approve(Herb $herb) {
         $this->approved($herb);
         Alert::success('Ok !', 'Nouvelle plante approuvée avec succès');
-
         return response()->json(['id' => $herb->id]);
 
     }
     public function refuse(MessageRefuseRequest $request) {
+
+        $herb = $this->getById($request->id);
+        $herb->notify( New HerbRefuse($request->message));
+        $this->delete($herb);
+
+        return response()->json(['id' => $herb->id]);
+
+    }
+    public function modifs(MessageRefuseRequest $request) {
 
         $herb = $this->getById($request->id);
         $herb->notify( New HerbRefuse($request->message));

@@ -42,14 +42,14 @@
                             <!-- Body content -->
                             <tr>
                                 <td class="content-cell" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; max-width: 100vw; padding: 32px;">
-                                    <h1 style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: #3d4852; font-size: 18px; font-weight: bold; margin-top: 0; text-align: left;">Bonjour !</h1>
-                                    <p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">Un nouveau utilisateur vient d'inscrire sur la site d'hedrine.</p>
-                                    <p>L'utilisateur attends toujours d'activer son compte</p>
+                                    <h1 style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: green; font-size: 18px; font-weight: bold; margin-top: 0; text-align: left;">Bonjour !</h1>
+                                    <b style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">Un nouveau utilisateur sur la site d'hedrine, </b>
+                                    <strong>l'utilisateur attends d'activer son compte</strong>
                                     <hr>
-                                    <h3 style="color: cornflowerblue">User infos</h3>
+                                    <h3 style="color: green"></h3>
                                     <ul>
                                         <li>
-                                            <p><strong>Nom : {{$activateUser->name}} {{$activateUser->firstname}} </strong></p>
+                                            <p><strong>Nom : {{$activateUser->name}} {{$activateUser->firestname}} </strong></p>
                                         </li>
                                         <li>
                                             <p><strong>Email : {{$activateUser->email}}</strong></p>
@@ -70,8 +70,11 @@
                                                             <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
                                                                 <tr>
                                                                     <td style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
-                                                                        <a href="{{route('activeUser', $activateUser->id)}}" class="button button-primary" target="_blank" rel="noopener" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -webkit-text-size-adjust: none; border-radius: 4px; color: #fff; display: inline-block; overflow: hidden; text-decoration: none; background-color: #2d3748; border-bottom: 8px solid #2d3748; border-left: 18px solid #2d3748; border-right: 18px solid #2d3748; border-top: 8px solid #2d3748;">activer le compte utilisateur</a>
+                                                                        <a href="{{route('activeUser', $activateUser->id)}}" class="button button-outline-success" target="_blank" rel="noopener" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -webkit-text-size-adjust: none; border-radius: 4px; color: #fff; display: inline-block; overflow: hidden; text-decoration: none; background-color: green; border-bottom: 8px solid green; border-left: 18px solid green; border-right: 18px solid green; border-top: 8px solid #2d3748;">Activer</a>
                                                                     </td>
+                                                                    <td style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+                                                                        <a href="{{route('denyingUser', $activateUser->id)}}" class="button button-outline-danger" target="_blank" rel="noopener" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -webkit-text-size-adjust: none; border-radius: 4px; color: #fff; display: inline-block; overflow: hidden; text-decoration: none; background-color: red; border-bottom: 8px solid red; border-left: 18px solid red; border-right: 18px solid red; border-top: 8px solid red;">Réfuser</a>
+                                                                      </td>
                                                                 </tr>
                                                             </table>
                                                         </td>
@@ -104,4 +107,3 @@
 </table>
 </body>
 </html>
-© Copyright Railsware Products, Inc. All rights reserved.

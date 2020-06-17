@@ -35,7 +35,7 @@ class Drug extends Model
 
     public function targets()
     {
-        return $this->belongsToMany(Target::class);
+        return $this->belongsToMany(Target::class, 'dinteractions')->withTimestamps();
     }
     
     public function dinteractions()
