@@ -22,9 +22,7 @@
 						<a href="" class="add_style" ><strong class="text-dark">{{$effect->name}}</strong></a>
 					</td>
 					<td style="width: 10rem">
-						<div class="btn-group float-right">&nbsp; &nbsp; &nbsp;
-							<a class="btn btn-outline-primary align-self-center p-2" href="" role="button">View</i>
-							</a>  &nbsp; &nbsp;
+						<div class="btn-group float-center">&nbsp; &nbsp; &nbsp;
 							<a class="btn btn-outline-success align-self-center p-2" href="{{ route('effect.edit',$effect->id) }}" role="button">Edit</a> &nbsp; &nbsp;
 							{{-- <a class="btn btn-outline-danger" href="{{ route('effect.destroy.alert',$effect->id) }}" role="button"><i class="far fa-trash-alt"></i>
 							</a> --}}

@@ -40,7 +40,6 @@
 					</td>
 					<td>
 						<div class="btn-group float-right">
-						&nbsp; &nbsp; &nbsp;<a class="btn btn-outline-primary text align-self-center p-2" href="" role="button">View</a>  &nbsp; &nbsp;
 							<a class="btn btn-outline-success text align-self-center p-2" href="{{ route('target.edit',$target->id) }}" role="button">Edit</a> &nbsp; &nbsp;
 							<a class="btn btn-outline-danger text align-self-center p-2" href="{{ route('target.destroy.alert',$target->id) }}" role="button">Delete</a>
 
