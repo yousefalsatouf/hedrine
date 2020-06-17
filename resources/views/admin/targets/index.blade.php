@@ -40,9 +40,8 @@
 					</td>
 					<td>
 						<div class="btn-group float-right">
-						&nbsp; &nbsp; &nbsp;<a class="btn btn-outline-primary" href="" role="button"><i class="far fa-eye"></i></a>  &nbsp; &nbsp;
-							<a class="btn btn-outline-success" href="{{ route('target.edit',$target->id) }}" role="button"><i class="fas fa-edit"></i></a> &nbsp; &nbsp;
-							<a class="btn btn-outline-danger" href="{{ route('target.destroy.alert',$target->id) }}" role="button"><i class="far fa-trash-alt"></i></a>
+							<a class="btn btn-outline-success text align-self-center p-2" href="{{ route('target.edit',$target->id) }}" role="button">Edit</a> &nbsp; &nbsp;
+							<a class="btn btn-outline-danger text align-self-center p-2" href="{{ route('target.destroy.alert',$target->id) }}" role="button">Delete</a>
 
 						</div>
 					</td>

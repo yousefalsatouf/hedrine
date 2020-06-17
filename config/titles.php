@@ -71,10 +71,23 @@ return [
         'create' => 'Création d\'un effet',
     ],
 
+<<<<<<< HEAD
     'user' => [
         'index' => 'Gestion des Users',
         'edit' => 'Modification d\'un user',
         'create' => 'Création d\'un user',
+=======
+    'force' => [
+        'index' => 'Gestion des Forces',
+        'edit' => 'Modification d\'une force',
+        'create' => 'Création d\'une force',
+    ],
+
+    'herb_form' => [
+        'index' => 'Gestion des formes des plantes',
+        'edit' => 'Modification d\'une forme de plante',
+        'create' => 'Création d\'une forme de plante',
+>>>>>>> 251c46a39beebc1f06fdeebca85c730085c7a599
     ],
 
 

@@ -6,10 +6,19 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
+    $('.referencesForm').select2({
+        placeholder:"choisissez une ou plusieur forme de references"
+    });
+
+    $('#effectForm').selectpicker();
+
+});
+
+
+$(document).ready(function() {
     $('.target').select2({
     	placeholder:"choisissez une ou plusieur target"
     });
-
 });
 
 

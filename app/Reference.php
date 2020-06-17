@@ -9,12 +9,12 @@ use Illuminate\Database\Eloquent\Model;
 class Reference extends Model  
 {
      protected $fillable = [
-        'id','title', 'authors','year','edition','url','user_id'
+        'id','title', 'authors','year','url','user_id'
     ];
 
     public function user() 
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class);
     }
 
     public function dinteractions()

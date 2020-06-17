@@ -23,7 +23,7 @@
 								<div class="card-header">
 									<h3 class="card-title">
 										<strong>
-											@if(Route::currentRouteName() === 'target_type.create')
+											@if(Route::currentRouteName() === ' target_type.create')
 												Ajouter un nouveau type de target
 											@else
 												Modification d'un type de target

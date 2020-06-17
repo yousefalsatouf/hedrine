@@ -2,8 +2,8 @@
 
 @section('content_dashboard')
     <div class="row justify-content-end" style="padding-bottom: 0.75rem">
-        @if(Route::currentRouteName() === 'drug_family.index')
-            <a class="btn btn-light" href="{{ route('drug_family.create') }}" role="button">Créer un nouveau DCI</a>
+        @if(Route::currentRouteName() === 'herb_form.index')
+            <a class="btn btn-light" href="{{ route('herb_form.create') }}" role="button">Créer une nouvelle forme de plante</a>
         @endif
     </div>
 
@@ -17,14 +17,14 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach ($drug_families as $drug_family)
+                @foreach ($herb_forms as $herb_form)
                     <tr class="text-center">
                         <td>
-                            <strong>{{$drug_family->name}}</strong>
+                            <strong>{{$herb_form->name}}</strong>
                         </td>
                         <td style="width: 10rem">
                             <div>
-                                <a class="btn btn-outline-success align-self-center p-2" href="{{ route('drug_family.edit',$drug_family->id) }}" role="button">Edit</a> 
+                                <a class="btn btn-outline-success align-self-center p-2" href="{{ route('herb_form.edit',$herb_form->id) }}" role="button">Edit</a> 
                             </div>
                         </td>
                     </tr>

@@ -2,8 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Effect;
+use App\Force;
+use App\Herb;
 use App\Hinteraction;
+use App\HinteractionHasEffect;
+use App\Reference;
+use App\Target;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class HinteractionController extends Controller
 {
@@ -37,7 +46,14 @@ class HinteractionController extends Controller
      */
     public function create()
     {
-        //
+        // return to herb form
+        $herbs = Herb::all();
+        $targets = Target::all();
+        $effects = Effect::all();
+        $force = Force::all();
+        $references = Reference::all();
+
+        return view('admin.interaction.targets.newHerbTargetForm', compact('herbs', 'targets', 'effects', 'force', 'references'));
     }
 
     /**
@@ -48,7 +64,29 @@ class HinteractionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd(Auth::user()->role_id);
+        $effects = $request->effects;
+        $references = $request->references;
+        $now = \Carbon\Carbon::now();
+
+        $hinteraction = new Hinteraction;
+        $hinteraction->user_id = Auth::user()->id;
+        $hinteraction->herb_id = $request->herb;
+        $hinteraction->target_id = $request->target;
+        $hinteraction->force_id = $request->force;
+        $hinteraction->notes = $request->note;
+        if (Auth::user()->role_id)
+        {
+            $hinteraction->validated = $now;
+        }
+        $hinteraction->save();
+
+        $hinteraction->effects()->sync($effects, false);
+        $hinteraction->references()->sync($references, false);
+
+        Alert::success('Ok,', 'Herb target inserted successfully!');
+
+        return redirect('admin/target');
     }
 
     /**
