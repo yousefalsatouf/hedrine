@@ -56,7 +56,7 @@ class DinteractionController extends Controller
         $references = $request->references;
         $now = \Carbon\Carbon::now();
 
-        $dinteraction = new Dinteraction();
+        $dinteraction = new Dinteraction;
         $dinteraction->user_id = Auth::user()->id;
         $dinteraction->drug_id = $request->drug;
         $dinteraction->target_id = $request->target;

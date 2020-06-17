@@ -90,3 +90,8 @@ new style is added for the filter search ...
     border-bottom: 1px solid green;
     height: 4rem;
 }
+
+nav.sidebar-nav ul li a
+{
+    height: 4rem;
+}

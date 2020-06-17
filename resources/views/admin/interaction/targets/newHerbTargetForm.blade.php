@@ -1,8 +1,5 @@
-
 @extends('dashboard.layout')
-
 <!-- @yield('content_title') créé dans la view master_dashboard.blade.php-->
-
 @section('content_dashboard')
     <div class="row" id="new-x-target">
         <div class="col-12">
@@ -35,7 +32,7 @@
                                         </div>
                                         @csrf
                                         <div class="form-group">
-                                            <label for="herb">Herbs <i class="fa fa-info-circle info text-danger" id="required-msg"></i>: </label>
+                                            <label for="herb">Herbs : <i class="fa fa-info-circle info text-danger" id="required-msg"></i></label>
                                             <select class="form-control" name="herb" required id="forms" >
                                                 <option>== Choix ==</option>
                                                 @foreach ($herbs as $herb)
@@ -44,7 +41,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="target">Targets <i class="fa fa-info-circle info text-danger" id="required-msg"></i>: </label>
+                                            <label for="target">Targets : <i class="fa fa-info-circle info text-danger" id="required-msg"></i></label>
                                             <select class="form-control" name="target" required id="forms" >
                                                 <option>== Choix ==</option>
                                                 @foreach ($targets as $target)
@@ -53,7 +50,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="force">Force : </label>
+                                            <label for="force">Force : <i class="fa fa-info-circle info text-danger" id="required-msg"></i></label>
                                             <select class="form-control" name="force" id="forms" >
                                                 <option>== Choix ==</option>
                                                 @foreach ($force as $f)
@@ -62,7 +59,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="effects">Effects : </label>
+                                            <label for="effects">Effects : <i class="fa fa-info-circle info text-danger" id="required-msg"></i></label>
                                             <select class="form-control effectForm" id="forms" name="effects[]" multiple>
                                                 <option></option>
                                                 @foreach ($effects as $effect)
@@ -71,11 +68,14 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="references">References : </label>
-                                            <select class="referenceForm" id="forms" name="references[]" multiple>
-                                                <option value="" disabled>choisissez une ou plusieur forme de references</option>
+                                            <label for="references">References : <i class="fa fa-info-circle info text-danger" id="required-msg"></i></label>
+                                            <br>
+                                            <b class="text-info"><i class="fa fa-info-circle info text-info" id="required-msg"></i> Choisissez une ou plusieur forme de references</b>
+                                            <hr>
+                                            <select class="form-control" style="height: 7rem"  id="forms" name="references[]" multiple>
+                                                <option></option>
                                                 @foreach ($references as $reference)
-                                                    <option value="{{ $reference->id }}">{{ $reference->title }}</option>
+                                                    <option value="{{ $reference->id }}" style="margin: 0.5rem auto">{{ $reference->title }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
