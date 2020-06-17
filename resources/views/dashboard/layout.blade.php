@@ -340,7 +340,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="pending_user.index" class="nav-link">
                                     <i class="far fa-dot-circle nav-icon"></i>
                                     <p>Pending Users</p>
                                 </a>
