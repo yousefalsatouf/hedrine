@@ -27,7 +27,6 @@
 
 					<td style="width: 10rem">
 						<div class="btn-group float-right">&nbsp; &nbsp; &nbsp;
-							<a class="btn btn-outline-primary align-self-center p-2" href="" role="button">View</a>  &nbsp; &nbsp;
 							<a class="btn btn-outline-success align-self-center p-2" href="{{ route('post.edit',$post->id) }}" role="button">Edit</a> &nbsp; &nbsp;
 							<a class="btn btn-outline-danger align-self-center p-2" href="{{ route('post.destroy.alert',$post->id) }}" role="button">Delete</a>
 
