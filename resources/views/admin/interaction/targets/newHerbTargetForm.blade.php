@@ -60,7 +60,10 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="effects">Effects : <i class="fa fa-info-circle info text-danger" id="required-msg"></i></label>
-                                            <select class="form-control effectForm" id="forms" name="effects[]" multiple>
+                                            <br>
+                                            <b class="text-info"><i class="fa fa-info-circle info text-info" id="required-msg"></i> Choisissez une ou plusieur forme de references</b>
+                                            <hr>
+                                            <select class="form-control selectpicker" id="effectForm" name="effects[]" multiple>
                                                 <option></option>
                                                 @foreach ($effects as $effect)
                                                         <option value="{{ $effect->id }}">{{ $effect->name }}</option>
@@ -72,10 +75,9 @@
                                             <br>
                                             <b class="text-info"><i class="fa fa-info-circle info text-info" id="required-msg"></i> Choisissez une ou plusieur forme de references</b>
                                             <hr>
-                                            <select class="form-control" style="height: 7rem"  id="forms" name="references[]" multiple>
-                                                <option></option>
+                                            <select class="form-control referencesForm" style="height: 7rem" name="references[]" multiple>
                                                 @foreach ($references as $reference)
-                                                    <option value="{{ $reference->id }}" style="margin: 0.5rem auto">{{ $reference->title }}</option>
+                                                    <option value="{{ $reference->id }}" style="margin: 0.5rem auto;">{{ $reference->title }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
