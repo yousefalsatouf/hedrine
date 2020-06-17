@@ -27,7 +27,7 @@
 												Ajouter un nouveau user
 											@else
 												Modification d'un user
-											@endif
+											@endif 
 										</strong>
 									</h3>
 								</div>
@@ -36,49 +36,66 @@
 								<form class=" justify-content-center" role="form" 
 										method="POST" action="@isset($user) {{ route('user.update', $user->id) }} @else {{route('user.store')}} @endisset">
 									<div class="card-body">
-										<div class="form-group">
-											@isset($user) @method('PUT') @endisset
-											@csrf
-											<label for="name">Nom du user</label>
-											<input type="text" class="form-control" id="name" name="name" required placeholder="Nom du user" value="{{isset($user) ? $user->name : ''}}">
+										<div class="row">
+											<div class="col-6">
+												<div class="form-group">
+													@isset($user) @method('PUT') @endisset
+													@csrf
+													<label for="name">Nom de l'utilisateur</label>
+													<input type="text" class="form-control" id="name" name="name" required placeholder="Nom du user" value="{{isset($user) ? $user->name : ''}}">
+												</div>
+											</div>
+											<div class="col-6">
+												<div class="form-group">
+													<label for="firstname">Prénom</label>
+													<input type="text" class="form-control" id="firstname" name="firstname" required placeholder="Prénom" value="{{isset($user) ? $user->firstname : ''}}">
+												</div>
+											</div>
 										</div>
-										<div class="form-group">
-											<label for="Description">Firstname</label>
-											<input type="text" class="form-control" id="description" name="description" required placeholder="Description" value="{{isset($user) ? $user->firstname : ''}}">
+
+										<div class="row">
+											<div class="col-6">
+												<div class="form-group">
+													<label for="team">Équipe</label>
+													<input type="text" class="form-control" id="team" name="team" required placeholder="Indiquez l'équipe" value="{{isset($user) ? $user->team : ''}}">
+												</div>
+											</div>
+											<div class="col-6">
+												<div class="form-group">
+													<label for="Description">Email</label>
+													<input type="text" class="form-control" id="description" name="description" required placeholder="Veuillez indiquer l'email" value="{{isset($user) ? $user->email : ''}}">
+												</div>
+											</div>
 										</div>
-										<div class="form-group">
-											<label for="Description">Team</label>
-											<input type="text" class="form-control" id="description" name="description" required placeholder="Description" value="{{isset($user) ? $user->team : ''}}">
+
+										<div class="row">
+											<div class="col-6">
+												<div class="form-group">
+													<label for="tel1">Numéro portable</label>
+													<input type="text" class="form-control" id="tel1" name="tel1" required placeholder="Veuillez indiquer le numéro portable" value="{{isset($user) ? $user->tel1 : ''}}">
+												</div>
+											</div>
+											<div class="col-6">
+												<div class="form-group">
+													<label for="tel2">Numéro Fixe</label>
+													<input type="text" class="form-control" id="tel2" name="tel2" required placeholder="Veuillez indiquer le numéro du fixe" value="{{isset($user) ? $user->tel2 : ''}}">
+												</div>
+											</div>
 										</div>
-										<div class="form-group">
-											<label for="Description">Numéro portable</label>
-											<input type="text" class="form-control" id="description" name="description" required placeholder="Description" value="{{isset($user) ? $user->tel1 : ''}}">
+										<div class="row">
+											<div class="col-6">
+												<div class="form-group">
+													<label for="Description">Password</label>
+													<input type="password" class="form-control" id="description" name="description" required placeholder="Description" value="{{isset($user) ? $user->password : ''}}">
+												</div>
+											</div>
+											<div class="col-6">
+												<div class="form-group">
+													<label for="Description">Password</label>
+													<input type="password" class="form-control" id="description" name="description" required placeholder="Description" value="{{isset($user) ? $user->password : ''}}">
+												</div>
+											</div>
 										</div>
-										<div class="form-group">
-											<label for="Description">Numéro Fixe</label>
-											<input type="text" class="form-control" id="description" name="description" required placeholder="Description" value="{{isset($user) ? $user->tel2 : ''}}">
-										</div>
-										<div class="form-group">
-											<label for="Description">Email</label>
-											<input type="text" class="form-control" id="description" name="description" required placeholder="Description" value="{{isset($user) ? $user->email : ''}}">
-										</div>
-										<div class="form-group">
-											<label for="Description">Description</label>
-											<input type="text" class="form-control" id="description" name="description" required placeholder="Description" value="{{isset($user) ? $user->email_verified_at : ''}}">
-										</div>
-										<div class="form-group">
-											<label for="Description">Password</label>
-											<input type="password" class="form-control" id="description" name="description" required placeholder="Description" value="{{isset($user) ? $user->password : ''}}">
-										</div>
-										<div class="form-group">
-											<label for="Description">Firstname</label>
-											<input type="text" class="form-control" id="description" name="description" required placeholder="Description" value="{{isset($user) ? $user->is_actif : ''}}">
-										</div>
-										<div class="form-group">
-											<label for="Description">Is Actif</label>
-											<input type="text" class="form-control" id="description" name="description" required placeholder="Description" value="{{isset($user) ? $user->is_actif : ''}}">
-										</div>
-										
 									</div>
 									<!-- /.card-body -->
 									<div class="card-footer">

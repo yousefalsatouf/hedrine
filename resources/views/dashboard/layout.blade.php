@@ -334,7 +334,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="user.index" class="nav-link">
                                     <i class="far fa-dot-circle nav-icon"></i>
                                     <p>Users</p>
                                 </a>
@@ -350,59 +350,6 @@
                                     <i class="far fa-dot-circle nav-icon"></i>
                                     <p>Références</p>
                                 </a>
-<<<<<<< HEAD
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="{{ route('effect.index') }}" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Actions</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{route('drug_family.index')}}" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Drugs Families</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('force.index') }}" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Forces</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('role.index') }}" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Roles</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('target_type.index') }}" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Target Types</p>
-                                        </a>
-                                    </li> 
-                                    <li class="nav-item">
-                                        <a href="{{ route('user.index') }}" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Users</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Pending Users</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('reference.index') }}" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Références</p>
-                                        </a>
-                                    </li>
-                                </ul>
-=======
->>>>>>> 251c46a39beebc1f06fdeebca85c730085c7a599
                             </li>
                         </ul>
                     </li>
