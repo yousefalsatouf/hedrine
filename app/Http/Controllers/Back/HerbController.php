@@ -29,7 +29,7 @@ class HerbController extends Controller
      */
     public function index()
     {
-        $numberOfTimes_herbForms = 0; 
+        $numberOfTimes_herbForms = 0;
         $lastHerb = 0;
 
         return view('admin.herbs.index', compact('numberOfTimes_herbForms','lastHerb'));
@@ -60,8 +60,6 @@ class HerbController extends Controller
         $herb->user_id = Auth::user()->id;
         $herb->name = $request->name;
         $herb->sciname = $request->sciname;
-
-
         $herb->save();
         $herb->herb_forms()->sync($request->forms, false);
 
