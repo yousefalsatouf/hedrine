@@ -36,35 +36,45 @@
 								<form class=" justify-content-center" role="form" method="POST" action="@isset($reference) {{ route('reference.update', $reference->id) }} @else {{
 								route('reference.store')}} @endisset">
 									<div class="card-body">
-										<div class="form-group">
-											@isset($reference) @method('PUT') @endisset
-											@csrf
-											<label for="title">Titre</label>
-											<input type="text" class="form-control" id="title" name="title" required placeholder="Titre de la reference" value="{{isset($reference) ? $reference->title : ''}}">
+										<div class="row">
+											<div class="col-6">
+												<div class="form-group">
+												@isset($reference) @method('PUT') @endisset
+												@csrf
+												<label for="title">Titre</label>
+												<input type="text" class="form-control" id="title" name="title" required placeholder="Titre de la reference" value="{{isset($reference) ? $reference->title : ''}}">
+												</div>
+											</div>
+
+											<div class="col-6">
+												<div class="form-group">
+													<label for="authors">Authors</label>
+													<input type="text" class="form-control" id="authors" name="authors" required placeholder="Nom de l'auteur" value="{{isset($reference) ? $reference->authors : ''}}">
+												</div>
+											</div>
 										</div>
-										<div class="form-group">
-											<label for="authors">Authors</label>
-											<input type="text" class="form-control" id="authors" name="authors" required placeholder="Nom de l'auteur" value="{{isset($reference) ? $reference->authors : ''}}">
+
+										<div class="row">
+											<div class="col-6">
+												<div class="form-group">
+													<label for="year">Année</label>
+													<input type="text" class="form-control" id="year" name="year" required placeholder="Année de la référence" value="{{isset($reference) ? $reference->year : ''}}"> 
+												</div>
+											</div>
+
+											<div class="col-6">
+												<div class="form-group">
+													<label for="edition">Edition</label>
+													<input type="text" class="form-control" id="edition" name="edition" required placeholder="Édition de la référence" value="{{isset($reference) ? $reference->edition : ''}}">
+												</div>
+											</div>
 										</div>
-										<div class="form-group">
-											<label for="year">Année</label>
-											<input type="text" class="form-control" id="year" name="year" required placeholder="Année de la référence" value="{{isset($reference) ? $reference->year : ''}}"> 
-										</div>
-										<div class="form-group">
-											<label for="edition">Edition</label>
-											<input type="text" class="form-control" id="edition" name="edition" required placeholder="Édition de la référence" value="{{isset($reference) ? $reference->edition : ''}}">
-										</div>
+
 										<div class="form-group">
 											<label for="url">URL</label>
-											<input type="text" class="form-control" id="url" name="url" required placeholder="URL de la référence" value="{{isset($reference) ? $reference->url : ''}}">
+											<textarea type="text" class="form-control" id="url" name="url" required placeholder="URL de la référence" value="{{isset($reference) ? $reference->url : ''}}">
+											</textarea>
 										</div>
-										<div class="form-group">
-											<label for="validated">Validated</label>
-											<input type="text" class="form-control" id="validated" name="validated" required placeholder="" value="{{isset($reference) ? $reference->validated : ''}}">
-										</div>
-										
-										
-										
 									<!-- /.card-body -->
 									<div class="card-footer">
 										<div class="control-group">

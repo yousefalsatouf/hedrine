@@ -16,7 +16,7 @@
 					<th> Authors </th>
 					<th> Year </th>
 					<th> Edition </th>
-					{{-- <th> URL </th> --}}
+					<th> URL </th>
 					<th> User</th>
 					<th> Actions</th>
 				</tr>
@@ -30,8 +30,8 @@
 					<td>{{ $reference->authors }}</td>
 					<td>{{ $reference->year }}</td>
 					<td>{{ $reference->edition }}</td>
-					{{-- <td>{{ $reference->url }}</td> --}}
-					<td>{{ optional($reference->user)->name }}</td>
+					<td>{{ $reference->url }}</td>
+					<td>{{ $reference->user->name }}</td>
 					<td style="width: 10rem">
 						<div class="btn-group float-right">
 						&nbsp; &nbsp; &nbsp;<a class="btn btn-outline-primary" href="" role="button"><i class="far fa-eye"></i></a>  &nbsp; &nbsp;
