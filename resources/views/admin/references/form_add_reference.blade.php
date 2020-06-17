@@ -70,11 +70,15 @@
 											</div>
 										</div>
 
-										<div class="form-group">
-											<label for="url">URL</label>
-											<textarea type="text" class="form-control" id="url" name="url" required placeholder="URL de la référence" value="{{isset($reference) ? $reference->url : ''}}">
-											</textarea>
+										<div class="rows">
+											<div class="form-group">
+												<label for="url">Notes du poste</label>
+													<textarea rows="5" cols="5" class="form-control" id="url" name="url" placeholder="url de la reference" required>{{ isset($reference) ? $reference->url : ''}}</textarea>
+											</div>
 										</div>
+									</div>
+
+										
 									<!-- /.card-body -->
 									<div class="card-footer">
 										<div class="control-group">
