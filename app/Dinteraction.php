@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Dinteraction extends Model
 {
     public function effects() {
-        //DD: une hinteraction peut avoir plusieurs effets et un effet peut se trouver dans plusieurs hinteractions 
-        return $this->belongsToMany(Effect::class, 'dinteraction_has_effects'); 
+        //DD: une hinteraction peut avoir plusieurs effets et un effet peut se trouver dans plusieurs hinteractions
+        return $this->belongsToMany(Effect::class, 'dinteraction_has_effects')->withTimestamps();
     }
     public function users()
     {
@@ -22,7 +22,7 @@ class Dinteraction extends Model
 
     public function references()
     {
-        return $this->belongsToMany(Reference::class, 'dinteraction_has_references');
+        return $this->belongsToMany(Reference::class, 'dinteraction_has_references')->withTimestamps();
     }
 
 

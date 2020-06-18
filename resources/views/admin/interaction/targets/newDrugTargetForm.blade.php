@@ -61,7 +61,7 @@
                                         <div class="form-group">
                                             <label for="effects">Effects : <i class="fa fa-info-circle info text-danger" id="required-msg"></i></label>
                                             <br>
-                                            <b class="text-info"><i class="fa fa-info-circle info text-info" id="required-msg"></i> Choisissez une ou plusieur forme de references</b>
+                                            <b class="text-info"><i class="fa fa-info-circle info text-info" id="required-msg"></i>  Choisissez un ou plusieurs effets</b>
                                             <hr>
                                             <select class="form-control selectpicker" id="effectForm" required id="forms" name="effects[]" multiple>
                                                 @foreach ($effects as $effect)
@@ -72,16 +72,16 @@
                                         <div class="form-group">
                                             <label for="references">References : <i class="fa fa-info-circle info text-danger" id="required-msg"></i></label>
                                             <br>
-                                            <b class="text-info"><i class="fa fa-info-circle info text-info" id="required-msg"></i> Choisissez une ou plusieur forme de references</b>
+                                            <b class="text-info"><i class="fa fa-info-circle info text-info" id="required-msg"></i> Choisissez une ou plusieurs références</b>
                                             <hr>
-                                            <select class="form-control referencesForm" style="height: 7rem" id="forms" required name="references[]" multiple>
+                                            <select class="form-control referencesForm" id="forms" required name="references[]" multiple>
                                                 @foreach ($references as $reference)
-                                                    <option value="{{ $reference->id }}" style="margin: 0.5rem auto">{{ $reference->title }}</option>
+                                                    <option value="{{ $reference->id }}" class="text-dark">{{ $reference->title }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="note">Note : </label>
+                                            <label for="note">Note : <i class="fa fa-info-circle info text-danger" id="required-msg"></i></label>
                                             <div class="col-md-6">
                                                 <textarea name="note" required cols="80" rows="8" placeholder="Note ..."></textarea>
                                             </div>
