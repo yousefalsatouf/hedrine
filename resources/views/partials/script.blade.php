@@ -1,6 +1,6 @@
 <script>
     $(() => {
-        alert('ici');
+
         const toggleButtons = () => {
             $('#icon').toggle();
             $('#buttons').toggle();
