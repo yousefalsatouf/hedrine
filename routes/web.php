@@ -1,6 +1,8 @@
 <?php
 
+use App\Herb;
 use App\Http\Controllers\PostController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Monolog\Handler\RotatingFileHandler;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -109,12 +111,21 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
             Route::post('approve/{herb}','AdminController@approve')->name('admin.approve');
             Route::post('refuse','AdminController@refuse')->name('admin.refuse');
             Route::post('modifs','AdminController@modifs')->name('admin.modifs');
-
-            Route::post('quickEdit', 'AdminController@quickEdit');
-
         });
     });
+    //pour quick update ...
+    //Route::post('quickEdit', 'AdminController@quickEdit');
 
+    //
+    Route::post('quickEdit', function (Request $request)
+    {
+        $data = Herb::where('validated',false)->where('id', $request->id)->get();
+        $data->name = $request->name;
+        $data->sciname = $request->sciname;
+        $data->save();
+
+        return response()->json($data);
+    });
 
     // Route pour users
     Route::name('drug.update')->put('drug', 'DrugController@update');
@@ -152,10 +163,10 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
 
     // Route pour pending user
     // Route::name('newUser.request')->get('/list_user_requests', ' NotificationController@showNewUserRequests');
-    
+
     Route::name('pending_user.update')->put('pending_user', 'PendingUserController@update');
     Route::name('pending_user.edit')->get('pending_user', 'PendingUserController@edit');
-    // Route::name('pending_user.index')->get('pending_user', '  NotificationController@showNewUserRequests'); 
+    // Route::name('pending_user.index')->get('pending_user', '  NotificationController@showNewUserRequests');
 
     Route::name('pending_user.details')->get('pending_user', 'PendingUserController@details');
     Route::resource('pending_user', 'PendingUserController')->parameters([

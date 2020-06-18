@@ -51,7 +51,7 @@
                                         <a class="btn btn-warning btn-sm" href="{{ route('admin.modifs', $herb->id) }}" role="button" data-id="{{ $herb->id }}" data-toggle="tooltip" title="Modifier la plante">
                                             <i class="fas fa-eye" style="color:white"></i>
                                         </a>
-                                        <button class="btn btn-secondary btn-sm edit-modal" role="button" data-id="{{ $herb->id }}" data-name="{{$herb->name}}" data-toggle="tooltip" title="editeur rapide">
+                                        <button class="btn btn-secondary btn-sm edit-modal" role="button" data-id="{{ $herb->id }}" data-name="{{$herb->name}}" data-sciname="{{$herb->sciname}}" data-toggle="tooltip" title="editeur rapide">
                                             <i class="fas fa-edit" style="color:white"></i>
                                         </button>
                                     </td>
@@ -68,30 +68,33 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header bg-success">
+                        <h4 class="modal-title">Veilliez entrez:</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Quick Update</h4>
                     </div>
                     <div class="modal-body">
                         <form class="form-horizontal" role="form">
                             <div class="form-group">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2" for="id">ID:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="fid" disabled>
+                                    </div>
+                                </div>
                                 <label class="control-label col-sm-2" for="name">Name:</label>
                                 <div class="col-sm-10">
                                     <input type="name" class="form-control" id="n">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-sm-2" for="name">Sciname:</label>
+                                <label class="control-label col-sm-2" for="sciname">Sciname:</label>
                                 <div class="col-sm-10">
-                                    <input type="name" class="form-control" id="s">
+                                    <input type="sciname" class="form-control" id="s">
                                 </div>
                             </div>
                         </form>
                         <div class="modal-footer">
                             <button type="button" class="btn actionBtn" data-dismiss="modal">
-                                <span id="footer_action_button" class='glyphicon'> </span>
-                            </button>
-                            <button type="button" class="btn btn-warning" data-dismiss="modal">
-                                <span class='glyphicon glyphicon-remove'></span> Close
+                                <span id="footer_action_button" class='glyphicon'> <i class="fa fa-save"></i> </span>
                             </button>
                         </div>
                     </div>

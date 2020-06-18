@@ -51,6 +51,7 @@ class AdminController extends Controller
 
     public function quickEdit(Request $request)
     {
+        //dd($request->id);
         $data = Herb::where('validated',false)->where('id', $request->id)->get();
         $data->name = $request->name;
         $data->sciname = $request->sciname;
