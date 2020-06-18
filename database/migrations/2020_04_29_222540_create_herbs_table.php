@@ -18,7 +18,7 @@ class CreateHerbsTable extends Migration
             $table->id();
             $table->string('name', 255);
             $table->text('sciname');
-            $table->boolean('validated')->default(false);
+            $table->integer('validated')->default(0);
             $table->timestamps();
         });
     }
