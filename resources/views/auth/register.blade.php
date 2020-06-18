@@ -137,9 +137,10 @@
                                             <div class="modal-body scroll text-dark">
                                                 <h4 class="text-success text-center">RGPD : Hedrine</h4>
                                                 <hr>
+                                                <strong class="text-info"><i class="fa fa-info-circle"></i>Veuillez faire défiler vers le bas pour cocher la case</strong>
+                                                <hr>
                                                 @include('auth.terms')
-                                            </div>
-                                            <div class="modal-footer m-footer bg-light">
+                                                <hr>
                                                 <div class="condtions">
                                                     <!-- Button trigger modal -->
                                                     <label for="RGPD" id="checkboxContent">
@@ -152,6 +153,8 @@
                                                     @enderror
 
                                                 </div>
+                                            </div>
+                                            <div class="modal-footer m-footer bg-light">
                                                 <input type="button" class="btn btn-outline-danger" data-dismiss="modal" required value="Je refuse">
                                                 <i class="far fa-smile-wink"></i>
                                                 <input type="button" class="btn btn-outline-success" data-dismiss="modal" required value="J'accepte" id="accept">
