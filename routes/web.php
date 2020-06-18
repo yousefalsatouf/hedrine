@@ -149,9 +149,11 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
     Route::name('drug.destroy.alert')->get('drug/{drug}', 'DrugController@alert');
 
     // Route pour pending user
+    // Route::name('newUser.request')->get('/list_user_requests', ' NotificationController@showNewUserRequests');
+    
     Route::name('pending_user.update')->put('pending_user', 'PendingUserController@update');
     Route::name('pending_user.edit')->get('pending_user', 'PendingUserController@edit');
-    Route::name('pending_user.index')->get('pending_user', 'PendingUserController@index');
+    Route::name('pending_user.index')->get('pending_user', '  NotificationController@showNewUserRequests');
 
     Route::name('pending_user.details')->get('pending_user', 'PendingUserController@details');
     Route::resource('pending_user', 'PendingUserController')->parameters([
@@ -263,7 +265,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
 
 
     //pour les nouveau utilisateurs
-    Route::name('newUser.request')->get('/list_user_requests', ' NotificationController@showNewUserRequests');
+    Route::name('newUser.request')->get('/list_user_requests', '  NotificationController@showNewUserRequests');
     Route::name('newSingleUser.request')->get('/single_user_requests/{id}', 'NotificationController@showSingleNewUserRequest');
     Route::name('activeUser')->get('/activated_user/{id}', 'NotificationController@activateNewUser');
     Route::name('denyingUser')->get('/denied_user/{id}', 'NotificationController@denyUser');
