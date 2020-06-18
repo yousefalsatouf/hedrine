@@ -16,7 +16,7 @@
                             </a>
                         </li>
                         @foreach (range('A', 'Z') as $char)
-                            <li class="nav-item">
+                            <li class="nav-item" style="max-width: 3.4%">
                                 <a class="nav-link {{in_array($char, $resultChars)?'listAlphabet':'disabled-char'}} {{isset($targetChar) && $targetChar===$char?"active-char":""}}" href="{{url('target/'.$char)}}">
                                     {{ $char }}
                                 </a>

@@ -106,7 +106,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
     Route::get('/', 'AdminController@herbs')->name('admin.herbs');
     Route::prefix('herb')->group(function () {
         Route::middleware('ajax')->group(function() {
-            Route::post('approve/{herb}','AdminController@approve')->name('admin.approve');
+            Route::name('admin.approve')->post('approve/{herb}','AdminController@approve');
             Route::post('refuse','AdminController@refuse')->name('admin.refuse');
             Route::post('modifs','AdminController@modifs')->name('admin.modifs');
             Route::post('quickEdit', 'AdminController@quickEdit');
@@ -146,13 +146,27 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
     Route::resource('drug_family', 'DrugFamilyController')->parameters([
         'drug_family' => 'drug_family'
       ]);
-    Route::name('drug_family.destroy.alert')->get('drug_family/{drug_family}', 'HerbController@alert');
+    Route::name('drug_family.destroy.alert')->get('drug_family/{drug_family}', 'DrugFamilyController@alert');
+
+    // Route pour Herbs forms ..
+    Route::name('herb_form.update')->put('herb_form', 'HerbFormController@update');
+    Route::name('herb_form.edit')->get('herb_form', 'HerbFormController@edit');
+    Route::name('herb_form.index')->get('herb_form', 'HerbFormController@index');
+    Route::name('herb_form.show')->get('herb_form', 'HerbFormController@show');
+
+    Route::name('herb_form.details')->get('herb_form', 'HerbFormController@details');
+    Route::resource('herb_form', 'HerbFormController')->parameters([
+        'herb_form' => 'herb_form'
+      ]);
+    Route::name('herb_form.destroy.alert')->get('herb_form/{herb_form}', 'HerbFormController@alert');
 
     //Route pour plante
     Route::name('herb.update')->put('herb', 'HerbController@update');
     Route::name('herb.edit')->get('herb', 'HerbController@edit');
     Route::name('herb.index')->get('herb', 'HerbController@index');
-    Route::name('herb.show')->get('herb', 'HerbController@show');
+    Route::name('herb.show')->get('show/{herb}', 'HerbController@show');
+   // Route::get('show/{herb}', 'HerbController@showHerb')->name('herb.show');
+
 
     Route::name('herb.details')->get('herb', 'HerbController@details');
     Route::resource('herb', 'HerbController')->parameters([
