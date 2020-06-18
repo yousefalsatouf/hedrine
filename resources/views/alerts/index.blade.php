@@ -10,7 +10,7 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-                <div  class="table-responsive">
+                <div  class²="table-responsive">
                     @csrf
                     <table id="editable" class="table">
                         <thead>
