@@ -7,7 +7,8 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $('.referencesForm').select2({
-        placeholder:"choisissez une ou plusieur forme de references"
+        placeholder:"choisissez une ou plusieur forme de references",
+        theme: "classic"
     });
 
     $('#effectForm').selectpicker();

@@ -124,3 +124,7 @@ a.style_a {
     height: 25rem;
     text-align: left;
 }
+.img-fluid.d-block.mx-auto.mx-md-0.hedrine_logo {
+    width: 42%;
+    float: right;
+}

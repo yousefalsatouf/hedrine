@@ -17,7 +17,7 @@
 					<th>Notes</th>
 					<th>Type</th>
 					<th>Editors</th>
-					<th> Actions</th>
+					<th> Action</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -40,9 +40,7 @@
 					</td>
 					<td>
 						<div class="btn-group float-right">
-							<a class="btn btn-outline-success text align-self-center p-2" href="{{ route('target.edit',$target->id) }}" role="button">Edit</a> &nbsp; &nbsp;
-							<a class="btn btn-outline-danger text align-self-center p-2" href="{{ route('target.destroy.alert',$target->id) }}" role="button">Delete</a>
-
+							<a class="btn btn-outline-success text align-self-center p-2" href="{{ route('target.edit',$target->id) }}" role="button"><i class="fa fa-edit"></i></a> &nbsp; &nbsp;
 						</div>
 					</td>
 				</tr>

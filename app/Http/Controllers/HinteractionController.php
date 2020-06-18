@@ -47,11 +47,11 @@ class HinteractionController extends Controller
     public function create()
     {
         // return to herb form
-        $herbs = Herb::all();
-        $targets = Target::all();
-        $effects = Effect::all();
-        $force = Force::all();
-        $references = Reference::all();
+        $herbs = Herb::orderBy('name', 'desc')->get();
+        $targets = Target::orderBy('name', 'desc')->get();
+        $effects = Effect::orderBy('name', 'desc')->get();
+        $force = Force::orderBy('name', 'desc')->get();
+        $references = Reference::orderBy('title', 'desc')->get();
 
         return view('admin.interaction.targets.newHerbTargetForm', compact('herbs', 'targets', 'effects', 'force', 'references'));
     }
