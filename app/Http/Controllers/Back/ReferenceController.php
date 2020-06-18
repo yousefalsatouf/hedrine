@@ -23,8 +23,8 @@ class ReferenceController extends Controller
      */
     public function index()
     {
-
-        return view('admin.references.index');
+        $referencees = Reference::find(2);
+        return view('admin.references.index', compact('referencees'));
     }
 
     /**
@@ -53,7 +53,6 @@ class ReferenceController extends Controller
         $reference->year = $request->year;
         $reference->edition = $request->edition;
         $reference->url = $request->url;
-        $reference->validated = $request->validated;
         $reference->save();
         Alert::success('Ok !', 'Nouvelle référence ajoutée avec succès');
 

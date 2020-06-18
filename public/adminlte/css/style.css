@@ -72,3 +72,26 @@ new style is added for the filter search ...
 {
     font-family: 'Berkshire Swash', cursive;
 }
+
+#new-x-target
+{
+    width: 70%;
+    margin: auto;
+}
+
+#new-x-target label
+{
+    color: green;
+}
+
+#new-x-target select, #new-x-target textarea
+{
+    border: 0;
+    border-bottom: 1px solid green;
+    height: 4rem;
+}
+
+nav.sidebar-nav ul li a
+{
+    height: 4rem;
+}

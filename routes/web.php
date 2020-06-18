@@ -87,6 +87,18 @@ Route::view('admin','admin.layout');
 Route::middleware('ajax')->group(function () {
     Route::post('message', 'UserController@message')->name('message');
 });
+
+//create this new one, because I don't need the namespace back here ...
+Route::prefix('admin')->middleware('admin')->group(function() {
+    //route pour new herb/drug target ....
+    // create - show form page
+    Route::name('newHerbTarget')->get('new_herb_target', 'HinteractionController@create');
+    Route::name('newDrugTarget')->get('new_drug_target', 'DinteractionController@create');
+    // store new herb/drug target
+    Route::name('newHerbTarget.store')->post('new_herb_target_store', 'HinteractionController@store');
+    Route::name('newDrugTarget.store')->post('new_drug_target_store', 'DinteractionController@store');
+});
+
 Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function() {
 
     // Route pour Admins
@@ -135,7 +147,19 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
     Route::resource('drug_family', 'DrugFamilyController')->parameters([
         'drug_family' => 'drug_family'
       ]);
-    Route::name('drug_family.destroy.alert')->get('drug_family/{drug_family}', 'HerbController@alert');
+    Route::name('drug_family.destroy.alert')->get('drug_family/{drug_family}', 'DrugFamilyController@alert');
+
+    // Route pour Herbs forms ..
+    Route::name('herb_form.update')->put('herb_form', 'HerbFormController@update');
+    Route::name('herb_form.edit')->get('herb_form', 'HerbFormController@edit');
+    Route::name('herb_form.index')->get('herb_form', 'HerbFormController@index');
+    Route::name('herb_form.show')->get('herb_form', 'HerbFormController@show');
+
+    Route::name('herb_form.details')->get('herb_form', 'HerbFormController@details');
+    Route::resource('herb_form', 'HerbFormController')->parameters([
+        'herb_form' => 'herb_form'
+      ]);
+    Route::name('herb_form.destroy.alert')->get('herb_form/{herb_form}', 'HerbFormController@alert');
 
     //Route pour plante
     Route::name('herb.update')->put('herb', 'HerbController@update');

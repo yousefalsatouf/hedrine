@@ -71,5 +71,17 @@ return [
         'create' => 'Création d\'un effet',
     ],
 
+    'force' => [
+        'index' => 'Gestion des Forces',
+        'edit' => 'Modification d\'une force',
+        'create' => 'Création d\'une force',
+    ],
+
+    'herb_form' => [
+        'index' => 'Gestion des formes des plantes',
+        'edit' => 'Modification d\'une forme de plante',
+        'create' => 'Création d\'une forme de plante',
+    ],
+
 
 ]; 
