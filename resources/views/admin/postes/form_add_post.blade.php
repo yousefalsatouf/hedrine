@@ -39,11 +39,11 @@
 										@isset($post) @method('PUT') @endisset
 										@csrf
 										<label for="title">Titre du poste</label>
-										<input type="text" class="form-control" id="title" name="title" required placeholder="Titre du poste" value="{{isset($post) ? $post->title : ''}}">
+										<input type="text" class="form-control" id="title" name="title" required placeholder="Veuillez indiquer un nom du poste" value="{{isset($post) ? $post->title : ''}}">
 									</div>
 									<div class="form-group">
 										<label for="body">Message du poste</label>
-										<textarea rows="10" cols="15" class="form-control" id="body" name="body" placeholder="Texte du poste" required>{{ isset($post) ? $post->body : ''}}</textarea>
+										<textarea rows="10" cols="15" class="form-control" id="body" name="body" placeholder="Veuillez introduire une note pour le poste" required>{{ isset($post) ? $post->body : ''}}</textarea>
                                     </div>
 
                                     <div class="form-group form-check form-check-inline">

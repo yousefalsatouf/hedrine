@@ -100,6 +100,7 @@
         </div>
     </div>
 @endsection
+
 @section('dashboard-js')
     <script>
         $(function () {
@@ -122,6 +123,7 @@
 @section('script')
     @include('partials.script')
 @endsection
+
 
 
 
