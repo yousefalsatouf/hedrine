@@ -463,7 +463,6 @@
 <script src="{{ asset('/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- ChartJS -->©
 <script src="{{ asset('/adminlte/plugins/chart.js/Chart.min.js') }}"></script>
-
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="{{ asset('/adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 <!-- Summernote -->

@@ -83,8 +83,6 @@
     </script>
 @endsection
 
-@section('script')
-    @include('partials.script')
-@endsection
+
 
 
