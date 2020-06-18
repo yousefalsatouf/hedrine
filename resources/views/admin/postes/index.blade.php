@@ -13,6 +13,7 @@
 				<tr class="text-center">
 					<th> title</th>
 					<th> Body</th>
+					<th> Important</th>
 					<th> Actions</th>
 				</tr>
 			</thead>
@@ -24,6 +25,7 @@
 					</td>
 
 					<td>{{$post->body}}</td>
+					<td>{{$post->important}}</td>
 
 					<td style="width: 10rem">
 						<div class="btn-group float-right">&nbsp; &nbsp; &nbsp;

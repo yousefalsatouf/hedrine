@@ -95,7 +95,7 @@ class UserController extends Controller
     public function edit(User $user)
     {
         
-        return view('admin.drugs.form_add_drug',['user' => $user ]);
+        return view('admin.users.form_add_user',['user' => $user ]);
     }
 
     /**
@@ -107,7 +107,7 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        $drug->update($request->all());
+        $user->update($request->all());
         Alert::success('Ok !', 'Votre user a étè mis à jour avec succès');
 
         return back();

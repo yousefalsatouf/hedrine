@@ -334,7 +334,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="user.index" class="nav-link">
+                                <a href="{{ route('user.index') }}" class="nav-link">
                                     <i class="far fa-dot-circle nav-icon"></i>
                                     <p>Users</p>
                                 </a>
