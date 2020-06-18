@@ -105,12 +105,11 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
     Route::name('admin')->get('/','AdminController@index');
     Route::get('/', 'AdminController@herbs')->name('admin.herbs');
     Route::prefix('herb')->group(function () {
-
         Route::middleware('ajax')->group(function() {
             Route::name('admin.approve')->post('approve/{herb}','AdminController@approve');
             Route::post('refuse','AdminController@refuse')->name('admin.refuse');
             Route::post('modifs','AdminController@modifs')->name('admin.modifs');
-
+            Route::post('quickEdit', 'AdminController@quickEdit');
         });
     });
 

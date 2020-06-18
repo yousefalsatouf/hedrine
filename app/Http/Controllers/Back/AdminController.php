@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\HerbRefuse;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\MessageRefuse as MessageRefuseRequest;
+use Symfony\Component\VarDumper\Cloner\Data;
 
 
 class AdminController extends Controller
@@ -47,6 +48,17 @@ class AdminController extends Controller
         $herb->validated = -1;
         $herb->save();
     }
+
+    public function quickEdit(Request $request)
+    {
+        $data = Herb::where('validated',false)->where('id', $request->id)->get();
+        $data->name = $request->name;
+        $data->sciname = $request->sciname;
+        $data->save();
+
+        return response()->json($data);
+    }
+
     /**
      * Get an ad by id.
      *
