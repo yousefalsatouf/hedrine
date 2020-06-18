@@ -461,8 +461,15 @@
 </script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<!-- ChartJS -->©
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
+<!-- ChartJS -->
 <script src="{{ asset('/adminlte/plugins/chart.js/Chart.min.js') }}"></script>
+
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="{{ asset('/adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 <!-- Summernote -->
@@ -481,8 +488,10 @@
 <!-- JP Ajout css et js pour le crud des herbs avec ses forms -->
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+<script src="{{ asset('/js/quickEdit.js') }}" type="text/javascript"></script>
 
 <script src="{{ asset('/js/custom.js') }}" type="text/javascript"></script>
+
 
 
 
