@@ -39,7 +39,7 @@
 										@isset($effect) @method('PUT') @endisset
 										@csrf
 										<label for="name">Nom de l'effet</label>
-										<input type="text" class="form-control" id="name" name="name" required placeholder="Nom de l'effet" value="{{isset($effect) ? $effect->name : ''}}">
+										<input type="text" class="form-control" id="name" name="name" required placeholder="Veuillez indiquer un nom pour l'effet" value="{{isset($effect) ? $effect->name : ''}}">
 									</div>
 									
 								</div>

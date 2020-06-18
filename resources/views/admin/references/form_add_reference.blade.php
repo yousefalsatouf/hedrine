@@ -42,14 +42,14 @@
 												@isset($reference) @method('PUT') @endisset
 												@csrf
 												<label for="title">Titre</label>
-												<input type="text" class="form-control" id="title" name="title" required placeholder="Titre de la reference" value="{{isset($reference) ? $reference->title : ''}}">
+												<input type="text" class="form-control" id="title" name="title" required placeholder="Veuillez indiquer un titre pour la révérence" value="{{isset($reference) ? $reference->title : ''}}">
 												</div>
 											</div>
 
 											<div class="col-6">
 												<div class="form-group">
 													<label for="authors">Authors</label>
-													<input type="text" class="form-control" id="authors" name="authors" required placeholder="Nom de l'auteur" value="{{isset($reference) ? $reference->authors : ''}}">
+													<input type="text" class="form-control" id="authors" name="authors" required placeholder="Veuillez indiquer un nom d'auteur pour la révérence" value="{{isset($reference) ? $reference->authors : ''}}">
 												</div> 
 											</div>
 										</div>
@@ -58,14 +58,14 @@
 											<div class="col-6">
 												<div class="form-group">
 													<label for="year">Année</label>
-													<input type="text" class="form-control" id="year" name="year" required placeholder="Année de la référence" value="{{isset($reference) ? $reference->year : ''}}"> 
+													<input type="text" class="form-control" id="year" name="year" required placeholder="Veuillez indiquer une année pour la révérence" value="{{isset($reference) ? $reference->year : ''}}"> 
 												</div>
 											</div>
 
 											<div class="col-6">
 												<div class="form-group">
 													<label for="edition">Edition</label>
-													<input type="text" class="form-control" id="edition" name="edition" required placeholder="Édition de la référence" value="{{isset($reference) ? $reference->edition : ''}}">
+													<input type="text" class="form-control" id="edition" name="edition" required placeholder="Veuillez indiquer un édition pour la révérence" value="{{isset($reference) ? $reference->edition : ''}}">
 												</div>
 											</div>
 										</div>
@@ -73,7 +73,7 @@
 										<div class="rows">
 											<div class="form-group">
 												<label for="url">URL de la reference</label>
-													<textarea rows="5" cols="5" class="form-control" id="url" name="url" placeholder="url de la reference" required>{{ isset($reference) ? $reference->url : ''}}</textarea>
+													<textarea rows="5" cols="5" class="form-control" id="url" name="url" placeholder="Veuillez indiquer un url pour la révérence" required>{{ isset($reference) ? $reference->url : ''}}</textarea>
 											</div>
 										</div>
 									</div>
