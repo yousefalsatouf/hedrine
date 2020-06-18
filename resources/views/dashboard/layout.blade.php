@@ -471,6 +471,7 @@
 <!-- ChartJS -->
 <script src="{{ asset('/adminlte/plugins/chart.js/Chart.min.js') }}"></script>
 <script src="{{ asset('/js/custom.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/js/herb.js') }}" type="text/javascript"></script>
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="{{ asset('/adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 <!-- Summernote -->
