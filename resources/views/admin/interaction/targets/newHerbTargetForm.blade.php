@@ -84,7 +84,7 @@
                                         <div class="form-group row">
                                             <label for="note">Note : <i class="fa fa-info-circle info text-danger" id="required-msg"></i></label>
                                             <div class="col-md-6">
-                                                <textarea name="note" required cols="80" rows="8" placeholder="Note ..."></textarea>
+                                                <textarea name="note" required cols="60" rows="8" placeholder="Note ..."></textarea>
                                             </div>
                                         </div>
                                     <!-- /.card-body -->

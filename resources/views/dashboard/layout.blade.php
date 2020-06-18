@@ -8,12 +8,12 @@
   <title>Hedrine | ULB</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Font Awesome -->
+    <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('/adminlte/plugins/fontawesome-free/css/all.min.css') }}">
-
-  <!-- Ionicons -->
+    <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
 
   <!-- Tempusdominus Bbootstrap 4 -->
   <link rel="stylesheet" href="{{asset('/adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
@@ -223,7 +223,7 @@
         </div>
 
         <!-- Sidebar Menu -->
-       <nav class="mt-2">
+       <nav class="mt-2 sidebar-nav">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                 with font-awesome or any other icon font library -->
@@ -237,7 +237,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('hinteractions.hdi')}}" class="nav-link active">
+                            <a href="{{ route('hinteractions.hdi')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Plantes <span><i class="fas fa-arrows-alt-h fa-lg"></i></span> DCI</p>
                             </a>
@@ -292,68 +292,64 @@
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ route('post.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="fas fa-plus-circle text-success nav-icon"></i>
                                 <p>New Post</p>
                                 </a>
                             </li>
-                            <li class="nav-item has-treeview">
-                                <a href="#" class="nav-link" style="background-color:#08AA8F;">
-                                    <i class="fas fa-toolbox nav-icon"></i>
-                                    <p>
-                                        Manager
-                                        <i class="right fas fa-angle-left"></i>
-                                    </p>
+                            <hr>
+                            <li class="nav-item">
+                                <a href="{{ route('effect.index') }}" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Actions</p>
                                 </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="{{ route('effect.index') }}" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Actions</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{route('drug_family.index')}}" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Drugs Families</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('force.index') }}" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Forces</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('role.index') }}" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Roles</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('target_type.index') }}" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Target Types</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Users</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Pending Users</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('reference.index') }}" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Références</p>
-                                        </a>
-                                    </li>
-                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('drug_family.index')}}" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Drugs Families</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('herb_form.index')}}" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Herbs Forms</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('force.index') }}" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Forces</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('role.index') }}" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Roles</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('target_type.index') }}" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Target Types</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Users</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('pending_user.index')}}" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Pending Users</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('reference.index') }}" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Références</p>
+                                </a>
                             </li>
                         </ul>
                     </li>
@@ -366,37 +362,40 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item has-treeview">
-                                <a href="#" class="nav-link" style="background-color:#08AA8F;">
-                                    <i class="fas fa-toolbox nav-icon"></i>
-                                    <p>
-                                        Manager
-                                        <i class="right fas fa-angle-left"></i>
-                                    </p>
+                            <li class="nav-item">
+                                <a href="{{route('newHerbTarget')}}" class="nav-link">
+                                    <i class="fas fa-plus-circle nav-icon text-success"></i>
+                                    <p> <i class="fas fa-seedling mr-2" style="color: seagreen"></i> New Target</p>
                                 </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="{{route('drug.index')}}" class="nav-link">
-                                            <i class="far fa-dot-circle nav-icon"></i>
-                                            <p>Drugs</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('herb.index') }}" class="nav-link">
-                                        <i class="far fa-dot-circle nav-icon"></i>
-                                        <p>Herbs</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('target.index') }}" class="nav-link">
-                                        <i class="far fa-dot-circle nav-icon"></i>
-                                        <p>Targets</p>
-                                        </a>
-                                    </li>
-                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('newDrugTarget')}}" class="nav-link">
+                                    <i class="fas fa-plus-circle nav-icon text-success"></i>
+                                    <p> <i class="fas fa-capsules mr-2" style="color:#7d041e"></i> New Target</p>
+                                </a>
                             </li>
                         </ul>
-                    </li>
+                        <hr>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('drug.index')}}" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Drugs</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('herb.index') }}" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Herbs</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('target.index') }}" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Targets</p>
+                                </a>
+                            </li>
+                        </ul>
                 @endif
             </ul>
         </nav>
@@ -443,7 +442,6 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-
 <!-- jQuery -->
 <script src="{{ asset('/adminlte/plugins/jquery/jquery.min.js') }}"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -459,10 +457,19 @@
         });
     });
 </script>
+
+
 <!-- Bootstrap 4 -->
 <script src="{{ asset('/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<!-- ChartJS -->©
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
+<!-- ChartJS -->
 <script src="{{ asset('/adminlte/plugins/chart.js/Chart.min.js') }}"></script>
+<script src="{{ asset('/js/custom.js') }}" type="text/javascript"></script>
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="{{ asset('/adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 <!-- Summernote -->
@@ -478,12 +485,18 @@
 <script src="{{ asset('/adminlte/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
 <script src="{{ asset('/adminlte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <!-- JP Ajout css et js pour le crud des herbs avec ses forms -->
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 <script src="{{ asset('/js/quickEdit.js') }}" type="text/javascript"></script>
 
+
+
+@yield('dashboard-js')
+
 <script src="{{ asset('/js/custom.js') }}" type="text/javascript"></script>
+
 
     @include('sweetalert::alert')
     @include('cookieConsent::index')
@@ -499,8 +512,6 @@
     </script>
     <!-- Recaptha -->
     @yield('captcha')
-    @yield('dashboard-js')
     @yield('script')
-
 </body>
 </html>
