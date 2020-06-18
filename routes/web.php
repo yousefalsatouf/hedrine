@@ -107,10 +107,9 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
     Route::prefix('herb')->group(function () {
 
         Route::middleware('ajax')->group(function() {
-            Route::name('admin.approve')->post('approve/{herb}','AdminController@approve');
+            Route::post('approve/{herb}','AdminController@approve')->name('admin.approve');
             Route::post('refuse','AdminController@refuse')->name('admin.refuse');
             Route::post('modifs','AdminController@modifs')->name('admin.modifs');
-
         });
     });
 
@@ -154,7 +153,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
     
     Route::name('pending_user.update')->put('pending_user', 'PendingUserController@update');
     Route::name('pending_user.edit')->get('pending_user', 'PendingUserController@edit');
-    Route::name('pending_user.index')->get('pending_user', '  NotificationController@showNewUserRequests');
+    // Route::name('pending_user.index')->get('pending_user', '  NotificationController@showNewUserRequests'); 
 
     Route::name('pending_user.details')->get('pending_user', 'PendingUserController@details');
     Route::resource('pending_user', 'PendingUserController')->parameters([
@@ -190,9 +189,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
     Route::name('herb.update')->put('herb', 'HerbController@update');
     Route::name('herb.edit')->get('herb', 'HerbController@edit');
     Route::name('herb.index')->get('herb', 'HerbController@index');
-    Route::name('herb.show')->get('show/{herb}', 'HerbController@show');
-   // Route::get('show/{herb}', 'HerbController@showHerb')->name('herb.show');
-
+    Route::name('herb.show')->get('herb', 'HerbController@show');
 
     Route::name('herb.details')->get('herb', 'HerbController@details');
     Route::resource('herb', 'HerbController')->parameters([
@@ -268,7 +265,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
 
 
     //pour les nouveau utilisateurs
-    Route::name('newUser.request')->get('/list_user_requests', '  NotificationController@showNewUserRequests');
+    Route::name('newUser.request')->get('/list_user_requests', 'NotificationController@showNewUserRequests');
     Route::name('newSingleUser.request')->get('/single_user_requests/{id}', 'NotificationController@showSingleNewUserRequest');
     Route::name('activeUser')->get('/activated_user/{id}', 'NotificationController@activateNewUser');
     Route::name('denyingUser')->get('/denied_user/{id}', 'NotificationController@denyUser');

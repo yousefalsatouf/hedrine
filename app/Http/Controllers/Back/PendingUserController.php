@@ -135,4 +135,11 @@ class PendingUserController extends Controller
 
         return view('admin.drugs.show',$drug);
     }
+
+    public function showSingleNewUserRequest($id)
+    {
+        $singleNewUser = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->where('id', '=', $id)->WhereNull('denied')->get();
+
+        return view('notifications.newUserRequests',compact('singleNewUser'));
+    }
 }
