@@ -43,6 +43,7 @@ class HerbRefuse extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
+
                     ->line('Nous avons réfusé une plante que vous voudriez publiée sur notre site hedrine pour la raison suivante : ')
                     ->line($this->message)
                     ->line('Merci d utiliser notre site pour vos futurs recherches');

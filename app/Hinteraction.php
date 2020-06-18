@@ -15,7 +15,7 @@ class Hinteraction extends Model
 
     public function effects() {
         //DD: une hinteraction peut avoir plusieurs effets et un effet peut se trouver dans plusieurs hinteractions
-        return $this->belongsToMany(Effect::class, 'hinteraction_has_effects');
+        return $this->belongsToMany(Effect::class, 'hinteraction_has_effects')->withTimestamps();
     }
 
     public function users()
@@ -30,7 +30,7 @@ class Hinteraction extends Model
 
     public function references()
     {
-        return $this->belongsToMany(Reference::class, 'hinteraction_has_references');
+        return $this->belongsToMany(Reference::class, 'hinteraction_has_references')->withTimestamps();
     }
 
     public function herbs()

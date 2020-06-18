@@ -345,12 +345,6 @@
                                     <p>Pending Users</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="{{ route('reference.index') }}" class="nav-link">
-                                    <i class="far fa-dot-circle nav-icon"></i>
-                                    <p>Références</p>
-                                </a>
-                            </li>
                         </ul>
                     </li>
                     <li class="nav-item has-treeview">
@@ -395,6 +389,13 @@
                                     <p>Targets</p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{ route('reference.index') }}" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Références</p>
+                                </a>
+                            </li>
+                        
                         </ul>
                 @endif
             </ul>
@@ -490,8 +491,6 @@
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
-
-@yield('dashboard-js')
     @include('sweetalert::alert')
     @include('cookieConsent::index')
     <script type="text/javascript">
@@ -507,5 +506,6 @@
     <!-- Recaptha -->
     @yield('captcha')
     @yield('script')
+    @yield('dashboard-js')
 </body>
 </html>

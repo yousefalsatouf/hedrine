@@ -50,10 +50,10 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer('*', function ($view) {
-            $view->with('noValidCount',Herb::where('validated',false)->get());
+            $view->with('noValidCount',Herb::where('validated',0)->get());
         });
         view()->composer('*', function ($view) {
-            $view->with('validatedHerb',Herb::where('validated',true)->get());
+            $view->with('validatedHerb',Herb::where('validated',1)->get());
         });
 
         View::composer('*', function ($view) {
@@ -96,10 +96,10 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer('*', function ($view) {
-            $view->with('noValidCount',Herb::where('validated',false)->get());
+            $view->with('noValidCount',Herb::where('validated',0)->get());
         });
         view()->composer('*', function ($view) {
-            $view->with('validatedHerb',Herb::where('validated',true)->get());
+            $view->with('validatedHerb',Herb::where('validated',1)->get());
         });
 
         View::composer('dashboard.layout', function ($view) {

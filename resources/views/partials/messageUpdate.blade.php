@@ -1,7 +1,7 @@
-<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="message" aria-hidden="true">
+<div class="modal fade" id="messageUpdateModal" tabindex="-1" role="dialog" aria-labelledby="message" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
-            <form id="messageForm" method="POST" action="{{ route('admin.refuse') }}">
+            <form id="messageForm" method="POST" action="{{ route('admin.modifs') }}">
                 @csrf
                 <div class="modal-body">
 
@@ -17,7 +17,7 @@
                     <input id="id" name="id" type="hidden" value="{{ isset($herb) ? $herb->id : '' }}">
 
                     <div class="form-group">
-                        <label for="texte">Entrez ici votre raison de refus</label>
+                        <label for="texte">Précisez ici les choses à modifier</label>
                         <textarea class="form-control" id="message" name="message" rows="3" required>{{ old('texte', isset($value) ? $value : '') }}</textarea>
                         <div id="messageError" class="invalid-feedback"></div>
                     </div>

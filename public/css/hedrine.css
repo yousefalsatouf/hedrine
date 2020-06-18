@@ -1,6 +1,6 @@
 .awesome-font, label
 {
-    font-family: 'Berkshire Swash', cursive;
+    font-family: cursive;
 }
 
 a.add_style {
@@ -123,4 +123,8 @@ a.style_a {
     overflow-y: scroll;
     height: 25rem;
     text-align: left;
+}
+.img-fluid.d-block.mx-auto.mx-md-0.hedrine_logo {
+    width: 42%;
+    float: right;
 }

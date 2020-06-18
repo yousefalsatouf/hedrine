@@ -32,11 +32,11 @@ class DinteractionController extends Controller
      */
     public function create()
     {
-        $drugs = Drug::all();
-        $targets = Target::all();
-        $effects = Effect::all();
-        $force = Force::all();
-        $references = Reference::all();
+        $drugs = Drug::orderBy('name', 'desc')->get();
+        $targets = Target::orderBy('name', 'desc')->get();
+        $effects = Effect::orderBy('name', 'desc')->get();
+        $force = Force::orderBy('name', 'desc')->get();
+        $references = Reference::orderBy('title', 'desc')->get();
         //dd($references);
 
         return view('admin.interaction.targets.newDrugTargetForm', compact('drugs', 'targets', 'effects', 'force', 'references'));
