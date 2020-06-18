@@ -34,7 +34,7 @@
         $('.btn-warning').click((e) => {
             e.preventDefault();
             $('#id').val($(e.currentTarget).attr('data-id'));
-            $('#messageModal').modal();
+            $('#messageUpdateModal').modal();
         });
 
         $('#messageForm').submit((e) => {
@@ -63,6 +63,7 @@
                     });
                 } else {
                     $('#messageModal').modal('hide');
+                    $('#messageUpdateModal').modal('hide');
                     $('.alert-warning').removeClass('d-none').addClass('show');
                 }
             });

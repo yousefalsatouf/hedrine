@@ -487,7 +487,7 @@
 
 
 
-    @yield('dashboard-js')
+
     @include('sweetalert::alert')
     @include('cookieConsent::index')
     <script type="text/javascript">
@@ -503,5 +503,6 @@
     <!-- Recaptha -->
     @yield('captcha')
     @yield('script')
+    @yield('dashboard-js')
 </body>
 </html>

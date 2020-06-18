@@ -98,6 +98,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
             Route::post('approve/{herb}','AdminController@approve')->name('admin.approve');
             Route::post('refuse','AdminController@refuse')->name('admin.refuse');
             Route::post('modifs','AdminController@modifs')->name('admin.modifs');
+
         });
     });
 
@@ -140,7 +141,9 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
     Route::name('herb.update')->put('herb', 'HerbController@update');
     Route::name('herb.edit')->get('herb', 'HerbController@edit');
     Route::name('herb.index')->get('herb', 'HerbController@index');
-    Route::name('herb.show')->get('herb', 'HerbController@show');
+    Route::name('herb.show')->get('show/{herb}', 'HerbController@show');
+   // Route::get('show/{herb}', 'HerbController@showHerb')->name('herb.show');
+
 
     Route::name('herb.details')->get('herb', 'HerbController@details');
     Route::resource('herb', 'HerbController')->parameters([

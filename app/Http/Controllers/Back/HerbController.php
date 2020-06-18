@@ -29,15 +29,10 @@ class HerbController extends Controller
      */
     public function index()
     {
-        $numberOfTimes_herbForms = 0; 
+        $numberOfTimes_herbForms = 0;
         $lastHerb = 0;
-<<<<<<< HEAD
 
 
-=======
-        // $herbs = Herb::all();
-
->>>>>>> e0c6a2b0c2eefd61d44df7ee754341d55574779d
         return view('admin.herbs.index', compact('numberOfTimes_herbForms','lastHerb'));
     }
 
@@ -93,6 +88,11 @@ class HerbController extends Controller
 
     public function show($id)
     {
+        return view('herbs.show', compact('herb'));
+    }
+    public function showHerb(Herb $herb) {
+
+        return view('herbs.show', compact('herb'));
     }
 
     /**
