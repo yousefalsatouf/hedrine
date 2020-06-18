@@ -490,8 +490,10 @@
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
+<script src="{{ asset('/js/custom.js') }}" type="text/javascript"></script>
 
-@yield('dashboard-js')
+
+
     @include('sweetalert::alert')
     @include('cookieConsent::index')
     <script type="text/javascript">
@@ -506,6 +508,7 @@
     </script>
     <!-- Recaptha -->
     @yield('captcha')
+    @yield('dashboard-js')
     @yield('script')
 </body>
 </html>
