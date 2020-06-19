@@ -50,7 +50,7 @@
                 data: $(that).serialize()
             })
             .done((data) => {
-                document.location.reload(true);
+                document.location.reload(false);
             })
             .fail((data) => {
                 toggleButtons();

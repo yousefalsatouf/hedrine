@@ -2,17 +2,16 @@
 
 @section('content_dashboard')
 
-
-    @include('partials.messageUpdate', ['url' => route('admin.modifs')])
-    @include('partials.message', ['url' => route('admin.refuse')])
+    @include('partials.message')
+    @include('partials.messageUpdate')
     @include('partials.alerts', ['title' => 'Plantes à valider'])
 
 
 
     <div class="container-fluid">
-        <div class="card">
+
             <div class="col-12">
-                <div class="card-body">
+                <div class="table responsive">
                     <table id="valid-form" class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -74,7 +73,6 @@
                     </table>
                 </div>
             </div>
-        </div>
     </div>
 @endsection
 
