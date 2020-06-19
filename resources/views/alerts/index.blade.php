@@ -2,8 +2,12 @@
 
 @section('content_dashboard')
 
+
+    @include('partials.messageUpdate', ['url' => route('admin.modifs')])
     @include('partials.message', ['url' => route('admin.refuse')])
     @include('partials.alerts', ['title' => 'Plantes à valider'])
+
+
 
     <div class="container-fluid">
         <div class="card">
@@ -24,21 +28,31 @@
                         <tbody>
 
                             @foreach($noValidCount as $herb)
-                                @include('partials.messageUpdate', ['url' => route('admin.modifs', $herb->id)])
+
                                 <tr>
-                                    <td>
+                                    <td class="@if($herb->validated == -1)
+                                        invalidColor
+                                    @endif">
                                         {{ $herb->id }}
                                     </td>
-                                    <td>
+                                    <td class=" @if($herb->validated == -1)
+                                        invalidColor
+                                    @endif">
                                         {{ $herb->name }}
                                     </td>
-                                    <td >
+                                    <td class=" @if($herb->validated == -1)
+                                        invalidColor
+                                    @endif">
                                         {{ $herb->sciname }}
                                     </td>
-                                    <td>
+                                    <td class=" @if($herb->validated == -1)
+                                        invalidColor
+                                    @endif">
                                         {{ $herb->user->name }}
                                     </td>
-                                    <td>
+                                    <td class=" @if($herb->validated == -1)
+                                        invalidColor
+                                    @endif">
                                         {{ date_create($herb->created_at)->format('d-m-Y') }}
                                     </td>
                                     <td class="">
@@ -49,7 +63,7 @@
                                         <a class="btn btn-danger btn-sm" href="#" role="button" data-id="{{ $herb->id }}" data-toggle="tooltip" title="Refuser la plante">
                                             <i class="fas fa-thumbs-down"></i>
                                         </a>
-                                        <a class="btn btn-warning btn-sm" href="{{ route('admin.modifs', $herb->id) }}" role="button" data-id="{{ $herb->id }}" data-toggle="tooltip" title="Modifier la plante">
+                                        <a class="btn btn-warning btn-sm" href="#" role="button" data-id="{{ $herb->id }}" data-toggle="tooltip" title="Modifier la plante">
                                             <i class="fas fa-eye" style="color:white"></i>
                                         </a>
                                     </td>
@@ -63,28 +77,11 @@
         </div>
     </div>
 @endsection
-@section('dashboard-js')
-    <script>
-        $(function () {
-            $('#valid-form').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": true,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "responsive": true,
-                "language":
-                {
-                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
-                }
-            });
-        });
-    </script>
-@endsection
+
 @section('script')
     @include('partials.script')
 @endsection
+
 
 
 

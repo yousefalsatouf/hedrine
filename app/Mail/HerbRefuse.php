@@ -25,9 +25,9 @@ class HerbRefuse extends Mailable
     public function __construct(User $user,$message )
     {
         //
-
-        $this->message = $message;
         $this->user  = $user;
+        $this->message = $message;
+
     }
 
     /**

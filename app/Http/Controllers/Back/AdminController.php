@@ -8,12 +8,18 @@ use App\Herb;
 use App\User;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\HerbRefuse;
+use App\Mail\HerbToUpdate;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\MessageRefuse as MessageRefuseRequest;
 
 
 class AdminController extends Controller
 {
+    protected $herb;
+
+    public function __constuct(Herb $herb) {
+      $this->herb = $herb;
+    }
     public function index(Request $request) {
 
         $notifications = $request->user()->unreadNotifications()->get();
@@ -56,6 +62,11 @@ class AdminController extends Controller
     {
         return Herb::findOrFail($id);
     }
+    public function getByIdBy($id)
+    {
+        return Herb::findOrFail($id);
+    }
+
 
 
     public function approve(Herb $herb) {
@@ -81,10 +92,10 @@ class AdminController extends Controller
         return response()->json(['id' => $herb->id]);
 
     }
-    public function modifs(Herb $herb , MessageRefuseRequest $request) {
+    public function modifs(MessageRefuseRequest $request) {
 
         $herb = $this->getById($request->id);
-
+         Alert($herb->user);
         $msg = $request->get('message');
 
         $username = null;
@@ -94,7 +105,7 @@ class AdminController extends Controller
         Mail::to($mail)->send(new HerbToUpdate($herb->user,$msg));
 
         $this->modifTodo($herb);
-        Alert::success('Ok !', 'La plante a bien été refusée et le rédacteur va être notifié.');
+        Alert::success('Ok !', 'La plante doit etre corriger et le rédacteur va être notifié.');
         return response()->json(['id' => $herb->id]);
 
     }

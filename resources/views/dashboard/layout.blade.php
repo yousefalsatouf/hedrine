@@ -27,6 +27,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('/adminlte/dist/css/adminlte.min.css')}}">
   <link rel="stylesheet" href="{{ asset('/adminlte/css/style.css')}}">
+  <link rel="stylesheet" href="{{ asset('/css/hedrine.css')}}">
 
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{asset('/adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
@@ -423,6 +424,7 @@
     <section class="content">
       <div class="container-fluid">
         @yield('content_dashboard')
+
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
@@ -446,8 +448,7 @@
 
 <!-- jQuery -->
 <script src="{{ asset('/adminlte/plugins/jquery/jquery.min.js') }}"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)
@@ -459,9 +460,10 @@
         });
     });
 </script>
+
 <!-- Bootstrap 4 -->
 <script src="{{ asset('/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<!-- ChartJS -->©
+<!-- ChartJS -->
 <script src="{{ asset('/adminlte/plugins/chart.js/Chart.min.js') }}"></script>
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="{{ asset('/adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
@@ -489,6 +491,11 @@
 
     @include('sweetalert::alert')
     @include('cookieConsent::index')
+
+    <!-- Recaptha -->
+    @yield('captcha')
+    @yield('dashboard-js')
+    @yield('script')
     <script type="text/javascript">
         $(function () {
             $('[data-toggle="tooltip"]').tooltip();
@@ -499,10 +506,6 @@
             });
         })
     </script>
-    <!-- Recaptha -->
-    @yield('captcha')
-    @yield('dashboard-js')
-    @yield('script')
 
 </body>
 </html>
