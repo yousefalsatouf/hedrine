@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header"> <h2>Bonjour<strong> {{$username}},</strong></h2> </div>
                 <div class="card-title">
-                    <h3>  Nous estimé qu il manque quelques precision sur les points dessus :
+                    <h3>  Nous estimons qu il manque quelques precision sur les points dessus :
                         (<small>Veuillez corriger les erreurs et soumettre votre plante à nouveau</small>)
                     </h3>
                 </div>

@@ -96,7 +96,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer('*', function ($view) {
-            $view->with('noValidCount',Herb::where('validated',0)->get());
+            $view->with('noValidCount',Herb::where('validated','<=',0)->get());
         });
         view()->composer('*', function ($view) {
             $view->with('validatedHerb',Herb::where('validated',1)->get());
