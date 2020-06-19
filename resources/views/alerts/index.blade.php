@@ -6,13 +6,11 @@
     @include('partials.message', ['url' => route('admin.refuse')])
     @include('partials.alerts', ['title' => 'Plantes à valider'])
 
-
-
-
     <div class="container-fluid">
 
             <div class="col-12">
                 <div class="table responsive">
+                    {{ csrf_field() }}
                     <table id="valid-form" class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -26,19 +24,19 @@
                         <tbody>
 
                             @foreach($noValidCount as $herb)
-                                <tr class="item{{$herb->id}}">
+                                <tr>
                                 <tr>
                                     <td class="@if($herb->validated == -1)
                                         invalidColor
                                     @endif">
                                         {{ $herb->id }}
                                     </td>
-                                    <td class=" @if($herb->validated == -1)
+                                    <td class="herb-name-{{$herb->id}} @if($herb->validated == -1)
                                         invalidColor
                                     @endif">
                                         {{ $herb->name }}
                                     </td>
-                                    <td class=" @if($herb->validated == -1)
+                                    <td class="herb-sciname-{{$herb->id}} @if($herb->validated == -1)
                                         invalidColor
                                     @endif">
                                         {{ $herb->sciname }}
@@ -95,18 +93,18 @@
                                 </div>
                                 <label class="control-label col-sm-2" for="name">Name:</label>
                                 <div class="col-sm-10">
-                                    <input type="name" class="form-control" id="n">
+                                    <input type="text" class="form-control" id="n">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-2" for="sciname">Sciname:</label>
                                 <div class="col-sm-10">
-                                    <input type="sciname" class="form-control" id="s">
+                                    <input type="text" class="form-control" id="s">
                                 </div>
                             </div>
                         </form>
                         <div class="modal-footer">
-                            <button type="button" class="btn actionBtn" data-dismiss="modal">
+                            <button type="button"  class="btn actionBtn" data-dismiss="modal">
                                 <span id="footer_action_button" class='glyphicon'> <i class="fa fa-save"></i> </span>
                             </button>
                         </div>

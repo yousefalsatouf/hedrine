@@ -51,7 +51,7 @@ Route::get('/master', function () {
 //Yousef for the filter searching
 
 //here is the url for the char searching ...
-Route::get('/herb/{char}', 'HerbController@filterByChar'); 
+Route::get('/herb/{char}', 'HerbController@filterByChar');
 
 
 //N.Thierry pour atteindre la page de herbe
@@ -99,6 +99,7 @@ Route::prefix('admin')->middleware('admin')->group(function() {
     // store new herb/drug target
     Route::name('newHerbTarget.store')->post('new_herb_target_store', 'HinteractionController@store');
     Route::name('newDrugTarget.store')->post('new_drug_target_store', 'DinteractionController@store');
+
 });
 
 Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function() {
@@ -113,19 +114,9 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
             Route::post('modifs','AdminController@modifs')->name('admin.modifs');
         });
     });
+
     //pour quick update ...
-    //Route::post('quickEdit', 'AdminController@quickEdit');
-
-    //
-    Route::post('quickEdit', function (Request $request)
-    {
-        $data = Herb::where('validated',false)->where('id', $request->id)->get();
-        $data->name = $request->name;
-        $data->sciname = $request->sciname;
-        $data->save();
-
-        return response()->json($data);
-    });
+    Route::post('/quickEdit', 'AdminController@quickEdit');
 
     // Route pour users
     Route::name('drug.update')->put('drug', 'DrugController@update');
@@ -167,7 +158,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
     Route::name('pending_user.update')->put('pending_user', 'PendingUserController@update');
     Route::name('pending_user.edit')->get('pending_user', 'PendingUserController@edit');
 
-    Route::name('pending_user.index')->get('pending_user', 'PendingUserController@showNewUserRequests'); 
+    Route::name('pending_user.index')->get('pending_user', 'PendingUserController@showNewUserRequests');
 
 
     Route::name('pending_user.details')->get('pending_user', 'PendingUserController@details');
