@@ -494,13 +494,12 @@
 
 <script src="{{ asset('/js/custom.js') }}" type="text/javascript"></script>
 
-
-
-
-
-
     @include('sweetalert::alert')
     @include('cookieConsent::index')
+
+    @yield('dashboard-js')
+    @yield('script')
+
     <script type="text/javascript">
         $(function () {
             $('[data-toggle="tooltip"]').tooltip();

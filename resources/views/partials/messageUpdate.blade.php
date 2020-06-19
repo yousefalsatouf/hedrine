@@ -1,7 +1,7 @@
 <div class="modal fade" id="messageUpdateModal" tabindex="-1" role="dialog" aria-labelledby="message" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
-            <form id="messageFormUp" method="POST" action="{{ $url }}">
+            <form id="messageFormUp" method="POST" action="{{ route('admin.modifs') }}">
                 @csrf
                 <div class="modal-body">
 
