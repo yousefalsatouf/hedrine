@@ -40,11 +40,11 @@
 											@isset($role) @method('PUT') @endisset
 											@csrf
 											<label for="name">Nom du role</label>
-											<input type="text" class="form-control" id="name" name="name" required placeholder="Nom du role" value="{{isset($role) ? $role->name : ''}}">
+											<input type="text" class="form-control" id="name" name="name" required placeholder="Veuillez indiquer un nom pour role" value="{{isset($role) ? $role->name : ''}}">
 										</div>
 										<div class="form-group">
 											<label for="Description">Description</label>
-											<input type="text" class="form-control" id="description" name="description" required placeholder="Description" value="{{isset($role) ? $role->description : ''}}">
+											<input type="text" class="form-control" id="description" name="description" required placeholder="Veuillez indiquer une description pour rôle" value="{{isset($role) ? $role->description : ''}}">
 										</div>
 									</div>
 									<!-- /.card-body -->
