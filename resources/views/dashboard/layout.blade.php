@@ -27,6 +27,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('/adminlte/dist/css/adminlte.min.css')}}">
   <link rel="stylesheet" href="{{ asset('/adminlte/css/style.css')}}">
+  <link rel="stylesheet" href="{{ asset('/css/hedrine.css')}}">
 
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{asset('/adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
@@ -497,8 +498,6 @@
     @include('sweetalert::alert')
     @include('cookieConsent::index')
 
-    @yield('dashboard-js')
-    @yield('script')
 
     <script type="text/javascript">
         $(function () {
@@ -511,7 +510,6 @@
         })
     </script>
     <!-- Recaptha -->
-    @yield('captcha')
     @yield('dashboard-js')
     @yield('script')
 </body>
