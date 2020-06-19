@@ -95,13 +95,13 @@
                                 </div>
                                 <label class="control-label col-sm-2" for="name">Name:</label>
                                 <div class="col-sm-10">
-                                    <input type="name" class="form-control" id="n">
+                                    <input type="text" class="form-control" id="n">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-2" for="sciname">Sciname:</label>
                                 <div class="col-sm-10">
-                                    <input type="sciname" class="form-control" id="s">
+                                    <input type="text" class="form-control" id="s">
                                 </div>
                             </div>
                         </form>

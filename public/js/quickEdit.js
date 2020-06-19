@@ -24,18 +24,14 @@ $(document).ready(function() {
             dataType: "json",
             contentType : "application/json",
             data: {
-                '_token': $('input[name=_token]').val(),
+                '_token': $('meta[name="csrf-token"]').attr('content'),
                 'id': $("#fid").val(),
                 'name': $('#n').val(),
-                'sciname': $("#s").val(),
+                'sciname': $("#s").val()
             },
-            success: function(data) {
-                console.log('good');
-                //$('.item' + data.id).replaceWith("<tr class='item" + data.id + "'><td>" + data.id + "</td><td>" + data.name + "</td><td><button class='edit-modal btn btn-info' data-id='" + data.id + "' data-name='" + data.name + "'><span class='glyphicon glyphicon-edit'></span> Edit</button> <button class='delete-modal btn btn-danger' data-id='" + data.id + "' data-name='" + data.name + "' ><span class='glyphicon glyphicon-trash'></span> Delete</button></td></tr>");
-            },
-            error: function()
+            success: function(data)
             {
-              console.log('bad')
+              console.log(data)
             },
         });
     });
