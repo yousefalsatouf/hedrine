@@ -27,7 +27,9 @@ class PendingUserController extends Controller
      */
     public function index()
     {
-        return view('admin.pendingUsers.index');
+        $allNewUsers = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->WhereNull('denied')->get();
+
+        return view('admin.pendingUsers.index',compact('allNewUsers'));
     }
 
     /**
@@ -124,7 +126,7 @@ class PendingUserController extends Controller
 
     }
 
-    public function alert(Drug $drug) {
+    public function alert(Drug $drug) { 
 
         return view('admin.drugs.destroy', ['drug' => $drug]);
     }
@@ -136,10 +138,9 @@ class PendingUserController extends Controller
         return view('admin.drugs.show',$drug);
     }
 
-    public function showSingleNewUserRequest($id)
-    {
-        $singleNewUser = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->where('id', '=', $id)->WhereNull('denied')->get();
+    public function showNewUserRequests(){
+        $allNewUsers = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->WhereNull('denied')->get();
 
-        return view('notifications.newUserRequests',compact('singleNewUser'));
+        return view('admin.pendingUsers.index',compact('allNewUsers'));
     }
 }
