@@ -19,7 +19,7 @@ $(document).ready(function() {
         //alert('clicked');
         //console.log($("#n").val());
         $.ajax({
-            type: 'post',
+            type: 'POST',
             url: '/admin/quickEdit',
             data: {
                 '_token': $('input[name=_token]').val(),
@@ -29,8 +29,16 @@ $(document).ready(function() {
             },
             success: function(data)
             {
-              //console.log(data)
+                let id = data[0].id;
+                let name = data[0].name;
+                let sciname = data[0].sciname;
+
+                $('.herb-name-'+id).text(name);
+                $('.herb-sciname-'+id).text(sciname);
             },
+            error: function (error) {
+                console.log(error)
+            }
         });
     });
 });

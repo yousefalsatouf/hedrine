@@ -6,9 +6,6 @@
     @include('partials.message', ['url' => route('admin.refuse')])
     @include('partials.alerts', ['title' => 'Plantes à valider'])
 
-
-
-
     <div class="container-fluid">
 
             <div class="col-12">
@@ -27,19 +24,19 @@
                         <tbody>
 
                             @foreach($noValidCount as $herb)
-                                <tr class="item{{$herb->id}}">
+                                <tr>
                                 <tr>
                                     <td class="@if($herb->validated == -1)
                                         invalidColor
                                     @endif">
                                         {{ $herb->id }}
                                     </td>
-                                    <td class=" @if($herb->validated == -1)
+                                    <td class="herb-name-{{$herb->id}} @if($herb->validated == -1)
                                         invalidColor
                                     @endif">
                                         {{ $herb->name }}
                                     </td>
-                                    <td class=" @if($herb->validated == -1)
+                                    <td class="herb-sciname-{{$herb->id}} @if($herb->validated == -1)
                                         invalidColor
                                     @endif">
                                         {{ $herb->sciname }}

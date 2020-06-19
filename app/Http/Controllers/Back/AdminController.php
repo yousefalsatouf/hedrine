@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Herb;
 use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\HerbRefuse;
 use App\Mail\HerbToUpdate;
@@ -57,16 +59,34 @@ class AdminController extends Controller
 
     public function quickEdit(Request $request)
     {
-        //echo $request->name;
         //echo $request->id;
-        $data = Herb::where('validated',false)->where('id', $request->id)->get();
-        echo $data;
+        /*$data = Herb::where('validated',false)->where('id', $request->id)->get();
         //echo $data;
         $data->name = $request->name;
         $data->sciname = $request->sciname;
-        $data->save();
+        $data->save();*/
 
-        //return response()->json(['meg'=>'ok', 200]);
+        if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
+        {
+            DB::table('herbs')->where('validated',false)->where('id', $request->id)
+                ->update([
+                    'name' => $request->name,
+                    'sciname' => $request->sciname,
+                    //'validated' => 1
+                ]);
+        }
+        else
+        {
+            DB::table('herbs')->where('validated',false)->where('id', $request->id)
+                ->update([
+                    'name' => $request->name,
+                    'sciname' => $request->sciname,
+                    //'validated' => -1
+                ]);
+        }
+        $data = Herb::where('validated',false)->where('id', $request->id)->get();
+        //Alert::success("C'est Ok");
+        return response()->json($data);
     }
 
     /**
