@@ -51,7 +51,7 @@ Route::get('/master', function () {
 //Yousef for the filter searching
 
 //here is the url for the char searching ...
-Route::get('/herb/{char}', 'HerbController@filterByChar');
+Route::get('/herb/{char}', 'HerbController@filterByChar'); 
 
 
 //N.Thierry pour atteindre la page de herbe
@@ -166,7 +166,9 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
 
     Route::name('pending_user.update')->put('pending_user', 'PendingUserController@update');
     Route::name('pending_user.edit')->get('pending_user', 'PendingUserController@edit');
-    // Route::name('pending_user.index')->get('pending_user', '  NotificationController@showNewUserRequests');
+
+    Route::name('pending_user.index')->get('pending_user', 'PendingUserController@showNewUserRequests'); 
+
 
     Route::name('pending_user.details')->get('pending_user', 'PendingUserController@details');
     Route::resource('pending_user', 'PendingUserController')->parameters([

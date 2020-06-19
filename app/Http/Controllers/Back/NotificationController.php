@@ -35,7 +35,7 @@ class NotificationController extends Controller
         return view('notifications.index_drug',compact('user'));
     }
 
-    public function show_targets(Request $request) {
+    public function show_targets(Request $request) { 
 
         $user = $request->user();
 
