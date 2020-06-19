@@ -39,40 +39,11 @@ class PendingUserController extends Controller
      */
     public function create()
     {
-        $routes = Route::all();
-        $targets = Target::all();
-        return view('admin.drugs.form_add_drug', compact('routes','targets'));
+        
+        return view('admin.pendingUsers.form_add_pending_user');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(DrugRequest $request)
-    {
-        $drug = new Drug;
-
-        $drug->user_id = Auth::user()->id; 
-        $drug->name = $request->name;
-        $drug->drug_families_id = $request->drug_families_id;
-        $drug->route_id = $request->route_id;
-        $drug->atc_level_4s_id = $request->atc_level_4s_id;
-        $drug->save();
-        $drug->targets()->sync($request->targets, false);
-        Alert::success('Ok !', 'Nouveau DCI ajouté avec succès');
-
-        // $adminusers = User::with('roles')->where('role_id','1')->get();
-        // //dd($adminusers);
-        // foreach($adminusers as $adm) {
-        //     //Mail::to($adm)->send(new NewHerb($herb, $user));
-        //     $adm->notify(new NewdrugNotification($drug));
-
-        // }
-
-        return back();
-    }
+    
 
     /**
      * Display the specified resource.
@@ -96,51 +67,5 @@ class PendingUserController extends Controller
         $routes = Route::all();
         return view('admin.drugs.form_add_drug',['drug' => $drug ], compact('routes'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Drug $drug)
-    {
-        $drug->update($request->all());
-        $drug->targets()->sync($request->targets, false);
-        Alert::success('Ok !', 'Votre DCI a étè mis à jour avec succès');
-
-        return back();
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Drug $drug)
-    {
-        $drug->delete();
-        return redirect(route('drug.index'));
-
-    }
-
-    public function alert(Drug $drug) { 
-
-        return view('admin.drugs.destroy', ['drug' => $drug]);
-    }
-
-    public function details($id)
-    {
-        $drug = Drug::findOrFail($id);
-
-        return view('admin.drugs.show',$drug);
-    }
-
-    public function showNewUserRequests(){
-        $allNewUsers = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->WhereNull('denied')->get();
-
-        return view('admin.pendingUsers.index',compact('allNewUsers'));
-    }
+    
 }
