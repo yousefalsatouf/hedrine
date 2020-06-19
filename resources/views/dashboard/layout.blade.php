@@ -27,7 +27,6 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('/adminlte/dist/css/adminlte.min.css')}}">
   <link rel="stylesheet" href="{{ asset('/adminlte/css/style.css')}}">
-  <link rel="stylesheet" href="{{ asset('/css/hedrine.css')}}">
 
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{asset('/adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
@@ -423,7 +422,6 @@
     <section class="content">
       <div class="container-fluid">
         @yield('content_dashboard')
-
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
@@ -446,7 +444,8 @@
 <!-- ./wrapper -->
 <!-- jQuery -->
 <script src="{{ asset('/adminlte/plugins/jquery/jquery.min.js') }}"></script>
-
+<!-- jQuery UI 1.11.4 -->
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)
@@ -459,9 +458,6 @@
     });
 </script>
 
-<!-- Bootstrap 4 -->
-<script src="{{ asset('/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-=======
 
 <!-- Bootstrap 4 -->
 <script src="{{ asset('/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
@@ -471,7 +467,6 @@
 
 <!-- (Optional) Latest compiled and minified JavaScript translation files -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
-
 <!-- ChartJS -->
 <script src="{{ asset('/adminlte/plugins/chart.js/Chart.min.js') }}"></script>
 
@@ -506,11 +501,6 @@
 
     @include('sweetalert::alert')
     @include('cookieConsent::index')
-
-    <!-- Recaptha -->
-    @yield('captcha')
-    @yield('dashboard-js')
-    @yield('script')
     <script type="text/javascript">
         $(function () {
             $('[data-toggle="tooltip"]').tooltip();
@@ -525,6 +515,5 @@
     @yield('captcha')
     @yield('dashboard-js')
     @yield('script')
-
 </body>
 </html>
