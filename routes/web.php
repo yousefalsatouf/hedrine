@@ -116,7 +116,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
     });
 
     //pour quick update ...
-    Route::post('quickEdit', 'AdminController@quickEdit');
+    Route::post('/quickEdit', 'AdminController@quickEdit');
 
     // Route pour users
     Route::name('drug.update')->put('drug', 'DrugController@update');

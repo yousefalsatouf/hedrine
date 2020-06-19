@@ -13,6 +13,7 @@
 
             <div class="col-12">
                 <div class="table responsive">
+                    {{ csrf_field() }}
                     <table id="valid-form" class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -106,7 +107,7 @@
                             </div>
                         </form>
                         <div class="modal-footer">
-                            <button type="button" class="btn actionBtn" data-dismiss="modal">
+                            <button type="button"  class="btn actionBtn" data-dismiss="modal">
                                 <span id="footer_action_button" class='glyphicon'> <i class="fa fa-save"></i> </span>
                             </button>
                         </div>

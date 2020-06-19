@@ -21,17 +21,15 @@ $(document).ready(function() {
         $.ajax({
             type: 'post',
             url: '/admin/quickEdit',
-            dataType: "json",
-            contentType : "application/json",
             data: {
-                '_token': $('meta[name="csrf-token"]').attr('content'),
+                '_token': $('input[name=_token]').val(),
                 'id': $("#fid").val(),
                 'name': $('#n').val(),
                 'sciname': $("#s").val()
             },
             success: function(data)
             {
-              console.log(data)
+              //console.log(data)
             },
         });
     });
