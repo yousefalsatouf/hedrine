@@ -19,6 +19,18 @@ class UserController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $users = User::all(); 
+
+        return view('admin.users.index', compact('users'));
+    }
+
+    /**
      * Send message.
      *
      * @param  App\Http\Requests\MessageAd  $request

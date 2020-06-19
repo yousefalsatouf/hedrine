@@ -3,9 +3,11 @@
 @section('content_dashboard')
 
 
+
     @include('partials.messageUpdate', ['url' => route('admin.modifs')])
     @include('partials.message', ['url' => route('admin.refuse')])
     @include('partials.alerts', ['title' => 'Plantes à valider'])
+
 
 
 
@@ -21,14 +23,12 @@
                                 <th scope="col">SciName</th>
                                 <th scope="col">Author</th>
                                 <th scope="col">Date</th>
-                                <th scope="col">Actions</th>
-
                             </tr>
                         </thead>
                         <tbody>
 
                             @foreach($noValidCount as $herb)
-
+                                <tr class="item{{$herb->id}}">
                                 <tr>
                                     <td class="@if($herb->validated == -1)
                                         invalidColor
@@ -66,12 +66,50 @@
                                         <a class="btn btn-warning btn-sm" href="#" role="button" data-id="{{ $herb->id }}" data-toggle="tooltip" title="Modifier la plante">
                                             <i class="fas fa-eye" style="color:white"></i>
                                         </a>
+                                        <button class="btn btn-secondary btn-sm edit-modal" role="button" data-id="{{ $herb->id }}" data-name="{{$herb->name}}" data-toggle="tooltip" title="editeur rapide">
+                                            <i class="fas fa-edit" style="color:white"></i>
+                                        </button>
                                     </td>
-
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header bg-success">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Quick Update</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="name">Name:</label>
+                                <div class="col-sm-10">
+                                    <input type="name" class="form-control" id="n">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="name">Sciname:</label>
+                                <div class="col-sm-10">
+                                    <input type="name" class="form-control" id="s">
+                                </div>
+                            </div>
+                        </form>
+                        <div class="modal-footer">
+                            <button type="button" class="btn actionBtn" data-dismiss="modal">
+                                <span id="footer_action_button" class='glyphicon'> </span>
+                            </button>
+                            <button type="button" class="btn btn-warning" data-dismiss="modal">
+                                <span class='glyphicon glyphicon-remove'></span> Close
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

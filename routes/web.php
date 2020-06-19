@@ -105,14 +105,27 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
     Route::name('admin')->get('/','AdminController@index');
     Route::get('/', 'AdminController@herbs')->name('admin.herbs');
     Route::prefix('herb')->group(function () {
-
         Route::middleware('ajax')->group(function() {
-            Route::name('admin.approve')->post('approve/{herb}','AdminController@approve');
+            Route::post('approve/{herb}','AdminController@approve')->name('admin.approve');
             Route::post('refuse','AdminController@refuse')->name('admin.refuse');
             Route::post('modifs','AdminController@modifs')->name('admin.modifs');
 
+            Route::post('quickEdit', 'AdminController@quickEdit');
+
         });
     });
+
+
+    // Route pour users
+    Route::name('drug.update')->put('drug', 'DrugController@update');
+    Route::name('drug.edit')->get('drug', 'DrugController@edit');
+    Route::name('user.index')->get('user', 'UserController@index');
+
+    Route::name('drug.details')->get('drug', 'DrugController@details');
+    Route::resource('drug', 'DrugController')->parameters([
+        'drug' => 'drug'
+      ]);
+    Route::name('drug.destroy.alert')->get('drug/{drug}', 'DrugController@alert');
 
     //Pour Post
     Route::name('post.update')->put('post', 'PostController@update');
@@ -136,6 +149,19 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
         'drug' => 'drug'
       ]);
     Route::name('drug.destroy.alert')->get('drug/{drug}', 'DrugController@alert');
+
+    // Route pour pending user
+    // Route::name('newUser.request')->get('/list_user_requests', ' NotificationController@showNewUserRequests');
+    
+    Route::name('pending_user.update')->put('pending_user', 'PendingUserController@update');
+    Route::name('pending_user.edit')->get('pending_user', 'PendingUserController@edit');
+    // Route::name('pending_user.index')->get('pending_user', '  NotificationController@showNewUserRequests'); 
+
+    Route::name('pending_user.details')->get('pending_user', 'PendingUserController@details');
+    Route::resource('pending_user', 'PendingUserController')->parameters([
+        'pending_user' => 'pending_user'
+      ]);
+    Route::name('pending_user.destroy.alert')->get('pending_user/{pending_user}', 'PendingUserController@alert');
 
     // Route pour Drugs Family ..
     Route::name('drug_family.update')->put('drug_family', 'DrugFamilyController@update');
@@ -165,9 +191,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
     Route::name('herb.update')->put('herb', 'HerbController@update');
     Route::name('herb.edit')->get('herb', 'HerbController@edit');
     Route::name('herb.index')->get('herb', 'HerbController@index');
-    Route::name('herb.show')->get('show/{herb}', 'HerbController@show');
-   // Route::get('show/{herb}', 'HerbController@showHerb')->name('herb.show');
-
+    Route::name('herb.show')->get('herb', 'HerbController@show');
 
     Route::name('herb.details')->get('herb', 'HerbController@details');
     Route::resource('herb', 'HerbController')->parameters([
