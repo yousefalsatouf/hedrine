@@ -493,7 +493,7 @@
     @include('cookieConsent::index')
 
     <!-- Recaptha -->
-    @yield('captcha')
+
     @yield('dashboard-js')
     @yield('script')
     <script type="text/javascript">

@@ -50,6 +50,7 @@
                 data: $(that).serialize()
             })
             .done((data) => {
+
                 document.location.reload(false);
             })
             .fail((data) => {
