@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Herb;
 use App\Messages;
 use App\User;
+use App\Role;
 use App\Http\Requests\UserRequest;
 
 
@@ -43,7 +44,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.users.form_add_user');
+        $roles = Role::all();
+        return view('admin.users.form_add_user', compact('roles'));
     }
 
     /**
@@ -65,9 +67,7 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->email_verified_at = $request->email_verified_at;
         $user->password = $request->password;
-        $user->is_active = $request->is_active;
         $user->remember_token = $request->remember_token;
-        $user->created = $request->created;
         $user->role_id = $request->role_id;
         $user->save();
         Alert::success('Ok !', 'Nouveau user ajouté avec succès');
@@ -94,8 +94,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        
-        return view('admin.users.form_add_user',['user' => $user ]);
+        $roles = Role::all();
+        return view('admin.users.form_add_user',['user' => $user ], compact( 'roles'));
     }
 
     /**

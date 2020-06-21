@@ -39,16 +39,16 @@
 										<div class="row">
 											<div class="col-6">
 												<div class="form-group">
-													@isset($user) @method('PUT') @endisset
-													@csrf
-													<label for="name">Nom de l'utilisateur</label>
-													<input type="text" class="form-control" id="name" name="name" required placeholder="Nom du user" value="{{isset($user) ? $user->name : ''}}">
+													<label for="firstname">Prénom</label>
+													<input type="text" class="form-control" id="firstname" name="firstname" required placeholder="Prénom" value="{{isset($user) ? $user->firstname : ''}}">
 												</div>
 											</div>
 											<div class="col-6">
 												<div class="form-group">
-													<label for="firstname">Prénom</label>
-													<input type="text" class="form-control" id="firstname" name="firstname" required placeholder="Prénom" value="{{isset($user) ? $user->firstname : ''}}">
+													@isset($user) @method('PUT') @endisset
+													@csrf
+													<label for="name">Nom de l'utilisateur</label>
+													<input type="text" class="form-control" id="name" name="name" required placeholder="Nom du user" value="{{isset($user) ? $user->name : ''}}">
 												</div>
 											</div>
 										</div>
@@ -62,12 +62,24 @@
 											</div>
 											<div class="col-6">
 												<div class="form-group">
-													<label for="Description">Email</label>
-													<input type="text" class="form-control" id="description" name="description" required placeholder="Veuillez indiquer l'email" value="{{isset($user) ? $user->email : ''}}">
+													<label for="email">Email</label>
+													<input type="text" class="form-control" id="email" name="email" required placeholder="Veuillez indiquer l'email" value="{{isset($user) ? $user->email : ''}}">
 												</div>
 											</div>
 										</div>
+										 <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}<i class="fa fa-info-circle info text-danger" id="required-msg"></i></label>
 
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        {{-- <strong>{{ $message }}</strong> --}}
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+										
 										<div class="row">
 											<div class="col-6">
 												<div class="form-group">
@@ -77,25 +89,24 @@
 											</div>
 											<div class="col-6">
 												<div class="form-group">
-													<label for="tel2">Numéro Fixe</label>
-													<input type="text" class="form-control" id="tel2" name="tel2" required placeholder="Veuillez indiquer le numéro du fixe" value="{{isset($user) ? $user->tel2 : ''}}">
+													<label for="role_id">Route</label>
+													<select name="role_id" class="form-control">
+														@if(Route::currentRouteName() === 'user.create')
+															<option></option>
+														@foreach ($roles as $role)
+															<option value="{{$role->id}}">{{$role->name}}</option>
+														@endforeach
+														@else
+															<option></option>
+															@foreach ($roles as $role)
+															<option value="{{$role->id}}" @if($user->role_id == $role->id) selected @endif>{{$role->name}}</option>
+														@endforeach
+														@endif
+													</select>
 												</div>
 											</div>
 										</div>
-										<div class="row">
-											<div class="col-6">
-												<div class="form-group">
-													<label for="Description">Password</label>
-													<input type="password" class="form-control" id="description" name="description" required placeholder="Description" value="{{isset($user) ? $user->password : ''}}">
-												</div>
-											</div>
-											<div class="col-6">
-												<div class="form-group">
-													<label for="Description">Password</label>
-													<input type="password" class="form-control" id="description" name="description" required placeholder="Description" value="{{isset($user) ? $user->password : ''}}">
-												</div>
-											</div>
-										</div>
+										
 									</div>
 									<!-- /.card-body -->
 									<div class="card-footer">

@@ -2,9 +2,7 @@
 
 @section('content_dashboard')
 <div class="row justify-content-end" style="padding-bottom: 0.75rem">
-	@if(Route::currentRouteName() === 'user.index')
-		<a class="btn btn-light" href="{{ route('user.create') }}" role="button">Créer un nouveau user</a>
-	@endif
+	
 </div>
 
 <div class="col-12">
@@ -20,7 +18,7 @@
 					<th> Email </th>
 					<th> Is Active</th>
 					<th> Rôle </th>
-					<th> Actions</th>
+					<th> Actions</th> 
 				</tr>
 			</thead>
 			<tbody> 
@@ -36,14 +34,20 @@
 					<td>{{$user->email}}</td>
 					<td>{{$user->is_active}}</td>
 					<td>{{$user->roles->name}}</td>
-					<td style="width: 10rem">
-						<div class="btn-group float-right">&nbsp; &nbsp; &nbsp;
-							<a class="btn btn-outline-success" href="{{ route('user.edit',$user->id) }}" role="button">Edit</a> &nbsp; &nbsp;
-							
-							{{-- <a class="btn btn-outline-danger" href="{{ route('user.destroy.alert',$user->id) }}" role="button">Delete</a> --}} 
-
-						</div>
-					</td>
+					@if ($user->roles->id != 4)
+						<td style="width: 10rem">
+							<div class="btn-group float-right">&nbsp; &nbsp; &nbsp;
+								<a class="btn btn-outline-success" href="{{ route('user.edit',$user->id) }}" role="button">Edit</a> &nbsp; &nbsp;
+							</div>
+						</td>
+					@else
+						<td style="width: 10rem">
+							<div class="btn-group float-right">&nbsp; &nbsp; &nbsp;
+								<a class="btn btn-outline-success" href="{{ route('user.edit',$user->id) }}" role="button">Edit</a> &nbsp; &nbsp;
+								<a class="btn btn-outline-danger" href="{{ route('user.destroy.alert',$user->id) }}" role="button">Delete</a>
+							</div>
+						</td>
+					@endif
 				</tr>
 				@endforeach
 			</tbody>
