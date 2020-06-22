@@ -157,18 +157,8 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
 
     // Route pour pending user
     // Route::name('newUser.request')->get('/list_user_requests', ' NotificationController@showNewUserRequests');
+    Route::name('pending_user.index')->get('pending_user', 'NotificationController@showNewUserRequestsOnAdmin');
 
-    Route::name('pending_user.update')->put('pending_user', 'PendingUserController@update');
-    Route::name('pending_user.edit')->get('pending_user', 'PendingUserController@edit');
-
-    Route::name('pending_user.index')->get('pending_user', 'PendingUserController@showNewUserRequests');
-
-
-    Route::name('pending_user.details')->get('pending_user', 'PendingUserController@details');
-    Route::resource('pending_user', 'PendingUserController')->parameters([
-        'pending_user' => 'pending_user'
-      ]);
-    Route::name('pending_user.destroy.alert')->get('pending_user/{pending_user}', 'PendingUserController@alert');
 
     // Route pour Drugs Family ..
     Route::name('drug_family.update')->put('drug_family', 'DrugFamilyController@update');

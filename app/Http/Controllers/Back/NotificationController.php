@@ -54,6 +54,14 @@ class NotificationController extends Controller
 
         return view('notifications.newUserRequests',compact('singleNewUser'));
     }
+
+    public function showNewUserRequestsOnAdmin(Request $request)
+    {
+        $allNewUsers = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->WhereNull('denied')->get();
+
+        return view('admin.pendingUsers.index',compact('allNewUsers'));
+    }
+    
     public function activateNewUser($id)
     {
         DB::table('users')
