@@ -10,6 +10,6 @@ class TargetType extends Model
     
     public function targets()
     {
-        return $this->belongsTo(Target::class);
+        return $this->belongsTo(Target::class); 
     }
 }
