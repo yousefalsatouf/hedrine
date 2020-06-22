@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-     {!! NoCaptcha::renderJs() !!}
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -20,6 +20,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
     {{--Font awesome cdn--}}
     <link href="{{ asset('css/hedrine.css') }}" rel="stylesheet">
 </head>
@@ -85,5 +86,6 @@
             @yield('content')
         </main>
     </div>
+    {!! NoCaptcha::renderJs() !!}
 </body>
 </html>
