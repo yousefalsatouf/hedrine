@@ -66,9 +66,10 @@ class AdminController extends Controller
         $data->sciname = $request->sciname;
         $data->save();*/
 
+
         if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
         {
-            DB::table('herbs')->where('validated',false)->where('id', $request->id)
+            DB::table('herbs')->where('validated', '!=', 1)->where('id', $request->id)
                 ->update([
                     'name' => $request->name,
                     'sciname' => $request->sciname,
@@ -77,15 +78,15 @@ class AdminController extends Controller
         }
         else
         {
-            DB::table('herbs')->where('validated',false)->where('id', $request->id)
+            DB::table('herbs')->where('validated', '!=', 1)->where('id', $request->id)
                 ->update([
                     'name' => $request->name,
                     'sciname' => $request->sciname,
                     //'validated' => -1
                 ]);
         }
-        $data = Herb::where('validated',false)->where('id', $request->id)->get();
-        //Alert::success("C'est Ok");
+        $data = Herb::where('validated', '!=', 1)->where('id', $request->id)->get();
+        Alert::success("C'est Ok");
         return response()->json($data);
     }
 
@@ -111,8 +112,8 @@ class AdminController extends Controller
         return response()->json(['id' => $herb->id]);
 
     }
-    public function refuse(MessageRefuseRequest $request) {
-
+    public function refuse(MessageRefuseRequest $request)
+    {
         $herb = $this->getById($request->id);
 
         $msg = $request->get('message');

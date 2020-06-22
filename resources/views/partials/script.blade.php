@@ -39,6 +39,7 @@
         });
 
         $('#messageForm').submit((e) => {
+            //alert('yah Iknow')
             let that = e.currentTarget;
             e.preventDefault();
             $('#message').removeClass('is-invalid');
@@ -70,7 +71,6 @@
             });
         });
         $('#messageFormUp').submit((e) => {
-
             let that = e.currentTarget;
             e.preventDefault();
             $('#message').removeClass('is-invalid');
