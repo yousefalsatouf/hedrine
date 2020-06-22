@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-
   <title>Hedrine | ULB</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,6 +26,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('/adminlte/dist/css/adminlte.min.css')}}">
   <link rel="stylesheet" href="{{ asset('/adminlte/css/style.css')}}">
+  <link rel="stylesheet" href="{{ asset('/css/hedrine.css')}}">
 
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{asset('/adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
@@ -340,9 +340,15 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{route('pending_user.index')}}" class="nav-link">
                                     <i class="far fa-dot-circle nav-icon"></i>
                                     <p>Pending Users</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('reference.index') }}" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Références</p>
                                 </a>
                             </li>
                         </ul>
@@ -389,13 +395,6 @@
                                     <p>Targets</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="{{ route('reference.index') }}" class="nav-link">
-                                    <i class="far fa-dot-circle nav-icon"></i>
-                                    <p>Références</p>
-                                </a>
-                            </li>
-                        
                         </ul>
                 @endif
             </ul>
@@ -470,7 +469,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
 <!-- ChartJS -->
 <script src="{{ asset('/adminlte/plugins/chart.js/Chart.min.js') }}"></script>
-<script src="{{ asset('/js/custom.js') }}" type="text/javascript"></script>
+
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="{{ asset('/adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 <!-- Summernote -->
@@ -486,13 +485,19 @@
 <script src="{{ asset('/adminlte/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
 <script src="{{ asset('/adminlte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
 <!-- JP Ajout css et js pour le crud des herbs avec ses forms -->
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+<script src="{{ asset('/js/quickEdit.js') }}" type="text/javascript"></script>
+
+
+<script src="{{ asset('/js/custom.js') }}" type="text/javascript"></script>
 
     @include('sweetalert::alert')
     @include('cookieConsent::index')
+
+
     <script type="text/javascript">
         $(function () {
             $('[data-toggle="tooltip"]').tooltip();
@@ -504,8 +509,7 @@
         })
     </script>
     <!-- Recaptha -->
-    @yield('captcha')
-    @yield('script')
     @yield('dashboard-js')
+    @yield('script')
 </body>
 </html>

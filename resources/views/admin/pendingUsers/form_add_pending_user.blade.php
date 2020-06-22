@@ -40,13 +40,13 @@
 											@isset($drug) @method('PUT') @endisset
 											@csrf
 											<label for="name">Nom du DC</label>
-											<input type="text" class="form-control" id="name" name="name" required placeholder="Veuillez indiquer un nom pour le DCI" value="{{isset($drug) ? $drug->name : ''}}">
+											<input type="text" class="form-control" id="name" name="name" required placeholder="Nom du DCI" value="{{isset($drug) ? $drug->name : ''}}">
 										</div>
 										<div class="form-group">
 											<label for="drug_families_id">Famille</label>
 											<select name="drug_families_id" class="form-control">
 												@if(Route::currentRouteName() === 'drug.create')
-													<option value="" disabled selected>Veuillez indiquer un famille pour le DCI </option>
+													<option></option>
 												@foreach ($drug_families as $drug_familie)
 													<option value="{{$drug_familie->id}}">{{$drug_familie->name}}</option>
 												@endforeach
@@ -56,13 +56,15 @@
 														<option value="{{$drug_familie->id}}" @if($drug->drug_families_id == $drug_familie->id) selected @endif>{{$drug_familie->name}}</option>
 													@endforeach
 												@endif
+
+
 											</select> 
 										</div>
 										<div class="form-group">
 											<label for="route_id">Route</label>
 											<select name="route_id" class="form-control">
 												@if(Route::currentRouteName() === 'drug.create')
-													<option value="" disabled selected>Veuillez indiquer une route pour le DCI </option>
+													<option></option>
 												@foreach ($routes as $route)
 													<option value="{{$route->id}}">{{$route->name}}</option>
 												@endforeach
@@ -78,7 +80,7 @@
 											<label for="atc_level_4s_id">AtcLevel4</label>
 											<select name="atc_level_4s_id" class="form-control">
 												@if(Route::currentRouteName() === 'drug.create')
-													<option value="" disabled selected>Veuillez indiquer un atc pour le DCI </option>
+													<option></option>
 													@foreach ($atc_level_4s as $atc_level_4)
 													<option value="{{$atc_level_4->id}}">{{$atc_level_4->name}}</option>
 													@endforeach

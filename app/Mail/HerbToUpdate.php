@@ -6,6 +6,8 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class HerbToUpdate extends Mailable
 {
@@ -13,20 +15,17 @@ class HerbToUpdate extends Mailable
 
     public $user;
     public $message;
-    public $herb;
+
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(User $user,Herb $herb, $message)
+    public function __construct(User $user, $message)
     {
-        //
         $this->message = $message;
         $this->user  = $user;
-        $this->herb  = $herb;
-
     }
 
     /**
@@ -38,11 +37,11 @@ class HerbToUpdate extends Mailable
     {
         $admin = Auth::user();
         $username = $this->user->name." ".$this->user->firstname;
-        $herb = $this->herb->id;
+
         $msg = $this->message;
 
         return $this->from($admin->email)
             ->subject('Hedrine : Votre plante doit etre modifié')
-            ->view('mail.updateHerb', compact('admin','username', 'msg','herb'));
+            ->view('mail.updateHerb', compact('admin','username', 'msg'));
     }
 }

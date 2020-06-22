@@ -1,6 +1,6 @@
 .awesome-font, label
 {
-    font-family: cursive;
+
 }
 
 a.add_style {
@@ -67,6 +67,7 @@ a.style_a {
 .faible {background:#EEE8AA;}
 .aucune {background:#CCFF99;}
 .inconnue {background:#FFCCFF;}
+.invalidColor {background: #ffc107;}
 
 .active-char
 {

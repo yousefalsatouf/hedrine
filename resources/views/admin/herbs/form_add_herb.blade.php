@@ -41,43 +41,26 @@
 									<div class="form-group">
 										@isset($herb) @method('PUT') @endisset
 										@csrf
-										<label for="name">Nom d'une plante</label>
-										<input type="text" class="form-control" id="title" name="name" required placeholder="Nom d'une plante" value="{{isset($herb) ? $herb->name : ''}}">
+										<label for="name">Nom de la plante</label>
+										<input type="text" class="form-control" id="title" name="name" required placeholder="Veuillez indiquer un nom pour la plante" value="{{isset($herb) ? $herb->name : ''}}">
 									</div>
 									<div class="form-group">
 										<label for="sciname">Sciname</label>
-										<input type="text" class="form-control" id="sciname" name="sciname" required placeholder="Nom du sciname" value="{{isset($herb) ? $herb->sciname : ''}}">
+										<input type="text" class="form-control" id="sciname" name="sciname" required placeholder="Veuillez indiquer un nom du sciname pour la plante" value="{{isset($herb) ? $herb->sciname : ''}}"> 
 									</div>
 									<div class="form-group">
-										<label for="herb_form">Formes d'une plante</label>
+										<label for="herb_form">Formes de la plante</label>
 										<select class="form-control herbForm" id="forms" name="forms[]" multiple >
 											@foreach ($herb_forms as $herb_form)
 												@if(Route::currentRouteName() === 'herb.create')
 							            		<option value="{{ $herb_form->id }}" {{ in_array($herb_form->id, old('forms') ?: []) ? 'selected' : '' }}>{{ $herb_form->name }}</option>
 							            		@else
-							            		<option value="{{ $herb_form->id }}" {{ in_array($herb_form->id, old('forms') ?: $herb->herb_forms->pluck('id')->toArray()) ? 'selected' : '' }}>{{ $herb_form->name }}
-							            		</option>
-							            		@endif
-							            	@endforeach 
-	        									
-	 									</select>
-									</div>
-
-										
-									{{-- <div class="form-group">
-										<label for="target">Target</label>
-										<select class="form-control target" id="targets" name="targets[]" multiple >
-											@foreach ($targets as $target)
-												@if(Route::currentRouteName() === 'herb.create')
-							            		<option value="{{ $target->id }}" {{ in_array($target->id, old('targets') ?: []) ? 'selected' : '' }}>{{ $target->name }}</option>
-							            		@else
-							            		<option value="{{ $target->id }}" {{ in_array($target->id, old('targets') ?: $herb->targets->pluck('id')->toArray()) ? 'selected' : '' }}>{{ $target->name }}
+							            		<option style="color:black" value="{{ $herb_form->id }}" {{ in_array($herb_form->id, old('forms') ?: $herb->herb_forms->pluck('id')->toArray()) ? 'selected' : '' }}>{{ $herb_form->name }}
 							            		</option>
 							            		@endif
 							            	@endforeach
 							            </select>
-									</div> --}}
-
+									</div>
 								</div>
 								<!-- /.card-body -->
 								<div class="card-footer">

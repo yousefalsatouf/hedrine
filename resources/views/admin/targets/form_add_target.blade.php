@@ -40,21 +40,21 @@
 										@isset($target) @method('PUT') @endisset
 										@csrf
 										<label for="name">Nom du Target</label>
-										<input type="text" class="form-control" id="name" name="name" required placeholder="Titre du target" value="{{isset($target) ? $target->name : ''}}">
+										<input type="text" class="form-control" id="name" name="name" required placeholder="Veuillez indiquer un nom pour le target" value="{{isset($target) ? $target->name : ''}}">
 									</div>
 									<div class="form-group">
 										<label for="long_name">Long nom du target</label>
-										<input type="text" class="form-control" id="long_name" name="long_name" required placeholder="Long nom du target" value="{{isset($target) ? $target->long_name : ''}}">
+										<input type="text" class="form-control" id="long_name" name="long_name" required placeholder="Veuillez indiquer un long nom pour la target" value="{{isset($target) ? $target->long_name : ''}}">
 									</div>
 									<div class="form-group">
 										<label for="notes">Notes du poste</label>
-										<textarea rows="10" cols="15" class="form-control" id="notes" name="notes" placeholder="Note du poste" required>{{ isset($target) ? $target->notes : ''}}</textarea>
+										<textarea rows="10" cols="15" class="form-control" id="notes" name="notes" placeholder="Veuillez introduire une note pour la target" required>{{ isset($target) ? $target->notes : ''}}</textarea>
 									</div>
 									<div class="form-group">
 										<label for="target_type_id">Type target</label>
-										<select name="target_type_id" class="form-control">
+										<select name="target_type_id" class="form-control" placeholder="Veuillez indiquer un type de target pour la target ">
 											@if(Route::currentRouteName() === 'target.create')
-												<option></option>
+												<option value="" disabled selected>Veuillez indiquer un type de target pour la target </option>
 												@foreach ($target_types as $target_type)
 												<option value="{{$target_type->id}}">{{$target_type->name}}</option>
 												@endforeach

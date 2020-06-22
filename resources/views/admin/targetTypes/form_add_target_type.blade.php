@@ -39,16 +39,17 @@
 										<div class="form-group">
 											@isset($target_type) @method('PUT') @endisset
 											@csrf
-											<label for="name">Nom du type de target</label>
-											<input type="text" class="form-control" id="name" name="name" required placeholder="Nom du type de target" value="{{isset($target_type) ? $target_type->name : ''}}">
+											<label for="name">Veuillez indiquer un nom de type de target</label>
+											<input type="text" class="form-control" id="name" name="name" required placeholder="Veuillez indiquer un nom pour le type de target" value="{{isset($target_type) ? $target_type->name : ''}}">
 										</div>
 										<div class="form-group">
 											<label for="description">Description</label>
-											<input type="text" class="form-control" id="description" name="description" required placeholder="Indiquez la description" value="{{isset($target_type) ? $target_type->description : ''}}">
+											<input type="text" class="form-control" id="description" name="description" required placeholder="Veuillez indiquer une description pour le type de target" value="{{isset($target_type) ? $target_type->description : ''}}">
 										</div>
 										<div class="form-group">
 											<label for="rank">Rank</label>
 											<select class="form-control" id="exampleFormControlSelect1" name="rank">
+												<option value="" disabled selected>Veuillez indiquer un rank pour le type de target </option>
 												<option>1</option>
 												<option>2</option>
 												<option>3</option>

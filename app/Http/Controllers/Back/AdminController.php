@@ -6,14 +6,23 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Herb;
 use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\HerbRefuse;
+use App\Mail\HerbToUpdate;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\MessageRefuse as MessageRefuseRequest;
+use Symfony\Component\VarDumper\Cloner\Data;
 
 
 class AdminController extends Controller
 {
+    protected $herb;
+
+    public function __constuct(Herb $herb) {
+      $this->herb = $herb;
+    }
     public function index(Request $request) {
 
         $notifications = $request->user()->unreadNotifications()->get();
@@ -47,6 +56,39 @@ class AdminController extends Controller
         $herb->validated = -1;
         $herb->save();
     }
+
+    public function quickEdit(Request $request)
+    {
+        //echo $request->id;
+        /*$data = Herb::where('validated',false)->where('id', $request->id)->get();
+        //echo $data;
+        $data->name = $request->name;
+        $data->sciname = $request->sciname;
+        $data->save();*/
+
+        if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
+        {
+            DB::table('herbs')->where('validated',false)->where('id', $request->id)
+                ->update([
+                    'name' => $request->name,
+                    'sciname' => $request->sciname,
+                    //'validated' => 1
+                ]);
+        }
+        else
+        {
+            DB::table('herbs')->where('validated',false)->where('id', $request->id)
+                ->update([
+                    'name' => $request->name,
+                    'sciname' => $request->sciname,
+                    //'validated' => -1
+                ]);
+        }
+        $data = Herb::where('validated',false)->where('id', $request->id)->get();
+        //Alert::success("C'est Ok");
+        return response()->json($data);
+    }
+
     /**
      * Get an ad by id.
      *
@@ -56,6 +98,11 @@ class AdminController extends Controller
     {
         return Herb::findOrFail($id);
     }
+    public function getByIdBy($id)
+    {
+        return Herb::findOrFail($id);
+    }
+
 
 
     public function approve(Herb $herb) {
@@ -81,10 +128,10 @@ class AdminController extends Controller
         return response()->json(['id' => $herb->id]);
 
     }
-    public function modifs(Herb $herb , MessageRefuseRequest $request) {
+    public function modifs(MessageRefuseRequest $request) {
 
         $herb = $this->getById($request->id);
-
+         Alert($herb->user);
         $msg = $request->get('message');
 
         $username = null;
@@ -94,7 +141,7 @@ class AdminController extends Controller
         Mail::to($mail)->send(new HerbToUpdate($herb->user,$msg));
 
         $this->modifTodo($herb);
-        Alert::success('Ok !', 'La plante a bien été refusée et le rédacteur va être notifié.');
+        Alert::success('Ok !', 'La plante doit etre corrigée et le rédacteur va être notifié.');
         return response()->json(['id' => $herb->id]);
 
     }
