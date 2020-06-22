@@ -46,7 +46,7 @@
 									</div>
 									<div class="form-group">
 										<label for="sciname">Sciname</label>
-										<input type="text" class="form-control" id="sciname" name="sciname" required placeholder="Veuillez indiquer un nom du sciname pour la plante" value="{{isset($herb) ? $herb->sciname : ''}}">
+										<input type="text" class="form-control" id="sciname" name="sciname" required placeholder="Veuillez indiquer un nom du sciname pour la plante" value="{{isset($herb) ? $herb->sciname : ''}}"> 
 									</div>
 									<div class="form-group">
 										<label for="herb_form">Formes de la plante</label>
@@ -55,7 +55,7 @@
 												@if(Route::currentRouteName() === 'herb.create')
 							            		<option value="{{ $herb_form->id }}" {{ in_array($herb_form->id, old('forms') ?: []) ? 'selected' : '' }}>{{ $herb_form->name }}</option>
 							            		@else
-							            		<option value="{{ $herb_form->id }}" {{ in_array($herb_form->id, old('forms') ?: $herb->herb_forms->pluck('id')->toArray()) ? 'selected' : '' }}>{{ $herb_form->name }}
+							            		<option style="color:black" value="{{ $herb_form->id }}" {{ in_array($herb_form->id, old('forms') ?: $herb->herb_forms->pluck('id')->toArray()) ? 'selected' : '' }}>{{ $herb_form->name }}
 							            		</option>
 							            		@endif
 							            	@endforeach
