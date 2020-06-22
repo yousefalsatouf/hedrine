@@ -49,23 +49,8 @@ class UserController extends Controller
     }
 
     /**
-<<<<<<< HEAD
-     * Store a newly created resource in storage.
-=======
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $users = User::all(); 
-
-        return view('admin.users.index', compact('users'));
-    }
-
-    /**
      * Send message.
->>>>>>> 476a89d1c5dfbc530e55e84fa270ab6aee59d82b
+
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
