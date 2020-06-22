@@ -3,7 +3,6 @@
 @section('content_dashboard')
 
     @include('partials.messageUpdate', ['url' => route('admin.modifs')])
-    @include('partials.message', ['url' => route('admin.refuse')])
     @include('partials.alerts', ['title' => 'Plantes à valider'])
 
     <div class="container-fluid">
@@ -116,6 +115,7 @@
 @endsection
 
 @section('script')
+    @include('partials.message', ['url' => route('admin.refuse')])
     @include('partials.script')
 @endsection
 
