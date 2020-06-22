@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Back;
 
+use App\HistoryHerbs;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Herb;
@@ -59,24 +60,37 @@ class AdminController extends Controller
 
     public function quickEdit(Request $request)
     {
-        //echo $request->id;
-        /*$data = Herb::where('validated',false)->where('id', $request->id)->get();
-        //echo $data;
-        $data->name = $request->name;
-        $data->sciname = $request->sciname;
-        $data->save();*/
 
+        $herb = Herb::where('validated', '!=', 1)->where('id', $request->id)->get();
+        $history = new HistoryHerbs;
+        $history->name = $herb->name;
+        $history->sciname = $herb->sciname;
+        $history->auhor = $herb->user->name;
+        $history->edit_by = Auth::user()->name;
+        $history->save();
 
         if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
         {
+        /*
+         * HistoryHerbs::create([
+            'name' => $herb->name,
+            'sciname' => $herb->sciname,
+            'author' => $herb->user->name,
+            'edit_by' => Auth::user()->name
+        ]);
+         *
+         * */
+
             DB::table('herbs')->where('validated', '!=', 1)->where('id', $request->id)
                 ->update([
                     'name' => $request->name,
                     'sciname' => $request->sciname,
                     //'validated' => 1
                 ]);
+
+            //Alert::success("C'est Ok");
         }
-        else
+        /*else
         {
             DB::table('herbs')->where('validated', '!=', 1)->where('id', $request->id)
                 ->update([
@@ -84,9 +98,8 @@ class AdminController extends Controller
                     'sciname' => $request->sciname,
                     //'validated' => -1
                 ]);
-        }
+        }*/
         $data = Herb::where('validated', '!=', 1)->where('id', $request->id)->get();
-        Alert::success("C'est Ok");
         return response()->json($data);
     }
 
