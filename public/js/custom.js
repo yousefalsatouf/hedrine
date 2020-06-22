@@ -1,7 +1,8 @@
 $(document).ready(function() {
-    $('.herbForm').select2({
-    	placeholder:"Veuillez choisir une ou plusieur forme de plante"
-    });
+    // $('.herbForm').select2({
+    // 	placeholder:"Veuillez choisir une ou plusieur forme de plante"
+    // });
+    $('.herbForm').selectpicker();
 
 });
 
