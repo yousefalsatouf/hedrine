@@ -128,7 +128,7 @@
             <a href="{{ route('post.index') }}" class="dropdown-item dropdown-footer">See All Posts</a>
         </div>
       </li>
-      @if((auth()->user()->role_id == 1 )||(auth()->user()->role_id == 2 ))
+      @if((auth()->user()->role_id == 1 )||(auth()->user()->role_id == 2 ) )
         <!-- Notifications Dropdown Menu -->
 
             <li class="nav-item dropdown">
@@ -397,6 +397,55 @@
                             </li>
                         </ul>
                     </li>
+
+                @endif
+
+                @if ((auth()->user()->role_id == 1) || (auth()->user()->role_id == 3 ))
+
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link" style="background-color:green;" >
+                            <i class="fas fa-database nav-icon"></i>
+                            <p>
+                            Gerer les données
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('newHerbTarget')}}" class="nav-link">
+                                    <i class="fas fa-plus-circle nav-icon text-success"></i>
+                                    <p> <i class="fas fa-seedling mr-2" style="color: seagreen"></i> New Target</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('newDrugTarget')}}" class="nav-link">
+                                    <i class="fas fa-plus-circle nav-icon text-success"></i>
+                                    <p> <i class="fas fa-capsules mr-2" style="color:#7d041e"></i> New Target</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <hr>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('drug.index')}}" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Drugs</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('herb.index') }}" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Herbs</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('target.index') }}" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Targets</p>
+                                </a>
+                            </li>
+                        </ul>
+
                 @endif
             </ul>
         </nav>

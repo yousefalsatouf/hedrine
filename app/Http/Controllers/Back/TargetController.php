@@ -8,10 +8,12 @@ use App\Http\Requests\TargetRequest;
 use App\Drug;
 use App\Herb;
 use App\Target;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\DB;
+use App\Notifications\NewTarget as NewTargetNotification;
 
 
 class TargetController extends Controller
@@ -23,7 +25,7 @@ class TargetController extends Controller
      */
     public function index()
     {
-       
+
         return view('admin.targets.index');
     }
 
@@ -56,6 +58,13 @@ class TargetController extends Controller
         $target->save();
         Alert::success('Ok !', 'Nouveau target ajouté avec succès');
 
+        $adminusers = User::with('roles')->where('role_id','1')->get();
+        //dd($adminusers);
+        foreach($adminusers as $adm) {
+            //Mail::to($adm)->send(new NewHerb($herb, $user));
+            $adm->notify(new NewTargetNotification($target));
+        }
+
         return back();
     }
 
@@ -65,7 +74,7 @@ class TargetController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    
+
     public function show($id)
     {
     }
@@ -113,7 +122,7 @@ class TargetController extends Controller
 
         return view('admin.targets.destroy', ['target' => $target]);
     }
-  
+
     public function details($id)
     {
         $target = Target::findOrFail($id);

@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 class Target extends Model
 {
+    use Notifiable;
+
     protected $fillable = ['name', 'long_name', 'user_id', 'notes','target_type_id'];
 
     public function user()
@@ -20,7 +23,7 @@ class Target extends Model
 
     public function herbs()
     {
-        return $this->belongsToMany(Herb::class, 'hinteractions')->withTimestamps(); 
+        return $this->belongsToMany(Herb::class, 'hinteractions')->withTimestamps();
     }
 
     public function drugs()
@@ -33,6 +36,6 @@ class Target extends Model
     }
     public function dinteractions()
     {
-        return $this->hasMany(Dinteraction::class, 'target_id', 'id'); 
+        return $this->hasMany(Dinteraction::class, 'target_id', 'id');
     }
 }

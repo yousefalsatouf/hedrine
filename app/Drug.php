@@ -4,9 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\DrugFamily;
+use Illuminate\Notifications\Notifiable;
 
 class Drug extends Model
 {
+    use Notifiable;
+
     protected $fillable = [
         'id','name', 'drug_families_id','route_id','user_id','atc_level_4s_id'
     ];
@@ -37,11 +40,11 @@ class Drug extends Model
     {
         return $this->belongsToMany(Target::class, 'dinteractions')->withTimestamps();
     }
-    
+
     public function dinteractions()
     {
         return $this->hasMany(Dinteraction::class);
     }
 
-    
+
 }

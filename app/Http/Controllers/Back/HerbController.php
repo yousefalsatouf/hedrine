@@ -56,8 +56,6 @@ class HerbController extends Controller
     public function store(HerbRequest $request)
     {
         $herb = new Herb;
-
-
         $herb->user_id = Auth::user()->id;
         $herb->name = $request->name;
         $herb->sciname = $request->sciname;

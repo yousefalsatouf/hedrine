@@ -61,6 +61,7 @@ class NewHerb extends Notification
         return [
                 'name' => $this->herb->name,
                 'sciname' => $this->herb->sciname,
+                'validated' => (integer) $this->herb->validated,
         ];
     }
 }

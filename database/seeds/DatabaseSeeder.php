@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(UserSeeder::class);
         $this->call(RoleSeeder::class);
         $this->call(UsersTableSeeder::class);
-        $this->call(HerbSeeder::class);
+        //$this->call(HerbSeeder::class);
         $this->call(DrugSeeder::class);
         $this->call(HerbFormSeeder::class);
         $this->call(DrugFamilySeeder::class);
@@ -38,6 +38,6 @@ class DatabaseSeeder extends Seeder
         $this->call(DinteractionHasEffectSeeder::class);
         $this->call(DinteractionHasReferenceSeeder::class);
 
-  
+
     }
 }

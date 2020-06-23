@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class Admin
+class AdminEditor
 {
     /**
      * Handle an incoming request.
@@ -17,7 +17,7 @@ class Admin
     {
         $user = $request->user();
 
-        if($user && $user->role_id == 1 ){
+        if($user && $user->role_id == 1 && $user->role_id == 3){
             return $next($request);
         }
 

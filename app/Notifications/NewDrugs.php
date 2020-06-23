@@ -8,7 +8,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use App\Drug;
 
-class NewDrug extends Notification
+class NewDrugs extends Notification
 {
     use Queueable;
     protected $drug;
