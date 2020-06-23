@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->smallInteger('is_active')->default(0);
             $table->smallInteger('denied')->nullable();
+            $table->integer('unsubscribe')->default('0');
             $table->rememberToken();
             $table->dateTime('created')->nullable();
             $table->timestamps();
