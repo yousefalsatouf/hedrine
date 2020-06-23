@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\Herb;
 use App\HerbHasForm;
+use App\Http\Requests\HerbRequest;
 use App\Drug;
 use App\Hinteraction;
 use App\Target;
@@ -15,6 +16,10 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use Symfony\Component\VarDumper\VarDumper;
+use App\Notifications\NewHerb as NewHerbNotification;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class HerbController extends Controller
 {
@@ -56,7 +61,8 @@ class HerbController extends Controller
      */
     public function create()
     {
-        //
+        $targets = Target::all();
+        return view('admin.herbs.form_add_herb', compact('targets'));
     }
 
     //create function to get data by char
@@ -113,9 +119,26 @@ class HerbController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(HerbRequest $request)
     {
-        return  view("herbs/test");
+        $herb = new Herb;
+        $herb->user_id = Auth::user()->id;
+        $herb->name = $request->name;
+        $herb->sciname = $request->sciname;
+        $herb->save();
+        $herb->herb_forms()->sync($request->forms, false);
+
+        Alert::success('Ok !', 'Nouvelle plante ajouté avec succès');
+
+        $adminusers = User::with('roles')->where('role_id','1')->get();
+        //dd($adminusers);
+        foreach($adminusers as $adm) {
+            //Mail::to($adm)->send(new NewHerb($herb, $user));
+            $adm->notify(new NewHerbNotification($herb));
+
+        }
+
+        return back();
     }
 
     /**

@@ -105,8 +105,8 @@ class AppServiceProvider extends ServiceProvider
         View::composer('dashboard.layout', function ($view) {
             $title = config('titles.' . Route::currentRouteName());
             $notifications = auth()->user()->unreadNotifications()->count();
-            $newHerbs = auth()->user()->unreadNotifications()->where('type','App\Notifications\NewHerb')->get();
-            $newDrugs = auth()->user()->unreadNotifications()->where('type','App\Notifications\NewDrug')->count();
+            $newHerbs = auth()->user()->unreadNotifications()->where('type','App\Notifications\NewHerb')->where('data->validated','<= 0')->count();
+            $newDrugs = auth()->user()->unreadNotifications()->where('type','App\Notifications\NewDrugs')->count();
             $newTargets = auth()->user()->unreadNotifications()->where('type','App\Notifications\NewTarget')->count();
             $newUsersCount = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->whereNull('denied')->count();
             $mostRecentUsers = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->whereNull('denied')->orderBy('email_verified_at', 'DESC')->paginate(5);

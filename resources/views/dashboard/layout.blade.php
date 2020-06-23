@@ -128,7 +128,7 @@
             <a href="{{ route('post.index') }}" class="dropdown-item dropdown-footer">See All Posts</a>
         </div>
       </li>
-      @if((auth()->user()->role_id == 1 )||(auth()->user()->role_id == 2 ))
+      @if((auth()->user()->role_id == 1 )||(auth()->user()->role_id == 2 ) )
         <!-- Notifications Dropdown Menu -->
 
             <li class="nav-item dropdown">
@@ -353,6 +353,10 @@
                             </li>
                         </ul>
                     </li>
+                @endif
+
+                @if ((auth()->user()->role_id == 1) || (auth()->user()->role_id == 3 ))
+
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link" style="background-color:green;" >
                             <i class="fas fa-database nav-icon"></i>

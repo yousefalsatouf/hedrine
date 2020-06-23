@@ -4,17 +4,21 @@ namespace App\Http\Controllers\Back;
 
 use App\HistoryHerbs;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+
 use App\Herb;
 use App\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\HerbRefuse;
 use App\Mail\HerbToUpdate;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\MessageRefuse as MessageRefuseRequest;
 use Symfony\Component\VarDumper\Cloner\Data;
+use Illuminate\{
+    Http\Request,
+    Notifications\DatabaseNotification,
+    Support\Facades\DB
+};
 
 
 class AdminController extends Controller
@@ -118,9 +122,9 @@ class AdminController extends Controller
     }
 
 
-
-    public function approve(Herb $herb) {
+    public function approve(Herb $herb, DatabaseNotification $notification) {
         $this->approved($herb);
+        $notification->markAsRead();
         Alert::success('Ok !', 'Nouvelle plante approuvée avec succès');
         return response()->json(['id' => $herb->id]);
 
