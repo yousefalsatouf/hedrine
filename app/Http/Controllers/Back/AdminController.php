@@ -125,22 +125,18 @@ class AdminController extends Controller
         return response()->json(['id' => $herb->id]);
 
     }
-    public function refuse(MessageRefuseRequest $request)
+    public function refuse(Request $request)
     {
-        $herb = $this->getById($request->id);
-
-        $msg = $request->get('message');
-
-        $username = null;
-
+        //echo 'ok';
+        $id = $request->id;
+        $msg = $request->msg;
+        $herb = $this->getById($id);
         $mail = $herb->user->email;
-
-        Mail::to($mail)->send(new HerbRefuse($herb->user,$msg));
+        Mail::to($mail)->send(new HerbRefuse($herb->user, $msg));
 
         $this->delete($herb);
-        Alert::success('Ok !', 'La plante a bien été refusée et le rédacteur va être notifié.');
-        return response()->json(['id' => $herb->id]);
-
+        Alert::success('Ok !', 'La plante a bien été refusée et le rédacteur va être refusée.');
+        return response()->json($id);
     }
     public function modifs(MessageRefuseRequest $request) {
 

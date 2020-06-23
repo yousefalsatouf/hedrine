@@ -1,10 +1,10 @@
 <script>
     $(() => {
-
         const toggleButtons = () => {
             $('#icon').toggle();
             $('#buttons').toggle();
-        }
+        };
+
         $('.alert-success button').click(() => {
             $('.alert-success').addClass('d-none').removeClass('show');
         });
@@ -38,7 +38,7 @@
             $('#messageUpdateModal').modal();
         });
 
-        $('#messageForm').submit((e) => {
+        /*$('#messageForm').submit((e) => {
             //alert('yah Iknow')
             let that = e.currentTarget;
             e.preventDefault();
@@ -51,8 +51,8 @@
                 data: $(that).serialize()
             })
             .done((data) => {
-
-                document.location.reload(false);
+                alert(data)
+                //document.location.reload(false);
             })
             .fail((data) => {
                 toggleButtons();
@@ -69,7 +69,7 @@
                     $('.alert-warning').removeClass('d-none').addClass('show');
                 }
             });
-        });
+        });*/
         $('#messageFormUp').submit((e) => {
             let that = e.currentTarget;
             e.preventDefault();

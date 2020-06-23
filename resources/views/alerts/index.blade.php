@@ -1,7 +1,6 @@
 @extends('dashboard.layout')
 
 @section('content_dashboard')
-
     @include('partials.messageUpdate', ['url' => route('admin.modifs')])
     @include('partials.alerts', ['title' => 'Plantes à valider'])
 
