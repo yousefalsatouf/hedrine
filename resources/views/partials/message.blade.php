@@ -18,7 +18,7 @@
 
                     <div class="form-group">
                         <label for="texte">Entrez ici votre raison de refus</label>
-                        <textarea class="form-control" id="message" name="message" rows="3" required>{{ old('texte', isset($value) ? $value : '') }}</textarea>
+                        <textarea class="form-control" id="refuse-message" name="message" rows="3" required>{{ old('texte', isset($value) ? $value : '') }}</textarea>
                         <div id="messageError" class="invalid-feedback"></div>
                     </div>
 
@@ -34,9 +34,9 @@
                 <div class="modal-footer">
                     <div id="buttons">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                        <button type="submit" id="send" class="btn btn-primary">Envoyer</button>
                     </div>
-                    <i id="icon" class="fas fa-spinner fa-pulse fa-2x" style="display: none"></i>
+                    <i id="icon-refuse" class="fas fa-spinner fa-pulse fa-2x" style="display: none"></i>
                 </div>
             </form>
         </div>
