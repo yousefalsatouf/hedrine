@@ -18,6 +18,8 @@ $(document).ready(function() {
     {
         //alert('clicked');
         //console.log($("#n").val());
+        $('#edit').hide();
+        $('i#icon-edit').show();
         $.ajax({
             type: 'POST',
             url: '/admin/quickEdit',
@@ -29,12 +31,16 @@ $(document).ready(function() {
             },
             success: function(data)
             {
-                let id = data[0].id;
+                //console.log(data[0]);
+                document.location.reload(true);
+                /*
+                * let id = data[0].id;
                 let name = data[0].name;
                 let sciname = data[0].sciname;
 
                 $('.herb-name-'+id).text(name);
                 $('.herb-sciname-'+id).text(sciname);
+                * */
             },
             error: function (error) {
                 console.log(error)

@@ -2,23 +2,23 @@
 
 namespace App\Http\Controllers\Back;
 
-use App\HistoryHerbs;
 use App\Http\Controllers\Controller;
 
 use App\Herb;
-use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\HerbRefuse;
 use App\Mail\HerbToUpdate;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\MessageRefuse as MessageRefuseRequest;
+
 use Symfony\Component\VarDumper\Cloner\Data;
 use Illuminate\{
     Http\Request,
     Notifications\DatabaseNotification,
     Support\Facades\DB
 };
+
 
 
 class AdminController extends Controller
@@ -64,26 +64,17 @@ class AdminController extends Controller
 
     public function quickEdit(Request $request)
     {
-
         $herb = Herb::where('validated', '!=', 1)->where('id', $request->id)->get();
-        $history = new HistoryHerbs;
-        $history->name = $herb->name;
-        $history->sciname = $herb->sciname;
-        $history->auhor = $herb->user->name;
-        $history->edit_by = Auth::user()->name;
-        $history->save();
+
 
         if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
         {
-        /*
-         * HistoryHerbs::create([
-            'name' => $herb->name,
-            'sciname' => $herb->sciname,
-            'author' => $herb->user->name,
-            'edit_by' => Auth::user()->name
-        ]);
-         *
-         * */
+            DB::table('history_herbs')->updateOrInsert([
+                'name' => $herb[0]->name,
+                'sciname' => $herb[0]->sciname,
+                'author' => $herb[0]->user->name,
+                'edit_by' => Auth::user()->name
+            ]);
 
             DB::table('herbs')->where('validated', '!=', 1)->where('id', $request->id)
                 ->update([
@@ -91,20 +82,9 @@ class AdminController extends Controller
                     'sciname' => $request->sciname,
                     //'validated' => 1
                 ]);
-
-            //Alert::success("C'est Ok");
+            Alert::success("C'est Ok");
         }
-        /*else
-        {
-            DB::table('herbs')->where('validated', '!=', 1)->where('id', $request->id)
-                ->update([
-                    'name' => $request->name,
-                    'sciname' => $request->sciname,
-                    //'validated' => -1
-                ]);
-        }*/
-        $data = Herb::where('validated', '!=', 1)->where('id', $request->id)->get();
-        return response()->json($data);
+        return response()->json($herb);
     }
 
     /**
@@ -139,7 +119,7 @@ class AdminController extends Controller
         Mail::to($mail)->send(new HerbRefuse($herb->user, $msg));
 
         $this->delete($herb);
-        Alert::success('Ok !', 'La plante a bien été refusée et le rédacteur va être refusée.');
+        Alert::success('Ok !', 'La plante a bien été refusée');
         return response()->json($id);
     }
     public function modifs(MessageRefuseRequest $request) {

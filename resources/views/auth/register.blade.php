@@ -66,7 +66,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        {{--<div class="form-group row">
                             <label for="tel2" class="col-md-4 col-form-label text-md-right">{{ __('tel2') }}</label>
 
                             <div class="col-md-6">
@@ -76,7 +76,7 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                            </div>--}}
                         </div>
 
                         <div class="form-group row">
@@ -165,7 +165,7 @@
                             </div>
                         </div>
 
-                        
+
                         <div class="form-group row mb-0" id="test">
                             <div class="col-md-6 offset-md-3">
                                 <small> </small>

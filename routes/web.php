@@ -4,8 +4,7 @@ use App\Herb;
 use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Monolog\Handler\RotatingFileHandler;
-use RealRashid\SweetAlert\Facades\Alert;
+
 
 
 /*
@@ -30,6 +29,7 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard/dashboard');
 });
+
 
 Route::get('/logout', 'SessionController@destroy')->name('logout');
 
@@ -161,6 +161,11 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function()
     Route::name('drug.update')->put('drug', 'DrugController@update');
     Route::name('drug.edit')->get('drug', 'DrugController@edit');
     Route::name('user.index')->get('user', 'UserController@index');
+
+    // unsubscribe user ...
+    Route::get('/unsubscribe/{id}', 'UserController@unsubscribe')->name('unsubscribe');
+    // subscribe user ...
+    Route::get('/subscribe/{id}', 'UserController@subscribe')->name('subscribe');
 
     Route::name('drug.details')->get('drug', 'DrugController@details');
     Route::resource('drug', 'DrugController')->parameters([
