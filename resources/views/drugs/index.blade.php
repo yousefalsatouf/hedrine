@@ -44,7 +44,7 @@
 					@foreach (isset($drug)?$drug:$drugs as $drug)
 					<tr>
 						<td>
-							<a href="{{route('drugs.details', $drug->id)}}" class="add_style" ><strong class="text-success">{{$drug->name}} <span>({{$drug->route}})</span></strong> </a>
+							<a href="{{route('drugs.details', $drug->id)}}" class="add_style" ><strong class="text-success">{{$drug->name}} <span>({{$drug->routes->name}})</span></strong> </a>
 						</td>
 					<td>{{$drug->drug_family->name}}</td>
 					</tr>
