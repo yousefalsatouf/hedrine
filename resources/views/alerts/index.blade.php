@@ -60,7 +60,7 @@
                                         <a class="btn btn-warning btn-sm" href="#" role="button" data-id="{{ $herb->id }}" data-toggle="tooltip" title="Modifier la plante">
                                             <i class="fas fa-eye" style="color:white"></i>
                                         </a>
-                                        <button class="btn btn-secondary btn-sm edit-modal" role="button" data-id="{{ $herb->id }}" data-name="{{$herb->name}}" data-sciname="{{$herb->sciname}}" data-toggle="tooltip" title="editeur rapide">
+                                        <button {{\Illuminate\Support\Facades\Auth::user()->role_id > 2? "disabled" : ""}} class="btn btn-secondary btn-sm edit-modal" role="button" data-id="{{ $herb->id }}" data-name="{{$herb->name}}" data-sciname="{{$herb->sciname}}" data-toggle="tooltip" title="editeur rapide">
                                             <i class="fas fa-edit" style="color:white"></i>
                                         </button>
                                     </td>
@@ -102,8 +102,11 @@
                             </div>
                         </form>
                         <div class="modal-footer">
-                            <button type="button"  class="btn actionBtn" data-dismiss="modal">
-                                <span id="footer_action_button" class='glyphicon'> <i class="fa fa-save"></i> </span>
+                            <button type="button"  class="btn actionBtn">
+                                <span id="footer_action_button" class='glyphicon'>
+                                    <i id="edit" class="fa fa-save"></i>
+                                    <i id="icon-edit" class="fas fa-spinner fa-pulse fa-2x" style="display: none"></i>
+                                </span>
                             </button>
                         </div>
                     </div>
