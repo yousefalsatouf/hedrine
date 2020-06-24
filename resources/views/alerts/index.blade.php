@@ -3,9 +3,7 @@
 @section('content_dashboard')
     @include('partials.messageUpdate', ['url' => route('admin.modifs')])
     @include('partials.alerts', ['title' => 'Plantes à valider'])
-
     <div class="container-fluid">
-
             <div class="col-12">
                 <div class="table responsive">
                     {{ csrf_field() }}
@@ -20,7 +18,6 @@
                             </tr>
                         </thead>
                         <tbody>
-
                             @foreach($noValidCount as $herb)
                                 <tr>
                                 <tr>

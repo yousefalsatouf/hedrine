@@ -105,7 +105,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
             @foreach ($posts as $post)
-                <a href="#" class="dropdown-item">
+                <a href="{{route('post.details', $post->id)}}" class="dropdown-item">
                     <!-- Message Start -->
                     <div class="media">
                         <div class="media-body @if ($post->important == 1) important @endif">
