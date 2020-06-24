@@ -105,7 +105,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
             @foreach ($posts as $post)
-                <a href="#" class="dropdown-item">
+                <a href="{{route('post.details', $post->id)}}" class="dropdown-item">
                     <!-- Message Start -->
                     <div class="media">
                         <div class="media-body @if ($post->important == 1) important @endif">
@@ -134,7 +134,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown" href="#">
                     <i class="far fa-bell fa-2x"></i>
-                    <span class="badge badge-warning navbar-badge" style="font-size: 15.5px" >{{ $notifications }}</span>
+                    <span class="badge badge-warning navbar-badge" style="font-size: 15.5px" >{{ $drugsNoValidCount->count() + $noValidCount->count() }}</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <span class="dropdown-item dropdown-header"> {{ $notifications }} Notifications</span>
@@ -148,8 +148,8 @@
                     </a>
                     <div class="dropdown-divider"></div>
                     <a href="{{ route('notification.index_drugs') }}" class="dropdown-item">
-                        <i class="fas fa-capsules mr-2" style="color:#7d041e"></i> {{ $newDrugs }}
-                        @if($newHerbs === 1) new Drug
+                        <i class="fas fa-capsules mr-2" style="color:#7d041e"></i> {{ $drugsNoValidCount->count() }}
+                        @if($newDrugs === 1) new Drug
                             @else new Drugs
                         @endif
                         <span class="float-right text-muted text-sm">3 mins</span>
