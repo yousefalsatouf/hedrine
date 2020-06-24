@@ -46,7 +46,7 @@
 									</div>
 									<div class="form-group">
 										<label for="sciname">Sciname</label>
-										<input type="text" class="form-control" id="sciname" name="sciname" required placeholder="Veuillez indiquer un nom du sciname pour la plante" value="{{isset($herb) ? $herb->sciname : ''}}"> 
+										<input type="text" class="form-control" id="sciname" name="sciname" required placeholder="Veuillez indiquer un nom du sciname pour la plante" value="{{isset($herb) ? $herb->sciname : ''}}">
 									</div>
 									<div class="form-group">
 										<label for="herb_form">Formes de la plante</label>
@@ -61,6 +61,9 @@
 							            	@endforeach
 							            </select>
 									</div>
+                                    <div class="form-group">
+                                        <label for="validated"> <input type="checkbox" name="validated" id="validated" {{\Illuminate\Support\Facades\Auth::user()->role_id <= 2?"checked" : ""}}> Validé</label>
+                                    </div>
 								</div>
 								<!-- /.card-body -->
 								<div class="card-footer">
@@ -85,7 +88,7 @@
 			</div>
 		</div>
     </div>
-    
+
 
 @endsection
 

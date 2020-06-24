@@ -57,6 +57,7 @@ class DrugController extends Controller
         $drug->name = $request->name;
         $drug->drug_families_id = $request->drug_families_id;
         $drug->route_id = $request->route_id;
+        $request->validated? $drug->validated = 1 : $drug->validated = 0;
         $drug->atc_level_4s_id = $request->atc_level_4s_id;
 
         $drug->save();
@@ -70,7 +71,6 @@ class DrugController extends Controller
             $adm->notify(new NewDrugNotification($drug));
 
         }
-
         return back();
     }
 

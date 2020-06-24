@@ -55,10 +55,12 @@ class HerbController extends Controller
      */
     public function store(HerbRequest $request)
     {
+        //dd($request->validated);
         $herb = new Herb;
         $herb->user_id = Auth::user()->id;
         $herb->name = $request->name;
         $herb->sciname = $request->sciname;
+        $request->validated? $herb->validated = 1 : $herb->validated = 0;
         $herb->save();
         $herb->herb_forms()->sync($request->forms, false);
 
