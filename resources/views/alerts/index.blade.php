@@ -84,25 +84,25 @@
                         <form class="form-horizontal" role="form">
                             <div class="form-group">
                                 <div class="form-group">
-                                    <label class="control-label col-sm-2" for="id">ID:</label>
+                                    <label class="control-label col-sm-2 text-success" for="id">ID:</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="fid" disabled>
+                                        <input type="text" style="border: 0;border-bottom: 1px solid green"  class="form-control" id="fid" disabled>
                                     </div>
                                 </div>
-                                <label class="control-label col-sm-2" for="name">Name:</label>
+                                <label class="control-label col-sm-2 text-success" for="name">Name:</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="n">
+                                    <input type="text" style="border: 0;border-bottom: 1px solid green"  class="form-control" id="n">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-sm-2" for="sciname">Sciname:</label>
+                                <label class="control-label col-sm-2 text-success" for="sciname">Sciname:</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="s">
+                                    <input type="text" style="border: 0;border-bottom: 1px solid green"  class="form-control" id="s">
                                 </div>
                             </div>
                         </form>
                         <div class="modal-footer">
-                            <button type="button"  class="btn actionBtn">
+                            <button type="button" style="border: 0;border-bottom: 1px solid green"   class="btn actionBtn">
                                 <span id="footer_action_button" class='glyphicon'>
                                     <i id="edit" class="fa fa-save"></i>
                                     <i id="icon-edit" class="fas fa-spinner fa-pulse fa-2x" style="display: none"></i>

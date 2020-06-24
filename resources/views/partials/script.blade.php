@@ -38,38 +38,6 @@
             $('#messageUpdateModal').modal();
         });
 
-        /*$('#messageForm').submit((e) => {
-            //alert('yah Iknow')
-            let that = e.currentTarget;
-            e.preventDefault();
-            $('#message').removeClass('is-invalid');
-            $('.invalid-feedback').html('');
-            toggleButtons();
-            $.ajax({
-                method: $(that).attr('method'),
-                url: $(that).attr('action'),
-                data: $(that).serialize()
-            })
-            .done((data) => {
-                alert(data)
-                //document.location.reload(false);
-            })
-            .fail((data) => {
-                toggleButtons();
-                if(data.status == 422) {
-                    $.each(data.responseJSON.errors, function (i, error) {
-                        $(document)
-                            .find('[name="' + i + '"]')
-                            .addClass('is-invalid')
-                            .next()
-                            .append(error[0]);
-                    });
-                } else {
-                    $('#messageModal').modal('hide');
-                    $('.alert-warning').removeClass('d-none').addClass('show');
-                }
-            });
-        });*/
         $('#messageFormUp').submit((e) => {
             let that = e.currentTarget;
             e.preventDefault();
