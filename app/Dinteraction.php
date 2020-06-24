@@ -12,7 +12,7 @@ class Dinteraction extends Model
     }
     public function users()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function forces()
@@ -35,5 +35,11 @@ class Dinteraction extends Model
     {
         return $this->belongsTo(Target::class,'target_id');
 
+    }
+
+    public function dinteraction_has_effects()
+
+    {
+        return $this->hasMany(DinteractionHasEffect::class);
     }
 }
