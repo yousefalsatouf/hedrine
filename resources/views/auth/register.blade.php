@@ -65,20 +65,6 @@
                                 @enderror
                             </div>
                         </div>
-
-                        {{--<div class="form-group row">
-                            <label for="tel2" class="col-md-4 col-form-label text-md-right">{{ __('tel2') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="tel2" type="text" class="form-control @error('tel2') is-invalid @enderror" name="tel2" value="{{ old('tel2') }}"  autocomplete="name" autofocus>
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>--}}
-                        </div>
-
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}<i class="fa fa-info-circle info text-danger" id="required-msg"></i></label>
 
@@ -115,7 +101,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-1! offset-md-1">
-                                <blockquote class="text-info">
+                                <blockquote class="text-info text-justify" style="max-width: 91%">
                                     <i class="fa fa-info-circle info text-danger" id="required-msg"></i>
                                     « L'Université libre de Bruxelles traite vos données afin de permettre votre inscription sur ce site. Pour en savoir plus sur la manière dont vos données personnelles sont traitées et conservées ainsi que pour exercer vos droits,
                                     <button type="button" class="btn btn-outline-light text-dark awesome-font" data-toggle="modal" data-target="#exampleModal">reportez-vous à l'information disponible ici </button>»
@@ -143,7 +129,7 @@
                                                 <hr>
                                                 <div class="condtions">
                                                     <!-- Button trigger modal -->
-                                                    <label for="RGPD" id="checkboxContent">
+                                                    <label for="check-me" id="checkboxContent">
                                                         <input type="checkbox" name="RGPD" id="check-me" class="@error('RGPD') is-invalid @enderror" required value="1">  En cochant cette case, j’accepte la politique de confidentialité de ce site
                                                     </label>
                                                     @error('RGPD')
@@ -164,13 +150,10 @@
                                 </div>
                             </div>
                         </div>
-
-
                         <div class="form-group row mb-0" id="test">
                             <div class="col-md-6 offset-md-3">
                                 <small> </small>
                                 {!! NoCaptcha::display() !!}
-
                                 @if ($errors->has('g-recaptcha-response'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
@@ -178,10 +161,8 @@
                                 @endif
                             </div>
                         </div>
-
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <small> </small>
                                 <button type="submit" id="registerBtn" class="btn btn-outline-success register">
                                     {{ __('Register') }}
                                 </button>
