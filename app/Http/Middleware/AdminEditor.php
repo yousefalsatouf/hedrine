@@ -17,10 +17,11 @@ class AdminEditor
     {
         $user = $request->user();
 
-        if($user && $user->role_id == 1 && $user->role_id == 3){
+        if($user && $user->role_id == 3){
             return $next($request);
+
         }
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('error','You have no admin access');
     }
 }
