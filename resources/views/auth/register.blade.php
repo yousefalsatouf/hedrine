@@ -9,7 +9,7 @@
 
                 <div class="card-body">
                     <div class="alert alert-info alert-dismissible fade show text-danger">
-                        <strong><i class="fa fa-info-circle info text-danger" id="required-msg"></i></strong> champ obligatoire!
+                        <strong><i class="fa fa-info-circle info text-danger" id="required-msg"></i></strong> Champs obligatoires!
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
                     </div>
                     <form method="POST" action="{{ route('register') }}">

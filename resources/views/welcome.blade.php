@@ -11,12 +11,23 @@
         @include('cookieConsent::index')
     </head>
     <body>
-        <header>
 
-        </header>
+            <div class="container-fluid" style="padding-top: 2rem;">
+                <div class="row justify-content-end ">
+                    <div class="col-3">
+                        <img src="{{ asset('images/ulb-icon.png') }}" class="img-fluid d-block mx-auto mx-md-0" alt="Responsive image">
+                    </div>
+                     <div class="col-5">
+                        &nbsp;&nbsp;
+                     </div>
+                    <div class="col-4 ">
+                        <img src="{{ asset('images/universite-grenoble.png') }}" class="img-fluid" style="width: 45%;margin-left:12rem" alt="Responsive image">
+                    </div>
+                </div>
+            </div>
+
         <div class="container-fluid mb-3">
            <div class="text-center">
-                <img src="{{ asset('images/ulb-icon.png') }}" class="img-fluid d-block mx-auto mx-md-0" alt="Responsive image">
                 <img src="{{ asset('images/hedrine6b.png') }}" class="img-fluid" alt="Responsive image">
             </div>
         </div>

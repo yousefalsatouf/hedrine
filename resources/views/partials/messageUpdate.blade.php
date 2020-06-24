@@ -17,8 +17,8 @@
                     <input id="id" name="id" type="hidden" value="{{ isset($herb) ? $herb->id : '' }}">
 
                     <div class="form-group">
-                        <label for="texte">Précisez ici les choses à modifier</label>
-                        <textarea class="form-control" id="message" name="message" rows="3" required>{{ old('texte', isset($value) ? $value : '') }}</textarea>
+                        <label for="texte" class="text-success">Précisez ici les choses à modifier</label>
+                        <textarea style="border: 0;border-bottom: 1px solid green" class="form-control" id="message" name="message" rows="3" required>{{ old('texte', isset($value) ? $value : '') }}</textarea>
                         <div id="messageError" class="invalid-feedback"></div>
                     </div>
 
@@ -33,8 +33,8 @@
                 </div>
                 <div class="modal-footer">
                     <div id="buttons">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Annuler</button>
+                        <button type="submit" class="btn btn-outline-success"><i class="fa fa-paper-plane"></i></button>
                     </div>
                     <i id="icon" class="fas fa-spinner fa-pulse fa-2x" style="display: none"></i>
                 </div>

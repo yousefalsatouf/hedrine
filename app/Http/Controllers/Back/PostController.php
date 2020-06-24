@@ -10,6 +10,7 @@ use App\User;
 use App\Notifications\NewHerb as NewHerbNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class PostController extends Controller
@@ -21,8 +22,9 @@ class PostController extends Controller
      */
     public function index()
     {
+        $posts = Post::all();
 
-        return view('admin.postes.index');
+        return view('admin.postes.index', compact('posts'));
     }
 
     /**
@@ -119,10 +121,18 @@ class PostController extends Controller
         return view('admin.postes.valid_form',$postTovalid);
     }
 
+    public function showSingle($id)
+    {
+        dd($id);
+    }
+
     public function details($id)
     {
-        $post = Post::findOrFail($id);
 
-        return view('admin.postes.show',$post);
+        $post = DB::table('posts')->where('id', $id)->get();
+        $user = User::whereId($post[0]->user_id)->first();
+        $username = $user->name." ".$user->firstname;
+
+        return view('admin.postes.show',compact('post', 'username'));
     }
 }

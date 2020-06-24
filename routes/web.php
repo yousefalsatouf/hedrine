@@ -140,9 +140,10 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
     Route::name('drug.destroy.alert')->get('drug/{drug}', 'DrugController@alert');
 
     //Pour Post
+    Route::name('post.index')->get('post', 'PostController@index');
     Route::name('post.update')->put('post', 'PostController@update');
     Route::name('post.edit')->get('post', 'PostController@edit');
-    Route::name('post.details')->get('post', 'PostController@details');
+    Route::name('post.details')->get('/post/{id}', 'PostController@details');
     Route::resource('post', 'PostController')->parameters([
         'post' => 'post'
       ]);
