@@ -1,12 +1,6 @@
 @extends('dashboard.layout')
 
 @section('content_dashboard')
-<div class="row justify-content-end" style="padding-bottom: 0.75rem">
-	@if(Route::currentRouteName() === 'dinteraction.index')
-		<a class="btn btn-light" href="{{ route('dinteraction.create') }}" role="button">Créer un nouvelle dinteraction</a>
-	@endif
-</div>
-
 <div class="col-12">
 	<div class="card-body " style="background-color: #fff">
 		<table id="example1" class="table table-striped table-sm">

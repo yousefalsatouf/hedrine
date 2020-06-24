@@ -40,6 +40,6 @@ class Dinteraction extends Model
     public function dinteraction_has_effects()
 
     {
-        return $this->hasMany(DinteractionHasEffect::class);
+        return $this->hasMany(DinteractionHasEffect::class, 'dinteraction_id', 'id');
     }
 }

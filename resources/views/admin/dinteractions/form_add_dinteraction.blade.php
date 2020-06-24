@@ -54,7 +54,6 @@
 													@endif
 												</select>
 										</div>
-										
 										<div class="form-group">
 											<label for="target_id">Target Name</label>
 											<select name="target_id" class="form-control">
@@ -73,30 +72,44 @@
 										</div>
 
 										<div class="form-group">
-											<label for="target_id"> Effect</label>
-											<select name="target_id" class="form-control">
-												@if(Route::currentRouteName() === 'dinteraction.create')
-													<option value="" disabled selected>Veuillez indiquer un effet pour l'interaction Drug </option>
-												@foreach ($dinteractions->dinteraction_has_effects as $dinteraction_has_effect)
-													@foreach ($dinteraction_has_effect->effects as $effect)
-														<option value="{{$effect->id}}">{{$effect->name}}</option>
-													@endforeach
-													
+											<label for="herb_form">Effects</label>
+											<select class="form-control herbForm" id="forms" name="forms[]" multiple >
+												@foreach ($effects as $effect)
+													{{-- @if(Route::currentRouteName() === 'dinteraction.create')
+								            		<option value="{{ $effect->id }}" {{ in_array($effect->id, old('forms') ?: []) ? 'selected' : '' }}>{{ $effect->name }}</option>
+								            		@else --}}
+								            		<option style="color:black" value="{{ $effect->id }}" {{ in_array($effect->id, old('forms') ?: $dinteraction->effects->pluck('id')->toArray()) ? 'selected' : '' }}>{{ $effect->name }}
+								            		</option>
+								            		{{-- @endif --}}
+								            	@endforeach
+								            </select>
+										</div>
+										<div class="form-group">
+											<label for="force_id">Force</label>
+											<select name="force_id" class="form-control">
+												<option></option>
+												@foreach ($forces as $force)
+													<option value="{{$force->id}}" @if($dinteraction->force_id == $force->id) selected @endif>{{$force->name}}</option>
 												@endforeach
-												@else
-													<option></option>
-													@foreach ($dinteractions->dinteraction_has_effects as $dinteraction_has_effect)
-														@foreach ($dinteraction_has_effect ->effects as $effect)
-															<option value="{{$effect->id}}" @if($dinteraction->interaction_has_references->effects_id == $effect->id) selected @endif>{{$effect->name}}
-															</option>
-														@endforeach
-													
-												@endforeach
-												@endif
 											</select>
 										</div>
-										
-                                        
+										<div class="form-group">
+											<label for="notes">Notes du poste</label>
+											<textarea rows="10" cols="15" class="form-control" id="notes" name="notes" placeholder="Veuillez introduire une note pour la target" required>{{ isset($dinteraction) ? $dinteraction->notes : ''}}</textarea>
+										</div>
+										<div class="form-group">
+											<label for="herb_form">Références</label>
+											<select class="form-control herbForm" id="forms" name="forms[]" multiple >
+												@foreach ($references as $reference)
+													{{-- @if(Route::currentRouteName() === 'dinteraction.create')
+								            		<option value="{{ $effect->id }}" {{ in_array($effect->id, old('forms') ?: []) ? 'selected' : '' }}>{{ $effect->name }}</option>
+								            		@else --}}
+								            		<option style="color:black" value="{{ $reference->id }}" {{ in_array($reference->id, old('forms') ?: $dinteraction->references->pluck('id')->toArray()) ? 'selected' : '' }}>{{ $reference->name }}
+								            		</option>
+								            		{{-- @endif --}}
+								            	@endforeach
+								            </select>
+										</div>
 									</div>
 									<!-- /.card-body -->
 									<div class="card-footer">
