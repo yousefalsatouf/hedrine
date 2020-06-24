@@ -104,43 +104,9 @@ Route::prefix('admin')->middleware('admin')->group(function() {
 
 });
 
-Route::prefix('editor')->middleware('admineditor')->group(function() {
-     // Route pour drugs
-     Route::name('drug.update')->put('drug', 'DrugController@update');
-     Route::name('drug.edit')->get('drug', 'DrugController@edit');
-     Route::name('drug.details')->get('drug', 'DrugController@details');
-     Route::resource('drug', 'DrugController')->parameters([
-         'drug' => 'drug'
-       ]);
-     Route::name('drug.destroy.alert')->get('drug/{drug}', 'DrugController@alert');
 
 
-    //Route pour plante
-    Route::name('herb.update')->put('herb', 'HerbController@update');
-    Route::name('herb.edit')->get('herb', 'HerbController@edit');
-    Route::name('herb.index')->get('herb', 'HerbController@index');
-    Route::name('herb.show')->get('herb', 'HerbController@show');
-
-    Route::name('herb.details')->get('herb', 'HerbController@details');
-    Route::resource('herb', 'HerbController')->parameters([
-        'herb' => 'herb'
-    ]);
-
-    //Route pour target
-    Route::name('target.update')->put('target', 'TargetController@update');
-    Route::name('target.edit')->get('target', 'TargetController@edit');
-    Route::name('target.index')->get('target', 'TargetController@index');
-
-    Route::name('target.details')->get('target', 'TargetController@details');
-    Route::resource('target', 'TargetController')->parameters([
-        'target' => 'target'
-      ]);
-    Route::name('target.destroy.alert')->get('target/{target}', 'TargetController@alert');
-
-});
-
-Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function() {
-
+Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function() {
 
     // Route pour Admins
     Route::name('admin')->get('/','AdminController@index');

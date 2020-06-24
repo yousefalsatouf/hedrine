@@ -261,26 +261,26 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('herbs.index') }}" class="nav-link">
+                            <a href="{{ route('herb.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Plantes</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('drugs.index') }}" class="nav-link">
+                            <a href="{{ route('drug.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>DCI</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('targets.index') }}" class="nav-link">
+                            <a href="{{ route('target.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Cas Rapporté et Mécanisme</p>
                             </a>
                         </li>
                     </ul>
                 </li>
-                @if (auth()->user()->role_id == 1)
+                @if ((auth()->user()->role_id == 1 )||(auth()->user()->role_id == 2) ||(auth()->user()->role_id == 3 ))
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link" style="background-color:green;" >
                             <i class="fas fa-database nav-icon"></i>
@@ -330,6 +330,8 @@
                             </li>
                         </ul>
                     </li>
+                @endif
+                @if (auth()->user()->role_id == 1)
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link" style="background-color:green;" >
                             <i class="fas fa-unlock-alt nav-icon"></i>

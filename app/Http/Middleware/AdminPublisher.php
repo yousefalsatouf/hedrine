@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class Admin
+class AdminPublisher
 {
     /**
      * Handle an incoming request.
@@ -17,8 +17,9 @@ class Admin
     {
         $user = $request->user();
 
-        if($user && $user->role_id == 1 || $user->role_id == 2 || $user->role_id == 3  ){
+        if($user && $user->role_id == 2){
             return $next($request);
+
         }
 
         return redirect()->route('home')->with('error','You have no admin access');
