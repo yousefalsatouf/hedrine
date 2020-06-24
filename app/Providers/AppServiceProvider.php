@@ -99,6 +99,9 @@ class AppServiceProvider extends ServiceProvider
             $view->with('noValidCount',Herb::where('validated','<=',0)->get());
         });
         view()->composer('*', function ($view) {
+            $view->with('drugsNoValidCount',Drug::where('validated','<=',0)->get());
+        });
+        view()->composer('*', function ($view) {
             $view->with('validatedHerb',Herb::where('validated',1)->get());
         });
 
@@ -106,7 +109,7 @@ class AppServiceProvider extends ServiceProvider
             $title = config('titles.' . Route::currentRouteName());
             $notifications = auth()->user()->unreadNotifications()->count();
             $newHerbs = auth()->user()->unreadNotifications()->where('type','App\Notifications\NewHerb')->where('data->validated','<= 0')->count();
-            $newDrugs = auth()->user()->unreadNotifications()->where('type','App\Notifications\NewDrugs')->count();
+            $newDrugs = auth()->user()->unreadNotifications()->where('type','App\Notifications\NewDrugs')->where('data->validated','<= 0')->count();
             $newTargets = auth()->user()->unreadNotifications()->where('type','App\Notifications\NewTarget')->count();
             $newUsersCount = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->whereNull('denied')->count();
             $mostRecentUsers = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->whereNull('denied')->orderBy('email_verified_at', 'DESC')->paginate(5);
