@@ -5,7 +5,7 @@
 @section('content_dashboard')
 	<div class="row">
 		<div class="col-12">
-			<section class="content"> 
+			<section class="content">
 				<div class="container-fluid">
 					@if(session()->has('message'))
 						<div class="col s12">
@@ -56,7 +56,7 @@
 														<option value="{{$drug_familie->id}}" @if($drug->drug_families_id == $drug_familie->id) selected @endif>{{$drug_familie->name}}</option>
 													@endforeach
 												@endif
-											</select> 
+											</select>
 										</div>
 										<div class="form-group">
 											<label for="route_id">Route</label>
@@ -90,8 +90,10 @@
 												@endif
 											</select>
 										</div>
+                                        <div class="form-group">
+                                            <label for="validated"> <input type="checkbox" name="validated" id="validated" {{\Illuminate\Support\Facades\Auth::user()->role_id <= 2?"checked" : ""}}> Validé</label>
+                                        </div>
 									</div>
-								</div> 
 									<!-- /.card-body -->
 									<div class="card-footer">
 										<div class="control-group">
