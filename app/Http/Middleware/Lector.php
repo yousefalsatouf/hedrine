@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class Admin
+class Lector
 {
     /**
      * Handle an incoming request.
@@ -15,12 +15,13 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        $user = $request->user();
 
-        if($user && $user->role_id == 1 || $user->role_id == 2 || $user->role_id == 3 || $user->role_id == 4 ){
+
+        if(Auth::check() && Auth::user()->role_id == 4){
             return $next($request);
+
         }
 
-        return redirect()->route('home')->with('error','You have no admin access');
+        return redirect()->route('welcome')->with('error','You have no admin access');
     }
 }

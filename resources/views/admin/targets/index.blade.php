@@ -17,7 +17,9 @@
 					<th>Notes</th>
 					<th>Type</th>
 					<th>Editors</th>
-					<th> Action</th>
+                    @if((auth()->user()->role_id == 1) || (auth()->user()->role_id == 2) || (auth()->user()->role_id == 3))
+                    <th> Actions</th>
+                    @endif
 				</tr>
 			</thead>
 			<tbody>
@@ -37,12 +39,15 @@
 					</td>
 					<td>
 						{{$target->user->name}}
-					</td>
-					<td>
-						<div class="btn-group float-right">
-							<a class="btn btn-outline-success text align-self-center p-2" href="{{ route('target.edit',$target->id) }}" role="button"><i class="fa fa-edit"></i></a> &nbsp; &nbsp;
-						</div>
-					</td>
+                    </td>
+                    @if((auth()->user()->role_id == 1) || (auth()->user()->role_id == 2) || (auth()->user()->role_id == 3))
+                        <td>
+                            <div class="btn-group float-right">
+                                <a class="btn btn-outline-success text align-self-center p-2" href="{{ route('target.edit',$target->id) }}" role="button"><i class="fa fa-edit"></i></a> &nbsp; &nbsp;
+                            </div>
+                        </td>
+                    @endif
+
 				</tr>
 				@endforeach
 			</tbody>

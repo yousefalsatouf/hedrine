@@ -27,6 +27,7 @@ class AdminController extends Controller
     protected $herb;
 
     public function __constuct(Herb $herb) {
+        $this->middleware('admin');
       $this->herb = $herb;
     }
     public function index(Request $request) {
