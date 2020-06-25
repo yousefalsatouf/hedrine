@@ -76,11 +76,6 @@ class UserController extends Controller
         return back();
     }
 
-    public function unsubscribe($id)
-    {
-        dd('hh');
-    }
-
     /**
      * Display the specified resource.
      *
