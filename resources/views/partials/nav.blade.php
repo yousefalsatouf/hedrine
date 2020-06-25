@@ -133,12 +133,11 @@
         <div class="dropdown-menu">
             <a class="dropdown-item" href="{{ action('SessionController@destroy') }}">
                 <i class="left fas fa-sign-out-alt"></i>
-                logout
+                Se déconnecter
             </a>
-            <a class="dropdown-item" href="">
-                <i style="color: red" class="left fas fa-times-circle"></i>
-                désinscription
-            </a>
+            @if(\Illuminate\Support\Facades\Auth::user()->role_id === 4)
+                <a class="dropdown-item" href="{{route('unsubscribe', \Illuminate\Support\Facades\Auth::id())}}"><i style="color: red" class="left fas fa-times-circle"></i> Désinscription</a>
+            @endif
         </div>
     </div>
 </nav>
