@@ -33,18 +33,18 @@ $(document).ready(function() {
             {
                 //console.log(data[0]);
                 document.location.reload(true);
-                /*
-                * let id = data[0].id;
-                let name = data[0].name;
-                let sciname = data[0].sciname;
-
-                $('.herb-name-'+id).text(name);
-                $('.herb-sciname-'+id).text(sciname);
-                * */
             },
             error: function (error) {
                 console.log(error)
             }
         });
     });
+
+    //unsubscribe part ...
+    $('.modal-footer').on('click', '#unsubscribe', function()
+    {
+        $('#unsubscribe').html('<i class="fa fa-spinner fa-pulse" id="pending-unsubscribe"></i>');
+        $('#pending-unsubscribe').show();
+    });
+
 });

@@ -61,9 +61,11 @@
 							            	@endforeach
 							            </select>
 									</div>
-                                    <div class="form-group">
-                                        <label for="validated"> <input type="checkbox" name="validated" id="validated" {{\Illuminate\Support\Facades\Auth::user()->role_id <= 2?"checked" : ""}}> Validé</label>
-                                    </div>
+                                    @if(\Illuminate\Support\Facades\Auth::user()->role_id <=2)
+                                        <div class="form-group">
+                                            <label for="validated"> <input type="checkbox" name="validated" id="validated" checked> Validé</label>
+                                        </div>
+                                    @endif
 								</div>
 								<!-- /.card-body -->
 								<div class="card-footer">

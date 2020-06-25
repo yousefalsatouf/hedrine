@@ -88,12 +88,11 @@ Route::post('posts/add_post','PostController@create')->name('posts.create');
 
 Route::get('drug_families/details/{id}','DrugFamilyController@details')->name('drugs.family');
 
-
+// unsubscribe user ...
+Route::get('/unsubscribe', 'UnsubscribeController@unsubscribe')->name('unsubscribe');
 
 //N.Thierry Admin route
 Route::view('admin','admin.layout');
-
-
 
 //Message
 Route::middleware('ajax')->group(function () {
@@ -109,7 +108,6 @@ Route::prefix('admin')->middleware('admin')->group(function() {
     // store new herb/drug target
     Route::name('newHerbTarget.store')->post('new_herb_target_store', 'HinteractionController@store');
     Route::name('newDrugTarget.store')->post('new_drug_target_store', 'DinteractionController@store');
-
 });
 
 
@@ -121,7 +119,7 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
     Route::get('/', 'AdminController@herbs')->name('admin.herbs');
     Route::prefix('herb')->group(function () {
         Route::middleware('ajax')->group(function() {
-            Route::post('approve/{herb}','AdminController@approve')->name('admin.approve');
+            Route::post('/approve','AdminController@approve')->name('admin.approve');
             Route::post('/modifs','AdminController@modifs')->name('admin.modifs');
         });
     });
@@ -130,16 +128,13 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
     Route::post('/quickEdit', 'AdminController@quickEdit');
     Route::post('/refuse','AdminController@refuse')->name('admin.refuse');
 
-
     // Route pour users
     Route::name('drug.update')->put('drug', 'DrugController@update');
     Route::name('drug.edit')->get('drug', 'DrugController@edit');
     Route::name('user.index')->get('user', 'UserController@index');
 
-    // unsubscribe user ...
-    Route::get('/unsubscribe/{id}', 'UserController@unsubscribe')->name('unsubscribe');
     // subscribe user ...
-    Route::get('/subscribe/{id}', 'UserController@subscribe')->name('subscribe');
+    //Route::get('/subscribe/{id}', 'UserController@subscribe')->name('subscribe');
 
     Route::name('drug.details')->get('drug', 'DrugController@details');
     Route::resource('drug', 'DrugController')->parameters([

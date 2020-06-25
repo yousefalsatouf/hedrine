@@ -164,7 +164,6 @@
                         <span class="float-right text-muted text-sm">2 days</span>
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                 </div>
             </li>
       @endif
@@ -199,20 +198,39 @@
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <a class="dropdown-item" href="{{ action('SessionController@destroy') }}">
                     <i class="left fas fa-sign-out-alt"></i>
-                    logout
+                    Se déconnecter
                 </a>
-                @if(\Illuminate\Support\Facades\Auth::user()->role_id >= 2)
-                    @if(\Illuminate\Support\Facades\Auth::user()->unsubscribe)
-                        <a class="dropdown-item" href="{{route('subscribe', \Illuminate\Support\Facades\Auth::id())}}"><i style="color: green" class="left fas fa-check-circle"></i>inscription</a>
-                    @else
-                        <a class="dropdown-item" href="{{route('unsubscribe', \Illuminate\Support\Facades\Auth::id())}}"><i style="color: red" class="left fas fa-times-circle"></i>désinscription</a>
-                    @endif
+                @if(\Illuminate\Support\Facades\Auth::user()->role_id === 4)
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#unsubscribeModal"><i style="color: red" class="left fas fa-times-circle"></i> Désinscription</a>
                 @endif
             </div>
         </li>
     </ul>
   </nav>
   <!-- /.navbar -->
+    <!-- Modal -->
+    <div class="modal fade" id="unsubscribeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header  bg-danger ">
+                    <strong class="modal-titletext-light" id="exampleModalLabel"> Attention !</strong>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <b class="text-danger">Votre compte et vos données vont supprimer !</b>
+                    <strong> voulez-vous  vraiment désinscrire?</strong>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Non</button>
+                    <a href="{{route('unsubscribe')}}" id="unsubscribe" style="border: 0; border-bottom: 1px solid red" class="btn btn-outline-danger">
+                         Oui, Je confirme!
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">

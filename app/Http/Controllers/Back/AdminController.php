@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Back;
 use App\Http\Controllers\Controller;
 
 use App\Herb;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\HerbRefuse;
@@ -95,47 +96,45 @@ class AdminController extends Controller
      */
     public function getById($id)
     {
-        return Herb::findOrFail($id);
-    }
-    public function getByIdBy($id)
-    {
-        return Herb::findOrFail($id);
+        return DB::table('herbs')->where('id', '=', $id)->get();
     }
 
+    public function approve(Request $request) {
 
-    public function approve(Herb $herb, DatabaseNotification $notification) {
-        $this->approved($herb);
-        $notification->markAsRead();
+        //echo $request->id;
+        DB::table('herbs')->where('id', '=', $request->id)->update(['validated'=>1]);
+
         Alert::success('Ok !', 'Nouvelle plante approuvée avec succès');
-        return response()->json(['id' => $herb->id]);
+        return response()->json(['id' => $request->id]);
 
     }
     public function refuse(Request $request)
     {
-        //echo 'ok';
         $id = $request->id;
         $msg = $request->msg;
-        $herb = $this->getById($id);
+
+        $herb = DB::table('herbs')->where('id', '=', $id)->get();
+
         $mail = $herb->user->email;
         Mail::to($mail)->send(new HerbRefuse($herb->user, $msg));
 
-        $this->delete($herb);
+        DB::table('herbs')->where('id', '=', $id)->delete();
+
         Alert::success('Ok !', 'La plante a bien été refusée');
-        return response()->json($id);
+
+        return response()->json(['id' => $herb]);
     }
-    public function modifs(MessageRefuseRequest $request) {
+    public function modifs(Request $request) {
 
-        $herb = $this->getById($request->id);
-         Alert($herb->user);
-        $msg = $request->get('message');
-
-        $username = null;
+        $id = $request->id;
+        $msg = $request->msg;
+        $herb = $this->getById($id);
 
         $mail = $herb->user->email;
-
         Mail::to($mail)->send(new HerbToUpdate($herb->user,$msg));
 
         $this->modifTodo($herb);
+
         Alert::success('Ok !', 'La plante doit etre corrigée et le rédacteur va être notifié.');
         return response()->json(['id' => $herb->id]);
 
