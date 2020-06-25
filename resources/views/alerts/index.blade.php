@@ -2,7 +2,6 @@
 
 @section('content_dashboard')
     @include('partials.messageUpdate', ['url' => route('admin.modifs')])
-    @include('partials.alerts', ['title' => 'Plantes à valider'])
     <div class="container-fluid">
             <div class="col-12">
                 <div class="table responsive">
@@ -47,7 +46,7 @@
                                         {{ date_create($herb->created_at)->format('d-m-Y') }}
                                     </td>
                                     <td class="">
-                                        <a class="btn btn-success btn-sm" href="{{ route('admin.approve', $herb->id) }}" role="button" data-toggle="tooltip" title="Approuver la plante">
+                                        <a class="btn btn-success text-light btn-sm" data-url="{{ route('admin.approve') }}" data-id="{{$herb->id}}" role="button" data-toggle="tooltip" title="Approuver la plante">
                                             <i class="fas fa-thumbs-up"></i>
                                         </a>
                                         <i class="fas fa-spinner fa-pulse fa-lg" style="display: none"></i>
@@ -102,7 +101,7 @@
                             <button type="button" style="border: 0;border-bottom: 1px solid green"   class="btn actionBtn">
                                 <span id="footer_action_button" class='glyphicon'>
                                     <i id="edit" class="fa fa-save"></i>
-                                    <i id="icon-edit" class="fas fa-spinner fa-pulse fa-2x" style="display: none"></i>
+                                    <i id="icon-edit" class="fas fa-spinner fa-pulse" style="display: none"></i>
                                 </span>
                             </button>
                         </div>

@@ -103,11 +103,13 @@ class AdminController extends Controller
     }
 
 
-    public function approve(Herb $herb, DatabaseNotification $notification) {
-        $this->approved($herb);
-        $notification->markAsRead();
+    public function approve(Request $request) {
+
+        //echo $request->id;
+        DB::table('herbs')->where('id', '=', $request->id)->update(['validated'=>1]);
+
         Alert::success('Ok !', 'Nouvelle plante approuvée avec succès');
-        return response()->json(['id' => $herb->id]);
+        return response()->json(['id' => $request->id]);
 
     }
     public function refuse(Request $request)
@@ -139,12 +141,5 @@ class AdminController extends Controller
         Alert::success('Ok !', 'La plante doit etre corrigée et le rédacteur va être notifié.');
         return response()->json(['id' => $herb->id]);
 
-    }
-
-    public function unsubscribe($id)
-    {
-        $user = User::findOrFail($id);
-        dd($user);
-        return redirect('/');
     }
 }
