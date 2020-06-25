@@ -78,22 +78,7 @@ class UserController extends Controller
 
     public function unsubscribe($id)
     {
-        $user = User::findOrFail($id);
-        //dd($user);
-        DB::table('users')
-            ->where('id', $id)
-            ->update(['unsubscribe' => 1, 'is_active' => 0]);
-        return redirect('/');
-    }
 
-    public function subscribe($id)
-    {
-        $user = User::findOrFail($id);
-        //dd($user);
-        DB::table('users')
-            ->where('id', $id)
-            ->update(['unsubscribe' => 0]);
-        return redirect('/admin');
     }
 
     /**

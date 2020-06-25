@@ -201,12 +201,8 @@
                     <i class="left fas fa-sign-out-alt"></i>
                     logout
                 </a>
-                @if(\Illuminate\Support\Facades\Auth::user()->role_id >= 2)
-                    @if(\Illuminate\Support\Facades\Auth::user()->unsubscribe)
-                        <a class="dropdown-item" href="{{route('subscribe', \Illuminate\Support\Facades\Auth::id())}}"><i style="color: green" class="left fas fa-check-circle"></i>inscription</a>
-                    @else
-                        <a class="dropdown-item" href="{{route('unsubscribe', \Illuminate\Support\Facades\Auth::id())}}"><i style="color: red" class="left fas fa-times-circle"></i>désinscription</a>
-                    @endif
+                @if(\Illuminate\Support\Facades\Auth::user()->role_id === 4)
+                    <a class="dropdown-item" href="{{route('unsubscribe', \Illuminate\Support\Facades\Auth::id())}}"><i style="color: red" class="left fas fa-times-circle"></i> Désinscription</a>
                 @endif
             </div>
         </li>

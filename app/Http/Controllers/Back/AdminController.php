@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Back;
 use App\Http\Controllers\Controller;
 
 use App\Herb;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\HerbRefuse;
@@ -138,5 +139,12 @@ class AdminController extends Controller
         Alert::success('Ok !', 'La plante doit etre corrigée et le rédacteur va être notifié.');
         return response()->json(['id' => $herb->id]);
 
+    }
+
+    public function unsubscribe($id)
+    {
+        $user = User::findOrFail($id);
+        dd($user);
+        return redirect('/');
     }
 }

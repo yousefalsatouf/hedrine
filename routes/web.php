@@ -131,7 +131,7 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
     // unsubscribe user ...
     Route::get('/unsubscribe/{id}', 'UserController@unsubscribe')->name('unsubscribe');
     // subscribe user ...
-    Route::get('/subscribe/{id}', 'UserController@subscribe')->name('subscribe');
+    //Route::get('/subscribe/{id}', 'UserController@subscribe')->name('subscribe');
 
     Route::name('drug.details')->get('drug', 'DrugController@details');
     Route::resource('drug', 'DrugController')->parameters([
