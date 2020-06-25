@@ -285,6 +285,17 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
        ]);
      Route::name('dinteraction.destroy.alert')->get('dinteraction/{dinteraction}', 'DinteractionController@alert');
 
+     //Route pour hinteraction
+     Route::name('hinteraction.update')->put('hinteraction', 'HinteractionController@update');
+     Route::name('hinteraction.edit')->get('hinteraction', 'HinteractionController@edit');
+     Route::name('hinteraction.index')->get('hinteraction', 'HinteractionController@index');
+
+     Route::name('hinteraction.details')->get('hinteraction', 'HinteractionController@details');
+     Route::resource('hinteraction', 'HinteractionController')->parameters([
+         'hinteraction' => 'hinteraction'
+       ]);
+     Route::name('hinteraction.destroy.alert')->get('hinteraction/{hinteraction}', 'HinteractionController@alert');
+
 
     //pour les nouveau utilisateurs
 

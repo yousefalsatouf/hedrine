@@ -337,6 +337,12 @@
                                     <p>Interaction Drugs</p>
                                 </a>
                             </li>
+                             <li class="nav-item">
+                                <a href="{{ route('hinteraction.index') }}" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Interaction Plantes</p>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                 @endif

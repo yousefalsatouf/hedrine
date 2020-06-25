@@ -7,11 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Hinteraction extends Model
 {
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
 
-    // public function effects() {
-    //     //DD: une hinteraction peut avoir plusieurs effets et un effet peut se trouver dans plusieurs hinteractions
-    //     return $this->belongsToMany(Effect::class, 'hinteraction_has_effects');
-    // }
+        'herb_id','target_id','force_id','notes'
+
+    ];
 
     public function effects() {
         //DD: une hinteraction peut avoir plusieurs effets et un effet peut se trouver dans plusieurs hinteractions
@@ -19,8 +24,8 @@ class Hinteraction extends Model
     }
 
     public function users()
-    {
-        return $this->belongsTo(User::class);
+    { 
+        return $this->belongsTo(User::class,'user_id');
     }
 
     public function forces()
@@ -40,7 +45,7 @@ class Hinteraction extends Model
     }
     public function targets()
     {
-        return $this->belongsTo(Target::class,'target_id','id');
+        return $this->belongsTo(Target::class,'target_id');
 
     }
 
