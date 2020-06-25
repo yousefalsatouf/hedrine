@@ -30,6 +30,7 @@ Route::get('/dashboard', function () {
     return view('dashboard/dashboard');
 });
 
+Auth::routes();
 
 Route::get('/logout', 'SessionController@destroy')->name('logout');
 
@@ -39,6 +40,7 @@ Auth::routes(['verify' => true]);
 //DD 2/5/20 pour atteindre la première page du site (home), il faut que le user ait vérifié son adresse mail en cliquant sur le lien reçu à cette dernière (->middleware('verified');)
 //J'ai créé un middleware nommé checkuserisactive qui permet de vérifier si le user a été activé par un admin (Florence par exemple)
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified', 'checkuserisactive');
+Route::get('/herb','HerbController@index')->name('herbs.index')->middleware('verified', 'checkuserisactive');;
 
 Route::get('/test',function(){
     return view("auth/usernotvalidated.blade.php");
@@ -54,6 +56,11 @@ Route::get('/master', function () {
 Route::get('/herb/{char}', 'HerbController@filterByChar');
 
 
+    //N.Thierry pour atteindre la page de herbe
+    Route::get('/herb','HerbController@index')->name('herbs.index');
+    Route::get('herb/details_plante/{id}','HerbController@details')->name('herbs.details');
+
+
 //N.Thierry pour atteindre la page de herbe
 Route::get('/herb','HerbController@index')->name('herbs.index');
 Route::get('herb/details_plante/{id}','HerbController@details')->name('herbs.details');
@@ -61,6 +68,7 @@ Route::get('herb/details_plante/{id}','HerbController@details')->name('herbs.det
 //N.Thierry pour atteindre la page de drugs
 Route::get('/drug','DrugController@index')->name('drugs.index');
 Route::get('drug/details_drug/{id}','DrugController@details')->name('drugs.details');
+
 //Yousef for the filter searching
 //here is the url for the char searching ...
 Route::get('/drug/{char}', 'DrugController@filterByChar');
@@ -185,7 +193,7 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
     //Route pour plante
     Route::name('herb.update')->put('herb', 'HerbController@update');
     Route::name('herb.edit')->get('herb', 'HerbController@edit');
-    Route::name('herb.index')->get('herb', 'HerbController@index');
+    Route::name('herb.back.index')->get('herb', 'HerbController@index');
     Route::name('herb.show')->get('herb', 'HerbController@show');
 
     Route::name('herb.details')->get('herb', 'HerbController@details');
@@ -321,6 +329,10 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
 
 
 });
+
+Route::resource('herb', 'HerbFController')->parameters([
+    'herb' => 'herb'
+  ]);
 
 //N.Thierry : Les routes pour interagir entre les plante et DCI
 

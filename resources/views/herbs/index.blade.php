@@ -34,7 +34,8 @@
 						<tr>
 							<th> Name</th>
 							<th> Sci Name</th>
-							<th> Forme(s) de la plante</th>
+                            <th> Forme(s) de la plante</th>
+
 						</tr>
 					</thead>
 					<tbody>

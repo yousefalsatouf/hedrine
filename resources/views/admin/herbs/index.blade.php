@@ -18,14 +18,17 @@
 					<th> nom</th>
 					<th>Sciname</th>
 					{{-- <th>Forces</th> --}}
-					<th>Formes de la plante</th>
-					<th> Actions</th>
+                    <th>Formes de la plante</th>
+                    @if((auth()->user()->role_id == 1) || (auth()->user()->role_id == 2) || (auth()->user()->role_id == 3))
+                    <th> Actions</th>
+                    @endif
+
 				</tr>
 			</thead>
 			<tbody>
 				@foreach ($herbs as $herb)
-					<!-- 
-					START COMMENT 
+					<!--
+					START COMMENT
 					Les variables $lastHerb et $numberOfTimes_herbForms ont été déclarées dans le controleur Herb methode indes
 					la $numberOfTimes_herbForms sert à compter le nombre de qu'on a une differente forme de plande pour plant x La $lastHerbe y est stockée l'ID de la dernier herb.
 					On verifie si l'ID stocké dans $lastHerb est different de l'Herb recu à chaque boucle, si oui on reinitialise $numberOfTimes_herbForms pour qu'il se reincrémente au tant de fois qu'on a une nouvelle forme de plante
@@ -35,7 +38,7 @@
 						$lastHerb = $herb->id;
 						$numberOfTimes_herbForms = 0;
 					@endphp
-							
+
 					<tr class="text-center">
 						<td>
 							<a href="" class="add_style" ><strong class="text-dark">{{$herb->name}}</strong></a>
@@ -47,11 +50,11 @@
 							@foreach ($herb->herb_forms as $herb_form)
 							<!-- START COMMENT tant que l' Herb ne change $numberOfTimes_herbForms continue à incrémenté au tant de fois q'il des forme herb pour l'Herb Y -->
 								@php
-									$numberOfTimes_herbForms++; 
+									$numberOfTimes_herbForms++;
 								@endphp
-							
-										
-							<!-- START COMMENT 
+
+
+							<!-- START COMMENT
 							On verifie que le nombre de forme herb de Herb Y soit inférieur à 1 et que la $numberOfTimes_herbForms qui s'incremente à cahque nouvelle forme herb de l'Herb Y soit inférieur au nombre de forme herb de l'Herb Y
 							et on affiche les noms de la forme herb de l'Herb Y plus "-" sinon on affiche juste les noms de la forme herb de l'Herb Y
 							-->
@@ -61,14 +64,17 @@
 										{{ $herb_form->name }}
 									@endif
 							@endforeach
-						</td>
-						<td style="width: 10rem">
-							<div class="btn-group float-right">
-							<a class="btn btn-outline-success text-center text align-self-center p-2" href="{{ route('herb.edit',$herb->id) }}" role="button">Edit</a> &nbsp; &nbsp;
-								<a class="btn btn-outline-danger text align-self-center p-2" href="{{ route('herb.destroy.alert',$herb->id) }}" role="button">Delete</a>
-								
-							</div>
-						</td>
+                        </td>
+                        @if((auth()->user()->role_id == 1) || (auth()->user()->role_id == 2) || (auth()->user()->role_id == 3))
+                            <td style="width: 10rem">
+                                    <div class="btn-group float-right">
+                                        <a class="btn btn-outline-success text-center text align-self-center p-2" href="{{ route('herb.edit',$herb->id) }}" role="button">Edit</a> &nbsp; &nbsp;
+                                        <a class="btn btn-outline-danger text align-self-center p-2" href="{{ route('herb.destroy.alert',$herb->id) }}" role="button">Delete</a>
+
+                                    </div>
+                            </td>
+                        @endif
+
 					</tr>
 				@endforeach
 			</tbody>
@@ -77,11 +83,11 @@
  </div>
 @endsection
 
-@section('dashboard-js') 
- 
+@section('dashboard-js')
+
 	<script>
 		$(function () {
-		
+
 		$('#example1').DataTable({
 			"paging": true,
 			"lengthChange": false,
@@ -90,7 +96,7 @@
 			"info": true,
 			"autoWidth": false,
 			"responsive": true,
-			"language": 
+			"language":
 			{
 				"url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
 			}

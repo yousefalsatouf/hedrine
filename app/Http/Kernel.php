@@ -57,6 +57,7 @@ class Kernel extends HttpKernel
         'admin' => \App\Http\Middleware\Admin::class,
         'admineditor' => \App\Http\Middleware\AdminEditor::class,
         'adminpublisher' => \App\Http\Middleware\AdminPublisher::class,
+        'lector' => \App\Http\Middleware\Lector::class,
         'ajax' => \App\Http\Middleware\Ajax::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,

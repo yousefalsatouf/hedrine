@@ -23,7 +23,12 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class HerbController extends Controller
 {
+    public function __construct()
+    {
+
+    }
     /**
+     *
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
