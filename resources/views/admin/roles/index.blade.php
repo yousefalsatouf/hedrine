@@ -27,8 +27,6 @@
 					<td style="width: 10rem">
 						<div class="btn-group float-center">
 							<a class="btn btn-outline-success align-self-center p-2" href="{{ route('role.edit',$role->id) }}" role="button">Edit</a> &nbsp; &nbsp;
-							{{-- <a class="btn btn-outline-danger" href="{{ route('role.destroy.alert',$role->id) }}" role="button"><i class="far fa-trash-alt"></i> </a> --}}
-
 						</div>
 					</td>
 				</tr>
