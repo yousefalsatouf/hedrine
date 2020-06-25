@@ -90,13 +90,14 @@ $(document).ready(function() {
         toggleButtons();
         $('#send').hide();
         $('i#icon-refuse').show();
+        //console.log($('#refuse-message').val());
 
-        $.ajax({
+         $.ajax({
             type: that.attr('method'),
             url: that.attr('action'),
             data: {
-                '_token': $('input[name=_token]').val(),
-                'id': $('#refuse-id').val(),
+                //'_token': $('input[name=_token]').val(),
+                'id': $('#refuse-btn-id').data('id'),
                 'msg': $('#refuse-message').val(),
             },
             success: function(data)

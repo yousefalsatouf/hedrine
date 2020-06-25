@@ -109,19 +109,19 @@ class AdminController extends Controller
     }
     public function refuse(Request $request)
     {
-        //echo 'ok';
-
         $id = $request->id;
         $msg = $request->msg;
+
         $herb = DB::table('herbs')->where('id', '=', $id)->get();
 
         $mail = $herb->user->email;
         Mail::to($mail)->send(new HerbRefuse($herb->user, $msg));
 
-        //$herb->delete($herb);
+        DB::table('herbs')->where('id', '=', $id)->delete();
 
         Alert::success('Ok !', 'La plante a bien été refusée');
-        return response()->json($id);
+
+        return response()->json(['id' => $herb]);
     }
     public function modifs(Request $request) {
 

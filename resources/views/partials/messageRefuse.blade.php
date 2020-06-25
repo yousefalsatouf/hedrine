@@ -12,9 +12,6 @@
                             </button>
                         </div>
                     @endguest
-
-                    <input id="refuse-id" name="id" type="hidden" value="{{ isset($herb) ? $herb->id : '' }}">
-
                     <div class="form-group">
                         <label for="texte" class="text-danger">Entrez ici votre raison de refus</label>
                         <textarea class="form-control" style="border: 0;border-bottom: 1px solid red" id="refuse-message" name="message" rows="3" required>{{ old('texte', isset($value) ? $value : '') }}</textarea>
