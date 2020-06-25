@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Back;
 use App\Http\Controllers\Controller;
 
 use App\Herb;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\HerbRefuse;
@@ -102,11 +103,13 @@ class AdminController extends Controller
     }
 
 
-    public function approve(Herb $herb, DatabaseNotification $notification) {
-        $this->approved($herb);
-        $notification->markAsRead();
+    public function approve(Request $request) {
+
+        //echo $request->id;
+        DB::table('herbs')->where('id', '=', $request->id)->update(['validated'=>1]);
+
         Alert::success('Ok !', 'Nouvelle plante approuvée avec succès');
-        return response()->json(['id' => $herb->id]);
+        return response()->json(['id' => $request->id]);
 
     }
     public function refuse(Request $request)

@@ -47,4 +47,12 @@ $(document).ready(function() {
             }
         });
     });
+
+    //unsubscribe part ...
+    $('.modal-footer').on('click', '#unsubscribe', function()
+    {
+        $('#unsubscribe').html('<i class="fa fa-spinner fa-pulse" id="pending-unsubscribe"></i>');
+        $('#pending-unsubscribe').show();
+    });
+
 });

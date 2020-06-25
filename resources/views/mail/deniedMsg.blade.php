@@ -6,13 +6,13 @@
             <div class="card-body">
                 <form class=" justify-content-center" role="form" action="{{route('sendDenyingMsg', $id)}}" method="POST">
                     @csrf
-                    <div class="modal-header">
-                        <h4 class="modal-title text-dark">Veilliez Ecrire votre message à l'utlisateur:</h4>
+                    <div class="modal-header bg-success">
+                        <h5 class="modal-title text-dark">Veilliez Ecrire votre message à l'utlisateur:</h5>
                     </div>
                     <div class="modal-body">
                         <div class="form-group row">
-                            <div class="col-md-6">
-                                <textarea name="msg" required cols="62" rows="8" placeholder="Message ..."></textarea>
+                            <div class="w-100">
+                                <textarea name="msg" class="w-100" required  placeholder="Message ..."></textarea>
                             </div>
                         </div>
                     </div>

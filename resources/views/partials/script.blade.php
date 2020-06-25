@@ -14,17 +14,25 @@
         $('.btn-success').click((e) => {
             e.preventDefault();
             let that = $(e.currentTarget);
+            //alert(that.data('url'));
             that.hide();
             that.closest('td').find('i.fa-spinner').show();
-            $.post(that.attr('href'))
-            .done((data) => {
-                document.location.reload(true);
-            })
-            .fail(() => {
-                $('.alert-warning').removeClass('d-none').addClass('show');
-                that.show();
-                that.closest('td').find('i.fa-spinner').hide();
+            $.ajax({
+                type: 'POST',
+                url: that.data('url'),
+                data: {
+                    'id': that.data('id'),
+                },
+                success: function(data)
+                {
+                    //console.log(data);
+                    document.location.reload(true);
+                },
+                error: function (error) {
+                    console.log(error)
+                }
             });
+
         });
         $('.btn-danger').click((e) => {
             e.preventDefault();
@@ -45,7 +53,6 @@
             $('.invalid-feedback').html('');
             toggleButtons();
             $.ajax({
-
                 method: $(that).attr('method'),
                 url: $(that).attr('action'),
                 data: $(that).serialize()
@@ -54,20 +61,7 @@
                 document.location.reload(true);
             })
             .fail((data) => {
-                toggleButtons();
-                if(data.status == 422) {
-                    $.each(data.responseJSON.errors, function (i, error) {
-                        $(document)
-                            .find('[name="' + i + '"]')
-                            .addClass('is-invalid')
-                            .next()
-                            .append(error[0]);
-                    });
-                } else {
-
-                    $('#messageUpdateModal').modal('hide');
-                    $('.alert-warning').removeClass('d-none').addClass('show');
-                }
+                console.log(data);
             });
         });
     })
