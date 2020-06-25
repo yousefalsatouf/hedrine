@@ -65,8 +65,6 @@
 						<td style="width: 10rem">
 							<div class="btn-group float-right">
 							<a class="btn btn-outline-success text-center text align-self-center p-2" href="{{ route('herb.edit',$herb->id) }}" role="button">Edit</a> &nbsp; &nbsp;
-								<a class="btn btn-outline-danger text align-self-center p-2" href="{{ route('herb.destroy.alert',$herb->id) }}" role="button">Delete</a>
-								
 							</div>
 						</td>
 					</tr>
