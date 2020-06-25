@@ -91,5 +91,17 @@ return [
 
     ],
 
+    'dinteraction'=> [
+        'index' => 'Gestion des Interactions DCI',
+        'edit' => 'Modification d\'une Interaction DCI',
+        'create' => 'Création d\'une Interaction DCI',
+    ],
+
+    'hinteraction'=> [
+        'index' => 'Gestion des Interactions Plante',
+        'edit' => 'Modification d\'une Interactions Plante',
+        'create' => 'Création d\'une Interactions Plante',
+    ],
+
 
 ]; 

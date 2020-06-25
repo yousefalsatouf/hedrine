@@ -1,16 +1,29 @@
 <?php
 
-namespace App;
+namespace App; 
 
 use Illuminate\Database\Eloquent\Model;
 
 class Dinteraction extends Model
 {
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+
+        'drug_id','target_id','force_id','notes'
+
+    ];
+
+
     public function effects() {
         //DD: une hinteraction peut avoir plusieurs effets et un effet peut se trouver dans plusieurs hinteractions
         return $this->belongsToMany(Effect::class, 'dinteraction_has_effects')->withTimestamps();
     }
-    public function users()
+    public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
     }

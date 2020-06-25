@@ -44,36 +44,36 @@ class DinteractionController extends Controller
         return view('admin.dinteractions.form_add_dinteraction', compact('targets','dinteractions','effects'));
     }
 
-    // /**
-    //  * Store a newly created resource in storage.
-    //  *
-    //  * @param  \Illuminate\Http\Request  $request
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function store(DrugRequest $request)
-    // {
-    //     $drug = new Drug;
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(DrugRequest $request)
+    {
+        $drug = new Drug;
 
-    //     $drug->user_id = Auth::user()->id;
-    //     $drug->name = $request->name;
-    //     $drug->drug_families_id = $request->drug_families_id;
-    //     $drug->route_id = $request->route_id;
-    //     $request->validated? $drug->validated = 1 : $drug->validated = 0;
-    //     $drug->atc_level_4s_id = $request->atc_level_4s_id;
+        $drug->user_id = Auth::user()->id;
+        $drug->name = $request->name;
+        $drug->drug_families_id = $request->drug_families_id;
+        $drug->route_id = $request->route_id;
+        $request->validated? $drug->validated = 1 : $drug->validated = 0;
+        $drug->atc_level_4s_id = $request->atc_level_4s_id;
 
-    //     $drug->save();
-    //     $drug->targets()->sync($request->targets, false);
-    //     Alert::success('Ok !', 'Nouveau DCI ajouté avec succès');
+        $drug->save();
+        $drug->targets()->sync($request->targets, false);
+        Alert::success('Ok !', 'Nouveau DCI ajouté avec succès');
 
-    //     $adminusers = User::with('roles')->where('role_id','1')->get();
-    //     // //dd($adminusers);
-    //     foreach($adminusers as $adm) {
-    //     //     //Mail::to($adm)->send(new NewHerb($herb, $user));
-    //         $adm->notify(new NewDrugNotification($drug));
+        $adminusers = User::with('roles')->where('role_id','1')->get();
+        // //dd($adminusers);
+        foreach($adminusers as $adm) {
+        //     //Mail::to($adm)->send(new NewHerb($herb, $user));
+            $adm->notify(new NewDrugNotification($drug));
 
-    //     }
-    //     return back();
-    // }
+        }
+        return back();
+    }
 
     /**
      * Display the specified resource.
@@ -94,9 +94,9 @@ class DinteractionController extends Controller
      */
     public function edit(Dinteraction $dinteraction)
     {
-        $references = Reference::all();
-        $forces = Force::all();
-        $effects = Effect::all();
+        $references = Reference::orderBy('title', 'ASC')->get();
+        $forces = Force::orderBy('name', 'ASC')->get();
+        $effects = Effect::orderBy('name', 'ASC')->get();
         $dinteractions = Dinteraction::all();
         // dd($dinteractions);
         return view('admin.dinteractions.form_add_dinteraction',['dinteraction' => $dinteraction], compact('dinteractions','effects','forces','references'));
@@ -112,7 +112,7 @@ class DinteractionController extends Controller
     public function update(Request $request, Dinteraction $dinteraction)
     {
         $dinteraction->update($request->all());
-        $dinteraction->targets()->sync($request->targets, false);
+        
         Alert::success('Ok !', 'Votre Interaction drug a étè mis à jour avec succès');
 
         return back();

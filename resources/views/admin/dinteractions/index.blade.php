@@ -20,8 +20,8 @@
 					<td>{{$dinteraction->validated}}</td>
 					<td>{{$dinteraction->drugs->name}}</td> 
 					<td>{{$dinteraction->targets->name }}</td>
-					<td>{{$dinteraction->users->name }}</td>
-					{{-- <td>{{ optional($drug->user)->name }}</td> --}} 
+					<td>{{$dinteraction->notes }}</td>
+					<td>{{$dinteraction->user->name }}</td>
 					<td style="width: 10rem">
 						<div class="btn-group float-right">&nbsp; &nbsp; &nbsp;
 							<a class="btn btn-outline-success text align-self-center p-2" href="{{ route('dinteraction.edit',$dinteraction->id) }}" role="button">Edit</a> &nbsp; &nbsp;
