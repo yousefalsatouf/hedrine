@@ -1,7 +1,9 @@
 @extends('dashboard.layout')
 
 @section('content_dashboard')
-    @include('partials.messageUpdate', ['url' => route('admin.modifs')])
+    @include('partials.messageRefuse')
+    @include('partials.messageUpdate')
+
     <div class="container-fluid">
             <div class="col-12">
                 <div class="table responsive">
@@ -53,7 +55,7 @@
                                         <a class="btn btn-danger btn-sm" href="#" role="button" data-id="{{ $herb->id }}" data-toggle="tooltip" title="Refuser la plante">
                                             <i class="fas fa-thumbs-down"></i>
                                         </a>
-                                        <a class="btn btn-warning btn-sm" href="#" role="button" data-id="{{ $herb->id }}" data-toggle="tooltip" title="Modifier la plante">
+                                        <a class="btn btn-warning btn-sm" href="#" role="button" data-url="{{route('admin.modifs')}}" data-id="{{ $herb->id }}" data-toggle="tooltip" title="Modifier la plante">
                                             <i class="fas fa-eye" style="color:white"></i>
                                         </a>
                                         <button {{\Illuminate\Support\Facades\Auth::user()->role_id > 2? "disabled" : ""}} class="btn btn-secondary btn-sm edit-modal" role="button" data-id="{{ $herb->id }}" data-name="{{$herb->name}}" data-sciname="{{$herb->sciname}}" data-toggle="tooltip" title="editeur rapide">
@@ -111,11 +113,7 @@
         </div>
     </div>
 @endsection
-
-@section('script')
-    @include('partials.message', ['url' => route('admin.refuse')])
-    @include('partials.script')
-@endsection
+ {{--['url' => route('admin.refuse')]['url' => route('admin.modifs')]--}}
 
 
 

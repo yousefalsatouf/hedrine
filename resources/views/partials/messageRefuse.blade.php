@@ -1,10 +1,9 @@
 <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="message" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
-            <form id="messageForm" method="POST" action="{{ route('admin.refuse') }}">
+            <form id="refuse-form-message" method="POST" action="{{route('admin.refuse') }}">
                 @csrf
                 <div class="modal-body">
-
                     @guest
                         <div class="alert alert-warning alert-dismissible fade show" role="alert">
                             Vous n êtes pas connecté. Votre message sera modéré avant expédition.
@@ -14,7 +13,7 @@
                         </div>
                     @endguest
 
-                    <input id="id" name="id" type="hidden" value="{{ isset($herb) ? $herb->id : '' }}">
+                    <input id="refuse-id" name="id" type="hidden" value="{{ isset($herb) ? $herb->id : '' }}">
 
                     <div class="form-group">
                         <label for="texte" class="text-danger">Entrez ici votre raison de refus</label>
@@ -34,7 +33,7 @@
                 <div class="modal-footer">
                     <div id="buttons">
                         <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Annuler</button>
-                        <button type="submit" id="send" class="btn btn-outline-success"><i class="fa fa-paper-plane"></i></button>
+                        <button type="submit" class="btn btn-outline-success"><i class="fa fa-paper-plane"></i></button>
                     </div>
                     <i id="icon-refuse" class="fas fa-spinner fa-pulse fa-2x" style="display: none"></i>
                 </div>

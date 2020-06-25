@@ -95,13 +95,8 @@ class AdminController extends Controller
      */
     public function getById($id)
     {
-        return Herb::findOrFail($id);
+        return DB::table('herbs')->where('id', '=', $id)->get();
     }
-    public function getByIdBy($id)
-    {
-        return Herb::findOrFail($id);
-    }
-
 
     public function approve(Request $request) {
 
@@ -115,29 +110,30 @@ class AdminController extends Controller
     public function refuse(Request $request)
     {
         //echo 'ok';
+
         $id = $request->id;
         $msg = $request->msg;
-        $herb = $this->getById($id);
+        $herb = DB::table('herbs')->where('id', '=', $id)->get();
+
         $mail = $herb->user->email;
         Mail::to($mail)->send(new HerbRefuse($herb->user, $msg));
 
-        $this->delete($herb);
+        //$herb->delete($herb);
+
         Alert::success('Ok !', 'La plante a bien été refusée');
         return response()->json($id);
     }
-    public function modifs(MessageRefuseRequest $request) {
+    public function modifs(Request $request) {
 
-        $herb = $this->getById($request->id);
-         Alert($herb->user);
-        $msg = $request->get('message');
-
-        $username = null;
+        $id = $request->id;
+        $msg = $request->msg;
+        $herb = $this->getById($id);
 
         $mail = $herb->user->email;
-
         Mail::to($mail)->send(new HerbToUpdate($herb->user,$msg));
 
         $this->modifTodo($herb);
+
         Alert::success('Ok !', 'La plante doit etre corrigée et le rédacteur va être notifié.');
         return response()->json(['id' => $herb->id]);
 
