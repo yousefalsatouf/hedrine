@@ -74,15 +74,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'team' => $data['team'],
             'tel1' => $data['tel1'],
-            'tel2' => $data['tel2'],
             'RGPD' => $data['RGPD']
         ]);
-
-       /* $admins = User::with('roles')->where('role_id','1')->get();
-        foreach($admins as $adm) {
-            //Mail::to($adm)->send(new NewHerb($herb, $user));
-            $adm->notify(new NewUser());
-
-        }*/
     }
 }
