@@ -27,7 +27,7 @@ $(document).ready(function() {
     //approve an user
     $('.btn-success').click((e) => {
         e.preventDefault();
-        //let that = $(e.currentTarget);
+        let that = $(e.currentTarget);
         console.log(that.data('url'),)
         //alert(that.data('url'));
         that.hide();
