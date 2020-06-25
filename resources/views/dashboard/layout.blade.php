@@ -331,6 +331,12 @@
                                     <p>Références</p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{ route('dinteraction.index') }}" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Interaction Drugs</p>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                 @endif

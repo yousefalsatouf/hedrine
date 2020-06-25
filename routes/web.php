@@ -274,6 +274,17 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
       ]);
     Route::name('effect.destroy.alert')->get('effect/{effect}', 'EffectController@alert');
 
+    //Route pour dinteraction
+     Route::name('dinteraction.update')->put('dinteraction', 'DinteractionController@update');
+     Route::name('dinteraction.edit')->get('dinteraction', 'DinteractionController@edit');
+     Route::name('dinteraction.index')->get('dinteraction', 'DinteractionController@index');
+
+     Route::name('dinteraction.details')->get('dinteraction', 'DinteractionController@details');
+     Route::resource('dinteraction', 'DinteractionController')->parameters([
+         'dinteraction' => 'dinteraction'
+       ]);
+     Route::name('dinteraction.destroy.alert')->get('dinteraction/{dinteraction}', 'DinteractionController@alert');
+
 
     //pour les nouveau utilisateurs
 

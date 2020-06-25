@@ -50,6 +50,10 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Drug::class);
     }
 
+    public function dinteractions(){
+        return $this->hasMany(Dinteraction::class);
+    }
+
     public function references()
     {
         return $this->hasMany(Reference::class);
