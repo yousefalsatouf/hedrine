@@ -120,7 +120,6 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
     Route::post('/quickEdit', 'AdminController@quickEdit');
     Route::post('/refuse','AdminController@refuse')->name('admin.refuse');
 
-
     // Route pour users
     Route::name('drug.update')->put('drug', 'DrugController@update');
     Route::name('drug.edit')->get('drug', 'DrugController@edit');
