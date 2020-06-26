@@ -2,8 +2,8 @@
 
 @section('content_dashboard')
 <div class="row justify-content-end" style="padding-bottom: 0.75rem">
-	@if(Route::currentRouteName() === 'herb.index')
-		<a class="btn btn-light" href="{{ route('herb.create') }}" role="button">Créer une nouvelle plante</a>
+	@if(Route::currentRouteName() === 'target.index')
+		<a class="btn btn-light" href="{{ route('target.create') }}" role="button">Créer une nouvelle target</a>
 	@endif
 </div>
 

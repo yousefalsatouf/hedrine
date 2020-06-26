@@ -47,7 +47,7 @@
 										<input type="text" class="form-control" id="long_name" name="long_name" required placeholder="Veuillez indiquer un long nom pour la target" value="{{isset($target) ? $target->long_name : ''}}">
 									</div>
 									<div class="form-group">
-										<label for="notes">Notes du poste</label>
+										<label for="notes">Notes de la Target</label>
 										<textarea rows="10" cols="15" class="form-control" id="notes" name="notes" placeholder="Veuillez introduire une note pour la target" required>{{ isset($target) ? $target->notes : ''}}</textarea>
 									</div>
 									<div class="form-group">
