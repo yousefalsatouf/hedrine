@@ -109,7 +109,7 @@ class AdminController extends Controller
         DB::table('herbs')->where('id', '=', $id)->update(['validated' => -1]);
 
         Alert::success('Ok !', 'La plante doit etre corrigée et le rédacteur va être notifié.');
-        return response()->json(['id' => $herb->id]);
+        return response()->json(['id' => $herb]);
 
     }
 }

@@ -112,13 +112,13 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
     Route::prefix('herb')->group(function () {
         Route::middleware('ajax')->group(function() {
             Route::post('/approve','AdminController@approve')->name('admin.approve');
-            Route::post('/modifs','AdminController@modifs')->name('admin.modifs');
         });
     });
 
     //pour quick update ...
     Route::post('/quickEdit', 'AdminController@quickEdit');
-    Route::post('/refuse','AdminController@refuse')->name('admin.refuse');
+    Route::post('/refuse','AdminController@refuse');
+    Route::post('/modifs','AdminController@modifs');
 
     // Route pour users
     Route::name('drug.update')->put('drug', 'DrugController@update');
