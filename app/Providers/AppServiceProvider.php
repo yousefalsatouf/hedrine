@@ -105,7 +105,10 @@ class AppServiceProvider extends ServiceProvider
             $view->with('validatedHerb',Herb::where('validated',1)->get());
         });
         view()->composer('partials.table-add-del-view', function ($view) {
-            $view->with('waitingHerb',auth()->user()->herbs()->where('validated',-1)->get());
+            $view->with('waitingHerb',auth()->user()->herbs()->where('validated',0)->get());
+        });
+        view()->composer('partials.modifier-plante', function ($view) {
+            $view->with('modifierHerb',auth()->user()->herbs()->where('validated',-1)->get());
         });
 
         View::composer('dashboard.layout', function ($view) {
