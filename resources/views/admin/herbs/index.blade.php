@@ -61,6 +61,16 @@
 									@endif
 							@endforeach
                         </td>
+<<<<<<< HEAD
+                        @if((auth()->user()->role_id == 1) || (auth()->user()->role_id == 2) || (auth()->user()->role_id == 3))
+                            <td style="width: 10rem">
+                                    <div class="btn-group float-right">
+                                        <a class="btn btn-outline-success text-center text align-self-center p-2" href="{{ route('herb.edit',$herb->id) }}" role="button">Edit</a> &nbsp; &nbsp;
+                                    </div>
+                            </td>
+                        @endif
+						</td>
+=======
 
                         <td style="width: 10rem">
                             <div class="btn-group float-right">
@@ -70,6 +80,7 @@
                                 @endif
                             </div>
                         </td>
+>>>>>>> aef1f9ab40eeeccda4e95ade1a2b7c08cf4745e0
 					</tr>
 				@endforeach
 			</tbody>
