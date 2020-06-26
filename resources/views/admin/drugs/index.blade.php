@@ -42,13 +42,6 @@
                             </div>
                         </td>
                     @endif
-
-					<td>{{ optional($drug->user)->name }}</td> 
-					<td style="width: 10rem">
-						<div class="btn-group float-right">&nbsp; &nbsp; &nbsp;
-							<a class="btn btn-outline-success text align-self-center p-2" href="{{ route('drug.edit',$drug->id) }}" role="button">Edit</a> &nbsp; &nbsp;
-						</div>
-					</td>
 				</tr>
 				@endforeach
 			</tbody>
