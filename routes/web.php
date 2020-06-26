@@ -336,6 +336,7 @@ Route::prefix('utilisateur')->middleware('user')->group(function () {
     Route::prefix('herbs')->group(function () {
         Route::get('validated', 'UserProfileController@allValidated')->name('userprofile.validated');
         Route::get('attente', 'UserProfileController@attenteHerb')->name('userprofile.attente');
+        Route::get('modifier', 'UserProfileController@modifierHerb')->name('userprofile.modifier');
     });
     Route::prefix('profil')->group(function () {
         Route::get('email', 'UserProfileController@emailEdit')->name('userprofile.email.edit');
