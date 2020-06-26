@@ -3,7 +3,7 @@ $(document).ready(function() {
     {
         $('#footer_action_button').addClass('glyphicon-check');
         $('#footer_action_button').removeClass('glyphicon-trash');
-        $('.actionBtn').addClass('btn-success');
+        $('.actionBtn').addClass('btn-outline-secondary');
         $('.actionBtn').removeClass('btn-danger');
         $('.actionBtn').addClass('edit');
         $('.modal-title').text('Quick Edit');
@@ -11,13 +11,11 @@ $(document).ready(function() {
         $('#fid').val($(this).data('id'));
         $('#n').val($(this).data('name'));
         $('#s').val($(this).data('sciname'));
-        $('#myModal').modal('show');
+        $('#myModal-quickEdit').modal('show');
     });
 
-    $('.modal-footer').on('click', '.edit', function()
+    $('.modal-footer').on('click', '#edit', function()
     {
-        //alert('clicked');
-        //console.log($("#n").val());
         $('#edit').hide();
         $('i#icon-edit').show();
         $.ajax({

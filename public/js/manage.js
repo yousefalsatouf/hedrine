@@ -1,34 +1,32 @@
 $(document).ready(function() {
-
-    const toggleButtons = () => {
-        $('#icon').toggle();
-        $('#buttons').toggle();
-    };
-
-    $('.alert-success button').click(() => {
-        $('.alert-success').addClass('d-none').removeClass('show');
-    });
-    $('.alert-warning button').click(() => {
-        $('.alert-warning').addClass('d-none').removeClass('show');
-    });
-
-    $('.btn-danger').click((e) => {
+    // show modal
+    $(document).on('click', '.refuse-modal', function(e)
+    {
         e.preventDefault();
-        $('#id').val($(e.currentTarget).attr('data-id'));
-        $('#messageModal').modal();
+        let that = $(e.currentTarget);
+        let id = that.data('id');
+
+        $('#myModal-refuse-message').modal('show');
+
+        $('#refuse-id').val(id);
     });
 
-    $('.btn-warning').click((e) => {
+    $(document).on('click', '.modify-modal', function(e)
+    {
         e.preventDefault();
-        $('#id').val($(e.currentTarget).attr('data-id'));
-        $('#messageUpdateModal').modal();
+        let that = $(e.currentTarget);
+        let id = that.data('id');
+
+        $('#myModal-modify-message').modal('show');
+
+        $('#modif-id').val(id);
     });
 
     //approve an user
     $('.btn-success').click((e) => {
         e.preventDefault();
         let that = $(e.currentTarget);
-        console.log(that.data('url'),)
+        //console.log(that.data('url'))
         //alert(that.data('url'));
         that.hide();
         that.closest('td').find('i.fa-spinner').show();
@@ -51,25 +49,26 @@ $(document).ready(function() {
     });
 
     // modification message to send ...
-    $('#message-form-update').submit((e) => {
-        let that = $(e.currentTarget);
 
-        e.preventDefault();
-        $('#message').removeClass('is-invalid');
-        $('.invalid-feedback').html('');
-        toggleButtons();
+    $('.modal-footer').on('click', '#modify', function(e)
+    {
+
+        $('#modify').hide();
+        $('i#icon-modify').show();
+
+        //console.log($("#modif-id").val())
 
         $.ajax({
             type: 'POST',
-            url: $('#message-form-update').data('url'),
+            url: '/admin/modifs',
             data: {
-                //'_token': $('input[name=_token]').val(),
-                'id': $("#modifs-id").val(),
-                'msg': $('#modifs-message').val()
+                '_token': $('input[name=_token]').val(),
+                'id': $("#modif-id").val(),
+                'msg': $('#modify--message').val()
             },
             success: function(data)
             {
-                //console.log(data);
+                //console.log(data[0]);
                 document.location.reload(true);
             },
             error: function (error) {
@@ -78,35 +77,27 @@ $(document).ready(function() {
         });
     });
 
-
     // refuse message went from here ...
-    $('#refuse-form-message').submit((e) => {
-        e.preventDefault();
-        let that = $(e.currentTarget);
-        //console.log($('#refuse-form-message').data('url'))
-        //console.log(that.attr('action'))
-        $('#refuse-message').removeClass('is-invalid');
-        $('.invalid-feedback').html('');
-        toggleButtons();
-        $('#send').hide();
+    $('.modal-footer').on('click', '#refuse', function()
+    {
+        $('#refuse').hide();
         $('i#icon-refuse').show();
-        //console.log($('#refuse-message').val());
 
-         $.ajax({
-            type: that.attr('method'),
-            url: that.attr('action'),
+        $.ajax({
+            type: 'POST',
+            url: '/admin/refuse',
             data: {
-                //'_token': $('input[name=_token]').val(),
-                'id': $('#refuse-btn-id').data('id'),
-                'msg': $('#refuse-message').val(),
+                '_token': $('input[name=_token]').val(),
+                'id': $("#refuse-id").val(),
+                'msg': $('#refuse-message').val()
             },
             success: function(data)
             {
-                console.log(data);
+                //console.log(data[0]);
                 document.location.reload(true);
             },
             error: function (error) {
-               console.log(error)
+                console.log(error)
             }
         });
     });

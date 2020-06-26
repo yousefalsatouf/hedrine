@@ -3,7 +3,7 @@
 @section('content_dashboard')
     @include('partials.messageRefuse')
     @include('partials.messageUpdate')
-
+    @include('partials.quickEdit')
     <div class="container-fluid">
             <div class="col-12">
                 <div class="table responsive">
@@ -52,10 +52,10 @@
                                             <i class="fas fa-thumbs-up"></i>
                                         </a>
                                         <i class="fas fa-spinner fa-pulse fa-lg" style="display: none"></i>
-                                        <a class="btn btn-danger btn-sm" href="#" role="button" id="refuse-btn-id" data-id="{{ $herb->id }}" data-toggle="tooltip" title="Refuser la plante">
+                                        <a class="btn btn-danger btn-sm refuse-modal" href="#" role="button" data-id="{{ $herb->id }}" data-toggle="tooltip" title="Refuser la plante">
                                             <i class="fas fa-thumbs-down"></i>
                                         </a>
-                                        <a class="btn btn-warning btn-sm" href="#" role="button" id="modif-btn-id" data-id="{{ $herb->id }}" data-toggle="tooltip" title="Modifier la plante">
+                                        <a class="btn btn-warning btn-sm modify-modal" href="#" role="button"  data-id="{{ $herb->id }}" data-toggle="tooltip" title="Modifier la plante">
                                             <i class="fas fa-eye" style="color:white"></i>
                                         </a>
                                         <button {{\Illuminate\Support\Facades\Auth::user()->role_id > 2? "disabled" : ""}} class="btn btn-secondary btn-sm edit-modal" role="button" data-id="{{ $herb->id }}" data-name="{{$herb->name}}" data-sciname="{{$herb->sciname}}" data-toggle="tooltip" title="editeur rapide">
@@ -66,48 +66,6 @@
                             @endforeach
                         </tbody>
                     </table>
-                </div>
-            </div>
-        </div>
-
-        <div id="myModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header bg-success">
-                        <h4 class="modal-title">Veilliez entrez:</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <form class="form-horizontal" role="form">
-                            <div class="form-group">
-                                <div class="form-group">
-                                    <label class="control-label col-sm-2 text-success" for="id">ID:</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" style="border: 0;border-bottom: 1px solid green"  class="form-control" id="fid" disabled>
-                                    </div>
-                                </div>
-                                <label class="control-label col-sm-2 text-success" for="name">Name:</label>
-                                <div class="col-sm-10">
-                                    <input type="text" style="border: 0;border-bottom: 1px solid green"  class="form-control" id="n">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-sm-2 text-success" for="sciname">Sciname:</label>
-                                <div class="col-sm-10">
-                                    <input type="text" style="border: 0;border-bottom: 1px solid green"  class="form-control" id="s">
-                                </div>
-                            </div>
-                        </form>
-                        <div class="modal-footer">
-                            <button type="button" style="border: 0;border-bottom: 1px solid green"   class="btn actionBtn">
-                                <span id="footer_action_button" class='glyphicon'>
-                                    <i id="edit" class="fa fa-save"></i>
-                                    <i id="icon-edit" class="fas fa-spinner fa-pulse" style="display: none"></i>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
