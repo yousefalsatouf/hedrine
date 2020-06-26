@@ -26,15 +26,12 @@ class Herb extends Model
         return $this->belongsToMany(Target::class, 'hinteractions')->withTimestamps();
     }
 
-    public function hinteractions()
+    public function hinteractions() 
     {
-        return $this->hasMany(Hinteraction::class, 'herb_id', 'id');
+        return $this->hasMany(Hinteraction::class);
     }
 
-    public function dinteractions()
-    {
-        return $this->hasMany(Dinteraction::class, 'herb_id', 'id');
-    }
+
     //Thierry Tester
 
 
