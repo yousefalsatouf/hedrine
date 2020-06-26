@@ -50,7 +50,7 @@ class PostController extends Controller
         $post->user_id = Auth::user()->id;
         $post->title = $request->title;
         $post->body = $request->body;
-        $post->important = ( !$request->has('important') == '1' ? '0' : '1');
+        $post->important? $post->important = 1 : $post->important = 0;
         $post->save();
         Alert::success('Ok !', 'Nouveau poste ajouté avec succès');
 

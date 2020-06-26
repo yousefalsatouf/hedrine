@@ -146,11 +146,13 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
     Route::name('post.index')->get('post', 'PostController@index');
     Route::name('post.update')->put('post', 'PostController@update');
     Route::name('post.edit')->get('post', 'PostController@edit');
-    Route::name('post.details')->get('/post/{id}', 'PostController@details');
+    Route::name('post.create')->get('post', 'PostController@create');
     Route::resource('post', 'PostController')->parameters([
         'post' => 'post'
       ]);
+    Route::name('post.details')->get('post/detail/{id}', 'PostController@details');
     Route::name('post.destroy.alert')->get('post/{post}', 'PostController@alert');
+
 
     //Route pour Posts Important
     Route::name('post.validate')->get('post/validate/{id}', 'PostController@validpost');
