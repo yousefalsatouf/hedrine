@@ -325,9 +325,6 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
 
 });
 
-Route::resource('herb', 'HerbFController')->parameters([
-    'herb' => 'herb'
-  ]);
 
 //N.Thierry : Les routes pour interagir entre les plante et DCI
 
