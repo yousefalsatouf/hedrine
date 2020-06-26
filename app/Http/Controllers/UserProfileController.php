@@ -64,12 +64,12 @@ class UserProfileController extends Controller
 
     public function modifHerb($user, $nbr)
     {
-        return $user->herbs()->where('validated', 0)->paginate($nbr);
+        return $user->herbs()->where('validated', -1)->paginate($nbr);
     }
 
     public function attente($user, $nbr)
     {
-        return $user->herbs()->where('validated', -1)->paginate($nbr);
+        return $user->herbs()->where('validated', 0)->paginate($nbr);
     }
 
      /**
