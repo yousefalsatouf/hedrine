@@ -38,8 +38,7 @@
 					</td>
 					<td>
 						{{$target->user->name}}
-                    </td>
-<<<<<<< HEAD
+
                     @if((auth()->user()->role_id == 1) || (auth()->user()->role_id == 2) || (auth()->user()->role_id == 3))
                         <td>
                             <div class="btn-group float-right">
@@ -47,15 +46,7 @@
                             </div>
                         </td>
                     @endif
-=======
->>>>>>> aef1f9ab40eeeccda4e95ade1a2b7c08cf4745e0
-
-                    <td>
-                        <div class="btn-group float-right">
-                            <a class="btn btn-outline-success text align-self-center p-2" href="{{ route('target.edit',$target->id) }}" role="button"><i class="fa fa-edit"></i></a> &nbsp; &nbsp;
-                        </div>
-                    </td>
-				</tr>
+                </tr>
 				@endforeach
 			</tbody>
 		</table>
