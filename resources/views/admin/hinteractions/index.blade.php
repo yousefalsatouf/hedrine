@@ -17,7 +17,7 @@
 			<tbody>
 				@foreach ($hinteractions as $hinteraction) 
 				<tr class="text-center">
-					<td>{{$hinteraction->validated}}</td>
+					<td>{{$hinteraction->validated}}</td> 
 					<td>{{$hinteraction->herbs->name}}</td>
 					<td>{{$hinteraction->targets->name }}</td>
 					<td>{{$hinteraction->notes }}</td>

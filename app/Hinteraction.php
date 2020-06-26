@@ -38,7 +38,7 @@ class Hinteraction extends Model
         return $this->belongsToMany(Reference::class, 'hinteraction_has_references')->withTimestamps();
     }
 
-    public function herbs()
+    public function herb()
     {
         return $this->belongsTo(Herb::class,'herb_id');
 
