@@ -289,19 +289,19 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('herb.index') }}" class="nav-link">
+                            <a href="{{ route('herbs.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Plantes</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('drug.index') }}" class="nav-link">
+                            <a href="{{ route('drugs.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>DCI</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('target.index') }}" class="nav-link">
+                            <a href="{{ route('targets.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Cas Rapporté et Mécanisme</p>
                             </a>

@@ -2,7 +2,7 @@
 
 @section('content_dashboard')
 <div class="row justify-content-end" style="padding-bottom: 0.75rem">
-	@if((Route::currentRouteName() === 'herb.index') && (auth()->user()->role_id == 1) || (auth()->user()->role_id == 2) || (auth()->user()->role_id == 3) )
+	@if(Route::currentRouteName() === 'herb.index')
 		<a class="btn btn-light" href="{{ route('herb.create') }}" role="button">Créer une nouvelle plante</a>
 	@endif
 </div>
@@ -17,9 +17,8 @@
 					<th>Notes</th>
 					<th>Type</th>
 					<th>Editors</th>
-                    @if((auth()->user()->role_id == 1) || (auth()->user()->role_id == 2) || (auth()->user()->role_id == 3))
                     <th> Actions</th>
-                    @endif
+
 				</tr>
 			</thead>
 			<tbody>
@@ -40,14 +39,12 @@
 					<td>
 						{{$target->user->name}}
                     </td>
-                    @if((auth()->user()->role_id == 1) || (auth()->user()->role_id == 2) || (auth()->user()->role_id == 3))
-                        <td>
-                            <div class="btn-group float-right">
-                                <a class="btn btn-outline-success text align-self-center p-2" href="{{ route('target.edit',$target->id) }}" role="button"><i class="fa fa-edit"></i></a> &nbsp; &nbsp;
-                            </div>
-                        </td>
-                    @endif
 
+                    <td>
+                        <div class="btn-group float-right">
+                            <a class="btn btn-outline-success text align-self-center p-2" href="{{ route('target.edit',$target->id) }}" role="button"><i class="fa fa-edit"></i></a> &nbsp; &nbsp;
+                        </div>
+                    </td>
 				</tr>
 				@endforeach
 			</tbody>

@@ -32,16 +32,15 @@
 					<td>{{ $drug->atc_level4s->name }}</td>
 					<td>{{ $drug->routes->name }}</td>
                     <td>{{ optional($drug->user)->name }}</td>
-                    @if((auth()->user()->role_id == 1) || (auth()->user()->role_id == 2) || (auth()->user()->role_id == 3))
-                        <td style="width: 10rem">
-                            <div class="btn-group float-right">&nbsp; &nbsp; &nbsp;
-                                <a class="btn btn-outline-success text align-self-center p-2" href="{{ route('drug.edit',$drug->id) }}" role="button">Edit</a> &nbsp; &nbsp;
+                    <td style="width: 10rem">
+                        <div class="btn-group float-right">&nbsp; &nbsp; &nbsp;
+                            <a class="btn btn-outline-success text align-self-center p-2" href="{{ route('drug.edit',$drug->id) }}" role="button">Edit</a> &nbsp; &nbsp;
+                            @if(!auth()->user()->role_id == 3)
                                 <a class="btn btn-outline-danger text align-self-center p-2" href="{{ route('drug.destroy.alert',$drug->id) }}" role="button">Delete
                                 </a>
-
-                            </div>
-                        </td>
-                    @endif
+                            @endif
+                        </div>
+                    </td>
 				</tr>
 				@endforeach
 			</tbody>
