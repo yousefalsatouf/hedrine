@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class HistoryHerbs extends Model
+class DataHistory extends Model
 {
     protected $fillable = [
-        'id','name', 'sciname','author','edit_by'
+        'id','type_id', 'type','original', 'data', 'edit_by'
     ];
 }

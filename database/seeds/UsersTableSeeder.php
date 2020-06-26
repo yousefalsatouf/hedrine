@@ -64,7 +64,7 @@ class UsersTableSeeder extends Seeder
 
         User::create([
 
-            'name' => 'Alsatouf Yousef',
+            'name' => 'Alsatouf',
             'firstname' => 'Yousef',
             'team' => 'DPM',
             'tel1' => '',

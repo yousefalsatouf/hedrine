@@ -51,17 +51,25 @@ class AdminController extends Controller
     public function quickEdit(Request $request)
     {
         $herb = Herb::where('validated', '!=', 1)->where('id', $request->id)->get();
-
+        //dd($herb);
 
         if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
         {
-            DB::table('history_herbs')->updateOrInsert([
-                'name' => $herb[0]->name,
-                'sciname' => $herb[0]->sciname,
-                'author' => $herb[0]->user->name,
+            $data=array();
+            foreach ($herb as $k => $h)
+            {
+                $data[$k] = $h;
+            }
+            $json = json_encode($data[0]);
+            //dd($json);
+
+            $new = DB::table('data_history')->updateOrInsert([
+                'type_id' => $herb[0]->id,
+                'type' => "Herb",
+                'data' => $json,
+                'original' => 0,
                 'edit_by' => Auth::user()->name
             ]);
-
             DB::table('herbs')->where('validated', '!=', 1)->where('id', $request->id)
                 ->update([
                     'name' => $request->name,
