@@ -137,6 +137,10 @@
             </a>
             @if(\Illuminate\Support\Facades\Auth::user()->role_id === 4)
                 <a class="dropdown-item" href="{{route('unsubscribe', \Illuminate\Support\Facades\Auth::id())}}"><i style="color: red" class="left fas fa-times-circle"></i> Désinscription</a>
+                <a class="dropdown-item" href="{{ route('userprofile.index') }}">
+                    <i class="left fas fa-sign-out-alt"></i>
+                    Mon compte
+                </a>
             @endif
         </div>
     </div>

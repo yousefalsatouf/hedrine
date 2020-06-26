@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="{{asset('/adminlte/dist/css/adminlte.min.css')}}">
   <link rel="stylesheet" href="{{ asset('/adminlte/css/style.css')}}">
   <link rel="stylesheet" href="{{ asset('/css/hedrine.css')}}">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{asset('/adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
@@ -202,6 +203,12 @@
                 </a>
                 @if(\Illuminate\Support\Facades\Auth::user()->role_id === 4)
                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#unsubscribeModal"><i style="color: red" class="left fas fa-times-circle"></i> Désinscription</a>
+                @endif
+                @if(auth()->user()->role_id == 3)
+                <a class="dropdown-item" href="{{ route('userprofile.index') }}">
+                    <i class="left fas fa-sign-out-alt"></i>
+                    Mon compte
+                </a>
                 @endif
             </div>
         </li>
