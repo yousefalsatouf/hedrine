@@ -104,6 +104,9 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('*', function ($view) {
             $view->with('validatedHerb',Herb::where('validated',1)->get());
         });
+        view()->composer('partials.table-add-del-view', function ($view) {
+            $view->with('waitingHerb',auth()->user()->herbs()->where('validated',-1)->get());
+        });
 
         View::composer('dashboard.layout', function ($view) {
             $title = config('titles.' . Route::currentRouteName());

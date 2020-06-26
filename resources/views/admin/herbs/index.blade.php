@@ -5,7 +5,7 @@
 
 @section('content_dashboard')
 <div class="row justify-content-end" style="padding-bottom: 0.75rem">
-	@if((Route::currentRouteName() === 'herb.index') && (auth()->user()->role_id == 1) || (auth()->user()->role_id == 2) || (auth()->user()->role_id == 3) )
+	@if(Route::currentRouteName() === 'herb.index')
 		<a class="btn btn-light" href="{{ route('herb.create') }}" role="button">Créer une nouvelle plante</a>
 	@endif
 </div>
@@ -17,16 +17,12 @@
 				<tr class="text-center">
 					<th> nom</th>
 					<th>Sciname</th>
-					{{-- <th>Forces</th> --}}
                     <th>Formes de la plante</th>
-                    @if((auth()->user()->role_id == 1) || (auth()->user()->role_id == 2) || (auth()->user()->role_id == 3))
-                    <th> Actions</th>
-                    @endif
-
+                    <th>Actions</th>
 				</tr>
 			</thead>
 			<tbody>
-				@foreach ($herbs as $herb)
+				@foreach ($validatedHerb as $herb)
 					<!--
 					START COMMENT
 					Les variables $lastHerb et $numberOfTimes_herbForms ont été déclarées dans le controleur Herb methode indes
@@ -65,6 +61,7 @@
 									@endif
 							@endforeach
                         </td>
+<<<<<<< HEAD
                         @if((auth()->user()->role_id == 1) || (auth()->user()->role_id == 2) || (auth()->user()->role_id == 3))
                             <td style="width: 10rem">
                                     <div class="btn-group float-right">
@@ -73,6 +70,17 @@
                             </td>
                         @endif
 						</td>
+=======
+
+                        <td style="width: 10rem">
+                            <div class="btn-group float-right">
+                                <a class="btn btn-outline-success text-center text align-self-center p-2" href="{{ route('herb.edit',$herb->id) }}" role="button">Edit</a> &nbsp; &nbsp;
+                                @if(!auth()->user()->role_id == 3)
+                                    <a class="btn btn-outline-danger text align-self-center p-2" href="{{ route('herb.destroy.alert',$herb->id) }}" role="button">Delete</a>
+                                @endif
+                            </div>
+                        </td>
+>>>>>>> aef1f9ab40eeeccda4e95ade1a2b7c08cf4745e0
 					</tr>
 				@endforeach
 			</tbody>

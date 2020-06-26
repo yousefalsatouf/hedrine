@@ -40,7 +40,7 @@ Auth::routes(['verify' => true]);
 //DD 2/5/20 pour atteindre la première page du site (home), il faut que le user ait vérifié son adresse mail en cliquant sur le lien reçu à cette dernière (->middleware('verified');)
 //J'ai créé un middleware nommé checkuserisactive qui permet de vérifier si le user a été activé par un admin (Florence par exemple)
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified', 'checkuserisactive');
-Route::get('/herb','HerbController@index')->name('herbs.index')->middleware('verified', 'checkuserisactive');;
+Route::get('/herb','HerbController@index')->name('herbs.index');
 
 Route::get('/test',function(){
     return view("auth/usernotvalidated.blade.php");
@@ -323,8 +323,6 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
 
         Route::get('/','AlertsController@index')->name('index');
     });
-
-
 });
 
 
@@ -348,3 +346,5 @@ Route::prefix('utilisateur')->middleware('user')->group(function () {
         Route::name('userprofile.destroy')->get('herb/{herb}', 'UserProfileController@delete');
     });
 });
+
+
