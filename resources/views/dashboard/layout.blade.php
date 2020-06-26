@@ -219,8 +219,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <b class="text-danger">Votre compte et vos données vont supprimer !</b>
-                    <strong> voulez-vous  vraiment désinscrire?</strong>
+                    <b class="text-danger">Votre compte et vos données vont être supprimés.</b>
+                    <strong>Voulez-vous vraiment vous désinscrire définitivement ?</strong>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light" data-dismiss="modal">Non</button>

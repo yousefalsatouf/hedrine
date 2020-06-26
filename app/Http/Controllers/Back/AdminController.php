@@ -47,22 +47,6 @@ class AdminController extends Controller
         return view('alerts.index');
     }
 
-    public function approved($herb){
-        $herb->validated = 1;
-        $herb->save();
-    }
-    public function delete($herb){
-        $herb->delete();
-    }
-    public function delValue($herb){
-        $herb->validated = -1;
-        $herb->save();
-    }
-    public function modifTodo($herb){
-        $herb->validated = -1;
-        $herb->save();
-    }
-
     public function quickEdit(Request $request)
     {
         $herb = Herb::where('validated', '!=', 1)->where('id', $request->id)->get();
@@ -88,16 +72,6 @@ class AdminController extends Controller
         return response()->json($herb);
     }
 
-    /**
-     * Get an ad by id.
-     *
-     * @param integer $id
-     */
-    public function getById($id)
-    {
-        return DB::table('herbs')->where('id', '=', $id)->get();
-    }
-
     public function approve(Request $request) {
 
         //echo $request->id;
@@ -114,8 +88,8 @@ class AdminController extends Controller
 
         $herb = DB::table('herbs')->where('id', '=', $id)->get();
 
-        $mail = $herb->user->email;
-        Mail::to($mail)->send(new HerbRefuse($herb->user, $msg));
+        //$mail = $herb->user->email;
+        //Mail::to($mail)->send(new HerbRefuse($herb->user, $msg));
 
         DB::table('herbs')->where('id', '=', $id)->delete();
 
@@ -127,12 +101,12 @@ class AdminController extends Controller
 
         $id = $request->id;
         $msg = $request->msg;
-        $herb = $this->getById($id);
+        $herb = DB::table('herbs')->where('id', '=', $id)->get();
 
-        $mail = $herb->user->email;
-        Mail::to($mail)->send(new HerbToUpdate($herb->user,$msg));
+        //$mail = $herb->user->email;
+        //Mail::to($mail)->send(new HerbToUpdate($herb->user,$msg));
 
-        $this->modifTodo($herb);
+        DB::table('herbs')->where('id', '=', $id)->update(['validated' => -1]);
 
         Alert::success('Ok !', 'La plante doit etre corrigée et le rédacteur va être notifié.');
         return response()->json(['id' => $herb->id]);

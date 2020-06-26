@@ -30,9 +30,11 @@
                 <div class="modal-footer">
                     <div id="buttons">
                         <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Annuler</button>
-                        <button type="submit" class="btn btn-outline-success"><i class="fa fa-paper-plane"></i></button>
+                        <button type="submit" class="btn btn-outline-success">
+                            <i class="fas fa-spinner fa-pulse" id="send-refuse" style="display: none"></i>
+                            <i class="fa fa-paper-plane" id="icon-refuse" ></i>
+                        </button>
                     </div>
-                    <i id="icon-refuse" class="fas fa-spinner fa-pulse fa-2x" style="display: none"></i>
                 </div>
             </form>
         </div>

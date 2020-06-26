@@ -52,19 +52,22 @@ $(document).ready(function() {
 
     // modification message to send ...
     $('#message-form-update').submit((e) => {
+        e.preventDefault();
         let that = $(e.currentTarget);
 
-        e.preventDefault();
         $('#message').removeClass('is-invalid');
         $('.invalid-feedback').html('');
         toggleButtons();
 
+        $('#send-modif').hide();
+        $('i#icon-modif').show();
+
         $.ajax({
-            type: 'POST',
-            url: $('#message-form-update').data('url'),
+            type: that.attr('method'),
+            url: that.attr('action'),
             data: {
                 //'_token': $('input[name=_token]').val(),
-                'id': $("#modifs-id").val(),
+                'id': $("#modif-btn-id").data('id'),
                 'msg': $('#modifs-message').val()
             },
             success: function(data)
@@ -88,7 +91,8 @@ $(document).ready(function() {
         $('#refuse-message').removeClass('is-invalid');
         $('.invalid-feedback').html('');
         toggleButtons();
-        $('#send').hide();
+
+        $('#send-refuse').hide();
         $('i#icon-refuse').show();
         //console.log($('#refuse-message').val());
 
@@ -102,7 +106,7 @@ $(document).ready(function() {
             },
             success: function(data)
             {
-                console.log(data);
+                //console.log(data);
                 document.location.reload(true);
             },
             error: function (error) {

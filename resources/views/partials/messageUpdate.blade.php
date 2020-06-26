@@ -1,7 +1,7 @@
 <div class="modal fade" id="messageUpdateModal" tabindex="-1" role="dialog" aria-labelledby="message" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
-            <form id="message-form-update" data-url="{{ route('admin.modifs') }}">
+            <form id="message-form-update" method="POST" action="{{ route('admin.modifs') }}">
                 @csrf
                 <div class="modal-body">
                     @guest
@@ -12,8 +12,6 @@
                             </button>
                         </div>
                     @endguest
-
-                    <input id="modifs-id" name="id" type="hidden" value="{{ isset($herb) ? $herb->id : '' }}">
 
                     <div class="form-group">
                         <label for="texte" class="text-success">Précisez ici les choses à modifier</label>
@@ -33,9 +31,8 @@
                 <div class="modal-footer">
                     <div id="buttons">
                         <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Annuler</button>
-                        <button type="submit" class="btn btn-outline-success"><i class="fa fa-paper-plane"></i></button>
+                        <button type="submit" class="btn btn-outline-success"><i class="fa fa-paper-plane" id="send-modif"></i><i id="icon-modif" class="fas fa-spinner fa-pulse" style="display: none"></i></button>
                     </div>
-                    <i id="icon" class="fas fa-spinner fa-pulse" style="display: none"></i>
                 </div>
             </form>
         </div>
