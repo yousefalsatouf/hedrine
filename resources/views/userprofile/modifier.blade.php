@@ -1,8 +1,8 @@
 @extends('layouts.user')
 
 @section('content_dashboard')
-    @include('partials.alerts', ['title' => 'Plantes actives'])
-    @include('partials.table-add-del-view', ['edit' => true])
+    @include('partials.alerts', ['title' => 'Plantes à modifier'])
+    @include('partials.table-add-del-view', ['noAdd' => true])
 @endsection
 
 @section('script')

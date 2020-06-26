@@ -143,6 +143,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ route('userprofile.modifier')}}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Plantes à modifier</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{route('userprofile.validated')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Active</p>
