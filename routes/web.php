@@ -334,3 +334,18 @@ Route::resource('herb', 'HerbFController')->parameters([
 // Route::name('hinteractions.hdi')->get('hinteraction','HinteractionController@index');
 Route::get('hinteractions/hdi','HinteractionController@index')->name('hinteractions.hdi');
 Route::get('hinteractions/hti','HinteractionController@show_mecanisme_form')->name('hinteractions.hti');
+
+//UserPorofile
+Route::prefix('utilisateur')->middleware('user')->group(function () {
+    Route::get('/', 'UserProfileController@index')->name('userprofile.index');
+    Route::prefix('herbs')->group(function () {
+        Route::get('validated', 'UserProfileController@allValidated')->name('userprofile.validated');
+        Route::get('attente', 'UserProfileController@attenteHerb')->name('userprofile.attente');
+    });
+    Route::prefix('profil')->group(function () {
+        Route::get('email', 'UserProfileController@emailEdit')->name('userprofile.email.edit');
+        Route::put('email', 'UserProfileController@emailUpdate')->name('userprofile.email.update');
+        Route::get('donnees', 'UserProfileController@data')->name('userprofile.data');
+        Route::name('userprofile.destroy')->get('herb/{herb}', 'UserProfileController@delete');
+    });
+});
