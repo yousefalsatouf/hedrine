@@ -64,6 +64,8 @@ Route::get('/herb/{char}', 'HerbController@filterByChar');
 //N.Thierry pour atteindre la page de herbe
 Route::get('/herb','HerbController@index')->name('herbs.index');
 Route::get('herb/details_plante/{id}','HerbController@details')->name('herbs.details');
+Route::get('show/{id}','HerbController@show')->name('herbs.show');
+Route::name('herbs.update')->put('herb', 'HerbController@update');
 
 //N.Thierry pour atteindre la page de drugs
 Route::get('/drug','DrugController@index')->name('drugs.index');
@@ -336,6 +338,8 @@ Route::get('hinteractions/hti','HinteractionController@show_mecanisme_form')->na
 Route::prefix('utilisateur')->middleware('user')->group(function () {
     Route::get('/', 'UserProfileController@index')->name('userprofile.index');
     Route::prefix('herbs')->group(function () {
+
+        Route::get('actives', 'UserProfileController@actives')->name('userprofile.actives');
         Route::get('validated', 'UserProfileController@allValidated')->name('userprofile.validated');
         Route::get('attente', 'UserProfileController@attenteHerb')->name('userprofile.attente');
         Route::get('modifier', 'UserProfileController@modifierHerb')->name('userprofile.modifier');

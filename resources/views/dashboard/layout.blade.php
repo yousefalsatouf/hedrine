@@ -206,7 +206,7 @@
                 @endif
                 @if(auth()->user()->role_id == 3)
                 <a class="dropdown-item" href="{{ route('userprofile.index') }}">
-                    <i class="left fas fa-sign-out-alt"></i>
+                    <i class="left fas fa-user-cog"></i>
                     Mon compte
                 </a>
                 @endif

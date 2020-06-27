@@ -6,5 +6,5 @@
 @endsection
 
 @section('script')
-    @include('partials.script-add-del-view')
+   /* @include('partials.script-add-del-view')*/
 @endsection

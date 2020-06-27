@@ -149,7 +149,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('userprofile.validated')}}" class="nav-link">
+                            <a href="{{route('userprofile.actives')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Active</p>
                             </a>

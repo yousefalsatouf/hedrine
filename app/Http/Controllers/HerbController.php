@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\Herb;
 use App\HerbHasForm;
-use App\Http\Requests\HerbRequest;
+use App\Http\Requests\{HerbRequest,HerbUpdate};
 use App\Drug;
 use App\Hinteraction;
 use App\Target;
@@ -154,7 +154,7 @@ class HerbController extends Controller
      */
     public function show(Herb $herb)
     {
-        //
+        return view('herbs/show', compact('herb'));
     }
 
     /**
@@ -165,7 +165,7 @@ class HerbController extends Controller
      */
     public function edit(Herb $herb)
     {
-        //
+        return view('herbs/edit', compact('herb'));
     }
 
     /**
@@ -175,10 +175,23 @@ class HerbController extends Controller
      * @param  \App\Herb  $herb
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Herb $herb)
+    public function update(HerbUpdate $request, Herb $herb)
     {
         //
+        $this->updating($herb, $request->all());
+
+        return back();
     }
+    /**
+     * Update an ad.
+     *
+     * @param \App\Models\Herb
+     */
+    public function updating($herb, $data)
+    {
+        $herb->update($data);
+    }
+
 
     /**
      * Remove the specified resource from storage.
