@@ -18,7 +18,8 @@ class UserProfileController extends Controller
         $herbs = $this->getByUser($request->user());
         $herbsAttentsCount = $this->herbEntente($herbs);
         $herbToModifierCount = $this->herbToModif($herbs);
-        return view('userprofile.index', compact('herbsAttentsCount','herbToModifierCount'));
+        $herbActivesCount  = $this->activeCount($herbs);
+        return view('userprofile.index', compact('herbsAttentsCount','herbToModifierCount','herbActivesCount'));
     }
 
     /**
@@ -50,16 +51,30 @@ class UserProfileController extends Controller
     public function validated($user, $nbr) {
         return $user->herbs()->where('validated', 1)->paginate($nbr);
     }
+    public function actives(Request $request)
+    {
+        $herbings = $this->active($request->user(), 5);
+        return view('userprofile.actives', compact('herbings'));
+    }
+    public function active($user, $nbr)
+    {
+        return $user->herbs()->where('validated', 1)->paginate($nbr);
+    }
+    public function activeCount($herbs)
+{
+    return $herbs->where('validated', 1)->count();
+}
+
 
     public function attenteHerb(Request $request)
     {
-        $herbs = $this->attente($request->user(), 5);
-        return view('userprofile.waiting', compact('herbs'));
+        $herbings = $this->attente($request->user(), 5);
+        return view('userprofile.waiting', compact('herbings'));
     }
 
     public function modifierHerb(Request $request) {
-        $herbs = $this->modifHerb($request->user(), 5);
-        return view('userprofile.modifier', compact('herbs'));
+        $herbings = $this->modifHerb($request->user(), 5);
+        return view('userprofile.modifier', compact('herbings'));
     }
 
     public function modifHerb($user, $nbr)

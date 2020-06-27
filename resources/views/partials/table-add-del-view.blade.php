@@ -9,13 +9,13 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($waitingHerb as $herb)
+            @foreach ($herbings as $herb)
                 <tr id="{{ $herb->id }}">
                     <td>{{ $herb->name }}</td>
                     <td>{{ $herb->sciname }}</td>
                     <td class="date-id">{{ date_create($herb->created_at)->format('d-m-Y') }}</td>
                     <td class="float-right">
-                        <a class="btn btn-primary btn-sm" href="#" target="_blank" role="button" data-toggle="tooltip" title="Voir la plante"><i class="fas fa-eye"></i></a>
+                        <a class="btn btn-primary btn-sm" href="{{ route('herbs.show', $herb->id) }}" target="_blank" role="button" data-toggle="tooltip" title="Voir la plante"><i class="fas fa-eye"></i></a>
                         @isset($edit)
                             <a class="btn btn-warning btn-sm" href="#" role="button" data-toggle="tooltip" title="Modifier la plante"><i class="fas fa-edit"></i></a>
                         @endisset
