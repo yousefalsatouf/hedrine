@@ -201,9 +201,10 @@
                     <i class="left fas fa-sign-out-alt"></i>
                     Se déconnecter
                 </a>
-                @if(\Illuminate\Support\Facades\Auth::user()->role_id === 4)
+                {{-- DD 28 juin 2020 : je mets en commentaire la désinscription dans le menu du user car je l'ai déplacé dansle sidebar de gauche --}}
+                {{-- @if(\Illuminate\Support\Facades\Auth::user()->role_id === 4)
                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#unsubscribeModal"><i style="color: red" class="left fas fa-times-circle"></i> Désinscription</a>
-                @endif
+                @endif --}}
                 @if(auth()->user()->role_id == 3)
                 <a class="dropdown-item" href="{{ route('userprofile.index') }}">
                     <i class="left fas fa-user-cog"></i>
@@ -226,13 +227,13 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <b class="text-danger">Votre compte et vos données vont être supprimés.</b>
-                    <strong>Voulez-vous vraiment vous désinscrire définitivement ?</strong>
+                    <b class="text-danger">Votre compte et vos données seront DÉFINITIVEMENT supprimés :</b>
+                    <strong>Voulez-vous vraiment vous continuer ?</strong>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light" data-dismiss="modal">Non</button>
                     <a href="{{route('unsubscribe')}}" id="unsubscribe" style="border: 0; border-bottom: 1px solid red" class="btn btn-outline-danger">
-                         Oui, Je confirme!
+                         Oui, je confirme ma désinscription !
                     </a>
                 </div>
             </div>
@@ -438,6 +439,27 @@
                             </li>
                         </ul>
                     </li>
+                @endif
+                @if ((auth()->user()->role_id == 4 ))
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link" style="background-color:red;" >
+                        <i class="left fas fa-times-circle"></i>
+                        <p>
+                            DESINSCRIPTON
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#unsubscribeModal"><i style="color: red" class="left fas fa-times-circle"></i> Supprimer mon compte</a>
+                        
+                        
+                        </a>
+                    </li>
+                </ul>
+            </li>
                 @endif
             </ul>
         </nav>
