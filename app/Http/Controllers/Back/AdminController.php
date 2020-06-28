@@ -55,7 +55,8 @@ class AdminController extends Controller
 
         if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
         {
-            $data=array();
+            // all these were about the history data ....
+            /*$data=array();
             foreach ($herb as $k => $h)
             {
                 $data[$k] = $h;
@@ -69,7 +70,8 @@ class AdminController extends Controller
                 'data' => $json,
                 'original' => 0,
                 'edit_by' => Auth::user()->name
-            ]);
+            ]);*/
+
             DB::table('herbs')->where('validated', '!=', 1)->where('id', $request->id)
                 ->update([
                     'name' => $request->name,

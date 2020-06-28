@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class DataHistory extends Model
+class TemporaryData extends Model
 {
     protected $fillable = [
-        'id','type_id', 'type','original', 'data', 'edit_by'
+        'id','type_id', 'type', 'data', 'edit_by', 'verified_by'
     ];
 }
