@@ -8,6 +8,7 @@ use App\Http\Requests\HerbRequest;
 use App\Drug;
 use App\Herb;
 use App\Target;
+use App\TemporaryData;
 use App\User;
 use App\Role;
 use App\HerbForm;
@@ -114,14 +115,43 @@ class HerbController extends Controller
      */
     public function update(Request $request, Herb $herb)
     {
-        $herb->name = $request->name;
-        $herb->sciname = $request->sciname;
+        $editor = Auth::user()->role_id === 3;
+        $boss = Auth::user()->role_id <= 2;
 
-        $herb->save();
-        $herb->herb_forms()->sync($request->forms);
-        Alert::success('Ok !', 'Votre plante a étè mis à jour avec succès');
+        //dd($herb->name);
 
-        return back();
+        if ($editor || ($boss && !$request->validated))
+        {
+            $data = array();
+            $data["name"] = $request->name;
+            $data["sciname"] = $request->sciname;
+            $data["herb_forms"] = $request->forms;
+            //dd($data);
+            $json = json_encode($data);
+            //dd($json);
+
+            DB::table('temporary_data')
+                ->updateOrInsert(
+                    ['type_id' => $herb->id],
+                    ['type_id' => $herb->id, 'type' => 'herbs', 'data' => $json, 'edit_by' => Auth::user()->name]
+                );
+
+            Alert::success('Cool !', 'Votre plante est en cours de vérifier avec l\'administrateur');
+
+            return redirect('admin/herb');
+        }
+        elseif($boss && $request->validated)
+        {
+            $herb->name = $request->name;
+            $herb->sciname = $request->sciname;
+            $herb->save();
+            $herb->herb_forms()->sync($request->forms);
+
+            Alert::success('Ok !', 'Votre plante a étè mis à jour avec succès');
+
+            return redirect('admin/herb');
+        }
+
     }
 
     /**

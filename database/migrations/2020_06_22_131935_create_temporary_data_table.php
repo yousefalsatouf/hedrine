@@ -19,7 +19,7 @@ class CreateTemporaryDataTable extends Migration
             $table->string('type');
             $table->json('data');
             $table->string('edit_by');
-            $table->string('verified_by');
+            $table->string('verified_by')->nullable();
             $table->timestamps();
         });
     }
