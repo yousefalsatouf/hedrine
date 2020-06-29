@@ -4,9 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TemporaryHerbs extends Model
+class TemporaryData extends Model
 {
     protected $fillable = [
-        'id','herb_id', 'name', 'sciname', 'validated','edit_by'
+        'id','herb_id', 'edit_by'
     ];
+
+    function Herbs()
+    {
+        return $this->hasOne('App\Herb');
+    }
 }

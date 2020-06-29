@@ -11,6 +11,11 @@ class Herb extends Model
 
     protected $fillable = ['name', 'sciname', 'user_id'];
 
+    public function temporary()
+    {
+        return $this->belongsTo(TemporaryData::class, 'herb_id');
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class,'user_id');
