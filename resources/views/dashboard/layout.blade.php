@@ -216,7 +216,7 @@
     </ul>
   </nav>
   <!-- /.navbar -->
-    <!-- Modal -->
+    <!-- Modal de la désinscription-->
     <div class="modal fade" id="unsubscribeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
