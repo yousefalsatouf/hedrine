@@ -39,7 +39,7 @@
 											<div class="form-group">
 												@isset($user) @method('PUT') @endisset
 												@csrf
-												<label for="firstname">Prénom</label>
+												<label for="firstname">Prnom</label>
 												<input type="text" class="form-control" id="firstname" name="firstname" required placeholder="Veuillez indiquer un prénom pour l'utilisateur" value="{{isset($user) ? $user->firstname : ''}}">
 											</div>
 										</div>
