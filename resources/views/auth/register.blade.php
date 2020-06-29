@@ -140,10 +140,11 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-1! offset-md-1">
-                                <blockquote class="text-info text-justify" style="max-width: 91%">
+                                <blockquote class="" style="max-width: 91%">
                                     <i class="fa fa-info-circle info text-danger" id="required-msg"></i>
-                                    « L'Université libre de Bruxelles traite vos données afin de permettre votre inscription sur ce site. Pour en savoir plus sur la manière dont vos données personnelles sont traitées et conservées ainsi que pour exercer vos droits,
-                                    <button type="button" class="btn btn-outline-light text-dark awesome-font" data-toggle="modal" data-target="#exampleModal">reportez-vous à l'information disponible ici </button>»
+                                    ATTENTION :
+                                    « L'Université libre de Bruxelles traite vos données afin de permettre votre inscription sur ce site. Pour en savoir plus sur la manière dont vos données personnelles sont traitées et conservées ainsi que pour vérifier vos droits, <b>veuillez lire les conditions RGPD et les accepter en cochant la petite case que vous trouverez dans la popup qui s'ouvrira</b> (sans quoi vous ne pourrez pas vous enregistrer). 
+                                    Veuillez cliquer <button type="button" class="btn btn-outline-light text-dark awesome-font" data-toggle="modal" data-target="#exampleModal">ici. </button>»
                                 </blockquote>
                             </div>
                             <div class="col-md-6 offset-md-4">
@@ -162,14 +163,14 @@
                                             <div class="modal-body scroll text-dark">
                                                 <h4 class="text-success text-center">RGPD : Hedrine</h4>
                                                 <hr>
-                                                <strong class="text-info"><i class="fa fa-info-circle"></i>Veuillez faire défiler vers le bas pour cocher la case</strong>
+                                                <strong class="text-info"><i class="fa fa-info-circle"></i>Veuillez faire défiler vers le bas afin de lire attentivement et pour cocher la case d'acceptation des conditions mentionnées dans cette fenêtre :</strong>
                                                 <hr>
                                                 @include('auth.terms')
                                                 <hr>
                                                 <div class="condtions">
                                                     <!-- Button trigger modal -->
                                                     <label for="check-me" id="checkboxContent">
-                                                        <input type="checkbox" name="RGPD" id="check-me" class="@error('RGPD') is-invalid @enderror" required value="1">  En cochant cette case, j’accepte la politique de confidentialité de ce site
+                                                        => <input type="checkbox" name="RGPD" id="check-me" class="@error('RGPD') is-invalid @enderror" required value="1"> <= En cochant cette case, j’accepte la politique de confidentialité de ce site et je donne mon accord pour le traitement de mes données en vue de la bonne utilisaiton de ce site.
                                                     </label>
                                                     @error('RGPD')
                                                     <span class="invalid-feedback" role="alert">
