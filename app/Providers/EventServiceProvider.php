@@ -4,9 +4,11 @@ namespace App\Providers;
 
 use App\Events\AcceptNewUserEvent;
 use App\Events\DenyNewUserEvent;
+use App\Events\HerbRefuseEvent;
 use App\Listeners\AcceptNewUserListener;
 use App\Listeners\ActivateNewUser;
 use App\Listeners\DenyNewUser;
+use App\Listeners\HerbRefuseListener;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -31,6 +33,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         AcceptNewUserEvent::class => [
             AcceptNewUserListener::class,
+        ],
+        HerbRefuseEvent::class => [
+            HerbRefuseListener::class,
         ]
     ];
 

@@ -2,22 +2,15 @@
 
 namespace App\Http\Controllers\Back;
 
+use App\Events\HerbRefuseEvent;
 use App\Http\Controllers\Controller;
 
 use App\Herb;
 use App\TemporaryData;
-use App\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\HerbRefuse;
-use App\Mail\HerbToUpdate;
 use RealRashid\SweetAlert\Facades\Alert;
-use App\Http\Requests\MessageRefuse as MessageRefuseRequest;
-
-use Symfony\Component\VarDumper\Cloner\Data;
 use Illuminate\{
     Http\Request,
-    Notifications\DatabaseNotification,
     Support\Facades\DB
 };
 
@@ -56,22 +49,6 @@ class AdminController extends Controller
 
         if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
         {
-            // all these were about the history data ....
-            /*$data=array();
-            foreach ($herb as $k => $h)
-            {
-                $data[$k] = $h;
-            }
-            $json = json_encode($data[0]);
-            //dd($json);
-
-            $new = DB::table('data_history')->updateOrInsert([
-                'type_id' => $herb[0]->id,
-                'type' => "Herb",
-                'data' => $json,
-                'original' => 0,
-                'edit_by' => Auth::user()->name
-            ]);*/
 
             DB::table('herbs')->where('validated', '!=', 1)->where('id', $request->id)
                 ->update([
@@ -101,6 +78,7 @@ class AdminController extends Controller
         $herb = DB::table('herbs')->where('id', '=', $id)->get();
         TemporaryData::where('type_id', $request->id)->where('type', 'herbs')->delete();
 
+        event(new HerbRefuseEvent($herb, $msg));
         //$mail = $herb->user->email;
         //Mail::to($mail)->send(new HerbRefuse($herb->user, $msg));
 
