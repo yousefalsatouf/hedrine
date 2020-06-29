@@ -5,19 +5,14 @@ namespace App\Http\Controllers\Back;
 use App\DataTables\DrugssDataTable;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\HerbRequest;
-use App\Drug;
 use App\Herb;
 use App\Target;
 use App\TemporaryData;
 use App\User;
-use App\Role;
-use App\HerbForm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
-use Illuminate\Support\Facades\DB;
 use App\Notifications\NewHerb as NewHerbNotification;
-use Illuminate\Support\Facades\Mail;
 
 
 
@@ -61,6 +56,27 @@ class HerbController extends Controller
 
         if ($editor || ($boss && !$request->validated))
         {
+            $herb = new Herb;
+            $herb->name = $request->name;
+            $herb->sciname = $request->sciname;
+            $herb->user_id = Auth::id();
+            $herb->save();
+            $herb->herb_forms()->sync($request->forms);
+
+            $data = ["name" => $herb->name, "sciname" => $herb->sciname, "herb_forms" => json_encode($request->forms)];
+            //dd($data);
+            foreach ($data as $key => $value)
+            {
+                $temporary = new TemporaryData;
+                $temporary->type_id = $herb->id;
+                $temporary->type_name = "herbs";
+                $temporary->type_field = $key;
+                $temporary->new_value = $value;
+                $temporary->author = Auth::user()->name." ".Auth::user()->firstname;
+                $temporary->save();
+            }
+
+            $herb->delete();
 
             Alert::success('Cool !', 'Votre plante est en cours de vérifier avec l\'administrateur');
         }
@@ -132,6 +148,27 @@ class HerbController extends Controller
 
         if ($editor || ($boss && !$request->validated))
         {
+            $data = ["name" => $request->name, "sciname" => $request->sciname, "herb_forms" => json_encode($request->forms)];
+                //dd($data["herb_forms"]);
+            foreach ($data as $key => $value)
+            {
+                /*if ($value !== $herb->$key)
+                {
+                    $temporary = new TemporaryData;
+                    $temporary->type_id = $herb->id;
+                    $temporary->type_name = "herbs";
+                    $temporary->type_field = $key;
+                    $temporary->new_value = $value;
+                    $temporary->save();
+                }*/
+                $temporary = new TemporaryData;
+                $temporary->type_id = $herb->id;
+                $temporary->type_name = "herbs";
+                $temporary->type_field = $key;
+                $temporary->new_value = $value;
+                $temporary->author = Auth::user()->name." ".Auth::user()->firstname;
+                $temporary->save();
+            }
 
             Alert::success('Cool !', 'Votre plante est en cours de vérifier avec l\'administrateur');
         }

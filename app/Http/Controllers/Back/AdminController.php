@@ -76,7 +76,7 @@ class AdminController extends Controller
 
         $herb = DB::table('herbs')->where('id', '=', $id)->get();
 
-        event(new HerbRefuseEvent($herb, $msg));
+        //event(new HerbRefuseEvent($herb, $msg));
         //$mail = $herb->user->email;
         //Mail::to($mail)->send(new HerbRefuse($herb->user, $msg));
 

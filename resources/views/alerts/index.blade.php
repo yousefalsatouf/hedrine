@@ -14,6 +14,7 @@
                                 <th scope="col">ID</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">SciName</th>
+                                <th scope="col">Herb Form</th>
                                 <th scope="col">Author</th>
                                 <th scope="col">Date</th>
                             </tr>

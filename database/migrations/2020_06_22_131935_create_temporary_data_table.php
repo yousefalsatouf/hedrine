@@ -19,6 +19,7 @@ class CreateTemporaryDataTable extends Migration
             $table->string('type_name');
             $table->string('type_field');
             $table->text('new_value');
+            $table->string('author');
             $table->timestamps();
         });
     }
