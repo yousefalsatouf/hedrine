@@ -65,7 +65,6 @@ class AdminController extends Controller
 
         //echo $request->id;
         DB::table('herbs')->where('id', '=', $request->id)->update(['validated'=>1, "verified_by" => Auth::user()->name." ".Auth::user()->firstname]);
-        TemporaryData::where('type_id', $request->id)->where('type', 'herbs')->delete();
         Alert::success('Ok !', 'Nouvelle plante approuvée avec succès');
         return response()->json(['id' => $request->id]);
 
@@ -76,7 +75,6 @@ class AdminController extends Controller
         $msg = $request->msg;
 
         $herb = DB::table('herbs')->where('id', '=', $id)->get();
-        TemporaryData::where('type_id', $request->id)->where('type', 'herbs')->delete();
 
         event(new HerbRefuseEvent($herb, $msg));
         //$mail = $herb->user->email;

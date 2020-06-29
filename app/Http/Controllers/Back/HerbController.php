@@ -61,19 +61,6 @@ class HerbController extends Controller
 
         if ($editor || ($boss && !$request->validated))
         {
-            $herb = new Herb;
-            $herb->user_id = Auth::user()->id;
-            $herb->name = $request->name;
-            $herb->sciname = $request->sciname;
-            $herb->save();
-            $herb->herb_forms()->sync($request->forms, false);
-            // now add this one to temporary table
-            $herb->temporary();
-
-            DB::table('temporary_data')->updateOrInsert(
-                ['type_id' => $herb->id, 'type' => 'herbs'],
-                ['type' => 'herbs']
-            );
 
             Alert::success('Cool !', 'Votre plante est en cours de vérifier avec l\'administrateur');
         }
@@ -145,17 +132,6 @@ class HerbController extends Controller
 
         if ($editor || ($boss && !$request->validated))
         {
-            $herb->name = $request->name;
-            $herb->sciname = $request->sciname;
-            $herb->validated = 0;
-            $herb->save();
-            $herb->herb_forms()->sync($request->forms);
-            $herb->temporary();
-
-            DB::table('temporary_data')->updateOrInsert(
-                ['type_id' => $herb->id, 'type' => 'herbs'],
-                ['type' => 'herbs']
-            );
 
             Alert::success('Cool !', 'Votre plante est en cours de vérifier avec l\'administrateur');
         }
