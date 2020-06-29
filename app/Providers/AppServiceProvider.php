@@ -99,8 +99,10 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('*', function ($view) {
             $data = TemporaryData::where('type_name', 'herbs')->get();
-
-            dd($data->toArray());
+            $grouped = $data->mapToGroups(function ($item, $key){
+                //
+            });
+            $grouped->toArray();
 
             $view->with('noValidHerbs', $data);
         });
