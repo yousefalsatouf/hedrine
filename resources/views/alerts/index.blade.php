@@ -19,7 +19,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($noValidCount as $herb)
+                            @foreach($noValidHerbs as $herb)
                                 <tr>
                                 <tr>
                                     <td class="@if($herb->validated == -1)

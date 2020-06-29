@@ -8,6 +8,7 @@ use App\Http\Requests\HerbRequest;
 use App\Drug;
 use App\Herb;
 use App\Target;
+use App\TemporaryData;
 use App\User;
 use App\Role;
 use App\HerbForm;
@@ -55,26 +56,51 @@ class HerbController extends Controller
      */
     public function store(HerbRequest $request)
     {
-        //dd($request->validated);
-        $herb = new Herb;
-        $herb->user_id = Auth::user()->id;
-        $herb->name = $request->name;
-        $herb->sciname = $request->sciname;
-        $request->validated? $herb->validated = 1 : $herb->validated = 0;
-        $herb->save();
-        $herb->herb_forms()->sync($request->forms, false);
+        $editor = Auth::user()->role_id === 3;
+        $boss = Auth::user()->role_id <= 2;
 
-        Alert::success('Ok !', 'Nouvelle plante ajouté avec succès');
+        if ($editor || ($boss && !$request->validated))
+        {
+            $herb = new Herb;
+            $herb->user_id = Auth::user()->id;
+            $herb->name = $request->name;
+            $herb->sciname = $request->sciname;
+            $herb->save();
+            $herb->herb_forms()->sync($request->forms, false);
+            // now add this one to temporary table
+            $herb->temporary();
 
-        $adminusers = User::with('roles')->where('role_id','1')->get();
-        //dd($adminusers);
-        foreach($adminusers as $adm) {
-            //Mail::to($adm)->send(new NewHerb($herb, $user));
-            $adm->notify(new NewHerbNotification($herb));
+            DB::table('temporary_data')->updateOrInsert(
+                ['type_id' => $herb->id, 'type' => 'herbs'],
+                ['type' => 'herbs']
+            );
 
+            Alert::success('Cool !', 'Votre plante est en cours de vérifier avec l\'administrateur');
         }
+        elseif($boss && $request->validated)
+        {
+            //dd($request->forms);
+            $herb = new Herb;
+            $herb->user_id = Auth::user()->id;
+            $herb->name = $request->name;
+            $herb->sciname = $request->sciname;
+            $herb->validated = 1;
+            $herb->verified_by = Auth::user()->name." ".Auth::user()->firstname;
+            $herb->save();
+            $herb->herb_forms()->sync($request->forms);
 
-        return back();
+            Alert::success('Ok !', 'Nouvelle plante ajouté avec succès');
+
+            $adminusers = User::with('roles')->where('role_id', '1')->get();
+            //dd($adminusers);
+            foreach ($adminusers as $adm) {
+                //Mail::to($adm)->send(new NewHerb($herb, $user));
+                $adm->notify(new NewHerbNotification($herb));
+
+            }
+        }
+        return redirect('/admin/herb');
+
     }
 
     /**
@@ -114,14 +140,39 @@ class HerbController extends Controller
      */
     public function update(Request $request, Herb $herb)
     {
-        $herb->name = $request->name;
-        $herb->sciname = $request->sciname;
+        $editor = Auth::user()->role_id === 3;
+        $boss = Auth::user()->role_id <= 2;
 
-        $herb->save();
-        $herb->herb_forms()->sync($request->forms);
-        Alert::success('Ok !', 'Votre plante a étè mis à jour avec succès');
+        if ($editor || ($boss && !$request->validated))
+        {
+            $herb->name = $request->name;
+            $herb->sciname = $request->sciname;
+            $herb->validated = 0;
+            $herb->save();
+            $herb->herb_forms()->sync($request->forms);
+            $herb->temporary();
 
-        return back();
+            DB::table('temporary_data')->updateOrInsert(
+                ['type_id' => $herb->id, 'type' => 'herbs'],
+                ['type' => 'herbs']
+            );
+
+            Alert::success('Cool !', 'Votre plante est en cours de vérifier avec l\'administrateur');
+        }
+        elseif($boss && $request->validated)
+        {
+            $herb->name = $request->name;
+            $herb->sciname = $request->sciname;
+            $herb->validated = 1;
+            $herb->verified_by = Auth::user()->name." ".Auth::user()->firstname;
+            $herb->save();
+            $herb->herb_forms()->sync($request->forms);
+
+            Alert::success('Ok !', 'Votre plante a étè mis à jour avec succès');
+        }
+
+        return redirect('admin/herb');
+
     }
 
     /**

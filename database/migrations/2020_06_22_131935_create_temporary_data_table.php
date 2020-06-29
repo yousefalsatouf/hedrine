@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHistoryHerbsTable extends Migration
+class CreateTemporaryDataTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateHistoryHerbsTable extends Migration
      */
     public function up()
     {
-        Schema::create('history_herbs', function (Blueprint $table) {
+        Schema::create('temporary_data', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('sciname');
-            $table->string('author');
-            $table->string('edit_by');
+            $table->unsignedBigInteger('type_id');
+            $table->string('type');
             $table->timestamps();
         });
     }

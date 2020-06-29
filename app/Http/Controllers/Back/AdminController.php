@@ -2,21 +2,15 @@
 
 namespace App\Http\Controllers\Back;
 
+use App\Events\HerbRefuseEvent;
 use App\Http\Controllers\Controller;
 
 use App\Herb;
-use App\User;
+use App\TemporaryData;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\HerbRefuse;
-use App\Mail\HerbToUpdate;
 use RealRashid\SweetAlert\Facades\Alert;
-use App\Http\Requests\MessageRefuse as MessageRefuseRequest;
-
-use Symfony\Component\VarDumper\Cloner\Data;
 use Illuminate\{
     Http\Request,
-    Notifications\DatabaseNotification,
     Support\Facades\DB
 };
 
@@ -51,16 +45,10 @@ class AdminController extends Controller
     public function quickEdit(Request $request)
     {
         $herb = Herb::where('validated', '!=', 1)->where('id', $request->id)->get();
-
+        //dd($herb);
 
         if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
         {
-            DB::table('history_herbs')->updateOrInsert([
-                'name' => $herb[0]->name,
-                'sciname' => $herb[0]->sciname,
-                'author' => $herb[0]->user->name,
-                'edit_by' => Auth::user()->name
-            ]);
 
             DB::table('herbs')->where('validated', '!=', 1)->where('id', $request->id)
                 ->update([
@@ -76,8 +64,8 @@ class AdminController extends Controller
     public function approve(Request $request) {
 
         //echo $request->id;
-        DB::table('herbs')->where('id', '=', $request->id)->update(['validated'=>1]);
-
+        DB::table('herbs')->where('id', '=', $request->id)->update(['validated'=>1, "verified_by" => Auth::user()->name." ".Auth::user()->firstname]);
+        TemporaryData::where('type_id', $request->id)->where('type', 'herbs')->delete();
         Alert::success('Ok !', 'Nouvelle plante approuvée avec succès');
         return response()->json(['id' => $request->id]);
 
@@ -88,7 +76,9 @@ class AdminController extends Controller
         $msg = $request->msg;
 
         $herb = DB::table('herbs')->where('id', '=', $id)->get();
+        TemporaryData::where('type_id', $request->id)->where('type', 'herbs')->delete();
 
+        event(new HerbRefuseEvent($herb, $msg));
         //$mail = $herb->user->email;
         //Mail::to($mail)->send(new HerbRefuse($herb->user, $msg));
 

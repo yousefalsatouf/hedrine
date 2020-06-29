@@ -53,7 +53,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('noValidCount',Herb::where('validated',0)->get());
         });
         view()->composer('*', function ($view) {
-            $view->with('validatedHerb',Herb::where('validated',1)->get());
+            $view->with('validatedHerb', Herb::where('validated',1)->get());
         });
 
         View::composer('*', function ($view) {
@@ -96,10 +96,10 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer('*', function ($view) {
-            $view->with('noValidCount',Herb::where('validated','<=',0)->get());
+            $view->with('noValidHerbs', Herb::where('validated', '<=', 0)->get());
         });
         view()->composer('*', function ($view) {
-            $view->with('drugsNoValidCount',Drug::where('validated','<=',0)->get());
+            $view->with('noValidDrugs',Drug::where('validated', '<=', 0)->get());
         });
         view()->composer('*', function ($view) {
             $view->with('validatedHerb',Herb::where('validated',1)->get());
