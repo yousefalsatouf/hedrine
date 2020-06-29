@@ -6,12 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class TemporaryData extends Model
 {
-    protected $fillable = [
-        'id','herb_id', 'edit_by'
-    ];
+    protected $fillable = ['id','type_id', 'type'];
 
     function Herbs()
     {
-        return $this->hasOne('App\Herb');
+        return $this->belongsTo(Herb::class, 'type_id');
     }
 }

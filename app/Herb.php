@@ -13,7 +13,7 @@ class Herb extends Model
 
     public function temporary()
     {
-        return $this->belongsTo(TemporaryData::class, 'herb_id');
+        return $this->hasOne(TemporaryData::class);
     }
 
     public function user()

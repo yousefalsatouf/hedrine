@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Back;
 use App\Http\Controllers\Controller;
 
 use App\Herb;
+use App\TemporaryData;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -86,8 +87,8 @@ class AdminController extends Controller
     public function approve(Request $request) {
 
         //echo $request->id;
-        DB::table('herbs')->where('id', '=', $request->id)->update(['validated'=>1]);
-
+        DB::table('herbs')->where('id', '=', $request->id)->update(['validated'=>1, "verified_by" => Auth::user()->name." ".Auth::user()->firstname]);
+        TemporaryData::where('type_id', $request->id)->where('type', 'herbs')->delete();
         Alert::success('Ok !', 'Nouvelle plante approuvée avec succès');
         return response()->json(['id' => $request->id]);
 
@@ -98,6 +99,7 @@ class AdminController extends Controller
         $msg = $request->msg;
 
         $herb = DB::table('herbs')->where('id', '=', $id)->get();
+        TemporaryData::where('type_id', $request->id)->where('type', 'herbs')->delete();
 
         //$mail = $herb->user->email;
         //Mail::to($mail)->send(new HerbRefuse($herb->user, $msg));

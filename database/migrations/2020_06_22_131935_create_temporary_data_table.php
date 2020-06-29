@@ -15,7 +15,8 @@ class CreateTemporaryDataTable extends Migration
     {
         Schema::create('temporary_data', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('herb_id');
+            $table->unsignedBigInteger('type_id');
+            $table->string('type');
             $table->timestamps();
         });
     }

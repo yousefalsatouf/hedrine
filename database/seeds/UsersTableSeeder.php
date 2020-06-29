@@ -26,7 +26,7 @@ class UsersTableSeeder extends Seeder
             'email_verified_at' => Carbon::now(),
             'password' => bcrypt('admin'),
             'is_active' => 1,
-            'role_id' => 1,
+            'role_id' => 3,
 
         ]);
 
