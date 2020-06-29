@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TemporaryData extends Model
+class TemporaryHerbs extends Model
 {
     protected $fillable = [
-        'id','type_id', 'type', 'data', 'edit_by', 'verified_by'
+        'id','herb_id', 'name', 'sciname', 'validated','edit_by'
     ];
 }
