@@ -84,6 +84,11 @@
 											</div>
 										</div>
 									</div>
+									<div class="form-group">
+                                        <label for="is_active"> 
+                                        	<input type="checkbox" name="is_active" id="is_active" {{ !$user->is_activated ? "" : "checked"}}/> Validé
+                                        </label>
+                                    </div>
 								</div>
 								<!-- /.card-body -->
 								<div class="card-footer">
