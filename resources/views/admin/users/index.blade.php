@@ -14,7 +14,6 @@
 					<th> First Name </th>
 					<th> Team </th>
 					<th> Mobile Phone</th>
-					<th> Phone number</th>
 					<th> Email </th>
 					<th> Is Active</th>
 					<th> Rôle </th>
@@ -30,7 +29,6 @@
 					<td>{{$user->firstname}}</td>
 					<td>{{$user->team}}</td>
 					<td>{{$user->tel1}}</td>
-					<td>{{$user->tel2}}</td>
 					<td>{{$user->email}}</td>
 					<td>{{$user->is_active}}</td>
 					<td>{{$user->roles->name}}</td>
