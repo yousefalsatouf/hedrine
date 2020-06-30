@@ -16,7 +16,7 @@
 
                         <div class="form-group col-md-6">
 							<label class="form-check-label"><strong><h5>Plante *</h5></strong></label>
-							<select name="herb" id="sel_herb_id" class="form-control">
+							<select name="herb" id="herb" class="form-control">
 							</select>
                         </div>
                         &nbsp;&nbsp;&nbsp;&nbsp;
@@ -127,6 +127,7 @@
 			dataType: 'json',
 			success: function(retour)
 			{
+				console.log(retour);
 				herbOptions = '';
 				herbOptions+="<option value='"
 							+0+
