@@ -130,27 +130,3 @@ a.style_a {
     float: right;
 }
 
-/* DEBUT code pour checkbox de is_validated pour active ou desactiver les user */
-.custom-checkbox {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-}
-
-.custom-checkbox-input {
-  display: none;
-}
-
-.custom-checkbox-text {
-  padding: 1rem;
-  background-color: #aaa;
-  color: #555;
-  cursor: pointer;
-  user-select: none;
-}
-
-.custom-checkbox-input:checked ~ .custom-checkbox-text {
-  background-color: red;
-  color: white;
-}
-/* FIN code pour checkbox de is_validated pour active ou desactiver les user */
