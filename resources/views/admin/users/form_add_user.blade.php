@@ -25,7 +25,7 @@
 							<div class="card-header">
 								<h3 class="card-title">
 									<strong>
-										Modification d'une plante 
+										Modification d'un user 
 									</strong>
 								</h3>
 							</div>
@@ -39,7 +39,7 @@
 											<div class="form-group">
 												@isset($user) @method('PUT') @endisset
 												@csrf
-												<label for="firstname">Prnom</label>
+												<label for="firstname">Prénom</label>
 												<input type="text" class="form-control" id="firstname" name="firstname" required placeholder="Veuillez indiquer un prénom pour l'utilisateur" value="{{isset($user) ? $user->firstname : ''}}">
 											</div>
 										</div>
@@ -84,6 +84,13 @@
 											</div>
 										</div>
 									</div>
+									<div class="form-group">
+                                        <label class="custom-checkbox">
+                                        	<input type="hidden" name="is_active" value="0" @if(old('is_active', $user->is_active)) checked @endif />
+                                        	<input class="custom-checkbox-input" name="is_active" value="1" type="checkbox" @if(old('is_active', $user->is_active)) checked @endif>
+                                        	<span class="custom-checkbox-text">Validé</span>
+                                        </label>
+                                    </div>
 								</div>
 								<!-- /.card-body -->
 								<div class="card-footer">

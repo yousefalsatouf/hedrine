@@ -39,7 +39,7 @@
 										<div class="form-group">
 											@isset($drug) @method('PUT') @endisset
 											@csrf
-											<label for="name">Nom du DC</label>
+											<label for="name">Nom du DCI</label>
 											<input type="text" class="form-control" id="name" name="name" required placeholder="Veuillez indiquer un nom pour le DCI" value="{{isset($drug) ? $drug->name : ''}}">
 										</div>
 										<div class="form-group">
@@ -83,7 +83,7 @@
 													<option value="{{$atc_level_4->id}}">{{$atc_level_4->name}}</option>
 													@endforeach
 												@else
-													<option></option>
+													<option></option> 
 													@foreach ($atc_level_4s as $atc_level_4)
 													<option value="{{$atc_level_4->id}}" @if($drug->atc_level_4s_id == $atc_level_4->id) selected @endif>{{$atc_level_4->name}}</option>
 												@endforeach
@@ -92,7 +92,7 @@
 										</div>
                                         @if(\Illuminate\Support\Facades\Auth::user()->role_id <=2)
                                             <div class="form-group">
-                                                <label for="validated"> <input type="checkbox" name="validated" id="validated" checked> Validé</label>
+                                                <label for="is_validated"> <input type="checkbox" name="is_validated" id="is_validated" checked> Validé</label>
                                             </div>
                                         @endif
 									</div>
