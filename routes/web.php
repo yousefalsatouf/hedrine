@@ -56,9 +56,9 @@ Route::get('/master', function () {
 Route::get('/herb/{char}', 'HerbController@filterByChar');
 
 
-    //N.Thierry pour atteindre la page de herbe
-    Route::get('/herb','HerbController@index')->name('herbs.index');
-    Route::get('herb/details_plante/{id}','HerbController@details')->name('herbs.details');
+//N.Thierry pour atteindre la page de herbe
+Route::get('/herb','HerbController@index')->name('herbs.index');
+Route::get('herb/details_plante/{id}','HerbController@details')->name('herbs.details');
 
 
 //N.Thierry pour atteindre la page de herbe
@@ -120,9 +120,9 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
     Route::name('admin')->get('/','AdminController@index');
     Route::get('/', 'AdminController@herbs')->name('admin.herbs');
     Route::prefix('herb')->group(function () {
-        Route::middleware('ajax')->group(function() {
-            Route::post('/approve','AdminController@approve')->name('admin.approve');
-            Route::get('hinteractions/hdi','HinteractionController@index')->name('hinteractions.hdi');
+    Route::middleware('ajax')->group(function() {
+    Route::post('/approve','AdminController@approve')->name('admin.approve');
+    Route::get('hinteractions/hdi','HinteractionController@index')->name('hinteractions.hdi');
 
         });
     });
@@ -330,10 +330,11 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
 });
 
 
-//N.Thierry : Les routes pour interagir entre les plante et DCI
+//N.Thierry : Les routes pour interagir entre les plante et DCI (page d'accueil du site)
 
 // Route::name('hinteractions.hdi')->get('hinteraction','HinteractionController@index');
 Route::get('hinteractions/hdi','HinteractionController@index')->name('hinteractions.hdi');
+Route::get('hinteractions/hdi_get_herbs','HinteractionController@get_herbs')->name('hinteractions.get_herbs');
 Route::get('hinteractions/hti','HinteractionController@show_mecanisme_form')->name('hinteractions.hti');
 
 //UserPorofile

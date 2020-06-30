@@ -24,8 +24,16 @@ class HinteractionController extends Controller
     public function index()
     {
         $herbs = Herb::all();
+        
 
         return view('interaction.index', compact('herbs'));
+    }
+
+    public function get_herbs()
+    {
+        $herbs = Herb::where('validated',1)->orderBy('name')->get();
+        return $herbs;
+        // return $herbs->toJson();
     }
 
     /**

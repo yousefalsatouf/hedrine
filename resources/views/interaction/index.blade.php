@@ -1,6 +1,6 @@
 @extends('dashboard.layout')
 
-<!-- @yield('content_title') créé dans la view master_dashboard.blade.php-->
+@yield('content_title') {{--créé dans la view master_dashboard.blade.php --}}
 
 @section('content_dashboard')
 	<div class="row">
@@ -16,7 +16,7 @@
 
                         <div class="form-group col-md-6">
 							<label class="form-check-label"><strong><h5>Plante *</h5></strong></label>
-							<select name="herb" id="herb" class="form-control">
+							<select name="herb" id="sel_herb_id" class="form-control">
 							</select>
                         </div>
                         &nbsp;&nbsp;&nbsp;&nbsp;
@@ -102,6 +102,51 @@
 	  </div>
     </div>
 
+@endsection
+
+@section('getherbs')
+
+<script>
+	$(document).ready(function() 
+	{
+		
+		var herbOptions;
+		var addBtn = $('.add_btn'); // Add button selector
+
+
+
+		$(addBtn).click(function() {
+			alert('je suis la pr tester getJson');
+		});
+
+
+		$.ajax
+		({
+			type: 'GET',
+			url: '../hinteractions/hdi_get_herbs',
+			dataType: 'json',
+			success: function(retour)
+			{
+				herbOptions = '';
+				herbOptions+="<option value='"
+							+0+
+							"'>Veuillez choisir une plante"+
+							"</option>";
+				$.each(retour, function(i,herb) {
+
+							herbOptions+="<option value='"
+							+herb.id+
+							"'>"+herb.name+
+							"</option>";
+						});
+				
+						$('#herb').html(herbOptions);
+				
+			}
+		}); 
+
+	});
+</script>	
 @endsection
 
 

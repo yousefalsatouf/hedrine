@@ -61,9 +61,10 @@
 							            	@endforeach
 							            </select>
 									</div>
-                                    @if(\Illuminate\Support\Facades\Auth::user()->role_id <=2)
+									{{-- si on est admin ou publisher --}}
+									@if(\Illuminate\Support\Facades\Auth::user()->role_id <=2)
                                         <div class="form-group">
-                                            <label for="validated"> <input type="checkbox" name="validated" id="validated" {{ !$hers->validated ? "" : "checked"}}> Validé</label>
+                                            <label for="validated"> <input type="checkbox" name="validated" id="validated" {{ isset($herb->validated) ? "" : "checked"}}> Validé</label>
                                         </div>
                                     @endif
 								</div>
