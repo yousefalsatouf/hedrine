@@ -98,13 +98,13 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer('*', function ($view) {
-            $data = TemporaryData::where('type_name', 'herbs')->get();
-            $grouped = $data->mapToGroups(function ($item, $key){
-                //
-            });
-            $grouped->toArray();
+            //$data = TemporaryData::where('type_name', 'herbs')->get();
+            $data = DB::table('temporary_data')->get();
+            $collection = collect($data->toArray());
+            $groupedHerbs = $collection->groupBy('type_id')->toArray();
+            //dd($groupedHerbs);
 
-            $view->with('noValidHerbs', $data);
+            $view->with('noValidHerbs', $groupedHerbs);
         });
         view()->composer('*', function ($view) {
             $view->with('noValidDrugs',Drug::where('validated', '<=', 0)->get());

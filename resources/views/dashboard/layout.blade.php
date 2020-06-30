@@ -135,13 +135,13 @@
             <li class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown" href="#">
                     <i class="far fa-bell fa-2x"></i>
-                    <span class="badge badge-warning navbar-badge" style="font-size: 15.5px" >{{ $noValidDrugs->count() + $noValidHerbs->count() }}</span>
+                    <span class="badge badge-warning navbar-badge" style="font-size: 15.5px" >{{ $noValidDrugs->count()  }}</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <span class="dropdown-item dropdown-header"> {{ $notifications }} Notifications</span>
                     <div class="dropdown-divider"></div>
                     <a href="{{ route('admin.herbs') }}" class="dropdown-item">
-                        <i class="fas fa-seedling mr-2" style="color: seagreen"></i> {{ $noValidHerbs->count() }}
+                        <i class="fas fa-seedling mr-2" style="color: seagreen"></i>
                         @if($newHerbs === 1) new Herb
                             @else new Herbs
                         @endif
@@ -449,13 +449,13 @@
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                
+
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        
+
                         <a class="nav-link" href="#" data-toggle="modal" data-target="#unsubscribeModal"><i style="color: red" class="left fas fa-times-circle"></i> Supprimer mon compte</a>
-                        
-                        
+
+
                         </a>
                     </li>
                 </ul>

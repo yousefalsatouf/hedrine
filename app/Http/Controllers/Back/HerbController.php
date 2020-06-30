@@ -63,7 +63,9 @@ class HerbController extends Controller
             $herb->save();
             $herb->herb_forms()->sync($request->forms);
 
-            $data = ["name" => $herb->name, "sciname" => $herb->sciname, "herb_forms" => json_encode($request->forms)];
+            //dd($request->forms);
+
+            $data = ["name" => $herb->name, "sciname" => $herb->sciname, "herb_forms" => json_encode($request->forms, JSON_NUMERIC_CHECK)];
             //dd($data);
             foreach ($data as $key => $value)
             {
@@ -73,6 +75,7 @@ class HerbController extends Controller
                 $temporary->type_field = $key;
                 $temporary->new_value = $value;
                 $temporary->author = Auth::user()->name." ".Auth::user()->firstname;
+                $temporary->author_id = Auth::id();
                 $temporary->save();
             }
 
@@ -148,7 +151,8 @@ class HerbController extends Controller
 
         if ($editor || ($boss && !$request->validated))
         {
-            $data = ["name" => $request->name, "sciname" => $request->sciname, "herb_forms" => json_encode($request->forms)];
+
+            $data = ["name" => $request->name, "sciname" => $request->sciname, "herb_forms" => json_encode($request->forms, JSON_NUMERIC_CHECK)];
                 //dd($data["herb_forms"]);
             foreach ($data as $key => $value)
             {
@@ -167,6 +171,7 @@ class HerbController extends Controller
                 $temporary->type_field = $key;
                 $temporary->new_value = $value;
                 $temporary->author = Auth::user()->name." ".Auth::user()->firstname;
+                $temporary->author_id = Auth::id();
                 $temporary->save();
             }
 

@@ -17,49 +17,38 @@
                                 <th scope="col">Herb Form</th>
                                 <th scope="col">Author</th>
                                 <th scope="col">Date</th>
+                                <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($noValidHerbs as $herb)
+                            @foreach($noValidHerbs as $key => $herb)
                                 <tr>
-                                <tr>
-                                    <td class="@if($herb->validated == -1)
-                                        invalidColor
-                                    @endif">
-                                        {{ $herb->id }}
+                                    <td>
+                                        {{ $key }}
                                     </td>
-                                    <td class="herb-name-{{$herb->id}} @if($herb->validated == -1)
-                                        invalidColor
-                                    @endif">
-                                        {{ $herb->name }}
+                                    @foreach($herb as $one)
+                                        <td class="herb-name-{{$key}} {{$one->validated == -1? "invalidColor":""}}">
+                                            {{ $one->new_value }}
+                                        </td>
+                                    @endforeach
+                                    <td>
+                                        {{ $herb[0]->author }}
                                     </td>
-                                    <td class="herb-sciname-{{$herb->id}} @if($herb->validated == -1)
-                                        invalidColor
-                                    @endif">
-                                        {{ $herb->sciname }}
-                                    </td>
-                                    <td class=" @if($herb->validated == -1)
-                                        invalidColor
-                                    @endif">
-                                        {{ $herb->user->name }}
-                                    </td>
-                                    <td class=" @if($herb->validated == -1)
-                                        invalidColor
-                                    @endif">
-                                        {{ date_create($herb->created_at)->format('d-m-Y') }}
+                                    <td>
+                                       {{Carbon\Carbon::parse($herb[0]->created_at)->diffForHumans()}}
                                     </td>
                                     <td class="">
-                                        <a class="btn btn-success text-light btn-sm" data-url="{{ route('admin.approve') }}" data-id="{{$herb->id}}" role="button" data-toggle="tooltip" title="Approuver la plante">
+                                        <a class="btn btn-success text-light btn-sm" data-url="{{ route('admin.approve') }}" data-id="{{$key}}" role="button" data-toggle="tooltip" title="Approuver la plante">
                                             <i class="fas fa-thumbs-up"></i>
                                         </a>
                                         <i class="fas fa-spinner fa-pulse fa-lg" style="display: none"></i>
-                                        <a class="btn btn-danger btn-sm refuse-modal" href="#" role="button" data-id="{{ $herb->id }}" data-toggle="tooltip" title="Refuser la plante">
+                                        <a class="btn btn-danger btn-sm refuse-modal" href="#" role="button" data-id="{{ $key }}" data-user={{$herb[0]->author_id}} data-toggle="tooltip" title="Refuser la plante">
                                             <i class="fas fa-thumbs-down"></i>
                                         </a>
-                                        <a class="btn btn-warning btn-sm modify-modal" href="#" role="button"  data-id="{{ $herb->id }}" data-toggle="tooltip" title="Modifier la plante">
+                                        <a class="btn btn-warning btn-sm modify-modal" href="#" role="button"  data-id="{{ $key }}" data-user={{$herb[0]->author_id}} data-toggle="tooltip" title="Modifier la plante">
                                             <i class="fas fa-eye" style="color:white"></i>
                                         </a>
-                                        <button {{\Illuminate\Support\Facades\Auth::user()->role_id > 2? "disabled" : ""}} class="btn btn-secondary btn-sm edit-modal" role="button" data-id="{{ $herb->id }}" data-name="{{$herb->name}}" data-sciname="{{$herb->sciname}}" data-toggle="tooltip" title="editeur rapide">
+                                        <button {{\Illuminate\Support\Facades\Auth::user()->role_id > 2? "disabled" : ""}} class="btn btn-secondary btn-sm edit-modal" role="button" data-id="{{ $key }}" data-name="{{$herb[0]->new_value}}" data-sciname="{{$herb[1]->new_value}}" data-toggle="tooltip" title="editeur rapide">
                                             <i class="fas fa-edit" style="color:white"></i>
                                         </button>
                                     </td>

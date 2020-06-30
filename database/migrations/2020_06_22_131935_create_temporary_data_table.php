@@ -20,6 +20,8 @@ class CreateTemporaryDataTable extends Migration
             $table->string('type_field');
             $table->text('new_value');
             $table->string('author');
+            $table->integer('author_id');
+            $table->integer('validated')->default(0);
             $table->timestamps();
         });
     }
