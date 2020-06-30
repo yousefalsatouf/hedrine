@@ -2,7 +2,7 @@
 
 @section('content_dashboard')
     @include('partials.alerts', ['title' => 'Plantes en Ettente'])
-    @include('partials.table-add-del-view', ['noAdd' => true])
+    @include('partials.table-add-del-view', ['allno' => true])
 @endsection
 
 @section('script')

@@ -122,6 +122,8 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
     Route::prefix('herb')->group(function () {
         Route::middleware('ajax')->group(function() {
             Route::post('/approve','AdminController@approve')->name('admin.approve');
+            Route::get('hinteractions/hdi','HinteractionController@index')->name('hinteractions.hdi');
+
         });
     });
 
@@ -295,7 +297,7 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
      //Route pour hinteraction
      Route::name('hinteraction.update')->put('hinteraction', 'HinteractionController@update');
      Route::name('hinteraction.edit')->get('hinteraction', 'HinteractionController@edit');
-     Route::name('hinteraction.index')->get('hinteraction', 'HinteractionController@index');
+     Route::name('hinteraction.index')->get('hinteraction/all', 'HinteractionController@index');
 
      Route::name('hinteraction.details')->get('hinteraction', 'HinteractionController@details');
      Route::resource('hinteraction', 'HinteractionController')->parameters([

@@ -2,7 +2,7 @@
 
 @section('content_dashboard')
     @include('partials.alerts', ['title' => 'Plantes actives'])
-    @include('partials.table-add-del-view', ['edit' => true])
+    @include('partials.table-add-del-view', ['allno' => true])
 @endsection
 
 @section('script')

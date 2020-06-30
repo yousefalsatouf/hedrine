@@ -23,8 +23,9 @@ class HinteractionController extends Controller
      */
     public function index()
     {
+        $herbs = Herb::all();
 
-        return view('interaction.index');
+        return view('interaction.index', compact('herbs'));
     }
 
     /**

@@ -15,12 +15,17 @@
                     <td>{{ $herb->sciname }}</td>
                     <td class="date-id">{{ date_create($herb->created_at)->format('d-m-Y') }}</td>
                     <td class="float-right">
-                        <a class="btn btn-primary btn-sm" href="{{ route('herbs.show', $herb->id) }}" target="_blank" role="button" data-toggle="tooltip" title="Voir la plante"><i class="fas fa-eye"></i></a>
                         @isset($edit)
-                            <a class="btn btn-warning btn-sm" href="#" role="button" data-toggle="tooltip" title="Modifier la plante"><i class="fas fa-edit"></i></a>
+                              <a class="btn btn-warning btn-sm" href="{{ route('herbs.show', $herb->id) }}" role="button" data-toggle="tooltip" title="Modifier la plante"><i class="fas fa-edit"></i></a>
                         @endisset
+
                         <i class="fas fa-spinner fa-pulse fa-lg" style="display: none"></i>
-                        <a class="btn btn-danger btn-sm" href="#" role="button" data-id="{{ $herb->id }}" data-toggle="tooltip" title="Supprimer la plante"><i class="fas fa-trash"></i></a>
+                        @isset($edit)
+                            <a class="btn btn-danger btn-sm" href="#" role="button" data-id="{{ $herb->id }}" data-toggle="tooltip" title="Supprimer la plante"><i class="fas fa-trash"></i></a>
+                        @endisset
+
+
+
                     </td>
                 </tr>
             @endforeach
