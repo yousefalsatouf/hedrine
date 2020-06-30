@@ -449,13 +449,13 @@
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                
+
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        
+
                         <a class="nav-link" href="#" data-toggle="modal" data-target="#unsubscribeModal"><i style="color: red" class="left fas fa-times-circle"></i> Supprimer mon compte</a>
-                        
-                        
+
+
                         </a>
                     </li>
                 </ul>
@@ -509,7 +509,7 @@
 <!-- jQuery -->
 <script src="{{ asset('/adminlte/plugins/jquery/jquery.min.js') }}"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="{{ asset('/adminlte/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)
@@ -529,13 +529,12 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
 
-<!-- (Optional) Latest compiled and minified JavaScript translation files -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <!-- ChartJS -->
 <script src="{{ asset('/adminlte/plugins/chart.js/Chart.min.js') }}"></script>
 
 <!-- Tempusdominus Bootstrap 4 -->
-<script src="{{ asset('/adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+
 <!-- Summernote -->
 <script src="{{ asset('/adminlte/plugins/summernote/summernote-bs4.min.js') }}"></script>
 <!-- overlayScrollbars -->
@@ -555,8 +554,9 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 <script src="{{ asset('/js/quickEdit.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/js/manage.js') }}" type="text/javascript"></script>
-
+<script src="{{ asset('/js/herbJson.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/js/custom.js') }}" type="text/javascript"></script>
+
 
     @include('sweetalert::alert')
     @include('cookieConsent::index')
@@ -575,5 +575,6 @@
     <!-- Recaptha -->
     @yield('dashboard-js')
     @yield('script')
+    @yield('herb_json')
 </body>
 </html>
