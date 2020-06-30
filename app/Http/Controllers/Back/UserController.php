@@ -70,7 +70,7 @@ class UserController extends Controller
         $user->password = $request->password;
         $user->remember_token = $request->remember_token;
         $user->role_id = $request->role_id;
-        $user->is_active = $request->has('is_valite') == '1' ? '0' : '1';       
+        $user->is_active = $request->has('is_active');       
         $user->save();
         Alert::success('Ok !', 'Nouveau user ajouté avec succès');
 
@@ -109,7 +109,9 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
+
         $user->update($request->all());
+        // $user->$request->is_active;
         Alert::success('Ok !', 'Votre user a étè mis à jour avec succès');
 
         return back();

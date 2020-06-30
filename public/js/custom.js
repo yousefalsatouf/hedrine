@@ -45,5 +45,17 @@ $(document).ready(function() {
     $('#effectForm').selectpicker();
 });
 
+/* DEBUT code pour checkbox de is_validated pour active ou desactiver les user */
+
+$(document).ready(function(){
+$("input[type=checkbox]").on('click', function(){
+    $("input[type=hidden]").attr("value", $(this).attr("id"));
+    $(".display p").text($("input[type=hidden]").val());
+});
+});
+
+/* FIN code pour checkbox de is_validated pour active ou desactiver les user */
+
+
 
 

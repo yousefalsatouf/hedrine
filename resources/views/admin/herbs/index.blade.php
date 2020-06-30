@@ -20,7 +20,7 @@
                     <th>Formes de la plante</th>
                     <th>Verifié par</th>
                     <th>Actions</th>
-				</tr>
+				</tr> 
 			</thead>
 			<tbody>
 				@foreach ($validatedHerb as $herb)
