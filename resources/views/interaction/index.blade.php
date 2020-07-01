@@ -12,11 +12,11 @@
 				<fieldset class="form-group">
 					<legend style="color: #e32; font-size: 160%; font-weight: bold" >Interactions...</legend>
 
-					<div class="form-row field_wrapper">
+					<div class="form-row field_wrapper" id="countHerb">
 
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-6" id="herb_div">
 							<label class="form-check-label"><strong><h5>Plante *</h5></strong></label>
-							<select name="herb" id="herb" class="form-control">
+							<select name="herb[]" id="herb" class="form-control">
 							</select>
                         </div>
                         &nbsp;&nbsp;&nbsp;&nbsp;
@@ -24,7 +24,8 @@
                             <label class="form-check-label" for="inputState">ET</label>
                             <br>
 							<div class="" style="margin-top: 8px;">
-                                <a href="#" class="btn btn btn-warning add_btn">+</a>
+
+                                <input type="button" class="btn btn btn-warning add_btn"  value="+"><br>
                             </div>
 						</div>
                     </div>
@@ -107,18 +108,45 @@
 @section('getherbs')
 
 <script>
-	$(document).ready(function() 
+	$(document).ready(function()
 	{
-		
-		var herbOptions;
-		var addBtn = $('.add_btn'); // Add button selector
+		var maxField = 5; // Input fields increment limitation
+        var herbOptions;
+        var wrappering = $('.form-row.field_wrapper'); // Input field wrapper
+        var addBtn = $('.add_btn'); // Add button selector
+        var removeBtn = $('.remove_btn'); // Add button selector
+
+        var selct = '';
+
+        selct += '<div class="form-group col-md-3 id="btnRemove">';
+        selct += '<br>';
+        selct += '<div class="" style="margin-top:9px;padding-left: 15px;">';
+        selct += ' <input type="button" class="btn  btn-danger remove_btn" id="her" value="-"><br>';
+        selct += '</div>';
+        selct += '</div>';
+
+
+        var cpt = 1; // Initial field counter is 1
 
 
 
-		$(addBtn).click(function() {
-			alert('je suis la pr tester getJson');
-		});
+        $(addBtn).click(function() {
+            $(this).val("+"); // On met un getter sur l'input pour gerer le message d'erreure
 
+            if(cpt < maxField) {
+                $("#herb_div").clone().attr({'id': 'herb_div' + cpt}).appendTo('#countHerb') .after(selct); // Add field html
+                cpt++; // Increment field counter
+            }else {
+                $(this).val("Maximum 5 plantes").prop("disabled",true); // on desactive l'input +
+            }
+        });
+
+        $(document).on("click", ".remove_btn", function() {
+            {{-- var test = document.getElementById('countHerb');
+            test.remove();
+            cpt--; --}}
+            alert("je suis la");
+        });
 
 		$.ajax
 		({
@@ -140,14 +168,14 @@
 							"'>"+herb.name+
 							"</option>";
 						});
-				
+
 						$('#herb').html(herbOptions);
-				
+
 			}
-		}); 
+		});
 
 	});
-</script>	
+</script>
 @endsection
 
 
