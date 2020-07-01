@@ -54,6 +54,9 @@ class HerbController extends Controller
         $editor = Auth::user()->role_id === 3;
         $boss = Auth::user()->role_id <= 2;
 
+        //dd($request->forms);
+
+
         if ($editor || ($boss && !$request->validated))
         {
             $herb = new Herb;
@@ -149,6 +152,8 @@ class HerbController extends Controller
     {
         $editor = Auth::user()->role_id === 3;
         $boss = Auth::user()->role_id <= 2;
+
+        //dd($request->forms);
 
         if ($editor || ($boss && !$request->validated))
         {

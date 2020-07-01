@@ -8,13 +8,13 @@
             <div class="col-12">
                 <div class="table responsive">
                     {{ csrf_field() }}
-                    <h3 class="text-secondary"><b><i class="fas fa-seedling mr-2" style="color: seagreen"></i> Nouvelle Plante</b> </h3>
+                    <h3 class="text-success"><b><i class="fas fa-seedling mr-2" style="color: seagreen"></i> Nouvelle Plante</b> </h3>
                     <hr>
                     <table id="valid-form" class="table table-bordered table-striped">
                         <thead>
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Genre</th>
+                            {{--<th scope="col">Genre</th>--}}
                             <th scope="col">Titre</th>
                             <th scope="col">Valeur</th>
                             <th scope="col">Auteur</th>
@@ -26,9 +26,23 @@
                         @foreach($noValidHerbs as $herb)
                             <tr class={{$herb->validated == -1? "invalidColor":""}}>
                                 <td>{{$herb->id}}</td>
-                                <td>{{$herb->type_table}}</td>
+                                {{--<td>{{$herb->type_table}}</td>--}}
+
                                 <td>{{$herb->type_field}}</td>
-                                <td>{{$herb->new_value}}</td>
+                                <td>
+                                    @if($herb->type_field==="herb_forms")
+                                        @php
+                                            $number = (int) filter_var($herb->new_value, FILTER_SANITIZE_NUMBER_INT);
+                                            $name  = array_map('intval', str_split($number));
+                                        foreach ($name as $n)
+                                        {
+                                            echo \Illuminate\Support\Facades\DB::table('herb_forms')->where('id', $n)->value('name')." - ";
+                                        }
+                                        @endphp
+                                    @else
+                                        {{$herb->new_value}}
+                                    @endif
+                                </td>
                                 <td>{{$herb->author}}</td>
                                 <td>{{Carbon\Carbon::parse($herb->created_at)->diffForHumans()}}</td>
                                 <td class="">
@@ -51,13 +65,14 @@
                         </tbody>
                     </table>
                     <small class="d-flex justify-content-end">{{$noValidHerbs->links()}}</small>
+                    <br>
                     <h3 class="text-danger"><b><i class="fas fa-seedling mr-2" style="color: seagreen"></i> Plante Modifiée</b></h3>
                     <hr>
                     <table id="valid-form" class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">Genre</th>
+                                {{--<th scope="col">Genre</th>--}}
                                 <th scope="col">Titre</th>
                                 <th scope="col">Valeur origin</th>
                                 <th scope="col">Nouvelle valeur</th>
@@ -70,7 +85,7 @@
                             @foreach($noValidHerbsModified as $herb)
                                 <tr class={{$herb->validated == -1? "invalidColor":""}}>
                                     <td>{{$herb->id}}</td>
-                                    <td>{{$herb->type_table}}</td>
+                                    {{--<td>{{$herb->type_table}}</td>--}}
                                     <td>{{$herb->type_field}}</td>
                                     <td>{{$herb->original_value}}</td>
                                     <td>{{$herb->new_value}}</td>
