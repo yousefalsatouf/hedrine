@@ -9,6 +9,7 @@
             <div class="modal-body">
                 <form class="form-horizontal" role="form">
                     <input type="hidden" id="modif-id">
+                    <input type="hidden" id="modif-user">
                     <div class="form-group">
                         <label class="control-label col-sm-2 text-warning" for="name">Message:</label>
                         <div class="col-sm-10">

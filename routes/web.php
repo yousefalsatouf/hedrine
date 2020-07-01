@@ -118,7 +118,6 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
 
     // Route pour Admins
     Route::name('admin')->get('/','AdminController@index');
-    Route::get('/', 'AdminController@herbs')->name('admin.herbs');
     Route::prefix('herb')->group(function () {
     Route::middleware('ajax')->group(function() {
     Route::post('/approve','AdminController@approve')->name('admin.approve');
@@ -126,6 +125,8 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
 
         });
     });
+    // list temporary data
+    Route::get('/herbs', 'TemporaryDataController@index')->name('admin.herbs');
 
     //pour quick update ...
     Route::post('/quickEdit', 'AdminController@quickEdit');

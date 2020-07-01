@@ -5,10 +5,12 @@ $(document).ready(function() {
         e.preventDefault();
         let that = $(e.currentTarget);
         let id = that.data('id');
+        let user = that.data('user');
 
         $('#myModal-refuse-message').modal('show');
 
         $('#refuse-id').val(id);
+        $('#refuse-user').val(user);
     });
 
     $(document).on('click', '.modify-modal', function(e)
@@ -16,10 +18,12 @@ $(document).ready(function() {
         e.preventDefault();
         let that = $(e.currentTarget);
         let id = that.data('id');
+        let user = that.data('user');
 
         $('#myModal-modify-message').modal('show');
 
         $('#modif-id').val(id);
+        $('#modif-user').val(user);
     });
 
     //approve an user
@@ -64,6 +68,7 @@ $(document).ready(function() {
             data: {
                 '_token': $('input[name=_token]').val(),
                 'id': $("#modif-id").val(),
+                'user': $("#modif-user").val(),
                 'msg': $('#modify--message').val()
             },
             success: function(data)
@@ -89,6 +94,7 @@ $(document).ready(function() {
             data: {
                 '_token': $('input[name=_token]').val(),
                 'id': $("#refuse-id").val(),
+                'user': $("#refuse-user").val(),
                 'msg': $('#refuse-message').val()
             },
             success: function(data)

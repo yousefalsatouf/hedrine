@@ -13,16 +13,18 @@ use Illuminate\Queue\SerializesModels;
 class HerbRefuseEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-    public $herb;
+    public $user;
+    public $email;
     public $msg;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($herb, $msg)
+    public function __construct($user, $email, $msg)
     {
-        $this->herb = $herb;
+        $this->user = $user;
+        $this->email = $email;
         $this->msg = $msg;
     }
 

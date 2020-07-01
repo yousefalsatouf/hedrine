@@ -2,17 +2,12 @@
 
 namespace App\Http\Controllers\Back;
 
-use App\Events\HerbRefuseEvent;
 use App\Http\Controllers\Controller;
 
 use App\Herb;
-use App\TemporaryData;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
-use Illuminate\{
-    Http\Request,
-    Support\Facades\DB
-};
+use Illuminate\{Http\Request, Support\Facades\DB, Support\Facades\Mail};
 
 
 
@@ -65,7 +60,6 @@ class AdminController extends Controller
 
         //echo $request->id;
         DB::table('herbs')->where('id', '=', $request->id)->update(['validated'=>1, "verified_by" => Auth::user()->name." ".Auth::user()->firstname]);
-        TemporaryData::where('type_id', $request->id)->where('type', 'herbs')->delete();
         Alert::success('Ok !', 'Nouvelle plante approuvée avec succès');
         return response()->json(['id' => $request->id]);
 
@@ -73,16 +67,17 @@ class AdminController extends Controller
     public function refuse(Request $request)
     {
         $id = $request->id;
+        $user = DB::table('users')->where('id', $request->id)->get();
+        $email = DB::table('users')->where('id', $request->id)->pluck('email');
         $msg = $request->msg;
 
-        $herb = DB::table('herbs')->where('id', '=', $id)->get();
-        TemporaryData::where('type_id', $request->id)->where('type', 'herbs')->delete();
+        echo $email;
 
-        event(new HerbRefuseEvent($herb, $msg));
-        //$mail = $herb->user->email;
-        //Mail::to($mail)->send(new HerbRefuse($herb->user, $msg));
+        $herb = DB::table('temporary_data')->where('type_name', 'herbs')->where('type_id', '=', $id)->get();
+        //event(new HerbRefuseEvent($user, $email, $msg));
+        //Mail::to($email)->send(new HerbRefuse($user, $msg));
 
-        DB::table('herbs')->where('id', '=', $id)->delete();
+        DB::table('temporary_data')->where('type_name', 'herbs')->where('type_id', '=', $id)->delete();
 
         Alert::success('Ok !', 'La plante a bien été refusée');
 

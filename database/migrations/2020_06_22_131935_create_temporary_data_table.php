@@ -16,7 +16,14 @@ class CreateTemporaryDataTable extends Migration
         Schema::create('temporary_data', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('type_id');
-            $table->string('type');
+            $table->string('type_table');
+            $table->string('type_field');
+            $table->text('original_value')->nullable();
+            $table->text('new_value');
+            $table->boolean('modified');
+            $table->string('author');
+            $table->integer('author_id');
+            $table->integer('validated')->default(0);
             $table->timestamps();
         });
     }

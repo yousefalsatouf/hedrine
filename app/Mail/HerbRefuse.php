@@ -22,7 +22,7 @@ class HerbRefuse extends Mailable
      *
      * @return void
      */
-    public function __construct(User $user,$message )
+    public function __construct($user, $message)
     {
         //
         $this->user  = $user;
@@ -40,7 +40,6 @@ class HerbRefuse extends Mailable
 
         $admin = Auth::user();
         $username = $this->user->name." ".$this->user->firstname;
-
         $msg = $this->message;
 
         return $this->from($admin->email)

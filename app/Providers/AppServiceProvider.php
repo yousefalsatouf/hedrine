@@ -5,6 +5,8 @@ namespace App\Providers;
 use App\Drug;
 use App\Herb;
 use App\DrugFamily;
+use App\TemporaryData;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Route;
@@ -96,7 +98,9 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer('*', function ($view) {
-            $view->with('noValidHerbs', Herb::where('validated', '<=', 0)->get());
+            $counter = TemporaryData::where('type_table', 'herbs')->get();
+
+            $view->with('noValidHerbsCounter', $counter);
         });
         view()->composer('*', function ($view) {
             $view->with('noValidDrugs',Drug::where('validated', '<=', 0)->get());

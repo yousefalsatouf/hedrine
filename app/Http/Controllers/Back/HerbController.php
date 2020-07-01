@@ -5,19 +5,14 @@ namespace App\Http\Controllers\Back;
 use App\DataTables\DrugssDataTable;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\HerbRequest;
-use App\Drug;
 use App\Herb;
 use App\Target;
 use App\TemporaryData;
 use App\User;
-use App\Role;
-use App\HerbForm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
-use Illuminate\Support\Facades\DB;
 use App\Notifications\NewHerb as NewHerbNotification;
-use Illuminate\Support\Facades\Mail;
 
 
 
@@ -59,21 +54,36 @@ class HerbController extends Controller
         $editor = Auth::user()->role_id === 3;
         $boss = Auth::user()->role_id <= 2;
 
+        //dd($request->forms);
+
+
         if ($editor || ($boss && !$request->validated))
         {
             $herb = new Herb;
-            $herb->user_id = Auth::user()->id;
             $herb->name = $request->name;
             $herb->sciname = $request->sciname;
+            $herb->user_id = Auth::id();
             $herb->save();
-            $herb->herb_forms()->sync($request->forms, false);
-            // now add this one to temporary table
-            $herb->temporary();
+            $herb->herb_forms()->sync($request->forms);
 
-            DB::table('temporary_data')->updateOrInsert(
-                ['type_id' => $herb->id, 'type' => 'herbs'],
-                ['type' => 'herbs']
-            );
+            //dd($request->forms);
+            //$old = ["name" => $herb->name, "sciname" => $herb->sciname, "herb_forms" => json_encode($request->forms, JSON_NUMERIC_CHECK)];
+            $new = ["name" => $herb->name, "sciname" => $herb->sciname, "herb_forms" => json_encode($request->forms, JSON_NUMERIC_CHECK)];
+            //dd($data);
+            foreach ($new as $key => $value)
+            {
+                $temporary = new TemporaryData;
+                $temporary->type_id = $herb->id;
+                $temporary->type_table = "herbs";
+                $temporary->type_field = $key;
+                $temporary->new_value = $value;
+                $temporary->modified = false;
+                $temporary->author = Auth::user()->name." ".Auth::user()->firstname;
+                $temporary->author_id = Auth::id();
+                $temporary->save();
+            }
+
+            $herb->delete();
 
             Alert::success('Cool !', 'Votre plante est en cours de vérifier avec l\'administrateur');
         }
@@ -143,19 +153,31 @@ class HerbController extends Controller
         $editor = Auth::user()->role_id === 3;
         $boss = Auth::user()->role_id <= 2;
 
+        //dd($request->forms);
+
         if ($editor || ($boss && !$request->validated))
         {
-            $herb->name = $request->name;
-            $herb->sciname = $request->sciname;
-            $herb->validated = 0;
-            $herb->save();
-            $herb->herb_forms()->sync($request->forms);
-            $herb->temporary();
 
-            DB::table('temporary_data')->updateOrInsert(
-                ['type_id' => $herb->id, 'type' => 'herbs'],
-                ['type' => 'herbs']
-            );
+            $original = ["name" => $herb->name, "sciname" => $herb->sciname];
+            $new = ["name" => $request->name, "sciname" => $request->sciname];
+            $data = array_diff($new, $original);
+
+            foreach ($data as $key => $value)
+            {
+                $temporary = new TemporaryData;
+                $temporary->type_id = $herb->id;
+                $temporary->type_table = "herbs";
+                $temporary->type_field = $key;
+                if (!in_array($value, $original))
+                {
+                    $temporary->original_value = $original[$key];
+                    $temporary->new_value = $value;
+                }
+                $temporary->modified = true;
+                $temporary->author = Auth::user()->name." ".Auth::user()->firstname;
+                $temporary->author_id = Auth::id();
+                $temporary->save();
+            }
 
             Alert::success('Cool !', 'Votre plante est en cours de vérifier avec l\'administrateur');
         }
