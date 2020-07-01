@@ -64,16 +64,17 @@ class HerbController extends Controller
             $herb->herb_forms()->sync($request->forms);
 
             //dd($request->forms);
-
-            $data = ["name" => $herb->name, "sciname" => $herb->sciname, "herb_forms" => json_encode($request->forms, JSON_NUMERIC_CHECK)];
+            //$old = ["name" => $herb->name, "sciname" => $herb->sciname, "herb_forms" => json_encode($request->forms, JSON_NUMERIC_CHECK)];
+            $new = ["name" => $herb->name, "sciname" => $herb->sciname, "herb_forms" => json_encode($request->forms, JSON_NUMERIC_CHECK)];
             //dd($data);
-            foreach ($data as $key => $value)
+            foreach ($new as $key => $value)
             {
                 $temporary = new TemporaryData;
                 $temporary->type_id = $herb->id;
-                $temporary->type_name = "herbs";
+                $temporary->type_table = "herbs";
                 $temporary->type_field = $key;
                 $temporary->new_value = $value;
+                $temporary->modified = false;
                 $temporary->author = Auth::user()->name." ".Auth::user()->firstname;
                 $temporary->author_id = Auth::id();
                 $temporary->save();
@@ -152,24 +153,22 @@ class HerbController extends Controller
         if ($editor || ($boss && !$request->validated))
         {
 
-            $data = ["name" => $request->name, "sciname" => $request->sciname, "herb_forms" => json_encode($request->forms, JSON_NUMERIC_CHECK)];
-                //dd($data["herb_forms"]);
+            $original = ["name" => $herb->name, "sciname" => $herb->sciname];
+            $new = ["name" => $request->name, "sciname" => $request->sciname];
+            $data = array_diff($new, $original);
+
             foreach ($data as $key => $value)
             {
-                /*if ($value !== $herb->$key)
-                {
-                    $temporary = new TemporaryData;
-                    $temporary->type_id = $herb->id;
-                    $temporary->type_name = "herbs";
-                    $temporary->type_field = $key;
-                    $temporary->new_value = $value;
-                    $temporary->save();
-                }*/
                 $temporary = new TemporaryData;
                 $temporary->type_id = $herb->id;
-                $temporary->type_name = "herbs";
+                $temporary->type_table = "herbs";
                 $temporary->type_field = $key;
-                $temporary->new_value = $value;
+                if (!in_array($value, $original))
+                {
+                    $temporary->original_value = $original[$key];
+                    $temporary->new_value = $value;
+                }
+                $temporary->modified = true;
                 $temporary->author = Auth::user()->name." ".Auth::user()->firstname;
                 $temporary->author_id = Auth::id();
                 $temporary->save();

@@ -9,8 +9,7 @@ $(document).ready(function() {
         $('.modal-title').text('Quick Edit');
         $('.form-horizontal').show();
         $('#fid').val($(this).data('id'));
-        $('#n').val($(this).data('name'));
-        $('#s').val($(this).data('sciname'));
+        $('#title').val($(this).data('title'));
         $('#myModal-quickEdit').modal('show');
     });
 
@@ -24,8 +23,7 @@ $(document).ready(function() {
             data: {
                 '_token': $('input[name=_token]').val(),
                 'id': $("#fid").val(),
-                'name': $('#n').val(),
-                'sciname': $("#s").val()
+                'title': $('#n').val(),
             },
             success: function(data)
             {

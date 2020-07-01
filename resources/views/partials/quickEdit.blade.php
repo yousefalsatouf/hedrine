@@ -17,15 +17,10 @@
                         </div>
                         <label class="control-label col-sm-2 text-gray-dark" for="name">Name:</label>
                         <div class="col-sm-10">
-                            <input type="text" style="border: 0;border-bottom: 1px solid gray"  class="form-control" id="n">
+                            <input type="text" style="border: 0;border-bottom: 1px solid gray"  class="form-control" id="title">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2 text-gray-dark" for="sciname">Sciname:</label>
-                        <div class="col-sm-10">
-                            <input type="text" style="border: 0;border-bottom: 1px solid gray"  class="form-control" id="s">
-                        </div>
-                    </div>
+
                 </form>
                 <div class="modal-footer">
                     <button type="button" style="border: 0;border-bottom: 1px solid gray" class="btn actionBtn">
