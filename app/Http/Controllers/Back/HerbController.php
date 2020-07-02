@@ -54,8 +54,7 @@ class HerbController extends Controller
         $editor = Auth::user()->role_id === 3;
         $boss = Auth::user()->role_id <= 2;
 
-        //dd($request->forms);
-
+        //dd($request->validated);
 
         if ($editor || ($boss && !$request->validated))
         {
@@ -66,8 +65,6 @@ class HerbController extends Controller
             $herb->save();
             $herb->herb_forms()->sync($request->forms);
 
-            //dd($request->forms);
-            //$old = ["name" => $herb->name, "sciname" => $herb->sciname, "herb_forms" => json_encode($request->forms, JSON_NUMERIC_CHECK)];
             $new = ["name" => $herb->name, "sciname" => $herb->sciname, "herb_forms" => json_encode($request->forms, JSON_NUMERIC_CHECK)];
             //dd($data);
             foreach ($new as $key => $value)
@@ -82,8 +79,6 @@ class HerbController extends Controller
                 $temporary->author_id = Auth::id();
                 $temporary->save();
             }
-
-            $herb->delete();
 
             Alert::success('Cool !', 'Votre plante est en cours de vérifier avec l\'administrateur');
         }

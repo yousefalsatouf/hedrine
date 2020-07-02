@@ -9,8 +9,8 @@ class TemporaryDataController extends Controller
 {
     public function index()
     {
-        $noValidHerbs = TemporaryData::where('type_table', 'herbs')->where('modified', 0)->paginate(3);
-        $noValidHerbsModified = TemporaryData::where('type_table', 'herbs')->where('modified', 1)->paginate(3);
+        $noValidHerbs = TemporaryData::where('type_table', 'herbs')->where('modified', 0)->orderBy('created_at', 'desc')->paginate(3);
+        $noValidHerbsModified = TemporaryData::where('type_table', 'herbs')->where('modified', 1)->orderBy('created_at', 'desc')->paginate(3);
 
         return view('alerts.index', compact('noValidHerbs', 'noValidHerbsModified'));
     }

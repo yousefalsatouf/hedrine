@@ -6,6 +6,7 @@ $(document).ready(function() {
         let that = $(e.currentTarget);
         let id = that.data('id');
         let user = that.data('user');
+        console.log($('#myModal-refuse-message'))
 
         $('#myModal-refuse-message').modal('show');
 

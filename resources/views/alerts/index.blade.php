@@ -25,7 +25,7 @@
                         <tbody>
                         @foreach($noValidHerbs as $herb)
                             <tr class={{$herb->validated == -1? "invalidColor":""}}>
-                                <td>{{$herb->id}}</td>
+                                <td>{{$herb->type_id}}</td>
                                 {{--<td>{{$herb->type_table}}</td>--}}
 
                                 <td>{{$herb->type_field}}</td>
@@ -66,7 +66,7 @@
                     </table>
                     <small class="d-flex justify-content-end">{{$noValidHerbs->links()}}</small>
                     <br>
-                    <h3 class="text-danger"><b><i class="fas fa-seedling mr-2" style="color: seagreen"></i> Plante Modifiée</b></h3>
+                    <h3 class="text-danger"><b><i class="fas fa-seedling mr-2" style="color: red"></i> Plante Modifiée</b></h3>
                     <hr>
                     <table id="valid-form" class="table table-bordered table-striped">
                         <thead>
@@ -84,7 +84,7 @@
                         <tbody>
                             @foreach($noValidHerbsModified as $herb)
                                 <tr class={{$herb->validated == -1? "invalidColor":""}}>
-                                    <td>{{$herb->id}}</td>
+                                    <td>{{$herb->type_id}}</td>
                                     {{--<td>{{$herb->type_table}}</td>--}}
                                     <td>{{$herb->type_field}}</td>
                                     <td>{{$herb->original_value}}</td>
