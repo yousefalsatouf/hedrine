@@ -39,20 +39,24 @@ class AdminController extends Controller
 
     public function quickEdit(Request $request)
     {
-        $herb = Herb::where('validated', '!=', 1)->where('id', $request->id)->get();
-        //dd($herb);
+        $herb = Herb::where('validated', '<=', 0)->where('id', $request->id)->get();
+        $forms = $request->forms;
 
-        if (Auth::user()->role_id === 1 || Auth::user()->role_id === 2)
+        DB::table('herbs')->where('validated', '!=', 1)->where('id', $request->id)
+            ->update([
+                'name' => $request->name,
+                'sciname' => $request->sciname,
+                //'validated' => 1
+            ]);
+
+        DB::table('herb_has_forms')->where('herb_id', $request->id)->delete();
+        foreach ($forms as $id)
         {
-
-            DB::table('herbs')->where('validated', '!=', 1)->where('id', $request->id)
-                ->update([
-                    'name' => $request->name,
-                    'sciname' => $request->sciname,
-                    //'validated' => 1
-                ]);
-            Alert::success("C'est Ok");
+            DB::table('herb_has_forms')->insert(['herb_id' => $request->id, 'herb_form_id' => $id]);
         }
+
+        Alert::success("C'est Ok");
+
         return response()->json($herb);
     }
 

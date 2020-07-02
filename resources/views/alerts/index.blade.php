@@ -30,7 +30,11 @@
                                 <td>{{$herb->name}}</td>
                                 <td>{{$herb->sciname}}</td>
                                 <td>
-
+                                    <select class="form-control herbForm" id="temporary-forms" multiple disabled>
+                                        @foreach($herb->herb_forms as $form)
+                                            <option style="color:black" selected>{{ $form->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </td>
                                 <td>{{$herb->user->name.' '.$herb->user->firstname}}</td>
                                 <td>{{Carbon\Carbon::parse($herb->created_at)->diffForHumans()}}</td>

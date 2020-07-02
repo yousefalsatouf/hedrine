@@ -9,7 +9,9 @@ $(document).ready(function() {
         $('.modal-title').text('Quick Edit');
         $('.form-horizontal').show();
         $('#fid').val($(this).data('id'));
-        $('#title').val($(this).data('title'));
+        $('#name').val($(this).data('name'));
+        $('#sciname').val($(this).data('sciname'));
+        $('#forms').val($(this).data('forms'));
         $('#myModal-quickEdit').modal('show');
     });
 
@@ -17,13 +19,16 @@ $(document).ready(function() {
     {
         $('#edit').hide();
         $('i#icon-edit').show();
+        //console.log($('#forms').val())
         $.ajax({
             type: 'POST',
-            url: 'admin/quickEdit',
+            url: '/admin/quickEdit',
             data: {
                 '_token': $('input[name=_token]').val(),
                 'id': $("#fid").val(),
-                'title': $('#n').val(),
+                'name': $('#name').val(),
+                'sciname': $('#sciname').val(),
+                'forms': $('#forms').val(),
             },
             success: function(data)
             {
