@@ -8,7 +8,7 @@
             <div class="col-12">
                 <div class="table responsive">
                     {{ csrf_field() }}
-                    <h3 class="text-success"><b><i class="fas fa-seedling mr-2" style="color: seagreen"></i> Nouvelle Plante</b> </h3>
+                    <h3 class="text-success"><b><i class="fas fa-seedling mr-2" style="color: seagreen"></i> Plante ajoutée</b> </h3>
                     <hr>
                     <table id="valid-form" class="table table-bordered table-striped">
                         <thead>
