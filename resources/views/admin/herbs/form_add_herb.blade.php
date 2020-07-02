@@ -35,12 +35,11 @@
 							</div>
 							<!-- /.card-header -->
 							<!-- form start -->
-						<form class=" justify-content-center" role="form" method="POST" action="@isset($herb) {{ route('herb.update', $herb->id) }} @else {{
-							route('herb.store')}} @endisset">
-                                    @csrf
+						<form class=" justify-content-center" role="form" method="POST" action={{isset($herb)? route('herb.update', $herb->id) : route('herb.store')}}>
+                            @if(isset($herb))@method('PUT')@endif
+                                @csrf
 								<div class="card-body">
 									<div class="form-group">
-										@isset($herb) @method('PUT') @endisset
 										<label for="name">Nom de la plante</label>
 										<input type="text" class="form-control" id="title" name="name" required placeholder="Veuillez indiquer un nom pour la plante" value="{{isset($herb) ? $herb->name : ''}}">
 									</div>
@@ -62,7 +61,7 @@
 							            </select>
 									</div>
 									{{-- si on est admin ou publisher --}}
-									@if(\Illuminate\Support\Facades\Auth::user()->role_id <=2)
+                                    @if(\Illuminate\Support\Facades\Auth::user()->role_id <=2)
                                         <div class="form-group">
                                             <label for="validated"> <input type="checkbox" name="validated" id="validated" checked> Validé</label>
                                         </div>

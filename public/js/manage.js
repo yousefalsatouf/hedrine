@@ -65,7 +65,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: 'POST',
-            url: 'admin/modifs',
+            url: '/admin/modifs',
             data: {
                 '_token': $('input[name=_token]').val(),
                 'id': $("#modif-id").val(),
@@ -84,14 +84,18 @@ $(document).ready(function() {
     });
 
     // refuse message went from here ...
-    $('.modal-footer').on('click', '#refuse', function()
+    $('.modal-footer').on('click', '#refuse', function(e)
     {
+        e.preventDefault();
+        let that = $(e.currentTarget);
+        //alert(that.data('url'))
+
         $('#refuse').hide();
         $('i#icon-refuse').show();
 
         $.ajax({
             type: 'POST',
-            url: 'admin/refuse',
+            url: '/admin/refuse',
             data: {
                 '_token': $('input[name=_token]').val(),
                 'id': $("#refuse-id").val(),
