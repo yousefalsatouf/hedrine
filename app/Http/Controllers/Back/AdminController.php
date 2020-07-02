@@ -71,9 +71,7 @@ class AdminController extends Controller
         $email = DB::table('users')->where('id', $request->id)->pluck('email');
         $msg = $request->msg;
 
-        echo $email;
-
-        $herb = DB::table('temporary_data')->where('type_name', 'herbs')->where('type_id', '=', $id)->get();
+        //$herb = DB::table('temporary_data')->where('type_name', 'herbs')->where('type_id', '=', $id)->get();
         //event(new HerbRefuseEvent($user, $email, $msg));
         //Mail::to($email)->send(new HerbRefuse($user, $msg));
 
@@ -81,7 +79,7 @@ class AdminController extends Controller
 
         Alert::success('Ok !', 'La plante a bien été refusée');
 
-        return response()->json(['id' => $herb]);
+        return response()->json();
     }
     public function modifs(Request $request) {
 
