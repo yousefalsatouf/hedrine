@@ -79,7 +79,6 @@ class HerbController extends Controller
                 $temporary->author_id = Auth::id();
                 $temporary->save();
             }
-            $herb->delete();
 
             Alert::success('Cool !', 'Votre plante est en cours de vérifier avec l\'administrateur');
         }
