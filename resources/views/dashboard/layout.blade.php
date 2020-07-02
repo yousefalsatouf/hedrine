@@ -555,7 +555,6 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 <script src="{{ asset('/js/quickEdit.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/js/manage.js') }}" type="text/javascript"></script>
-
 <script src="{{ asset('/js/custom.js') }}" type="text/javascript"></script>
 
 @include('sweetalert::alert')
@@ -575,5 +574,8 @@
 <!-- Recaptha -->
 @yield('dashboard-js')
 @yield('script')
+
 </body>
 </html>
+layout.blade.php
+Displaying layout.blade.php.
