@@ -1,5 +1,8 @@
 $(document).ready(function() {
     $('#forms').selectpicker();
+    $('#temporary-forms').select2({
+        theme: "classic"
+    });
 });
 
 $(document).ready(function() {

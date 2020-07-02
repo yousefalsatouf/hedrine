@@ -17,10 +17,26 @@
                         </div>
                         <label class="control-label col-sm-2 text-gray-dark" for="name">Name:</label>
                         <div class="col-sm-10">
-                            <input type="text" style="border: 0;border-bottom: 1px solid gray"  class="form-control" id="title">
+                            <input type="text" style="border: 0;border-bottom: 1px solid gray"  class="form-control" id="name">
                         </div>
                     </div>
-
+                    <div class="form-group">
+                        <label class="control-label col-sm-2 text-gray-dark" for="sciname">Sciname:</label>
+                        <div class="col-sm-10">
+                            <input type="text" style="border: 0;border-bottom: 1px solid gray"  class="form-control" id="sciname">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="herb_form">Formes de la plante</label>
+                        @php
+                            $herb_forms = \App\HerbForm::all();
+                        @endphp
+                        <select class="form-control herbForm selectpicker" id="forms" name="forms[]" multiple>
+                            @foreach ($herb_forms as $form)
+                                <option style="color:black" value="{{$form->id}}">{{ $form->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </form>
                 <div class="modal-footer">
                     <button type="button" style="border: 0;border-bottom: 1px solid gray" class="btn actionBtn">
