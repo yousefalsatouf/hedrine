@@ -37,10 +37,10 @@
 							<!-- form start -->
 						<form class=" justify-content-center" role="form" method="POST" action="@isset($herb) {{ route('herb.update', $herb->id) }} @else {{
 							route('herb.store')}} @endisset">
+                                    @csrf
 								<div class="card-body">
 									<div class="form-group">
 										@isset($herb) @method('PUT') @endisset
-										@csrf
 										<label for="name">Nom de la plante</label>
 										<input type="text" class="form-control" id="title" name="name" required placeholder="Veuillez indiquer un nom pour la plante" value="{{isset($herb) ? $herb->name : ''}}">
 									</div>
@@ -50,7 +50,7 @@
 									</div>
 									<div class="form-group">
 										<label for="herb_form">Formes de la plante</label>
-										<select class="form-control herbForm" id="forms" name="forms[]" multiple >
+										<select class="form-control herbForm selectpicker" id="forms" name="forms[]" multiple >
 											@foreach ($herb_forms as $herb_form)
 												@if(Route::currentRouteName() === 'herb.create')
 							            		<option value="{{ $herb_form->id }}" {{ in_array($herb_form->id, old('forms') ?: []) ? 'selected' : '' }}>{{ $herb_form->name }}</option>
@@ -64,7 +64,7 @@
 									{{-- si on est admin ou publisher --}}
 									@if(\Illuminate\Support\Facades\Auth::user()->role_id <=2)
                                         <div class="form-group">
-                                            <label for="validated"> <input type="checkbox" name="validated" id="validated" {{ isset($herb->validated) ? "" : "checked"}}> Validé</label>
+                                            <label for="validated"> <input type="checkbox" name="validated" id="validated" checked> Validé</label>
                                         </div>
                                     @endif
 								</div>
@@ -75,7 +75,7 @@
 											<a class="btn btn-light" href="{{ route('herb.index') }}" role="button"><i class="fas fa-arrow-left"></i> Retour à la liste des plantes</a>
 											<button type="submit" class="btn btn-outline-success float-right"><i class="fas fa-location-arrow"></i>
 												@if(Route::currentRouteName() === 'herb.create')
-													Ajouter un nouvelle plante
+													Ajouter une nouvelle plante
 												@else
 												 Sauvegarder
 												@endif

@@ -41,8 +41,7 @@
   <!-- DataTables -->
   <link rel="stylesheet" href="{{ asset('/adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
   <link rel="stylesheet" href="{{ asset('/adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
-
-  <!-- Google Font: Source Sans Pro -->
+    <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -197,6 +196,12 @@
                 {{ auth()->user()->firstname }} {{ auth()->user()->name }} ({{ auth()->user()->roles->name }})
             </button>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                @if(auth()->user()->role_id == 3)
+                    <a class="dropdown-item" href="{{ route('userprofile.index') }}">
+                        <i class="left fas fa-user-cog"></i>
+                        Mon compte
+                    </a>
+                @endif
                 <a class="dropdown-item" href="{{ action('SessionController@destroy') }}">
                     <i class="left fas fa-sign-out-alt"></i>
                     Se déconnecter
@@ -205,12 +210,6 @@
                 {{-- @if(\Illuminate\Support\Facades\Auth::user()->role_id === 4)
                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#unsubscribeModal"><i style="color: red" class="left fas fa-times-circle"></i> Désinscription</a>
                 @endif --}}
-                @if(auth()->user()->role_id == 3)
-                <a class="dropdown-item" href="{{ route('userprofile.index') }}">
-                    <i class="left fas fa-user-cog"></i>
-                    Mon compte
-                </a>
-                @endif
             </div>
         </li>
     </ul>
@@ -321,14 +320,12 @@
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{route('newHerbTarget')}}" class="nav-link">
-                                    <i class="fas fa-plus-circle nav-icon text-success"></i>
-                                    <p> <i class="fas fa-seedling mr-2" style="color: seagreen"></i> New Target</p>
+                                    <p> <i class="fas fa-seedling mr-2" style="color: seagreen"></i> New Hinteraction Target</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{route('newDrugTarget')}}" class="nav-link">
-                                    <i class="fas fa-plus-circle nav-icon text-success"></i>
-                                    <p> <i class="fas fa-capsules mr-2" style="color:#7d041e"></i> New Target</p>
+                                    <p> <i class="fas fa-capsules mr-2" style="color:#7d041e"></i> New Dinteraction Target</p>
                                 </a>
                             </li>
                         </ul>
@@ -506,6 +503,9 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+<script src="{{ asset('/js/custom.js') }}" type="text/javascript"></script>
 <!-- jQuery -->
 <script src="{{ asset('/adminlte/plugins/jquery/jquery.min.js') }}"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -521,8 +521,6 @@
         });
     });
 </script>
-
-
 <!-- Bootstrap 4 -->
 <script src="{{ asset('/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
@@ -550,16 +548,12 @@
 
 
 <!-- JP Ajout css et js pour le crud des herbs avec ses forms -->
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 <script src="{{ asset('/js/quickEdit.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/js/manage.js') }}" type="text/javascript"></script>
 {{-- <script src="{{ asset('/js/herbJson.js') }}" type="text/javascript"></script> --}}
-{{-- DD/Thierry 30 juin on met ce code pour appeler le script js se trouvant dans index.blade.php ==> resources/views/interaction/index.blade.php  
+{{-- DD/Thierry 30 juin on met ce code pour appeler le script js se trouvant dans index.blade.php ==> resources/views/interaction/index.blade.php
     on met dans un yield autrement il va se lancer partout  --}}
 @yield('getherbs');
-<script src="{{ asset('/js/custom.js') }}" type="text/javascript"></script>
-
 
     @include('sweetalert::alert')
     @include('cookieConsent::index')
