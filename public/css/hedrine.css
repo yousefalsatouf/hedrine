@@ -136,8 +136,17 @@ a.style_a {
     margin-top: 0;
 }
 
-#layout a.nav-link
+#layout .sidenav a.nav-link
 {
     font-weight: bold;
     color: white;
+}
+#layout a.nav-link:hover
+{
+    transition: all 0.5s;
+}
+#layout a.nav-link:hover
+{
+    color: black;
+    font-weight: bolder;
 }

@@ -242,7 +242,7 @@
     </div>
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar bg-secondary elevation-4">
+    <aside class="main-sidebar bg-secondary sidenav elevation-4">
         <!-- Sidebar -->
         <div class="sidebar">
             <br />
