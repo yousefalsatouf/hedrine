@@ -9,21 +9,47 @@ $(document).ready(function() {
         $('.modal-title').text('Quick Edit');
         $('.form-horizontal').show();
         $('#fid').val($(this).data('id'));
-        $('#title').val($(this).data('title'));
+        $('#name').val($(this).data('name'));
+        $('#sciname').val($(this).data('sciname'));
+        $('#forms').val($(this).data('forms'));
         $('#myModal-quickEdit').modal('show');
+    });
+    $(document).on('click', '.edit-modal-temporary', function()
+    {
+        $('#footer_action_button').addClass('glyphicon-check');
+        $('#footer_action_button').removeClass('glyphicon-trash');
+        $('.actionBtn').addClass('btn-outline-secondary');
+        $('.actionBtn').removeClass('btn-danger');
+        $('.actionBtn').addClass('edit');
+        $('.modal-title').text('Quick Edit');
+        $('.form-horizontal').show();
+        $('#tid').val($(this).data('id'));
+        $('.title').text($(this).data('title'));
+        $('#title').val($(this).data('new'));
+        $('#original').val($(this).data('original'));
+        $('#temporary').val($(this).data('temporary'));
+        $('#myModal-quickEdit-temporary').modal('show');
     });
 
     $('.modal-footer').on('click', '#edit', function()
     {
         $('#edit').hide();
-        $('i#icon-edit').show();
+        $('i#icon-edit-t').show();
+        //console.log($('.title').text())
+
         $.ajax({
             type: 'POST',
-            url: 'admin/quickEdit',
+            url: '/admin/quickEdit',
             data: {
                 '_token': $('input[name=_token]').val(),
                 'id': $("#fid").val(),
-                'title': $('#n').val(),
+                'name': $('#name').val(),
+                'sciname': $('#sciname').val(),
+                'tid': $("#tid").val(),
+                'forms': $('#forms').val(),
+                'title': $('.title').text(),
+                'new': $('#title').val(),
+                'temporary': $('#temporary').val(),
             },
             success: function(data)
             {

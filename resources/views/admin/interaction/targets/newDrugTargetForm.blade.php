@@ -74,9 +74,9 @@
                                             <br>
                                             <b class="text-info"><i class="fa fa-info-circle info text-info" id="required-msg"></i> Choisissez une ou plusieurs références</b>
                                             <hr>
-                                            <select class="form-control referencesForm" id="forms" required name="references[]" multiple>
+                                            <select class="form-control" id="referencesForm" style="height: 7rem" required name="references[]" multiple>
                                                 @foreach ($references as $reference)
-                                                    <option value="{{ $reference->id }}" class="text-dark">{{ $reference->title }}</option>
+                                                    <option value="{{ $reference->id }}" class="text-dark" >{{ $reference->title }}</option>
                                                 @endforeach
                                             </select>
                                         </div>

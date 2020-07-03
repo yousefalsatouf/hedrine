@@ -1,30 +1,20 @@
 $(document).ready(function() {
-    $('.herbForm').select2({
-    	placeholder:"Veuillez choisir une ou plusieur forme de plante",
-        theme: "classic"
-    });
-    $('.herbForm').selectpicker();
-
+    $('#forms').selectpicker();
+    
 });
 
 $(document).ready(function() {
-    $('.referencesForm').select2({
-        placeholder:"Veuillez choisir une ou plusieur forme de references",
-        theme: "classic" 
+    $('#referencesForm').select2({
+        placeholder:"Veuillez choisir une ou plusieur références",
+        theme: "classic"
     });
 
     $('#effectForm').selectpicker();
 
 });
 
-
 $(document).ready(function() {
-    $('.target').select2({
-    	placeholder:"Veuillez choisir une ou plusieur target",
-        theme: "classic"
-    });
-
-    $('#effectForm').selectpicker();
+    $('.target').selectpicker()
 });
 
 $(document).ready(function() {
@@ -32,8 +22,6 @@ $(document).ready(function() {
         placeholder:"Veuillez choisir une ou plusieur références",
         theme: "classic"
     });
-
-    $('#effectForm').selectpicker();
 });
 
 $(document).ready(function() {
@@ -41,8 +29,6 @@ $(document).ready(function() {
         placeholder:"Veuillez choisir un ou plusieur effet",
         theme: "classic"
     });
-
-    $('#effectForm').selectpicker();
 });
 
 /* DEBUT code pour checkbox de is_validated pour active ou desactiver les user */

@@ -98,8 +98,8 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer('*', function ($view) {
-            $counter = TemporaryData::where('type_table', 'herbs')->get();
-
+            $counter = DB::table('temporary_data')->where('type_table', 'herbs')->count() + DB::table('herbs')->where('validated', 0)->count();
+            //dd($counter);
             $view->with('noValidHerbsCounter', $counter);
         });
         view()->composer('*', function ($view) {
