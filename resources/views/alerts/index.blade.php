@@ -30,7 +30,7 @@
                                 <td>{{$herb->name}}</td>
                                 <td>{{$herb->sciname}}</td>
                                 <td>
-                                    <select class="form-control herbForm" id="temporary-forms" multiple disabled>
+                                    <select class="form-control herbForm selectpicker" id="temporary-forms" multiple disabled>
                                         @foreach($herb->herb_forms as $form)
                                             <option style="color:black" selected>{{ $form->name }}</option>
                                         @endforeach
@@ -39,7 +39,7 @@
                                 <td>{{$herb->user->name.' '.$herb->user->firstname}}</td>
                                 <td>{{Carbon\Carbon::parse($herb->updated_at)->diffForHumans()}}</td>
                                 <td class="">
-                                    <a class="btn btn-success text-light btn-sm" data-url="{{ route('admin.approve') }}" data-id="{{$herb->id}}" data-typeid="{{$herb->type_id}}" data-temporary="temporary" data-title="{{$herb->type_field}}" data-value="{{$herb->new_value}}" role="button" data-toggle="tooltip" title="Approuver la plante">
+                                    <a class="btn btn-success text-light btn-sm" data-url="{{ route('admin.approve') }}" data-id="{{$herb->id}}" data-typeid="{{$herb->type_id}}" data-title="{{$herb->type_field}}" data-value="{{$herb->new_value}}" role="button" data-toggle="tooltip" title="Approuver la plante">
                                         <i class="fas fa-thumbs-up"></i>
                                     </a>
                                     <i class="fas fa-spinner fa-pulse fa-lg" style="display: none"></i>
@@ -67,7 +67,7 @@
                                 <th scope="col">ID</th>
                                 {{--<th scope="col">Genre</th>--}}
                                 <th scope="col">Titre</th>
-                                <th scope="col">Valeur origin</th>
+                                <th scope="col">Valeur d'origine</th>
                                 <th scope="col">Nouvelle valeur</th>
                                 <th scope="col">Auteur</th>
                                 <th scope="col">Date</th>

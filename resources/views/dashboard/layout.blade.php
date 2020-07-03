@@ -321,14 +321,12 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="{{route('newHerbTarget')}}" class="nav-link">
-                                        <i class="fas fa-plus-circle nav-icon text-success"></i>
-                                        <p> <i class="fas fa-seedling mr-2" style="color: seagreen"></i> New Target</p>
+                                        <p> <i class="fas fa-seedling mr-2" style="color: seagreen"></i> New Hintercation Target</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{route('newDrugTarget')}}" class="nav-link">
-                                        <i class="fas fa-plus-circle nav-icon text-success"></i>
-                                        <p> <i class="fas fa-capsules mr-2" style="color:#7d041e"></i> New Target</p>
+                                        <p> <i class="fas fa-capsules mr-2" style="color:#7d041e"></i> New Dinteraction Target</p>
                                     </a>
                                 </li>
                             </ul>
