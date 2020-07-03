@@ -135,3 +135,9 @@ a.style_a {
     display: block;
     margin-top: 0;
 }
+
+#layout a.nav-link
+{
+    font-weight: bold;
+    color: white;
+}

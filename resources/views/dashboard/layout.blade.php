@@ -242,7 +242,7 @@
     </div>
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar bg-gray-light elevation-4">
+    <aside class="main-sidebar bg-secondary elevation-4">
         <!-- Sidebar -->
         <div class="sidebar">
             <br />
@@ -320,13 +320,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('newHerbTarget')}}" class="nav-link text-success">
-                                        <p> <i class="fas fa-seedling mr-2" style="color: seagreen"></i> New Hintercation Target</p>
+                                    <a href="{{route('newHerbTarget')}}" class="nav-link text-dark">
+                                        <p> <i class="fas fa-seedling mr-2 text-dark"></i> New Hintercation Target</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('newDrugTarget')}}" class="nav-link text-success">
-                                        <p> <i class="fas fa-capsules mr-2" style="color:#7d041e"></i> New Dinteraction Target</p>
+                                    <a href="{{route('newDrugTarget')}}" class="nav-link text-dark">
+                                        <p> <i class="fas fa-capsules mr-2 text-dark"></i> New Dinteraction Target</p>
                                     </a>
                                 </li>
                             </ul>
@@ -381,8 +381,8 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ route('post.index') }}" class="nav-link text-success">
-                                        <i class="fas fa-plus-circle text-success nav-icon"></i>
+                                    <a href="{{ route('post.index') }}" class="nav-link text-dark">
+                                        <i class="fas fa-plus-circle nav-icon"></i>
                                         <p>New Post</p>
                                     </a>
                                 </li>
