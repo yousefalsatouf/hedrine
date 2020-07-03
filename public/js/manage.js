@@ -35,11 +35,17 @@ $(document).ready(function() {
         //alert(that.data('url'));
         that.hide();
         that.closest('td').find('i.fa-spinner').show();
+        //console.log(that.data('title'));
+        //console.log(that.data('value'));
         $.ajax({
             type: 'POST',
             url: that.data('url'),
             data: {
                 'id': that.data('id'),
+                'temporary': that.data('temporary'),
+                'typeid': that.data('typeid'),
+                'title': that.data('title'),
+                'value': that.data('value'),
             },
             success: function(data)
             {

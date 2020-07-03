@@ -63,11 +63,25 @@ class AdminController extends Controller
     public function approve(Request $request) {
 
         //echo $request->id;
-        DB::table('herbs')->where('id', '=', $request->id)->update(['validated'=>1, "verified_by" => Auth::user()->name." ".Auth::user()->firstname]);
+        if ($request->temporary)
+        {
+            $fields = ["name", "sciname"];
+            foreach ($fields as $one)
+            {
+                if ($one === $request->title)
+                    DB::table('herbs')->where('id', $request->typeid)->update([$one=>$request->value]);
+            }
+            DB::table('temporary_data')->where('type_table', 'herbs')->where('id', $request->id)->delete();
+
+        }else
+        {
+            DB::table('herbs')->where('id', '=', $request->id)->update(['validated'=>1, "verified_by" => Auth::user()->name." ".Auth::user()->firstname]);
+        }
         Alert::success('Ok !', 'Nouvelle plante approuvée avec succès');
         return response()->json(['id' => $request->id]);
 
     }
+    
     public function refuse(Request $request)
     {
         $id = $request->id;
