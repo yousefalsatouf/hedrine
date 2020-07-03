@@ -9,8 +9,8 @@
                 <div class="table responsive">
                     {{ csrf_field() }}
                     <h3 class="text-success"><b><i class="fas fa-seedling mr-2" style="color: seagreen"></i> Plante ajoutée</b> </h3>
-                    <hr>
-                    <table id="valid-form" class="table table-bordered table-striped">
+                    <br>
+                    <table id="valid-form" class="table">
                         <thead>
                         <tr>
                             <th scope="col">ID</th>
@@ -25,7 +25,7 @@
                         </thead>
                         <tbody>
                         @foreach($noValidHerbs as $herb)
-                            <tr class={{$herb->validated == -1? "bg-warning":""}}>
+                            <tr class={{$herb->validated == -1? "text-info text-bolder":"text-dark"}}>
                                 <td>{{$herb->id}}</td>
                                 <td>{{$herb->name}}</td>
                                 <td>{{$herb->sciname}}</td>
@@ -39,19 +39,19 @@
                                 <td>{{$herb->user->name.' '.$herb->user->firstname}}</td>
                                 <td>{{Carbon\Carbon::parse($herb->updated_at)->diffForHumans()}}</td>
                                 <td class="">
-                                    <a class="btn btn-success text-light btn-sm" data-url="{{ route('admin.approve') }}" data-id="{{$herb->id}}" data-typeid="{{$herb->type_id}}" data-title="{{$herb->type_field}}" data-value="{{$herb->new_value}}" role="button" data-toggle="tooltip" title="Approuver la plante">
+                                    <a class="btn btn-outline-success text-success btn-sm" data-url="{{ route('admin.approve') }}" data-id="{{$herb->id}}" data-typeid="{{$herb->type_id}}" data-title="{{$herb->type_field}}" data-value="{{$herb->new_value}}" role="button" data-toggle="tooltip" title="Approuver la plante">
                                         <i class="fas fa-thumbs-up"></i>
                                     </a>
                                     <i class="fas fa-spinner fa-pulse fa-lg" style="display: none"></i>
-                                    <a class="btn btn-danger btn-sm refuse-modal" href="#" role="button" data-id="{{ $herb->id }}" data-user={{$herb->user->id}} data-toggle="tooltip" title="Refuser la plante">
+                                    <a class="btn btn-outline-danger btn-sm refuse-modal" href="#" role="button" data-id="{{ $herb->id }}" data-user={{$herb->user->id}} data-toggle="tooltip" title="Refuser la plante">
                                         <i class="fas fa-thumbs-down"></i>
                                     </a>
-                                    <a class="btn btn-warning btn-sm modify-modal" href="#" role="button"  data-id="{{ $herb->id }}" data-user={{$herb->user->id}} data-toggle="tooltip" title="Modifier la plante">
-                                        <i class="fas fa-eye" style="color:white"></i>
-                                    </a>
-                                    <button {{\Illuminate\Support\Facades\Auth::user()->role_id > 2? "disabled" : ""}} class="btn btn-secondary btn-sm edit-modal" role="button" data-id="{{ $herb->id }}" data-name="{{$herb->name}}" data-sciname="{{$herb->sciname}}" data-toggle="tooltip" title="editeur rapide">
-                                        <i class="fas fa-edit" style="color:white"></i>
+                                    <button {{\Illuminate\Support\Facades\Auth::user()->role_id > 2? "disabled" : ""}} class="btn btn-outline-secondary btn-sm edit-modal" role="button" data-id="{{ $herb->id }}" data-name="{{$herb->name}}" data-sciname="{{$herb->sciname}}" data-toggle="tooltip" title="editeur rapide">
+                                        <i class="fas fa-edit"></i>
                                     </button>
+                                    <a class="btn btn-outline-info btn-sm modify-modal" href="#" role="button"  data-id="{{ $herb->id }}" data-user={{$herb->user->id}} data-toggle="tooltip" title="Modifier la plante">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach
@@ -60,8 +60,8 @@
                     <small class="d-flex justify-content-end">{{$noValidHerbs->links()}}</small>
                     <br>
                     <h3 class="text-danger"><b><i class="fas fa-seedling mr-2" style="color: red"></i> Plante Modifiée</b></h3>
-                    <hr>
-                    <table id="valid-form" class="table table-bordered table-striped">
+                    <br>
+                    <table id="valid-form" class="table">
                         <thead>
                             <tr>
                                 <th scope="col">ID</th>
@@ -76,7 +76,7 @@
                         </thead>
                         <tbody>
                             @foreach($noValidHerbsModified as $herb)
-                                <tr class={{$herb->validated == -1? "bg-warning":""}}>
+                                <tr class={{$herb->validated == -1? "text-info text-bolder":"text-dark"}}>
                                     <td>{{$herb->type_id}}</td>
                                     {{--<td>{{$herb->type_table}}</td>--}}
                                     <td>{{$herb->type_field}}</td>
@@ -85,19 +85,19 @@
                                     <td>{{$herb->author}}</td>
                                     <td>{{Carbon\Carbon::parse($herb->updated_at)->diffForHumans()}}</td>
                                     <td class="">
-                                        <a class="btn btn-success text-light btn-sm" data-url="{{ route('admin.approve') }}" data-temporary="temporary" data-title="{{$herb->type_field}}" data-value="{{$herb->new_value}}" data-id="{{$herb->id}}"  data-typeid="{{$herb->type_id}}" role="button" data-toggle="tooltip" title="Approuver la plante">
+                                        <a class="btn btn-outline-success text-success btn-sm" data-url="{{ route('admin.approve') }}" data-temporary="temporary" data-title="{{$herb->type_field}}" data-value="{{$herb->new_value}}" data-id="{{$herb->id}}"  data-typeid="{{$herb->type_id}}" role="button" data-toggle="tooltip" title="Approuver la plante">
                                             <i class="fas fa-thumbs-up"></i>
                                         </a>
                                         <i class="fas fa-spinner fa-pulse fa-lg" style="display: none"></i>
-                                        <a class="btn btn-danger btn-sm refuse-modal" href="#" role="button" data-id="{{ $herb->id }}" data-temporary="temporary" data-user={{$herb->author_id}} data-toggle="tooltip" title="Refuser la plante">
+                                        <a class="btn btn-outline-danger btn-sm refuse-modal" href="#" role="button" data-id="{{ $herb->id }}" data-temporary="temporary" data-user={{$herb->author_id}} data-toggle="tooltip" title="Refuser la plante">
                                             <i class="fas fa-thumbs-down"></i>
                                         </a>
-                                        <a class="btn btn-warning btn-sm modify-modal" href="#" role="button" data-id="{{ $herb->id }}" data-temporary="temporary" data-user={{$herb->author_id}} data-toggle="tooltip" title="Modifier la plante">
-                                            <i class="fas fa-eye" style="color:white"></i>
-                                        </a>
-                                        <button {{\Illuminate\Support\Facades\Auth::user()->role_id > 2? "disabled" : ""}} class="btn btn-secondary btn-sm edit-modal-temporary" role="button" data-temporary="temporary" data-id="{{ $herb->id }}" data-title="{{$herb->type_field}}" data-original="{{$herb->original_value}}" data-new="{{$herb->new_value}}" data-toggle="tooltip" title="editeur rapide">
-                                            <i class="fas fa-edit" style="color:white"></i>
+                                        <button {{\Illuminate\Support\Facades\Auth::user()->role_id > 2? "disabled" : ""}} class="btn btn-outline-secondary btn-sm edit-modal-temporary" role="button" data-temporary="temporary" data-id="{{ $herb->id }}" data-title="{{$herb->type_field}}" data-original="{{$herb->original_value}}" data-new="{{$herb->new_value}}" data-toggle="tooltip" title="editeur rapide">
+                                            <i class="fas fa-edit"></i>
                                         </button>
+                                        <a class="btn btn-outline-info btn-sm modify-modal" href="#" role="button" data-id="{{ $herb->id }}" data-temporary="temporary" data-user={{$herb->author_id}} data-toggle="tooltip" title="Modifier la plante">
+                                            <i class="fas fa-paper-plane"></i>
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach

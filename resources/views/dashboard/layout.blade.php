@@ -70,7 +70,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="fa fa-users fa-2x"></i>
-                        <span class="badge badge-success navbar-badge" style="font-size: 15.5px" >{{ $newUsersCount }}</span>
+                        <span class="badge badge-info navbar-badge" style="font-size: 15.5px" >{{ $newUsersCount }}</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <h4 class="dropdown-item dropdown-header text-info"><i class="fas fa-users mr-2"></i> {{ $newUsersCount }}  New Users requests</h4>
@@ -102,7 +102,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown" href="#">
                     <i class="far fa-comments fa-2x"></i>
-                    <span class="badge badge-danger navbar-badge" style="font-size: 15px">{{ $posts->count() }}</span>
+                    <span class="badge badge-info navbar-badge" style="font-size: 15px">{{ $posts->count() }}</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     @foreach ($posts as $post)
@@ -135,7 +135,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="far fa-bell fa-2x"></i>
-                        <span class="badge badge-warning navbar-badge" style="font-size: 15.5px" >{{ $noValidHerbsCounter }}</span>
+                        <span class="badge badge-info navbar-badge" style="font-size: 15.5px" >{{ $noValidHerbsCounter }}</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <span class="dropdown-item dropdown-header"> {{ $notifications }} Notifications</span>
@@ -192,12 +192,13 @@
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
-                <button class="btn btn-secondary" data-toggle="dropdown" href="#">
+                <button class="btn btn-outline-success" style="border: 0; border-bottom: 1px solid green" data-toggle="dropdown" href="#">
                     <i class="fas fa-user-circle fa-2x"></i>
-                    {{ auth()->user()->firstname }} {{ auth()->user()->name }} ({{ auth()->user()->roles->name }})
+                    <br>
+                    <b>{{ auth()->user()->firstname }} {{ auth()->user()->name }} ({{ auth()->user()->roles->name }})</b>
                 </button>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <a class="dropdown-item" href="{{ action('SessionController@destroy') }}">
+                    <a class="dropdown-item text-danger" href="{{ action('SessionController@destroy') }}">
                         <i class="left fas fa-sign-out-alt"></i>
                         Se déconnecter
                     </a>
@@ -241,7 +242,7 @@
     </div>
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <aside class="main-sidebar bg-gray-light elevation-4">
         <!-- Sidebar -->
         <div class="sidebar">
             <br />
@@ -257,7 +258,7 @@
                     <!-- Add icons to the links using the .nav-icon class
                     with font-awesome or any other icon font library -->
                     <li class="nav-item has-treeview menu-open">
-                        <a href="#" class="nav-link active" style="background-color:green;">
+                        <a href="#" class="nav-link active" style="background-color: #3a64a5">
                             <i class="nav-icon fas fa-search-plus"></i>
                             <p>
                                 RECHERCHE
@@ -280,12 +281,11 @@
                         </ul>
                     </li>
                     <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link" style="background-color:green;">
+                        <a href="#" class="nav-link " style="background-color: #3a64a5; color: white">
                             <i class="nav-icon fas fa-compress-arrows-alt"></i>
                             <p>
                                 INDEX
                                 <i class="fas fa-angle-left right"></i>
-
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
@@ -311,7 +311,7 @@
                     </li>
                     @if ((auth()->user()->role_id == 1 )||(auth()->user()->role_id == 2) ||(auth()->user()->role_id == 3 ))
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link" style="background-color:green;" >
+                            <a href="#" class="nav-link" style="background-color:#3a64a5; color: white" >
                                 <i class="fas fa-database nav-icon"></i>
                                 <p>
                                     Gerer les données
@@ -320,12 +320,12 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('newHerbTarget')}}" class="nav-link">
+                                    <a href="{{route('newHerbTarget')}}" class="nav-link text-success">
                                         <p> <i class="fas fa-seedling mr-2" style="color: seagreen"></i> New Hintercation Target</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('newDrugTarget')}}" class="nav-link">
+                                    <a href="{{route('newDrugTarget')}}" class="nav-link text-success">
                                         <p> <i class="fas fa-capsules mr-2" style="color:#7d041e"></i> New Dinteraction Target</p>
                                     </a>
                                 </li>
@@ -372,7 +372,7 @@
                     @endif
                     @if (auth()->user()->role_id == 1)
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link" style="background-color:green;" >
+                            <a href="#" class="nav-link" style="background-color:#3a64a5; color: white" >
                                 <i class="fas fa-unlock-alt nav-icon"></i>
                                 <p>
                                     ADMIN
@@ -381,7 +381,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ route('post.index') }}" class="nav-link">
+                                    <a href="{{ route('post.index') }}" class="nav-link text-success">
                                         <i class="fas fa-plus-circle text-success nav-icon"></i>
                                         <p>New Post</p>
                                     </a>
