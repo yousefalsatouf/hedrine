@@ -336,6 +336,8 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
 // Route::name('hinteractions.hdi')->get('hinteraction','HinteractionController@index');
 Route::get('hinteractions/hdi','HinteractionController@index')->name('hinteractions.hdi');
 Route::get('hinteractions/hdi_get_herbs','HinteractionController@get_herbs')->name('hinteractions.get_herbs');
+Route::get('hinteractions/hdi_get_drugs','HinteractionController@get_drugs')->name('hinteractions.get_drugs');
+Route::post('/hinteractions/getHerbs','HinteractionController@getHerbs')->name('hinteractions.getHerbsById');
 Route::get('hinteractions/hti','HinteractionController@show_mecanisme_form')->name('hinteractions.hti');
 
 //UserPorofile

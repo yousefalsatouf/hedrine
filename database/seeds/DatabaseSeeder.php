@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TargetSeeder::class);
         $this->call(TargetTypeSeeder::class);
         $this->call(ForceSeeder::class);
-        $this->call(HinteractionSeeder::class);
+       // $this->call(HinteractionSeeder::class);
         $this->call(EffectSeeder::class);
         $this->call(HinteractionHasEffectSeeder::class);
         $this->call(ReferenceSeeder::class);
@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
         $this->call(AtcLevel2Seeder::class);
         $this->call(AtcLevel3Seeder::class);
         $this->call(AtcLevel4Seeder::class);
-        $this->call(DinteractionSeeder::class);
+       // $this->call(DinteractionSeeder::class);
         $this->call(DinteractionHasEffectSeeder::class);
         $this->call(DinteractionHasReferenceSeeder::class);
 
