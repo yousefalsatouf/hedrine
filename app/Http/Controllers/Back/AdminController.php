@@ -81,7 +81,7 @@ class AdminController extends Controller
         return response()->json(['id' => $request->id]);
 
     }
-    
+
     public function refuse(Request $request)
     {
         $id = $request->id;
@@ -89,11 +89,16 @@ class AdminController extends Controller
         $email = DB::table('users')->where('id', $request->id)->pluck('email');
         $msg = $request->msg;
 
-        //sending an email
-        //event(new HerbRefuseEvent($user, $email, $msg));
-        //Mail::to($email)->send(new HerbRefuse($user, $msg));
-        DB::table('herbs')->where('id', $id)->delete();
-        //DB::table('temporary_data')->where('type_name', 'herbs')->where('id', '=', $id)->delete();
+        if ($request->temporary)
+        {
+            DB::table('temporary_data')->where('type_table', 'herbs')->where('id', '=', $id)->delete();
+        }else
+        {
+            //sending an email
+            //event(new HerbRefuseEvent($user, $email, $msg));
+            //Mail::to($email)->send(new HerbRefuse($user, $msg));
+            DB::table('herbs')->where('id', $id)->delete();
+        }
 
         Alert::success('Ok !', 'La plante a bien été refusée');
 

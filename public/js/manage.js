@@ -6,12 +6,14 @@ $(document).ready(function() {
         let that = $(e.currentTarget);
         let id = that.data('id');
         let user = that.data('user');
+        let temporary = that.data('temporary');
         console.log($('#myModal-refuse-message'))
 
         $('#myModal-refuse-message').modal('show');
 
         $('#refuse-id').val(id);
         $('#refuse-user').val(user);
+        $('#refuse-tamporary').val(temporary);
     });
 
     $(document).on('click', '.modify-modal', function(e)
@@ -105,6 +107,7 @@ $(document).ready(function() {
             data: {
                 '_token': $('input[name=_token]').val(),
                 'id': $("#refuse-id").val(),
+                'temporary': $("#refuse-tamporary").val(),
                 'user': $("#refuse-user").val(),
                 'msg': $('#refuse-message').val()
             },
