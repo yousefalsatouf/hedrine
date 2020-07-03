@@ -555,9 +555,12 @@
 <script src="{{ asset('/js/quickEdit.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/js/manage.js') }}" type="text/javascript"></script>
 {{-- <script src="{{ asset('/js/herbJson.js') }}" type="text/javascript"></script> --}}
-{{-- DD/Thierry 30 juin on met ce code pour appeler le script js se trouvant dans index.blade.php ==> resources/views/interaction/index.blade.php  
+{{-- DD/Thierry 30 juin on met ce code pour appeler le script js se trouvant dans index.blade.php ==> resources/views/interaction/index.blade.php
     on met dans un yield autrement il va se lancer partout  --}}
+    @yield('getdrugs');
 @yield('getherbs');
+@yield('resultat');
+
 <script src="{{ asset('/js/custom.js') }}" type="text/javascript"></script>
 
 
