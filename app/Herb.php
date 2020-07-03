@@ -11,11 +11,6 @@ class Herb extends Model
 
     protected $fillable = ['name', 'sciname', 'user_id'];
 
-    public function temporary()
-    {
-        return $this->hasOne(TemporaryData::class);
-    }
-
     public function user()
     {
         return $this->belongsTo(User::class,'user_id');
@@ -31,7 +26,7 @@ class Herb extends Model
         return $this->belongsToMany(Target::class, 'hinteractions')->withTimestamps();
     }
 
-    public function hinteractions() 
+    public function hinteractions()
     {
         return $this->hasMany(Hinteraction::class);
     }

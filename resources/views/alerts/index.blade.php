@@ -8,7 +8,7 @@
             <div class="col-12">
                 <div class="table responsive">
                     {{ csrf_field() }}
-                    <h3 class="text-success"><b><i class="fas fa-seedling mr-2" style="color: seagreen"></i> Plante ajoutée</b> </h3>
+                    <h3 class="text-secondary"><b><i class="fas fa-seedling mr-2"></i> Plante ajoutée</b> </h3>
                     <br>
                     <table id="valid-form" class="table">
                         <thead>
@@ -39,7 +39,7 @@
                                 <td>{{$herb->user->name.' '.$herb->user->firstname}}</td>
                                 <td>{{Carbon\Carbon::parse($herb->updated_at)->diffForHumans()}}</td>
                                 <td class="">
-                                    <a class="btn btn-outline-success text-success btn-sm" data-url="{{ route('admin.approve') }}" data-id="{{$herb->id}}" data-typeid="{{$herb->type_id}}" data-title="{{$herb->type_field}}" data-value="{{$herb->new_value}}" role="button" data-toggle="tooltip" title="Approuver la plante">
+                                    <a class="btn btn-outline-success text-success btn-sm approve" data-url="{{ route('admin.approve') }}" data-id="{{$herb->id}}" data-typeid="{{$herb->type_id}}" data-title="{{$herb->type_field}}" data-value="{{$herb->new_value}}" role="button" data-toggle="tooltip" title="Approuver la plante">
                                         <i class="fas fa-thumbs-up"></i>
                                     </a>
                                     <i class="fas fa-spinner fa-pulse fa-lg" style="display: none"></i>
@@ -85,7 +85,7 @@
                                     <td>{{$herb->author}}</td>
                                     <td>{{Carbon\Carbon::parse($herb->updated_at)->diffForHumans()}}</td>
                                     <td class="">
-                                        <a class="btn btn-outline-success text-success btn-sm" data-url="{{ route('admin.approve') }}" data-temporary="temporary" data-title="{{$herb->type_field}}" data-value="{{$herb->new_value}}" data-id="{{$herb->id}}"  data-typeid="{{$herb->type_id}}" role="button" data-toggle="tooltip" title="Approuver la plante">
+                                        <a class="btn btn-outline-success text-success btn-sm approve" data-url="{{ route('admin.approve') }}" data-temporary="temporary" data-title="{{$herb->type_field}}" data-value="{{$herb->new_value}}" data-id="{{$herb->id}}"  data-typeid="{{$herb->type_id}}" role="button" data-toggle="tooltip" title="Approuver la plante">
                                             <i class="fas fa-thumbs-up"></i>
                                         </a>
                                         <i class="fas fa-spinner fa-pulse fa-lg" style="display: none"></i>

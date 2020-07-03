@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
-            <div class="modal-header bg-warning">
+            <div class="modal-header bg-info">
                 <h4 class="modal-title">Veilliez Préciser ici la raison:</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
@@ -12,14 +12,14 @@
                     <input type="hidden" id="modif-user">
                     <input type="hidden" id="modif-temporary">
                     <div class="form-group">
-                        <label class="control-label col-sm-2 text-warning" for="name">Message:</label>
+                        <label class="control-label col-sm-2 text-info" for="name">Message:</label>
                         <div class="col-sm-10">
-                            <textarea id="modify-message" style="border: 0;border-bottom: 1px solid orange"  class="form-control"></textarea>
+                            <textarea id="modify-message" style="border: 0;border-bottom: 1px solid dodgerblue"  class="form-control"></textarea>
                         </div>
                     </div>
                 </form>
                 <div class="modal-footer">
-                    <button type="button" style="border: 0;border-bottom: 1px solid orange"   class="btn actionBtn">
+                    <button type="button" style="border: 0;border-bottom: 1px solid dodgerblue"   class="btn actionBtn">
                         <span id="footer_action_button" class='glyphicon'>
                             <i id="modify" class="fa fa-save"></i>
                             <i id="icon-modify" class="fas fa-spinner fa-pulse" style="display: none"></i>

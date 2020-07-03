@@ -13,6 +13,7 @@ class CreateTemporaryDataTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('temporary_data', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('type_id');
