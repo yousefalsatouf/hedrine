@@ -39,35 +39,54 @@ class AdminController extends Controller
 
     public function quickEdit(Request $request)
     {
-        $herb = Herb::where('validated', '<=', 0)->where('id', $request->id)->get();
-        $forms = $request->forms;
-
-        DB::table('herbs')->where('validated', '!=', 1)->where('id', $request->id)
-            ->update([
-                'name' => $request->name,
-                'sciname' => $request->sciname,
-                //'validated' => 1
-            ]);
-
-        DB::table('herb_has_forms')->where('herb_id', $request->id)->delete();
-        foreach ($forms as $id)
+        if ($request->temporary)
         {
-            DB::table('herb_has_forms')->insert(['herb_id' => $request->id, 'herb_form_id' => $id]);
+            DB::table('temporary_data')->where('type_table', 'herbs')->where('id', $request->tid)->update(['new_value'=>$request->new]);
+
+        }else{
+            $forms = $request->forms;
+
+            DB::table('herbs')->where('validated', '!=', 1)->where('id', $request->id)
+                ->update([
+                    'name' => $request->name,
+                    'sciname' => $request->sciname,
+                    //'validated' => 1
+                ]);
+
+            DB::table('herb_has_forms')->where('herb_id', $request->id)->delete();
+            foreach ($forms as $id)
+            {
+                DB::table('herb_has_forms')->insert(['herb_id' => $request->id, 'herb_form_id' => $id]);
+            }
         }
 
         Alert::success("C'est Ok");
 
-        return response()->json($herb);
+        return response()->json();
     }
 
     public function approve(Request $request) {
 
         //echo $request->id;
-        DB::table('herbs')->where('id', '=', $request->id)->update(['validated'=>1, "verified_by" => Auth::user()->name." ".Auth::user()->firstname]);
+        if ($request->temporary)
+        {
+            $fields = ["name", "sciname"];
+            foreach ($fields as $one)
+            {
+                if ($one === $request->title)
+                    DB::table('herbs')->where('id', $request->typeid)->update([$one=>$request->value]);
+            }
+            DB::table('temporary_data')->where('type_table', 'herbs')->where('id', $request->id)->delete();
+
+        }else
+        {
+            DB::table('herbs')->where('id', '=', $request->id)->update(['validated'=>1, "verified_by" => Auth::user()->name." ".Auth::user()->firstname]);
+        }
         Alert::success('Ok !', 'Nouvelle plante approuvée avec succès');
         return response()->json(['id' => $request->id]);
 
     }
+
     public function refuse(Request $request)
     {
         $id = $request->id;
@@ -75,11 +94,16 @@ class AdminController extends Controller
         $email = DB::table('users')->where('id', $request->id)->pluck('email');
         $msg = $request->msg;
 
-        //sending an email
-        //event(new HerbRefuseEvent($user, $email, $msg));
-        //Mail::to($email)->send(new HerbRefuse($user, $msg));
-        DB::table('herbs')->where('id', $id)->delete();
-        //DB::table('temporary_data')->where('type_name', 'herbs')->where('id', '=', $id)->delete();
+        if ($request->temporary)
+        {
+            DB::table('temporary_data')->where('type_table', 'herbs')->where('id', '=', $id)->delete();
+        }else
+        {
+            //sending an email
+            //event(new HerbRefuseEvent($user, $email, $msg));
+            //Mail::to($email)->send(new HerbRefuse($user, $msg));
+            DB::table('herbs')->where('id', $id)->delete();
+        }
 
         Alert::success('Ok !', 'La plante a bien été refusée');
 
@@ -94,7 +118,13 @@ class AdminController extends Controller
         //$mail = $herb->user->email;
         //Mail::to($mail)->send(new HerbToUpdate($herb->user,$msg));
 
-        DB::table('herbs')->where('id', '=', $id)->update(['validated' => -1]);
+        if ($request->temporary)
+        {
+            DB::table('temporary_data')->where('id', '=', $id)->update(['validated' => -1]);
+        }else
+        {
+            DB::table('herbs')->where('id', '=', $id)->update(['validated' => -1]);
+        }
 
         Alert::success('Ok !', 'La plante doit etre corrigée et le rédacteur va être notifié.');
         return response()->json(['id' => $herb]);

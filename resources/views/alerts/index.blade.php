@@ -37,9 +37,9 @@
                                     </select>
                                 </td>
                                 <td>{{$herb->user->name.' '.$herb->user->firstname}}</td>
-                                <td>{{Carbon\Carbon::parse($herb->created_at)->diffForHumans()}}</td>
+                                <td>{{Carbon\Carbon::parse($herb->updated_at)->diffForHumans()}}</td>
                                 <td class="">
-                                    <a class="btn btn-success text-light btn-sm" data-url="{{ route('admin.approve') }}" data-id="{{$herb->id}}" role="button" data-toggle="tooltip" title="Approuver la plante">
+                                    <a class="btn btn-success text-light btn-sm" data-url="{{ route('admin.approve') }}" data-id="{{$herb->id}}" data-typeid="{{$herb->type_id}}" data-temporary="temporary" data-title="{{$herb->type_field}}" data-value="{{$herb->new_value}}" role="button" data-toggle="tooltip" title="Approuver la plante">
                                         <i class="fas fa-thumbs-up"></i>
                                     </a>
                                     <i class="fas fa-spinner fa-pulse fa-lg" style="display: none"></i>
@@ -76,26 +76,26 @@
                         </thead>
                         <tbody>
                             @foreach($noValidHerbsModified as $herb)
-                                <tr class={{$herb->validated == -1? "invalidColor":""}}>
+                                <tr class={{$herb->validated == -1? "bg-warning":""}}>
                                     <td>{{$herb->type_id}}</td>
                                     {{--<td>{{$herb->type_table}}</td>--}}
                                     <td>{{$herb->type_field}}</td>
                                     <td>{{$herb->original_value}}</td>
                                     <td>{{$herb->new_value}}</td>
                                     <td>{{$herb->author}}</td>
-                                    <td>{{Carbon\Carbon::parse($herb->created_at)->diffForHumans()}}</td>
+                                    <td>{{Carbon\Carbon::parse($herb->updated_at)->diffForHumans()}}</td>
                                     <td class="">
-                                        <a class="btn btn-success text-light btn-sm" data-url="{{ route('admin.approve') }}" data-id="{{$herb->id}}" role="button" data-toggle="tooltip" title="Approuver la plante">
+                                        <a class="btn btn-success text-light btn-sm" data-url="{{ route('admin.approve') }}" data-temporary="temporary" data-title="{{$herb->type_field}}" data-value="{{$herb->new_value}}" data-id="{{$herb->id}}"  data-typeid="{{$herb->type_id}}" role="button" data-toggle="tooltip" title="Approuver la plante">
                                             <i class="fas fa-thumbs-up"></i>
                                         </a>
                                         <i class="fas fa-spinner fa-pulse fa-lg" style="display: none"></i>
-                                        <a class="btn btn-danger btn-sm refuse-modal" href="#" role="button" data-id="{{ $herb->id }}" data-user={{$herb->author_id}} data-toggle="tooltip" title="Refuser la plante">
+                                        <a class="btn btn-danger btn-sm refuse-modal" href="#" role="button" data-id="{{ $herb->id }}" data-temporary="temporary" data-user={{$herb->author_id}} data-toggle="tooltip" title="Refuser la plante">
                                             <i class="fas fa-thumbs-down"></i>
                                         </a>
-                                        <a class="btn btn-warning btn-sm modify-modal" href="#" role="button"  data-id="{{ $herb->id }}" data-user={{$herb->author_id}} data-toggle="tooltip" title="Modifier la plante">
+                                        <a class="btn btn-warning btn-sm modify-modal" href="#" role="button" data-id="{{ $herb->id }}" data-temporary="temporary" data-user={{$herb->author_id}} data-toggle="tooltip" title="Modifier la plante">
                                             <i class="fas fa-eye" style="color:white"></i>
                                         </a>
-                                        <button {{\Illuminate\Support\Facades\Auth::user()->role_id > 2? "disabled" : ""}} class="btn btn-secondary btn-sm edit-modal" role="button" data-id="{{ $herb->id }}" data-title="{{$herb->new_value}}" data-toggle="tooltip" title="editeur rapide">
+                                        <button {{\Illuminate\Support\Facades\Auth::user()->role_id > 2? "disabled" : ""}} class="btn btn-secondary btn-sm edit-modal-temporary" role="button" data-temporary="temporary" data-id="{{ $herb->id }}" data-title="{{$herb->type_field}}" data-original="{{$herb->original_value}}" data-new="{{$herb->new_value}}" data-toggle="tooltip" title="editeur rapide">
                                             <i class="fas fa-edit" style="color:white"></i>
                                         </button>
                                     </td>

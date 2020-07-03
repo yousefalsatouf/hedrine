@@ -6,12 +6,14 @@ $(document).ready(function() {
         let that = $(e.currentTarget);
         let id = that.data('id');
         let user = that.data('user');
+        let temporary = that.data('temporary');
         console.log($('#myModal-refuse-message'))
 
         $('#myModal-refuse-message').modal('show');
 
         $('#refuse-id').val(id);
         $('#refuse-user').val(user);
+        $('#refuse-tamporary').val(temporary);
     });
 
     $(document).on('click', '.modify-modal', function(e)
@@ -20,9 +22,10 @@ $(document).ready(function() {
         let that = $(e.currentTarget);
         let id = that.data('id');
         let user = that.data('user');
+        let temporary = that.data('temporary');
 
         $('#myModal-modify-message').modal('show');
-
+        $('#modif-temporary').val(temporary);
         $('#modif-id').val(id);
         $('#modif-user').val(user);
     });
@@ -35,11 +38,17 @@ $(document).ready(function() {
         //alert(that.data('url'));
         that.hide();
         that.closest('td').find('i.fa-spinner').show();
+        //console.log(that.data('title'));
+        //console.log(that.data('value'));
         $.ajax({
             type: 'POST',
             url: that.data('url'),
             data: {
                 'id': that.data('id'),
+                'temporary': that.data('temporary'),
+                'typeid': that.data('typeid'),
+                'title': that.data('title'),
+                'value': that.data('value'),
             },
             success: function(data)
             {
@@ -69,8 +78,9 @@ $(document).ready(function() {
             data: {
                 '_token': $('input[name=_token]').val(),
                 'id': $("#modif-id").val(),
+                'temporary': $("#modif-temporary").val(),
                 'user': $("#modif-user").val(),
-                'msg': $('#modify--message').val()
+                'msg': $('#modify-message').val()
             },
             success: function(data)
             {
@@ -99,6 +109,7 @@ $(document).ready(function() {
             data: {
                 '_token': $('input[name=_token]').val(),
                 'id': $("#refuse-id").val(),
+                'temporary': $("#refuse-tamporary").val(),
                 'user': $("#refuse-user").val(),
                 'msg': $('#refuse-message').val()
             },

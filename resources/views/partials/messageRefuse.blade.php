@@ -10,6 +10,7 @@
                 <form class="form-horizontal" role="form">
                     <input type="hidden" id="refuse-id">
                     <input type="hidden" id="refuse-user">
+                    <input type="hidden" id="refuse-tamporary">
                     <div class="form-group">
                         <label class="control-label col-sm-2 text-danger" for="name">Message:</label>
                         <div class="col-sm-10">
