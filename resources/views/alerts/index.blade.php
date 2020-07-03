@@ -95,7 +95,7 @@
                                         <a class="btn btn-warning btn-sm modify-modal" href="#" role="button" data-id="{{ $herb->id }}" data-temporary="temporary" data-user={{$herb->author_id}} data-toggle="tooltip" title="Modifier la plante">
                                             <i class="fas fa-eye" style="color:white"></i>
                                         </a>
-                                        <button {{\Illuminate\Support\Facades\Auth::user()->role_id > 2? "disabled" : ""}} class="btn btn-secondary btn-sm edit-modal" role="button" data-id="{{ $herb->id }}" data-title="{{$herb->new_value}}" data-toggle="tooltip" title="editeur rapide">
+                                        <button {{\Illuminate\Support\Facades\Auth::user()->role_id > 2? "disabled" : ""}} class="btn btn-secondary btn-sm edit-modal-temporary" role="button" data-temporary="temporary" data-id="{{ $herb->id }}" data-title="{{$herb->type_field}}" data-original="{{$herb->original_value}}" data-new="{{$herb->new_value}}" data-toggle="tooltip" title="editeur rapide">
                                             <i class="fas fa-edit" style="color:white"></i>
                                         </button>
                                     </td>

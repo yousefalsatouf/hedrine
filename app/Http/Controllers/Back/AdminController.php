@@ -39,25 +39,30 @@ class AdminController extends Controller
 
     public function quickEdit(Request $request)
     {
-        $herb = Herb::where('validated', '<=', 0)->where('id', $request->id)->get();
-        $forms = $request->forms;
-
-        DB::table('herbs')->where('validated', '!=', 1)->where('id', $request->id)
-            ->update([
-                'name' => $request->name,
-                'sciname' => $request->sciname,
-                //'validated' => 1
-            ]);
-
-        DB::table('herb_has_forms')->where('herb_id', $request->id)->delete();
-        foreach ($forms as $id)
+        if ($request->temporary)
         {
-            DB::table('herb_has_forms')->insert(['herb_id' => $request->id, 'herb_form_id' => $id]);
+            DB::table('temporary_data')->where('type_table', 'herbs')->where('id', $request->tid)->update(['new_value'=>$request->new]);
+
+        }else{
+            $forms = $request->forms;
+
+            DB::table('herbs')->where('validated', '!=', 1)->where('id', $request->id)
+                ->update([
+                    'name' => $request->name,
+                    'sciname' => $request->sciname,
+                    //'validated' => 1
+                ]);
+
+            DB::table('herb_has_forms')->where('herb_id', $request->id)->delete();
+            foreach ($forms as $id)
+            {
+                DB::table('herb_has_forms')->insert(['herb_id' => $request->id, 'herb_form_id' => $id]);
+            }
         }
 
         Alert::success("C'est Ok");
 
-        return response()->json($herb);
+        return response()->json();
     }
 
     public function approve(Request $request) {
