@@ -76,7 +76,7 @@
                         </thead>
                         <tbody>
                             @foreach($noValidHerbsModified as $herb)
-                                <tr class={{$herb->validated == -1? "invalidColor":""}}>
+                                <tr class={{$herb->validated == -1? "bg-warning":""}}>
                                     <td>{{$herb->type_id}}</td>
                                     {{--<td>{{$herb->type_table}}</td>--}}
                                     <td>{{$herb->type_field}}</td>
@@ -92,7 +92,7 @@
                                         <a class="btn btn-danger btn-sm refuse-modal" href="#" role="button" data-id="{{ $herb->id }}" data-temporary="temporary" data-user={{$herb->author_id}} data-toggle="tooltip" title="Refuser la plante">
                                             <i class="fas fa-thumbs-down"></i>
                                         </a>
-                                        <a class="btn btn-warning btn-sm modify-modal" href="#" role="button"  data-id="{{ $herb->id }}" data-user={{$herb->author_id}} data-toggle="tooltip" title="Modifier la plante">
+                                        <a class="btn btn-warning btn-sm modify-modal" href="#" role="button" data-id="{{ $herb->id }}" data-temporary="temporary" data-user={{$herb->author_id}} data-toggle="tooltip" title="Modifier la plante">
                                             <i class="fas fa-eye" style="color:white"></i>
                                         </a>
                                         <button {{\Illuminate\Support\Facades\Auth::user()->role_id > 2? "disabled" : ""}} class="btn btn-secondary btn-sm edit-modal" role="button" data-id="{{ $herb->id }}" data-title="{{$herb->new_value}}" data-toggle="tooltip" title="editeur rapide">

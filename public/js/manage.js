@@ -22,9 +22,10 @@ $(document).ready(function() {
         let that = $(e.currentTarget);
         let id = that.data('id');
         let user = that.data('user');
+        let temporary = that.data('temporary');
 
         $('#myModal-modify-message').modal('show');
-
+        $('#modif-temporary').val(temporary);
         $('#modif-id').val(id);
         $('#modif-user').val(user);
     });
@@ -77,8 +78,9 @@ $(document).ready(function() {
             data: {
                 '_token': $('input[name=_token]').val(),
                 'id': $("#modif-id").val(),
+                'temporary': $("#modif-temporary").val(),
                 'user': $("#modif-user").val(),
-                'msg': $('#modify--message').val()
+                'msg': $('#modify-message').val()
             },
             success: function(data)
             {

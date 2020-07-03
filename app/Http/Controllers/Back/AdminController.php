@@ -113,7 +113,13 @@ class AdminController extends Controller
         //$mail = $herb->user->email;
         //Mail::to($mail)->send(new HerbToUpdate($herb->user,$msg));
 
-        DB::table('herbs')->where('id', '=', $id)->update(['validated' => -1]);
+        if ($request->temporary)
+        {
+            DB::table('temporary_data')->where('id', '=', $id)->update(['validated' => -1]);
+        }else
+        {
+            DB::table('herbs')->where('id', '=', $id)->update(['validated' => -1]);
+        }
 
         Alert::success('Ok !', 'La plante doit etre corrigée et le rédacteur va être notifié.');
         return response()->json(['id' => $herb]);
