@@ -153,10 +153,17 @@ class HerbController extends Controller
 
         if ($editor || ($boss && !$request->validated))
         {
+            $forms = array();
+            foreach ($herb->herb_forms as $form)
+            {
+                $forms[] = $form->id;
+            }
 
             $original = ["name" => $herb->name, "sciname" => $herb->sciname];
             $new = ["name" => $request->name, "sciname" => $request->sciname];
+
             $data = array_diff($new, $original);
+            //dd($data);
 
             foreach ($data as $key => $value)
             {
@@ -173,6 +180,20 @@ class HerbController extends Controller
                 $temporary->author = Auth::user()->name." ".Auth::user()->firstname;
                 $temporary->author_id = Auth::id();
                 $temporary->save();
+            }
+
+            if(count($forms) != count($request->forms))
+            {
+                //dd('different');
+                $temporary = new TemporaryData;
+                $temporary->type_id = $herb->id;
+                $temporary->type_table = "herbs";
+                $temporary->type_field = "herb_forms";
+                $temporary->modified = true;
+                $temporary->author = Auth::user()->name." ".Auth::user()->firstname;
+                $temporary->author_id = Auth::id();
+                $temporary->save();
+                $temporary->herb_forms_temporary()->sync($request->forms);
             }
 
             Alert::success('Cool !', 'Votre plante est en cours de vérifier avec l\'administrateur');

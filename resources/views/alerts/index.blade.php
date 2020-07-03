@@ -78,10 +78,29 @@
                             @foreach($noValidHerbsModified as $herb)
                                 <tr class={{$herb->validated == -1? "text-info text-bolder":"text-dark"}}>
                                     <td>{{$herb->type_id}}</td>
-                                    {{--<td>{{$herb->type_table}}</td>--}}
                                     <td>{{$herb->type_field}}</td>
-                                    <td>{{$herb->original_value}}</td>
-                                    <td>{{$herb->new_value}}</td>
+                                    @if($herb->type_field === "herb_forms")
+                                        @php
+                                            $herbForm = \Illuminate\Support\Facades\DB::table('herbs')->where('id', $herb->type_id)->get();
+                                        @endphp
+                                        <td>
+                                            <select class="form-control herbForm selectpicker" id="temporary-forms" multiple disabled>
+                                                @foreach($herbForm->herb_forms as $form)
+                                                    <option style="color:black" selected>{{ $form->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="form-control herbForm selectpicker" id="temporary-forms" multiple disabled>
+                                                @foreach($noValidHerbsModified->herb_forms_temporary as $form)
+                                                    <option style="color:black" selected>{{ $form->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </td>
+                                    @else
+                                        <td>{{$herb->original_value}}</td>
+                                        <td>{{$herb->new_value}}</td>
+                                    @endif
                                     <td>{{$herb->author}}</td>
                                     <td>{{Carbon\Carbon::parse($herb->updated_at)->diffForHumans()}}</td>
                                     <td class="">

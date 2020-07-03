@@ -16,7 +16,7 @@ class CreateHerbHasFormsTable extends Migration
         Schema::create('herb_has_forms', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('herb_id')->unsigned()->nullable();
-            $table->unsignedBigInteger('temporary_id')->unsigned()->nullable();
+            $table->unsignedBigInteger('temporary_data_id')->unsigned()->nullable();
             $table->unsignedBigInteger('herb_form_id')->unsigned();
 
             // Je relie la table references à la table references_has_dinteractions (table pivot) qui est elle même

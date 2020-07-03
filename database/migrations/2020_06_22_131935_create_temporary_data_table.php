@@ -20,7 +20,7 @@ class CreateTemporaryDataTable extends Migration
             $table->string('type_table');
             $table->string('type_field');
             $table->text('original_value')->nullable();
-            $table->text('new_value');
+            $table->text('new_value')->nullable();
             $table->boolean('modified');
             $table->string('author');
             $table->integer('author_id');
