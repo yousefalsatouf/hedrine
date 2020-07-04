@@ -237,6 +237,8 @@
                 alert("je suis la");
             });
 
+            
+
             $.ajax
             ({
                 type: 'GET',
@@ -264,6 +266,21 @@
             });
 
         });
+
+        $('#countHerb').on('change', 'select',function()
+            // $('select').on('change', function() 
+            {
+                // enable all options 
+                $('option[disabled]').prop('disabled', false);
+                
+                $('select').each(function() 
+                {
+                    $('select').not(this).find('option[value="' + this.value + '"]').prop('disabled', true); 
+                });
+            
+
+            });
+
     </script>
 @endsection
 
