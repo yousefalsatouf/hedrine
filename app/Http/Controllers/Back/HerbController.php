@@ -81,7 +81,7 @@ class HerbController extends Controller
                 $temporary->save();
             }*/
 
-            Alert::success('Cool !', 'Votre plante est en cours de vérifier avec l\'administrateur');
+            Alert::success('Merci !', 'Votre plante est en cours de vérification par un éditeur ou un administrateur');
         }
         elseif($boss && $request->validated)
         {
@@ -175,7 +175,7 @@ class HerbController extends Controller
                 $temporary->save();
             }
 
-            Alert::success('Cool !', 'Votre plante est en cours de vérifier avec l\'administrateur');
+            Alert::success('Merci !', 'Votre plante est en cours de vérification par un éditeur ou un administrateur');
         }
         elseif($boss && $request->validated)
         {
