@@ -127,7 +127,9 @@
 <script>
 	$(document).ready(function()
 	{
-        /*Permet de désactiver les options déjà choisies dans les autres listes déroulantes*/
+        /*
+            Permet de désactiver les options déjà choisies dans les autres listes déroulantes
+        */
         var disable_option = function() 
         {
                 // enable all options 
@@ -142,9 +144,6 @@
             
             $('#countHerb').on('change', 'select',disable_option);
             
-
-        
-
 
 		var maxField = 5; // Input fields increment limitation
         var herbOptions;
@@ -173,7 +172,9 @@
             if(cpt < maxField) {
                 $("#herb_div").clone().attr({'id': 'herb_div' + cpt}).appendTo('#countHerb') .after(selct); // Add field html
                 cpt++; // Increment field counter
-                /*Permet de désactiver les options déjà choisies dans les autres listes déroulantes*/
+                /*
+                    Permet de désactiver les options déjà choisies dans les autres listes déroulantes
+                */
                 disable_option();
             }else {
                 $(this).val("Maximum 5 plantes").prop("disabled",true); // on desactive l'input +
@@ -181,10 +182,23 @@
         });
 
         $(document).on("click", ".remove_btn", function() {
-            {{-- var test = document.getElementById('countHerb');
-            test.remove();
-            cpt--; --}}
-            alert("je suis la");
+            // {{-- var test = document.getElementById('countHerb');
+            // test.remove();
+            // cpt--; --}}
+            // alert("je suis la");
+
+            $('body').on("click",'.remove_btn',function()
+            {
+                cpt--; // decrement field counter
+                alert(cpt);
+                $(this).closest(".col-md-3").prev(".col-md-6").remove();//supprimer le div qui précède le parent du bouton "-"
+                $(this).closest(".col-md-3").remove();//supprimer le div parent du bouton "-"
+                
+                /*
+                    Permet de désactiver les options déjà choisies dans les autres listes déroulantes
+                */
+                disable_option();
+            });
         });
 
 		$.ajax
