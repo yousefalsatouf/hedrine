@@ -127,6 +127,25 @@
 <script>
 	$(document).ready(function()
 	{
+        /*Permet de désactiver les options déjà choisies dans les autres listes déroulantes*/
+        var disable_option = function() 
+        {
+                // enable all options 
+                $('option[disabled]').prop('disabled', false);
+                
+                $('select').each(function() 
+                {
+                    $('select').not(this).find('option[value="' + this.value + '"]').prop('disabled', true); 
+                });
+
+        }    
+            
+            $('#countHerb').on('change', 'select',disable_option);
+            
+
+        
+
+
 		var maxField = 5; // Input fields increment limitation
         var herbOptions;
         var wrappering = $('.form-row.field_wrapper'); // Input field wrapper
@@ -154,6 +173,8 @@
             if(cpt < maxField) {
                 $("#herb_div").clone().attr({'id': 'herb_div' + cpt}).appendTo('#countHerb') .after(selct); // Add field html
                 cpt++; // Increment field counter
+                /*Permet de désactiver les options déjà choisies dans les autres listes déroulantes*/
+                disable_option();
             }else {
                 $(this).val("Maximum 5 plantes").prop("disabled",true); // on desactive l'input +
             }
@@ -209,13 +230,15 @@
 
             var selct = '';
 
-            selct += '<div class="form-group col-md-3 id="btnRemove">';
+            selct += '<div class="form-group col-md-3" id="btnRemove">';
             selct += '<br>';
             selct += '<div class="" style="margin-top:9px;padding-left: 15px;">';
             selct += ' <input type="button" class="btn  btn-danger remove_btn" id="her" value="-"><br>';
             selct += '</div>';
             selct += '</div>';
 
+
+            
 
             var cpt = 1; // Initial field counter is 1
 
@@ -225,17 +248,27 @@
                 if(cpt < maxField) {
                     $("#drug_div").clone().attr({'id': 'drug_div' + cpt}).appendTo('#countDrug') .after(selct); // Add field html
                     cpt++; // Increment field counter
+                    disable_option();
+                    
+                    
                 }else {
                     $(this).val("Maximum 5 médicaments").prop("disabled",true); // on desactive l'input +
                 }
             });
 
+            
+
+
+            
+
             $(document).on("click", ".remove_btn", function() {
                 {{-- var test = document.getElementById('countHerb');
                 test.remove();
                 cpt--; --}}
-                alert("je suis la");
+                //alert("je suis la");
             });
+
+            
 
             $.ajax
             ({
@@ -259,11 +292,15 @@
                             });
 
                         $('#drug').html(drugOptions);
+                        
 
                 }
             });
 
         });
+
+        
+
     </script>
 @endsection
 
@@ -278,7 +315,7 @@
                 alert("Doucement vas y Doucement pas encore fait pour l'ID " + herb_id);
 
                 $.ajax({
-                    type: 'post'
+                    type: 'post',
                     url: '{{ route("hinteractions.getHerbsById") }}',
                     dataType: 'json',
                     data: {
