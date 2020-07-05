@@ -227,8 +227,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <b class="text-danger">Votre compte et vos données seront DÉFINITIVEMENT supprimés :</b>
-                    <strong>Voulez-vous vraiment vous continuer ?</strong>
+                    <b class="text-danger">Cette opération sera irréversible : Votre compte et vos données seront DÉFINITIVEMENT supprimés</b>
+                    <strong>Voulez-vous vraiment continuer ?</strong>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light" data-dismiss="modal">Non</button>
