@@ -5,7 +5,7 @@
 @section('content_dashboard')
 	<div class="row">
 		<div class="col-12">
-			<section class="content"> 
+			<section class="content">
 				<div class="container-fluid">
 					@if(session()->has('message'))
 						<div class="col s12">
@@ -15,7 +15,12 @@
 								</div>
 							</div>
 						</div>
-					@endif
+                    @endif
+                    <div class="row justify-content-end" style="padding-bottom: 0.75rem">
+
+                        <a class="btn btn-light" href="{{ route('reference.create') }}" role="button">Créer une nouvelle référence</a>
+
+                    </div>
 				    <div class="row">
 						<div class="col-md-8 offset-md-2 ">
 							<!-- general form elements -->
@@ -50,7 +55,7 @@
 												<div class="form-group">
 													<label for="authors">Authors</label>
 													<input type="text" class="form-control" id="authors" name="authors" required placeholder="Veuillez indiquer un nom d'auteur pour la révérence" value="{{isset($reference) ? $reference->authors : ''}}">
-												</div> 
+												</div>
 											</div>
 										</div>
 
@@ -58,7 +63,7 @@
 											<div class="col-6">
 												<div class="form-group">
 													<label for="year">Année</label>
-													<input type="text" class="form-control" id="year" name="year" required placeholder="Veuillez indiquer une année pour la révérence" value="{{isset($reference) ? $reference->year : ''}}"> 
+													<input type="text" class="form-control" id="year" name="year" required placeholder="Veuillez indiquer une année pour la révérence" value="{{isset($reference) ? $reference->year : ''}}">
 												</div>
 											</div>
 
@@ -78,7 +83,7 @@
 										</div>
 									</div>
 
-										
+
 									<!-- /.card-body -->
 									<div class="card-footer">
 										<div class="control-group">
