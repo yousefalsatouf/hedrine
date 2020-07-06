@@ -91,23 +91,6 @@
 				<tr  style="background-color: #FFCCFF">
 					<th>Inconnue</th>
 				</tr>
-				<tr  style="background-color: #FF0000">
-					<th>G4</th>
-				</tr>
-				<tr  style="background-color: #F46207">
-					<th>G3</th>
-				</tr>
-				<tr  style="background-color: #FFCC33">
-					<th>G2</th>
-				</tr>
-				<tr  style="background-color: #EEE8AA">
-					<th>G1</th>
-				</tr>
-				<tr  style="background-color: #CCFF99">
-				 <th>G0</th>
-
-				</tr>
-
 			</tbody>
 		 </table>
 	   </div>
