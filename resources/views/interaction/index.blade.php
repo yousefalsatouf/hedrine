@@ -11,8 +11,19 @@
            <form   action="" id="myInteractionForm">
             @csrf
 				<fieldset class="form-group">
-					<legend style="color: #e32; font-size: 160%; font-weight: bold" >Interactions...</legend>
-
+					<legend style="color: #3a64a5; font-size: 160%; font-weight: bold" >Interactions...</legend>
+                    <hr>
+                    <br>
+                    <div class="d-flex justify-content-between">
+                        <div class="input-field col s12">
+                            <label>Rechercher par </label>
+                            <select class="form-control selectpicker">
+                                <option value="name">Nom des Plantes</option>
+                                <option value="atc">Classes ATC</option>
+                            </select>
+                        </div>
+                    </div>
+                    <hr>
 					<div class="form-row field_wrapper" id="countHerb">
 
                         <div class="form-group col-md-6" id="herb_div">
@@ -25,14 +36,12 @@
                             <label class="form-check-label" for="inputState">ET</label>
                             <br>
 							<div class="" style="margin-top: 8px;">
-
                                 <input type="button" class="btn btn btn-warning add_btn"  value="+"><br>
                             </div>
 						</div>
                     </div>
                 <hr>
                     <div class="form-row field_wrapper" id="countDrug">
-
                         <div class="form-group col-md-6" id="drug_div">
 							<label class="form-check-label"><strong><h5>DCI *</h5></strong></label>
 							<select name="drug[]" id="drug" class="form-control" >
@@ -127,23 +136,25 @@
 <script>
 	$(document).ready(function()
 	{
+	    // customiza select
+        //$('#herb-select').formSelect();
         /*
             Permet de désactiver les options déjà choisies dans les autres listes déroulantes
         */
-        var disable_option = function() 
+        var disable_option = function()
         {
-                // enable all options 
+                // enable all options
                 $('option[disabled]').prop('disabled', false);
-                
-                $('select').each(function() 
+
+                $('select').each(function()
                 {
-                    $('select').not(this).find('option[value="' + this.value + '"]').prop('disabled', true); 
+                    $('select').not(this).find('option[value="' + this.value + '"]').prop('disabled', true);
                 });
 
-        }    
-            
+        }
+
             $('#countHerb').on('change', 'select',disable_option);
-            
+
 
 		var maxField = 5; // Input fields increment limitation
         var herbOptions;
@@ -193,7 +204,7 @@
                 alert(cpt);
                 $(this).closest(".col-md-3").prev(".col-md-6").remove();//supprimer le div qui précède le parent du bouton "-"
                 $(this).closest(".col-md-3").remove();//supprimer le div parent du bouton "-"
-                
+
                 /*
                     Permet de désactiver les options déjà choisies dans les autres listes déroulantes
                 */
@@ -201,32 +212,60 @@
             });
         });
 
-		$.ajax
-		({
-			type: 'GET',
-			url: '../hinteractions/hdi_get_herbs',
-			dataType: 'json',
-			success: function(retour)
-			{
-				console.log(retour);
-				herbOptions = '';
-				herbOptions+="<option value='"
-							+0+
-							"'>Veuillez choisir une plante"+
-							"</option>";
-				$.each(retour, function(i,herb) {
+        $.ajax
+        ({
+            type: 'GET',
+            url: '../hinteractions/hdi_get_herbs',
+            dataType: 'json',
+            success: function(retour)
+            {
+                //console.log(retour);
+                herbOptions = '';
+                herbOptions+="<option value='"
+                    +0+
+                    "'>Veuillez choisir une plante"+
+                    "</option>";
+                $.each(retour, function(i,herb) {
 
-							herbOptions+="<option value='"
-							+herb.id+
-							"'>"+herb.name+
-							"</option>";
-						});
+                    herbOptions+="<option value='"
+                        +herb.id+
+                        "'>"+herb.name+
+                        "</option>";
+                });
 
-						$('#herb').html(herbOptions);
-
-			}
+                $('#herb').html(herbOptions);
+            }
         });
 
+        $('select').on('change', function() {
+            //alert(this.value)
+            if(this.value === 'atc')
+            {
+                $.ajax
+                ({
+                    type: 'GET',
+                    url: '../hinteractions/hdi_get_herbs',
+                    dataType: 'json',
+                    success: function(retour)
+                    {
+                        //console.log(retour);
+                        herbOptions = '';
+                        herbOptions+="<option value='"
+                            +0+
+                            "'>Veuillez choisir un ATC"+
+                            "</option>";
+                        $.each(retour, function(i,herb) {
+
+                            herbOptions+="<option value='"
+                                +herb.id+
+                                "'>ATC test</option>";
+                        });
+
+                        $('#herb').html(herbOptions);
+                    }
+                });
+            }
+        });
 
 	});
 </script>
@@ -252,7 +291,7 @@
             selct += '</div>';
 
 
-            
+
 
             var cpt = 1; // Initial field counter is 1
 
@@ -263,17 +302,17 @@
                     $("#drug_div").clone().attr({'id': 'drug_div' + cpt}).appendTo('#countDrug') .after(selct); // Add field html
                     cpt++; // Increment field counter
                     disable_option();
-                    
-                    
+
+
                 }else {
                     $(this).val("Maximum 5 médicaments").prop("disabled",true); // on desactive l'input +
                 }
             });
 
-            
 
 
-            
+
+
 
             $(document).on("click", ".remove_btn", function() {
                 {{-- var test = document.getElementById('countHerb');
@@ -282,7 +321,7 @@
                 //alert("je suis la");
             });
 
-            
+
 
             $.ajax
             ({
@@ -306,14 +345,14 @@
                             });
 
                         $('#drug').html(drugOptions);
-                        
+
 
                 }
             });
 
         });
 
-        
+
 
     </script>
 @endsection
