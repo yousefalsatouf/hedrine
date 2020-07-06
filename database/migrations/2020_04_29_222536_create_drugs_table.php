@@ -17,6 +17,7 @@ class CreateDrugsTable extends Migration
             $table->id();
             $table->string('name', 255);
             $table->boolean('validated')->default(false);
+            $table->string('ATC', 20)->nullable();
             $table->timestamps();
         });
     }
