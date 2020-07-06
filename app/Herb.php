@@ -23,7 +23,7 @@ class Herb extends Model
 
     public function targets()
     {
-        return $this->belongsToMany(Target::class, 'hinteractions')->withTimestamps();
+        return $this->hasMany(Target::class)->withTimestamps();
     }
 
     public function hinteractions()
