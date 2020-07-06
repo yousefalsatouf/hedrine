@@ -1,11 +1,16 @@
 @extends('dashboard.layout')
 
 @section('content_dashboard')
+<div class="row justify-content-end" style="padding-bottom: 0.75rem">
+
+    <a class="btn btn-light" href="{{ route('newHerbTarget') }}" role="button">Créer une nouvelle Hinteraction Target</a>
+
+</div>
 <div class="col-12">
 	<div class="card-body " style="background-color: #fff">
 		<table id="example1" class="table table-striped table-sm">
 			<thead>
-				<tr class="text-center"> 
+				<tr class="text-center">
 					<th> Validated </th>
 					<th> Herb Name </th>
 					<th> Target Name </th>
@@ -15,9 +20,9 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach ($hinteractions as $hinteraction) 
+				@foreach ($hinteractions as $hinteraction)
 				<tr class="text-center">
-					<td>{{$hinteraction->validated}}</td> 
+					<td>{{$hinteraction->validated}}</td>
 					<td>{{$hinteraction->herbs->name}}</td>
 					<td>{{$hinteraction->targets->name }}</td>
 					<td>{{$hinteraction->notes }}</td>

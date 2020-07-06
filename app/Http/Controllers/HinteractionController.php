@@ -116,7 +116,7 @@ class HinteractionController extends Controller
 
         Alert::success('Ok,', 'Herb target inserted successfully!');
 
-        return redirect('admin/target');
+        return redirect()->route('hinteraction.index');
     }
 
     /**

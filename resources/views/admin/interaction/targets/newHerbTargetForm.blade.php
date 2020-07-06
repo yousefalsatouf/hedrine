@@ -91,7 +91,7 @@
                                     <div class="card-footer">
                                         <div class="control-group">
                                             <div class="controls">
-                                                <a class="btn btn-light" href="{{ route('target.index') }}" role="button"><i class="fas fa-arrow-left"></i> Retour à la liste des targets</a>
+                                                <a class="btn btn-light" href="{{ route('hinteraction.index') }}" role="button"><i class="fas fa-arrow-left"></i> Retour à la liste des hinteractions</a>
                                                 <button type="submit" class="btn btn-outline-success float-right"><i class="fas fa-check-circle"></i>
                                                         Ajouter
                                                 </button>
