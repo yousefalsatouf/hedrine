@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDrugsTable extends Migration
+class CreateAtcTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateDrugsTable extends Migration
      */
     public function up()
     {
-        Schema::create('drugs', function (Blueprint $table) {
+        Schema::create('atc', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
-            $table->boolean('validated')->default(false);
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateDrugsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('drugs');
+        Schema::dropIfExists('atc');
     }
 }
