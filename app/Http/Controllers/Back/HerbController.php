@@ -235,10 +235,10 @@ class HerbController extends Controller
         return view('admin.herbs.destroy', ['herb' => $herb]);
     }
 
-    public function details($id)
+/* public function details($id)
     {
         $herb = Herb::findOrFail($id);
 
         return view('admin.herbs.show',$herb);
-    }
+    }*/
 }

@@ -1,4 +1,5 @@
 @extends('dashboard.layout')
+
 @section('content_dashboard')
 
 <div class="container">
@@ -62,8 +63,7 @@
 					</thead>
 					<tbody>
 						@foreach ($herb->hinteractions as $hinteraction)
-							@foreach ($hinteraction->effects as $effect)
-								@foreach ($hinteraction->references as $reference)
+
 									<tr>
 										<th scope="row">
 											{{$hinteraction->targets->name}}
@@ -80,7 +80,11 @@
 													aucune
 												@elseif($hinteraction->forces->color == "mauve")
 													inconnue
-											@endif">{{$effect->name}}
+                                            @endif">
+                                             @foreach($hinteraction->effects as $effect)
+                                                {{ $effect->name}}
+                                             @endforeach
+
 										</td>
 										<td class="
 											@if($hinteraction->forces->color == "rouge")
@@ -124,16 +128,15 @@
 												@elseif($hinteraction->forces->color == "mauve")
 													inconnue
 											@endif">
-											<a href="">
-												{{$reference->year}} , {{$reference->edition}};<br>
-											</a>
-											<a href=" {{$reference->url}} ">
-												<i class="fas fa-globe-europe"></i>
-											</a>
+
+                                            @foreach($hinteraction->references as $reference)
+                                                    <a href="">{{$reference->year}} , {{$reference->edition}};</a>
+                                                    <a href=" {{$reference->url}} ">
+                                                        <i class="fas fa-globe-europe"></i>
+                                                    </a><br>
+                                            @endforeach
 										</td>
 									</tr>
-								@endforeach
-							@endforeach
 						@endforeach
 					</tbody>
 				</table>
