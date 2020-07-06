@@ -84,18 +84,20 @@
                                             $herbForm = \Illuminate\Support\Facades\DB::table('herbs')->where('id', $herb->type_id)->get();
                                         @endphp
                                         <td>
-                                            <select class="form-control herbForm selectpicker" id="temporary-forms" multiple disabled>
+                                            just for test
+                                            {{--<select class="form-control herbForm selectpicker" id="temporary-forms" multiple disabled>
                                                 @foreach($herbForm->herb_forms as $form)
                                                     <option style="color:black" selected>{{ $form->name }}</option>
                                                 @endforeach
-                                            </select>
+                                            </select>--}}
                                         </td>
                                         <td>
-                                            <select class="form-control herbForm selectpicker" id="temporary-forms" multiple disabled>
+                                            just for test
+                                            {{--<select class="form-control herbForm selectpicker" id="temporary-forms" multiple disabled>
                                                 @foreach($noValidHerbsModified->herb_forms_temporary as $form)
                                                     <option style="color:black" selected>{{ $form->name }}</option>
                                                 @endforeach
-                                            </select>
+                                            </select>--}}
                                         </td>
                                     @else
                                         <td>{{$herb->original_value}}</td>
