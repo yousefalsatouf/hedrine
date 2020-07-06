@@ -50,7 +50,9 @@
         </div>
     </div>
 </div>
-
+<div class="route">
+    <input type="hidden" id="quick-edit-url" value="{{route('admin.quickEdit')}}">
+</div>
 {{--temmporary modal show--}}
 <div id="myModal-quickEdit-temporary" class="modal fade" role="dialog">
     <div class="modal-dialog">

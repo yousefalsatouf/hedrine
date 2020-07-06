@@ -129,9 +129,9 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
     Route::get('/herbs', 'TemporaryDataController@index')->name('admin.herbs');
 
     //pour quick update ...
-    Route::post('/quickEdit', 'AdminController@quickEdit');
-    Route::post('/refuse','AdminController@refuse');
-    Route::post('/modifs','AdminController@modifs');
+    Route::post('/quickEdit', 'AdminController@quickEdit')->name('admin.quickEdit');
+    Route::post('/refuse','AdminController@refuse')->name('admin.refuse');
+    Route::post('/modifs','AdminController@modifs')->name('admin.modifs');
 
     // Route pour users
     Route::name('drug.update')->put('drug', 'DrugController@update');

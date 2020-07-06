@@ -69,12 +69,12 @@ $(document).ready(function() {
 
         $('#modify').hide();
         $('i#icon-modify').show();
-
+        let url = $('#modif-url').val();
         //console.log($("#modif-id").val())
 
         $.ajax({
             type: 'POST',
-            url: 'admin/modifs',
+            url: url,
             data: {
                 '_token': $('input[name=_token]').val(),
                 'id': $("#modif-id").val(),
@@ -98,6 +98,7 @@ $(document).ready(function() {
     {
         e.preventDefault();
         let that = $(e.currentTarget);
+        let url = $('#refuse-url').val();
         //alert(that.data('url'))
 
         $('#refuse').hide();
@@ -105,7 +106,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: 'POST',
-            url: 'admin/refuse',
+            url: url,
             data: {
                 '_token': $('input[name=_token]').val(),
                 'id': $("#refuse-id").val(),
