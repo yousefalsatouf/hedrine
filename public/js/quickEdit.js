@@ -39,7 +39,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: 'POST',
-            url: '/admin/quickEdit',
+            url: 'admin/quickEdit',
             data: {
                 '_token': $('input[name=_token]').val(),
                 'id': $("#fid").val(),
