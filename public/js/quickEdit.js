@@ -36,10 +36,11 @@ $(document).ready(function() {
         $('#edit').hide();
         $('i#icon-edit-t').show();
         //console.log($('.title').text())
-
+        let url = $('#quick-edit-url').val();
+        //alert(url)
         $.ajax({
             type: 'POST',
-            url: 'admin/quickEdit',
+            url: url,
             data: {
                 '_token': $('input[name=_token]').val(),
                 'id': $("#fid").val(),

@@ -11,6 +11,7 @@
                     <input type="hidden" id="modif-id">
                     <input type="hidden" id="modif-user">
                     <input type="hidden" id="modif-temporary">
+                    <input type="hidden" id="modif-url" value="{{route('admin.modifs')}}">
                     <div class="form-group">
                         <label class="control-label col-sm-2 text-info" for="name">Message:</label>
                         <div class="col-sm-10">

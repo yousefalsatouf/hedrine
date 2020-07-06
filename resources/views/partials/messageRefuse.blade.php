@@ -11,6 +11,7 @@
                     <input type="hidden" id="refuse-id">
                     <input type="hidden" id="refuse-user">
                     <input type="hidden" id="refuse-tamporary">
+                    <input type="hidden" id="refuse-url" value="{{route('admin.refuse')}}">
                     <div class="form-group">
                         <label class="control-label col-sm-2 text-danger" for="name">Message:</label>
                         <div class="col-sm-10">
