@@ -4,7 +4,7 @@ $(document).ready(function() {
     var addBtn = $('.add_btn'); // Add button selector
     var wrapper = $('.form-row.field_wrapper'); // Input field wrapper
 
-
+        // by herb name search
         var selct = '';
         selct += '<div class="form-group col-md-6">';
         selct += '<label class="form-check-label"><strong><h5>Plante *</h5></strong></label>';
@@ -19,6 +19,7 @@ $(document).ready(function() {
         selct += '<a  href="#" class="btn btn btn-danger remove_btn">-</a>';
         selct += '</div>';
         selct += '</div>';
+
 
      var cpt = 1; // Initial field counter is 1
 
