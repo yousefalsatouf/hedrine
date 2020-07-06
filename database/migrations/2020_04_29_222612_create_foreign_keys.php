@@ -15,13 +15,11 @@ class CreateForeignKeys extends Migration
     {
         Schema::create('foreign_keys', function (Blueprint $table) {
             $table->id();
+
             Schema::table('users', function (Blueprint $table) {
                 $table->unsignedBigInteger('role_id');
-
-
                 $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
             });
- 
 
             Schema::table('posts', function (Blueprint $table) {
                 $table->unsignedBigInteger('user_id');
@@ -80,6 +78,14 @@ class CreateForeignKeys extends Migration
 
                 $table->foreign('atc_level3s_id')->references('id')->on('atc_level3s')->onDelete('cascade');
             });
+
+           /* Schema::table('atc', function (Blueprint $table) {
+                $table->unsignedBigInteger('drug_families_id');
+                $table->foreign('drug_families_id')->references('id')->on('drug_families')->onDelete('cascade');
+            });*/
+
+
+
             $table->timestamps();
         });
     }
