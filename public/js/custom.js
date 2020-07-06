@@ -1,15 +1,23 @@
 $(document).ready(function() {
     $('#forms').selectpicker();
-    
+
 });
 
 $(document).ready(function() {
     $('#referencesForm').select2({
         placeholder:"Veuillez choisir une ou plusieur références",
         theme: "classic"
+
+    });
+    $('#effectForm').select2({
+        placeholder:"Veuillez choisir une ou plusieur effets",
+        theme: "classic"
+
     });
 
-    $('#effectForm').selectpicker();
+    $('#effectForm').selectpicker({
+
+    });
 
 });
 
