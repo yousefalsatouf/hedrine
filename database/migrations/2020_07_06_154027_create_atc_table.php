@@ -15,6 +15,7 @@ class CreateAtcTable extends Migration
     {
         Schema::create('atc', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('drug_families_id');
             $table->string('name');
             $table->timestamps();
         });
