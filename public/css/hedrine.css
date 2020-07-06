@@ -130,3 +130,23 @@ a.style_a {
     float: right;
 }
 
+
+#layout .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+#layout .sidenav a.nav-link
+{
+    font-weight: bold;
+    color: white;
+}
+#layout a.nav-link:hover
+{
+    transition: all 0.5s;
+}
+#layout a.nav-link:hover
+{
+    color: black;
+    font-weight: bolder;
+}

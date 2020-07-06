@@ -31,7 +31,7 @@ $(document).ready(function() {
     });
 
     //approve an user
-    $('.btn-success').click((e) => {
+    $('.approve').click((e) => {
         e.preventDefault();
         let that = $(e.currentTarget);
         //console.log(that.data('url'))
