@@ -13,12 +13,12 @@
                 </div>
                 <div class="row text-center">
                     <div class="col-6  col-sm-6 col-md-6  col-xl-5 offset-xl-1 ">
-                        <a href="">
+                        <a href="#">
                             <img src="{{ asset('images/interaction_gche.jpg') }}" alt="Drugs" class="img-fluid">
                         </a>
                     </div>
                     <div class="col-6 col-sm-6  col-md-6  col-xl-4 ">
-                        <a href="">
+                        <a href="#">
                             <img src="{{ asset('images/interaction_drte.jpg') }}" alt="Targets" class="img-fluid">
                         </a>
                     </div>

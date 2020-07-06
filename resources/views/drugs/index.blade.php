@@ -46,7 +46,7 @@
 						<td>
 							<a href="{{route('drugs.details', $drug->id)}}" class="add_style" ><strong class="text-success">{{$drug->name}} <span>({{$drug->routes->name}})</span></strong> </a>
 						</td>
-					<td>{{$drug->drug_family->name}}</td>
+					<td>{{optional($drug->drug_family)->name}}</td>
 					</tr>
 					@endforeach
 				</tbody>
