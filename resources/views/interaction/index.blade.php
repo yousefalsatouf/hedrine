@@ -14,16 +14,6 @@
 					<legend style="color: #3a64a5; font-size: 160%; font-weight: bold" >Interactions...</legend>
                     <hr>
                     <br>
-                    <div class="d-flex justify-content-between">
-                        <div class="input-field col s12">
-                            <label>Rechercher par </label>
-                            <select class="form-control selectpicker">
-                                <option value="name">Nom des Plantes</option>
-                                <option value="atc">Classes ATC</option>
-                            </select>
-                        </div>
-                    </div>
-                    <hr>
 					<div class="form-row field_wrapper" id="countHerb">
 
                         <div class="form-group col-md-6" id="herb_div">
@@ -40,7 +30,21 @@
                             </div>
 						</div>
                     </div>
-                <hr>
+                    <br>
+                    <hr>
+                    <div class="form-group ">
+                        <strong class="text-info"><i class="fa fa-info-circle"></i> Veilliez choisir la meilleure méthode pour votre recherche: </strong>
+                        <br>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="drug-name" name="drug-search" class="custom-control-input" value="name" checked>
+                            <label class="custom-control-label" for="drug-name">Nom Des DCI</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="atc" name="drug-search" class="custom-control-input" value="atc">
+                            <label class="custom-control-label" for="atc">Classes ATC</label>
+                        </div>
+                        <br>
+                    </div>
                     <div class="form-row field_wrapper" id="countDrug">
                         <div class="form-group col-md-6" id="drug_div">
 							<label class="form-check-label"><strong><h5>DCI *</h5></strong></label>
@@ -237,62 +241,6 @@
             }
         });
 
-        $('select').on('change', function() {
-            //alert(this.value)
-            if(this.value === 'atc')
-            {
-                $.ajax
-                ({
-                    type: 'GET',
-                    url: '../hinteractions/hdi_get_herbs',
-                    dataType: 'json',
-                    success: function(retour)
-                    {
-                        //console.log(retour);
-                        herbOptions = '';
-                        herbOptions+="<option value='"
-                            +0+
-                            "'>Veuillez choisir un ATC"+
-                            "</option>";
-                        $.each(retour, function(i,herb) {
-
-                            herbOptions+="<option value='"
-                                +herb.id+
-                                "'>ATC test</option>";
-                        });
-
-                        $('#herb').html(herbOptions);
-                    }
-                });
-            }else
-            {
-                $.ajax
-                ({
-                    type: 'GET',
-                    url: '../hinteractions/hdi_get_herbs',
-                    dataType: 'json',
-                    success: function(retour)
-                    {
-                        //console.log(retour);
-                        herbOptions = '';
-                        herbOptions+="<option value='"
-                            +0+
-                            "'>Veuillez choisir une plante"+
-                            "</option>";
-                        $.each(retour, function(i,herb) {
-
-                            herbOptions+="<option value='"
-                                +herb.id+
-                                "'>"+herb.name+
-                                "</option>";
-                        });
-
-                        $('#herb').html(herbOptions);
-                    }
-                });
-            }
-        });
-
 	});
 </script>
 @endsection
@@ -347,8 +295,6 @@
                 //alert("je suis la");
             });
 
-
-
             $.ajax
             ({
                 type: 'GET',
@@ -371,8 +317,62 @@
                             });
 
                         $('#drug').html(drugOptions);
+                }
+            });
 
+            $('input[type=radio][name=drug-search]').on('change', function() {
+                //alert(this.value)
+                if(this.value === 'atc')
+                {
+                    $.ajax
+                    ({
+                        type: 'GET',
+                        url: '../hinteractions/hdi_get_drugs',
+                        dataType: 'json',
+                        success: function(retour)
+                        {
+                            //console.log(retour);
+                            drugOptions = '';
+                            drugOptions+="<option value='"
+                                +0+
+                                "'>Veuillez choisir un ATC"+
+                                "</option>";
+                            $.each(retour, function(i,drug) {
 
+                                drugOptions+="<option value='"
+                                    +drug.id+
+                                    "'>ATC test</option>";
+                            });
+
+                            $('#drug').html(drugOptions);
+                        }
+                    });
+                }else
+                {
+                    $.ajax
+                    ({
+                        type: 'GET',
+                        url: '../hinteractions/hdi_get_drugs',
+                        dataType: 'json',
+                        success: function(retour)
+                        {
+                            console.log(retour);
+                            drugOptions = '';
+                            drugOptions+="<option value='"
+                                +0+
+                                "'>Veuillez choisir un médicament"+
+                                "</option>";
+                            $.each(retour, function(i,drug) {
+
+                                drugOptions+="<option value='"
+                                    +drug.id+
+                                    "'>"+drug.name+
+                                    "</option>";
+                            });
+
+                            $('#drug').html(drugOptions);
+                        }
+                    });
                 }
             });
 
