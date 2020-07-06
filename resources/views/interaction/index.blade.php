@@ -12,13 +12,17 @@
             @csrf
 				<fieldset class="form-group">
 					<legend style="color: #3a64a5; font-size: 160%; font-weight: bold" >Interactions...</legend>
+                    <div class="alert alert-light alert-dismissible fade show text-danger">
+                        <strong><i class="fa fa-info-circle info text-danger" id="required-msg"></i></strong> Champs obligatoires!
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    </div>
                     <hr>
                     <br>
 					<div class="form-row field_wrapper" id="countHerb">
 
                         <div class="form-group col-md-6" id="herb_div">
-							<label class="form-check-label"><strong><h5>Plante *</h5></strong></label>
-							<select name="herb[]" id="herb" class="form-control">
+							<label class="form-check-label"><strong><h5>Plante <i class="fa fa-info-circle text-danger"></i></h5></strong></label>
+							<select name="herb[]" id="herb" class="form-control custom-select">
 							</select>
                         </div>
                         &nbsp;&nbsp;&nbsp;&nbsp;
@@ -26,7 +30,7 @@
                             <label class="form-check-label" for="inputState">ET</label>
                             <br>
 							<div class="" style="margin-top: 8px;">
-                                <input type="button" class="btn btn btn-warning add_btn"  value="+"><br>
+                                <input type="button" class="btn btn btn-light add_btn"  value="+"><br>
                             </div>
 						</div>
                     </div>
@@ -34,6 +38,7 @@
                     <hr>
                     <div class="form-group ">
                         <strong class="text-info"><i class="fa fa-info-circle"></i> Veilliez choisir la meilleure méthode pour votre recherche: </strong>
+                        <br>
                         <br>
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" id="drug-name" name="drug-search" class="custom-control-input" value="name" checked>
@@ -47,8 +52,8 @@
                     </div>
                     <div class="form-row field_wrapper" id="countDrug">
                         <div class="form-group col-md-6" id="drug_div">
-							<label class="form-check-label"><strong><h5>DCI *</h5></strong></label>
-							<select name="drug[]" id="drug" class="form-control" >
+							<label class="form-check-label"><strong><h5 class="drug-title">DCI <i class="fa fa-info-circle text-danger"></i></h5></strong></label>
+							<select name="drug[]" id="drug" class="form-control custom-select" >
 							</select>
                         </div>
                         &nbsp;&nbsp;&nbsp;&nbsp;
@@ -56,13 +61,12 @@
                             <label class="form-check-label" for="inputState">ET</label>
                             <br>
 							<div class="" style="margin-top: 8px;">
-
-                                <input type="button" class="btn btn btn-warning add_btn_drug"  value="+"><br>
+                                <input type="button" class="btn btn btn-light add_btn_drug"  value="+"><br>
                             </div>
 						</div>
                     </div>
 
-					<button type="submit" class="btn btn-primary" style="background-color: #62af56; border: 1px solid #62af56">Chercher <i class="fas fa-chevron-right"></i></button>
+					<button type="submit" class="btn btn-outline-success" style="border: 0; border-bottom: 1px solid green">Chercher <i class="fas fa-chevron-right"></i></button>
 				</fieldset>
 		   </form>
 	   </div>
@@ -324,6 +328,7 @@
                 //alert(this.value)
                 if(this.value === 'atc')
                 {
+                    $('.drug-title').html('ATC <i class="fa fa-info-circle text-danger"></i>');
                     $.ajax
                     ({
                         type: 'GET',
@@ -349,6 +354,7 @@
                     });
                 }else
                 {
+                    $('.drug-title').html('DCI <i class="fa fa-info-circle text-danger"></i>');
                     $.ajax
                     ({
                         type: 'GET',
