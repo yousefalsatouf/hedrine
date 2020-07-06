@@ -304,6 +304,7 @@
                 type: 'GET',
                 url: '../hinteractions/hdi_get_drugs',
                 dataType: 'json',
+                data: {'name': 'drug'},
                 success: function(retour)
                 {
                     console.log(retour);
@@ -328,25 +329,27 @@
                 //alert(this.value)
                 if(this.value === 'atc')
                 {
-                    $('.drug-title').html('ATC <i class="fa fa-info-circle text-danger"></i>');
+                    $('.drug-title').html('Famille de médicaments <i class="fa fa-info-circle text-danger"></i>');
                     $.ajax
                     ({
                         type: 'GET',
                         url: '../hinteractions/hdi_get_drugs',
                         dataType: 'json',
+                        data: {'name': 'drugF'},
                         success: function(retour)
                         {
-                            //console.log(retour);
+                            console.log(retour);
                             drugOptions = '';
                             drugOptions+="<option value='"
                                 +0+
-                                "'>Veuillez choisir un ATC"+
+                                "'>Veuillez choisir un Famille de Médicaments"+
                                 "</option>";
                             $.each(retour, function(i,drug) {
 
                                 drugOptions+="<option value='"
                                     +drug.id+
-                                    "'>ATC test</option>";
+                                    "'>"+drug.name+
+                                    "</option>";
                             });
 
                             $('#drug').html(drugOptions);
@@ -360,6 +363,7 @@
                         type: 'GET',
                         url: '../hinteractions/hdi_get_drugs',
                         dataType: 'json',
+                        data: {'name': 'drug'},
                         success: function(retour)
                         {
                             console.log(retour);

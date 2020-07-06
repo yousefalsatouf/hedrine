@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DrugFamily;
 use App\Effect;
 use App\Force;
 use App\Herb;
@@ -37,9 +38,13 @@ class HinteractionController extends Controller
         // return $herbs->toJson();
     }
 
-    public function get_drugs()
+    public function get_drugs(Request $request)
     {
         $drugs = Drug::where('validated',1)->orderBy('name')->get();
+        
+        if ($request->name === 'drugF')
+            $drugs = DrugFamily::orderBy('name')->get();
+
         return $drugs;
         // return $herbs->toJson();
     }
