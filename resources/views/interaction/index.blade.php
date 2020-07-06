@@ -264,6 +264,32 @@
                         $('#herb').html(herbOptions);
                     }
                 });
+            }else
+            {
+                $.ajax
+                ({
+                    type: 'GET',
+                    url: '../hinteractions/hdi_get_herbs',
+                    dataType: 'json',
+                    success: function(retour)
+                    {
+                        //console.log(retour);
+                        herbOptions = '';
+                        herbOptions+="<option value='"
+                            +0+
+                            "'>Veuillez choisir une plante"+
+                            "</option>";
+                        $.each(retour, function(i,herb) {
+
+                            herbOptions+="<option value='"
+                                +herb.id+
+                                "'>"+herb.name+
+                                "</option>";
+                        });
+
+                        $('#herb').html(herbOptions);
+                    }
+                });
             }
         });
 
