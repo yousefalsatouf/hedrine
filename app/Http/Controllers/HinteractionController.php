@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Effect;
 use App\Force;
 use App\Herb;
+use App\Drug;
 use App\Hinteraction;
 use App\HinteractionHasEffect;
 use App\Reference;
@@ -24,7 +25,7 @@ class HinteractionController extends Controller
     public function index()
     {
         $herbs = Herb::all();
-        
+
 
         return view('interaction.index', compact('herbs'));
     }
@@ -34,6 +35,21 @@ class HinteractionController extends Controller
         $herbs = Herb::where('validated',1)->orderBy('name')->get();
         return $herbs;
         // return $herbs->toJson();
+    }
+
+    public function get_drugs()
+    {
+        $drugs = Drug::where('validated',1)->orderBy('name')->get();
+        return $drugs;
+        // return $herbs->toJson();
+    }
+
+    public function getHerbs(Request $request) {
+
+        $hinteractions = Hinteration::with('herbs')->whereIn('id',$request->id)->get();
+
+        return $hinteractions;
+
     }
 
     /**
