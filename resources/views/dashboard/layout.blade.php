@@ -228,8 +228,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <b class="text-danger">Votre compte et vos données seront DÉFINITIVEMENT supprimés :</b>
-                    <strong>Voulez-vous vraiment vous continuer ?</strong>
+                    <b class="text-danger">Cette opération sera irréversible : Votre compte et vos données seront DÉFINITIVEMENT supprimés</b>
+                    <strong>Voulez-vous vraiment continuer ?</strong>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light" data-dismiss="modal">Non</button>
@@ -553,6 +553,15 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 <script src="{{ asset('/js/quickEdit.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/js/manage.js') }}" type="text/javascript"></script>
+
+{{-- <script src="{{ asset('/js/herbJson.js') }}" type="text/javascript"></script> --}}
+{{-- DD/Thierry 30 juin on met ce code pour appeler le script js se trouvant dans index.blade.php ==> resources/views/interaction/index.blade.php
+    on met dans un yield autrement il va se lancer partout  --}}
+    @yield('getdrugs');
+@yield('getherbs');
+@yield('resultat');
+
+
 <script src="{{ asset('/js/custom.js') }}" type="text/javascript"></script>
 
 @include('sweetalert::alert')
