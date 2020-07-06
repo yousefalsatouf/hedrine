@@ -7,15 +7,11 @@
 		<div class="col-12">
 			<section class="content">
 				<div class="container-fluid">
-					@if(session()->has('message'))
-						<div class="col s12">
-							<div class="card purple darken-3">
-								<div class="card-content white-text center-align">
-								{{ session('message') }}
-								</div>
-							</div>
-						</div>
-					@endif
+					<div class="row justify-content-end" style="padding-bottom: 0.75rem">
+
+                            <a class="btn btn-light" href="{{ route('target.create') }}" role="button">Créer une nouvelle target</a>
+
+                    </div>
 				    <div class="row">
 						<div class="col-md-8 offset-md-2 ">
 						<!-- general form elements -->

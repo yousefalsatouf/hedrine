@@ -16,7 +16,12 @@
 								</div>
 							</div>
 						</div>
-					@endif
+                    @endif
+                    <div class="row justify-content-end" style="padding-bottom: 0.75rem">
+
+                            <a class="btn btn-light" href="{{ route('herb.create') }}" role="button">Créer une nouvelle plante</a>
+
+                    </div>
 				    <div class="row">
 						<!-- left column -->
 						<div class="col-md-8 offset-md-2 ">

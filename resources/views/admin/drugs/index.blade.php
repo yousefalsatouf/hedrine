@@ -2,8 +2,8 @@
 
 @section('content_dashboard')
 <div class="row justify-content-end" style="padding-bottom: 0.75rem">
-    @if((Route::currentRouteName() === 'herb.index') && (auth()->user()->role_id == 1) || (auth()->user()->role_id == 2) || (auth()->user()->role_id == 3) )
-    <a class="btn btn-light" href="{{ route('herb.create') }}" role="button">Créer une nouvelle plante</a>
+    @if((Route::currentRouteName() === 'drug.index') && (auth()->user()->role_id == 1) || (auth()->user()->role_id == 2) || (auth()->user()->role_id == 3) )
+    <a class="btn btn-light" href="{{ route('drug.create') }}" role="button">Créer un nouveau médicament</a>
 @endif
 </div>
 

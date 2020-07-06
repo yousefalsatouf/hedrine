@@ -4,9 +4,15 @@
 
 @section('content_dashboard')
 	<div class="row">
+
 		<div class="col-12">
 			<section class="content">
 				<div class="container-fluid">
+                    <div class="row justify-content-end" style="padding-bottom: 0.75rem">
+                        @if((auth()->user()->role_id == 1) || (auth()->user()->role_id == 2) || (auth()->user()->role_id == 3) )
+                        <a class="btn btn-light" href="{{ route('drug.create') }}" role="button">Créer un nouveau médicament</a>
+                    @endif
+                    </div>
 					@if(session()->has('message'))
 						<div class="col s12">
 							<div class="card purple darken-3">
@@ -14,7 +20,8 @@
 								{{ session('message') }}
 								</div>
 							</div>
-						</div>
+                        </div>
+
 					@endif
 				    <div class="row">
 						<div class="col-md-8 offset-md-2 ">
@@ -83,7 +90,7 @@
 													<option value="{{$atc_level_4->id}}">{{$atc_level_4->name}}</option>
 													@endforeach
 												@else
-													<option></option> 
+													<option></option>
 													@foreach ($atc_level_4s as $atc_level_4)
 													<option value="{{$atc_level_4->id}}" @if($drug->atc_level_4s_id == $atc_level_4->id) selected @endif>{{$atc_level_4->name}}</option>
 												@endforeach

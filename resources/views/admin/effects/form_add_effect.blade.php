@@ -3,7 +3,7 @@
 @yield('content_title') {{-- créé dans la view master_dashboard.blade.php --}}
 @section('content_dashboard')
 	<div class="row">
-		<div class="col-12"> 
+		<div class="col-12">
 			<section class="content">
 				<div class="container-fluid">
 					@if(session()->has('message'))
@@ -14,7 +14,12 @@
 								</div>
 							</div>
 						</div>
-					@endif
+                    @endif
+                    <div class="row justify-content-end" style="padding-bottom: 0.75rem">
+                        @if(Route::currentRouteName() === 'effect.index')
+                            <a class="btn btn-light" href="{{ route('effect.create') }}" role="button">Créer un nouvel Effet</a>
+                        @endif
+                    </div>
 				    <div class="row">
 						<!-- left column -->
 						<div class="col-md-8 offset-md-2 ">
@@ -41,7 +46,7 @@
 										<label for="name">Nom de l'effet</label>
 										<input type="text" class="form-control" id="name" name="name" required placeholder="Veuillez indiquer un nom pour l'effet" value="{{isset($effect) ? $effect->name : ''}}">
 									</div>
-									
+
 								</div>
 								<!-- /.card-body -->
 								<div class="card-footer">
