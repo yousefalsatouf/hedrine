@@ -26,7 +26,7 @@
 										@if(Route::currentRouteName() === 'target.create')
 											Ajouter un nouveau target
 										@else
-										Modification d'un target
+										Modification d un target
 										@endif
 									</strong>
 								</h3>
@@ -52,7 +52,7 @@
 									</div>
 									<div class="form-group">
 										<label for="target_type_id">Type target</label>
-										<select name="target_type_id" class="form-control" placeholder="Veuillez indiquer un type de target pour la target ">
+										<select name="target_type_id" required="" class="form-control" placeholder="Veuillez indiquer un type de target pour la target ">
 											@if(Route::currentRouteName() === 'target.create')
 												<option value="" disabled selected>Veuillez indiquer un type de target pour la target </option>
 												@foreach ($target_types as $target_type)
@@ -72,8 +72,8 @@
 									<div class="control-group">
 										<div class="controls">
 											<a class="btn btn-light" href="{{ route('target.index') }}" role="button"><i class="fas fa-arrow-left"></i> Retour à la liste des targets</a>
-											
-											<button type="submit" class="btn btn-outline-success 
+
+											<button type="submit" class="btn btn-outline-success
 												float-right"><i class="fas fa-location-arrow"></i>
 													@if(Route::currentRouteName() === 'target.create')
 														Ajouter un nouveau target
