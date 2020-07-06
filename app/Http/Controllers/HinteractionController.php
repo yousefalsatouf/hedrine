@@ -41,7 +41,7 @@ class HinteractionController extends Controller
     public function get_drugs(Request $request)
     {
         $drugs = Drug::where('validated',1)->orderBy('name')->get();
-        
+
         if ($request->name === 'drugF')
             $drugs = DrugFamily::orderBy('name')->get();
 
