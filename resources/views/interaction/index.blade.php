@@ -317,8 +317,13 @@
                         data: {'name': 'drugF'},
                         success: function(retour)
                         {
-                            console.log(retour);
-                            drugOptions = '';
+                            //console.log(retour);
+                            let drugSelect = '';
+
+                            drugSelect = '<select name="drug" id="drug-family" class="form-control custom-select" ></select>';
+                            $('#drug').replaceWith(drugSelect);
+
+                            let drugOptions = '';
                             drugOptions+="<option value='"
                                 +0+
                                 "'>Veuillez choisir un Famille de Médicaments"+
@@ -331,12 +336,18 @@
                                     "</option>";
                             });
 
-                            $('#drug').html(drugOptions);
+                            $('#drug-family').html(drugOptions);
                         }
                     });
                 }else
                 {
+                    $('#drug-atc').remove();
                     $('.drug-title').html('DCI <i class="fa fa-info-circle text-danger"></i>');
+
+                    let drug= '';
+                    drug = '<select name="drug" id="drug" class="form-control custom-select" ></select>';
+
+                    $('#drug-family').replaceWith(drug);
                     $.ajax
                     ({
                         type: 'GET',
@@ -366,7 +377,7 @@
             });
 
             // display the advanced drug familly
-            $('select').on('change', function() {
+            $('div#countDrug').on('change', '#drug-family', function() {
                 //alert(this.value)
                 let id = this.value;
                 $.ajax
@@ -380,27 +391,27 @@
                         console.log('ok');
 
                         let drugFamilySelect = '';
-                        drugFamilySelect =  '<div class="form-group col-md-6" id="drug-family">'+
+                        drugFamilySelect =  '<div class="form-group col-md-6" id="drug-atc">'+
                                                     '<label class="form-check-label"><strong><h5 class="drug-title">ATC <i class="fa fa-info-circle text-danger"></i></h5></strong></label>'+
-                                                    '<select name="drug-family" id="drug-family-select" class="form-control custom-select" ></select>'+
+                                                    '<select name="drug-family" id="drug-atc-select" class="form-control custom-select" ></select>'+
                                                 '</div>';
-                        if ($('#drug-family').length === 0)
+                        if ($('#drug-atc').length === 0)
                             $(drugFamilySelect).insertAfter('#drug_div');
 
-                        let drugFamilyOptions = '';
+                        let drugAtcOptions = '';
 
-                        drugFamilyOptions+="<option value='"
+                        drugAtcOptions+="<option value='"
                             +0+
                             "'>Veuillez choisir un ATC"+
                             "</option>";
                         $.each(data, function(i,family) {
 
-                            drugFamilyOptions += "<option value='"
+                            drugAtcOptions += "<option value='"
                                 +family.id+
                                 "'>"+family.name+
                                 "</option>";
                         });
-                        $('#drug-family-select').html(drugFamilyOptions);
+                        $('#drug-atc-select').html(drugAtcOptions);
                     }
                 });
             });
