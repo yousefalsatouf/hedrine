@@ -24,13 +24,13 @@
 									<h3 class="card-title">
 										<strong>
 
-											Ajouter un nouveau poste
+											Modification d un post
 										</strong>
 									</h3>
 								</div>
 							<!-- /.card-header -->
 							<!-- form start -->
-							<form class=" justify-content-center" role="form" method="POST" action=" {{route('post.store')}}">
+							<form class=" justify-content-center" role="form" method="PUT" action="{{ URL('post/update/'.$post->id) }}">
 								<div class="card-body">
 									<div class="form-group">
 
@@ -59,7 +59,7 @@
 											<a class="btn btn-light" href="{{ route('post.index') }}" role="button"><i class="fas fa-arrow-left"></i> Retour à la liste des postes</a>
 											<button type="submit" class="btn btn-outline-success float-right"><i class="fas fa-location-arrow"></i>
 
-												Ajouter un nouveau poste
+												Sauvegarder
 
 											</button>
 										</div>

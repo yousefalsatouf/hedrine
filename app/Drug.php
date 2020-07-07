@@ -11,14 +11,14 @@ class Drug extends Model
     use Notifiable;
 
     protected $fillable = [
-        'id','name', 'drug_families_id','route_id','user_id','atc_level_4s_id'
+        'id','name', 'drug_families_id','route_id','user_id','atc_id'
     ];
     /**
      * Get the drugs for the blog drug_families.
      */
-    public function atc_level4s()
+    public function atc()
     {
-        return $this->belongsTo(AtcLevel4::class,'atc_level_4s_id');
+        return $this->belongsTo(Atc::class,'atc_id');
     }
 
     public function drug_family()

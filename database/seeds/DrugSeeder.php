@@ -20,7 +20,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -31,7 +31,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -42,7 +42,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -53,7 +53,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -64,7 +64,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -75,7 +75,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -86,7 +86,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -97,7 +97,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -108,7 +108,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -119,7 +119,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -130,7 +130,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -141,7 +141,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -152,7 +152,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -163,7 +163,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -174,7 +174,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -185,7 +185,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -196,7 +196,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -207,7 +207,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -218,7 +218,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -229,7 +229,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -240,7 +240,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -251,7 +251,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -262,7 +262,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -273,7 +273,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -284,7 +284,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -295,7 +295,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -306,7 +306,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -317,7 +317,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -328,7 +328,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -339,7 +339,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -350,7 +350,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -361,7 +361,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -372,7 +372,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -383,7 +383,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -394,7 +394,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -405,7 +405,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -416,7 +416,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -427,7 +427,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -438,7 +438,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -449,7 +449,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -460,7 +460,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -471,7 +471,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -482,7 +482,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -493,7 +493,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -504,7 +504,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -515,7 +515,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -526,7 +526,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -537,7 +537,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -548,7 +548,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -559,7 +559,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -570,7 +570,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -581,7 +581,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -592,7 +592,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -603,7 +603,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -614,7 +614,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -625,7 +625,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -636,7 +636,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -647,7 +647,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -658,7 +658,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -669,7 +669,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -680,7 +680,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -691,7 +691,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -702,7 +702,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -713,7 +713,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -724,7 +724,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -735,7 +735,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -746,7 +746,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -757,7 +757,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -768,7 +768,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -779,7 +779,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -790,7 +790,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -801,7 +801,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -812,7 +812,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -823,7 +823,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -834,7 +834,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -845,7 +845,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -856,7 +856,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -867,7 +867,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -878,7 +878,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -889,7 +889,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -900,7 +900,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -911,7 +911,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -922,7 +922,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -933,7 +933,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -944,7 +944,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -955,7 +955,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -966,7 +966,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -977,7 +977,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -988,7 +988,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -999,7 +999,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1010,7 +1010,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1021,7 +1021,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1032,7 +1032,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1043,7 +1043,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1054,7 +1054,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1065,7 +1065,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1076,7 +1076,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1087,7 +1087,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1098,7 +1098,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1109,7 +1109,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1120,7 +1120,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1131,7 +1131,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1142,7 +1142,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1153,7 +1153,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1164,7 +1164,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1175,7 +1175,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1186,7 +1186,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1197,7 +1197,7 @@ Drug::create( [
     'drug_families_id'=>13,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1208,7 +1208,7 @@ Drug::create( [
     'drug_families_id'=>17,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1219,7 +1219,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1230,7 +1230,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1241,7 +1241,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1252,7 +1252,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1263,7 +1263,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1274,7 +1274,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1285,7 +1285,7 @@ Drug::create( [
     'drug_families_id'=>13,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1296,7 +1296,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1307,7 +1307,7 @@ Drug::create( [
     'drug_families_id'=>10,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1318,7 +1318,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1329,7 +1329,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1340,7 +1340,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1351,7 +1351,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1362,7 +1362,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1373,7 +1373,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1384,7 +1384,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1395,7 +1395,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1406,7 +1406,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1417,7 +1417,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1428,7 +1428,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1439,7 +1439,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1450,7 +1450,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1461,7 +1461,7 @@ Drug::create( [
     'drug_families_id'=>17,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1472,7 +1472,7 @@ Drug::create( [
     'drug_families_id'=>18,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1483,7 +1483,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>8,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1494,7 +1494,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1505,7 +1505,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1516,7 +1516,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1527,7 +1527,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1538,7 +1538,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1549,7 +1549,7 @@ Drug::create( [
     'drug_families_id'=>13,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1560,7 +1560,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1571,7 +1571,7 @@ Drug::create( [
     'drug_families_id'=>18,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1582,7 +1582,7 @@ Drug::create( [
     'drug_families_id'=>17,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1593,7 +1593,7 @@ Drug::create( [
     'drug_families_id'=>16,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1604,7 +1604,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1615,7 +1615,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1626,7 +1626,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1637,7 +1637,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1648,7 +1648,7 @@ Drug::create( [
     'drug_families_id'=>16,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1659,7 +1659,7 @@ Drug::create( [
     'drug_families_id'=>18,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1670,7 +1670,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1681,7 +1681,7 @@ Drug::create( [
     'drug_families_id'=>17,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1692,7 +1692,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1703,7 +1703,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1714,7 +1714,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1725,7 +1725,7 @@ Drug::create( [
     'drug_families_id'=>18,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1736,7 +1736,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1747,7 +1747,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1758,7 +1758,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1769,7 +1769,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1780,7 +1780,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1791,7 +1791,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1802,7 +1802,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1813,7 +1813,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1824,7 +1824,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1835,7 +1835,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1846,7 +1846,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1857,7 +1857,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1868,7 +1868,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1879,7 +1879,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1890,7 +1890,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1901,7 +1901,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1912,7 +1912,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1923,7 +1923,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1934,7 +1934,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1945,7 +1945,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1956,7 +1956,7 @@ Drug::create( [
     'drug_families_id'=>17,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1967,7 +1967,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1978,7 +1978,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -1989,7 +1989,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2000,7 +2000,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2011,7 +2011,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2022,7 +2022,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2033,7 +2033,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2044,7 +2044,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2055,7 +2055,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2066,7 +2066,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2077,7 +2077,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2088,7 +2088,7 @@ Drug::create( [
     'drug_families_id'=>18,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2099,7 +2099,7 @@ Drug::create( [
     'drug_families_id'=>17,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2110,7 +2110,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2121,7 +2121,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2132,7 +2132,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2143,7 +2143,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2154,7 +2154,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2165,7 +2165,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2176,7 +2176,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2187,7 +2187,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2198,7 +2198,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2209,7 +2209,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2220,7 +2220,7 @@ Drug::create( [
     'drug_families_id'=>18,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2231,7 +2231,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2242,7 +2242,7 @@ Drug::create( [
     'drug_families_id'=>10,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2253,7 +2253,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2264,7 +2264,7 @@ Drug::create( [
     'drug_families_id'=>10,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2275,7 +2275,7 @@ Drug::create( [
     'drug_families_id'=>17,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2286,7 +2286,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2297,7 +2297,7 @@ Drug::create( [
     'drug_families_id'=>16,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2308,7 +2308,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2319,7 +2319,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2330,7 +2330,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2341,7 +2341,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2352,7 +2352,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2363,7 +2363,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2374,7 +2374,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2385,7 +2385,7 @@ Drug::create( [
     'drug_families_id'=>18,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2396,7 +2396,7 @@ Drug::create( [
     'drug_families_id'=>17,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2407,7 +2407,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2418,7 +2418,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2429,7 +2429,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2440,7 +2440,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2451,7 +2451,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2462,7 +2462,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2473,7 +2473,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2484,7 +2484,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2495,7 +2495,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2506,7 +2506,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2517,7 +2517,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2528,7 +2528,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2539,7 +2539,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2550,7 +2550,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2561,7 +2561,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2572,7 +2572,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2583,7 +2583,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2594,7 +2594,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2605,7 +2605,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2616,7 +2616,7 @@ Drug::create( [
     'drug_families_id'=>13,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2627,7 +2627,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2638,7 +2638,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2649,7 +2649,7 @@ Drug::create( [
     'drug_families_id'=>17,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2660,7 +2660,7 @@ Drug::create( [
     'drug_families_id'=>13,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2671,7 +2671,7 @@ Drug::create( [
     'drug_families_id'=>16,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2682,7 +2682,7 @@ Drug::create( [
     'drug_families_id'=>10,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2693,7 +2693,7 @@ Drug::create( [
     'drug_families_id'=>18,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2704,7 +2704,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2715,7 +2715,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2726,7 +2726,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2737,7 +2737,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2748,7 +2748,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2759,7 +2759,7 @@ Drug::create( [
     'drug_families_id'=>10,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2770,7 +2770,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2781,7 +2781,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2792,7 +2792,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2803,7 +2803,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2814,7 +2814,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2825,7 +2825,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2836,7 +2836,7 @@ Drug::create( [
     'drug_families_id'=>13,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2847,7 +2847,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2858,7 +2858,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2869,7 +2869,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2880,7 +2880,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2891,7 +2891,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2902,7 +2902,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2913,7 +2913,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2924,7 +2924,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2935,7 +2935,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2946,7 +2946,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2957,7 +2957,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2968,7 +2968,7 @@ Drug::create( [
     'drug_families_id'=>17,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2979,7 +2979,7 @@ Drug::create( [
     'drug_families_id'=>14,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -2990,7 +2990,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3001,7 +3001,7 @@ Drug::create( [
     'drug_families_id'=>18,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3012,7 +3012,7 @@ Drug::create( [
     'drug_families_id'=>13,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3023,7 +3023,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3034,7 +3034,7 @@ Drug::create( [
     'drug_families_id'=>17,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3045,7 +3045,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3056,7 +3056,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3067,7 +3067,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3078,7 +3078,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3089,7 +3089,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3100,7 +3100,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3111,7 +3111,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3122,7 +3122,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3133,7 +3133,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3144,7 +3144,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3155,7 +3155,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3166,7 +3166,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3177,7 +3177,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3188,7 +3188,7 @@ Drug::create( [
     'drug_families_id'=>13,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3199,7 +3199,7 @@ Drug::create( [
     'drug_families_id'=>18,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3210,7 +3210,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3221,7 +3221,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3232,7 +3232,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3243,7 +3243,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3254,7 +3254,7 @@ Drug::create( [
     'drug_families_id'=>10,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3265,7 +3265,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3276,7 +3276,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3287,7 +3287,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3298,7 +3298,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3309,7 +3309,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3320,7 +3320,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3331,7 +3331,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3342,7 +3342,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3353,7 +3353,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3364,7 +3364,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3375,7 +3375,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3386,7 +3386,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3397,7 +3397,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3408,7 +3408,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3419,7 +3419,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3430,7 +3430,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3441,7 +3441,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3452,7 +3452,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3463,7 +3463,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3474,7 +3474,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3485,7 +3485,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3496,7 +3496,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3507,7 +3507,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3518,7 +3518,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3529,7 +3529,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3540,7 +3540,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3551,7 +3551,7 @@ Drug::create( [
     'drug_families_id'=>10,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3562,7 +3562,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3573,7 +3573,7 @@ Drug::create( [
     'drug_families_id'=>10,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3584,7 +3584,7 @@ Drug::create( [
     'drug_families_id'=>18,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3595,7 +3595,7 @@ Drug::create( [
     'drug_families_id'=>18,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3606,7 +3606,7 @@ Drug::create( [
     'drug_families_id'=>18,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3617,7 +3617,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3628,7 +3628,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3639,7 +3639,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3650,7 +3650,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3661,7 +3661,7 @@ Drug::create( [
     'drug_families_id'=>2,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3672,7 +3672,7 @@ Drug::create( [
     'drug_families_id'=>2,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3683,7 +3683,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3694,7 +3694,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3705,7 +3705,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3716,7 +3716,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3727,7 +3727,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3738,7 +3738,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3749,7 +3749,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3760,7 +3760,7 @@ Drug::create( [
     'drug_families_id'=>18,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3771,7 +3771,7 @@ Drug::create( [
     'drug_families_id'=>18,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3782,7 +3782,7 @@ Drug::create( [
     'drug_families_id'=>2,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3793,7 +3793,7 @@ Drug::create( [
     'drug_families_id'=>2,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3804,7 +3804,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3815,7 +3815,7 @@ Drug::create( [
     'drug_families_id'=>16,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3826,7 +3826,7 @@ Drug::create( [
     'drug_families_id'=>16,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3837,7 +3837,7 @@ Drug::create( [
     'drug_families_id'=>16,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3848,7 +3848,7 @@ Drug::create( [
     'drug_families_id'=>18,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3859,7 +3859,7 @@ Drug::create( [
     'drug_families_id'=>2,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3870,7 +3870,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3881,7 +3881,7 @@ Drug::create( [
     'drug_families_id'=>2,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3892,7 +3892,7 @@ Drug::create( [
     'drug_families_id'=>2,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3903,7 +3903,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3914,7 +3914,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3925,7 +3925,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3936,7 +3936,7 @@ Drug::create( [
     'drug_families_id'=>18,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3947,7 +3947,7 @@ Drug::create( [
     'drug_families_id'=>16,
     'route_id'=>1,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3958,7 +3958,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3969,7 +3969,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3980,7 +3980,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -3991,7 +3991,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4002,7 +4002,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4013,7 +4013,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4024,7 +4024,7 @@ Drug::create( [
     'drug_families_id'=>13,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4035,7 +4035,7 @@ Drug::create( [
     'drug_families_id'=>17,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4046,7 +4046,7 @@ Drug::create( [
     'drug_families_id'=>13,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4057,7 +4057,7 @@ Drug::create( [
     'drug_families_id'=>2,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4068,7 +4068,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4079,7 +4079,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4090,7 +4090,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4101,7 +4101,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4112,7 +4112,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4123,7 +4123,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4134,7 +4134,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>8,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4145,7 +4145,7 @@ Drug::create( [
     'drug_families_id'=>16,
     'route_id'=>2,
     'user_id'=>8,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4156,7 +4156,7 @@ Drug::create( [
     'drug_families_id'=>13,
     'route_id'=>1,
     'user_id'=>8,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4167,7 +4167,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>8,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4178,7 +4178,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4189,7 +4189,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4200,7 +4200,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4211,7 +4211,7 @@ Drug::create( [
     'drug_families_id'=>16,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4222,7 +4222,7 @@ Drug::create( [
     'drug_families_id'=>13,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4233,7 +4233,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4244,7 +4244,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4255,7 +4255,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4266,7 +4266,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4277,7 +4277,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4288,7 +4288,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4299,7 +4299,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4310,7 +4310,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4321,7 +4321,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4332,7 +4332,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4343,7 +4343,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4354,7 +4354,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4365,7 +4365,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4376,7 +4376,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4387,7 +4387,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4398,7 +4398,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4409,7 +4409,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4420,7 +4420,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4431,7 +4431,7 @@ Drug::create( [
     'drug_families_id'=>13,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4442,7 +4442,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4453,7 +4453,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4464,7 +4464,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4475,7 +4475,7 @@ Drug::create( [
     'drug_families_id'=>13,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4486,7 +4486,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4497,7 +4497,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4508,7 +4508,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4519,7 +4519,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4530,7 +4530,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4541,7 +4541,7 @@ Drug::create( [
     'drug_families_id'=>16,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4552,7 +4552,7 @@ Drug::create( [
     'drug_families_id'=>16,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4563,7 +4563,7 @@ Drug::create( [
     'drug_families_id'=>16,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4574,7 +4574,7 @@ Drug::create( [
     'drug_families_id'=>16,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4585,7 +4585,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4596,7 +4596,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4607,7 +4607,7 @@ Drug::create( [
     'drug_families_id'=>16,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4618,7 +4618,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4629,7 +4629,7 @@ Drug::create( [
     'drug_families_id'=>16,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4640,7 +4640,7 @@ Drug::create( [
     'drug_families_id'=>16,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4651,7 +4651,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4662,7 +4662,7 @@ Drug::create( [
     'drug_families_id'=>10,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4673,7 +4673,7 @@ Drug::create( [
     'drug_families_id'=>18,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4684,7 +4684,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4695,7 +4695,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4706,7 +4706,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4717,7 +4717,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4728,7 +4728,7 @@ Drug::create( [
     'drug_families_id'=>10,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4739,7 +4739,7 @@ Drug::create( [
     'drug_families_id'=>10,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4750,7 +4750,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4761,7 +4761,7 @@ Drug::create( [
     'drug_families_id'=>2,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4772,7 +4772,7 @@ Drug::create( [
     'drug_families_id'=>2,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4783,7 +4783,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4794,7 +4794,7 @@ Drug::create( [
     'drug_families_id'=>17,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4805,7 +4805,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4816,7 +4816,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4827,7 +4827,7 @@ Drug::create( [
     'drug_families_id'=>2,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4838,7 +4838,7 @@ Drug::create( [
     'drug_families_id'=>2,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4849,7 +4849,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>3,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4860,7 +4860,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>1,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4871,7 +4871,7 @@ Drug::create( [
     'drug_families_id'=>17,
     'route_id'=>2,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4882,7 +4882,7 @@ Drug::create( [
     'drug_families_id'=>17,
     'route_id'=>2,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4893,7 +4893,7 @@ Drug::create( [
     'drug_families_id'=>17,
     'route_id'=>2,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4904,7 +4904,7 @@ Drug::create( [
     'drug_families_id'=>17,
     'route_id'=>2,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4915,7 +4915,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4926,7 +4926,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4937,7 +4937,7 @@ Drug::create( [
     'drug_families_id'=>10,
     'route_id'=>2,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4948,7 +4948,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4959,7 +4959,7 @@ Drug::create( [
     'drug_families_id'=>17,
     'route_id'=>2,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4970,7 +4970,7 @@ Drug::create( [
     'drug_families_id'=>17,
     'route_id'=>2,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4981,7 +4981,7 @@ Drug::create( [
     'drug_families_id'=>16,
     'route_id'=>1,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -4992,7 +4992,7 @@ Drug::create( [
     'drug_families_id'=>17,
     'route_id'=>2,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5003,7 +5003,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5014,7 +5014,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5025,7 +5025,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5036,7 +5036,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5047,7 +5047,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5058,7 +5058,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>1,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5069,7 +5069,7 @@ Drug::create( [
     'drug_families_id'=>17,
     'route_id'=>2,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5080,7 +5080,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>1,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5091,7 +5091,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5102,7 +5102,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5113,7 +5113,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5124,7 +5124,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5135,7 +5135,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>1,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5146,7 +5146,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>1,
     'user_id'=>44,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5157,7 +5157,7 @@ Drug::create( [
     'drug_families_id'=>13,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5168,7 +5168,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>30,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5179,7 +5179,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>1,
     'user_id'=>30,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5190,7 +5190,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>1,
     'user_id'=>30,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5201,7 +5201,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>30,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5212,7 +5212,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>30,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5223,7 +5223,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5234,7 +5234,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5245,7 +5245,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5256,7 +5256,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5267,7 +5267,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5278,7 +5278,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5289,7 +5289,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5300,7 +5300,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5311,7 +5311,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5322,7 +5322,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5333,7 +5333,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5344,7 +5344,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5355,7 +5355,7 @@ Drug::create( [
     'drug_families_id'=>13,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5366,7 +5366,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>1,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5377,7 +5377,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5388,7 +5388,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5399,7 +5399,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5410,7 +5410,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5421,7 +5421,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5432,7 +5432,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5443,7 +5443,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5454,7 +5454,7 @@ Drug::create( [
     'drug_families_id'=>17,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5465,7 +5465,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5476,7 +5476,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5487,7 +5487,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5498,7 +5498,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5509,7 +5509,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5520,7 +5520,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5531,7 +5531,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5542,7 +5542,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5553,7 +5553,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5564,7 +5564,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5575,7 +5575,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5586,7 +5586,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5597,7 +5597,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5608,7 +5608,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5619,7 +5619,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5630,7 +5630,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5641,7 +5641,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5652,7 +5652,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5663,7 +5663,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5674,7 +5674,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5685,7 +5685,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5696,7 +5696,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5707,7 +5707,7 @@ Drug::create( [
     'drug_families_id'=>16,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5718,7 +5718,7 @@ Drug::create( [
     'drug_families_id'=>16,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5729,7 +5729,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5740,7 +5740,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5751,7 +5751,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5762,7 +5762,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5773,7 +5773,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5784,7 +5784,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5795,7 +5795,7 @@ Drug::create( [
     'drug_families_id'=>11,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5806,7 +5806,7 @@ Drug::create( [
     'drug_families_id'=>14,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5817,7 +5817,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5828,7 +5828,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5839,7 +5839,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5850,7 +5850,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5861,7 +5861,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5872,7 +5872,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5883,7 +5883,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5894,7 +5894,7 @@ Drug::create( [
     'drug_families_id'=>15,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5905,7 +5905,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5916,7 +5916,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5927,7 +5927,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5938,7 +5938,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5949,7 +5949,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5960,7 +5960,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5971,7 +5971,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5982,7 +5982,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -5993,7 +5993,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6004,7 +6004,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6015,7 +6015,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6026,7 +6026,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6037,7 +6037,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6048,7 +6048,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6059,7 +6059,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6070,7 +6070,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6081,7 +6081,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6092,7 +6092,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6103,7 +6103,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6114,7 +6114,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6125,7 +6125,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6136,7 +6136,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6147,7 +6147,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6158,7 +6158,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6169,7 +6169,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6180,7 +6180,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6191,7 +6191,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6202,7 +6202,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6213,7 +6213,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6224,7 +6224,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6235,7 +6235,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6246,7 +6246,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6257,7 +6257,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6268,7 +6268,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6279,7 +6279,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6290,7 +6290,7 @@ Drug::create( [
     'drug_families_id'=>12,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6301,7 +6301,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6312,7 +6312,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6323,7 +6323,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>1,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6334,7 +6334,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>1,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6345,7 +6345,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6356,7 +6356,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6367,7 +6367,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>1,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6378,7 +6378,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>1,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6389,7 +6389,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6400,7 +6400,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>1,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6411,7 +6411,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6422,7 +6422,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>1,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6433,7 +6433,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>1,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6444,7 +6444,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6455,7 +6455,7 @@ Drug::create( [
     'drug_families_id'=>7,
     'route_id'=>2,
     'user_id'=>43,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6466,7 +6466,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>151,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6477,7 +6477,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>151,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6488,7 +6488,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>151,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6499,7 +6499,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>151,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6510,7 +6510,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>151,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6521,7 +6521,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>151,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6532,7 +6532,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>151,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6543,7 +6543,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>151,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6554,7 +6554,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>151,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6565,7 +6565,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>151,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6576,7 +6576,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>151,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6587,7 +6587,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>151,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6598,7 +6598,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>151,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6609,7 +6609,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>151,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6620,7 +6620,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>151,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6631,7 +6631,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>151,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6642,7 +6642,7 @@ Drug::create( [
     'drug_families_id'=>1,
     'route_id'=>2,
     'user_id'=>151,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 
@@ -6653,7 +6653,7 @@ Drug::create( [
     'drug_families_id'=>8,
     'route_id'=>2,
     'user_id'=>2,
-    'validated'=>'1',
+    'validated'=>'1', 'atc_id'=>1
     ] );
 
 

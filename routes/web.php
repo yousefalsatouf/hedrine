@@ -149,9 +149,10 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
 
     //Pour Post
     Route::name('post.index')->get('post', 'PostController@index');
-    Route::name('post.update')->put('post', 'PostController@update');
-    Route::name('post.edit')->get('post', 'PostController@edit');
+    Route::name('post.update')->put('post/update/{id}', 'PostController@update');
+    Route::name('post.edit')->get('post/edit/{id}', 'PostController@edit');
     Route::name('post.create')->get('post', 'PostController@create');
+
     Route::resource('post', 'PostController')->parameters([
         'post' => 'post'
       ]);

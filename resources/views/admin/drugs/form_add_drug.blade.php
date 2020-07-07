@@ -33,7 +33,7 @@
 											@if(Route::currentRouteName() === 'drug.create')
 												Ajouter un nouveau DCI
 											@else
-												Modification d'un DCI
+												Modification d un DCI
 											@endif
 										</strong>
 									</h3>
@@ -82,17 +82,17 @@
 											</select>
 										</div>
 										<div class="form-group">
-											<label for="atc_level_4s_id">AtcLevel4</label>
-											<select name="atc_level_4s_id" class="form-control">
+											<label for="atc_level_4s_id">AtcLevel</label>
+											<select name="atc_id" class="form-control">
 												@if(Route::currentRouteName() === 'drug.create')
 													<option value="" disabled selected>Veuillez indiquer un atc pour le DCI </option>
-													@foreach ($atc_level_4s as $atc_level_4)
-													<option value="{{$atc_level_4->id}}">{{$atc_level_4->name}}</option>
+													@foreach ($acts as $atc_level)
+													<option value="{{$atc_level->id}}">{{$atc_level->name}}</option>
 													@endforeach
 												@else
 													<option></option>
-													@foreach ($atc_level_4s as $atc_level_4)
-													<option value="{{$atc_level_4->id}}" @if($drug->atc_level_4s_id == $atc_level_4->id) selected @endif>{{$atc_level_4->name}}</option>
+													@foreach ($atcs as $atc_level)
+													<option value="{{$atc_level->id}}" @if($drug->atc == $atc_level->id) selected @endif>{{$atc_level->name}}</option>
 												@endforeach
 												@endif
 											</select>
