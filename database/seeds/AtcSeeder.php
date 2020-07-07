@@ -12,7 +12,6 @@ class AtcSeeder extends Seeder
      */
     public function run()
     {
-        //
         Atc::create( [
             'name'=>'A16AX',
             'drug_families_id'=>7,
@@ -25,5 +24,6 @@ class AtcSeeder extends Seeder
             'name'=>'C10B',
             'drug_families_id'=>4,
         ] );
+
     }
 }
