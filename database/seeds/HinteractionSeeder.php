@@ -20,7 +20,7 @@ class HinteractionSeeder extends Seeder
             Zhou décrit des interactions théoriques au niveau enzymatique',
             'user_id'=>1,
             'force_id'=>1,
-            'validated'=>NULL,
+            'validated'=>0,
             'created_at'=>NULL,
             'updated_at'=>NULL
             ] );
@@ -40,7 +40,7 @@ class HinteractionSeeder extends Seeder
             Enfin, des études cliniques utilisant le midazolam comme substrat témoin de l’activité du CYP3A4 ne montrent pas de modification significative de cette isoenzyme. ',
             'user_id'=>1,
             'force_id'=>6,
-            'validated'=>NULL,
+            'validated'=>0,
             'created_at'=>NULL,
             'updated_at'=>NULL
             ] );
@@ -54,7 +54,7 @@ class HinteractionSeeder extends Seeder
             'notes'=>'Une des indications de l\'ail est un stimulant de l\'immunité',
             'user_id'=>1,
             'force_id'=>10,
-            'validated'=>NULL,
+            'validated'=>0,
             'created_at'=>NULL,
             'updated_at'=>NULL
             ] );

@@ -105,9 +105,9 @@ class HinteractionController extends Controller
         $hinteraction->target_id = $request->target;
         $hinteraction->force_id = $request->force;
         $hinteraction->notes = $request->note;
-        if (Auth::user()->role_id)
+        if (Auth::user()->role_id == 1)
         {
-            $hinteraction->validated = $now;
+            $hinteraction->validated = 1;
         }
         $hinteraction->save();
 

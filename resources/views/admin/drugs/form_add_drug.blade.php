@@ -86,13 +86,13 @@
 											<select name="atc_id" class="form-control">
 												@if(Route::currentRouteName() === 'drug.create')
 													<option value="" disabled selected>Veuillez indiquer un atc pour le DCI </option>
-													@foreach ($acts as $atc_level)
+													@foreach ($atcs as $atc_level)
 													<option value="{{$atc_level->id}}">{{$atc_level->name}}</option>
 													@endforeach
 												@else
 													<option></option>
 													@foreach ($atcs as $atc_level)
-													<option value="{{$atc_level->id}}" @if($drug->atc == $atc_level->id) selected @endif>{{$atc_level->name}}</option>
+													<option value="{{$atc_level->id}}" @if($drug->atc_id == $atc_level->id) selected @endif>{{$atc_level->name}}</option>
 												@endforeach
 												@endif
 											</select>

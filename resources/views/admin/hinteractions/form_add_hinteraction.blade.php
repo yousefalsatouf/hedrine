@@ -23,7 +23,7 @@
 								<div class="card-header">
 									<h3 class="card-title">
 										<strong>
-											Modification d'une Interaction Plante
+											Modification d une Interaction Plante
 										</strong>
 									</h3>
 								</div>
@@ -81,7 +81,7 @@
 										<div class="form-group">
 											@isset($hinteraction) @method('PUT') @endisset
 											@csrf
-											<label for="notes">Notes de l'interaction</label>
+											<label for="notes">Notes de linteraction</label>
 											<textarea rows="10" cols="15" class="form-control" id="notes" name="notes" placeholder="Veuillez introduire une note pour la target" required>{{ isset($hinteraction) ? $hinteraction->notes : ''}}</textarea>
 										</div>
 										<div class="form-group">

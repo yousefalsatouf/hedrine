@@ -63,9 +63,9 @@ class DinteractionController extends Controller
         $dinteraction->target_id = $request->target;
         $dinteraction->force_id = $request->force;
         $dinteraction->notes = $request->note;
-        if (Auth::user()->role_id)
+        if (Auth::user()->role_id == 1)
         {
-            $dinteraction->validated = $now;
+            $dinteraction->validated = 1;
         }
         $dinteraction->save();
 
@@ -74,7 +74,7 @@ class DinteractionController extends Controller
 
         Alert::success('Ok,', 'Drug target inserted successfully!');
 
-        return redirect('admin/target');
+        return redirect()->route('dinteraction.index');
     }
 
     // get the drug family from request api ajax

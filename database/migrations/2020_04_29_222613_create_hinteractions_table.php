@@ -20,7 +20,7 @@ class CreateHinteractionsTable extends Migration
             $table->text('notes')->nullable();;
             $table->unsignedBigInteger('user_id')->unsigned();
             $table->unsignedBigInteger('force_id')->unsigned();
-            $table->dateTime('validated')->nullable();
+            $table->integer('validated')->default(0);
 
             //Relation un à plusieurs
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

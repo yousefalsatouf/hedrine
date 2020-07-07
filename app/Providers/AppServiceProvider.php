@@ -19,6 +19,8 @@ use App\Target;
 use App\TargetType;
 use App\AtcLevel4;
 use App\HerbForm;
+use App\Hinteraction;
+use App\Dinteraction;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -85,7 +87,7 @@ class AppServiceProvider extends ServiceProvider
 
         View::composer('*', function ($view) {
 
-            $view->with('acts', Atc::all());
+            $view->with('atcs', Atc::all());
         });
 
         View::composer('*', function ($view) {
@@ -108,6 +110,18 @@ class AppServiceProvider extends ServiceProvider
         });
         view()->composer('*', function ($view) {
             $view->with('validatedHerb',Herb::where('validated',1)->get());
+        });
+        view()->composer('*', function ($view) {
+            $view->with('validatedHinteractions',Hinteraction::where('validated',1)->get());
+        });
+        view()->composer('*', function ($view) {
+            $view->with('validatedDinteractions',Dinteraction::where('validated',1)->get());
+        });
+        view()->composer('*', function ($view) {
+            $view->with('noValidHinteractions',Hinteraction::where('validated', '<=', 0)->count());
+        });
+        view()->composer('*', function ($view) {
+            $view->with('noValidDinteractions',Dinteraction::where('validated', '<=', 0)->count());
         });
         view()->composer('partials.table-add-del-view', function ($view) {
             $view->with('waitingHerb',auth()->user()->herbs()->where('validated',0)->get());
