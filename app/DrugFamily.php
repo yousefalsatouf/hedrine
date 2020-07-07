@@ -20,8 +20,5 @@ class DrugFamily extends Model
         return $this->hasMany(Atc::class);
     }
 
-    public function atc_level2()
-    {
-        return $this->hasMany(Drug::class);
-    }
+
 }

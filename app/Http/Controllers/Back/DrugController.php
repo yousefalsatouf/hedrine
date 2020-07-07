@@ -58,7 +58,7 @@ class DrugController extends Controller
         $drug->drug_families_id = $request->drug_families_id;
         $drug->route_id = $request->route_id;
         $request->validated? $drug->validated = 1 : $drug->validated = 0;
-        $drug->atc_level_4s_id = $request->atc_level_4s_id;
+        $drug->atc_id = $request->atc_id;
 
         $drug->save();
         $drug->targets()->sync($request->targets, false);

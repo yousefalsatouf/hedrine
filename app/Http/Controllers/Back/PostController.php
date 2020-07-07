@@ -76,9 +76,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit($id)
     {
-        return view('admin.postes.form_add_post', ['post' => $post ]);
+        $post = Post::findOrFail($id);
+        return view('admin.postes.update', ['post' => $post ]);
     }
 
     /**
@@ -88,9 +89,11 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, $id)
     {
-        $post->updated_at->now();
+
+        $post = Post::findOrFail($id);
+        dd($post);
         $post->update($request->all());
 
         Alert::success('Ok !', 'Votre poste a étè mis à jour avec succès');

@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 
 use App\Post;
+use App\Atc;
 use App\Reference;
 use App\Target;
 use App\TargetType;
@@ -80,6 +81,11 @@ class AppServiceProvider extends ServiceProvider
         View::composer('*', function ($view) {
 
             $view->with('target_types', TargetType::all());
+        });
+
+        View::composer('*', function ($view) {
+
+            $view->with('acts', Atc::all());
         });
 
         View::composer('*', function ($view) {

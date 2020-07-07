@@ -584,5 +584,4 @@
 
 </body>
 </html>
-layout.blade.php
-Displaying layout.blade.php.
+

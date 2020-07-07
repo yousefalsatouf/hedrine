@@ -37,7 +37,8 @@ class CreateForeignKeys extends Migration
                 $table->unsignedBigInteger('route_id');
                 $table->foreign('route_id')->references('id')->on('routes')->onDelete('cascade');
 
-
+                $table->unsignedBigInteger('atc_id');
+                $table->foreign('atc_id')->references('id')->on('atc')->onDelete('cascade');
             });
 
             Schema::table('references', function (Blueprint $table) {
@@ -61,10 +62,12 @@ class CreateForeignKeys extends Migration
             });
 
 
-           /*Schema::table('atc', function (Blueprint $table) {
+           /* Schema::table('atc', function (Blueprint $table) {
                 $table->unsignedBigInteger('drug_families_id');
                 $table->foreign('drug_families_id')->references('id')->on('drug_families')->onDelete('cascade');
             });*/
+
+
 
             $table->timestamps();
         });

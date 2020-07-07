@@ -14,7 +14,7 @@
 				<tr class="text-center">
 					<th> Name </th>
 					<th> Family </th>
-					<th> AtcLevel4 </th>
+					<th> AtcLevel </th>
 					<th> Route </th>
 					<th> Editor </th>
                     @if((auth()->user()->role_id == 1) || (auth()->user()->role_id == 2) || (auth()->user()->role_id == 3))
@@ -29,7 +29,7 @@
 						<a href="" class="add_style" ><strong class="text-dark">{{$drug->name}}</strong></a>
 					</td>
 					<td>{{optional($drug->drug_family)->name}}</td>
-					<td>{{ $drug->atc_level4s->name }}</td>
+					<td>{{ optional($drug->atc)->name }}</td>
 					<td>{{ $drug->routes->name }}</td>
                     <td>{{ optional($drug->user)->name }}</td>
 
