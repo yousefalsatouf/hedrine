@@ -53,10 +53,9 @@
                     <div class="form-row field_wrapper" id="countDrug">
                         <div class="form-group col-md-6" id="drug_div">
 							<label class="form-check-label"><strong><h5 class="drug-title">DCI <i class="fa fa-info-circle text-danger"></i></h5></strong></label>
-							<select name="drug[]" id="drug" class="form-control custom-select" >
+							<select name="drug" id="drug" class="form-control custom-select" >
 							</select>
-                        </div>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>&nbsp;&nbsp;&nbsp;
 						<div class="form-group col-md-3">
                             <label class="form-check-label" for="inputState">ET</label>
                             <br>
@@ -251,9 +250,6 @@
             selct += '</div>';
             selct += '</div>';
 
-
-
-
             var cpt = 1; // Initial field counter is 1
 
             $(addBtnDrug).click(function() {
@@ -367,6 +363,46 @@
                         }
                     });
                 }
+            });
+
+            // display the advanced drug familly
+            $('select').on('change', function() {
+                //alert(this.value)
+                let id = this.value;
+                $.ajax
+                ({
+                    type: 'GET',
+                    url: '../dinteractions/hdi_get_drugs_families',
+                    dataType: 'json',
+                    data: {'family': id},
+                    success: function(data)
+                    {
+                        console.log('ok');
+
+                        let drugFamilySelect = '';
+                        drugFamilySelect =  '<div class="form-group col-md-6" id="drug-family">'+
+                                                    '<label class="form-check-label"><strong><h5 class="drug-title">ATC <i class="fa fa-info-circle text-danger"></i></h5></strong></label>'+
+                                                    '<select name="drug-family" id="drug-family-select" class="form-control custom-select" ></select>'+
+                                                '</div>';
+                        if ($('#drug-family').length === 0)
+                            $(drugFamilySelect).insertAfter('#drug_div');
+
+                        let drugFamilyOptions = '';
+
+                        drugFamilyOptions+="<option value='"
+                            +0+
+                            "'>Veuillez choisir un ATC"+
+                            "</option>";
+                        $.each(data, function(i,family) {
+
+                            drugFamilyOptions += "<option value='"
+                                +family.id+
+                                "'>"+family.name+
+                                "</option>";
+                        });
+                        $('#drug-family-select').html(drugFamilyOptions);
+                    }
+                });
             });
 
         });
