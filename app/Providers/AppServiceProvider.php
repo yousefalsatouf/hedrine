@@ -84,11 +84,6 @@ class AppServiceProvider extends ServiceProvider
 
         View::composer('*', function ($view) {
 
-            $view->with('atc_level_4s', AtcLevel4::all());
-        });
-
-        View::composer('*', function ($view) {
-
             $view->with('herb_forms', HerbForm::all());
         });
 
