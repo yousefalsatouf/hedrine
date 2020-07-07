@@ -1,6 +1,7 @@
 <?php
 
 use App\Reference;
+use App\Atc;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
