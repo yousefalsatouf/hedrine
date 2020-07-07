@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Atc;
 use App\Dinteraction;
 use App\Drug;
 use App\Effect;
@@ -74,6 +75,16 @@ class DinteractionController extends Controller
         Alert::success('Ok,', 'Drug target inserted successfully!');
 
         return redirect('admin/target');
+    }
+
+    // get the drug family from request api ajax
+
+    public function get_drug_families(Request $request)
+    {
+        //echo $request->family;
+        $singleDrugFamily = Atc::where('drug_families_id', $request->family)->orderBy('name')->get();
+
+        return $singleDrugFamily;
     }
 
     /**

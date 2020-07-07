@@ -337,6 +337,7 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
 Route::get('hinteractions/hdi','HinteractionController@index')->name('hinteractions.hdi');
 Route::get('hinteractions/hdi_get_herbs','HinteractionController@get_herbs')->name('hinteractions.get_herbs');
 Route::get('hinteractions/hdi_get_drugs','HinteractionController@get_drugs')->name('hinteractions.get_drugs');
+Route::get('dinteractions/hdi_get_drugs_families', 'DinteractionController@get_drug_families');
 Route::post('/hinteractions/getHerbs','HinteractionController@getHerbs')->name('hinteractions.getHerbsById');
 Route::get('hinteractions/hti','HinteractionController@show_mecanisme_form')->name('hinteractions.hti');
 
