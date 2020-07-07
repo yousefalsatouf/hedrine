@@ -12,6 +12,7 @@ class Atc extends Model
     use Notifiable;
 
     protected $table = 'atc';
+
     protected $fillable = [
         'id','name', 'drug_families_id'
     ];
