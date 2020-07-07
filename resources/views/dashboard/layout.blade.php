@@ -165,6 +165,24 @@
                             <span class="float-right text-muted text-sm">2 days</span>
                         </a>
                         <div class="dropdown-divider"></div>
+                        <a href="{{ route('notification.index_hinteractiontarget') }}" class="dropdown-item">
+                            <i class="fas fa-seedling mr-1" style="color: seagreen"></i> {{$noValidHinteractions}}
+                            @if($newHerbs === 1) new Hinteraction Target
+                            @else new Hinteractions Targets
+                            @endif
+                            <span class="float-right text-muted text-sm">3 mins</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="{{ route('notification.index_dinteractiontarget') }}" class="dropdown-item">
+                            <i class="fas fa-seedling mr-1" style="color: seagreen"></i> {{$noValidDinteractions}}
+                            @if($newHerbs === 1) new Dinteraction Target
+                            @else new Dinteractions Target
+                            @endif
+                            <span class="float-right text-muted text-sm"> 3 mins</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+
+
                     </div>
                 </li>
             @endif

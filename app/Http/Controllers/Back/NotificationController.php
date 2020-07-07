@@ -35,11 +35,23 @@ class NotificationController extends Controller
         return view('notifications.index_drug',compact('user'));
     }
 
-    public function show_targets(Request $request) { 
+    public function show_targets(Request $request) {
 
         $user = $request->user();
 
         return view('notifications.index_target',compact('user'));
+    }
+    public function show_hinteraction_target(Request $request) {
+
+        $user = $request->user();
+
+        return view('notifications.index_hinteractiontarget',compact('user'));
+    }
+    public function show_dinteraction_target(Request $request) {
+
+        $user = $request->user();
+
+        return view('notifications.index_dinteractiontarget',compact('user'));
     }
 
     public function showNewUserRequests(Request $request)
@@ -61,7 +73,7 @@ class NotificationController extends Controller
 
         return view('admin.pendingUsers.index',compact('allNewUsers'));
     }
-    
+
     public function activateNewUser($id)
     {
         DB::table('users')

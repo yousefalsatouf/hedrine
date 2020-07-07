@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\DrugFamily;
+use App\Atc;
 use Illuminate\Notifications\Notifiable;
 
 class Drug extends Model

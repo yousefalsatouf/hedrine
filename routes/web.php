@@ -322,6 +322,8 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
         Route::name ('update')->patch ('{notification}', 'NotificationController@update');
         Route::name ('index_drugs')->get ('/index_drugs', 'NotificationController@show_drugs');
         Route::name ('index_targets')->get ('/index_targets', 'NotificationController@show_targets');
+        Route::name ('index_hinteractiontarget')->get ('/index_hinteractiontarget', 'NotificationController@show_hinteraction_target');
+        Route::name ('index_dinteractiontarget')->get ('/index_dinteractiontarget', 'NotificationController@show_dinteraction_target');
     });
 
     //Route Pour Les Alertes

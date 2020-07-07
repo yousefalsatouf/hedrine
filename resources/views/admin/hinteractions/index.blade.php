@@ -11,7 +11,7 @@
 		<table id="example1" class="table table-striped table-sm">
 			<thead>
 				<tr class="text-center">
-					<th> Validated </th>
+
 					<th> Herb Name </th>
 					<th> Target Name </th>
 					<th> Notes </th>
@@ -20,9 +20,9 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach ($hinteractions as $hinteraction)
+				@foreach ($validatedHinteractions as $hinteraction)
 				<tr class="text-center">
-					<td>{{$hinteraction->validated}}</td>
+
 					<td>{{$hinteraction->herbs->name}}</td>
 					<td>{{$hinteraction->targets->name }}</td>
 					<td>{{$hinteraction->notes }}</td>

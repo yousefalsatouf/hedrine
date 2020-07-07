@@ -1,12 +1,17 @@
 @extends('dashboard.layout')
 
 @section('content_dashboard')
+<div class="row justify-content-end" style="padding-bottom: 0.75rem">
+
+    <a class="btn btn-light" href="{{ route('newDrugTarget') }}" role="button">Créer une nouvelle Dinteraction Target</a>
+
+</div>
 <div class="col-12">
 	<div class="card-body " style="background-color: #fff">
 		<table id="example1" class="table table-striped table-sm">
 			<thead>
-				<tr class="text-center"> 
-					<th> Validated </th>
+				<tr class="text-center">
+
 					<th> Drug Name </th>
 					<th> Target Name </th>
 					<th> Notes </th>
@@ -15,10 +20,10 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach ($dinteractions as $dinteraction) 
+				@foreach ($validatedDinteractions as $dinteraction)
 				<tr class="text-center">
-					<td>{{$dinteraction->validated}}</td>
-					<td>{{$dinteraction->drugs->name}}</td> 
+
+					<td>{{$dinteraction->drugs->name}}</td>
 					<td>{{$dinteraction->targets->name }}</td>
 					<td>{{$dinteraction->notes }}</td>
 					<td>{{$dinteraction->user->name }}</td>

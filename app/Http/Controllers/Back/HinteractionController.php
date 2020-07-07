@@ -58,7 +58,7 @@ class HinteractionController extends Controller
         $hinteraction->name = $request->name;
         $hinteraction->drug_families_id = $request->drug_families_id;
         $hinteraction->route_id = $request->route_id;
-        $hinteraction->atc_level_4s_id = $request->atc_level_4s_id;
+        $hinteraction->atc_id = $request->atc_id;
 
         $hinteraction->save();
         Alert::success('Ok !', 'Nouveau DCI ajouté avec succès');
@@ -89,7 +89,7 @@ class HinteractionController extends Controller
         $forces = Force::orderBy('name', 'ASC')->get();
         $effects = Effect::orderBy('name', 'ASC')->get();
         $hinteractions = Hinteraction::all();
-        
+
         return view('admin.hinteractions.form_add_hinteraction',['hinteraction' => $hinteraction], compact('hinteractions','effects','forces','references'));
     }
 
@@ -103,7 +103,7 @@ class HinteractionController extends Controller
     public function update(Request $request, Hinteraction $hinteraction)
     {
         $hinteraction->update($request->all());
-        
+
         Alert::success('Ok !', 'Votre Interaction Plante a étè mis à jour avec succès');
 
         return back();
