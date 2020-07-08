@@ -12,6 +12,7 @@ class Hinteraction extends Model
      *
      * @var array
      */
+    protected $table = 'hinteractions';
     protected $fillable = [
 
         'herb_id','target_id','force_id','notes'
@@ -24,7 +25,7 @@ class Hinteraction extends Model
     }
 
     public function users()
-    { 
+    {
         return $this->belongsTo(User::class,'user_id');
     }
 
@@ -38,7 +39,7 @@ class Hinteraction extends Model
         return $this->belongsToMany(Reference::class, 'hinteraction_has_references')->withTimestamps();
     }
 
-    public function herbs() 
+    public function herbs()
     {
         return $this->belongsTo(Herb::class,'herb_id');
 

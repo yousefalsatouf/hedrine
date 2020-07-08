@@ -345,6 +345,10 @@ Route::get('dinteractions/hdi_get_drugs_families', 'DinteractionController@get_d
 Route::post('/hinteractions/getHerbs','HinteractionController@getHerbs')->name('hinteractions.getHerbsById');
 Route::get('hinteractions/hti','HinteractionController@show_mecanisme_form')->name('hinteractions.hti');
 
+// advanced search start from here ..
+//this guy is about one to one search ...
+Route::get('oneHerb-oneDrug/results', 'TargetController@oneToOne');
+
 //UserPorofile
 Route::prefix('utilisateur')->middleware('user')->group(function () {
     Route::get('/', 'UserProfileController@index')->name('userprofile.index');
