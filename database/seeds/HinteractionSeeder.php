@@ -12,51 +12,193 @@ class HinteractionSeeder extends Seeder
      */
     public function run()
     {
-        Hinteraction::create( [
-            'id'=>1,
-            'herb_id'=>6,
-            'target_id'=>11,
-            'notes'=>'Des études cliniques montrent que l\'ail n\'a pas d\'effet sur le CYP1A2
-            Zhou décrit des interactions théoriques au niveau enzymatique',
-            'user_id'=>1,
-            'force_id'=>1,
-            'validated'=>0,
-            'created_at'=>NULL,
-            'updated_at'=>NULL
-            ] );
+        
 
-
-
-            Hinteraction::create( [
-            'id'=>2,
-            'herb_id'=>6,
-            'target_id'=>21,
-            'notes'=>'Certaines préparations d\'ail contenant de l\'allicine semblent induire l\'activité du CYP3A4. Cela a été démontré dans des recherches montrant une réduction significative des taux plasmatiques de saquinavir, un substrat du CYP3A4, chez les patients prenant d\'ail.
-
-            Cependant, d\'autres recherches suggèrent que d\'autres produits contenant de l\'ail et aussi de l\'allicine n\'ont pas d\'activité sur le métabolisme des substrats du CYP3A4. Dans une petite étude, avec un produit spécifique d\'ail (GarliPure Maximum Allicin Formula, Natrolm Chatsworth) ou 600 mg était consommé deux fois par jour (fournissant 3.600 µg d\'allicine par dose), pendant 12 jours consécutifs n\'a pas affecté significativement la pharmacocinétique du docétaxel, un substrat du CYP3A4.
-
-            D\'autres recherches suggèrent également que l\'huile d\'ail n\'affecte pas le CYP3A4. Des extraits contenant de l\'alliine et de l\'alliinase n\'affecte pas l\'activité du CYP3A4. Des recherches sur modèles animaux suggèrent qu\'un extrait aqueux d\'ail n\'affecte pas significativement les paramètres pharmacocinétiques de la rifampicine, un substrat du CYP3A4.
-
-            Enfin, des études cliniques utilisant le midazolam comme substrat témoin de l’activité du CYP3A4 ne montrent pas de modification significative de cette isoenzyme. ',
-            'user_id'=>1,
-            'force_id'=>6,
-            'validated'=>0,
-            'created_at'=>NULL,
-            'updated_at'=>NULL
-            ] );
-
-
-
-            Hinteraction::create( [
-            'id'=>3,
-            'herb_id'=>6,
-            'target_id'=>25,
-            'notes'=>'Une des indications de l\'ail est un stimulant de l\'immunité',
-            'user_id'=>1,
-            'force_id'=>10,
-            'validated'=>0,
-            'created_at'=>NULL,
-            'updated_at'=>NULL
-            ] );
+Hinteraction::create( [
+    'id'=>1,
+    'herb_id'=>28,
+    'target_id'=>13,
+    'force_id'=>3,
+    'notes'=>'Les phyto-œstrogènes sont susceptibles d\'interférer avec une hormonothérapie.\r\nLa génistéine et la daidzéine sont distribuées dans le corps avec des pics de concentrations plasmatiques à 4-8 heures après administration à court terme et excrété dans les 24 heures.',
+    'user_id'=>2
+    ] );
+    
+                
+    
+    Hinteraction::create( [
+    'id'=>2,
+    'herb_id'=>39,
+    'target_id'=>13,
+    'force_id'=>3,
+    'notes'=>'Les phyto-œstrogènes sont susceptibles d\'interagir avec l\'hormonothérapie.',
+    'user_id'=>2
+    ] );
+    
+                
+    
+    Hinteraction::create( [
+    'id'=>3,
+    'herb_id'=>40,
+    'target_id'=>13,
+    'force_id'=>3,
+    'notes'=>'Les phyto-œstrogènes sont susceptibles d\'interagir avec l\'hormonothérapie.',
+    'user_id'=>2
+    ] );
+    
+                
+    
+    Hinteraction::create( [
+    'id'=>4,
+    'herb_id'=>41,
+    'target_id'=>13,
+    'force_id'=>3,
+    'notes'=>'Les phyto-œstrogènes sont susceptibles d\'interagir avec l\'hormonothérapie.',
+    'user_id'=>2
+    ] );
+    
+                
+    
+    Hinteraction::create( [
+    'id'=>5,
+    'herb_id'=>42,
+    'target_id'=>13,
+    'force_id'=>5,
+    'notes'=>'Les phyto-œstrogènes sont susceptibles d\'interagir avec l\'hormonothérapie.',
+    'user_id'=>2
+    ] );
+    
+                
+    
+    Hinteraction::create( [
+    'id'=>9,
+    'herb_id'=>46,
+    'target_id'=>13,
+    'force_id'=>3,
+    'notes'=>'Les phyto-œstrogènes sont susceptibles d\'interagir avec l\'hormonothérapie.',
+    'user_id'=>2
+    ] );
+    
+                
+    
+    Hinteraction::create( [
+    'id'=>10,
+    'herb_id'=>36,
+    'target_id'=>13,
+    'force_id'=>4,
+    'notes'=>'Les phyto-œstrogènes sont susceptibles d\'interagir avec l\'hormonothérapie. Mais une étude clinique démontre que l\'actée n\'a pas d\'activité',
+    'user_id'=>2
+    ] );
+    
+                
+    
+    Hinteraction::create( [
+    'id'=>13,
+    'herb_id'=>47,
+    'target_id'=>13,
+    'force_id'=>3,
+    'notes'=>'Les phyto-œstrogènes sont susceptibles d\'interagir avec l\'hormonothérapie.',
+    'user_id'=>2
+    ] );
+    
+                
+    
+    Hinteraction::create( [
+    'id'=>14,
+    'herb_id'=>48,
+    'target_id'=>13,
+    'force_id'=>3,
+    'notes'=>'Les phyto-œstrogènes sont susceptibles d\'interagir avec l\'hormonothérapie.',
+    'user_id'=>2
+    ] );
+    
+                
+    
+    Hinteraction::create( [
+    'id'=>15,
+    'herb_id'=>49,
+    'target_id'=>13,
+    'force_id'=>3,
+    'notes'=>'Les phyto-œstrogènes sont susceptibles d\'interagir avec l\'hormonothérapie.',
+    'user_id'=>2
+    ] );
+    
+                
+    
+    Hinteraction::create( [
+    'id'=>17,
+    'herb_id'=>25,
+    'target_id'=>13,
+    'force_id'=>3,
+    'notes'=>'Les phyto-œstrogènes sont susceptibles d\'interagir avec l\'hormonothérapie.\r\nLa génistéine et la daidzéine sont distribuées dans le corps avec des pics de concentration plasmatiques à 4-8 heures après 1 administration et excrétées dans les 24 heures. L\'administration chronique d\'isoflavones de trèfle rouge a dans une demi-vie de 13-16 heures',
+    'user_id'=>2
+    ] );
+    
+                
+    
+    Hinteraction::create( [
+    'id'=>18,
+    'herb_id'=>27,
+    'target_id'=>13,
+    'force_id'=>3,
+    'notes'=>'Les phytostérols sont susceptibles d\'interagir avec l\'hormonothérapie.',
+    'user_id'=>2
+    ] );
+    
+                
+    
+    Hinteraction::create( [
+    'id'=>19,
+    'herb_id'=>74,
+    'target_id'=>13,
+    'force_id'=>3,
+    'notes'=>'Les phyto-œstrogènes sont susceptibles d\'interagir avec l\'hormonothérapie.',
+    'user_id'=>2
+    ] );
+    
+                
+    
+    Hinteraction::create( [
+    'id'=>20,
+    'herb_id'=>1,
+    'target_id'=>10,
+    'force_id'=>5,
+    'notes'=>'Une très faible activité a été montrée in vitro surement conséquence clinique',
+    'user_id'=>2
+    ] );
+    
+                
+    
+    Hinteraction::create( [
+    'id'=>21,
+    'herb_id'=>1,
+    'target_id'=>21,
+    'force_id'=>3,
+    'notes'=>'Les polysaccharides immunomodulants sont susceptibles d\'interagir avec les anticorps monoclonaux. Mais il n\'y a pas d\'argument pour penser qu\'il y ait une interaction avec les cytotoxiques autres que ceux ayant une structure d\'anticorps.',
+    'user_id'=>2
+    ] );
+    
+                
+    
+    Hinteraction::create( [
+    'id'=>22,
+    'herb_id'=>1,
+    'target_id'=>7,
+    'force_id'=>5,
+    'notes'=>'',
+    'user_id'=>2
+    ] );
+    
+                
+    
+    Hinteraction::create( [
+    'id'=>23,
+    'herb_id'=>1,
+    'target_id'=>1,
+    'force_id'=>5,
+    'notes'=>'4 études cliniques\r\n',
+    'user_id'=>2
+    ] );
+    
+    
     }
 }
