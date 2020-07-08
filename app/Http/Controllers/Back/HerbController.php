@@ -9,6 +9,7 @@ use App\Herb;
 use App\Target;
 use App\TemporaryData;
 use App\User;
+use Datatables;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -28,9 +29,10 @@ class HerbController extends Controller
         $numberOfTimes_herbForms = 0;
         $lastHerb = 0;
 
-
         return view('admin.herbs.index', compact('numberOfTimes_herbForms','lastHerb'));
     }
+
+
 
     /**
      * Show the form for creating a new resource.
