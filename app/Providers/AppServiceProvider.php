@@ -41,7 +41,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
         Schema::defaultStringLength(191);
+
+        /*-------------------- Posts ---------------------- */
 
         View::composer('*', function ($view) {
 
@@ -49,55 +52,64 @@ class AppServiceProvider extends ServiceProvider
                 ->orderBy('created_at', 'desc')
                 ->Take(20)->get());
         });
-        View::composer('*', function ($view) {
 
-            $view->with('herbs', Herb::orderBy('name')->get());
-        });
-
-        view()->composer('*', function ($view) {
-            $view->with('noValidCount',Herb::where('validated',0)->get());
-        });
-        view()->composer('*', function ($view) {
-            $view->with('validatedHerb', Herb::where('validated',1)->get());
-        });
-
-        View::composer('*', function ($view) {
-
-            $view->with('drugs', Drug::orderBy('name')->get());
-        });
-
-
-        View::composer('*', function ($view) {
-
-            $view->with('targets', Target::all());
-        });
-
-       // view()->share('postsToValidate', Post::whereColumn('created_at','!=', 'updated_at')->orderBy('updated_at','desc')->get());
-
-
-        View::composer('*', function ($view) {
-
-            $view->with('references', Reference::all());
-        });
+        /*-------------------- TargetType ---------------------- */
 
         View::composer('*', function ($view) {
 
             $view->with('target_types', TargetType::all());
         });
 
+        /*--------------------  Atc ------------------------------ */
+
         View::composer('*', function ($view) {
 
             $view->with('atcs', Atc::all());
         });
+        /*--------------------  HerbForm ------------------------------ */
 
         View::composer('*', function ($view) {
 
             $view->with('herb_forms', HerbForm::all());
         });
 
+         /*--------------------  DrugFamily ------------------------------ */
+
         View::composer('*', function ($view) {
 
             $view->with('drug_families', DrugFamily::all());
+        });
+
+        /*-------------------- Drugs ---------------------- */
+
+        view()->composer('*', function ($view) {
+            $view->with('noValidDrugs',Drug::where('validated', '<=', 0)->get());
+        });
+        View::composer('*', function ($view) {
+
+            $view->with('drugs', Drug::orderBy('name')->get());
+        });
+
+        /*-------------------- Herbs ---------------------- */
+
+        View::composer('*', function ($view) {
+
+            $view->with('herbs', Herb::orderBy('name')->get());
+        });
+
+        view()->composer('*', function ($view) {
+            $view->with('validatedHerb',Herb::where('validated',1)->get());
+        });
+        view()->composer('*', function ($view) {
+            $view->with('noValidCount',Herb::where('validated',0)->get());
+        });
+
+        view()->composer('partials.table-add-del-view', function ($view) {
+            $view->with('waitingHerb',auth()->user()->herbs()->where('validated',0)->get());
+        });
+
+        view()->composer('partials.modifier-plante', function ($view) {
+            $view->with('modifierHerb',auth()->user()->herbs()->where('validated',-1)->get());
         });
 
         view()->composer('*', function ($view) {
@@ -105,30 +117,54 @@ class AppServiceProvider extends ServiceProvider
             //dd($counter);
             $view->with('noValidHerbsCounter', $counter);
         });
+
+
+        /*-------------------- References ---------------------- */
+
         view()->composer('*', function ($view) {
-            $view->with('noValidDrugs',Drug::where('validated', '<=', 0)->get());
+            $view->with('noValidReferences',Reference::where('validated', '<=', 0)->count());
         });
         view()->composer('*', function ($view) {
-            $view->with('validatedHerb',Herb::where('validated',1)->get());
+            $view->with('validReferences',Reference::where('validated', 1)->get());
+        });
+        View::composer('*', function ($view) {
+
+            $view->with('references', Reference::all());
+        });
+
+         /*-------------------- Targets ---------------------- */
+
+         view()->composer('*', function ($view) {
+            $view->with('noValidTargets',Target::where('validated', '<=', 0)->count());
         });
         view()->composer('*', function ($view) {
-            $view->with('validatedHinteractions',Hinteraction::where('validated',1)->get());
+            $view->with('validTargets',Target::where('validated', 1)->get());
         });
-        view()->composer('*', function ($view) {
-            $view->with('validatedDinteractions',Dinteraction::where('validated',1)->get());
+        View::composer('*', function ($view) {
+
+            $view->with('targets', Target::all());
         });
+
+        /*-------------------- Hinteractions ---------------------- */
+
         view()->composer('*', function ($view) {
             $view->with('noValidHinteractions',Hinteraction::where('validated', '<=', 0)->count());
         });
         view()->composer('*', function ($view) {
+            $view->with('validatedHinteractions',Hinteraction::where('validated',1)->get());
+        });
+
+        /*-------------------- Dinteractions ---------------------- */
+
+        view()->composer('*', function ($view) {
+            $view->with('validatedDinteractions',Dinteraction::where('validated',1)->get());
+        });
+        view()->composer('*', function ($view) {
             $view->with('noValidDinteractions',Dinteraction::where('validated', '<=', 0)->count());
         });
-        view()->composer('partials.table-add-del-view', function ($view) {
-            $view->with('waitingHerb',auth()->user()->herbs()->where('validated',0)->get());
-        });
-        view()->composer('partials.modifier-plante', function ($view) {
-            $view->with('modifierHerb',auth()->user()->herbs()->where('validated',-1)->get());
-        });
+
+
+        /*-------------------- Dashboard ---------------------- */
 
         View::composer('dashboard.layout', function ($view) {
             $title = config('titles.' . Route::currentRouteName());

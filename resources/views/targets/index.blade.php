@@ -39,7 +39,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					@foreach (isset($target)?$target:$targets as $target)
+					@foreach (isset($target)?$target:$validTargets as $target)
 					<tr>
                   <td class="style_table">{{ $target->targetype->name }}</td>
 						<td>

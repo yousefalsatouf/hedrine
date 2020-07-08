@@ -18,7 +18,7 @@ class CreateTargetsTable extends Migration
             $table->string('name', 45)->comment('Un mécanisme = une plante + un médicament (?)');
             $table->string('long_name');
             $table->text('notes')->nullable();
-            $table->dateTime('validated')->nullable();
+            $table->integer('validated')->default(0);
             $table->timestamps();
         });
     }

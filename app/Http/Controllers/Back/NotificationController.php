@@ -54,6 +54,13 @@ class NotificationController extends Controller
         return view('notifications.index_dinteractiontarget',compact('user'));
     }
 
+    public function show_references(Request $request) {
+
+        $user = $request->user();
+
+        return view('notifications.index_reference',compact('user'));
+    }
+
     public function showNewUserRequests(Request $request)
     {
         $allNewUsers = auth()->user()->whereNotNull('email_verified_at')->where('is_active', '=', 0)->WhereNull('denied')->get();

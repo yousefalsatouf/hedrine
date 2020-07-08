@@ -145,7 +145,7 @@
                             @if($newHerbs === 1) new Herb
                             @else new Herbs
                             @endif
-                            <span class="float-right text-muted text-sm">3 mins</span>
+
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="{{ route('notification.index_drugs') }}" class="dropdown-item">
@@ -153,32 +153,40 @@
                             @if($newDrugs === 1) new Drug
                             @else new Drugs
                             @endif
-                            <span class="float-right text-muted text-sm">3 mins</span>
+
                         </a>
 
                         <div class="dropdown-divider"></div>
                         <a href="{{ route('notification.index_targets') }}" class="dropdown-item">
-                            <i class="fas fa-file mr-2"></i> {{ $newTargets }}
+                            <i class="fas fa-file mr-2"></i> {{ $noValidTargets }}
                             @if($newHerbs === 1) new Target
                             @else new Targets
                             @endif
-                            <span class="float-right text-muted text-sm">2 days</span>
+
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="{{ route('notification.index_hinteractiontarget') }}" class="dropdown-item">
-                            <i class="fas fa-seedling mr-1" style="color: seagreen"></i> {{$noValidHinteractions}}
+                            <i class="fas fa-sync mr-1" style="color: seagreen"></i> {{$noValidHinteractions}}
                             @if($newHerbs === 1) new Hinteraction Target
                             @else new Hinteractions Targets
                             @endif
-                            <span class="float-right text-muted text-sm">3 mins</span>
+
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="{{ route('notification.index_dinteractiontarget') }}" class="dropdown-item">
-                            <i class="fas fa-seedling mr-1" style="color: seagreen"></i> {{$noValidDinteractions}}
+                            <i class="fas fa-sync  mr-1" style="color:red"></i> {{$noValidDinteractions}}
                             @if($newHerbs === 1) new Dinteraction Target
                             @else new Dinteractions Target
                             @endif
-                            <span class="float-right text-muted text-sm"> 3 mins</span>
+
+
+                        <div class="dropdown-divider"></div>
+                        <a href="{{ route('notification.index_reference') }}" class="dropdown-item">
+                            <i class="fas fa-book-medical mr-1" style="color: seagreen"></i> {{$noValidReferences}}
+                            @if($newHerbs === 1) new Reference
+                            @else new References
+                            @endif
+
                         </a>
                         <div class="dropdown-divider"></div>
 

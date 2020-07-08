@@ -22,7 +22,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach ($references as $reference)
+				@foreach ($validReferences as $reference)
 				<tr class="text-center">
 					<td>
 						<a href="" class="add_style" ><strong class="text-dark">{{$reference->title}}</strong></a>
