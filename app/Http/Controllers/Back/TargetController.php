@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Back;
 
 use App\DataTables\DrugssDataTable;
+use App\Dinteraction;
+use App\Hinteraction;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TargetRequest;
 use App\Drug;
@@ -129,4 +131,5 @@ class TargetController extends Controller
 
         return view('admin.targets.show',$target);
     }
+
 }

@@ -22,7 +22,7 @@
 
                         <div class="form-group col-md-6" id="herb_div">
 							<label class="form-check-label"><strong><h5>Plante <i class="fa fa-info-circle text-danger"></i></h5></strong></label>
-							<select name="herb[]" id="herb" class="form-control custom-select">
+							<select name="herb" id="herb" class="form-control custom-select" required>
 							</select>
                         </div>
                         &nbsp;&nbsp;&nbsp;&nbsp;
@@ -53,7 +53,7 @@
                     <div class="form-row field_wrapper" id="countDrug">
                         <div class="form-group col-md-6" id="drug_div">
 							<label class="form-check-label"><strong><h5 class="drug-title">DCI <i class="fa fa-info-circle text-danger"></i></h5></strong></label>
-							<select name="drug" id="drug" class="form-control custom-select" >
+							<select name="drug" id="drug" class="form-control custom-select" required>
 							</select>
                         </div>&nbsp;&nbsp;&nbsp;
 						<div class="form-group col-md-3">
@@ -64,8 +64,7 @@
                             </div>
 						</div>
                     </div>
-
-					<button type="submit" class="btn btn-outline-success" style="border: 0; border-bottom: 1px solid green">Chercher <i class="fas fa-chevron-right"></i></button>
+					<button type="button" id="go-search" class="btn btn-outline-success" style="border: 0; border-bottom: 1px solid green">Chercher <i class="fas fa-chevron-right"></i></button>
 				</fieldset>
 		   </form>
 	   </div>
@@ -96,27 +95,44 @@
 	</div>
 	</div>
 
-	<div class="row" id="results" style="display: none">
-		<div class="col-md-1"></div>
-      <div class="col-md-8">
-		<hr>
-			<div class="row">
-               <div class="col-md-6">
-				   <h3 style="color: red"> Cas Cliniques</h3>
-				   <p>
-					   Aucune étude ni cas référencé
-				   </p>
-			   </div>
-			</div>
-			<div class="row">
-				<div class="col-md-6" id="hinter">
-					<h3 style="color: red"> Interactions Potentielles</h3>
-				   <p>
-					   Aucune interaction référencée
-				   </p>
-				</div>
-			</div>
-	  </div>
+	<div class="row" id="results">
+          <div class="col-md-8">
+                <hr>
+                <div class="row">
+                   <div class="col-md-6">
+                       <h3 style="color: red"> Cas Cliniques</h3>
+                       <p>
+                           Aucune étude ni cas référencé
+                       </p>
+                   </div>
+                </div>
+                <div class="row">
+                    <div class="col-md" id="non">
+                        <h3 style="color: red"> Interactions Potentielles</h3>
+                        <div id="result">
+                            <p class="d-none">
+                                Aucune interaction référencée
+                            </p>
+                            <table id="valid-form" class="table">
+                                <thead>
+                                <tr>
+                                    <th class="herb"></th>
+                                    <th></th>
+                                    <th ></th>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+          </div>
     </div>
 
 @endsection

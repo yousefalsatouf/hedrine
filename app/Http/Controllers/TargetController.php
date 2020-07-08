@@ -158,4 +158,20 @@ class TargetController extends Controller
         return view("targets/details",compact('target'));
 
     }
+
+    //advanced search starts here
+
+    public function oneToOne(Request $request)
+    {
+        $result =  DB::table('targets')
+            ->join('hinteractions', 'hinteractions.target_id', '=', 'targets.id')
+            ->join('dinteractions', 'dinteractions.target_id', '=', 'targets.id')
+            ->where('hinteractions.herb_id', $request->herbId)
+            ->where('dinteractions.drug_id', $request->drugId)
+            ->get();
+
+
+        return $result;
+
+    }
 }

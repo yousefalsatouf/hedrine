@@ -571,6 +571,7 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 <script src="{{ asset('/js/quickEdit.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/js/manage.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/js/advancedSearch.js') }}" type="text/javascript"></script>
 
 {{-- <script src="{{ asset('/js/herbJson.js') }}" type="text/javascript"></script> --}}
 {{-- DD/Thierry 30 juin on met ce code pour appeler le script js se trouvant dans index.blade.php ==> resources/views/interaction/index.blade.php

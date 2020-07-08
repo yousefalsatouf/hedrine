@@ -1,6 +1,6 @@
 <?php
 
-namespace App; 
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,6 +12,7 @@ class Dinteraction extends Model
      *
      * @var array
      */
+    protected $table = 'dinteractions';
     protected $fillable = [
 
         'drug_id','target_id','force_id','notes'
