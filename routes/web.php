@@ -345,6 +345,8 @@ Route::get('dinteractions/hdi_get_drugs_families', 'DinteractionController@get_d
 Route::post('/hinteractions/getHerbs','HinteractionController@getHerbs')->name('hinteractions.getHerbsById');
 Route::get('hinteractions/hti','HinteractionController@show_mecanisme_form')->name('hinteractions.hti');
 
+Route::get('herb-list', 'HerbController@herbsList');
+
 //UserPorofile
 Route::prefix('utilisateur')->middleware('user')->group(function () {
     Route::get('/', 'UserProfileController@index')->name('userprofile.index');

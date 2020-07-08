@@ -38,14 +38,18 @@
     <!-- summernote -->
     <link rel="stylesheet" href="{{asset('/adminlte/plugins/summernote/summernote-bs4.css')}}">
 
+
     <!-- DataTables -->
     <link rel="stylesheet" href="{{ asset('/adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
 
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed" id="layout">
+
 <div class="wrapper">
 
     <!-- Navbar -->
@@ -142,50 +146,45 @@
                         <div class="dropdown-divider"></div>
                         <a href="{{ route('admin.herbs') }}" class="dropdown-item">
                             <i class="fas fa-seedling mr-2" style="color: seagreen"></i> {{$noValidHerbsCounter}}
-                            @if($newHerbs === 1) new Herb
-                            @else new Herbs
-                            @endif
-
+                             new Herbs
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="{{ route('notification.index_drugs') }}" class="dropdown-item">
                             <i class="fas fa-capsules mr-2" style="color:#7d041e"></i> {{ $noValidDrugs->count() }}
-                            @if($newDrugs === 1) new Drug
-                            @else new Drugs
-                            @endif
+
+                              new Drugs
+
 
                         </a>
 
                         <div class="dropdown-divider"></div>
                         <a href="{{ route('notification.index_targets') }}" class="dropdown-item">
                             <i class="fas fa-file mr-2"></i> {{ $noValidTargets }}
-                            @if($newHerbs === 1) new Target
-                            @else new Targets
-                            @endif
+
+                                new Targets
+
 
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="{{ route('notification.index_hinteractiontarget') }}" class="dropdown-item">
                             <i class="fas fa-sync mr-1" style="color: seagreen"></i> {{$noValidHinteractions}}
-                            @if($newHerbs === 1) new Hinteraction Target
-                            @else new Hinteractions Targets
-                            @endif
+                             new Hinteraction Target
 
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="{{ route('notification.index_dinteractiontarget') }}" class="dropdown-item">
                             <i class="fas fa-sync  mr-1" style="color:red"></i> {{$noValidDinteractions}}
-                            @if($newHerbs === 1) new Dinteraction Target
-                            @else new Dinteractions Target
-                            @endif
+                            new Dinteraction Target
 
+
+                        </a>
 
                         <div class="dropdown-divider"></div>
                         <a href="{{ route('notification.index_reference') }}" class="dropdown-item">
                             <i class="fas fa-book-medical mr-1" style="color: seagreen"></i> {{$noValidReferences}}
-                            @if($newHerbs === 1) new Reference
-                            @else new References
-                            @endif
+
+                              new References
+
 
                         </a>
                         <div class="dropdown-divider"></div>
@@ -567,11 +566,12 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('/adminlte/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 <script src="{{ asset('/adminlte/dist/js/adminlte.js') }}"></script>
+
 <!-- DataTables -->
-<script src="{{ asset('/adminlte/plugins/datatables/jquery.dataTables.min.js')}}"></script>
-<script src="{{ asset('/adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-<script src="{{ asset('/adminlte/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
-<script src="{{ asset('/adminlte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+    <script src="{{ asset('/adminlte/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{ asset('/adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{ asset('/adminlte/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+
 
 
 <!-- JP Ajout css et js pour le crud des herbs avec ses forms -->
@@ -605,8 +605,10 @@
     })
 </script>
 <!-- Recaptha -->
-@yield('dashboard-js')
+
+
 @yield('script')
+@yield('dashboard-js')
 
 </body>
 </html>

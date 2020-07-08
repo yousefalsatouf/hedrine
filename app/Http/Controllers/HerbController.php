@@ -59,6 +59,12 @@ class HerbController extends Controller
         return view('herbs/index', compact('herbsChar', 'numberOfTimes_herbForms', 'lastHerb', 'resultChars', 'disable'));
     }
 
+    public function herbsList() {
+        $herbs = DB::table('herb')->select('*');
+        return datatables()->of($herbs)
+        ->make(true);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

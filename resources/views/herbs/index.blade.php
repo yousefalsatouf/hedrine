@@ -29,7 +29,7 @@
 	 	</div>
 		<div class="col-12">
 			<div class="card-body " style="background-color: #fff">
-				<table id="example1" class="table table-bordered table-striped">
+				<table id="herb_table" class="table table-bordered table-striped">
 					<thead>
 						<tr>
 							<th> Name</th>
@@ -97,39 +97,28 @@
 @endsection
 
 @section('dashboard-js')
-<script>
-	$(function () {
+    <script>
+        $(document).ready(function() {
 
-        //console.log('hello world');
-        //this function is responsible for activating class on clicking on it the class called active-char
-        //still work on it
-        //start
-        $('.listAlphabet').on('click', function(e) {
-            //window.localStorage.setItem( 'active', 'active-char');
-            let ele = $(e.target);
-            //let className = JSON.parse( window.localStorage.getItem( 'active' ));
-            //console.log(className);
-            ele.addClass('active-char');
+            $('#herb_table').DataTable({
+                "paging": true,
+                "processing": true,
+                "lengthChange": false,
+                "searching": false,
+                "deferRender": 15,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+
+                "language":
+                {
+                    "url": '//cdn.datatables.net/plug-ins/1.10.20/i18n/French.json'
+                }
+            });
+
         });
-
-        //end
-
-
-	  $('#example1').DataTable({
-		"paging": true,
-		"lengthChange": false,
-		"searching": true,
-		"ordering": true,
-		"info": true,
-		"autoWidth": false,
-		"responsive": true,
-		"language":
-		{
-			"url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
-        }
-	  });
-	});
-  </script>
+    </script>
 @endsection
 
 @section('alfab-js')
