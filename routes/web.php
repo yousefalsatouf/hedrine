@@ -324,6 +324,7 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
         Route::name ('index_targets')->get ('/index_targets', 'NotificationController@show_targets');
         Route::name ('index_hinteractiontarget')->get ('/index_hinteractiontarget', 'NotificationController@show_hinteraction_target');
         Route::name ('index_dinteractiontarget')->get ('/index_dinteractiontarget', 'NotificationController@show_dinteraction_target');
+        Route::name ('index_reference')->get ('/index_reference', 'NotificationController@show_references');
     });
 
     //Route Pour Les Alertes

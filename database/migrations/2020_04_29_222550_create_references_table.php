@@ -20,7 +20,7 @@ class CreateReferencesTable extends Migration
             $table->smallInteger('year');
             $table->string('edition');
             $table->text('url')->nullable();
-            $table->dateTime('validated')->nullable();
+            $table->integer('validated')->default(0);
             $table->timestamps();
         });
     }
