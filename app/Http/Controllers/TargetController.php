@@ -164,12 +164,10 @@ class TargetController extends Controller
     public function oneToOne(Request $request)
     {
         $result =  DB::table('targets')
-            ->join('hinteractions', 'hinteractions.target_id', '=', 'targets.id')
-            ->join('dinteractions', 'dinteractions.target_id', '=', 'targets.id')
-            ->where('hinteractions.herb_id', $request->herbId)
-            ->where('dinteractions.drug_id', $request->drugId)
+            ->join('hinteractions', 'targets.id', '=',  'hinteractions.target_id')
+            ->join('dinteractions',  'targets.id', '=', 'dinteractions.target_id')
+            ->where('hinteractions.target_id', '=', 'dinteractions.target_id')
             ->get();
-
 
         return $result;
 

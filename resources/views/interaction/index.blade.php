@@ -100,30 +100,30 @@
                 <hr>
                 <div class="row">
                    <div class="col-md-6">
-                       <h3 style="color: red"> Cas Cliniques</h3>
-                       <p>
+                       <h3 style="color: #3a64a5"> Cas Cliniques</h3>
+                       <p class="text-danger">
                            Aucune étude ni cas référencé
                        </p>
                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md" id="non">
-                        <h3 style="color: red"> Interactions Potentielles</h3>
+                        <h3 style="color: #3a64a5"> Interactions Potentielles</h3>
                         <div id="result">
-                            <p class="d-none">
+                            <p class="text-danger d-none">
                                 Aucune interaction référencée
                             </p>
-                            <table id="valid-form" class="table">
+                            <table id="result-table" class="table">
                                 <thead>
                                 <tr>
-                                    <th class="herb"></th>
-                                    <th></th>
-                                    <th ></th>
+                                    <th class="herb">herb</th>
+                                    <th class="target">Target</th>
+                                    <th class="drug">drug</th>
                                 </tr>
                                 <tr>
+                                    <th>Effets</th>
                                     <th></th>
-                                    <th></th>
-                                    <th></th>
+                                    <th>Effets</th>
                                 </tr>
                                 </thead>
                                 <tbody>
