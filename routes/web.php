@@ -347,6 +347,11 @@ Route::get('hinteractions/hti','HinteractionController@show_mecanisme_form')->na
 
 Route::get('herb-list', 'HerbController@herbsList');
 
+// advanced search start from here ..
+//this guy is about one to one search ...
+Route::get('oneHerb-oneDrug/results', 'TargetController@oneToOne');
+
+
 //UserPorofile
 Route::prefix('utilisateur')->middleware('user')->group(function () {
     Route::get('/', 'UserProfileController@index')->name('userprofile.index');
