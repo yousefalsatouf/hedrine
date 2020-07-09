@@ -122,7 +122,7 @@ class AppServiceProvider extends ServiceProvider
         /*-------------------- References ---------------------- */
 
         view()->composer('*', function ($view) {
-            $view->with('noValidReferences',Reference::where('validated', '<=', 0)->count());
+            $view->with('noValidReferences',Reference::where('validated', '<=', 0)->get());
         });
         view()->composer('*', function ($view) {
             $view->with('validReferences',Reference::where('validated', 1)->get());
@@ -148,7 +148,7 @@ class AppServiceProvider extends ServiceProvider
         /*-------------------- Hinteractions ---------------------- */
 
         view()->composer('*', function ($view) {
-            $view->with('noValidHinteractions',Hinteraction::where('validated', '<=', 0)->count());
+            $view->with('noValidHinteractions',Hinteraction::where('validated', '<=', 0)->get());
         });
         view()->composer('*', function ($view) {
             $view->with('validatedHinteractions',Hinteraction::where('validated',1)->get());
@@ -160,7 +160,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('validatedDinteractions',Dinteraction::where('validated',1)->get());
         });
         view()->composer('*', function ($view) {
-            $view->with('noValidDinteractions',Dinteraction::where('validated', '<=', 0)->count());
+            $view->with('noValidDinteractions',Dinteraction::where('validated', '<=', 0)->get());
         });
 
 
