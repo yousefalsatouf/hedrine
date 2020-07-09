@@ -164,22 +164,22 @@
 
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a href="{{ route('notification.index_hinteractiontarget') }}" class="dropdown-item">
-                            <i class="fas fa-sync mr-1" style="color: seagreen"></i> {{$noValidHinteractions}}
+                        <a href="{{ route('admin.hinteractiontarget') }}" class="dropdown-item">
+                            <i class="fas fa-sync mr-1" style="color: seagreen"></i> {{$noValidHinteractions->count()}}
                              new Hinteraction Target
 
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a href="{{ route('notification.index_dinteractiontarget') }}" class="dropdown-item">
-                            <i class="fas fa-sync  mr-1" style="color:red"></i> {{$noValidDinteractions}}
+                        <a href="{{ route('admin.dinteractiontarget') }}" class="dropdown-item">
+                            <i class="fas fa-sync  mr-1" style="color:red"></i> {{$noValidDinteractions->count()}}
                             new Dinteraction Target
 
 
                         </a>
 
                         <div class="dropdown-divider"></div>
-                        <a href="{{ route('notification.index_reference') }}" class="dropdown-item">
-                            <i class="fas fa-book-medical mr-1" style="color: seagreen"></i> {{$noValidReferences}}
+                        <a href="{{ route('admin.references') }}" class="dropdown-item">
+                            <i class="fas fa-book-medical mr-1" style="color: seagreen"></i> {{$noValidReferences->count()}}
 
                               new References
 

@@ -135,6 +135,9 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
     Route::get('/herbs', 'TemporaryDataController@index')->name('admin.herbs');
     Route::get('/drugs', 'TemporaryDataController@index_drugs')->name('admin.drugs');
     Route::get('/targets', 'TemporaryDataController@index_targets')->name('admin.targets');
+    Route::get('/hinteraction/targets', 'TemporaryDataController@index_hinteraction_targets')->name('admin.hinteractiontarget');
+    Route::get('/dinteraction/targets', 'TemporaryDataController@index_dinteraction_targets')->name('admin.dinteractiontarget');
+    Route::get('/references', 'TemporaryDataController@index_references')->name('admin.references');
 
     //pour quick update ...
     Route::post('/quickEdit', 'AdminController@quickEdit')->name('admin.quickEdit');
