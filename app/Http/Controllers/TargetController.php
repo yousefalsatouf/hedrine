@@ -24,7 +24,7 @@ class TargetController extends Controller
         $posts  = Post::all();
         $herbs = Herb::all();
         $drugs = Drug::all();
-        $targets = Target::all();
+
         $targets = Target::with('targetype')->get();
         //these are for the filter chars search
         //dd($targets);
@@ -41,6 +41,7 @@ class TargetController extends Controller
         }
         $resultChars = array_unique($targetsChar);
         in_array('A', $resultChars)?$disable=null:$disable='disabled-char';
+
         return view('targets/index',compact('targets','posts','drugs','herbs', 'targetsChar', 'resultChars', 'disable'));
     }
 

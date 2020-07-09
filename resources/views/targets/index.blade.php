@@ -63,8 +63,9 @@
 	  $('#target').DataTable({
 		"paging": true,
 		"lengthChange": false,
-		"searching": true,
-		"ordering": true,
+        "searching": true,
+        "order": [[ 1, "asc" ]],
+        "ordering": true,
 		"info": true,
 		"autoWidth": false,
 		"responsive": true,
