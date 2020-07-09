@@ -215,7 +215,7 @@
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
-                <button class="btn btn-outline-success" style="border: 0; border-bottom: 1px solid green" data-toggle="dropdown" href="#">
+                <button class="btn btn-light" style="border: 0; border-bottom: 1px solid green" data-toggle="dropdown" href="#">
                     <i class="fas fa-user-circle fa-2x"></i>
                     <br>
                     <b>{{ auth()->user()->firstname }} {{ auth()->user()->name }} ({{ auth()->user()->roles->name }})</b>

@@ -18,7 +18,7 @@
                         <!-- left column -->
                         <div class="col-md-8 offset-md-2 ">
                             <!-- general form elements -->
-                            <div class="card card-success">
+                            <div class="card card-light">
                                 <div class="card-header">
                                     <h3 class="card-title"> Ajouter une nouvelle Herb Target:</h3>
                                 </div>
