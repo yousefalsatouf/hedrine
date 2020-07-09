@@ -28,7 +28,11 @@
 		</div>
 	 </div>
 	 <div class="col-12">
+        <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Targets</h1>
+        </div><!-- /.col -->
 		<div class="card-body " style="background-color: #fff">
+
             <table id="target" class="table table-bordered table-striped">
 				<thead>
 					<tr>
