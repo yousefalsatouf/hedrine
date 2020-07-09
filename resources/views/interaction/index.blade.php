@@ -94,8 +94,11 @@
 	   </div>
 	</div>
 	</div>
-
-	<div class="row" id="results">
+    <div id="get-ids">
+        <input type="hidden" id="herb-id">
+        <input type="hidden" id="drug-id">
+    </div>
+	<div class="row" id="both-results">
           <div class="col-md-8">
                 <hr>
                 <div class="row">
@@ -116,23 +119,68 @@
                             <table id="result-table" class="table">
                                 <thead>
                                 <tr>
-                                    <th class="herb">herb</th>
+                                    <th class="herb-name"></th>
+                                    <th></th>
                                     <th class="target">Target</th>
-                                    <th class="drug">drug</th>
+                                    <th class="drug-name"></th>
+                                    <th></th>
                                 </tr>
                                 <tr>
                                     <th>Effets</th>
                                     <th></th>
+                                    <th></th>
                                     <th>Effets</th>
+                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
+
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
           </div>
+    </div>
+
+    <div class="row" id="one-result">
+        <div class="col-md-8">
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 style="color: #3a64a5"> Cas Cliniques</h3>
+                    <p class="text-danger">
+                        Aucune étude ni cas référencé
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md" id="non">
+                    <h3 style="color: #3a64a5"> Interactions Potentielles</h3>
+                    <div id="result">
+                        <p class="text-danger d-none">
+                            Aucune interaction référencée
+                        </p>
+                        <table id="result-table" class="table">
+                            <thead>
+                            <tr>
+                                <th class="type-name"></th>
+                                <th></th>
+                               <th>Targets</th>
+                            </tr>
+                            <tr>
+                                <th>Effets</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 @endsection
