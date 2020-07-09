@@ -28,7 +28,11 @@
 			</div>
 	 	</div>
 		<div class="col-12">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Plantes</h1>
+            </div><!-- /.col -->
 			<div class="card-body " style="background-color: #fff">
+
 				<table id="herb_table" class="table table-bordered table-striped">
 					<thead>
 						<tr>

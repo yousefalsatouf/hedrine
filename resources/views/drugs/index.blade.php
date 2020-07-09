@@ -32,6 +32,9 @@
 		</div>
 	 </div>
 	 <div class="col-12">
+        <div class="col-sm-6">
+            <h1 class="m-0 text-dark">DCI</h1>
+        </div><!-- /.col -->
 		<div class="card-body " style="background-color: #fff">
             <table id="example1" class="table table-bordered table-striped">
 				<thead>
