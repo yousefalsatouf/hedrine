@@ -138,11 +138,11 @@ class AppServiceProvider extends ServiceProvider
             $view->with('noValidTargets',Target::where('validated', '<=', 0)->count());
         });
         view()->composer('*', function ($view) {
-            $view->with('validTargets',Target::where('validated', 1)->get());
+            $view->with('validTargets',Target::where('validated', 1)->orderBy('name')->get());
         });
         View::composer('*', function ($view) {
 
-            $view->with('targets', Target::all());
+            $view->with('targets', Target::orderBy('name')->get());
         });
 
         /*-------------------- Hinteractions ---------------------- */
