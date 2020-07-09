@@ -67,7 +67,7 @@
                                 <th scope="col">ID</th>
                                 {{--<th scope="col">Genre</th>--}}
                                 <th scope="col">Titre</th>
-                                <th scope="col">Valeur d'origine</th>
+                                <th scope="col">Valeur d origine</th>
                                 <th scope="col">Nouvelle valeur</th>
                                 <th scope="col">Auteur</th>
                                 <th scope="col">Date</th>

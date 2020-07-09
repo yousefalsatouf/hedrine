@@ -65,6 +65,32 @@ class AdminController extends Controller
         return response()->json();
     }
 
+    public function drugEdit(Request $request)
+    {
+        if ($request->temporary)
+        {
+            DB::table('temporary_data')->where('type_table', 'drugs')->where('id', $request->tid)->update(['new_value'=>$request->new]);
+
+        }else{
+            $forms = $request->forms;
+
+            DB::table('drugs')->where('validated', '!=', 1)->where('id', $request->id)
+                ->update([
+                    'name' => $request->name,
+                ]);
+
+            DB::table('drugs')->where('drug_families_id', $request->id)->delete();
+            foreach ($forms as $id)
+            {
+                DB::table('drugs')->insert(['herb_id' => $request->id, 'drug_families_id' => $id]);
+            }
+        }
+
+        Alert::success("C'est Ok");
+
+        return response()->json();
+    }
+
     public function approve(Request $request) {
 
         //echo $request->id;
@@ -87,6 +113,29 @@ class AdminController extends Controller
 
     }
 
+    public function approve_drug(Request $request) {
+
+        //echo $request->id;
+        if ($request->temporary)
+        {
+            $fields = ["name"];
+            foreach ($fields as $one)
+            {
+                if ($one === $request->title)
+                    DB::table('drugs')->where('id', $request->typeid)->update([$one=>$request->value]);
+            }
+            DB::table('temporary_data')->where('type_table', 'drugs')->where('id', $request->id)->delete();
+
+        }else
+        {
+            DB::table('drugs')->where('id', '=', $request->id)->update(['validated'=>1, "verified_by" => Auth::user()->name." ".Auth::user()->firstname]);
+        }
+        Alert::success('Ok !', 'Nouveau DCI approuvé avec succès');
+        return response()->json(['id' => $request->id]);
+
+    }
+
+
     public function refuse(Request $request)
     {
         $id = $request->id;
@@ -106,6 +155,30 @@ class AdminController extends Controller
         }
 
         Alert::success('Ok !', 'La plante a bien été refusée');
+
+        return response()->json(['id'=>$id]);
+    }
+
+    public function refuse_drug(Request $request)
+    {
+        $id = $request->id;
+        $user = DB::table('users')->where('id', $request->id)->get();
+        $email = DB::table('users')->where('id', $request->id)->pluck('email');
+
+        $msg = $request->msg;
+
+        if ($request->temporary)
+        {
+            DB::table('temporary_data')->where('type_table', 'drugs')->where('id', '=', $id)->delete();
+        }else
+        {
+            //sending an email
+            //event(new HerbRefuseEvent($user, $email, $msg));
+            //Mail::to($email)->send(new HerbRefuse($user, $msg));
+            DB::table('drugs')->where('id', $id)->delete();
+        }
+
+        Alert::success('Ok !', 'Le DCI a bien été refusé');
 
         return response()->json(['id'=>$id]);
     }
