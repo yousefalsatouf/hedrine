@@ -118,7 +118,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <small class="d-flex justify-content-end">{{$noValidinteractionTargetsModified->links()}}</small>
+                    <small class="d-flex justify-content-end">{{$noValidDinteractionTargetsModified->links()}}</small>
                 </div>
             </div>
         </div>
