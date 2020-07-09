@@ -142,7 +142,7 @@
                         <span class="badge badge-info navbar-badge" style="font-size: 15.5px" >{{ $noValidHerbsCounter }}</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <span class="dropdown-item dropdown-header"> {{ $noValidHerbsCounter }} Notifications</span>
+
                         <div class="dropdown-divider"></div>
                         <a href="{{ route('admin.herbs') }}" class="dropdown-item">
                             <i class="fas fa-seedling mr-2" style="color: seagreen"></i> {{$noValidHerbsCounter}}
