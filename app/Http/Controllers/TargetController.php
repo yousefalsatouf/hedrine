@@ -169,6 +169,15 @@ class TargetController extends Controller
 
         if ($request->herbId && $request->drugId)
         {
+            $result = DB::table('targets')
+                ->join('hinteractions', 'targets.id', '=','hinteractions.target_id')
+                ->leftJoin('forces', 'forces.id', '=', 'hinteractions.force_id')
+                ->join('dinteractions', 'targets.id', '=','dinteractions.target_id')
+                ->select('hinteractions.notes as hNotes', 'dinteractions.notes as dNotes', 'targets.name as targetName', 'forces.name as hForce', 'forces.color as hColor')
+                ->where('hinteractions.herb_id', $request->herbId)
+                ->where('dinteractions.drug_id', $request->drugId)
+                ->get();
+
             /*$result =  DB::table('hinteractions')
                 ->join('dinteractions', 'hinteractions.target_id', '=','dinteractions.target_id')
                 ->join('dinteractions', 'hinteractions.target_id', '=','dinteractions.target_id')
@@ -186,12 +195,12 @@ class TargetController extends Controller
                 ->where('hinteractions.herb_id', $request->herbId)
                 ->where('dinteractions.drug_id', $request->drugId)
                 ->get();*/
-            $result =  DB::table('hinteractions')
+            /*$result =  DB::table('hinteractions')
                 ->join('dinteractions', 'hinteractions.target_id', '=','dinteractions.target_id')
                 ->where('hinteractions.herb_id', $request->herbId)
                 ->where('dinteractions.drug_id', $request->drugId)
                 ->select('hinteractions.notes as hNotes', 'dinteractions.notes as dNotes')
-                ->get();
+                ->get();*/
 
             $herb =  DB::table('herbs')->where('id', $request->herbId)->pluck('name');
             $drug = DB::table('drugs')->where('id', $request->drugId)->pluck('name');

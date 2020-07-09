@@ -27,27 +27,27 @@ $(document).ready(function()
                     let herbName = data.herb[0];
                     let drugName = data.drug[0];
                     let bodyRows = '';
-                    //console.log(data)
+                    console.log(data.result)
                     $('.herb-name').text(herbName);
                     $('.drug-name').text(drugName);
                     //console.log(data.result)
                     $.each(data.result, function(i, type)
                     {
-                        /*let color;
-                        switch (herbs.color) {
+                        let color;
+                        switch (type.hColor) {
                             case 'rouge': color="red"; break;
-                            case 'orange': color="orange"; break;
-                            case 'jaune': color="yalow"; break;
-                            case 'vert': color="green"; break;
-                            case 'mauve': color="mauve"; break;
-                            case 'brun': color="brown"; break;
+                            case 'orange': color="#FF8C00"; break;
+                            case 'jaune': color="#FFD700"; break;
+                            case 'vert': color="#8FBC8F"; break;
+                            case 'mauve': color="#b87b8d"; break;
+                            case 'brun': color="#FAEBD7"; break;
                             case 'blanc': color="white"; break;
-                        }*/
+                        }
+
                         bodyRows += "<tr>"+
                             "<td>"+type.hNotes+"</td>"+
-                            //"<td style='color:"+color+"'>"+herbs.forceName+"</td>"+
-                            "<td>test hinteractions force here</td>"+
-                            "<td>test target here</td>"+
+                            "<td style='background-color:"+color+"'>"+type.hForce+"</td>"+
+                            "<td><strong>"+type.targetName+"</strong></td>"+
                             "<td>"+type.dNotes+"</td>"+
                             "<td>test dinteractions force here</td>"+
                             "</tr>";
@@ -69,16 +69,16 @@ $(document).ready(function()
                         let color;
                         switch (herbs.color) {
                             case 'rouge': color="red"; break;
-                            case 'orange': color="orange"; break;
-                            case 'jaune': color="yalow"; break;
-                            case 'vert': color="green"; break;
-                            case 'mauve': color="mauve"; break;
-                            case 'brun': color="brown"; break;
+                            case 'orange': color="#FF8C00"; break;
+                            case 'jaune': color="#FFD700"; break;
+                            case 'vert': color="#8FBC8F"; break;
+                            case 'mauve': color="#b87b8d"; break;
+                            case 'brun': color="#FAEBD7"; break;
                             case 'blanc': color="white"; break;
                         }
                         bodyRows += "<tr>"+
                             "<td>"+herbs.notes+"</td>"+
-                            "<td style='color:"+color+"'>"+herbs.forceName+"</td>"+
+                            "<td style='background-color:"+color+"'>"+herbs.forceName+"</td>"+
                             "<td>"+herbs.targetName+"</td>"+
                             "</tr>";
                     });
@@ -97,16 +97,16 @@ $(document).ready(function()
                         let color;
                         switch (drugs.color) {
                             case 'rouge': color="red"; break;
-                            case 'orange': color="orange"; break;
-                            case 'jaune': color="yalow"; break;
-                            case 'vert': color="green"; break;
-                            case 'mauve': color="mauve"; break;
-                            case 'brun': color="brown"; break;
+                            case 'orange': color="#FF8C00"; break;
+                            case 'jaune': color="#FFD700"; break;
+                            case 'vert': color="#8FBC8F"; break;
+                            case 'mauve': color="#b87b8d"; break;
+                            case 'brun': color="#FAEBD7"; break;
                             case 'blanc': color="white"; break;
                         }
                         bodyRows += "<tr>"+
                             "<td>"+drugs.notes+"</td>"+
-                            "<td style='color:"+color+"'>"+drugs.forceName+"</td>"+
+                            "<td style='background-color:"+color+"'>"+drugs.forceName+"</td>"+
                             "<td>"+drugs.targetName+"</td>"+
                             "</tr>";
                     });
