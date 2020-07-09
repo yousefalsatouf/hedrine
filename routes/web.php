@@ -134,14 +134,18 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
     // list temporary data
     Route::get('/herbs', 'TemporaryDataController@index')->name('admin.herbs');
     Route::get('/drugs', 'TemporaryDataController@index_drugs')->name('admin.drugs');
+    Route::get('/targets', 'TemporaryDataController@index_targets')->name('admin.targets');
 
     //pour quick update ...
     Route::post('/quickEdit', 'AdminController@quickEdit')->name('admin.quickEdit');
     Route::post('/drugEdit', 'AdminController@drugEdit')->name('admin.drugEdit');
+    Route::post('/targetEdit', 'AdminController@targetEdit')->name('admin.targetEdit');
     Route::post('/refuse','AdminController@refuse')->name('admin.refuse');
     Route::post('/refuse/drug','AdminController@refuse_drug')->name('admin.refuse_drug');
+    Route::post('/refuse/target','AdminController@refuse_target')->name('admin.refuse_target');
     Route::post('/modifs','AdminController@modifs')->name('admin.modifs');
     Route::post('/modifs/drug','AdminController@modifs_drug')->name('admin.modifs_drug');
+    Route::post('/modifs/target','AdminController@modifs_target')->name('admin.modifs_target');
 
 
     // Route pour users
