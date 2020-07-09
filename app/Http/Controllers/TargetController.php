@@ -7,6 +7,7 @@ use App\Target;
 use App\TargetType;
 use App\Herb;
 use App\Drug;
+use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
@@ -163,13 +164,61 @@ class TargetController extends Controller
 
     public function oneToOne(Request $request)
     {
-        $result =  DB::table('targets')
-            ->join('hinteractions', 'targets.id', '=',  'hinteractions.target_id')
-            ->join('dinteractions',  'targets.id', '=', 'dinteractions.target_id')
-            ->where('hinteractions.target_id', '=', 'dinteractions.target_id')
-            ->get();
+        $result='';
 
-        return $result;
+        if ($request->herbId && $request->drugId)
+        {
+            /*$result =  DB::table('hinteractions')
+                ->join('dinteractions', 'hinteractions.target_id', '=','dinteractions.target_id')
+                ->join('dinteractions', 'hinteractions.target_id', '=','dinteractions.target_id')
+                ->join('targets', 'hinteractions.target_id', '=','targets.id')
+                ->join('forces', 'hinteractions.force_id', '=','forces.id')
+                ->join('targets', 'dinteractions.target_id', '=','targets.id')
+                ->join('forces', 'dinteractions.force_id', '=','forces.id')
+                ->where('hinteractions.herb_id', $request->herbId)
+                ->where('dinteractions.drug_id', $request->drugId)
+                //->select('hinteractions.notes as hNotes', 'dinteractions.notes as Dnotes', 'forces.name as hForceName', 'forces.name as dForceName')
+                ->get();*/
+           /* $result = Target::with('dinteractions','hinteractions','dinteractions.targets',
+                'hinteractions.targets','hinteractions.forces','dinteractions.forces','hinteractions.references','dinteractions.references')
+                ->join('dinteractions', 'hinteractions.target_id', '=','dinteractions.target_id')
+                ->where('hinteractions.herb_id', $request->herbId)
+                ->where('dinteractions.drug_id', $request->drugId)
+                ->get();*/
+            $result =  DB::table('hinteractions')
+                ->join('dinteractions', 'hinteractions.target_id', '=','dinteractions.target_id')
+                ->where('hinteractions.herb_id', $request->herbId)
+                ->where('dinteractions.drug_id', $request->drugId)
+                ->select('hinteractions.notes as hNotes', 'dinteractions.notes as dNotes')
+                ->get();
 
+            $herb =  DB::table('herbs')->where('id', $request->herbId)->pluck('name');
+            $drug = DB::table('drugs')->where('id', $request->drugId)->pluck('name');
+
+            return response()->json(['result'=>$result, 'herb'=>$herb, 'drug'=>$drug]);
+        } elseif ($request->herbId)
+        {
+            $result = DB::table('hinteractions')
+                ->leftJoin('targets', 'hinteractions.target_id', '=', 'targets.id')
+                ->rightJoin('forces', 'hinteractions.force_id', '=', 'forces.id')
+                ->where('hinteractions.herb_id', $request->herbId)
+                ->select('hinteractions.notes as notes', 'targets.name as targetName', 'forces.name as forceName', 'forces.color as color')
+                ->get();
+            $herb = DB::table('herbs')->where('id', $request->herbId)->pluck('name');
+
+            return response()->json(['result'=>$result, 'herb'=>$herb]);
+        }elseif ( $request->drugId)
+        {
+            $result = DB::table('dinteractions')
+                ->leftJoin('targets', 'dinteractions.target_id', '=', 'targets.id')
+                ->rightJoin('forces', 'dinteractions.force_id', '=', 'forces.id')
+                ->where('dinteractions.drug_id', $request->drugId)
+                ->select('dinteractions.notes as notes', 'targets.name as targetName', 'forces.name as forceName', 'forces.color as color')
+                ->get();
+
+            $drug = DB::table('drugs')->where('id', $request->drugId)->pluck('name');
+
+            return response()->json(['result'=>$result, 'drug'=>$drug]);
+        }
     }
 }
