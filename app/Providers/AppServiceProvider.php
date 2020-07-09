@@ -135,7 +135,7 @@ class AppServiceProvider extends ServiceProvider
          /*-------------------- Targets ---------------------- */
 
          view()->composer('*', function ($view) {
-            $view->with('noValidTargets',Target::where('validated', '<=', 0)->count());
+            $view->with('noValidTargets',Target::where('validated', '<=', 0)->get());
         });
         view()->composer('*', function ($view) {
             $view->with('validTargets',Target::where('validated', 1)->orderBy('name')->get());

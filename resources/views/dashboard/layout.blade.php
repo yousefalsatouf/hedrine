@@ -156,8 +156,8 @@
                         </a>
 
                         <div class="dropdown-divider"></div>
-                        <a href="{{ route('notification.index_targets') }}" class="dropdown-item">
-                            <i class="fas fa-file mr-2"></i> {{ $noValidTargets }}
+                        <a href="{{ route('admin.targets') }}" class="dropdown-item">
+                            <i class="fas fa-file mr-2"></i> {{ $noValidTargets->count() }}
 
                                 new Targets
 
@@ -577,6 +577,7 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 <script src="{{ asset('/js/quickEdit.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/js/drugEdit.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/js/targetEdit.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/js/manage.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/js/advancedSearch.js') }}" type="text/javascript"></script>
 

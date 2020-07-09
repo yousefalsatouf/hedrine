@@ -91,6 +91,31 @@ class AdminController extends Controller
         return response()->json();
     }
 
+    public function targetEdit(Request $request)
+    {
+        if ($request->temporary)
+        {
+            DB::table('temporary_data')->where('type_table', 'targets')->where('id', $request->tid)->update(['new_value'=>$request->new]);
+
+        }else{
+            $forms = $request->forms;
+
+            DB::table('targets')->where('validated', '!=', 1)->where('id', $request->id)
+                ->update([
+                    'type' => $request->targetype->name,
+                    'name' => $request->name,
+                    'long_name' => $request->long_name,
+                    'notes' => $request->notes,
+                ]);
+
+
+        }
+
+        Alert::success("C'est Ok");
+
+        return response()->json();
+    }
+
     public function approve(Request $request) {
 
         //echo $request->id;
@@ -182,6 +207,30 @@ class AdminController extends Controller
 
         return response()->json(['id'=>$id]);
     }
+    public function refuse_target(Request $request)
+    {
+        $id = $request->id;
+        $user = DB::table('users')->where('id', $request->id)->get();
+        $email = DB::table('users')->where('id', $request->id)->pluck('email');
+
+        $msg = $request->msg;
+
+        if ($request->temporary)
+        {
+            DB::table('temporary_data')->where('type_table', 'targets')->where('id', '=', $id)->delete();
+        }else
+        {
+            //sending an email
+            //event(new HerbRefuseEvent($user, $email, $msg));
+            //Mail::to($email)->send(new HerbRefuse($user, $msg));
+            DB::table('targets')->where('id', $id)->delete();
+        }
+
+        Alert::success('Ok !', 'Le Target a bien été refusé');
+
+        return response()->json(['id'=>$id]);
+    }
+
     public function modifs(Request $request) {
 
         $id = $request->id;
@@ -200,6 +249,48 @@ class AdminController extends Controller
         }
 
         Alert::success('Ok !', 'La plante doit etre corrigée et le rédacteur va être notifié.');
+        return response()->json(['id' => $herb]);
+
+    }
+    public function modifs_drug(Request $request) {
+
+        $id = $request->id;
+        $msg = $request->msg;
+        $drug = DB::table('drugs')->where('id', '=', $id)->get();
+
+        //$mail = $herb->user->email;
+        //Mail::to($mail)->send(new HerbToUpdate($herb->user,$msg));
+
+        if ($request->temporary)
+        {
+            DB::table('temporary_data')->where('id', '=', $id)->update(['validated' => -1]);
+        }else
+        {
+            DB::table('drugs')->where('id', '=', $id)->update(['validated' => -1]);
+        }
+
+        Alert::success('Ok !', 'Le dci doit etre corrigée et le rédacteur va être notifié.');
+        return response()->json(['id' => $herb]);
+
+    }
+    public function modifs_target(Request $request) {
+
+        $id = $request->id;
+        $msg = $request->msg;
+        $herb = DB::table('targets')->where('id', '=', $id)->get();
+
+        //$mail = $herb->user->email;
+        //Mail::to($mail)->send(new HerbToUpdate($herb->user,$msg));
+
+        if ($request->temporary)
+        {
+            DB::table('temporary_data')->where('id', '=', $id)->update(['validated' => -1]);
+        }else
+        {
+            DB::table('targets')->where('id', '=', $id)->update(['validated' => -1]);
+        }
+
+        Alert::success('Ok !', 'Le Target doit etre corrigée et le rédacteur va être notifié.');
         return response()->json(['id' => $herb]);
 
     }
