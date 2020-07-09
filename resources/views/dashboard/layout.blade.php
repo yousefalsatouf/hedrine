@@ -149,11 +149,9 @@
                              new Herbs
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a href="{{ route('notification.index_drugs') }}" class="dropdown-item">
+                        <a href="{{ route('admin.drugs') }}" class="dropdown-item">
                             <i class="fas fa-capsules mr-2" style="color:#7d041e"></i> {{ $noValidDrugs->count() }}
-
-                              new Drugs
-
+                            new Drugs
 
                         </a>
 
@@ -578,6 +576,7 @@
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 <script src="{{ asset('/js/quickEdit.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/js/drugEdit.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/js/manage.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/js/advancedSearch.js') }}" type="text/javascript"></script>
 

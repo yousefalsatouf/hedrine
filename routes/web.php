@@ -121,17 +121,28 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
     Route::prefix('herb')->group(function () {
     Route::middleware('ajax')->group(function() {
     Route::post('/approve','AdminController@approve')->name('admin.approve');
+    Route::post('/approve/drug','AdminController@approve_drug')->name('admin.approve_drug');
+    Route::post('/approve/target','AdminController@approve_target')->name('admin.approve_target');
+    Route::post('/approve/reference','AdminController@approve_reference')->name('admin.approve_reference');
+    Route::post('/approve/hinteractiontarget','AdminController@approve_hinteraction_target')->name('admin.approve_htarget');
+    Route::post('/approve/dinteractiontarget','AdminController@approve_dinteraction_target')->name('admin.approve_dtarget');
+
     Route::get('hinteractions/hdi','HinteractionController@index')->name('hinteractions.hdi');
 
         });
     });
     // list temporary data
     Route::get('/herbs', 'TemporaryDataController@index')->name('admin.herbs');
+    Route::get('/drugs', 'TemporaryDataController@index_drugs')->name('admin.drugs');
 
     //pour quick update ...
     Route::post('/quickEdit', 'AdminController@quickEdit')->name('admin.quickEdit');
+    Route::post('/drugEdit', 'AdminController@drugEdit')->name('admin.drugEdit');
     Route::post('/refuse','AdminController@refuse')->name('admin.refuse');
+    Route::post('/refuse/drug','AdminController@refuse_drug')->name('admin.refuse_drug');
     Route::post('/modifs','AdminController@modifs')->name('admin.modifs');
+    Route::post('/modifs/drug','AdminController@modifs_drug')->name('admin.modifs_drug');
+
 
     // Route pour users
     Route::name('drug.update')->put('drug', 'DrugController@update');
