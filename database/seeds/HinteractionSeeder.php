@@ -186,14 +186,21 @@ class HinteractionSeeder extends Seeder
             'user_id'=>2
         ] );
 
-
-
         Hinteraction::create( [
             'id'=>23,
             'herb_id'=>1,
             'target_id'=>1,
             'force_id'=>5,
             'notes'=>'4 études cliniques\r\n',
+            'user_id'=>2
+        ] );
+
+        Hinteraction::create( [
+            'id'=>8,
+            'herb_id'=>8,
+            'target_id'=>13,
+            'force_id'=>5,
+            'notes'=>'',
             'user_id'=>2
         ] );
 

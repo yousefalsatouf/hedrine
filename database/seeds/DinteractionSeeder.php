@@ -97,6 +97,15 @@ class DinteractionSeeder extends Seeder
             'notes'=>'Le torémifène est un dérivé non-stéroïde du triphényléthylène. Comme les autres composés de cette famille, le tamoxifène et le clomifène, le torémifène se lie aux récepteurs aux estrogènes.',
             'user_id'=>2
             ] );
+
+            Dinteraction::create( [
+                'id'=>8,
+                'drug_id'=>452,
+                'target_id'=>13,
+                'force_id'=>1,
+                'notes'=>'Le torémifène est un dérivé non-stéroïde du triphényléthylène. Comme les autres composés de cette famille, le tamoxifène et le clomifène, le torémifène se lie aux récepteurs aux estrogènes.',
+                'user_id'=>2
+                ] );
             
         
     }
