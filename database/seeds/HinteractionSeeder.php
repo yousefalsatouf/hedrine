@@ -80,7 +80,7 @@ class HinteractionSeeder extends Seeder
 
         Hinteraction::create( [
             'id'=>10,
-            'herb_id'=>36,
+            'herb_id'=>8,
             'target_id'=>13,
             'force_id'=>4,
             'notes'=>'Les phyto-œstrogènes sont susceptibles d\'interagir avec l\'hormonothérapie. Mais une étude clinique démontre que l\'actée n\'a pas d\'activité',
@@ -91,7 +91,7 @@ class HinteractionSeeder extends Seeder
 
         Hinteraction::create( [
             'id'=>13,
-            'herb_id'=>47,
+            'herb_id'=>8,
             'target_id'=>13,
             'force_id'=>3,
             'notes'=>'Les phyto-œstrogènes sont susceptibles d\'interagir avec l\'hormonothérapie.',
@@ -102,7 +102,7 @@ class HinteractionSeeder extends Seeder
 
         Hinteraction::create( [
             'id'=>14,
-            'herb_id'=>48,
+            'herb_id'=>8,
             'target_id'=>13,
             'force_id'=>3,
             'notes'=>'Les phyto-œstrogènes sont susceptibles d\'interagir avec l\'hormonothérapie.',
