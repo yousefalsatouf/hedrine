@@ -59,10 +59,10 @@ $(document).ready(function()
                         {
                             if (ref.hId === type.hId)
                             {
-                                link = "<div>"+
-                                    "<b><a href='"+ref.url+"'>"+ref.title+"</a></b>"+
-                                    "<strong>Author: "+ref.authors+" Year: "+ref.year+"</strong>"+
-                                    "</div>";
+                                link =  "<div>"+
+                                            "<b><a href='"+ref.url+"'>"+ref.title+"</a></b>"+
+                                            "<strong>Author: "+ref.authors+" Year: "+ref.year+"</strong>"+
+                                        "</div>";
                             }
                         });
 
