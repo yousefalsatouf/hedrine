@@ -165,19 +165,31 @@ class TargetController extends Controller
 
     public function oneToOne(Request $request)
     {
-        $result='';
 
         if ($request->herbId && $request->drugId)
         {
+            $references = DB::table('references')
+                ->join('hinteraction_has_references', 'references.id', '=','hinteraction_has_references.reference_id')
+                ->join('dinteraction_has_references', 'references.id', '=','dinteraction_has_references.reference_id')
+                ->join('hinteractions', 'hinteractions.id', '=','hinteraction_has_references.hinteraction_id')
+                ->join('dinteractions', 'dinteractions.id', '=','dinteraction_has_references.dinteraction_id')
+                ->where('hinteractions.herb_id', $request->herbId)
+                ->where('dinteractions.drug_id', $request->drugId)
+                ->select('hinteractions.id as hId', 'dinteractions.id as dId', 'references.*')
+                ->get();
+
             $result = DB::table('targets')
                 ->join('hinteractions', 'targets.id', '=','hinteractions.target_id')
                 ->join('dinteractions', 'targets.id', '=','dinteractions.target_id')
-                ->join('forces', 'forces.id', '=','hinteractions.force_id')
-               /* ->join('forces', function ($join) {
-                    $join->on('forces.id', '=', 'hinteractions.force_id')
-                         ->on('forces.id', '=', 'dinteractions.force_id');
-                })*/
-                ->select('hinteractions.notes as hNotes', 'dinteractions.notes as dNotes', 'targets.name as targetName', 'forces.name as hForce', 'forces.color as hColor')
+                // ->join('forces', function ($join) {
+                //     $join->on('forces.id', '=', 'hinteractions.force_id')
+                //          ->on('forces.id', '=', 'dinteractions.force_id');
+                // })
+
+                ->leftJoin('forces as hforce', 'hforce.id', '=', 'hinteractions.force_id')
+                ->leftJoin('forces as dforce', 'dforce.id', '=', 'dinteractions.force_id')
+
+                ->select('hinteractions.id as hId', 'dinteractions.id as dId', 'hinteractions.notes as hNotes', 'dinteractions.notes as dNotes', 'targets.name as targetName', 'hforce.name as hForce', 'hforce.color as hColor', 'dforce.name as dForce', 'dforce.color as dColor')
                 ->where('hinteractions.herb_id', $request->herbId)
                 ->where('dinteractions.drug_id', $request->drugId)
                 ->get();
@@ -185,7 +197,7 @@ class TargetController extends Controller
             $herb =  DB::table('herbs')->where('id', $request->herbId)->pluck('name');
             $drug = DB::table('drugs')->where('id', $request->drugId)->pluck('name');
 
-            return response()->json(['result'=>$result, 'herb'=>$herb, 'drug'=>$drug]);
+            return response()->json(['result'=>$result, 'references'=>$references, 'herb'=>$herb, 'drug'=>$drug]);
 
         } elseif ($request->herbId)
         {
