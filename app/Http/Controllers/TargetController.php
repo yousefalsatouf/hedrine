@@ -172,11 +172,12 @@ class TargetController extends Controller
             $result = DB::table('targets')
                 ->join('hinteractions', 'targets.id', '=','hinteractions.target_id')
                 ->join('dinteractions', 'targets.id', '=','dinteractions.target_id')
-                ->join('forces', function ($join) {
+                ->join('forces', 'forces.id', '=','hinteractions.force_id')
+               /* ->join('forces', function ($join) {
                     $join->on('forces.id', '=', 'hinteractions.force_id')
                          ->on('forces.id', '=', 'dinteractions.force_id');
-                })
-                ->select('hinteractions.notes as hNotes', 'dinteractions.notes as dNotes', 'targets.name as targetName', 'forces.name as hForce', 'forces.color as hColor', 'forces.name as dForce', 'forces.color as dColor')
+                })*/
+                ->select('hinteractions.notes as hNotes', 'dinteractions.notes as dNotes', 'targets.name as targetName', 'forces.name as hForce', 'forces.color as hColor')
                 ->where('hinteractions.herb_id', $request->herbId)
                 ->where('dinteractions.drug_id', $request->drugId)
                 ->get();

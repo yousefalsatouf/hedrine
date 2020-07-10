@@ -60,7 +60,7 @@ $(document).ready(function()
                             "<td style='background-color:"+hcolor+"'>"+type.hForce+"</td>"+
                             "<td><strong>"+type.targetName+"</strong></td>"+
                             "<td>"+type.dNotes+"</td>"+
-                            "<td style='background-color:"+dcolor+"'>"+type.dForce+"</td>"+
+                           // "<td style='background-color:"+dcolor+"'>"+type.dForce+"</td>"+
                             "</tr>";
                     });
 
