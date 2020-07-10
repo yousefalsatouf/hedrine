@@ -47,7 +47,7 @@ class DinteractionSeeder extends Seeder
             
             Dinteraction::create( [
             'id'=>4,
-            'drug_id'=>62,
+            'drug_id'=>410,
             'target_id'=>13,
             'force_id'=>1,
             'notes'=>'Le flutamide est un anti-androgène pur non stéroïdien. Il agit en bloquant les récepteurs androgéniques prostatiques.\r\n\r\nLe flutamide est dépourvu d\'action sur les hormones gonadotropes et corticosurrénaliennes.',
@@ -58,7 +58,7 @@ class DinteractionSeeder extends Seeder
             
             Dinteraction::create( [
             'id'=>5,
-            'drug_id'=>63,
+            'drug_id'=>410,
             'target_id'=>13,
             'force_id'=>1,
             'notes'=>'Anti-androgène pas de risque d\'interaction avec un phyto-oestrogene',
@@ -69,7 +69,7 @@ class DinteractionSeeder extends Seeder
             
             Dinteraction::create( [
             'id'=>6,
-            'drug_id'=>64,
+            'drug_id'=>410,
             'target_id'=>13,
             'force_id'=>1,
             'notes'=>'Le fulvestrant est un antagoniste compétitif des récepteurs aux estrogènes (RE) avec une affinité comparable à l\'estradiol. Le fulvestrant bloque les actions trophiques des estrogènes sans posséder une quelconque activité agoniste partielle (de type estrogène).',
@@ -80,7 +80,7 @@ class DinteractionSeeder extends Seeder
             
             Dinteraction::create( [
             'id'=>7,
-            'drug_id'=>65,
+            'drug_id'=>410,
             'target_id'=>13,
             'force_id'=>1,
             'notes'=>'Anti-estrogène par inhibition compétitive de la liaison de l\'estradiol avec ses récepteurs. ',
