@@ -27,7 +27,7 @@ $(document).ready(function()
                     let herbName = data.herb[0];
                     let drugName = data.drug[0];
                     let bodyRows = '';
-                    console.log(data.result)
+                    console.log(data.references)
                     $('.herb-name').text(herbName);
                     $('.drug-name').text(drugName);
                     //console.log(data.result)
@@ -55,12 +55,34 @@ $(document).ready(function()
                             case 'blanc': dcolor="white"; break;
                         }
 
+                        let hinteractionRef = $.each(data.references, function (i, ref)
+                        {
+                            if (ref.hId === type.hId)
+                            {
+                                link = "<div>"+
+                                    "<b><a href='"+ref.url+"'>"+ref.title+"</a></b>"+
+                                    "<strong>Author: "+ref.authors+" Year: "+ref.year+"</strong>"+
+                                    "</div>";
+                            }
+                        });
+
+                        let dinteractionRef = $.each(data.references, function (i, ref)
+                        {
+                            if (ref.dId === type.dId)
+                            {
+                                link = "<div>"+
+                                            "<b><a href='"+ref.url+"'>"+ref.title+"</a></b>"+
+                                            "<strong>Author: "+ref.authors+" Year: "+ref.year+"</strong>"+
+                                        "</div>";
+                            }
+                        });
+
                         bodyRows += "<tr>"+
-                            "<td>"+type.hNotes+"</td>"+
+                            "<td>"+ type.hNotes + hinteractionRef + "</td>"+
                             "<td style='background-color:"+hcolor+"'>"+type.hForce+"</td>"+
                             "<td><strong>"+type.targetName+"</strong></td>"+
-                            "<td>"+type.dNotes+"</td>"+
-                           // "<td style='background-color:"+dcolor+"'>"+type.dForce+"</td>"+
+                            "<td>"+type.dNotes + dinteractionRef + "</td>"+
+                            "<td style='background-color:"+dcolor+"'>"+type.dForce+"</td>"+
                             "</tr>";
                     });
 
