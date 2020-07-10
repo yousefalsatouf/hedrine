@@ -33,23 +33,34 @@ $(document).ready(function()
                     //console.log(data.result)
                     $.each(data.result, function(i, type)
                     {
-                        let color;
+                        let hcolor;
                         switch (type.hColor) {
-                            case 'rouge': color="red"; break;
-                            case 'orange': color="#FF8C00"; break;
-                            case 'jaune': color="#FFD700"; break;
-                            case 'vert': color="#8FBC8F"; break;
-                            case 'mauve': color="#b87b8d"; break;
-                            case 'brun': color="#FAEBD7"; break;
-                            case 'blanc': color="white"; break;
+                            case 'rouge': hcolor="red"; break;
+                            case 'orange': hcolor="#FFCC33"; break;
+                            case 'jaune': hcolor="#FFD700"; break;
+                            case 'vert': hcolor="#ccff99"; break;
+                            case 'mauve': hcolor="#ffccff"; break;
+                            case 'brun': hcolor="#EEE8AA"; break;
+                            case 'blanc': hcolor="white"; break;
+                        }
+
+                        let dcolor;
+                        switch (type.dColor) {
+                            case 'rouge': dcolor="red"; break;
+                            case 'orange': dcolor="#FFCC33"; break;
+                            case 'jaune': dcolor="#FFD700"; break;
+                            case 'vert': dcolor="#ccff99"; break;
+                            case 'mauve': dcolor="#ffccff"; break;
+                            case 'brun': dcolor="#EEE8AA"; break;
+                            case 'blanc': dcolor="white"; break;
                         }
 
                         bodyRows += "<tr>"+
                             "<td>"+type.hNotes+"</td>"+
-                            "<td style='background-color:"+color+"'>"+type.hForce+"</td>"+
+                            "<td style='background-color:"+hcolor+"'>"+type.hForce+"</td>"+
                             "<td><strong>"+type.targetName+"</strong></td>"+
                             "<td>"+type.dNotes+"</td>"+
-                            "<td>test dinteractions force here</td>"+
+                            "<td style='background-color:"+dcolor+"'>"+type.dForce+"</td>"+
                             "</tr>";
                     });
 
@@ -69,11 +80,11 @@ $(document).ready(function()
                         let color;
                         switch (herbs.color) {
                             case 'rouge': color="red"; break;
-                            case 'orange': color="#FF8C00"; break;
+                            case 'orange': color="#FFCC33"; break;
                             case 'jaune': color="#FFD700"; break;
-                            case 'vert': color="#8FBC8F"; break;
-                            case 'mauve': color="#b87b8d"; break;
-                            case 'brun': color="#FAEBD7"; break;
+                            case 'vert': color="#ccff99"; break;
+                            case 'mauve': color="#ffccff"; break;
+                            case 'brun': color="#EEE8AA"; break;
                             case 'blanc': color="white"; break;
                         }
                         bodyRows += "<tr>"+
@@ -97,11 +108,11 @@ $(document).ready(function()
                         let color;
                         switch (drugs.color) {
                             case 'rouge': color="red"; break;
-                            case 'orange': color="#FF8C00"; break;
+                            case 'orange': color="#FFCC33"; break;
                             case 'jaune': color="#FFD700"; break;
-                            case 'vert': color="#8FBC8F"; break;
-                            case 'mauve': color="#b87b8d"; break;
-                            case 'brun': color="#FAEBD7"; break;
+                            case 'vert': color="#ccff99"; break;
+                            case 'mauve': color="#ffccff"; break;
+                            case 'brun': color="#EEE8AA"; break;
                             case 'blanc': color="white"; break;
                         }
                         bodyRows += "<tr>"+
