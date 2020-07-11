@@ -30,6 +30,7 @@ class Target extends Model
     {
         return $this->belongsToMany(Drug::class, 'dinteractions')->withTimestamps();
     }
+
     public function hinteractions()
     {
         return $this->hasMany(Hinteraction::class, 'target_id', 'id');
