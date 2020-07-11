@@ -35,17 +35,17 @@
                                     <td>{{$target->user->name.' '.$target->user->firstname}}</td>
                                     <td>{{Carbon\Carbon::parse($target->updated_at)->diffForHumans()}}</td>
                                     <td class="">
-                                        <a class="btn btn-outline-success text-success btn-sm approve" data-url="{{ route('admin.approve_target') }}" data-id="{{$target->id}}" data-typeid="{{$target->type_id}}" data-title="{{$target->type_field}}" data-value="{{$target->new_value}}" role="button" data-toggle="tooltip" title="Approuver la plante">
+                                        <a class="btn btn-outline-success text-success btn-sm approve" data-url="{{ route('admin.approve_target') }}" data-id="{{$target->id}}" data-typeid="{{$target->type_id}}" data-title="{{$target->type_field}}" data-value="{{$target->new_value}}" role="button" data-toggle="tooltip" data-placement="bottom" title="Approuver la plante">
                                             <i class="fas fa-thumbs-up"></i>
                                         </a>
                                         <i class="fas fa-spinner fa-pulse fa-lg" style="display: none"></i>
-                                        <a class="btn btn-outline-danger btn-sm refuse-modal" href="#" role="button" data-id="{{ $target->id }}" data-user={{$target->user->id}} data-toggle="tooltip" title="Refuser la plante">
+                                        <a class="btn btn-outline-danger btn-sm refuse-modal" href="#"  data-id="{{ $target->id }}" data-user={{$target->user->id}} data-toggle="tooltip" data-placement="bottom" title="Refuser la plante">
                                             <i class="fas fa-thumbs-down"></i>
                                         </a>
-                                        <button {{\Illuminate\Support\Facades\Auth::user()->role_id > 2? "disabled" : ""}} class="btn btn-outline-secondary btn-sm edit-modal" role="button" data-id="{{ $target->id }}" data-name="{{$target->name}}" data-sciname="{{$target->sciname}}" data-toggle="tooltip" title="editeur rapide">
+                                        <button {{\Illuminate\Support\Facades\Auth::user()->role_id > 2? "disabled" : ""}} class="btn btn-outline-secondary btn-sm edit-modal" role="button" data-id="{{ $target->id }}" data-name="{{$target->name}}" data-sciname="{{$target->sciname}}" data-toggle="tooltip" data-placement="bottom" title="Editeur rapide">
                                             <i class="fas fa-edit"></i>
                                         </button>
-                                        <a class="btn btn-outline-info btn-sm modify-modal" href="#" role="button"  data-id="{{ $target->id }}" data-user={{$target->user->id}} data-toggle="tooltip" title="Modifier la plante">
+                                        <a class="btn btn-outline-info btn-sm modify-modal" href="#" role="button"  data-id="{{ $target->id }}" data-user={{$target->user->id}} data-toggle="tooltip" data-placement="bottom" title="Modifier la plante">
                                             <i class="fas fa-paper-plane"></i>
                                         </a>
                                     </td>
@@ -55,7 +55,7 @@
                     </table>
 
                     <br>
-                    <h3 class="text-danger"><b><i class="fas fa-seedling mr-2" style="color: red"></i> DCI Modifié</b></h3>
+                    <h3 class="text-danger"><b><i class="fas fa-seedling mr-2" style="color: red"></i> Target Modifié</b></h3>
                     <br>
                     <table id="valid-form" class="table">
                         <thead>
@@ -102,17 +102,18 @@
                                     <td>{{$target->author}}</td>
                                     <td>{{Carbon\Carbon::parse($target->updated_at)->diffForHumans()}}</td>
                                     <td class="">
-                                        <a class="btn btn-outline-success text-success btn-sm approve" data-url="{{ route('admin.approve') }}" data-temporary="temporary" data-title="{{$target->type_field}}" data-value="{{$target->new_value}}" data-id="{{$target->id}}"  data-typeid="{{$target->type_id}}" role="button" data-toggle="tooltip" title="Approuver la plante">
+                                        <a class="btn btn-outline-success text-success btn-sm approve" data-url="{{ route('admin.approve') }}" data-temporary="temporary" data-title="{{$target->type_field}}" data-value="{{$target->new_value}}" data-id="{{$target->id}}"  data-typeid="{{$target->type_id}}" role="button" data-toggle="tooltip" data-placement="bottom" data-placement="bottom" title="Approuver la plante">
                                             <i class="fas fa-thumbs-up"></i>
                                         </a>
+
                                         <i class="fas fa-spinner fa-pulse fa-lg" style="display: none"></i>
                                         <a class="btn btn-outline-danger btn-sm refuse-modal" href="#" role="button" data-id="{{ $target->id }}" data-temporary="temporary" data-user={{$target->author_id}} data-toggle="tooltip" title="Refuser la plante">
                                             <i class="fas fa-thumbs-down"></i>
                                         </a>
-                                        <button {{\Illuminate\Support\Facades\Auth::user()->role_id > 2? "disabled" : ""}} class="btn btn-outline-secondary btn-sm edit-modal-temporary" role="button" data-temporary="temporary" data-id="{{ $target->id }}" data-title="{{$target->type_field}}" data-original="{{$target->original_value}}" data-new="{{$target->new_value}}" data-toggle="tooltip" title="editeur rapide">
+                                        <button {{\Illuminate\Support\Facades\Auth::user()->role_id > 2? "disabled" : ""}} class="btn btn-outline-secondary btn-sm edit-modal-temporary" role="button" data-temporary="temporary" data-id="{{ $target->id }}" data-title="{{$target->type_field}}" data-original="{{$target->original_value}}" data-new="{{$target->new_value}}" data-toggle="tooltip" data-placement="bottom" title="Editeur rapide">
                                             <i class="fas fa-edit"></i>
                                         </button>
-                                        <a class="btn btn-outline-info btn-sm modify-modal" href="#" role="button" data-id="{{ $target->id }}" data-temporary="temporary" data-user={{$target->author_id}} data-toggle="tooltip" title="Modifier la plante">
+                                        <a class="btn btn-outline-info btn-sm modify-modal" href="#" role="button" data-id="{{ $target->id }}" data-temporary="temporary" data-user={{$target->author_id}} data-toggle="tooltip" data-placement="bottom" title="Modifier la plante">
                                             <i class="fas fa-paper-plane"></i>
                                         </a>
                                     </td>
@@ -125,8 +126,22 @@
             </div>
         </div>
     </div>
+
 @endsection
  {{--['url' => route('admin.refuse')]['url' => route('admin.modifs')]--}}
+
+ @section('tooltip')
+    <script>
+        $(document).ready(function(){
+             $('[data-toggle="tooltip"]').tooltip();
+
+            $('[data-toggle="tooltip"]').hover(function (){
+                $(this).next().addClass("animated shake");
+            });
+        });
+    </script>
+@endsection
+
 
 
 
