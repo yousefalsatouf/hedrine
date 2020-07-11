@@ -138,18 +138,18 @@
 	$(function () {
 
 	$('#hci_concern').DataTable({
-	"paging": false,
-	"lengthChange": true,
-	"searching": true,
-	"ordering": true,
-	"info": false,
-	"autoWidth": true,
-	"responsive": true,
-	"language":
-	{
-		"url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
-	}
-	});
+        "paging": false,
+        "lengthChange": true,
+        "searching": true,
+        "ordering": true,
+        "info": false,
+        "autoWidth": true,
+        "responsive": true,
+        "language":
+        {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
+        }
+        });
 	});
   </script>
 @endsection

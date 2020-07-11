@@ -14,8 +14,7 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
 
-    <!-- Tempusdominus Bbootstrap 4 -->
-    <link rel="stylesheet" href="{{asset('/adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
 
     <!-- iCheck -->
     <link rel="stylesheet" href="{{asset('/adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
@@ -532,9 +531,7 @@
 <!-- jQuery UI 1.11.4 -->
 <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-    $.widget.bridge('uibutton', $.ui.button)
-</script>
+
 <script>
     $(document).ready(function(){
         $('#MybtnModal').click(function(){
@@ -549,21 +546,19 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
-
+ <script src="https://unpkg.com/@popperjs/core@2"></script>
 <!-- (Optional) Latest compiled and minified JavaScript translation files -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
+
 <!-- ChartJS -->
 <script src="{{ asset('/adminlte/plugins/chart.js/Chart.min.js') }}"></script>
 
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="{{ asset('/adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
-<!-- Summernote -->
-<script src="{{ asset('/adminlte/plugins/summernote/summernote-bs4.min.js') }}"></script>
+
 <!-- overlayScrollbars -->
 <script src="{{ asset('/adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('/adminlte/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 <script src="{{ asset('/adminlte/dist/js/adminlte.js') }}"></script>
+<script src="{{ asset('/adminlte/dist/js/toolip.js') }}"></script>
 
 <!-- DataTables -->
     <script src="{{ asset('/adminlte/plugins/datatables/jquery.dataTables.min.js')}}"></script>
@@ -597,7 +592,7 @@
 
 <script type="text/javascript">
     $(function () {
-        $('[data-toggle="tooltip"]').tooltip();
+
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -610,6 +605,7 @@
 
 @yield('script')
 @yield('dashboard-js')
+
 
 </body>
 </html>
