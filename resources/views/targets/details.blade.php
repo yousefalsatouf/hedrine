@@ -30,46 +30,41 @@
 		<h3 style="color: #2c6877;">DCI concernées</h3>
 
 		<div class="card-body table-responsive" style="background-color: #fff" >
-			<table id="dci_concern" class="display responsive " width="100%">
+			<table id="dci_concern" class="table table-striped table-bordered " width="100%">
 				<thead>
 					<tr>
 						<th>Noms</th>
 						<th>Effets</th>
 						<th>Intensité</th>
 						<th>Notes</th>
-						<th>Références</th>
+
 					</tr>
 				</thead>
 				<tbody>
 					@foreach ($target->dinteractions as $dinteraction)
-						@foreach ($dinteraction->effects as $effect)
-							@foreach ($dinteraction->references as $reference)
-								<tr>
-									<th scope="row">
-										{{$dinteraction->targets->name}}
-										<h6>({{$dinteraction->targets->targetype->name}})</h6>
-									</th>
-									<td >{{$effect->name}}
-									</td>
-									<td >
+						<tr>
+							<th scope="row">
+								{{$dinteraction->targets->name}}
+								<h6>({{$dinteraction->targets->targetype->name}})</h6>
+							</th>
+                            <td>
+                                @foreach($dinteraction->effects as $effect)
+                                    {{ $effect->name}}
+                                @endforeach
+                            </td>
+							<td>{{$dinteraction->forces->name}}</td>
+                            <td>
+                                {{$dinteraction->notes}} <br> <br> <br>
+                                @foreach($dinteraction->references as $reference)
+                                    <a href="">{{$reference->year}} , {{$reference->edition}};</a>
+                                    <a href=" {{$reference->url}} ">
+                                        <i class="fas fa-globe-europe"></i>
+                                    </a><br>
+                                @endforeach
 
-											{{$dinteraction->forces->name}}
+                            </td>
 
-									</td>
-									<td >
-											{{$dinteraction->notes}}
-									</td>
-									<td >
-										<a href="">
-											{{$reference->year}} , {{$reference->edition}};<br>
-										</a>
-										<a href=" {{$reference->url}} ">
-											<i class="fas fa-globe-europe"></i>
-										</a>
-									</td>
-								</tr>
-							@endforeach
-						@endforeach
+						</tr>
 					@endforeach
 				</tbody>
 			</table>
@@ -79,46 +74,40 @@
 		<h3 style="color: #2c6877;">Plantes concernées</h3>
 		<br>
 		<div class="card-body table-responsive" style="background-color: #fff" >
-			<table id="hci_concern" class="display responsive " width="100%">
+			<table id="hci_concern" class="table table-striped table-bordered " width="100%">
 				<thead>
 					<tr>
 						<th>Noms</th>
 						<th>Effets</th>
 						<th>Intensité</th>
 						<th>Notes</th>
-						<th>Références</th>
+
 					</tr>
 				</thead>
 				<tbody>
 					@foreach ($target->hinteractions as $hinteraction)
-						@foreach ($hinteraction->effects as $effect)
-							@foreach ($hinteraction->references as $reference)
-								<tr>
-									<th scope="row">
-										{{$hinteraction->targets->name}}
-										<h6>({{$hinteraction->targets->targetype->name}})</h6>
-									</th>
-									<td >{{$effect->name}}
-									</td>
-									<td >
+						<tr>
+							<th scope="row">
+								{{$hinteraction->targets->name}}
+								<h6>({{$hinteraction->targets->targetype->name}})</h6>
+                            </th>
+                            <td>
+                                @foreach($hinteraction->effects as $effect)
+                                    {{ $effect->name}}
+                                @endforeach
+                            </td>
+                            <td>{{$hinteraction->forces->name}}</td>
 
-											{{$hinteraction->forces->name}}
-
-									</td>
-									<td >
-											{{$hinteraction->notes}}
-									</td>
-									<td >
-										<a href="">
-											{{$reference->year}} , {{$reference->edition}};<br>
-										</a>
-										<a href=" {{$reference->url}} ">
-											<i class="fas fa-globe-europe"></i>
-										</a>
-									</td>
-								</tr>
-							@endforeach
-						@endforeach
+                            <td>
+                                {{$hinteraction->notes}} <br> <br> <br>
+                                @foreach($hinteraction->references as $reference)
+                                    <a href="">{{$reference->year}} , {{$reference->edition}};</a>
+                                    <a href=" {{$reference->url}} ">
+                                        <i class="fas fa-globe-europe"></i>
+                                    </a><br>
+                                @endforeach
+                            </td>
+						</tr>
 					@endforeach
 				</tbody>
 			</table>

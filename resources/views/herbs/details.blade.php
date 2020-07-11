@@ -51,7 +51,7 @@
 			<h3 style="color: #2c6877;">Mécanisme impliqués</h3>
 			<br>
 			<div class="card-body table-responsive" style="background-color: #fff" >
-				<table id="dataTable_details" class="display responsive " width="100%">
+				<table id="dataTable_details" class="table table-striped table-bordered " width="100%">
 					<thead>
 						<tr>
 							<th></th>
