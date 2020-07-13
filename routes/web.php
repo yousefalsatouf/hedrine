@@ -119,15 +119,15 @@ Route::middleware(['admin'])->prefix('admin')->namespace('Back')->group(function
     // Route pour Admins
     Route::name('admin')->get('/','AdminController@index');
     Route::prefix('herb')->group(function () {
-    Route::middleware('ajax')->group(function() {
-    Route::post('/approve','AdminController@approve')->name('admin.approve');
-    Route::post('/approve/drug','AdminController@approve_drug')->name('admin.approve_drug');
-    Route::post('/approve/target','AdminController@approve_target')->name('admin.approve_target');
-    Route::post('/approve/reference','AdminController@approve_reference')->name('admin.approve_reference');
-    Route::post('/approve/hinteractiontarget','AdminController@approve_hinteraction_target')->name('admin.approve_htarget');
-    Route::post('/approve/dinteractiontarget','AdminController@approve_dinteraction_target')->name('admin.approve_dtarget');
+        Route::middleware('ajax')->group(function() {
+            Route::post('/approve','AdminController@approve')->name('admin.approve');
+            Route::post('/approve/drug','AdminController@approve_drug')->name('admin.approve_drug');
+            Route::post('/approve/target','AdminController@approve_target')->name('admin.approve_target');
+            Route::post('/approve/reference','AdminController@approve_reference')->name('admin.approve_reference');
+            Route::post('/approve/hinteractiontarget','AdminController@approve_hinteraction_target')->name('admin.approve_htarget');
+            Route::post('/approve/dinteractiontarget','AdminController@approve_dinteraction_target')->name('admin.approve_dtarget');
 
-    Route::get('hinteractions/hdi','HinteractionController@index')->name('hinteractions.hdi');
+            Route::get('hinteractions/hdi','HinteractionController@index')->name('hinteractions.hdi');
 
         });
     });
