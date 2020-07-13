@@ -42,7 +42,7 @@
                                         <a class="btn btn-outline-danger btn-sm refuse-modal" href="#"  data-id="{{ $target->id }}" data-user={{$target->user->id}} data-toggle="tooltip" data-placement="bottom" title="Refuser la plante">
                                             <i class="fas fa-thumbs-down"></i>
                                         </a>
-                                        <button {{\Illuminate\Support\Facades\Auth::user()->role_id > 2? "disabled" : ""}} class="btn btn-outline-secondary btn-sm edit-modal" role="button" data-id="{{ $target->id }}" data-name="{{$target->name}}" data-sciname="{{$target->sciname}}" data-toggle="tooltip" data-placement="bottom" title="Editeur rapide">
+                                        <button {{\Illuminate\Support\Facades\Auth::user()->role_id > 2? "disabled" : ""}} class="btn btn-outline-secondary btn-sm edit-modal" role="button" data-id="{{ $target->id }}" data-name="{{$target->name}}" data-longname="{{$target->long_name}}" data-notes="{{ $target->notes }}" data-toggle="tooltip" data-placement="bottom" title="Editeur rapide">
                                             <i class="fas fa-edit"></i>
                                         </button>
                                         <a class="btn btn-outline-info btn-sm modify-modal" href="#" role="button"  data-id="{{ $target->id }}" data-user={{$target->user->id}} data-toggle="tooltip" data-placement="bottom" title="Modifier la plante">

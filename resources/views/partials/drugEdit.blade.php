@@ -32,10 +32,10 @@
                 </form>
                 <div class="modal-footer">
                     <button type="button" style="border: 0;border-bottom: 1px solid gray" class="btn actionBtn">
-                                <span id="footer_action_button" class='glyphicon'>
-                                    <i id="edit" class="fa fa-save"></i>
-                                    <i id="icon-edit" class="fas fa-spinner fa-pulse" style="display: none"></i>
-                                </span>
+                        <span id="footer_action_button" class='glyphicon'>
+                            <i id="edit" class="fa fa-save"></i>
+                            <i id="icon-edit" class="fas fa-spinner fa-pulse" style="display: none"></i>
+                        </span>
                     </button>
                 </div>
             </div>
@@ -51,7 +51,7 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header bg-gray">
-                <h4 class="modal-title">Veilliez entrez:</h4>
+                <h4 class="modal-title">Veuillez entrez:</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">

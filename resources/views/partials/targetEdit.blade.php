@@ -3,7 +3,7 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header bg-gray">
-                <h4 class="modal-title">Veilliez entrez:</h4>
+                <h4 class="modal-title">Veuillez entrez:</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
@@ -15,19 +15,16 @@
                                 <input type="text" style="border: 0;border-bottom: 1px solid gray"  class="form-control" id="fid" disabled>
                             </div>
                         </div>
-                        <label class="control-label col-sm-2 text-gray-dark" for="name">Type:</label>
-                        <div class="col-sm-10">
-                            <input type="text" style="border: 0;border-bottom: 1px solid gray"  class="form-control" id="type">
-                        </div>
+
                         <label class="control-label col-sm-2 text-gray-dark" for="name">Name:</label>
                         <div class="col-sm-10">
                             <input type="text" style="border: 0;border-bottom: 1px solid gray"  class="form-control" id="name">
                         </div>
-                        <label class="control-label col-sm-2 text-gray-dark" for="name">Long Name:</label>
+                        <label class="control-label col-sm-4 text-gray-dark" for="longname">Long Name:</label>
                         <div class="col-sm-10">
-                            <input type="text" style="border: 0;border-bottom: 1px solid gray"  class="form-control" id="long_name">
+                            <input type="text" style="border: 0;border-bottom: 1px solid gray"  class="form-control" id="longname">
                         </div>
-                        <label class="control-label col-sm-2 text-gray-dark" for="name">Note:</label>
+                        <label class="control-label col-sm-2 text-gray-dark" for="notes">Note:</label>
                         <div class="col-sm-10">
                             <input type="text" style="border: 0;border-bottom: 1px solid gray"  class="form-control" id="notes">
                         </div>

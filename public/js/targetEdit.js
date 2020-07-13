@@ -9,9 +9,8 @@ $(document).ready(function() {
         $('.modal-title').text('Modification Target');
         $('.form-horizontal').show();
         $('#fid').val($(this).data('id'));
-        $('#type').val($(this).data('type'));
         $('#name').val($(this).data('name'));
-        $('#long_name').val($(this).data('long_name'));
+        $('#longname').val($(this).data('longname'));
         $('#notes').val($(this).data('notes'));
         $('#myModal-targetEdit').modal('show');
     });
@@ -45,9 +44,8 @@ $(document).ready(function() {
             data: {
                 '_token': $('input[name=_token]').val(),
                 'id': $("#fid").val(),
-                'type': $('#type').val(),
                 'name': $('#name').val(),
-                'long_name': $('#long_name').val(),
+                'longname': $('#longname').val(),
                 'notes': $('#notes').val(),
                 'tid': $("#tid").val(),
                 'title': $('.title').text(),

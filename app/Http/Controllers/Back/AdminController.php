@@ -102,15 +102,14 @@ class AdminController extends Controller
 
             DB::table('targets')->where('validated', '!=', 1)->where('id', $request->id)
                 ->update([
-                    'type' => $request->targetype->name,
+
                     'name' => $request->name,
-                    'long_name' => $request->long_name,
+                    'longname' => $request->long_name,
                     'notes' => $request->notes,
                 ]);
 
 
         }
-
         Alert::success("C'est Ok");
 
         return response()->json();
@@ -258,6 +257,7 @@ class AdminController extends Controller
         $msg = $request->msg;
         $drug = DB::table('drugs')->where('id', '=', $id)->get();
 
+
         //$mail = $herb->user->email;
         //Mail::to($mail)->send(new HerbToUpdate($herb->user,$msg));
 
@@ -270,15 +270,15 @@ class AdminController extends Controller
         }
 
         Alert::success('Ok !', 'Le dci doit etre corrigée et le rédacteur va être notifié.');
-        return response()->json(['id' => $herb]);
+        return response()->json(['id' => $drug]);
 
     }
     public function modifs_target(Request $request) {
 
         $id = $request->id;
         $msg = $request->msg;
-        $herb = DB::table('targets')->where('id', '=', $id)->get();
-
+        $target = DB::table('targets')->where('id', '=', $id)->get();
+        dd($target);
         //$mail = $herb->user->email;
         //Mail::to($mail)->send(new HerbToUpdate($herb->user,$msg));
 
@@ -291,7 +291,7 @@ class AdminController extends Controller
         }
 
         Alert::success('Ok !', 'Le Target doit etre corrigée et le rédacteur va être notifié.');
-        return response()->json(['id' => $herb]);
+        return response()->json(['id' => $target]);
 
     }
 }
