@@ -5,6 +5,14 @@ namespace App\Http\Controllers\Back;
 use App\Http\Controllers\Controller;
 
 use App\Herb;
+use App\Drug;
+use App\Target;
+use App\Mail\HerbRefuse;
+use App\Mail\DrugRefused;
+use App\Mail\TargetRefused;
+use App\Mail\HerbToUpdate;
+use App\Mail\DrugToUpdate;
+use App\Mail\TargetToUpdate;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\{Http\Request, Support\Facades\DB, Support\Facades\Mail};
@@ -44,7 +52,6 @@ class AdminController extends Controller
             DB::table('temporary_data')->where('type_table', 'herbs')->where('id', $request->tid)->update(['new_value'=>$request->new]);
 
         }else{
-            $forms = $request->forms;
 
             DB::table('herbs')->where('validated', '!=', 1)->where('id', $request->id)
                 ->update([
@@ -54,7 +61,8 @@ class AdminController extends Controller
                 ]);
 
             DB::table('herb_has_forms')->where('herb_id', $request->id)->delete();
-            foreach ($forms as $id)
+
+            foreach ($request->forms as $id)
             {
                 DB::table('herb_has_forms')->insert(['herb_id' => $request->id, 'herb_form_id' => $id]);
             }
@@ -72,7 +80,7 @@ class AdminController extends Controller
             DB::table('temporary_data')->where('type_table', 'drugs')->where('id', $request->tid)->update(['new_value'=>$request->new]);
 
         }else{
-            $forms = $request->forms;
+
 
             DB::table('drugs')->where('validated', '!=', 1)->where('id', $request->id)
                 ->update([
@@ -80,9 +88,9 @@ class AdminController extends Controller
                 ]);
 
             DB::table('drugs')->where('drug_families_id', $request->id)->delete();
-            foreach ($forms as $id)
+            foreach ($request->families as $id)
             {
-                DB::table('drugs')->insert(['herb_id' => $request->id, 'drug_families_id' => $id]);
+                DB::table('drugs')->insert(['drug_id' => $request->id, 'drug_families_id' => $id]);
             }
         }
 
@@ -104,7 +112,7 @@ class AdminController extends Controller
                 ->update([
 
                     'name' => $request->name,
-                    'longname' => $request->long_name,
+                    'long_name' => $request->long_name,
                     'notes' => $request->notes,
                 ]);
 
@@ -163,9 +171,12 @@ class AdminController extends Controller
     public function refuse(Request $request)
     {
         $id = $request->id;
-        $user = DB::table('users')->where('id', $request->id)->get();
-        $email = DB::table('users')->where('id', $request->id)->pluck('email');
         $msg = $request->msg;
+        //$herb = DB::table('herbs')->where('id','=',$id)->get();
+        $herb = Herb::findOrFail($id);
+
+        $mail = $herb->user->email;
+
 
         if ($request->temporary)
         {
@@ -173,8 +184,8 @@ class AdminController extends Controller
         }else
         {
             //sending an email
-            //event(new HerbRefuseEvent($user, $email, $msg));
-            //Mail::to($email)->send(new HerbRefuse($user, $msg));
+            $mail = $herb->user->email;
+            Mail::to($mail)->send(new HerbRefuse($herb->user,$msg));
             DB::table('herbs')->where('id', $id)->delete();
         }
 
@@ -186,9 +197,7 @@ class AdminController extends Controller
     public function refuse_drug(Request $request)
     {
         $id = $request->id;
-        $user = DB::table('users')->where('id', $request->id)->get();
-        $email = DB::table('users')->where('id', $request->id)->pluck('email');
-
+        $drug = Drug::findOrFail($id);
         $msg = $request->msg;
 
         if ($request->temporary)
@@ -198,7 +207,8 @@ class AdminController extends Controller
         {
             //sending an email
             //event(new HerbRefuseEvent($user, $email, $msg));
-            //Mail::to($email)->send(new HerbRefuse($user, $msg));
+            $mail = $drug->user->email;
+            Mail::to($mail)->send(new DrugRefused($drug->user,$msg));
             DB::table('drugs')->where('id', $id)->delete();
         }
 
@@ -209,8 +219,7 @@ class AdminController extends Controller
     public function refuse_target(Request $request)
     {
         $id = $request->id;
-        $user = DB::table('users')->where('id', $request->id)->get();
-        $email = DB::table('users')->where('id', $request->id)->pluck('email');
+        $target = Target::findOrFail($id);
 
         $msg = $request->msg;
 
@@ -220,8 +229,8 @@ class AdminController extends Controller
         }else
         {
             //sending an email
-            //event(new HerbRefuseEvent($user, $email, $msg));
-            //Mail::to($email)->send(new HerbRefuse($user, $msg));
+            $mail = $target->user->email;
+            Mail::to($mail)->send(new TargetRefused($target->user,$msg));
             DB::table('targets')->where('id', $id)->delete();
         }
 
@@ -234,10 +243,11 @@ class AdminController extends Controller
 
         $id = $request->id;
         $msg = $request->msg;
-        $herb = DB::table('herbs')->where('id', '=', $id)->get();
+        //$herb = DB::table('herbs')->where('id','=',$id)->get();
+        $herb = Herb::findOrFail($id);
 
-        //$mail = $herb->user->email;
-        //Mail::to($mail)->send(new HerbToUpdate($herb->user,$msg));
+        $mail = $herb->user->email;
+        Mail::to($mail)->send(new HerbToUpdate($herb->user,$msg));
 
         if ($request->temporary)
         {
@@ -255,11 +265,12 @@ class AdminController extends Controller
 
         $id = $request->id;
         $msg = $request->msg;
-        $drug = DB::table('drugs')->where('id', '=', $id)->get();
+        $drug = Drug::findOrFail($id);
 
+        //$drug = DB::table('drugs')->where('id', '=', $id)->get();
 
-        //$mail = $herb->user->email;
-        //Mail::to($mail)->send(new HerbToUpdate($herb->user,$msg));
+        $mail = $drug->user->email;
+        Mail::to($mail)->send(new DrugToUpdate($drug->user,$msg));
 
         if ($request->temporary)
         {
@@ -277,10 +288,8 @@ class AdminController extends Controller
 
         $id = $request->id;
         $msg = $request->msg;
-        $target = DB::table('targets')->where('id', '=', $id)->get();
-        dd($target);
-        //$mail = $herb->user->email;
-        //Mail::to($mail)->send(new HerbToUpdate($herb->user,$msg));
+        $target = Target::findOrFail($id);
+
 
         if ($request->temporary)
         {
@@ -288,6 +297,8 @@ class AdminController extends Controller
         }else
         {
             DB::table('targets')->where('id', '=', $id)->update(['validated' => -1]);
+            $mail = $target->user->email;
+            Mail::to($mail)->send(new TargetToUpdate($target->user,$msg));
         }
 
         Alert::success('Ok !', 'Le Target doit etre corrigée et le rédacteur va être notifié.');

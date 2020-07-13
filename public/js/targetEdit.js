@@ -45,7 +45,7 @@ $(document).ready(function() {
                 '_token': $('input[name=_token]').val(),
                 'id': $("#fid").val(),
                 'name': $('#name').val(),
-                'longname': $('#longname').val(),
+                'long_name': $('#longname').val(),
                 'notes': $('#notes').val(),
                 'tid': $("#tid").val(),
                 'title': $('.title').text(),
