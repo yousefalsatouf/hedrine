@@ -177,7 +177,6 @@
                                                         <strong>{{ $message }}</strong>
                                                     </span>
                                                     @enderror
-
                                                 </div>
                                             </div>
                                             <div class="modal-footer m-footer bg-light">
